@@ -24,7 +24,8 @@ jobs:
     - name: Build and Push Frontend Image
       uses: docker/build-push-action@v5
       with:
-        context: ./docker/services/product-client/Dockerfile  # Path to frontend Dockerfile
+        context: .  
+        file: docker/services/product-client/Dockerfile
         push: true
         tags: |
           ${{ secrets.AZURE_CONTAINER_REGISTRY }}/danone-xtab-ui-dev:latest
