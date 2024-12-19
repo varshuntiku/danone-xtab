@@ -1,0 +1,35 @@
+summary: "Get System Widgets"
+tags:
+  - product/AppAdmin
+description: "Get Visual UIaC setup widget details"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Leave empty
+  required: true
+  content:
+    application/json:
+      schema:
+        type: "object"
+        nullable: true
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'item not found'}

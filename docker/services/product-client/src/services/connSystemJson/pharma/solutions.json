@@ -1,0 +1,247 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "label": "Marketing & Media Planner",
+      "sub_headers": [
+        "Anamoly Detection",
+        "Isolate promo vs. price impact"
+      ],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          },
+          {
+            "insight": "Business Insights 3",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+3.5% YoY"
+          },
+          {
+            "insight": "Business Insights 4",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+1.5% YoY"
+          }
+        ]
+      },
+      "tag": "Pricing",
+      "functions": [
+        "fn_node_1"
+      ],
+      "workflows": [
+        "wf_node_4"
+      ],
+      "app_id": 1,
+      "app_name": "Marketing & Media Planner"
+    },
+    {
+      "id": 2,
+      "label": "PCM",
+      "sub_headers": [
+        "Optimization algorithm",
+        "White space analysis"
+      ],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Pricing",
+      "functions": [
+        "fn_node_3"
+      ],
+      "workflows": [
+        "wf_node_5"
+      ],
+      "app_id": 26,
+      "app_name": "Integrated Demand Forecasting"
+    },
+    {
+      "id": 3,
+      "label": "Next Best Action",
+      "sub_headers": [
+        "Price elasticity model",
+        "Local/ Regional constraints"
+      ],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Pricing",
+      "functions": [
+        "fn_node_1"
+      ],
+      "workflows": [
+        "wf_node_4"
+      ],
+      "app_id": 1,
+      "app_name": "Marketing & Media Planner"
+    },
+    {
+      "id": 4,
+      "label": "Clickstream Summary",
+      "sub_headers": [
+        "Anamoly Detection",
+        "Isolate promo vs. price impact"
+      ],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Promo",
+      "functions": [
+        "fn_node_3"
+      ],
+      "workflows": [
+        "wf_node_4"
+      ],
+      "type": "powerbi",
+      "app_id": 26,
+      "app_name": "Integrated Demand Forecasting"
+    },
+    {
+      "id": 5,
+      "label": "Omni Channel Optimizer",
+      "sub_headers": [
+        "Impact by promo type & duration",
+        "Promo pressure"
+      ],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Pricing",
+      "functions": [
+        "fn_node_1"
+      ],
+      "workflows": [
+        "wf_node_5"
+      ],
+      "app_id": 26,
+      "app_name": "Integrated Demand Forecasting"
+    },
+    {
+      "id": 6,
+      "label": "Sales force performance measurement",
+      "sub_headers": [
+        "Promotion Depth Optimizer"
+      ],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Pricing",
+      "functions": [
+        "fn_node_4"
+      ],
+      "workflows": [
+        "wf_node_4"
+      ],
+      "app_id": 1,
+      "app_name": "Marketing & Media Planner"
+    }
+  ]
+}

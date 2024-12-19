@@ -1,0 +1,150 @@
+@import '../../../styles/util.scss';
+
+.MinervaWC .MinervaQueryOutputItem {
+    flex: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: spacing(20);
+
+    .MinervaQueryOutput-queryInput-container {
+        display: flex;
+        flex-direction: column;
+        gap: spacing(10);
+
+        .MinervaQueryOutputItem-query-input {
+            // font-weight: 500;
+            font-size: spacing(18);
+            @include minervaFullScreen-bellow-md {
+                font-size: spacing(16);
+            }
+        }
+
+        .MinervaQueryDatasourceInput {
+            padding: 0;
+            background-color: transparent;
+        }
+    }
+
+    .MinervaQueryOutputItem-query-container {
+        display: flex;
+        gap: spacing(12);
+        align-items: center;
+        padding: spacing(0, 20);
+
+        @include minervaFullScreen-bellow-md {
+            padding: spacing(0, 12);
+        }
+
+        .MinervaAvatar {
+            flex-shrink: 0;
+            align-self: flex-start;
+        }
+
+        .MinervaQuerySelectIcon {
+            svg {
+                margin-top: spacing(3);
+                width: spacing(32);
+                height: spacing(32);
+            }
+
+            cursor: pointer;
+        }
+
+        .MinervaQueryOutput-Query {
+            display: flex;
+            gap: spacing(10);
+            align-items: center;
+        }
+    }
+
+    .MinervaQueryOutputItem-response-container {
+        display: flex;
+        gap: spacing(12);
+        background: var(--minerva-bg-main);
+        padding: spacing(20, 20, 20, 20);
+        border-radius: spacing(2);
+        border: 1px solid var(--minerva-text-color-20);
+        box-shadow: var(--minerva-box-shadow-1b);
+
+        @include minervaFullScreen-bellow-md {
+            padding: spacing(12);
+            gap: spacing(12);
+        }
+
+        .MinervaAvatar {
+            background-color: var(--minerva-bg-secondary-blue);
+            border-radius: spacing(10);
+            margin-top: spacing(4);
+
+            svg {
+                font-size: spacing(20);
+            }
+        }
+
+        .MinervaQueryOutputItem-loaderContainer {
+            display: flex;
+            align-items: center;
+            gap: spacing(8);
+
+            .MinervaQueryOutputItem-image {
+                width: spacing(40);
+                height: spacing(40)
+            }
+        }
+    }
+
+    .MinervaQueryOutputItem-visual-result {
+        flex: 1;
+
+        &.expanded {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+
+            .MinervaWidgetOutput {
+                background: var(--minerva-bg-main);
+                max-width: spacing(700);
+                padding: spacing(36);
+
+                .MinervaChartView {
+                    height: spacing(400);
+                }
+            }
+        }
+    }
+
+    .MinervaQueryOutputItem-response-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: spacing(28);
+        // overflow: hidden;
+        width: 0; // tobe tested
+
+        // font-size: spacing(15.5);
+        // @include minervaFullScreen-bellow-md {
+        //     font-size: spacing(12);
+        // }
+    }
+
+    .MinervaQueryOutputItem-action-panel {
+        display: flex;
+        gap: spacing(8);
+        align-items: center;
+        // padding: spacing(5, 0);
+    }
+
+    .MinervaQueryOutputItem-status {
+        em {
+            color: var(--minerva-contrast-color)
+        }
+    }
+}

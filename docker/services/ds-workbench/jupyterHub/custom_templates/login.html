@@ -1,0 +1,29 @@
+{% extends "templates/login.html" %} {% block message %} {{ super() }}
+{% block script %}
+    <script>
+        window.onload = () => {
+            console.log("New Template!!!!!!!!!!!!!!!")
+            window.addEventListener('message', (event) => {
+                if (event.data.type === 'login-info') {
+                    const {projectId, token} = event.data.data;
+                    console.log({projectId, token})
+                    const usernameEle = document.getElementById('username_input')
+                    usernameEle.value = projectId;
+                    const passwordEle = document.getElementById('password_input')
+                    passwordEle.value = token;
+                    const submitButton = document.getElementById('login_submit')
+                    submitButton.click();
+                }
+            });
+
+            window.parent.postMessage({
+                type: 'jupyterhub-login-info-request',
+                data: {
+                    name: 'auth-info-request',
+                }
+            },
+            '*')
+        }
+    </script>
+{% endblock script %}
+{% endblock %}

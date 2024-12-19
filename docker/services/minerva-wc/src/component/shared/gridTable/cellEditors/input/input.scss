@@ -1,0 +1,10 @@
+@import "../../../../../styles/util.scss";
+.MinervaWC .MinervaInput {
+    background: transparent;
+    color: inherit;
+    border: var( --minerva-border-1);
+    outline: 0;
+    padding: spacing(5, 10);
+    border-radius: spacing(2);
+    font-size: inherit;
+}

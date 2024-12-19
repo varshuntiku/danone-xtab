@@ -1,0 +1,70 @@
+/* Comment.module.css */
+
+.commentContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    padding: 8px;
+    color: #220047;
+    width: 100%;
+    padding-top: 2rem;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    display: flex;
+    margin-top: 2rem;
+    align-items: start;
+    padding-left: 5rem;
+    flex-direction: column;
+}
+
+.iconBar {
+    display: flex;
+    gap: 1rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-right: 56px;
+}
+
+.avatarWrapper {
+    margin-right: 8px; /* Space between the avatar and the content */
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: white;
+    margin-left: 4rem;
+    margin-top: 1rem;
+}
+
+.content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: -0.5rem;
+}
+
+.name {
+    margin-bottom: 1rem;
+    color: #220047;
+    font-size: 1.5rem;
+    font-weight: 500; /* Color for the username */
+}
+
+.textField {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    color: #220047;
+    font-size: 1.5rem;
+    font-weight: 500;/* Color for the comment text */
+}

@@ -1,0 +1,72 @@
+tags:
+  - product/App
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "body"
+  name: "body"
+  required: "true"
+  schema:
+    type: "object"
+    properties:
+      widget_value_id:
+        type: "integer"
+      action_type:
+        type: "string"
+      data:
+        type: "string"
+      filters:
+        type: "array"
+      formData:
+        type: "object"
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [widget_value_id]
+        properties:
+          widget_value_id:
+            type: "integer"
+          screen_data:
+            type: "string"
+          filter_data:
+            type: "string"
+          action_type:
+            type: "string"
+          selected_filters:
+            type: "object"
+          form_data:
+            type: "object"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "string"
+          example : "Code string"
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'Error executing code'
+          }

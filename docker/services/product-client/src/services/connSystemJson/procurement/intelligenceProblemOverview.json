@@ -1,0 +1,1186 @@
+{
+    "data": {
+        "consumptionData": [
+            {
+                "label": "Consumption & Cost",
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "x": [
+                                        3,
+                                        13,
+                                        33,
+                                        53,
+                                        73,
+                                        93,
+                                        103
+                                    ],
+                                    "y": [
+                                        10,
+                                        20,
+                                        25,
+                                        35,
+                                        25,
+                                        35,
+                                        40
+                                    ],
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "fill": "tozeroy",
+                                    "marker": {
+                                        "color": [
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7"
+                                        ]
+                                    }
+                                }
+                            ],
+                            "shapes": [
+                                {
+                                    "type": "line",
+                                    "x0": 13,
+                                    "x1": 13,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 33,
+                                    "x1": 33,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 53,
+                                    "x1": 53,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 73,
+                                    "x1": 73,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 93,
+                                    "x1": 93,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": -1.5,
+                                    "x1": 98,
+                                    "y0": 0,
+                                    "y1": 0,
+                                    "line": {
+                                        "color": "#FFFFFF70",
+                                        "width": 1,
+                                        "dash": "solid"
+                                    }
+                                }
+                            ],
+                            "annotations": [
+                                {
+                                    "x": 3,
+                                    "y": -5,
+                                    "text": "Jan",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 18,
+                                    "y": -5,
+                                    "text": "Feb",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 36,
+                                    "y": -5,
+                                    "text": "Mar",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 54,
+                                    "y": -5,
+                                    "text": "Apr",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 72,
+                                    "y": -5,
+                                    "text": "May",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 90,
+                                    "y": -5,
+                                    "text": "Jun",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -2.5,
+                                    "y": 1,
+                                    "text": "0",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 12
+                                    }
+                                },
+                                {
+                                    "x": -2,
+                                    "y": 10,
+                                    "text": "10k",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -2,
+                                    "y": 20,
+                                    "text": "20k",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -2,
+                                    "y": 30,
+                                    "text": "30k",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -2,
+                                    "y": 40,
+                                    "text": "40k",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "App Logins",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "data": "Last Month"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "sub_text",
+                            "icon": true,
+                            "data": "1-31 July 23"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "right_heading",
+                            "data": "3.1 K"
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "Requests Served",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "data": "Last Month"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "sub_text",
+                            "icon": true,
+                            "data": "1-31 July 23"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "right_heading",
+                            "data": "7.9K"
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            }
+        ],
+        "analysisData": [
+            {
+                "label": "Model & Model Type",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "values": [
+                                        20,
+                                        40,
+                                        20,
+                                        20
+                                    ],
+                                    "labels": [
+                                        "Forecasting 01",
+                                        "optimisation 02",
+                                        "optimisation 01",
+                                        "optimisation 03"
+                                    ],
+                                    "domain": {
+                                        "column": 0
+                                    },
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "hole": 0.7,
+                                    "type": "pie",
+                                    "marker": {
+                                        "colors": [
+                                            "#42E4BC",
+                                            "#6883F7",
+                                            "#E69E63",
+                                            "#FE6A9C"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "legend",
+                            "legendColor": "#42E4BC",
+                            "legendText": "Forecasting  01"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#6883F7",
+                            "legendText": "Optimisation 02"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#E69E63",
+                            "legendText": "Segmentaion 01"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#FE6A9C",
+                            "legendText": "Classification 01"
+                        }
+                    ]
+                },
+                "totalModels": 5
+            },
+            {
+                "label": "Service",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "values": [
+                                        40,
+                                        40,
+                                        20
+                                    ],
+                                    "labels": [
+                                        "Pass  03",
+                                        "Fail 01",
+                                        "At Risk 01"
+                                    ],
+                                    "domain": {
+                                        "column": 0
+                                    },
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "hole": 0.7,
+                                    "type": "pie",
+                                    "marker": {
+                                        "colors": [
+                                            "#81D390",
+                                            "#6883F7",
+                                            "#FFAD69"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "legend",
+                            "legendColor": "#81D390",
+                            "legendText": "Pass  03"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#6883F7",
+                            "legendText": "Fail 01"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#FFAD69",
+                            "legendText": "At Risk 01"
+                        }
+                    ]
+                },
+                "totalModels": 5
+            },
+            {
+                "label": "Accuracy",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "values": [
+                                        30,
+                                        30,
+                                        20,
+                                        20
+                                    ],
+                                    "labels": [
+                                        "Pass  03",
+                                        "Fail 01",
+                                        "At Risk 01"
+                                    ],
+                                    "domain": {
+                                        "column": 0
+                                    },
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "hole": 0.7,
+                                    "type": "pie",
+                                    "marker": {
+                                        "colors": [
+                                            "#81D390",
+                                            "#6883F7",
+                                            "#FFAD69"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "legend",
+                            "legendColor": "#81D390",
+                            "legendText": "Pass  03"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#6883F7",
+                            "legendText": "Fail 01"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#FFAD69",
+                            "legendText": "At Risk 01"
+                        }
+                    ]
+                },
+                "totalModels": 5
+            },
+            {
+                "label": "Drift",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "values": [
+                                        40,
+                                        35,
+                                        25
+                                    ],
+                                    "labels": [
+                                        "Pass  03",
+                                        "Fail 01",
+                                        "At Risk 01"
+                                    ],
+                                    "domain": {
+                                        "column": 0
+                                    },
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "hole": 0.7,
+                                    "type": "pie",
+                                    "marker": {
+                                        "colors": [
+                                            "#81D390",
+                                            "#6883F7",
+                                            "#FFAD69"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "legend",
+                            "legendColor": "#81D390",
+                            "legendText": "Pass  03"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#6883F7",
+                            "legendText": "Fail 01"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#FFAD69",
+                            "legendText": "At Risk 01"
+                        }
+                    ]
+                },
+                "totalModels": 5
+            }
+        ],
+        "kpiPopupData": [
+            {
+                "label": "Score",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "card-desc",
+                            "data": "Modal Health"
+                        },
+                        {
+                            "type": "card-desc",
+                            "data": "Drift"
+                        },
+                        {
+                            "type": "card-desc",
+                            "data": "Accuracy"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "card-value",
+                            "data": "06"
+                        },
+                        {
+                            "type": "card-value",
+                            "data": "08"
+                        },
+                        {
+                            "type": "card-value",
+                            "data": "01"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "Top 3 Features",
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "card-value",
+                            "data": "Sales"
+                        },
+                        {
+                            "type": "card-value",
+                            "data": "Pricing"
+                        },
+                        {
+                            "type": "card-value",
+                            "data": "Quantity"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "Algorithm Name",
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "card-value",
+                            "data": "K-Means"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "Error Metrics",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "card-desc",
+                            "data": "MAPE"
+                        },
+                        {
+                            "type": "card-desc",
+                            "data": "MAE"
+                        },
+                        {
+                            "type": "card-desc",
+                            "data": "ME"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "card-value",
+                            "data": "0.35"
+                        },
+                        {
+                            "type": "card-value",
+                            "data": "0.5"
+                        },
+                        {
+                            "type": "card-value",
+                            "data": "0.1"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "Confusion Matrix",
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    },
+                                    "z": [
+                                        [
+                                            -10,
+                                            -40
+                                        ],
+                                        [
+                                            -60,
+                                            -60
+                                        ]
+                                    ],
+                                    "type": "heatmap",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "colorscale": [
+                                        [
+                                            0,
+                                            "#49B5D1"
+                                        ],
+                                        [
+                                            0.5,
+                                            "#3BCBC0"
+                                        ],
+                                        [
+                                            1,
+                                            "#6589F3"
+                                        ]
+                                    ],
+                                    "coloraxis": "coloraxis",
+                                    "cmin": -60,
+                                    "cmax": -10,
+                                    "tickfont": {
+                                        "color": "#091F3A",
+                                        "size": 10
+                                    }
+                                }
+                            ],
+                            "annotations": [
+                                {
+                                    "x": 0,
+                                    "y": 0,
+                                    "text": "60",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 1,
+                                    "y": 0,
+                                    "text": "10",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 0,
+                                    "y": 1,
+                                    "text": "20",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 1,
+                                    "y": 1,
+                                    "text": "20",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 0,
+                                    "y": -1,
+                                    "text": "0",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 1,
+                                    "y": -1,
+                                    "text": "1",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -1,
+                                    "y": 0,
+                                    "text": "0",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -1,
+                                    "y": 1,
+                                    "text": "1",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "ROC Plot",
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "x": [
+                                        0,
+                                        4,
+                                        8,
+                                        12,
+                                        16
+                                    ],
+                                    "y": [
+                                        2,
+                                        4,
+                                        6,
+                                        7,
+                                        6
+                                    ],
+                                    "fill": "tozeroy",
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "marker": {
+                                        "color": [
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7"
+                                        ]
+                                    }
+                                }
+                            ],
+                            "shapes": [
+                                {
+                                    "type": "line",
+                                    "x0": 0,
+                                    "x1": 20,
+                                    "y0": 0,
+                                    "y1": 0,
+                                    "line": {
+                                        "color": "#091F3A",
+                                        "width": 0.8,
+                                        "dash": "solid"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 0,
+                                    "x1": 0,
+                                    "y0": 0,
+                                    "y1": 9,
+                                    "line": {
+                                        "color": "#091F3A",
+                                        "width": 0.8,
+                                        "dash": "solid"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 0,
+                                    "x1": 8,
+                                    "y0": 6,
+                                    "y1": 6,
+                                    "line": {
+                                        "color": "#091F3A",
+                                        "width": 0.6,
+                                        "dash": "dot"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 8,
+                                    "x1": 8,
+                                    "y0": 0,
+                                    "y1": 6,
+                                    "line": {
+                                        "color": "#091F3A",
+                                        "width": 0.8,
+                                        "dash": "dot"
+                                    }
+                                }
+                            ],
+                            "annotations": [
+                                {
+                                    "x": 6,
+                                    "y": -1,
+                                    "text": "IPR",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -2,
+                                    "y": 5,
+                                    "text": "IPR",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "#091F3A",
+                                        "size": 9
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "Total Requests",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "card-value",
+                            "data": "# of Total Request"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "card-value",
+                            "data": "8.1K"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "Refresh Rate",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "card-desc",
+                            "data": "Last Refresh"
+                        },
+                        {
+                            "type": "card-desc",
+                            "data": "Status"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "card-desc",
+                            "data": "Jul 4 2023"
+                        },
+                        {
+                            "type": "card-desc",
+                            "data": "In Prod"
+                        }
+                    ]
+                }
+            }
+        ],
+        "modelsViewData": {
+            "columns": [
+                {
+                    "id": "name",
+                    "name": "Model Name",
+                    "type": "name"
+                },
+                {
+                    "id": "service_health",
+                    "name": "Service Health",
+                    "type": "boolean"
+                },
+                {
+                    "id": "drift",
+                    "name": "Drift",
+                    "type": "boolean"
+                },
+                {
+                    "id": "accuracy",
+                    "name": "Accuracy",
+                    "type": "boolean"
+                },
+                {
+                    "id": "activity",
+                    "name": "Activity",
+                    "type": "plotly"
+                },
+                {
+                    "id": "logs",
+                    "name": "Logs",
+                    "type": "logs"
+                },
+                {
+                    "id": "metadata_availability",
+                    "name": "Metadata Availability",
+                    "type": "metadata_availability"
+                }
+            ],
+            "data": [
+                {
+                    "name": {
+                        "name": "Price Optimiser",
+                        "segment": "Pricing",
+                        "service": "Azure Databricks",
+                        "version": "V1.3"
+                    },
+                    "service_health": true,
+                    "drift": false,
+                    "accuracy": true,
+                    "activity": {
+                        "data": [
+                            {
+                                "fill": "tozeroy",
+                                "marker": {
+                                    "symbol": "circle",
+                                    "size": 0.1,
+                                    "color": "rgba(63, 85, 182, 1)"
+                                },
+                                "opacity": "1",
+                                "x": [
+                                    "01-06-2023",
+                                    "02-06-2023",
+                                    "03-06-2023",
+                                    "04-06-2023",
+                                    "05-06-2023",
+                                    "06-06-2023",
+                                    "07-06-2023",
+                                    "08-06-2023",
+                                    "09-06-2023",
+                                    "10-06-2023"
+                                ],
+                                "y": [
+                                    0,
+                                    65,
+                                    80,
+                                    55,
+                                    60,
+                                    95,
+                                    40,
+                                    60,
+                                    45
+                                ],
+                                "type": "scatter"
+                            }
+                        ]
+                    },
+                    "logs": "",
+                    "metadata_availability": true
+                },
+                {
+                    "name": {
+                        "name": "Interest Calculator",
+                        "segment": "Finance",
+                        "service": "AWS Segmenter",
+                        "version": "V0.6"
+                    },
+                    "service_health": true,
+                    "drift": false,
+                    "accuracy": true,
+                    "activity": {
+                        "data": [
+                            {
+                                "fill": "tozeroy",
+                                "marker": {
+                                    "symbol": "circle",
+                                    "size": 0.1,
+                                    "color": "rgba(63, 85, 182, 1)"
+                                },
+                                "opacity": "1",
+                                "x": [
+                                    "01-06-2023",
+                                    "02-06-2023",
+                                    "03-06-2023",
+                                    "04-06-2023",
+                                    "05-06-2023",
+                                    "06-06-2023",
+                                    "07-06-2023",
+                                    "08-06-2023",
+                                    "09-06-2023",
+                                    "10-06-2023"
+                                ],
+                                "y": [
+                                    0,
+                                    65,
+                                    80,
+                                    55,
+                                    60,
+                                    95,
+                                    40,
+                                    60,
+                                    45
+                                ],
+                                "type": "scatter"
+                            }
+                        ]
+                    },
+                    "logs": "",
+                    "metadata_availability": false
+                },
+                {
+                    "name": {
+                        "name": "MMM Optimizer",
+                        "segment": "Marketing",
+                        "service": "Azure Databricks",
+                        "version": "V2.0"
+                    },
+                    "service_health": true,
+                    "drift": false,
+                    "accuracy": true,
+                    "activity": {
+                        "data": [
+                            {
+                                "fill": "tozeroy",
+                                "marker": {
+                                    "symbol": "circle",
+                                    "size": 0.1,
+                                    "color": "rgba(63, 85, 182, 1)"
+                                },
+                                "opacity": "1",
+                                "x": [
+                                    "01-06-2023",
+                                    "02-06-2023",
+                                    "03-06-2023",
+                                    "04-06-2023",
+                                    "05-06-2023",
+                                    "06-06-2023",
+                                    "07-06-2023",
+                                    "08-06-2023",
+                                    "09-06-2023",
+                                    "10-06-2023"
+                                ],
+                                "y": [
+                                    0,
+                                    65,
+                                    80,
+                                    55,
+                                    60,
+                                    95,
+                                    40,
+                                    60,
+                                    45
+                                ],
+                                "type": "scatter"
+                            }
+                        ]
+                    },
+                    "logs": "",
+                    "metadata_availability": true
+                }
+            ]
+        },
+        "modelsMetadata": {
+            "columns": [
+                {
+                    "id": "model_id",
+                    "name": "Model ID",
+                    "type": "text"
+                },
+                {
+                    "id": "version",
+                    "name": "Version No.",
+                    "type": "text"
+                },
+                {
+                    "id": "timestamp",
+                    "name": "Time Stamp",
+                    "type": "text"
+                },
+                {
+                    "id": "username",
+                    "name": "User",
+                    "type": "text"
+                },
+                {
+                    "id": "stage",
+                    "name": "Stage",
+                    "type": "text"
+                },
+                {
+                    "id": "description",
+                    "name": "Description",
+                    "type": "text"
+                },
+                {
+                    "id": "dataset",
+                    "name": "Training/Valid Dataset",
+                    "type": "text"
+                },
+                {
+                    "id": "packages",
+                    "name": "Packages Used",
+                    "type": "text"
+                }
+            ],
+            "data": [
+                {
+                    "model_id": "Forecast_2",
+                    "version": 2,
+                    "timestamp": "08-02-21 22:33",
+                    "username": "John Doe",
+                    "stage": "Production",
+                    "description": "Demand Forecast",
+                    "dataset": "Demand_2971",
+                    "packages": "pytorch,..."
+                }
+            ]
+        }
+    }
+}

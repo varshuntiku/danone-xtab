@@ -1,0 +1,26 @@
+[
+    {
+        "model_id": 1,
+        "type_id": 2
+    },
+    {
+        "model_id": 2,
+        "type_id": 2
+    },
+    {
+        "model_id": 3,
+        "type_id": 2
+    },
+    {
+        "model_id": 4,
+        "type_id": 1
+    },
+    {
+        "model_id": 1,
+        "type_id": 1
+    },
+    {
+        "model_id": 5,
+        "type_id": 3
+    }
+]

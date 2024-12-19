@@ -1,0 +1,179 @@
+{
+    "data": {
+        "widget_value_id": 161401,
+        "value": {
+            "simulator_options": {
+                "sections": [
+                    {
+                        "header": "",
+                        "inputs": []
+                    },
+                    {
+                        "header": "Sliders with inputs",
+                        "inputs": [
+                            {
+                                "input_type": "number",
+                                "id": "Never Out",
+                                "label": "Never Out",
+                                "value": 0
+                            },
+                            {
+                                "input_type": "number",
+                                "id": "Must Have",
+                                "label": "Must Have",
+                                "value": 0
+                            },
+                            {
+                                "input_type": "number",
+                                "id": "Tertiary",
+                                "label": "Tertiary",
+                                "value": 0
+                            }
+                        ]
+                    },
+                    {
+                        "header": "",
+                        "inputs": []
+                    }
+                ],
+                "actions": [
+                    {
+                        "name": "Reset",
+                        "action_flag_type": "reset",
+                        "variant": "outlined",
+                        "action": "reset"
+                    },
+                    {
+                        "name": "Save",
+                        "action_flag_type": "submit",
+                        "variant": "contained",
+                        "action": "submit"
+                    }
+                ],
+                "trigger": {
+                    "text": "Simulator",
+                    "size": "small"
+                }
+            },
+            "form_config": {
+                "title": "",
+                "fields": [
+                    {
+                        "id": 5,
+                        "grid": 12,
+                        "name": "skuList",
+                        "type": "tabularForm",
+                        "noGutterBottom": true,
+                        "value": [
+                            {"2023 Category Ranking": 1},
+                            {"2023 Category Ranking": 2}
+                        ],
+                        "tableprops": {
+                            "coldef": [
+                                {"headerName": "2023 Category Ranking", "field": "2023 Category Ranking", "cellRenderer": "slNo", "cellRendererParams": {"slNoOffset": 1}},
+                                {"headerName": "2023 N/M/T/W/C", "field": "2023 N/M/T/W/C", "cellEditor": "select", "cellEditorParams": {
+                                    "options": ["N", "M", "T", "W", "C"],
+                                    "fullWidth": true,
+                                    "variant": "outlined"
+                                }, "editable": true},
+                                {"headerName": "2022 Brand Ranking", "field": "2022 Brand Ranking"},
+                                {"headerName": "2023 Brand Ranking", "field": "2022 Brand Ranking", "cellEditor": "text", "cellEditorParams": {
+                                    "fullWidth": true,
+                                    "variant": "outlined"
+                                }, "editable": true},
+                                {"headerName": "OSA Tier", "field": "OSA Tier"},
+                                {"headerName": "Cumulative % of Sales", "field": "Cumulative % of Sales"},
+                                {"headerName": "$ - 26 weeks", "field": "$ - 26 weeks"},
+                                {"headerName": "$ % change YA-26 weeks", "field": "$ % change YA-26 weeks"},
+                                {"headerName": "%ACV-26 weeks", "field": "%ACV-26 weeks"},
+                                {"headerName": "$/$MM ACV - 26 weeks", "field": "$/$MM ACV - 26 weeks"},
+                                {"headerName": "Notes", "field": "Notes", "cellEditor": "text", "cellEditorParams": {
+                                    "fullWidth": true,
+                                    "variant": "outlined"
+                                }, "editable": true}
+                            ],
+                            "gridOptions": {
+                                "tableSize": "small",
+                                "editorMode": true,
+                                "tableMaxHeight": "40vh",
+                                "enableRearrange": true
+                            }
+                        }
+                    },
+                    {
+                        "id": 4,
+                        "type": "actionButtons",
+                        "variant": "outlined",
+                        "value": [null, {"name": "Update", "size": "small", "variant": "contained"}, {"name": "Reset", "size": "small"}],
+                        "grid": 12
+                    },
+                    {
+                        "id": 3,
+                        "name": "",
+                        "label": "SKU List",
+                        "type": "label",
+                        "value": "SKU List",
+                        "InputLabelProps": {
+                            "variant": "h4"
+                        },
+                        "noGutterBottom": true,
+                        "fullWidth": true,
+                        "grid": true
+                    },
+                    {
+                        "id": 5,
+                        "grid": 12,
+                        "name": "",
+                        "type": "tabularForm",
+                        "noGutterBottom": true,
+                        "value": [
+                            {"SL No": 1},
+                            {"SL No": 2}
+                        ],
+                        "tableprops": {
+                            "coldef": [
+                                {"headerName": "SL No", "field": "SL No"},
+                                {"headerName": "User ID", "field": "User ID"},
+                                {"headerName": "Plan ID", "field": "Plan ID"},
+                                {"headerName": "Plan Details", "field": "Plan Details"},
+                                {"headerName": "Never Outs", "field": "Never Outs"},
+                                {"headerName": "Must Haves", "field": "Must Haves"},
+                                {"headerName": "Tertiary", "field": "Tertiary"},
+                                {"headerName": "Timestamp", "field": "Timestamp"},
+                                {"headerName": "Load", "field": "Load", "cellEditor": "select", "cellEditorParams": {
+                                    "options": ["LOAD", "NOT LOAD"],
+                                    "fullWidth": true,
+                                    "variant": "outlined"
+                                }, "editable": true}
+                            ],
+                            "gridOptions": {
+                                "tableSize": "small",
+                                "editorMode": true,
+                                "tableMaxHeight": "20vh",
+                                "stripeRow": true
+                            }
+                        }
+                    },
+                    {
+                        "id": 4,
+                        "type": "actionButtons",
+                        "variant": "outlined",
+                        "value": [null, {"name": "Finalize", "size": "small", "variant": "contained"}],
+                        "grid": 12
+                    }
+                ]
+            },
+            "error": false,
+            "message": "",
+            "extraParamsMapping": true,
+            "info": {
+                "list": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        "simulated_value": false
+    }
+}

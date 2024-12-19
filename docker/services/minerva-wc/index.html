@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Vite + Preact</title>
+    <script type="module" src="/src/index.tsx"></script>
+  </head>
+
+  <body>
+    <div class="container2">
+      <minerva-wc
+        id="minerva-k"
+        empty_state_message_greet="Hey Subhasis Debsharma"
+        copilot_app_id="7"
+        trigger_button_variant="float"
+      >
+      </minerva-wc>
+      <!-- theme_values='{"mode": "light", "bgMain": "#ffffff", "contrastColor":"#2e66fc"}' -->
+      <!-- theme_values='{"mode": "light", "bgMain": "#E5E5E5", "contrastColor":"#3277B3", "chartColor": "#7FD3BE", "fontFamily":"Roboto,Arial,sans-serif"}' -->
+      <!-- theme_values='{"mode": "dark","bgMain":"#0C2744","bgDark":"#091F3A","bgLight":"#1E3E5F","textColor":"#fff","contrastColor":"#6DF0C2","fontFamily":"Roboto,Arial,sans-serif","chartColors":["#6883F7","#42E4BC","#FFAD69","#FE6A9C","#7ACFFF","#AA7EF0","#F5E07E","#81D290","#D3C6F7","#018786"]}' -->
+      <!-- theme_values='{"mode": "light","bgMain":"#E5E5E5","bgDark":"#FFFFFF","bgLight":"#F5F5F5","textColor":"#000","contrastColor":"#3277B3","fontFamily":"Roboto,Arial,sans-serif","chartColors":["#7FD3BE","#3277B3","#FFAD69","#FE6A9C","#7ACFFF","#018786","#81D290","#F7C43D","#D3A6EE","#8DE6E7"]}' -->
+      <!-- consumer_access_key='bea08f12-b21f-44e3-9d4f-4e66cd842428' -->
+    </div>
+  </body>
+  <script>
+    var m;
+    window.onload = () => {
+      m = document.getElementById("minerva-k");
+      m.auth_token_getter = async () => {
+        return "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjNQYUs0RWZ5Qk5RdTNDdGpZc2EzWW1oUTVFMCIsImtpZCI6IjNQYUs0RWZ5Qk5RdTNDdGpZc2EzWW1oUTVFMCJ9.eyJhdWQiOiJhcGk6Ly9hYjUxZGVhNy1lNTRhLTQwMDctYmZkZS0zNDA0YWJmMjRkZmMiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC80YmYzMDMxMC1lNGYxLTQ2NTgtOWUzNC05ZThhNWExOTNlZDEvIiwiaWF0IjoxNzMxNTEwNTgyLCJuYmYiOjE3MzE1MTA1ODIsImV4cCI6MTczMTUxNTkyNiwiYWNyIjoiMSIsImFpbyI6IkFWUUFxLzhZQUFBQWg2bzE4bnRpQnd2U1VGZnZpUW1LYUMwRXhuK29rNHFoeGYxdy9OalRBY1VuVUYrbTdQRTdkWW1lV2tTLzkya1FoSVF4R1gvajUxS3BLNC9EeGpteDFSalFjTzdyNmN3Wms0Q0dJK1g4OFVzPSIsImFtciI6WyJwd2QiLCJyc2EiLCJtZmEiXSwiYXBwaWQiOiJhYjUxZGVhNy1lNTRhLTQwMDctYmZkZS0zNDA0YWJmMjRkZmMiLCJhcHBpZGFjciI6IjAiLCJkZXZpY2VpZCI6IjA1MDZmNTgyLWU1ZjgtNGVmYy1iZGM3LTk2N2YwNTY2NzU2OSIsImZhbWlseV9uYW1lIjoiRGVic2hhcm1hIiwiZ2l2ZW5fbmFtZSI6IlN1Ymhhc2lzIiwiaXBhZGRyIjoiMjAyLjE0Mi44MS4xMTEiLCJuYW1lIjoiU3ViaGFzaXMgRGVic2hhcm1hIiwib2lkIjoiNWMyMzBiYTUtODk4OC00NTJiLTlmYTQtMWQyZWQ2NmQwNmE3IiwicmgiOiIxLkFVb0FFQVB6U19Ia1dFYWVOSjZLV2hrLTBhZmVVYXRLNVFkQXY5NDBCS3Z5VGZ3dUFkNUtBQS4iLCJzY3AiOiJ1c2VyX2ltcGVyc29uYXRpb24iLCJzdWIiOiJuR2JHYndlMF9IRlBFZGtiVG1VOHZkWkx0LUNRMmJ5cXViVFBVU2dmbXpnIiwidGlkIjoiNGJmMzAzMTAtZTRmMS00NjU4LTllMzQtOWU4YTVhMTkzZWQxIiwidW5pcXVlX25hbWUiOiJzdWJoYXNpcy5kZWJzaGFybWFAbWF0aGNvLmNvbSIsInVwbiI6InN1Ymhhc2lzLmRlYnNoYXJtYUBtYXRoY28uY29tIiwidXRpIjoiTk1qZHRfYmgwRVM2UGFjSHgwMk1BQSIsInZlciI6IjEuMCJ9.FFsO-b3CjQWPrPPIB4U7OGNvOPAPphM5jKAMU3lFos5xqD-g1xflWHB5yZavUqIKym7t1Q4lI1SAX7Mr5Pr7OhhZ9zqtbR0xhRZ4I9HbJxTqMCLFFR7JUemSUNTR1HorLW92pFCMg162t0Uvqg3oTW7VX0Silp3RwzXactmr-gVH3u-NGyqPQmvdH_a796CbeORoaql3MmLhVuIZSYXsB7RotwxMR9yTxKAiehThbwJfuBGkP2znlQHo8iSYc83PeajElGiwukPB0J35XUuFBL_unVjUQDbFocsa8X0lA4AveYasd1bZRueTXcD26MRwxelWG4GEpyMFsGUEFjjMgA";
+      };
+      m.addEventListener("popper:close", function (e) {
+        console.log("index.html: " + e.type);
+      });
+      m.addEventListener("external:fullscreen", function (e) {
+        console.log("index.html: " + e.type);
+      });
+    };
+  </script>
+
+  <script>
+
+  const fontFamilyConfig = [
+      //Template for google fonts
+      // {
+      //     fontName: 'Roboto',
+      //     source: 'google',
+      //     fontWeights: [100, 300, 400, 500, 700]
+      // },
+      //Template for local font
+      {
+          fontName: 'Graphik',
+          source: 'local',
+          fontConfigs: [
+              {
+                  fontWeight: 300,
+                  fontPath: '/fonts/Graphik300.woff2',
+                  display: 'swap',
+                  style: 'normal'
+              },
+              {
+                  fontWeight: 300,
+                  fontPath: '/fonts/Graphik300I.woff2',
+                  display: 'swap',
+                  style: 'italic'
+              },
+              {
+                  fontWeight: 400,
+                  fontPath: '/fonts/Graphik400.woff2',
+                  display: 'swap',
+                  style: 'normal'
+              },
+              {
+                  fontWeight: 500,
+                  fontPath: '/fonts/Graphik500.woff2',
+                  display: 'swap',
+                  style: 'normal'
+              }
+          ]
+      },
+      {
+          fontName: 'Graphik Compact',
+          source: 'local',
+          fontConfigs: [
+              {
+                  fontWeight: 300,
+                  fontPath: '/fonts/GraphikCompact300.woff2',
+                  display: 'swap',
+                  style: 'normal'
+              },
+              {
+                  fontWeight: 400,
+                  fontPath: '/fonts/GraphikCompact400.woff2',
+                  display: 'swap',
+                  style: 'normal'
+              },
+              {
+                  fontWeight: 500,
+                  fontPath: '/fonts/GraphikCompact500.woff2',
+                  display: 'swap',
+                  style: 'normal'
+              }
+          ]
+      }
+  ];
+
+  fontFamilyConfig.forEach((font) => {
+      if (font.source === 'local') {
+          font.fontConfigs.forEach((fontConfig) => {
+              const newFont = new FontFace(font.fontName, `url(${fontConfig.fontPath})`, {
+                  weight: fontConfig.fontWeight,
+                  display: fontConfig.display,
+                  style: fontConfig.style
+              });
+              document.fonts.add(newFont);
+          });
+      }
+  });
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: Graphik,Graphik Compact,Arial,sans-serif;
+    }
+
+    .container1 {
+      height: 80%;
+      width: 70%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .MinervaFont-2 {
+      font-family: Graphik Compact;
+    }
+    .MinervaButton {
+      font-family: Graphik Compact;
+    }
+    .container2 {
+      height: 100vh;
+      width: 100vw;
+    }
+
+    /* .container2 .MinervaPopover {
+			left: 30px !important;
+			top: 30px !important;
+		} */
+
+    .MinervaPopper-trigger-btn {
+      /* left: 30px;
+			top: 30px;
+			position: relative;   */
+    }
+  </style>
+</html>

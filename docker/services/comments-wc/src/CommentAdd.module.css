@@ -1,0 +1,247 @@
+.commentBox {
+    margin-top: 1.2rem;
+    width: 100%;
+    padding: 0.8rem;
+    color: #989C9C;
+    box-sizing: border-box;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1.5px solid #A8AFB8;
+    position: relative;
+    border-radius: 3px; 
+    transition: height 0.3s;
+}
+
+.commentBoxFocused {
+    border: 1.5px solid #2B70C2;
+    height: auto;
+    min-height: 14rem;
+    border-radius: 3px; 
+}
+
+.textFieldWrapper {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .mentionInput {
+        display: block;
+        width: 100%;
+        position: absolute;
+        margin: 0;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        background-color: transparent;
+        font-family: inherit;
+        font-size: inherit;
+        letter-spacing: inherit;
+        height: 100%;
+        bottom: 0;
+        overflow: hidden;
+        resize: none;
+        border: none; /* Ensure no border */
+    }
+    
+
+
+.mentionInput:focus {
+    border: none;
+    outline: none;
+}
+
+.divider {
+    display: none;
+    border-bottom: 1px solid #BF99BD;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.dividerFocused {
+    display: block;
+    border-bottom: 1px solid #BF99BD;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.actionButtons {
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+}
+
+.actionButtonsVisible {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+}
+
+.iconButton {
+    padding: 0.8rem;
+}
+
+.rotatedAttachIcon {
+    width: 2rem;
+    height: 2rem;
+    color: #220047;
+}
+
+.sendButton {
+    padding: 0.5rem;
+    cursor: pointer;
+    color: #220047;/* Adjusted color */
+}
+
+.attachmentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 1.6rem;
+}
+
+.attachmentCard {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 92.5%;
+    height: 4rem;
+    border: none;
+    background-color: #F9F8F8; 
+    border-radius: 2px;
+    padding: 0.3rem; 
+    position: relative;
+    color :#220047;
+}
+
+.fileIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.fileName {
+    flex-grow: 1;
+    margin-left: 0.8rem;
+    margin-right: 0.8rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50%;
+}
+
+.fileSize{
+    font-size: 0.8em;
+    font-family: 'Graphik, Graphik Compact, Arial, sans-serif';
+}
+.cancelIcon, .downloadIcon {
+    width: 1.6rem;
+    height: 1.6rem;
+}
+.cancelIcon{
+    margin-top: 0.2rem;
+    margin-left:0.5rem;
+    margin-right:1.5rem;
+}
+
+.downloadIcon{
+    width: 1.6rem;
+    height: 1.6rem;
+    padding-right: 1.4rem;
+}
+
+.loadingBar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4A5568; /* Example loading bar color */
+}
+
+.warningText {
+    margin-top: 0.5rem;
+    font-size: 1.3rem;
+    color: gray;
+}
+
+.attachmentCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 4rem;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    padding: 0.5rem;
+    position: relative;
+    margin-bottom: 0.5rem;
+}
+
+
+
+.loadingBarContainer {
+    position: relative;
+    width: 100%;
+    height: 2.7px;
+  
+    border-radius: 2px;
+    overflow: hidden;
+ 
+    margin-bottom: -5rem;
+    margin-left: -35rem;
+}
+
+.loadingBar {
+    height: 100%;
+    background-color: #220047;
+    border-radius: 2px;
+}
+
+.uploadProgress {
+    margin-right: -8rem;
+}
+
+.attachmentCard{
+    display: flex;
+align-items: center;
+justify-content: start;
+width: 100%;
+height: 4rem;
+border: none;
+background-color: #F9F8F8; 
+border-radius: 2px;
+padding: 0.3rem; 
+position: relative;
+color:#220047;
+}
+.attachmentCardComponent{
+position: relative;
+color: #220047;
+gap: 0.5rem;
+width: 92.5%;
+border: none;
+height: 4rem;
+display: flex;
+padding: 0.8rem;
+font-size: 1.3rem;
+margin-top: 0.5em;
+align-items: center;
+border-radius: 2px;
+justify-content: start;
+background-color: #F9F8F8;
+}
+
+.fileNameComponent{
+overflow: hidden;
+flex-grow: 1;
+max-width: 60%;
+margin-left: 0.8rem;
+white-space: nowrap;
+margin-right: 0.8rem;
+text-overflow: ellipsis;
+}

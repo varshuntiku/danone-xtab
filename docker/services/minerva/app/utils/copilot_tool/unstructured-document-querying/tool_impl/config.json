@@ -1,0 +1,11 @@
+{
+    "pipeline_name":"databricks",
+    "database_connection_string":"postgresql://ergo42:Mathco_42@minerva-server.postgres.database.azure.com:5432/dev",
+    "database_schema_name":"minerva_pgvector_1",
+    "temp_folder_env_separator":"preprod",
+    "azure_storage_connection_string":"DefaultEndpointsProtocol=https;AccountName=minervastorage;AccountKey=mM37gaXLkN1oHvWLd0wQI8UP7qiI00bhf4Zrz2W2TlhknHVcJC360H/tj4CA7gOUoTLghvuEwzmK+AStW4QDzA==;EndpointSuffix=core.windows.net",
+    "config_container_name":"copilot-tool-configs",
+    "image_unstructured_container_name":"copilot-tool-document-image",
+    "env_config":{"azure_databricks_pgvector_pipeline_token": "dapic56a002c3181968e56e403a94352d7fb-2", "azure_databricks_pgvector_pipeline_job_id": "756413841414300", "pipeline_url": "https://adb-1373835178231560.0.azuredatabricks.net/api/2.0/jobs/run-now"},
+    "image_limit_no":5
+  }

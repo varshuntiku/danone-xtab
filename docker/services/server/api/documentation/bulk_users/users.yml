@@ -1,0 +1,85 @@
+summary: "Fetch all the users on the platform"
+tags:
+  - platform/Bulk Users
+description: "This returns all the users that are present on the platform "
+produces:
+  - "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "query"
+  name: "pageSize"
+  required: "true"
+  description: page size
+  schema:
+    type: "integer"
+- in: "query"
+  name: "page"
+  required: "true"
+  description: page number
+  schema:
+    type: "integer"
+- in: "query"
+  name: "filtered"
+  optional: "true"
+  description: data for filteration
+  schema:
+    type: "array"
+    items:
+      type: "object"
+      required: [id, value]
+      properties:
+        id:
+          type: "string"
+        name:
+          type: "string"
+    example: [{"id": 'first_name', "value": "testuser"}]
+- in: "query"
+  name: "sorted"
+  optional: "true"
+  description: data for sorting
+  schema:
+    type: "array"
+    items:
+      type: "object"
+      required: [id, desc]
+      properties:
+        id:
+          type: "string"
+        name:
+          type: "boolean"
+    example: [{"id": 'first_name', "desc": False}]
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: [{
+            "id": 123,
+            "first_name": "Soumava",
+            "last_name": "Paul",
+            "email_address": "soumava.paul@themathcompany.com",
+            "created_at": "26 April, 2022 08:36",
+            "user_group": ["COACH","default-user"],
+            "restricted_user": "Yes"
+        },
+        {
+            "id": 123,
+            "first_name": "Soumava",
+            "last_name": "Paul",
+            "email_address": "soumava.paul@themathcompany.com",
+            "created_at": "26 April, 2022 08:36",
+            "user_group": ["COACH","default-user"],
+            "restricted_user": "Yes"
+        }
+        ]
+  500:
+    description: "Query error:"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Query error:"
+      }
+

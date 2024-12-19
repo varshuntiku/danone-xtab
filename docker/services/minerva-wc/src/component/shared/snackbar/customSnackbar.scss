@@ -1,0 +1,104 @@
+@import '../../../styles/util.scss';
+
+.MinervaWC .MinervaSnackbar-container {
+    position: fixed;
+    background-color: var(--minerva-contrast-color2);
+    padding: spacing(15);
+    border-radius: spacing(4);
+    gap: spacing(4);
+    align-items: center;
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    z-index: 1;
+    display: flex;
+
+    &.MinervaSnackbar-show {
+        opacity: 1;
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    &.MinervaSnackbar-hide {
+        opacity: 0;
+        transform: translateX(100%);
+        visibility: hidden;
+    }
+
+    &.MinervaSnackbarAnchorOriginTopRight {
+        top: spacing(20);
+        right: spacing(20);
+        left: auto;
+        justify-content: flex-end;
+    }
+
+    &.MinervaSnackbarAnchorOriginTopCenter {
+        top: spacing(20);
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.MinervaSnackbarAnchorOriginTopLeft {
+        top: spacing(20);
+        left: spacing(20);
+        right: auto;
+    }
+
+    &.MinervaSnackbarAnchorOriginBottomRight {
+        bottom: spacing(20);
+        right: spacing(20);
+        left: auto;
+        justify-content: flex-end;
+    }
+
+    &.MinervaSnackbarAnchorOriginBottomCenter {
+        bottom: spacing(20);
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &.MinervaSnackbarAnchorOriginBottomLeft {
+        bottom: spacing(20);
+        left: spacing(20);
+        right: auto;
+    }
+
+
+    .MinervaSnackbar-content {
+        max-width: spacing(500);
+        padding: spacing(8);
+
+        p {
+            color: var(--minerva-text-color-white);
+        }
+    }
+
+    .MinervaSnackbar-close {
+        height: fit-content;
+        align-self: center;
+
+        svg {
+            fill: var(--minerva-text-color-white)
+        }
+    }
+
+    &.MinervaSnackbar-success {
+        background-color: var(--minerva-bg-success);
+    }
+    &.MinervaSnackbar-error {
+        background-color: var(--minerva-bg-error);
+    }
+    &.MinervaSnackbar-info {
+        background-color: var(--minerva-bg-info);
+    }
+    &.MinervaSnackbar-warning {
+        background-color: var(--minerva-bg-warning);
+    }
+    .MinervaSnackbar-icon {
+        height: 2em;
+        fill: var(--minerva-text-color-white)
+    }
+
+}

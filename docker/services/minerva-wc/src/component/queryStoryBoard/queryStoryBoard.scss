@@ -1,0 +1,78 @@
+@import '../../styles/util.scss';
+
+.MinervaWC .MinervaStoryBoard-root {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .MinervaStoryOutline-button {
+        width: relativeSpacing(15, 176);
+        height: relativeSpacing(15, 36);
+        font-size: spacing(15);
+        align-self: flex-start;
+        color: var(--minerva-bg-main);
+        background-color: var(--minerva-text-color);
+        margin-left: relativeSpacing(15, 16);
+        font-family: Graphik Compact, Arial, sans-serif;
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.3;
+        }
+    }
+
+    .MinervaStoryboard-query-items {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        height: 100%;
+        grid-gap: spacing(8)
+    }
+
+    .MinervaStoryBoard-include-all-container {
+        display: flex;
+        align-items: center;
+
+        .MinervaStoryBoard-include-all-label {
+            font-size: spacing(14);
+            font-weight: 400;
+            line-height: relativeSpacing(14, 16);
+            text-align: left;
+        }
+    }
+
+    .MinervaButton-text {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-bottom: relativeSpacing(14, 8);
+        margin-left: 0;
+        font-size: spacing(14);
+        font-family: Graphik Compact, Arial, Helvetica, sans-serif;
+        cursor: default;
+        background: none;
+        font-weight: 400;
+    }
+
+    .MinervaButton-text:hover {
+        background: none;
+    }
+
+    .MinervaIconButton {
+        svg {
+            width: spacing(19);
+            height: spacing(19);
+        }
+    }
+
+    .MinervaAddToListIcon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .MinervaAddToListIcon p {
+        margin-top: spacing(16);
+    }
+}

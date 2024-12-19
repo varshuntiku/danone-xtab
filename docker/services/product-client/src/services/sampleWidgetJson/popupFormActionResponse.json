@@ -1,0 +1,98 @@
+{
+    "trigger_button": {
+        "text": "Create config matrix"
+    },
+    "dialog": {
+        "title": "Create config matrix"
+    },
+    "dialogMaxWidth": "lg",
+    "dialog_actions": [
+        {
+            "is_cancel": true,
+            "text": "Cancel"
+        },
+        {
+            "name": "generate",
+            "text": "Update",
+            "variant": "contained"
+        }
+    ],
+    "form_config": {
+        "title": "",
+        "fields": [
+            {
+                "id": 3,
+                "name": "Start Date",
+                "suppressUTC": true,
+                "label": "Plan Start Date",
+                "type": "datepicker",
+                "variant": "outlined",
+                "margin": "none",
+                "value": "2022-05-19T00:00:00",
+                "inputprops": {
+                    "format": "DD/MM/yyyy",
+                    "variant": "inline"
+                },
+                "placeholder": "Enter StartDate",
+                "fullWidth": true,
+                "grid": 6
+            },
+            {
+                "id": 4,
+                "name": "End Date",
+                "suppressUTC": true,
+                "label": "Plan End Date",
+                "type": "datepicker",
+                "variant": "outlined",
+                "margin": "none",
+                "value": "2022-05-25T23:59:59",
+                "inputprops": {
+                    "format": "DD/MM/yyyy",
+                    "variant": "inline"
+                },
+                "placeholder": "Enter EndDate",
+                "fullWidth": true,
+                "grid": 6
+            },
+            {
+                "id": 5,
+                "grid": 12,
+                "name": "Weeks",
+                "coldefName": "Weeks_coldef",
+                "type": "tabularForm",
+                "value": [{}, {}],
+                "coldefValue": [{"headerName": "col a"}, {"headerName": "col b"}],
+                "tableprops": {
+                    "gridOptions": {
+                        "enableAddRow": true,
+                        "enableInRowDelete": true,
+                        "tableSize": "small",
+                        "tableTitle": "Create matrix",
+                        "editorMode": true,
+                        "addRowToTop": true,
+                        "tableMaxHeight": "1000px",
+                        "enableColumnEditor": true,
+                        "columnEditorParams": {
+                            "newColdefDefaultProps": {
+                                "cellEditorParams": {
+                                    "fullWidth": true,
+                                    "variant": "outlined"
+                                },
+                                "editable": true
+                            },
+                            "columnEditorOptions": [
+                                "text"
+                            ]
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    "suppress_data_reset_on_close": true,
+    "fetch_on_open": true,
+    "fetch_on_load": true,
+    "error": false,
+    "extraParamsMapping": true,
+    "info": {"list": [{"text": ""}]}
+}

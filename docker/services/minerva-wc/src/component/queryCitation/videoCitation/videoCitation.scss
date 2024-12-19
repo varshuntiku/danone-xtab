@@ -1,0 +1,59 @@
+@import '../../../styles/util.scss';
+
+.MinervaWC .MinervaVideoCitation {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: spacing(20);
+
+    video {
+        width: 100%;
+        border-radius: spacing(4);
+    }
+
+    .MinervaVideoCitation-video-name {
+        font-weight: 500;
+        margin-bottom: spacing(8);
+    }
+
+    .MinervaVideoCitation-container {
+        display: flex;
+        flex-direction: column;
+        gap: spacing(24);
+        background-color: var(--minerva-bg-main);
+        border-radius: spacing(4);
+        padding: spacing(20);
+        width: 100%;
+
+        .MinervaVideoCitation-title {
+            font-size: spacing(16);
+            font-weight: 500;
+            color: var(--minerva-text-color);
+        }
+    }
+
+    .MinervaVideoCitation-ranges {
+        display: flex;
+        flex-direction: column;
+        gap: spacing(20);
+
+        .VideoCitationRange {
+            color: var(--minerva-border-blue);
+            font-size: spacing(16);
+            font-weight: 500;
+
+            & span {
+                color: var(--minerva-text-color);
+                font-size: spacing(16);
+                font-weight: 400;
+
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                    color: var(--minerva-border-blue);
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

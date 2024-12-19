@@ -1,0 +1,42 @@
+summary: "List of all the KPIs."
+tags:
+  - product/App
+description: "Generates a list of all the KPIs and it's info associated to given app id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "array"
+          example :
+            - name: "Sales"
+              data: {}
+              config: {
+                title: "",
+                sub_title: "",
+                prefix: "",
+                metric_factor: "",
+                code: ""
+              }
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'error while fetching'
+          }

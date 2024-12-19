@@ -1,0 +1,18 @@
+[
+        {
+            "id": 1,
+            "name": "Prompt Based Orchestrator",
+            "identifier": "PromptAgent",
+            "desc": "This orchestrator evaluates a given prompt alongside detailed descriptions of available tools to intelligently determine the most appropriate tool for answering specific queries",
+            "config": {"system_message": ""},
+            "disabled": null
+        },
+        {
+            "id": 2,
+            "name": "OpenAI Function Based Orchestrator",
+            "identifier": "FunctionCallAgent",
+            "desc": "This orchestrator utilizes OpenAIs predefined functions and capabilities to directly manage and route questions to the optimal tool",
+            "config": {"input_params_enabled": true, "system_message": "Dont make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."},
+            "disabled": null
+        }
+    ]

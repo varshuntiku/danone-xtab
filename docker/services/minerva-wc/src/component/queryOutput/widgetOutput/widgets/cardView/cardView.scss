@@ -1,0 +1,25 @@
+@import '../../../../../styles/util.scss';
+
+.MinervaWC .MinervaCardView {
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacing(30);
+    & .MinervaCardView-item {
+        width: spacing(250);
+        background-color: var(--minerva-bg-main);
+        padding: spacing(30);
+        border-radius: spacing(5);
+        box-shadow: var(--minerva-box-shadow-1);
+        & .MinervaCardView-title {
+            color: var(--minerva-text-color-70);
+            font-size: 0.7em;
+            margin-bottom: spacing(10);
+        }
+
+        & .MinervaCardView-value {
+            font-size: 2em;
+            color:  var(--minerva-text-color);
+            font-weight: 300;
+        }
+    }
+}

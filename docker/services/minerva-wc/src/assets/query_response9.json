@@ -1,0 +1,191 @@
+{
+    "id": 572,
+    "input": "sales across brands",
+    "pinned": true,
+    "output": {
+        "type": "sql",
+        "response": {
+            "text": "",
+            "processed_query": "tell me advantages about data monitoring",
+            "hint": null,
+            "entities": null,
+            "widgets": [
+                {
+                    "type": "text",
+                    "value": "Monitoring data in machine learning systems offers several advantages. ",
+                    "citation": {
+                        "id": "0",
+                        "type": "ppt",
+                        "data": [
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_161_263_2.png?sp=r&st=2024-02-27T11:08:18Z&se=2024-02-27T19:08:18Z&spr=https&sv=2022-11-02&sr=b&sig=YNKu6MtjqswtgE2bx%2Byuszz7KLMUrd3UVAL0efAPZ4A%3D"
+                            },
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_3.png"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "text",
+                    "value": "",
+                    "citation": {
+                        "id": "1",
+                        "type": "ppt",
+                        "data": []
+                    }
+                },
+                {
+                    "type": "text",
+                    "value": "1. Retraining Guidance: Monitoring data drift provides guidance on when to retrain models to ensure they stay up to date and maintain optimal performance. This helps prevent models from becoming outdated and ensures they continue to deliver accurate predictions.",
+                    "citation": {
+                        "id": "2",
+                        "type": "ppt",
+                        "data": [
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_3.png"
+                            },
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_21.png"
+                            },
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_25.png"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "text",
+                    "value": "",
+                    "citation": {
+                        "id": "3",
+                        "type": "ppt",
+                        "data": []
+                    }
+                },
+                {
+                    "type": "text",
+                    "value": "2. Process Validation: Monitoring data drift helps validate the modeling process by ensuring the reliability of the models. By comparing inference data to the training data, practitioners can verify that the models are performing as expected and identify any discrepancies or issues.",
+                    "citation": {
+                        "id": "4",
+                        "type": "ppt",
+                        "data": [
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_3.png"
+                            },
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "image_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_21.png"
+                            },
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_2.png"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "text",
+                    "value": "",
+                    "citation": {
+                        "id": "5",
+                        "type": "ppt",
+                        "data": []
+                    }
+                },
+                {
+                    "type": "text",
+                    "value": "3. Insights into Model Behavior: Monitoring data drift provides valuable insights into the behavior and patterns of machine learning models. By analyzing drift, practitioners can understand how their models are performing and identify areas for improvement. This allows for informed decision-making to enhance the performance and accuracy of the models.",
+                    "citation": {
+                        "id": "6",
+                        "type": "ppt",
+                        "data": [
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_3.png"
+                            },
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_21.png"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "text",
+                    "value": "",
+                    "citation": {
+                        "id": "7",
+                        "type": "ppt",
+                        "data": []
+                    }
+                },
+                {
+                    "type": "text",
+                    "value": "4. Reliable Predictions: By detecting and addressing data drift, practitioners can ensure that their models consistently provide reliable predictions. This enhances the trust and accuracy of the machine learning systems, making them more reliable for decision-making purposes.",
+                    "citation": {
+                        "id": "8",
+                        "type": "ppt",
+                        "data": [
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_3.png"
+                            },
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_2.png"
+                            },
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_21.png"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "text",
+                    "value": "",
+                    "citation": {
+                        "id": "9",
+                        "type": "ppt",
+                        "data": []
+                    }
+                },
+                {
+                    "type": "text",
+                    "value": "Overall, monitoring data in machine learning systems helps maintain model performance, validate the modeling process, gain insights into model behavior, and ensure reliable predictions.",
+                    "citation": {
+                        "id": "10",
+                        "type": "ppt",
+                        "data": [
+                            {
+                                "name": "data_monitoring_ppt.pptx",
+                                "source_url": null,
+                                "img_url": "https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_49_64_21.png"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

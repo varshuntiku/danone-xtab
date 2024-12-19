@@ -1,0 +1,477 @@
+{
+    "data": {
+        "goals": {
+            "name": "Datasets",
+            "id": 1,
+            "targets": [
+                {
+                    "id": 1,
+                    "title": "# DATA ASSETS",
+                    "value": "686",
+                    "created_by": "test user",
+                    "created_at": "",
+                    "updtaed_by": "test user",
+                    "updated_at": ""
+                },
+                {
+                    "id": 1,
+                    "title": "REALISED DATA COST",
+                    "value": "$2.1M",
+                    "created_by": "test user",
+                    "created_at": "",
+                    "updtaed_by": "test user",
+                    "updated_at": ""
+                }
+            ],
+            "created_by": "test user",
+            "created_at": "",
+            "updtaed_by": "test user",
+            "updated_at": ""
+        },
+        "initiatives": [
+            {
+                "label": "Realised Cost",
+                "leftLevel": {
+                    "styles": {},
+                    "data": [
+                        {
+                            "type": "progressRenderer",
+                            "progressData": {
+                                "elements": {
+                                    "components": {
+                                        "progressBars": [
+                                            {
+                                                "currentProgress": 50,
+                                                "key": "tableLoader_1",
+                                                "params": {
+                                                    "type": "linear",
+                                                    "borderRadius": "3",
+                                                    "left": "5%",
+                                                    "top": "0%",
+                                                    "backgroundColor": "transparent",
+                                                    "color": "rgba(89, 200, 167, 1)",
+                                                    "height": "6px",
+                                                    "width": "120%",
+                                                    "showProgress": false,
+                                                    "heading_text": [
+                                                        {
+                                                            "text": "Storage",
+                                                            "left": "0%",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        },
+                                                        {
+                                                            "text": "$274K",
+                                                            "left": "auto",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "currentProgress": 80,
+                                                "key": "tableLoader_1",
+                                                "params": {
+                                                    "type": "linear",
+                                                    "borderRadius": "3",
+                                                    "left": "5%",
+                                                    "top": "0%",
+                                                    "backgroundColor": "transparent",
+                                                    "color": "rgba(69, 96, 215, 1)",
+                                                    "height": "6px",
+                                                    "width": "120%",
+                                                    "showProgress": false,
+                                                    "heading_text": [
+                                                        {
+                                                            "text": "Procurement",
+                                                            "left": "0%",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        },
+                                                        {
+                                                            "text": "$900k",
+                                                            "left": "auto",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "currentProgress": 10,
+                                                "key": "tableLoader_1",
+                                                "params": {
+                                                    "type": "linear",
+                                                    "borderRadius": "3",
+                                                    "left": "5%",
+                                                    "top": "0%",
+                                                    "backgroundColor": "transparent",
+                                                    "color": "#E69E63",
+                                                    "height": "6px",
+                                                    "width": "120%",
+                                                    "showProgress": false,
+                                                    "heading_text": [
+                                                        {
+                                                            "text": "Compute",
+                                                            "left": "0%",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        },
+                                                        {
+                                                            "text": "$10K",
+                                                            "left": "auto",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "values": [
+                                        50,
+                                        30,
+                                        20
+                                    ],
+                                    "labels": [
+                                        "US",
+                                        "China",
+                                        "India"
+                                    ],
+                                    "domain": {
+                                        "column": 0
+                                    },
+                                    "name": "GHG Emissions",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "hole": 0.7,
+                                    "type": "pie",
+                                    "marker": {
+                                        "colors": [
+                                            "rgba(69, 96, 215, 1)",
+                                            "#59C8A7",
+                                            "#E69E63"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true,
+                "height": "20rem",
+                "width": "40rem"
+            },
+            {
+                "label": "Data Sources",
+                "leftLevel": {
+                    "styles": {},
+                    "data": [
+                        {
+                            "type": "progressRenderer",
+                            "progressData": {
+                                "elements": {
+                                    "components": {
+                                        "progressBars": [
+                                            {
+                                                "currentProgress": 80,
+                                                "key": "tableLoader_1",
+                                                "params": {
+                                                    "type": "linear",
+                                                    "borderRadius": "3",
+                                                    "left": "5%",
+                                                    "top": "0%",
+                                                    "backgroundColor": "transparent",
+                                                    "color": "rgba(89, 200, 167, 1)",
+                                                    "height": "6px",
+                                                    "width": "110%",
+                                                    "showProgress": false,
+                                                    "heading_text": [
+                                                        {
+                                                            "text": "Catalogued Int Data Source",
+                                                            "left": "0%",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        },
+                                                        {
+                                                            "text": "342",
+                                                            "left": "auto",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "currentProgress": 30,
+                                                "key": "tableLoader_1",
+                                                "params": {
+                                                    "type": "linear",
+                                                    "borderRadius": "3",
+                                                    "left": "5%",
+                                                    "top": "0%",
+                                                    "backgroundColor": "transparent",
+                                                    "color": "rgba(69, 96, 215, 1)",
+                                                    "height": "6px",
+                                                    "width": "110%",
+                                                    "showProgress": false,
+                                                    "heading_text": [
+                                                        {
+                                                            "text": "Catalogued Ext Data Source",
+                                                            "left": "0%",
+                                                            "top": "0px",
+                                                            "bottom": "1%",
+                                                            "opacity": "0.8"
+                                                        },
+                                                        {
+                                                            "text": "102",
+                                                            "left": "auto",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "styles": {},
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "x": [
+                                        "giraffes"
+                                    ],
+                                    "y": [
+                                        20
+                                    ],
+                                    "name": "SF Zoo",
+                                    "type": "bar",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "width": 0.3,
+                                    "marker": {
+                                        "color": [
+                                            "#59C8A7"
+                                        ]
+                                    }
+                                },
+                                {
+                                    "x": [
+                                        "giraffes"
+                                    ],
+                                    "y": [
+                                        7
+                                    ],
+                                    "name": "LA Zoo",
+                                    "type": "bar",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "width": 0.3,
+                                    "marker": {
+                                        "color": [
+                                            "rgba(69, 96, 215, 1)"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true,
+                "height": "20rem",
+                "width": "40rem"
+            },
+            {
+                "label": "Reported Data Downtime",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "progressRenderer",
+                            "progressData": {
+                                "elements": {
+                                    "components": {
+                                        "progressBars": [
+                                            {
+                                                "currentProgress": 70,
+                                                "key": "tableLoader_1",
+                                                "params": {
+                                                    "type": "linear",
+                                                    "borderRadius": "3",
+                                                    "left": "5%",
+                                                    "top": "0%",
+                                                    "backgroundColor": "transparent",
+                                                    "color": "rgba(69, 96, 215, 1)",
+                                                    "height": "6px",
+                                                    "width": "120%",
+                                                    "showProgress": false,
+                                                    "heading_text": [
+                                                        {
+                                                            "text": "Uptime",
+                                                            "left": "0%",
+                                                            "top": "0px",
+                                                            "opacity": "0.8",
+                                                            "bottom": "4%"
+                                                        },
+                                                        {
+                                                            "text": "3Hrs",
+                                                            "left": "auto",
+                                                            "top": "0px",
+                                                            "opacity": "0.8",
+                                                            "bottom": "4%"
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "currentProgress": 20,
+                                                "key": "tableLoader_1",
+                                                "params": {
+                                                    "type": "linear",
+                                                    "borderRadius": "3",
+                                                    "left": "5%",
+                                                    "top": "0%",
+                                                    "backgroundColor": "transparent",
+                                                    "color": "rgba(89, 200, 167, 1)",
+                                                    "height": "6px",
+                                                    "width": "120%",
+                                                    "showProgress": false,
+                                                    "heading_text": [
+                                                        {
+                                                            "text": "Downtime",
+                                                            "left": "0%",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        },
+                                                        {
+                                                            "text": "0.2Hrs",
+                                                            "left": "auto",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "values": [
+                                        80,
+                                        20
+                                    ],
+                                    "labels": [
+                                        "US",
+                                        "China"
+                                    ],
+                                    "domain": {
+                                        "column": 0
+                                    },
+                                    "name": "GHG Emissions",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "hole": 0.7,
+                                    "type": "pie",
+                                    "marker": {
+                                        "colors": [
+                                            "rgba(69, 96, 215, 1)",
+                                            "#59C8A7"
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "Reported Incidents",
+                "leftLevel": {
+                    "styles": {},
+                    "data": [
+                        {
+                            "type": "progressRenderer",
+                            "progressData": {
+                                "elements": {
+                                    "components": {
+                                        "progressBars": [
+                                            {
+                                                "currentProgress": 0,
+                                                "key": "tableLoader_1",
+                                                "params": {
+                                                    "type": "linear",
+                                                    "borderRadius": "3",
+                                                    "left": "5%",
+                                                    "top": "0%",
+                                                    "backgroundColor": "transparent",
+                                                    "height": "6px",
+                                                    "width": "100%",
+                                                    "showProgress": false,
+                                                    "heading_text": [
+                                                        {
+                                                            "text": "Reported Security Incidents",
+                                                            "left": "0%",
+                                                            "top": "0px",
+                                                            "width": "100%",
+                                                            "opacity": "0.8"
+                                                        },
+                                                        {
+                                                            "text": "0",
+                                                            "left": "30%",
+                                                            "top": "0px",
+                                                            "opacity": "0.8"
+                                                        }
+                                                    ]
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true,
+                "height": "20rem",
+                "width": "40rem"
+            }
+        ]
+    }
+}

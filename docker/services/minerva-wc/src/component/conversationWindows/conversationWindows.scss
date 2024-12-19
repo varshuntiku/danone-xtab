@@ -1,0 +1,56 @@
+@import "../../styles/util.scss";
+.MinervaWC .MinervaConvoWindows {
+    display: flex;
+    flex-direction: column;
+    padding: spacing(16);
+    gap: spacing(20);
+    height: 100%;
+    border-right: 1px solid var(--minerva-text-color-10);
+    .MinervaConvoWindows-header {
+        border-bottom: 1px solid var(--minerva-text-color-30);
+        padding: spacing(0, 0, 16);
+        p {
+            font-size: spacing(20);
+            font-weight: 500;
+        }
+    }
+    .MinervaConvoWindows-action,.MinervaConvoWindows-header {
+        display: flex;
+        align-items: center;
+        gap: spacing(8);
+    }
+    .MinervaConvoWindows-close-convo-btn {
+        display: none;
+    }
+    .MinervaConvoWindows-search {
+        display: flex;
+        gap: spacing(5);
+        align-items: center;
+        background: var(--minerva-bg-main);
+        padding: spacing(4, 16);
+        height: spacing(40);
+        border: 1px solid;
+        border-radius: spacing(2);
+        border-color: var(--minerva-text-color-30);
+        input {
+            background: transparent;
+            flex: 1;
+            border: 0;
+            outline: 0;
+            color: var(--minerva-text-color-70);
+            font-size: spacing(14);
+        }
+    }
+    .MinervaConvoWindow-list-container {
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+        padding: spacing(10);
+        margin: spacing(-10);
+    }
+    .MinervaConvoWindows-newchat-btn {
+        svg {
+            fill: var(--minerva-contrast-color)
+        }
+    }
+}

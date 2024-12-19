@@ -1,0 +1,18 @@
+
+
+{
+    "MODEL_PATH" : "/finetune/1/",
+    "TRAIN_METHOD" : "QLora",
+    "LORA_ALPHA" : 16,
+    "LORA_DROPOUT" : 0.1,
+    "LORA_R" : 64,
+    "LOAD_IN_8BIT" : true,
+    "LOAD_IN_4BIT" : false,
+    "BATCH_SIZE" : 16,
+    "LEARNING_RATE" : 2e-4,
+    "EPOCHS" : 4,
+    "DATASET_TEXT_FIELD" : "prompt",
+    "MAX_SEQ_LENGTH" : 512 ,
+
+    "BASE_OUTPUT_DIR" : "/finetune"
+}

@@ -1,0 +1,49 @@
+summary: "Delete app user role"
+tags:
+  - product/AppAdmin
+description: "Deletes the given app user role"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_user_role_id"
+  required: "true"
+  description: "The role id that has to be deleted"
+  schema:
+    type: "integer"
+
+- in: "query"
+  name: "confirm"
+  required: "true"
+  description: "Delete confirmation from user"
+  schema:
+    type: "boolean"
+
+responses:
+  200:
+    description: "Deletes the given app user role"
+    schema:
+      type: "object"
+  404:
+    description: "ID not found"
+    schema:
+      type: "object"
+      example: {'error': 'item not found'}
+  409:
+    description: "Its a user role"
+    schema:
+      type: "object"
+      example: {'error': 'Role is associated with users'}
+  422:
+    description: "Unprocessed entity"
+    schema:
+      type: "object"
+      example: {'error': 'Error in deleting app user roles'}
+  500:
+    description: "Error while deleting"
+    schema :
+      type: "object"
+      example:  {'error': 'Error in deleting app user roles'}

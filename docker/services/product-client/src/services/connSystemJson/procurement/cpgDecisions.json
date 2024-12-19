@@ -1,0 +1,5325 @@
+{
+    "decisions": [
+        {
+            "id": "fn_node_1",
+            "nodes": [
+                {
+                    "id": "1",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "head": true,
+                    "text": "Pricing",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "icon": "pricing",
+                    "type": "custom",
+                    "styles": {
+                        "fontSize": "2.5rem",
+                        "fontWeight": 600
+                    }
+                },
+                {
+                    "id": "2",
+                    "problem_definition_id": 122,
+                    "linkedProblemDefinitionId": "wf_node_7",
+                    "linkedParentNodeIds": [
+                        "3"
+                    ],
+                    "downstreamNodes": [
+                        "3"
+                    ],
+                    "parentFnId": "fn_node_1",
+                    "text": "Establish compliance on differences between large and small stores",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        3
+                    ],
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "3",
+                    "linkedProblemDefinitionId": "wf_node_7",
+                    "linkedParentNodeIds": [
+                        "4"
+                    ],
+                    "downstreamNodes": [
+                        "4"
+                    ],
+                    "parentFnId": "fn_node_1",
+                    "text": "Establish right collection and payment protocols for goods sold",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        4
+                    ],
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "4",
+                    "linkedProblemDefinitionId": "wf_node_7",
+                    "linkedParentNodeIds": [
+                        "5"
+                    ],
+                    "downstreamNodes": [
+                        "5"
+                    ],
+                    "parentFnId": "fn_node_1",
+                    "text": "Collaborative incentive planning sessions with customers to reward compliance and promote sales",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "5",
+                    "linkedProblemDefinitionId": "wf_node_7",
+                    "downstreamNodes": [
+                        "2",
+                        "8"
+                    ],
+                    "parentFnId": "fn_node_1",
+                    "text": "Streamline order generation to the settlement of the order",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "6",
+                    "linkedProblemDefinitionId": "wf_node_8",
+                    "linkedParentNodeIds": [
+                        "5",
+                        "7"
+                    ],
+                    "downstreamNodes": [
+                        "5",
+                        "7"
+                    ],
+                    "parentFnId": "fn_node_1",
+                    "text": "Enable sales representatives to improve performance with their customers.",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        4
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "7",
+                    "linkedProblemDefinitionId": "wf_node_8",
+                    "parentFnId": "fn_node_1",
+                    "sourcePosition": "right",
+                    "text": "Streamline order generation to the settlement of the order",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "8",
+                    "linkedProblemDefinitionId": "wf_node_8",
+                    "parentFnId": "fn_node_1",
+                    "linkedParentNodeIds": [
+                        "9"
+                    ],
+                    "downstreamNodes": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed",
+                        "summary"
+                    ],
+                    "text": "Prospecting, Activities necessary to identify and capture new customers and channels within a geography",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 583.7433930340258,
+                        "y": -76.54761757471107
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "23",
+                    "parentFnId": "fn_node_1",
+                    "sourcePosition": "right",
+                    "text": "Trade Strategy & Trade terms development",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_7"
+                },
+                {
+                    "id": "24",
+                    "parentFnId": "fn_node_1",
+                    "sourcePosition": "right",
+                    "text": "Process monitoring & optimization",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_8"
+                },
+                {
+                    "id": "25",
+                    "parentFnId": "fn_node_1",
+                    "sourcePosition": "right",
+                    "text": "Negotiation and alignment",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_9"
+                }
+            ],
+            "edges": [
+                {
+                    "id": "e7-8",
+                    "source": "7",
+                    "target": "8",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "8",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e9-10",
+                    "source": "9",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "10"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e10-11",
+                    "source": "10",
+                    "target": "11",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e9-17",
+                    "source": "9",
+                    "target": "17",
+                    "nodeId": "9",
+                    "color": "#FE6A9C",
+                    "sourceHandle": "b",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e11-22",
+                    "source": "11",
+                    "target": "22",
+                    "sourceHandle": "b",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "targetHandle": "p"
+                },
+                {
+                    "id": "e19-17",
+                    "source": "19",
+                    "target": "17",
+                    "nodeId": "9",
+                    "sourceHandle": "h",
+                    "targetHandle": "i",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-19",
+                    "source": "17",
+                    "target": "19",
+                    "nodeId": "9",
+                    "sourceHandle": "a",
+                    "targetHandle": "t",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-20",
+                    "source": "17",
+                    "target": "20",
+                    "nodeId": "9",
+                    "sourceHandle": "f",
+                    "targetHandle": "g",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e20-22",
+                    "source": "20",
+                    "target": "22",
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-5",
+                    "source": "6",
+                    "target": "5",
+                    "nodeId": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "k",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-7",
+                    "source": "6",
+                    "target": "7",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "7"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e13-12",
+                    "source": "13",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "k",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e13-14",
+                    "source": "13",
+                    "target": "14",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e14-15",
+                    "source": "14",
+                    "target": "15",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e5-2",
+                    "source": "5",
+                    "target": "2",
+                    "show": true,
+                    "color": "#FF8F5E",
+                    "sourceHandle": "a",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "2"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e11-12",
+                    "source": "11",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e5-8",
+                    "source": "5",
+                    "target": "8",
+                    "show": true,
+                    "color": "#FE6A9C",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "8"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e11-13",
+                    "source": "11",
+                    "target": "13",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "h",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "13"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e10-12",
+                    "source": "10",
+                    "target": "12",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "e",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e5-19",
+                    "source": "5",
+                    "target": "19",
+                    "color": "#FF8F5E",
+                    "sourceHandle": "q",
+                    "targetHandle": "u",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-10",
+                    "source": "17",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "sourceHandle": "s",
+                    "targetHandle": "r",
+                    "nodeIds": [
+                        "5",
+                        "10"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "8",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e7-8",
+                    "source": "7",
+                    "target": "8",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        2
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e9-10",
+                    "source": "9",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "10"
+                    ]
+                },
+                {
+                    "id": "e10-11",
+                    "source": "10",
+                    "target": "11",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e6-5",
+                    "source": "6",
+                    "target": "5",
+                    "nodeId": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "e13-12",
+                    "source": "13",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "w",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e13-14",
+                    "source": "13",
+                    "target": "14",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e14-15",
+                    "source": "14",
+                    "target": "15",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fn_node_2",
+            "nodes": [
+                {
+                    "id": "1",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "head": true,
+                    "text": "Pricing",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "icon": "pricing",
+                    "type": "custom",
+                    "styles": {
+                        "fontSize": "2.5rem",
+                        "fontWeight": 400
+                    }
+                },
+                {
+                    "id": "2",
+                    "problem_definition_id": 122,
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "linkedParentNodeIds": [
+                        "3"
+                    ],
+                    "downstreamNodes": [
+                        "3"
+                    ],
+                    "parentFnId": "fn_node_2",
+                    "text": "Define industry benchmarks",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        3
+                    ],
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "3",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "linkedParentNodeIds": [
+                        "4"
+                    ],
+                    "downstreamNodes": [
+                        "4"
+                    ],
+                    "parentFnId": "fn_node_2",
+                    "text": "Define competitor benchmarks",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        4
+                    ],
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "4",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "linkedParentNodeIds": [
+                        "5"
+                    ],
+                    "downstreamNodes": [
+                        "5"
+                    ],
+                    "parentFnId": "fn_node_2",
+                    "text": "Establish KPIs and Metrics",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "5",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "downstreamNodes": [
+                        "2",
+                        "8"
+                    ],
+                    "parentFnId": "fn_node_2",
+                    "text": "Develop a benchmark score framework",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "6",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "linkedParentNodeIds": [
+                        "5",
+                        "7"
+                    ],
+                    "downstreamNodes": [
+                        "5",
+                        "7"
+                    ],
+                    "parentFnId": "fn_node_2",
+                    "text": "Drive processes towards benchmark score targets",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        4
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "7",
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "parentFnId": "fn_node_2",
+                    "sourcePosition": "right",
+                    "text": "Determine best entry & pivot packs to change price to suit affordability",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "8",
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "parentFnId": "fn_node_2",
+                    "linkedParentNodeIds": [
+                        "9"
+                    ],
+                    "downstreamNodes": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed",
+                        "summary"
+                    ],
+                    "text": "Target segments whose preferences changed & map packs",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 583.7433930340258,
+                        "y": -76.54761757471107
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "9",
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "linkedParentNodeIds": [
+                        "10"
+                    ],
+                    "downstreamNodes": [
+                        "10"
+                    ],
+                    "parentFnId": "fn_node_2",
+                    "summaryMainNode": true,
+                    "text": "Redefine price points based on  'actual' elasticity",
+                    "sourcePosition": "top",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 486.8291314793778,
+                        "y": 27.301588283525973
+                    },
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        2,
+                        5
+                    ]
+                },
+                {
+                    "id": "10",
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "parentFnId": "fn_node_2",
+                    "linkedParentNodeIds": [
+                        "11",
+                        "12"
+                    ],
+                    "downstreamNodes": [
+                        "11",
+                        "12"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Prioritize retail channels to drive changes",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        5
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 166.47245680414818,
+                        "y": 218.89449136082965
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "11",
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "parentFnId": "fn_node_2",
+                    "linkedParentNodeIds": [
+                        "12"
+                    ],
+                    "downstreamNodes": [
+                        "12",
+                        "13"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Review/ Change current trade discount to accommodate price change",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        5
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 166.29812077719924,
+                        "y": 318.3818857989629
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        7,
+                        8
+                    ]
+                },
+                {
+                    "id": "12",
+                    "linkedProblemDefinitionId": "wf_node_6",
+                    "parentFnId": "fn_node_2",
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Improve retail execution by ensuring price compliance",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        5,
+                        7
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 575.955549116681,
+                        "y": 218.1569465152291
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "13",
+                    "linkedProblemDefinitionId": "wf_node_6",
+                    "parentFnId": "fn_node_2",
+                    "linkedParentNodeIds": [
+                        "12",
+                        "14"
+                    ],
+                    "downstreamNodes": [
+                        "12",
+                        "14"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Assess & Improve Price Communication",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        3,
+                        8
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 575.4106784530209,
+                        "y": 325.2968167776991
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "14",
+                    "linkedProblemDefinitionId": "wf_node_6",
+                    "parentFnId": "fn_node_2",
+                    "linkedParentNodeIds": [
+                        "15"
+                    ],
+                    "downstreamNodes": [
+                        "15"
+                    ],
+                    "text": "Benchmark brands commercial execution effectiveness w.r.to competition",
+                    "sourcePosition": "top",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        3
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.9775373975226,
+                        "y": 318.6953780447202
+                    },
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "15",
+                    "linkedProblemDefinitionId": "wf_node_6",
+                    "parentFnId": "fn_node_2",
+                    "text": "Refine trade terms for retailers based on measurements",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4,
+                        6
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.0889017666377,
+                        "y": 217.91109823336217
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "16",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "parentFnId": "fn_node_2",
+                    "decisionCategory": 22,
+                    "text": "Strategy & Insights",
+                    "head": true,
+                    "subhead": true,
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2
+                    ],
+                    "icon": "strategy",
+                    "type": "custom",
+                    "position": {
+                        "x": -146.2820569326213,
+                        "y": 441.5982728115823
+                    },
+                    "styles": {
+                        "fontSize": "2.5rem",
+                        "fontWeight": 400
+                    }
+                },
+                {
+                    "id": "17",
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "linkedParentNodeIds": [
+                        "9",
+                        "5",
+                        "10"
+                    ],
+                    "parentFnId": "fn_node_2",
+                    "decisionCategory": 22,
+                    "screens": [
+                        "detailed",
+                        "summary"
+                    ],
+                    "text": "Evaluate the Return on Investment on price change",
+                    "sourcePosition": "top",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(212, 223, 249, 0.6)",
+                    "position": {
+                        "x": -119.1262819862431,
+                        "y": 519.0551383717897
+                    },
+                    "type": "custom"
+                },
+                {
+                    "id": "18",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "parentFnId": "fn_node_2",
+                    "text": "Finance",
+                    "decisionCategory": 23,
+                    "head": true,
+                    "subhead": true,
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2
+                    ],
+                    "icon": "finance",
+                    "type": "custom",
+                    "position": {
+                        "x": 555.5569878496598,
+                        "y": 449.30601943835813
+                    },
+                    "styles": {
+                        "fontSize": "2.5rem",
+                        "fontWeight": 400
+                    }
+                },
+                {
+                    "id": "19",
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "parentFnId": "fn_node_2",
+                    "decisionCategory": 23,
+                    "linkedParentNodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "text": "Modify pricing strategy for business sustainability & goal orientation",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(212, 223, 249, 0.6)",
+                    "position": {
+                        "x": 584.0847871036614,
+                        "y": 519.6083552613659
+                    },
+                    "type": "custom"
+                },
+                {
+                    "id": "20",
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "parentFnId": "fn_node_2",
+                    "decisionCategory": 23,
+                    "linkedParentNodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "text": "Approve new pricing framework and reallocate funds/ share reco to BU",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4
+                    ],
+                    "bgColor": "rgba(212, 223, 249, 0.6)",
+                    "color": "#FE6A9C",
+                    "position": {
+                        "x": 585.6558697937284,
+                        "y": 625.3227229140103
+                    },
+                    "type": "custom"
+                },
+                {
+                    "id": "21",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "parentFnId": "fn_node_2",
+                    "text": "Commercial",
+                    "decisionCategory": 24,
+                    "head": true,
+                    "subhead": true,
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2
+                    ],
+                    "icon": "commercial",
+                    "type": "custom",
+                    "position": {
+                        "x": 1234.6110435373232,
+                        "y": 444.81594013308586
+                    },
+                    "styles": {
+                        "fontSize": "2.5rem",
+                        "fontWeight": 400
+                    }
+                },
+                {
+                    "id": "22",
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "parentFnId": "fn_node_2",
+                    "linkedParentNodeIds": [
+                        "9",
+                        "5",
+                        "11"
+                    ],
+                    "decisionCategory": 24,
+                    "text": "Update promo calendar & review mechanics with category managers",
+                    "sourcePosition": "top",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(212, 223, 249, 0.6)",
+                    "position": {
+                        "x": 1273.802769075992,
+                        "y": 514.5866987237514
+                    },
+                    "type": "custom"
+                },
+                {
+                    "id": "23",
+                    "parentFnId": "fn_node_2",
+                    "sourcePosition": "right",
+                    "text": "Yearly Landscape Review",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_4"
+                },
+                {
+                    "id": "24",
+                    "parentFnId": "fn_node_2",
+                    "sourcePosition": "right",
+                    "text": "Quarterly MIS Review",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_5"
+                },
+                {
+                    "id": "25",
+                    "parentFnId": "fn_node_2",
+                    "sourcePosition": "right",
+                    "text": "Monthly Performance Review",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_6"
+                }
+            ],
+            "edges": [
+                {
+                    "id": "e7-8",
+                    "source": "7",
+                    "target": "8",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "8",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e9-10",
+                    "source": "9",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "10"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e10-11",
+                    "source": "10",
+                    "target": "11",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e9-17",
+                    "source": "9",
+                    "target": "17",
+                    "nodeId": "9",
+                    "color": "#FE6A9C",
+                    "sourceHandle": "b",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e11-22",
+                    "source": "11",
+                    "target": "22",
+                    "sourceHandle": "b",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "targetHandle": "p"
+                },
+                {
+                    "id": "e19-17",
+                    "source": "19",
+                    "target": "17",
+                    "nodeId": "9",
+                    "sourceHandle": "h",
+                    "targetHandle": "i",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-19",
+                    "source": "17",
+                    "target": "19",
+                    "nodeId": "9",
+                    "sourceHandle": "a",
+                    "targetHandle": "t",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-20",
+                    "source": "17",
+                    "target": "20",
+                    "nodeId": "9",
+                    "sourceHandle": "f",
+                    "targetHandle": "g",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e20-22",
+                    "source": "20",
+                    "target": "22",
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-5",
+                    "source": "6",
+                    "target": "5",
+                    "nodeId": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "k",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-7",
+                    "source": "6",
+                    "target": "7",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "7"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e13-12",
+                    "source": "13",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "k",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e13-14",
+                    "source": "13",
+                    "target": "14",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e14-15",
+                    "source": "14",
+                    "target": "15",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e5-2",
+                    "source": "5",
+                    "target": "2",
+                    "show": true,
+                    "color": "#FF8F5E",
+                    "sourceHandle": "a",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "2"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e11-12",
+                    "source": "11",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e5-8",
+                    "source": "5",
+                    "target": "8",
+                    "show": true,
+                    "color": "#FE6A9C",
+                    "sourceHandle": "e",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "8"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e11-13",
+                    "source": "11",
+                    "target": "13",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "h",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "13"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e10-12",
+                    "source": "10",
+                    "target": "12",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "e",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e5-19",
+                    "source": "5",
+                    "target": "19",
+                    "color": "#FF8F5E",
+                    "sourceHandle": "q",
+                    "targetHandle": "u",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-10",
+                    "source": "17",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "sourceHandle": "s",
+                    "targetHandle": "r",
+                    "nodeIds": [
+                        "5",
+                        "10"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "8",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e7-8",
+                    "source": "7",
+                    "target": "8",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        2
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e9-10",
+                    "source": "9",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "10"
+                    ]
+                },
+                {
+                    "id": "e10-11",
+                    "source": "10",
+                    "target": "11",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e6-5",
+                    "source": "6",
+                    "target": "5",
+                    "nodeId": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "w",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "e13-12",
+                    "source": "13",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "w",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e13-14",
+                    "source": "13",
+                    "target": "14",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e14-15",
+                    "source": "14",
+                    "target": "15",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fn_node_3",
+            "nodes": [
+                {
+                    "id": "1",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "head": true,
+                    "text": "Pricing",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "icon": "pricing",
+                    "type": "custom",
+                    "styles": {
+                        "fontSize": "2.5rem",
+                        "fontWeight": 600
+                    }
+                },
+                {
+                    "id": "2",
+                    "problem_definition_id": 122,
+                    "linkedProblemDefinitionId": "wf_node_10",
+                    "linkedParentNodeIds": [
+                        "3"
+                    ],
+                    "downstreamNodes": [
+                        "3"
+                    ],
+                    "parentFnId": "fn_node_3",
+                    "text": "Review & enhance the existing event library",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        3
+                    ],
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "3",
+                    "linkedProblemDefinitionId": "wf_node_10",
+                    "linkedParentNodeIds": [
+                        "4"
+                    ],
+                    "downstreamNodes": [
+                        "4"
+                    ],
+                    "parentFnId": "fn_node_3",
+                    "text": "Develop and quantify shopper needs, price point perception, trends",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        4
+                    ],
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "4",
+                    "linkedProblemDefinitionId": "wf_node_10",
+                    "linkedParentNodeIds": [
+                        "5"
+                    ],
+                    "downstreamNodes": [
+                        "5"
+                    ],
+                    "parentFnId": "fn_node_3",
+                    "text": "Prioritize strategic SKUs for custom/ optimized promotions",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "5",
+                    "linkedProblemDefinitionId": "wf_node_10",
+                    "downstreamNodes": [
+                        "2",
+                        "8"
+                    ],
+                    "parentFnId": "fn_node_3",
+                    "text": "Develop consumer promotion strategy & embed into plan",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "6",
+                    "linkedProblemDefinitionId": "wf_node_10",
+                    "linkedParentNodeIds": [
+                        "5",
+                        "7"
+                    ],
+                    "downstreamNodes": [
+                        "5",
+                        "7"
+                    ],
+                    "parentFnId": "fn_node_3",
+                    "text": "Develop promotion calendar which align with forecasts",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        4
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "7",
+                    "linkedProblemDefinitionId": "wf_node_10",
+                    "parentFnId": "fn_node_3",
+                    "sourcePosition": "right",
+                    "text": "Get financial audit and approval",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "9",
+                    "linkedProblemDefinitionId": "wf_node_11",
+                    "linkedParentNodeIds": [
+                        "10"
+                    ],
+                    "downstreamNodes": [
+                        "10"
+                    ],
+                    "parentFnId": "fn_node_3",
+                    "summaryMainNode": true,
+                    "text": "Evaluate promotion effectiveness considering affordability, penetration, cannibalization & incrementality",
+                    "sourcePosition": "top",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        2,
+                        5
+                    ]
+                },
+                {
+                    "id": "10",
+                    "linkedProblemDefinitionId": "wf_node_11",
+                    "parentFnId": "fn_node_3",
+                    "linkedParentNodeIds": [
+                        "11",
+                        "12"
+                    ],
+                    "downstreamNodes": [
+                        "11",
+                        "12"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Determine profit pools and evaluate promotion RoI",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        5
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 166.47245680414818,
+                        "y": 218.89449136082965
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "11",
+                    "linkedProblemDefinitionId": "wf_node_11",
+                    "parentFnId": "fn_node_3",
+                    "linkedParentNodeIds": [
+                        "12"
+                    ],
+                    "downstreamNodes": [
+                        "12",
+                        "13"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Track effectiveness in harsher market conditions & competitor events and flag for anomalies",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        5
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 166.29812077719924,
+                        "y": 318.3818857989629
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        7,
+                        8
+                    ]
+                },
+                {
+                    "id": "12",
+                    "linkedProblemDefinitionId": "wf_node_11",
+                    "parentFnId": "fn_node_3",
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Evaluate impact of instore activations and new product sell in.",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        5,
+                        7
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 575.955549116681,
+                        "y": 218.1569465152291
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "13",
+                    "linkedProblemDefinitionId": "wf_node_12",
+                    "parentFnId": "fn_node_3",
+                    "linkedParentNodeIds": [
+                        "12",
+                        "14"
+                    ],
+                    "downstreamNodes": [
+                        "12",
+                        "14"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Optimize for retailer-brand win-win objectives ",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        3,
+                        8
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 575.4106784530209,
+                        "y": 325.2968167776991
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "14",
+                    "linkedProblemDefinitionId": "wf_node_12",
+                    "parentFnId": "fn_node_3",
+                    "linkedParentNodeIds": [
+                        "15"
+                    ],
+                    "downstreamNodes": [
+                        "15"
+                    ],
+                    "text": "Optimize Cost to run promotions & drive higher trade RoI",
+                    "sourcePosition": "top",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        3
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.9775373975226,
+                        "y": 318.6953780447202
+                    },
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "15",
+                    "linkedProblemDefinitionId": "wf_node_12",
+                    "parentFnId": "fn_node_3",
+                    "text": "Optimize promotion mechanics, event weeks & co merch",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4,
+                        6
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.0889017666377,
+                        "y": 217.91109823336217
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "16",
+                    "linkedProblemDefinitionId": "wf_node_12",
+                    "parentFnId": "fn_node_3",
+                    "text": "Optimize consumer promotion events for targeted channels",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4,
+                        6
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.0889017666377,
+                        "y": 217.91109823336217
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "23",
+                    "parentFnId": "fn_node_3",
+                    "sourcePosition": "right",
+                    "text": "Promotion Planning",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_10"
+                },
+                {
+                    "id": "24",
+                    "parentFnId": "fn_node_3",
+                    "sourcePosition": "right",
+                    "text": "Promotion Measurement",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_11"
+                },
+                {
+                    "id": "25",
+                    "parentFnId": "fn_node_3",
+                    "sourcePosition": "right",
+                    "text": "Promotion Optimization",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_12"
+                }
+            ],
+            "edges": [
+                {
+                    "id": "e7-0",
+                    "source": "6",
+                    "target": "7",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e7-0",
+                    "source": "6",
+                    "target": "7",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e7-8",
+                    "source": "7",
+                    "target": "8",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "8",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e9-10",
+                    "source": "9",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "10"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e10-11",
+                    "source": "10",
+                    "target": "11",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e10-12",
+                    "source": "11",
+                    "target": "12",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e9-17",
+                    "source": "9",
+                    "target": "17",
+                    "nodeId": "9",
+                    "color": "#FE6A9C",
+                    "sourceHandle": "b",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e19-17",
+                    "source": "19",
+                    "target": "17",
+                    "nodeId": "9",
+                    "sourceHandle": "h",
+                    "targetHandle": "i",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-19",
+                    "source": "17",
+                    "target": "19",
+                    "nodeId": "9",
+                    "sourceHandle": "a",
+                    "targetHandle": "t",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-20",
+                    "source": "17",
+                    "target": "20",
+                    "nodeId": "9",
+                    "sourceHandle": "f",
+                    "targetHandle": "g",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e20-22",
+                    "source": "20",
+                    "target": "22",
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-5",
+                    "source": "6",
+                    "target": "5",
+                    "nodeId": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "k",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-7",
+                    "source": "6",
+                    "target": "7",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "7"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e13-12",
+                    "source": "13",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "k",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e13-14",
+                    "source": "13",
+                    "target": "14",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e14-15",
+                    "source": "14",
+                    "target": "15",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e5-2",
+                    "source": "5",
+                    "target": "2",
+                    "show": true,
+                    "color": "#FF8F5E",
+                    "sourceHandle": "a",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "2"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e5-8",
+                    "source": "5",
+                    "target": "8",
+                    "show": true,
+                    "color": "#FE6A9C",
+                    "sourceHandle": "e",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "8"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e11-13",
+                    "source": "11",
+                    "target": "13",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "h",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "13"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e10-12",
+                    "source": "10",
+                    "target": "12",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "e",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e5-19",
+                    "source": "5",
+                    "target": "19",
+                    "color": "#FF8F5E",
+                    "sourceHandle": "q",
+                    "targetHandle": "u",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-10",
+                    "source": "17",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "sourceHandle": "s",
+                    "targetHandle": "r",
+                    "nodeIds": [
+                        "5",
+                        "10"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "8",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e9-10",
+                    "source": "9",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "10"
+                    ]
+                },
+                {
+                    "id": "e10-11",
+                    "source": "10",
+                    "target": "11",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e6-5",
+                    "source": "6",
+                    "target": "5",
+                    "nodeId": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "w",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "e13-12",
+                    "source": "13",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "w",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e13-14",
+                    "source": "13",
+                    "target": "14",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e14-15",
+                    "source": "14",
+                    "target": "15",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "e14-16",
+                    "source": "15",
+                    "target": "16",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fn_node_5",
+            "nodes": [
+                {
+                    "id": "1",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "head": true,
+                    "text": "Pricing",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "icon": "pricing",
+                    "type": "custom",
+                    "styles": {
+                        "fontSize": "2.5rem",
+                        "fontWeight": 600
+                    }
+                },
+                {
+                    "id": "2",
+                    "problem_definition_id": 122,
+                    "linkedProblemDefinitionId": "wf_node_13",
+                    "linkedParentNodeIds": [
+                        "3"
+                    ],
+                    "downstreamNodes": [
+                        "3"
+                    ],
+                    "parentFnId": "fn_node_5",
+                    "text": "Determine OBPPC priorities Develop OBPPC and determine priorities.",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        3
+                    ],
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "3",
+                    "linkedProblemDefinitionId": "wf_node_13",
+                    "linkedParentNodeIds": [
+                        "4"
+                    ],
+                    "downstreamNodes": [
+                        "4"
+                    ],
+                    "parentFnId": "fn_node_5",
+                    "text": "Create Business Growth Model - Prioritize category growth opportunities and establish aspirational objectives",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        4
+                    ],
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "4",
+                    "linkedProblemDefinitionId": "wf_node_13",
+                    "linkedParentNodeIds": [
+                        "5"
+                    ],
+                    "downstreamNodes": [
+                        "5"
+                    ],
+                    "parentFnId": "fn_node_5",
+                    "text": "Prioritize product mix across channels/ customers/ geographies",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "5",
+                    "linkedProblemDefinitionId": "wf_node_13",
+                    "downstreamNodes": [
+                        "2",
+                        "8"
+                    ],
+                    "parentFnId": "fn_node_5",
+                    "text": "Prioritize product mix across channels/ customers/ geographies",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "6",
+                    "linkedProblemDefinitionId": "wf_node_14",
+                    "linkedParentNodeIds": [
+                        "5",
+                        "7"
+                    ],
+                    "downstreamNodes": [
+                        "5",
+                        "7"
+                    ],
+                    "parentFnId": "fn_node_5",
+                    "text": "Create SKU list for channel-geo-category (BU generated)",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        4
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "7",
+                    "linkedProblemDefinitionId": "wf_node_14",
+                    "parentFnId": "fn_node_5",
+                    "sourcePosition": "right",
+                    "text": "Refine SKUs by paramters (incrementality, NSV, margins, supply chain complexity, velocity, …)",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "9",
+                    "linkedProblemDefinitionId": "wf_node_14",
+                    "linkedParentNodeIds": [
+                        "10"
+                    ],
+                    "downstreamNodes": [
+                        "10"
+                    ],
+                    "parentFnId": "fn_node_5",
+                    "summaryMainNode": true,
+                    "text": "Flag SKUs that need to be monitored & create a cull list",
+                    "sourcePosition": "top",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        2,
+                        5
+                    ]
+                },
+                {
+                    "id": "10",
+                    "linkedProblemDefinitionId": "wf_node_14",
+                    "parentFnId": "fn_node_5",
+                    "linkedParentNodeIds": [
+                        "11",
+                        "12"
+                    ],
+                    "downstreamNodes": [
+                        "11",
+                        "12"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Generate final priority list of SKUs",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        5
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 166.47245680414818,
+                        "y": 218.89449136082965
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "11",
+                    "linkedProblemDefinitionId": "wf_node_14",
+                    "parentFnId": "fn_node_5",
+                    "linkedParentNodeIds": [
+                        "12"
+                    ],
+                    "downstreamNodes": [
+                        "12",
+                        "13"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Design planogram for final list at desired levels, bound by guidelines",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        5
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 166.29812077719924,
+                        "y": 318.3818857989629
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        7,
+                        8
+                    ]
+                },
+                {
+                    "id": "12",
+                    "linkedProblemDefinitionId": "wf_node_15",
+                    "parentFnId": "fn_node_5",
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Optimize assortment at channel-account-geo level",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        5,
+                        7
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 575.955549116681,
+                        "y": 218.1569465152291
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "13",
+                    "linkedProblemDefinitionId": "wf_node_15",
+                    "parentFnId": "fn_node_5",
+                    "linkedParentNodeIds": [
+                        "12",
+                        "14"
+                    ],
+                    "downstreamNodes": [
+                        "12",
+                        "14"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Align with stakeholder on optimized list of assortment plan or facilitate override",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        3,
+                        8
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 575.4106784530209,
+                        "y": 325.2968167776991
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "14",
+                    "linkedProblemDefinitionId": "wf_node_15",
+                    "parentFnId": "fn_node_5",
+                    "linkedParentNodeIds": [
+                        "15"
+                    ],
+                    "downstreamNodes": [
+                        "15"
+                    ],
+                    "text": "Discuss & finalize plan with field teams",
+                    "sourcePosition": "top",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        3
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.9775373975226,
+                        "y": 318.6953780447202
+                    },
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "15",
+                    "linkedProblemDefinitionId": "wf_node_15",
+                    "parentFnId": "fn_node_5",
+                    "text": "Audit and review final assortment plan",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4,
+                        6
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.0889017666377,
+                        "y": 217.91109823336217
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "16",
+                    "linkedProblemDefinitionId": "wf_node_16",
+                    "parentFnId": "fn_node_5",
+                    "text": "Measure KPIs & Develop specific action plan to capture region, channel, account opportunity",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4,
+                        6
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.0889017666377,
+                        "y": 217.91109823336217
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "17",
+                    "linkedProblemDefinitionId": "wf_node_16",
+                    "parentFnId": "fn_node_5",
+                    "text": "Establish process to consistently capture assortment effectiveness",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4,
+                        6
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.0889017666377,
+                        "y": 217.91109823336217
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "18",
+                    "linkedProblemDefinitionId": "wf_node_16",
+                    "parentFnId": "fn_node_5",
+                    "text": "Define new ideal state considering segmentation & potential",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        4,
+                        6
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.0889017666377,
+                        "y": 217.91109823336217
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "23",
+                    "parentFnId": "fn_node_5",
+                    "sourcePosition": "right",
+                    "text": "Assortment strategy",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_13"
+                },
+                {
+                    "id": "24",
+                    "parentFnId": "fn_node_5",
+                    "sourcePosition": "right",
+                    "text": "Annual Assortment Planning",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_14"
+                },
+                {
+                    "id": "25",
+                    "parentFnId": "fn_node_5",
+                    "sourcePosition": "right",
+                    "text": "Assortment Optimization",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_15"
+                },
+                {
+                    "id": "26",
+                    "parentFnId": "fn_node_5",
+                    "sourcePosition": "right",
+                    "text": "Performance Management",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_16"
+                }
+            ],
+            "edges": [
+                {
+                    "id": "e7-100",
+                    "source": "16",
+                    "target": "17",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e7-100",
+                    "source": "17",
+                    "target": "18",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e7-0",
+                    "source": "6",
+                    "target": "7",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e7-8",
+                    "source": "7",
+                    "target": "8",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "8",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e9-10",
+                    "source": "9",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "10"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e10-11",
+                    "source": "10",
+                    "target": "11",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e9-17",
+                    "source": "9",
+                    "target": "17",
+                    "nodeId": "9",
+                    "color": "#FE6A9C",
+                    "sourceHandle": "b",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e11-22",
+                    "source": "11",
+                    "target": "22",
+                    "sourceHandle": "b",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "targetHandle": "p"
+                },
+                {
+                    "id": "e19-17",
+                    "source": "19",
+                    "target": "17",
+                    "nodeId": "9",
+                    "sourceHandle": "h",
+                    "targetHandle": "i",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-19",
+                    "source": "17",
+                    "target": "19",
+                    "nodeId": "9",
+                    "sourceHandle": "a",
+                    "targetHandle": "t",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-20",
+                    "source": "17",
+                    "target": "20",
+                    "nodeId": "9",
+                    "sourceHandle": "f",
+                    "targetHandle": "g",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e20-22",
+                    "source": "20",
+                    "target": "22",
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-5",
+                    "source": "6",
+                    "target": "5",
+                    "nodeId": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "k",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-7",
+                    "source": "6",
+                    "target": "7",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "7"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-7",
+                    "source": "6",
+                    "target": "7",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "7"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e6-7",
+                    "source": "7",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "7"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e13-12",
+                    "source": "13",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "k",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e13-14",
+                    "source": "13",
+                    "target": "14",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e14-15",
+                    "source": "14",
+                    "target": "15",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e5-2",
+                    "source": "5",
+                    "target": "2",
+                    "show": true,
+                    "color": "#FF8F5E",
+                    "sourceHandle": "a",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "2"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e11-12",
+                    "source": "11",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e5-8",
+                    "source": "5",
+                    "target": "8",
+                    "show": true,
+                    "color": "#FE6A9C",
+                    "sourceHandle": "e",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "8"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e11-13",
+                    "source": "11",
+                    "target": "13",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "h",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "13"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e10-12",
+                    "source": "10",
+                    "target": "12",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "e",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e5-19",
+                    "source": "5",
+                    "target": "19",
+                    "color": "#FF8F5E",
+                    "sourceHandle": "q",
+                    "targetHandle": "u",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-10",
+                    "source": "17",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "sourceHandle": "s",
+                    "targetHandle": "r",
+                    "nodeIds": [
+                        "5",
+                        "10"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "8",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e7-8",
+                    "source": "7",
+                    "target": "8",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        2
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e9-10",
+                    "source": "9",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "10"
+                    ]
+                },
+                {
+                    "id": "e10-11",
+                    "source": "10",
+                    "target": "11",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e6-5",
+                    "source": "6",
+                    "target": "5",
+                    "nodeId": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "w",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "e13-12",
+                    "source": "13",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "w",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e13-14",
+                    "source": "13",
+                    "target": "14",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e14-15",
+                    "source": "14",
+                    "target": "15",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "e14-16",
+                    "source": "15",
+                    "target": "16",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fn_node_6",
+            "nodes": [
+                {
+                    "id": "1",
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "head": true,
+                    "text": "Pricing",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "icon": "pricing",
+                    "type": "custom",
+                    "styles": {
+                        "fontSize": "2.5rem",
+                        "fontWeight": 600
+                    }
+                },
+                {
+                    "id": "2",
+                    "problem_definition_id": 122,
+                    "linkedProblemDefinitionId": "wf_node_17",
+                    "linkedParentNodeIds": [
+                        "3"
+                    ],
+                    "downstreamNodes": [
+                        "3"
+                    ],
+                    "parentFnId": "fn_node_6",
+                    "text": "Establish Commercial Execution Priorities (cooler, assets, availability, space)",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        3
+                    ],
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "3",
+                    "linkedProblemDefinitionId": "wf_node_17",
+                    "linkedParentNodeIds": [
+                        "4"
+                    ],
+                    "downstreamNodes": [
+                        "4"
+                    ],
+                    "parentFnId": "fn_node_6",
+                    "text": "Establish segmented execution plans",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        4
+                    ],
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "4",
+                    "linkedProblemDefinitionId": "wf_node_17",
+                    "linkedParentNodeIds": [
+                        "5"
+                    ],
+                    "downstreamNodes": [
+                        "5"
+                    ],
+                    "parentFnId": "fn_node_6",
+                    "text": "Define consistency requirements for retail channels",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "5",
+                    "linkedProblemDefinitionId": "wf_node_17",
+                    "downstreamNodes": [
+                        "2",
+                        "8"
+                    ],
+                    "parentFnId": "fn_node_6",
+                    "text": "Draft guidelines for planogram with retailer constraints & data collection from stores",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "6",
+                    "linkedProblemDefinitionId": "wf_node_17",
+                    "linkedParentNodeIds": [
+                        "5",
+                        "7"
+                    ],
+                    "downstreamNodes": [
+                        "5",
+                        "7"
+                    ],
+                    "parentFnId": "fn_node_17",
+                    "text": "Complete visual merchandizing strategy",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        4
+                    ],
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "7",
+                    "linkedProblemDefinitionId": "wf_node_18",
+                    "parentFnId": "fn_node_6",
+                    "sourcePosition": "right",
+                    "text": "Enabling easy procurment for retail channels",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "8",
+                    "linkedProblemDefinitionId": "wf_node_18",
+                    "parentFnId": "fn_node_6",
+                    "linkedParentNodeIds": [
+                        "9"
+                    ],
+                    "downstreamNodes": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed",
+                        "summary"
+                    ],
+                    "text": "Ensure front line execution effectiveness - store, incentives, orders, POSM",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 583.7433930340258,
+                        "y": -76.54761757471107
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "9",
+                    "linkedProblemDefinitionId": "wf_node_18",
+                    "linkedParentNodeIds": [
+                        "10"
+                    ],
+                    "downstreamNodes": [
+                        "10"
+                    ],
+                    "parentFnId": "fn_node_6",
+                    "summaryMainNode": true,
+                    "text": "Maximize availability, display and communication through visual merchandising fixes",
+                    "sourcePosition": "top",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 486.8291314793778,
+                        "y": 27.301588283525973
+                    },
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        2,
+                        5
+                    ]
+                },
+                {
+                    "id": "10",
+                    "linkedProblemDefinitionId": "wf_node_18",
+                    "parentFnId": "fn_node_6",
+                    "linkedParentNodeIds": [
+                        "11",
+                        "12"
+                    ],
+                    "downstreamNodes": [
+                        "11",
+                        "12"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Monitor & Track Planogram compliance",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        5
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 166.47245680414818,
+                        "y": 218.89449136082965
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "11",
+                    "linkedProblemDefinitionId": "wf_node_19",
+                    "parentFnId": "fn_node_6",
+                    "linkedParentNodeIds": [
+                        "12"
+                    ],
+                    "downstreamNodes": [
+                        "12",
+                        "13"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Capture compliance reports & collaborate with stores for improvement",
+                    "targetPosition": "bottom",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        1,
+                        5
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "position": {
+                        "x": 166.29812077719924,
+                        "y": 318.3818857989629
+                    },
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        7,
+                        8
+                    ]
+                },
+                {
+                    "id": "12",
+                    "linkedProblemDefinitionId": "wf_node_19",
+                    "parentFnId": "fn_node_6",
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Quantify shopper activity insights",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        5,
+                        7
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 575.955549116681,
+                        "y": 218.1569465152291
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "13",
+                    "linkedProblemDefinitionId": "wf_node_19",
+                    "parentFnId": "fn_node_6",
+                    "linkedParentNodeIds": [
+                        "12",
+                        "14"
+                    ],
+                    "downstreamNodes": [
+                        "12",
+                        "14"
+                    ],
+                    "screens": [
+                        "summary"
+                    ],
+                    "text": "Activate, track & steward plan of execution",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        3,
+                        8
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 575.4106784530209,
+                        "y": 325.2968167776991
+                    },
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "14",
+                    "linkedProblemDefinitionId": "wf_node_19",
+                    "parentFnId": "fn_node_6",
+                    "linkedParentNodeIds": [
+                        "15"
+                    ],
+                    "downstreamNodes": [
+                        "15"
+                    ],
+                    "text": "Retrieving data. Wait a few seconds and try to cut or copy again.",
+                    "sourcePosition": "top",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        3
+                    ],
+                    "color": "#A2C73B",
+                    "bgColor": "#E8F1CE",
+                    "position": {
+                        "x": 962.9775373975226,
+                        "y": 318.6953780447202
+                    },
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "23",
+                    "parentFnId": "fn_node_6",
+                    "sourcePosition": "right",
+                    "text": "Define annual execution strategy",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_17"
+                },
+                {
+                    "id": "24",
+                    "parentFnId": "fn_node_6",
+                    "sourcePosition": "right",
+                    "text": "Operationalization",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_18"
+                },
+                {
+                    "id": "25",
+                    "parentFnId": "fn_node_6",
+                    "sourcePosition": "right",
+                    "text": "Measurement of effectiveness",
+                    "app_id": 1223,
+                    "dashboard_id": 232,
+                    "solution_id": [
+                        2,
+                        6
+                    ],
+                    "color": "#FE6A9C",
+                    "bgColor": "rgba(254, 106, 156, 0.1)",
+                    "type": "custom",
+                    "tab": true,
+                    "tabId": "wf_node_19"
+                }
+            ],
+            "edges": [
+                {
+                    "id": "e7-8",
+                    "source": "7",
+                    "target": "8",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "8",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e9-10",
+                    "source": "9",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "10"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e10-11",
+                    "source": "10",
+                    "target": "11",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e9-17",
+                    "source": "9",
+                    "target": "17",
+                    "nodeId": "9",
+                    "color": "#FE6A9C",
+                    "sourceHandle": "b",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e11-22",
+                    "source": "11",
+                    "target": "22",
+                    "sourceHandle": "b",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "targetHandle": "p"
+                },
+                {
+                    "id": "e19-17",
+                    "source": "19",
+                    "target": "17",
+                    "nodeId": "9",
+                    "sourceHandle": "h",
+                    "targetHandle": "i",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-19",
+                    "source": "17",
+                    "target": "19",
+                    "nodeId": "9",
+                    "sourceHandle": "a",
+                    "targetHandle": "t",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-20",
+                    "source": "17",
+                    "target": "20",
+                    "nodeId": "9",
+                    "sourceHandle": "f",
+                    "targetHandle": "g",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e20-22",
+                    "source": "20",
+                    "target": "22",
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "color": "#FE6A9C",
+                    "nodeIds": [
+                        "9",
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-5",
+                    "source": "6",
+                    "target": "5",
+                    "nodeId": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "k",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e6-7",
+                    "source": "6",
+                    "target": "7",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "7"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e13-12",
+                    "source": "13",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "k",
+                    "targetHandle": "p",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e13-14",
+                    "source": "13",
+                    "target": "14",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e14-15",
+                    "source": "14",
+                    "target": "15",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e5-2",
+                    "source": "5",
+                    "target": "2",
+                    "show": true,
+                    "color": "#FF8F5E",
+                    "sourceHandle": "a",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "2"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e11-12",
+                    "source": "11",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e5-8",
+                    "source": "5",
+                    "target": "8",
+                    "show": true,
+                    "color": "#FE6A9C",
+                    "sourceHandle": "e",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "8"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e11-13",
+                    "source": "11",
+                    "target": "13",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "h",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "13"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e10-12",
+                    "source": "10",
+                    "target": "12",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "e",
+                    "targetHandle": "i",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ],
+                    "type": "positionaledge"
+                },
+                {
+                    "id": "e5-19",
+                    "source": "5",
+                    "target": "19",
+                    "color": "#FF8F5E",
+                    "sourceHandle": "q",
+                    "targetHandle": "u",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e17-10",
+                    "source": "17",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "sourceHandle": "s",
+                    "targetHandle": "r",
+                    "nodeIds": [
+                        "5",
+                        "10"
+                    ],
+                    "screens": [
+                        "detailed"
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "8",
+                    "target": "9",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e8-9",
+                    "source": "11",
+                    "target": "12",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e7-8",
+                    "source": "7",
+                    "target": "8",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "9"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        2
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e9-10",
+                    "source": "9",
+                    "target": "10",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "10"
+                    ]
+                },
+                {
+                    "id": "e10-11",
+                    "source": "10",
+                    "target": "11",
+                    "color": "#FE6A9C",
+                    "show": true,
+                    "nodeId": "9",
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "screens": [
+                        "decisions"
+                    ],
+                    "nodeIds": [
+                        "11"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e6-5",
+                    "source": "6",
+                    "target": "5",
+                    "nodeId": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "w",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        5
+                    ]
+                },
+                {
+                    "id": "e13-12",
+                    "source": "13",
+                    "target": "12",
+                    "color": "#A2C73B",
+                    "show": true,
+                    "sourceHandle": "w",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed",
+                    "stakeholders": [
+                        2
+                    ]
+                },
+                {
+                    "id": "e13-14",
+                    "source": "13",
+                    "target": "14",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e14-15",
+                    "source": "14",
+                    "target": "15",
+                    "show": true,
+                    "color": "#A2C73B",
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "15"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "stakeholders": [
+                        8
+                    ]
+                }
+            ]
+        }
+    ]
+}

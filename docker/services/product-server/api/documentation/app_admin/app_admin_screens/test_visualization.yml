@@ -1,0 +1,39 @@
+summary: "Test Visualization"
+tags:
+  - product/AppAdmin
+description: "Test dynamic visualization given code_str for Visual UIaC"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to test the screen visualization UIaC
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [code]
+        properties:
+          code:
+            type: "string"
+          filters:
+            type: "object"
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'item not found'}

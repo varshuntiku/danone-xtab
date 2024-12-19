@@ -1,0 +1,786 @@
+{
+    "data": {
+        "analysisData": [
+            {
+                "label": "Quality",
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "x": [
+                                        3,
+                                        13,
+                                        23,
+                                        33,
+                                        43,
+                                        53,
+                                        63,
+                                        73,
+                                        83,
+                                        93
+                                    ],
+                                    "y": [
+                                        10,
+                                        20,
+                                        17,
+                                        23,
+                                        35,
+                                        22,
+                                        22,
+                                        27,
+                                        29,
+                                        31
+                                    ],
+                                    "type": "scatter",
+                                    "fill": "tozeroy",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "marker": {
+                                        "color": [
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7",
+                                            "#6883F7"
+                                        ]
+                                    }
+                                }
+                            ],
+                            "shapes": [
+                                {
+                                    "type": "line",
+                                    "x0": 3,
+                                    "x1": 3,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    },
+                                    "fillcolor": "red"
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 13,
+                                    "x1": 13,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 23,
+                                    "x1": 23,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 33,
+                                    "x1": 33,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 43,
+                                    "x1": 43,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 53,
+                                    "x1": 53,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 63,
+                                    "x1": 63,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 73,
+                                    "x1": 73,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 83,
+                                    "x1": 83,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": 93,
+                                    "x1": 93,
+                                    "y0": 1,
+                                    "y1": 40,
+                                    "line": {
+                                        "color": "gray",
+                                        "width": 0.5,
+                                        "dash": "dash"
+                                    }
+                                },
+                                {
+                                    "type": "line",
+                                    "x0": -1.5,
+                                    "x1": 98,
+                                    "y0": 0,
+                                    "y1": 0,
+                                    "line": {
+                                        "color": "#FFFFFF70",
+                                        "width": 1,
+                                        "dash": "solid"
+                                    }
+                                }
+                            ],
+                            "annotations": [
+                                {
+                                    "x": 3,
+                                    "y": -5,
+                                    "text": "Jan",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 18,
+                                    "y": -5,
+                                    "text": "Feb",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 36,
+                                    "y": -5,
+                                    "text": "Mar",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 54,
+                                    "y": -5,
+                                    "text": "Apr",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 72,
+                                    "y": -5,
+                                    "text": "May",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": 90,
+                                    "y": -5,
+                                    "text": "Jun",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -2.5,
+                                    "y": 1,
+                                    "text": "0",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 12
+                                    }
+                                },
+                                {
+                                    "x": -2,
+                                    "y": 10,
+                                    "text": "10k",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -2,
+                                    "y": 20,
+                                    "text": "20k",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -2,
+                                    "y": 30,
+                                    "text": "30k",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                },
+                                {
+                                    "x": -2,
+                                    "y": 40,
+                                    "text": "40k",
+                                    "showarrow": false,
+                                    "font": {
+                                        "color": "gray",
+                                        "size": 9
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "Health Index",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "data": "Last Month"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "sub_text",
+                            "icon": true,
+                            "data": "1-31 July 23"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "progressRenderer",
+                            "progressData": {
+                                "elements": {
+                                    "components": {
+                                        "progressBars": [
+                                            {
+                                                "currentProgress": 75,
+                                                "key": "tableLoader_1",
+                                                "params": {
+                                                    "type": "gauge",
+                                                    "colors": [
+                                                        "#A7F3D0",
+                                                        "#A7F3D0",
+                                                        "#34D399",
+                                                        "#34D399",
+                                                        "#059669",
+                                                        "#059669"
+                                                    ],
+                                                    "height": 30,
+                                                    "width": 40,
+                                                    "showProgress": false,
+                                                    "needle": {
+                                                        "height": "2rem",
+                                                        "left": "38%"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "texts": [
+                                            {
+                                                "text": "100",
+                                                "left": "36px",
+                                                "bottom": "-1rem",
+                                                "fontSize": "1.3rem",
+                                                "height": "4rem"
+                                            },
+                                            {
+                                                "text": "0",
+                                                "left": "-2px",
+                                                "bottom": "-1rem",
+                                                "fontSize": "1.3rem",
+                                                "height": "4rem"
+                                            },
+                                            {
+                                                "text": "50",
+                                                "left": "16px",
+                                                "bottom": "80%",
+                                                "fontSize": "1.3rem",
+                                                "height": "1rem"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "Errors Reported",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "data": "Last Month"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "sub_text",
+                            "icon": true,
+                            "data": "1-31 July 23"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "right_heading",
+                            "data": "03"
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "Overall Cost",
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "label": "Six Months Average Cost",
+                            "data": [
+                                {
+                                    "fill": "tozeroy",
+                                    "marker": {
+                                        "symbol": "circle",
+                                        "size": 0.1,
+                                        "color": "rgba(63, 85, 182, 1)"
+                                    },
+                                    "opacity": "1",
+                                    "x": [
+                                        "01-06-2023",
+                                        "02-06-2023",
+                                        "03-06-2023",
+                                        "04-06-2023",
+                                        "05-06-2023",
+                                        "06-06-2023",
+                                        "07-06-2023",
+                                        "09-06-2023"
+                                    ],
+                                    "y": [
+                                        20,
+                                        30,
+                                        60,
+                                        20,
+                                        20,
+                                        30,
+                                        40,
+                                        20
+                                    ],
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "Storage Cost",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "data": "Last Month"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "sub_text",
+                            "icon": true,
+                            "data": "1-31 July 23"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "right_heading",
+                            "icon": true,
+                            "data": "$1.2K"
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "API License Cost",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "data": "Last Month"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "sub_text",
+                            "icon": true,
+                            "data": "1-31 July 23"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "right_heading",
+                            "icon": true,
+                            "data": "$30K"
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "Overall Consumption",
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "values": [
+                                        60,
+                                        40
+                                    ],
+                                    "domain": {
+                                        "x": [
+                                            0.1,
+                                            0.9
+                                        ]
+                                    },
+                                    "name": "Utilized",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "hole": 0.7,
+                                    "labels": [
+                                        "utilized",
+                                        "unutilized"
+                                    ],
+                                    "type": "pie",
+                                    "text": "Total data assets: 686",
+                                    "textposition": "inside",
+                                    "marker": {
+                                        "colors": [
+                                            "#6883F7",
+                                            "#59C8A7"
+                                        ]
+                                    },
+                                    "annotations": [
+                                        {
+                                            "font": {
+                                                "size": 6
+                                            },
+                                            "showarrow": false,
+                                            "text": "Total data <br>assets: 686",
+                                            "x": 0.1,
+                                            "y": 0.5
+                                        }
+                                    ]
+                                }
+                            ],
+                            "showLegend": false,
+                            "legend": {
+                                "x": 0,
+                                "y": 0,
+                                "bgcolor": "transparent",
+                                "orientation": "h",
+                                "font": {
+                                    "color": "#E0EFFF",
+                                    "size": 10
+                                }
+                            }
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "# of Data Assets Created",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "data": "Last Month"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "sub_text",
+                            "icon": true,
+                            "data": "1-31 July 23"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "right_heading",
+                            "data": "35"
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            },
+            {
+                "label": "# of Data Assets Utilised",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "data": "Last Month"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "sub_text",
+                            "icon": true,
+                            "data": "1-31 July 23"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "right_heading",
+                            "data": "03"
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true
+            }
+        ],
+        "kpiPopupData": [
+            {
+                "label": "DB NAME",
+                "description": "Pricing-CPG",
+                "bannerBlue": false,
+                "banner": false,
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "Pricing -CPG"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "DATASET LOCATION",
+                "description": {
+                    "candence": "Weekly",
+                    "Last Updated On": "12/7/2023"
+                },
+                "title": {
+                    "fontSize": "18px"
+                },
+                "direction": "column",
+                "bannerBlue": false,
+                "banner": false,
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "Blob"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "FORMAT",
+                "description": {
+                    "candence": "Weekly",
+                    "Last Updated On": "12/7/2023"
+                },
+                "direction": "column",
+                "bannerBlue": false,
+                "banner": false,
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "Structured Data"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "CONSUMPTION",
+                "bannerBlue": false,
+                "banner": false,
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "data": "# of solutions provided by the dataset"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "3"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "REFRESH CANDENCE",
+                "bannerBlue": false,
+                "banner": false,
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type1",
+                            "data": "candence "
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "Weekly"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type1",
+                            "data": "Last Updated on "
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "12/07/23"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "GRANULARITY",
+                "bannerBlue": false,
+                "banner": false,
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "Monthly"
+                        }
+                    ]
+                }
+            },
+            {
+                "label": "DATA EFFECTIVENESS SCORE",
+                "descriptiveInfo": {},
+                "bannerBlue": false,
+                "banner": false,
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "8"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

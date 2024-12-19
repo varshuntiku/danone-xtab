@@ -1,0 +1,56 @@
+summary: "Generate 6 digit OTP for the user"
+tags:
+  - platform/Users
+description: "This generates a 6 didgit otp for the user which helps user in changing the password"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [email]
+        properties:
+          email:
+            type: "string"
+        example: {"email": "testuser@test.com"}
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+        "message": "Code generated successfully"
+      }
+
+  400:
+    description: "More attempts"
+    schema:
+      type: "object"
+      example: {
+        "message": "Attempt exceeded",
+        "attempt": 5
+      }
+
+  404:
+    description: "Invalid email"
+    schema:
+      type: "object"
+      example: {
+        "message": "Invalid email address"
+      }
+
+
+  500:
+    description: "Error in query operation"
+    schema:
+      type: "object"
+      example: {
+        'error': 'Error while generating the code'
+      }
+
+

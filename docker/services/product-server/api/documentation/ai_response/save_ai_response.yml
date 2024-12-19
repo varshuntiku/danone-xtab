@@ -1,0 +1,45 @@
+summary: "Saves a new ai response for the given app_id and screen_id"
+tags:
+  - product/AiResponse
+description: "Saves a new ai insight response for the given app_id and screen_id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  description: "Accepts the application ID for which the insight have to be saved"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  description: "Accepts the screen ID for which the insight have to be saved"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [response_text, username]
+        properties:
+          response_text:
+            type: "string"
+          username:
+            type: "string"
+        example: { "response_text": "\n\nSummary:\nThe charts, insights and metrics provided indicate that there is a need to improve the performance of the company. The key insights show that there is a lack of efficiency in the current processes, as well as a need to increase customer satisfaction. Recommended actions include improving operational efficiency, increasing customer satisfaction, and implementing new strategies to improve overall performance. \n\nKey Insights:\n-There is a lack of efficiency in the current processes\n-Customer satisfaction needs to be improved\n-Overall performance needs to be improved\n\nRecommended Actions:\n-Improve operational efficiency\n-Increase customer satisfaction\n-Implement new strategies to improve overall performance", "username": "Test User"}
+
+responses:
+  200:
+    description: "Return successful saved insight"
+    schema:
+      type: "object"
+    example: {"status": "success"}
+  500:
+    description: "Error while saving the insight"
+

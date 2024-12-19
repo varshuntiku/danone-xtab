@@ -1,0 +1,554 @@
+{
+    "data": {
+        "analysisData": [
+            {
+                "label": "HEALTH INDEX",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "progressRenderer",
+                            "progressData": {
+                                "elements": {
+                                    "components": {
+                                        "progressBars": [
+                                            {
+                                                "currentProgress": 80,
+                                                "key": "tableLoader_1",
+                                                "params": {
+                                                    "type": "gauge",
+                                                    "colors": [
+                                                        "#A7F3D0",
+                                                        "#A7F3D0",
+                                                        "#34D399",
+                                                        "#34D399",
+                                                        "#059669",
+                                                        "#059669"
+                                                    ],
+                                                    "height": 40,
+                                                    "width": 120,
+                                                    "top": "10%",
+                                                    "left": "10%",
+                                                    "showProgress": false,
+                                                    "needle": {
+                                                        "left": "48%",
+                                                        "height": "4rem"
+                                                    }
+                                                }
+                                            }
+                                        ],
+                                        "texts": [
+                                            {
+                                                "text": 100,
+                                                "left": "100px",
+                                                "bottom": "-1rem",
+                                                "fontSize": "1.5rem"
+                                            },
+                                            {
+                                                "text": "50",
+                                                "left": "65px",
+                                                "bottom": "50%",
+                                                "fontSize": "1.5rem"
+                                            },
+                                            {
+                                                "text": "0",
+                                                "left": "35px",
+                                                "bottom": "-1rem",
+                                                "fontSize": "1.5rem"
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "label": "HEALTH INDEX - PAST 6 MONTHS",
+                            "data": [
+                                {
+                                    "fill": "tozeroy",
+                                    "marker": {
+                                        "symbol": "circle",
+                                        "size": 0.1,
+                                        "color": "rgba(63, 85, 182, 1)"
+                                    },
+                                    "opacity": "1",
+                                    "x": [
+                                        "01-06-2023",
+                                        "02-06-2023",
+                                        "03-06-2023",
+                                        "04-06-2023",
+                                        "05-06-2023",
+                                        "06-06-2023",
+                                        "07-06-2023",
+                                        "09-06-2023"
+                                    ],
+                                    "y": [
+                                        20,
+                                        30,
+                                        60,
+                                        20,
+                                        20,
+                                        30,
+                                        40,
+                                        20
+                                    ],
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": true,
+                "bannerBlue": true
+            },
+            {
+                "label": "ERRORS REPORTED",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type1",
+                            "data": "# of errors reported"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "4"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "label": "ERRORS REPORTED - PAST 6 MONTHS",
+                            "data": [
+                                {
+                                    "fill": "tozeroy",
+                                    "marker": {
+                                        "symbol": "circle",
+                                        "size": 0.1,
+                                        "color": "rgba(63, 85, 182, 1)"
+                                    },
+                                    "opacity": "1",
+                                    "x": [
+                                        "01-06-2023",
+                                        "02-06-2023",
+                                        "03-06-2023",
+                                        "04-06-2023",
+                                        "05-06-2023",
+                                        "06-06-2023",
+                                        "07-06-2023",
+                                        "09-06-2023"
+                                    ],
+                                    "y": [
+                                        20,
+                                        30,
+                                        60,
+                                        20,
+                                        20,
+                                        30,
+                                        40,
+                                        20
+                                    ],
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": true,
+                "bannerBlue": true
+            },
+            {
+                "label": "APPS POWERED",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type1",
+                            "data": "# of apps powered"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "41"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "label": "APPS POWERED - PAST 6 MONTHS",
+                            "data": [
+                                {
+                                    "fill": "tozeroy",
+                                    "marker": {
+                                        "symbol": "circle",
+                                        "size": 0.1,
+                                        "color": "rgba(63, 85, 182, 1)"
+                                    },
+                                    "opacity": "1",
+                                    "x": [
+                                        "01-06-2023",
+                                        "02-06-2023",
+                                        "03-06-2023",
+                                        "04-06-2023",
+                                        "05-06-2023",
+                                        "06-06-2023",
+                                        "07-06-2023",
+                                        "09-06-2023"
+                                    ],
+                                    "y": [
+                                        20,
+                                        30,
+                                        60,
+                                        20,
+                                        20,
+                                        30,
+                                        40,
+                                        20
+                                    ],
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": true,
+                "bannerBlue": false
+            },
+            {
+                "label": "REQUESTS HANDLED",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type1",
+                            "data": "# of requests handled"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "9.8K"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "label": "REQUESTS - PAST 6 MONTHS",
+                            "data": [
+                                {
+                                    "fill": "tozeroy",
+                                    "marker": {
+                                        "symbol": "circle",
+                                        "size": 0.1,
+                                        "color": "rgba(63, 85, 182, 1)"
+                                    },
+                                    "opacity": "1",
+                                    "x": [
+                                        "01-06-2023",
+                                        "02-06-2023",
+                                        "03-06-2023",
+                                        "04-06-2023",
+                                        "05-06-2023",
+                                        "06-06-2023",
+                                        "07-06-2023",
+                                        "09-06-2023"
+                                    ],
+                                    "y": [
+                                        20,
+                                        30,
+                                        60,
+                                        20,
+                                        20,
+                                        30,
+                                        40,
+                                        20
+                                    ],
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": true,
+                "bannerBlue": false
+            },
+            {
+                "label": "LINEAGE",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type1",
+                            "data": "% of lineage coverage"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "81%"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "label": "LINEAGE COVERAGE - PAST 6 MONTHS",
+                            "data": [
+                                {
+                                    "fill": "tozeroy",
+                                    "marker": {
+                                        "symbol": "circle",
+                                        "size": 0.1,
+                                        "color": "rgba(63, 85, 182, 1)"
+                                    },
+                                    "opacity": "1",
+                                    "x": [
+                                        "01-06-2023",
+                                        "02-06-2023",
+                                        "03-06-2023",
+                                        "04-06-2023",
+                                        "05-06-2023",
+                                        "06-06-2023",
+                                        "07-06-2023",
+                                        "09-06-2023"
+                                    ],
+                                    "y": [
+                                        20,
+                                        30,
+                                        60,
+                                        20,
+                                        20,
+                                        30,
+                                        40,
+                                        20
+                                    ],
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "infoData": {
+                    "type": "flow",
+                    "data": {
+                        "label": "Data Lineage Details",
+                        "data": [
+                            {
+                                "id": 1,
+                                "type": "table",
+                                "details": [
+                                    {
+                                        "id": 1,
+                                        "label": "Order_id",
+                                        "icon": "simple"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "label": "Payment_id",
+                                        "icon": "simple"
+                                    },
+                                    {
+                                        "id": 3,
+                                        "label": "Shipping date",
+                                        "icon": "shipping"
+                                    },
+                                    {
+                                        "id": 4,
+                                        "label": "Customer_id",
+                                        "icon": "simple"
+                                    },
+                                    {
+                                        "id": 5,
+                                        "label": "Order_date",
+                                        "icon": "order"
+                                    }
+                                ],
+                                "tableDetails": {
+                                    "heading": "customer_payments_di",
+                                    "table": "Table_name"
+                                }
+                            },
+                            {
+                                "id": 2,
+                                "type": "table",
+                                "details": [
+                                    {
+                                        "id": 1,
+                                        "label": "Customer name",
+                                        "icon": "simple"
+                                    },
+                                    {
+                                        "id": 2,
+                                        "label": "Order_id",
+                                        "icon": "simple"
+                                    },
+                                    {
+                                        "id": 3,
+                                        "label": "Shipping_date",
+                                        "icon": "shipping"
+                                    },
+                                    {
+                                        "id": 4,
+                                        "label": "Customer_id",
+                                        "icon": "simple"
+                                    },
+                                    {
+                                        "id": 5,
+                                        "label": "Order_date",
+                                        "icon": "order"
+                                    }
+                                ],
+                                "tableDetails": {
+                                    "heading": "customer_orders",
+                                    "table": "Table_name"
+                                }
+                            },
+                            {
+                                "id": 3,
+                                "type": "dashboard",
+                                "tableDetails": {
+                                    "heading": "customer_order_report",
+                                    "table": "Table_name"
+                                }
+                            }
+                        ]
+                    }
+                },
+                "info_icon": true,
+                "showInfoPopup": true,
+                "banner": true,
+                "bannerBlue": true
+            },
+            {
+                "label": "METADATA",
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "text",
+                            "text_Type": "type1",
+                            "data": "% of metadata coverage"
+                        },
+                        {
+                            "type": "text",
+                            "text_Type": "type2",
+                            "data": "70%"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "label": "METADATA COVERAGE - PAST 6 MONTHS",
+                            "data": [
+                                {
+                                    "fill": "tozeroy",
+                                    "marker": {
+                                        "symbol": "circle",
+                                        "size": 0.1,
+                                        "color": "rgba(63, 85, 182, 1)"
+                                    },
+                                    "opacity": "1",
+                                    "x": [
+                                        "01-06-2023",
+                                        "02-06-2023",
+                                        "03-06-2023",
+                                        "04-06-2023",
+                                        "05-06-2023",
+                                        "06-06-2023",
+                                        "07-06-2023",
+                                        "09-06-2023"
+                                    ],
+                                    "y": [
+                                        20,
+                                        30,
+                                        60,
+                                        20,
+                                        20,
+                                        30,
+                                        40,
+                                        20
+                                    ],
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_icon": true,
+                "infoData": {
+                    "type": "table",
+                    "data": {
+                        "label": "MetaData Details",
+                        "data": [
+                            {
+                                "id": 1,
+                                "title": "Source of the data",
+                                "descriptive": "Twitter API"
+                            },
+                            {
+                                "id": 2,
+                                "title": "Business function associated",
+                                "descriptive": "Marketing ,CRM"
+                            },
+                            {
+                                "id": 3,
+                                "title": "Type of Data",
+                                "descriptive": "Structured Data"
+                            },
+                            {
+                                "id": 4,
+                                "title": "Dataset Size",
+                                "descriptive": "2.1M Rows & 75 Columns"
+                            },
+                            {
+                                "id": 5,
+                                "title": "Dataset Owner",
+                                "descriptive": "John Doe"
+                            },
+                            {
+                                "id": 6,
+                                "title": "Last Refresh Data",
+                                "descriptive": "23/06/2023"
+                            },
+                            {
+                                "id": 7,
+                                "title": "# of Connected Apps",
+                                "descriptive": "14"
+                            }
+                        ]
+                    }
+                },
+                "showInfoPopup": true,
+                "banner": true,
+                "bannerBlue": true
+            }
+        ]
+    }
+}

@@ -1,0 +1,313 @@
+@import '../../styles/util.scss';
+
+
+.MinervaWC .MinervaQueryInput {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: spacing(24, 16, 24);
+    max-width: spacing(1082);
+    margin: 0 auto;
+
+    .MinervaQueryInput-form {
+        display: flex;
+        justify-content: center;
+        gap: spacing(10);
+    }
+
+    .MinervaQueryInput-shortcuts {
+        display: none;
+    }
+    .MinervaQueryInput-icon-wrapper {
+            align-self: flex-end;
+            display: flex;
+            gap: spacing(10);
+    }
+    .MinervaIconButton-tilted {
+        & svg {
+           fill: var(--minerva-contrast-color2)
+        }
+    }
+
+    .MinervaVoiceButtonsController-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: spacing(10);
+        height: spacing(235);
+        background-color: var(--minerva-bg-main-50);
+        position: relative;
+
+        .MinervaVoiceIcon {
+            display: flex;
+            justify-content: center;
+            flex: 2;
+
+            .MinervaVoiceIconButton {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                flex-direction: column;
+                transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+                border: 0;
+                cursor: pointer;
+                outline: 0;
+                user-select: none;
+                text-decoration: none;
+                background-color: transparent;
+
+                .MinervaQueryInput-outer {
+                    width: spacing(110);
+                    height: spacing(110);
+                    transform: translate(0, 0);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    margin-bottom: spacing(10);
+
+                    .MinervaQueryInput-vui-state-processing {
+                        position: absolute;
+                        width: spacing(130);
+                        height: spacing(130);
+                        background: url('assets/voiceComponentGifs/thinking.gif');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        mix-blend-mode: screen;
+                        opacity: .8;
+
+                    }
+                    .MinervaQueryInput-vui-state-listening {
+                        position: absolute;
+                            width: spacing(130);
+                            height: spacing(130);
+                            background: url('assets/voiceComponentGifs/listen_state.gif');
+                            background-size: contain;
+                            background-repeat: no-repeat;
+                            mix-blend-mode: screen;
+                            opacity: .8;
+                    }
+
+                    .MinervaQueryInput-vui-state-responding {
+                        position: absolute;
+                        width: spacing(130);
+                        height: spacing(130);
+                        background: url('assets/voiceComponentGifs/speaking.gif');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        mix-blend-mode: screen;
+                        opacity: .8;
+
+                    }
+
+                }
+
+                .MinervaVoiceIconButton-listening {
+                    width: spacing(150);
+                    height: spacing(150);
+                    transform: translate(0, 0);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    margin-bottom: spacing(10);
+                }
+            }
+        }
+    }
+
+    @include minervaFullScreen-bellow-md {
+        padding: spacing(12, 16, 24);
+
+        .MinervaQueryInput-shortcuts {
+            display: flex;
+            justify-content: flex-end;
+            padding: spacing(0, 0, 12);
+
+            .MinervaQueryInput-shortcuts-link {
+                font-weight: 500;
+                transition-duration: 200ms;
+                cursor: pointer;
+
+                span {
+                    color: var(--minerva-text-color-30);
+                    font-size: spacing(14);
+                }
+
+                svg {
+                    fill: var(--minerva-text-color-30);
+                    transition-duration: 200ms;
+                    vertical-align: middle;
+                }
+
+                &:hover {
+                    color: var(--minerva-text-color);
+
+                    svg {
+                        fill: var(--minerva-text-color);
+                    }
+
+                    span {
+                        color: var(--minerva-text-color);
+                    }
+                }
+
+            }
+        }
+    }
+
+    form {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        padding: spacing(12);
+        border: 1px solid;
+        border-radius: spacing(4);
+        border-color: var(--minerva-text-color-30);
+        background: var(--minerva-bg-main);
+        box-shadow: var(--minerva-box-shadow-1a);
+        flex-direction: column;
+        &:focus-within {
+            // border-color: var(--minerva-text-color-70);
+            box-shadow: var(--minerva-box-shadow-4);
+        }
+    }
+
+    input {
+        flex: 1;
+        border: 0;
+        outline: 0;
+        background: transparent;
+        width: 0;
+        font-size: spacing(15);
+
+        &::placeholder {
+            font-size: inherit;
+        }
+    }
+
+    textarea {
+        border: 0;
+        outline: 0;
+        background: transparent;
+        width: 100%;
+        font-size: spacing(15);
+        font-family: inherit;
+        resize: none;
+        max-height: spacing(200);
+
+        &::placeholder {
+            font-size: inherit;
+        }
+    }
+
+    .MinervaVoiceButtonsController-cross-button {
+        align-self: flex-start;
+        position: absolute;
+        right: spacing(10);
+    }
+
+    .MinervaQueryInput-mic-button,
+    .MinervaVoiceButtonsController-mic-button {
+        background-color: transparent;
+        border-color: var(--minerva-text-color);
+        border: 1px solid;
+        height: spacing(35);
+        width: spacing(35);
+    }
+
+    .MinervaIconButton {
+        &[disabled] {
+            cursor: not-allowed;
+            background: transparent;
+            pointer-events: inherit;
+        }
+
+        .MinervaQueryInput-icon {
+            fill: var(--minerva-text-color-30);
+        }
+    }
+
+    .MinervaQueryInput-stopText {
+        align-self: flex-end;
+    }
+
+    .MinervaQueryInput-stopIcon {
+        border: none;
+        background: none;
+        height: spacing(32);
+        width: spacing(32);
+        align-self: flex-end;
+    }
+
+    .MinervaQueryInput-stopIcon-outer {
+        height: spacing(32);
+        width: spacing(32);
+        border-radius: 50%;
+        background: var(--minerva-contrast-color);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .MinervaQueryInput-stopIcon-inner {
+        height: spacing(10);
+        width: spacing(10);
+        background: var(--minerva-bg-main);
+        position: relative;
+    }
+
+    .MinervaQueryInput-outer-onMute {
+        margin-bottom: spacing(10);
+        width: spacing(80);
+        height: spacing(80);
+        transform: translate(0, 0);
+        background: var(--minerva-voice-bg);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+}
+
+//datasource CSS styles: Needs checking
+
+.MinervaQueryInput-datasource {
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    gap: spacing(10);
+    background-color: var(--minerva-bg-main);
+    padding: spacing(30, 10, 5, 20);
+    border-top-left-radius: spacing(12);
+    border-top-right-radius: spacing(12);
+}
+
+.MinervaQueryInput-filelimit {
+    font-size: spacing(14);
+}
+
+.MinervaQueryInput-dropbox-wrapper {
+    height: spacing(96);
+    padding: spacing(20);
+
+    .MinervaQueryInput-dropbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: spacing(68);
+        border: 1px dashed var(--minerva-text-color-30);
+        gap: spacing(4);
+
+        p:nth-of-type(2) {
+            font-weight: 300;
+        }
+    }
+}

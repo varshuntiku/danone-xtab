@@ -1,0 +1,96 @@
+@import "../../../styles/util.scss";
+
+.MinervaWC .MinervaFeedbackComment {
+    background: var(--minerva-contrast-color2-8);
+    margin: spacing(0, 0, 0, -12);
+    padding: spacing(16, 12);
+    display: flex;
+    flex-direction: column;
+    gap: spacing(16);
+
+    .MinervaFeedback-header {
+        display: flex;
+        align-items: center;
+        p {
+            display: flex;
+            gap: spacing(8);
+            align-items: center;
+        }
+        img {
+            width: spacing(24);
+            height: spacing(24);
+        }
+        span {
+            font-size: spacing(15);
+            font-weight: 500;
+        }
+    }
+
+    .MinervaFeedback-completed {
+        @extend .MinervaFeedback-header;
+        svg {
+            width: spacing(24);
+            height: spacing(24);
+        }
+    }
+
+    .MinervaFeedbackComment-options-container {
+        display: flex;
+        gap: spacing(12);
+        margin: spacing(0, 36);
+        .MinervaFeedbackComment-options-item {
+            border: 1px solid var(--minerva-border-blue);
+            padding: spacing(5, 12, 5, 12);
+            border-radius: spacing(35);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            span {
+                font-size: spacing(13);
+                line-height: relativeSpacing(13, 18);
+            }
+            svg {
+                width: spacing(18);
+                height: spacing(18);
+                margin-right: spacing(8);
+            }
+            &[selected] {
+                border: 1px solid var(--minerva-bg-secondary-blue);
+                background: var(--minerva-bg-secondary-blue);
+            }
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: spacing(0, 36);
+        label {
+            font-size: spacing(14);
+            font-weight: 500;
+            margin-bottom: spacing(4);
+        }
+        textarea {
+            width: 100%;
+            font-size: spacing(15);
+            font-family: inherit;
+            padding: relativeSpacing(15, 12);
+            margin-bottom: relativeSpacing(15, 24);
+            resize: none;
+            background: var(--minerva-bg-main);
+        }
+        button {
+            font-size: spacing(15);
+            font-weight: 500;
+            background: transparent;
+            padding: 0;
+            font-family: inherit;
+            margin-bottom: relativeSpacing(15, 4);
+            &:hover {
+                background: transparent;
+            }
+        }
+    }
+}

@@ -1,0 +1,29 @@
+summary: "List of all accessible apps."
+tags:
+  - product/App
+description: "Generates urls to access the apps if the logged in user has special access"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+
+            "status": "success",
+            "special_access_urls":  False
+
+      }
+
+  500:
+    description: "Error while fetching"
+    schema:
+      type: "object"
+      example: {
+        'status': 'error',
+        'error': 'item not found '
+        }

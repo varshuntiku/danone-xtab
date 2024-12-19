@@ -1,0 +1,130 @@
+@import '../../styles/util.scss';
+
+.MinervaWC .MinervaQueryOutput {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(20);
+    overflow-y: auto;
+    height: 100%;
+    padding: spacing(16);
+    max-width: spacing(1082);
+    margin: 0 auto;
+    &.MinervaQueryOutput-popped {
+        padding: spacing(0, 10)
+    }
+    .MinervaQueryOutput-emptystate {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: spacing(30);
+        margin: auto;
+        max-width: spacing(700);
+
+        @include minervaFullScreen-bellow-md {
+            max-width: spacing(426);
+        }
+        .MinervaQueryOutput-emptystate-greet {
+            display: flex;
+            gap: spacing(16);
+            svg {
+                width: spacing(44);
+                height: spacing(44);
+                fill: var(--minerva-contrast-color-40);
+                @include minervaFullScreen-bellow-md {
+                    width: spacing(40);
+                    height: spacing(40);
+                }
+                // stroke: var(--minerva-contrast-color-70);
+            }
+            span {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                gap: spacing(4);
+                font-size: spacing(32);
+                font-weight: 500;
+                height: auto;
+                @include minervaFullScreen-bellow-md {
+                    font-size: spacing(32);
+                }
+            }
+        }
+        p {
+            font-size: spacing(16);
+            text-align: center;
+            @include minervaFullScreen-bellow-md {
+                font-size: spacing(16);
+            }
+        }
+        .MinervaQueryOutput-emptystate-avatar {
+            width: spacing(105.21);
+            height: spacing(105.21);
+            object-fit: contain;
+            fill: var(--minerva-contrast-color);
+            @include minervaFullScreen-bellow-md {
+                width: spacing(60);
+                height: spacing(60);
+            }
+
+            .MinervaSkeleton {
+                width: spacing(105.21);
+                height: spacing(105.21);
+                @include minervaFullScreen-bellow-md {
+                    width: spacing(60);
+                    height: spacing(60);
+                }
+            }
+        }
+        // & img {
+        //     margin-top:spacing(10);
+        //     margin-bottom: spacing(10);
+        // }
+        .MinervaQueryOutput-emptystate-skeleton-wrapper {
+            width: 100%
+        }
+    }
+    .MinervaQueryOutput-loadmore {
+        margin: 0 auto;
+    }
+    .MinervaQueryOutput-emptystate-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        pre {
+            font-family: inherit;
+        }
+    }
+    .MinervaQueryOutput-scrollbtn {
+        position: absolute;
+        bottom: 0%;
+        left: 50%;
+        width: spacing(48);
+        height: spacing(48);
+        border-radius: 50%;
+        background-color: var(--minerva-bg-main);
+        border: 1px solid var(--minerva-text-color-30);
+        box-shadow: var(--minerva-box-shadow-1a);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .MinervaQueryOutput-scrollbtn::after {
+        content: '';
+        display: block;
+        width: 0;
+        height: 0;
+        border-left: spacing(7.5) solid transparent;
+        border-right: spacing(7.5) solid transparent;
+        border-top: spacing(7.5) solid var(--minerva-contrast-color);
+    }
+}
+
+

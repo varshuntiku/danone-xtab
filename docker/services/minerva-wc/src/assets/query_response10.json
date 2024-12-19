@@ -1,0 +1,34 @@
+{
+    "id": 460,
+    "input": "different type C connectors",
+    "output": {
+        "type": null,
+        "response": {
+            "text": "",
+            "processed_query": "different type C connectors",
+            "hint": null,
+            "entities": null,
+            "widgets": [
+                {
+                    "type": "text",
+                    "value": "Based on the content provided, TE Connectivity offers USB Type-C connectors in different orientations, including 90 degree header, 90 degree plug, 180 degree header, 180 degree plug, and 180 degree inline. These connectors are designed to be sleek and slim for handheld devices and robust enough for industrial applications. They are also compatible with various protocols and can be used with adapters for HDMI, VGA, DisplayPort, and other types of connections.",
+                    "citation": {
+                        "id": "0",
+                        "type": "ppt",
+                        "data": [
+                            {
+                                "name": "Product Info.pdf",
+                                "source_url": null,
+                                "img_url": "private:https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_161_261_9.png"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "window_id": 169,
+    "feedback": null,
+    "pinned": null,
+    "comment": null
+}

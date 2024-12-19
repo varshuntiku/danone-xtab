@@ -1,0 +1,50 @@
+summary: "Create Screen in app"
+tags:
+  - product/AppAdmin
+description: "Save screen info for a given app"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to create the screen
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [screens]
+        properties:
+          screens:
+            type: "array"
+            items:
+              type: "object"
+              required: []
+              properties:
+                id:
+                  type: "integer"
+                name:
+                  type: "string"
+                level:
+                  type: "integer"
+        example: {"screens":[{"id": 2, "name": "Screen 1", "level": 1}]}
+
+responses:
+  200:
+    description: "Created successfully"
+    schema:
+      type: "object"
+      example: {'status': 'success'}
+  500:
+    description: "Error while creating"
+    schema :
+      type: "object"
+      example:  {'error': 'Error in saving application screens'}
+

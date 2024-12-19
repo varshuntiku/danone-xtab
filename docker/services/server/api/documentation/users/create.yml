@@ -1,0 +1,65 @@
+summary: "Create new user"
+tags:
+  - platform/Users
+description: "This creates a new user"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "body"
+  name: "body"
+  description: "Accepts the following fields for creating a user"
+  required: "true"
+  schema:
+    type: "object"
+    properties:
+      first_name:
+        type: "string"
+        required: "true"
+      last_name:
+        type: "string"
+        required: "true"
+      email_address:
+        type: "string"
+        required: "true"
+      access_key:
+        type: "boolean"
+      user_groups:
+        type: "enum"
+      password:
+        type: "string"
+      restricted_user:
+        type: "boolean"
+
+
+    example: {
+                "first_name": 'first_name',
+                "last_name": 'last_name',
+                "email_address" : 'email_address',
+                "access_key": True,
+                "user_groups": ["Coach"],
+                "password": "password",
+                "restricted_user" : False
+              }
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+        "id": 123,
+        "first_name": "firstname"
+      }
+
+  422:
+    description: "Error in query"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Error in query operation"
+      }
+
+

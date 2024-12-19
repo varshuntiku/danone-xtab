@@ -1,0 +1,28 @@
+Hi,
+
+A story is been shared by {sender}.
+
+Story: {story_name}
+
+Description: {description}
+
+Created by: {created_by}
+
+link: {link}
+
+
+
+
+
+This email is intended for
+
+You are recieving professional identity emails.
+
+This email has been sent to intended recipient(s) and may
+contain confidential Information. Please
+ignore if you are not
+the recipient.
+
+Â© C/o Awfis Space Solutions Pvt. Ltd Sabari Complex, #24,
+1st Floor, Residency Rd, Bengaluru,
+Karnataka 560025

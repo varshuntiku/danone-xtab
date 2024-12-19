@@ -1,0 +1,44 @@
+summary: "Fetch the widget code string."
+tags:
+  - product/App
+description: "Fetch the widget code string associated with the screen for the app"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "widget_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "object"
+          example :
+            code: "Code string"
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'item not found'
+          }

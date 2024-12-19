@@ -1,0 +1,11 @@
+.srd-port{
+  width: 15px;
+  height: 15px;
+  border-radius: 11px;
+  background: rgba(white,0.1);
+  margin-bottom: 2px;
+
+  &:hover,&.selected{
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,79 @@
+{
+    "id": 573,
+    "input": "sales acorss barnds",
+    "output": {
+        "type": "sql",
+        "response": {
+            "widgets": [
+
+                {
+                    "type": "markdown",
+                    "value": "\n \n\n<CodeBlockWrapper><CodeBlockItem label=\"SQL\" enableCopy=\"true\">```sql\nSELECT brand, SUM(volume) AS total_sales FROM cpg.cpgnew_v2 GROUP BY brand;```</CodeBlockItem><CodeBlockItem label=\"Python\">```python\nimport math\n def greet(name):  # Function defn\n   print(\"Hello, \" + name)\n\n greet(\"World\")\n```</CodeBlockItem></CodeBlockWrapper>"
+                },
+                {
+                    "type": "markdown",
+                    "value": "\n \n\n<CodeBlockWrapper><CodeBlockItem label=\"Python\">```python\n\n# Assuming that llm_config, tools, and deployment_urls are already defined somewhere above\nllm_config: Dict = config_list[0] # Use the first config in the config_list\ntools: List = [functions[0], sim_json] # Assuming you want to use the functions and sim_json as tools\ndeployment_urls: List = [\"https://deployment.url.for.text2sql\", \"https://deployment.url.for.simulator\"]\n\n# Now create an instance of the FunctionCallOrchestrator\nfunction_call_orchestrator = FunctionCallOrchestrator(\n llm_config=llm_config,\n tools=tools,\n deployment_urls=deployment_urls\n # Add any other keyword arguments if necessary\n)\n\n# Now that you have an instance, you can use it to run queries\nquery = \"What is the market share of our top product?\"\nmessages = None # or provide a list of previous messages if applicable\nresponse = function_call_orchestrator.run(query=query, messages=messages)\n\n# Print the response or do something with it\nprint(response)\n```</CodeBlockItem></CodeBlockWrapper>"
+                },
+                {
+                    "type": "text",
+                    "value": "Below is the codeBlockWrapper component"
+                },
+                {
+                    "type": "codeBlockWrapper",
+                    "value": {
+                        "items": [
+                            {
+
+                                "content": "\nfrom typing import List, Dict\n\n# Assuming that llm_config, tools, and deployment_urls are already defined somewhere above\nllm_config: Dict = config_list[0] # Use ```this is backticked wrapped text``` the first config in the config_list\nbacktick_var = ```backtick string literal```\ntools: List = [functions[0], sim_json] # Assuming you want to use the functions and sim_json as tools\ndeployment_urls: List = [\"https://deployment.url.for.text2sql\", \"https://deployment.url.for.simulator\"]\n\n# Now create an instance of the FunctionCallOrchestrator\nfunction_call_orchestrator = FunctionCallOrchestrator(\n llm_config=llm_config,\n tools=tools,\n deployment_urls=deployment_urls\n # Add any other keyword arguments if necessary\n)\n\n# Now that you have an instance, you can use it to run queries\nquery = \"What is the market share of our top product?\"\nmessages = None # or provide a list of previous messages if applicable\nresponse = function_call_orchestrator.run(query=query, messages=messages)\n\n# Print the response or do something with it\nprint(response)\n",
+                                "props":{
+                                    "lang": "python",
+                                    "label": "Python",
+                                    "enableCopy": true
+                                }
+                            },
+                            {
+                                "content": "\nSELECT brand, SUM(volume) AS total_sales FROM cpg.cpgnew_v2 GROUP BY brand;",
+                                "props":{
+                                    "lang": "sql",
+                                    "label": "SQL",
+                                    "enableCopy": true
+                                }
+                            },
+                            {
+                                "content": "\nconst greet = (name) => {\n  console.log(\"Hello World\")\n}\n",
+                                "props":{
+                                    "lang": "javascript",
+                                    "label": "Javascript",
+                                    "enableCopy": true
+                                }
+                            },
+                            {
+                                "content": "\n<h1>This is <b>html</b> content</h1>\n",
+                                "props":{
+                                    "lang": "html",
+                                    "label": "HTML",
+                                    "enableCopy": true
+                                }
+                            },
+                            {
+                                "content": "This is a normal text\n",
+                                "props":{
+                                    "lang": "text",
+                                    "label": "Text",
+                                    "enableCopy": true
+                                }
+                            }
+                        ],
+                        "props":{
+
+                        }
+                    }
+                }
+
+            ],
+            "processed_query": "sales across brands"
+        }
+    },
+    "window_id": 61,
+    "feedback": null
+}

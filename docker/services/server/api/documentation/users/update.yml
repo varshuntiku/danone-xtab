@@ -1,0 +1,50 @@
+
+summary: "Update User"
+tags:
+  - platform/Users
+description: "This will update the User"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "user_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "body"
+  name: "body"
+  description: "Accepts paramters to update user"
+  required: "true"
+  schema:
+    type: "object"
+    example: {
+            "first_name" : "usergroupname",
+            "last_name" : "False",
+            "email_address": "False",
+            "user_groups": ["Coach","default-user"],
+            "password": "False",
+            "restricted_user": "False",
+    }
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "status": "true",
+      }
+
+  500:
+    description: "Query Error"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Query Error"
+      }
+
+

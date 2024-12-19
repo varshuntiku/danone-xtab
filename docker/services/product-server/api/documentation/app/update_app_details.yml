@@ -1,0 +1,62 @@
+summary: "Updates the app details."
+tags:
+  - product/App
+description: "Updates the app details for the given app id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to update the app
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [industry_id, function_id]
+        properties:
+          industry_id:
+            type: "integer"
+          function_id:
+            type: "integer"
+          name:
+            type: "string"
+          description:
+            type: "string"
+          blueprint_link:
+            type: "string"
+          orderby:
+            type: "integer"
+          config_link:
+            type: "string"
+          small_logo_url:
+            type: "string"
+          logo_url:
+            type: "string"
+        example: {"industry_id": 1, "function_id": 1}
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "object"
+          example :
+            message: "App details updated successfully"
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'Error while editing app data'
+          }

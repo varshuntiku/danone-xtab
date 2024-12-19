@@ -1,0 +1,125 @@
+{
+    "data": [
+        {
+            "name": "HCP Marketing",
+            "id": "1",
+            "ref_id": 1,
+            "problemDefinition": [
+                {
+                    "name": "Annual Plan",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "1"
+                },
+                {
+                    "name": "Mid year review",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "1"
+                },
+                {
+                    "name": "Measurement",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "1"
+                }
+            ]
+        },
+        {
+            "name": "Patient Support",
+            "id": "2",
+            "ref_id": 2,
+            "problemDefinition": [
+                {
+                    "name": "Annual Plan",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "2"
+                },
+                {
+                    "name": "Mid year review",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "2"
+                },
+                {
+                    "name": "Measurement",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "2"
+                }
+            ]
+        },
+        {
+            "name": "Patient Marketing",
+            "id": "3",
+            "ref_id": 3,
+            "problemDefinition": [
+                {
+                    "name": "Annual Plan",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "3"
+                },
+                {
+                    "name": "Mid year review",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "3"
+                },
+                {
+                    "name": "Measurement",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "3"
+                }
+            ]
+        },
+        {
+            "name": "Sales Force Effectiveness",
+            "id": "4",
+            "ref_id": 4,
+            "problemDefinition": [
+                {
+                    "name": "Annual Plan",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "business_process_id": "4"
+                },
+                {
+                    "name": "Mid year review",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "business_process_id": "4"
+                },
+                {
+                    "name": "Measurement",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "business_process_id": "4"
+                }
+            ]
+        }
+    ]
+}

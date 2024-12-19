@@ -1,0 +1,68 @@
+#
+# Author: Codx Core DEV Team
+# TheMathCompany, Inc. (c) 2021
+#
+# This file is part of Codx.
+#
+# Codx can not be copied and/or distributed without the express permission of TheMathCompany, Inc.
+
+FROM mathcodex.azurecr.io/codex-python-alpine
+
+LABEL maintainer shridhar@themathcompany.com
+LABEL org mathco
+LABEL platform codex
+LABEL product server
+LABEL image_type service_image
+
+# adding version file
+ADD VERSION .
+
+# Copy python requirements file
+COPY requirements.txt /tmp/requirements.txt
+
+# RUN apt-get -y install liblapack-dev libblas-dev gfortran
+RUN pip3 install --upgrade pip setuptools && \
+    pip3 install -r /tmp/requirements.txt
+
+# Copy the Nginx global conf
+COPY nginx.conf /etc/nginx/
+
+# Copy the Flask Nginx HTTP site conf
+COPY flask-http-site-nginx.conf /etc/nginx/conf.d/
+
+# Copy the Flask Nginx HTTPS site conf
+COPY flask-https-site-nginx.conf /etc/nginx/conf.d/
+
+#Create empty log file for uwsgi
+RUN touch /tmp/uwsgi.log
+
+# Copy the base uWSGI ini file to enable default dynamic uwsgi process number
+COPY uwsgi.ini /etc/uwsgi/
+
+# Custom Supervisord config
+COPY supervisord.conf /etc/supervisord.conf
+
+# Add MathModels
+COPY ./mathmodels /mathmodels
+RUN pip3 install /mathmodels
+
+# Add app
+RUN mkdir /app/
+COPY ./api /app/api
+WORKDIR /app
+RUN chown -R nginx:nginx /app
+
+# Add certs
+RUN mkdir /certs
+COPY ./certs/server.crt /certs/server.crt
+COPY ./certs/server.key /certs/server.key
+RUN chown -R nginx:nginx /certs
+
+# add entrypoint.sh
+COPY ./entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
+RUN mkdir /data/
+RUN chown -R nginx:nginx /data
+
+CMD ["sh", "-c", "/app/entrypoint.sh"]

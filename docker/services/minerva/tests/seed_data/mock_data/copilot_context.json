@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Unittest context",
+        "type": "data_metadata",
+        "copilot_app_id": 1,
+        "source_type": "csv"
+    },
+    {
+        "id": 2,
+        "name": "Unittest metrics_kpi context",
+        "type": "metrics_kpi",
+        "copilot_app_id": 1,
+        "source_type": "upload"
+    }
+]

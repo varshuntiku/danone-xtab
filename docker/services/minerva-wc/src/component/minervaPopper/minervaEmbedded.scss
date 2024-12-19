@@ -1,0 +1,53 @@
+@import '../../styles/util.scss';
+@import '../../styles/variables.scss';
+
+.MinervaWC {
+    .MinervaEmbedded {
+        width: 100%;
+        height: 100%;
+    }
+    .MinervaEmbedded-mini {
+       .MinervaFullScreen .MinervaFullScreen-main {
+            grid-template-columns: minmax(130px, 1fr) auto;
+            .MinervaFullScreen-conversation-section {
+                width: 100%;
+                height: 100%;
+            }
+            .MinervaFullScreen-sideworkspace-triggers {
+                display: none
+            }
+            &.MinervaFullScreen-convo-opened {
+                .MinervaFullScreen-conversation-section {
+                    left: 0;
+                }
+            }
+        }
+    }
+    .MinervaEmbedded-popper {
+        &.MinervaPopover::backdrop {
+                background: 'transparent';
+            }
+    }
+    .MinervaMenuOptions-Wrapper {
+            display: flex;
+            flex-direction: column;
+            padding: spacing(10, 0, 10, 0);
+
+            .MinervaMenuOptions {
+                display: flex;
+                gap: spacing(10);
+                align-items: center;
+                cursor: pointer;
+                padding: spacing(0, 10, 0, 10);
+
+                .MinervaIconButton:hover {
+                    background-color: transparent;
+                }
+
+                &:hover {
+                    background-color: var(--minerva-text-color-10);
+                }
+
+            }
+    }
+}

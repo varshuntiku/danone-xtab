@@ -1,0 +1,89 @@
+{
+    "dialog": {
+        "title": "User Guide Module Description"
+    },
+    "dialog_actions": [
+        {
+            "is_cancel": true,
+            "name": "Got it",
+            "variant": "contained"
+        }
+    ],
+    "form_config": {
+        "fields": [
+            {
+                "id": 2,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "What is a User Guide?"
+            },
+            {
+                "id": 3,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "User Guide is a form of documentation that provides a business user with a guided walkthrough of the application screens for better consumption. The documentation can be in the form of PDF, Word Document or Video."
+            },
+            {
+                "id": 4,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "Enabling User Guide:"
+            },
+            {
+                "id": 5,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "To activate User Guides, please click on the toggle button and add the relevant details in the Screens Overview section."
+            },
+            {
+                "id": 6,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "In-app availability: "
+            },
+            {
+                "id": 7,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "User Guide will be accessible to the business user on the main app screen and can be managed on screen overview page in the Admin section."
+            }
+        ]
+    }
+}

@@ -1,0 +1,56 @@
+
+summary: "Update NAC User Role"
+tags:
+  - platform/NACUserRoles
+description: "This will update the NAC user role"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "nac_role_id"
+  required: "true"
+  schema:
+    type: "integer"
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: "object"
+        properties:
+          name:
+            type: "string"
+            required: "true"
+          role_permissions:
+            type: "array"
+            items:
+              type: "number"
+              required: true
+        example: {
+          "name" : "test nac role edited",
+          "role_permissions" : [2]
+        }
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "message": "Updated Successfully",
+      }
+
+  500:
+    description: "Query Error"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Query Error"
+      }
+
+

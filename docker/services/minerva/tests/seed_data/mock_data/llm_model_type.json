@@ -1,0 +1,17 @@
+[
+	{
+		"id" : 11,
+		"type" : "text-to-embedding",
+		"is_active" : true
+	},
+	{
+		"id" : 12,
+		"type" : "text-to-text",
+		"is_active" : true
+	},
+	{
+		"id" : 3,
+		"type" : "text-to-speech",
+		"is_active" : true
+	}
+]

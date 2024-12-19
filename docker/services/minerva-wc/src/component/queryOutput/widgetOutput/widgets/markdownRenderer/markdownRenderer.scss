@@ -1,0 +1,20 @@
+@import "../../../../../styles/util.scss";
+
+.MinervaWC .MinervaMarkdownRenderer {
+    & *:not(li, .MinervaMarkdownCustom,  .MinervaMarkdownCustom *, .MinervaImageRendererContainer, .MinervaImageRendererContainer *, .MinervaCodeBlockWrapper, .MinervaCodeBlockWrapper *, .MinervaCursor, .MinervaCursor *){
+        all: revert;
+    }
+    & li {  //to reduce the specificity than the common style
+        all: revert;
+    }
+    & .MinervaImage-fallback {
+        color: var(--minerva-text-40)
+    }
+    #support-email {
+        color: var(--minerva-border-blue);
+    }
+}
+
+.MinervaWC ul.MinervaMarkdownRenderer > li, .MinervaWC ol.MinervaMarkdownRenderer > li {
+    margin-left: spacing(18);
+}

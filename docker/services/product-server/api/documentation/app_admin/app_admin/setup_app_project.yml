@@ -1,0 +1,39 @@
+summary: "Setup app project"
+tags:
+  - product/AppAdmin
+description: "Adds the blueprint link to the given app id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to add blueprint link
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [project_id]
+        properties:
+          value:
+            type: "integer"
+        example: {"project_id": 1}
+
+responses:
+  200:
+    description: "Created successfully"
+    schema:
+      type: "object"
+      example: {'status': 'success'}
+  500:
+    description: "Error while adding"
+    schema :
+      type: "object"
+      example:  {'error': 'Error in updating Blueprint Link'}

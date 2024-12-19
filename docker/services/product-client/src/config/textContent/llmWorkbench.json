@@ -1,0 +1,74 @@
+{
+    "deploy_llm": {
+        "action_modal": {
+            "title": "Deploy Model",
+            "description": "Set up a deployment to make API calls against a provided base model or a custom model. You will be able to track the deployment status in the Deployed Models page. Once the deployment is successfully completed it will be ready for use",
+            "button": {
+                "back": "Back",
+                "next": "Deploy"
+            }
+        }
+    },
+    "datatable": {
+        "cookbook": "Use NucliOS Inference Package to access and use the LLM Endpoints. Cookbooks can be found",
+        "cookbookLink": "here"
+    },
+    "deployed_models": {
+        "table": {
+            "title": "Deployed Models",
+            "information": "Deployments provide endpoints to the supported base models, or your fine-tuned models, configured with settings to meet your needs. From this page, you can view and delete your deployments. To create a new deployment please proceed to the supported models page."
+        }
+    },
+    "approval_requests": {
+        "table": {
+            "title": "Approval Requests",
+            "information": "Running a model requires GPU resources, which is costly. Hence all such tasks need approval. This page shows all the pending requests.",
+            "tabs": {
+                "deployment": {
+                    "title": "Deployment Requests"
+                },
+                "finetuning": {
+                    "title": "Finetune Requests"
+                }
+            }
+        }
+    },
+    "supported_models": {
+        "tables": {
+            "information": "Deploy one of the provided base models to try it out.",
+            "base_models": {
+                "title": "Base Models"
+            },
+            "finetuned_models": {
+                "title": "Finetuned Models"
+            }
+        }
+    },
+    "llm_experiments": {
+        "tables" : {
+            "information":"Examine previous fine-tuning outcomes, scrutinize their performance indicators, and implement them in your subsequent applications."
+        },
+        "button" : {
+            "create" : "Finetune Job"
+        },
+        "confirm_msg": "Are you sure to deploy this experiment? Once successfully deployed, you can access it from the Deployment Page."
+    },
+    "finetuning_results" : {
+        "overview" : {
+          "table":{
+            "heading": "Performance Summary",
+            "info": "View your experiment results here and compare them to the Untrained Model."
+          },
+          "graph":{
+            "heading": "Loss vs Steps",
+            "info": "Track the changes in your loss with each step."
+          }
+        },
+        "deep_dive": {
+         "table":{
+            "heading": "Performance Summary",
+            "info": "Review a sample of your fine-tuned experiment results on the test dataset while comparing them with the response of the untrained model."
+          }
+        }
+    }
+}

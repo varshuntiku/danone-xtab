@@ -1,0 +1,11 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: {{ .Values.hub.extraEnv.clusterRoleName }}
+  labels:
+    meta.helm.sh/release-name: "{{ .Release.Name }}"
+    meta.helm.sh/release-namespace: "{{ .Release.Namespace }}"
+rules:
+- apiGroups: [""]
+  resources: ["persistentvolumes"]
+  verbs: ["create", "get", "list", "watch", "delete"]

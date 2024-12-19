@@ -1,0 +1,26 @@
+summary: "Get App user roles"
+tags:
+  - product/AppAdmin
+description: "Provides list of app user roles for the given app ID"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Returns list of app user roles for the given appID"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching"
+    schema :
+      type: "object"
+      example:  {'error': "Error in fetching app user roles"}

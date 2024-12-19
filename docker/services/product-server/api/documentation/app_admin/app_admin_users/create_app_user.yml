@@ -1,0 +1,51 @@
+summary: "Create App User"
+tags:
+  - product/AppAdmin
+description: "Creates User for the application"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  description: Details to create the app user
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [app_id, email_address, first_name, last_name]
+        properties:
+          first_name:
+            type: "string"
+          last_name:
+            type: "string"
+          app_id:
+            type: "integer"
+          email_address:
+            type: "string"
+          user_roles:
+            type: "array"
+            items:
+              type: "integer"
+          responsibilities:
+            type: "array"
+            items:
+              type: "string"
+        example: {"app_id": 1, "first_name": "abc", "last_name": "xyz", "email_address": "abc.xyz@themathcompany.com", "user_roles": [1,2], "responsibilities": ["R1", "R2"]}
+
+responses:
+  200:
+    description: "Created successfully"
+    schema:
+      type: "object"
+      example: {"status": "success"}
+  409:
+    description: "Already exists"
+    schema:
+      type: "object"
+      example: {'error': 'App user already exists'}
+  422:
+    description: "Error while creating"
+    schema:
+      type: "object"
+      example: {'error': "Error in updating app users"}

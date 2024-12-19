@@ -1,0 +1,12 @@
+azure-storage-blob==1.4.0
+# data manipulation
+numpy==1.21.6
+pandas==1.3.5
+# visualization
+plotly==5.10.0
+pyodbc==4.0.34
+scikit-learn==1.0.2
+# data sources
+SQLAlchemy==1.4.13
+# data science
+statsmodels==0.13.2

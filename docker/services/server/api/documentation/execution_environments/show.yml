@@ -1,0 +1,35 @@
+summary: "Get Execution Environment details"
+tags:
+  - platform/ExecutionEnvironments
+description: "This returns environment details for given environment_id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "execution_environment_id"
+  description: "Execution Environment ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "id": 123,
+            "name": "envname",
+            "requirements": "envrequirements",
+        }
+  404:
+    description: "Item not found"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Item not found"
+      }

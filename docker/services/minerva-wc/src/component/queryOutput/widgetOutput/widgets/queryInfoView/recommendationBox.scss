@@ -1,0 +1,24 @@
+@import '../../../../../styles/util.scss';
+
+.MinervaWC .MinervaRecommendationBox {
+    background-color: color-mix(in srgb, var(--minerva-text-color) 10%, var(--minerva-bg-main));
+    padding: spacing(10, 20);
+    border-radius: spacing(10);
+    & .MinervaRecommendationBox-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: spacing(10);
+
+        & .MinervaRecommendationBox-copyButton {
+            background-color: color-mix(in srgb, var(--minerva-text-color) 5%, var(--minerva-bg-main));
+            text-transform: none;
+            border-color: var(--minerva-text-color);
+            color: var(--minerva-text-color);
+            min-width: 7em;
+        }
+    }
+    & .MinervaRecommendationBox-queries {
+        padding-bottom: spacing(10);
+    }
+}

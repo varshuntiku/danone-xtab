@@ -1,0 +1,44 @@
+@import "../../../styles/util.scss";
+
+.MinervaWC .MinervaGridTableRoot {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    & .MinervaGridTableWrapper {
+        overflow: auto;
+        box-shadow: var(--minerva-box-shadow-1);
+        border-radius: spacing(5);
+        flex: 1;
+        & table {
+            width: 100%;
+            border-spacing: 0;
+            & thead {
+                & tr {
+                    & th {
+                        text-align: var(--align);
+                        background: var(--minerva-bg-main);
+                        padding: spacing(10);
+                    };
+                }
+            }
+            & tbody {
+                & tr {
+                    &:hover {
+                        background-color: var(--minerva-bg-main-40);
+                    }
+                    & td {
+                        border-bottom: var(--minerva-border-1);
+                        text-align: var(--align);
+                        padding: spacing(10)
+                    }
+                }
+            }
+        }
+    }
+    & .MinervaGridTable-outeraction {
+        display: flex;
+        flex-wrap: wrap;
+        gap: spacing(10);
+        padding: spacing(10, 0);
+    }
+}

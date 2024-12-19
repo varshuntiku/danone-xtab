@@ -1,0 +1,361 @@
+{
+    "data": {
+        "initiatives": [
+            {
+                "id": 1,
+                "name": "Share Growth",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Portfolio of the future"
+                    }
+                ],
+                "dashboard_id": 1,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Value in recession",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Portfolio of the future"
+                    }
+                ],
+                "dashboard_id": 2,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 3,
+                "name": "AFH execution & growth engine",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Portfolio of the future"
+                    }
+                ],
+                "dashboard_id": 3,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Big Bets",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Innovation"
+                    }
+                ],
+                "dashboard_id": 4,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Notco crisp",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Innovation"
+                    }
+                ],
+                "dashboard_id": 5,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Toco Bell",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Innovation"
+                    }
+                ],
+                "dashboard_id": 6,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Lunchables",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Innovation"
+                    }
+                ],
+                "dashboard_id": 6,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    1
+                ],
+                "problem_definition_id": [
+                    2
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Delimix",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Innovation"
+                    }
+                ],
+                "dashboard_id": 6,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    1
+                ],
+                "problem_definition_id": [
+                    3
+                ]
+            },
+            {
+                "id": 7,
+                "name": "Engagement & Retention",
+                "category": "Violet",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "People"
+                    },
+                    {
+                        "category": "Violet",
+                        "name": "Foundational"
+                    }
+                ],
+                "dashboard_id": 7,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 8,
+                "name": "Customer Experience",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "Sales"
+                    },
+                    {
+                        "category": "Violet",
+                        "name": "Foundational"
+                    }
+                ],
+                "dashboard_id": 8,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 9,
+                "name": "Forecasting Excellence",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "People tag"
+                    },
+                    {
+                        "category": "Violet",
+                        "name": "Foundational"
+                    }
+                ],
+                "dashboard_id": 9,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 10,
+                "name": "Net One New",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "Sales"
+                    },
+                    {
+                        "category": "Violet",
+                        "name": "Foundational"
+                    }
+                ],
+                "dashboard_id": 10,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    1
+                ],
+                "problem_definition_id": [
+                    1
+                ]
+            },
+            {
+                "id": 11,
+                "name": "RGM + (Mix & PPA)",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "People"
+                    },
+                    {
+                        "category": "Violet",
+                        "name": "Foundational"
+                    }
+                ],
+                "dashboard_id": 11,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    1
+                ],
+                "problem_definition_id": [
+                    2
+                ]
+            },
+            {
+                "id": 12,
+                "name": "RGM + Mix",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Portfolio of the future"
+                    }
+                ],
+                "dashboard_id": 12,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    1
+                ],
+                "problem_definition_id": [
+                    3
+                ]
+            }
+        ],
+        "goals": {
+            "name": "Deliver 1YP Ambition",
+            "id": 1,
+            "targets": [
+                {
+                    "id": 1,
+                    "title": "NSV",
+                    "value": "+3.2%",
+                    "created_by": "test user",
+                    "created_at": "",
+                    "updtaed_by": "test user",
+                    "updated_at": "",
+                    "marginRight":"1.5rem"
+                },
+                {
+                    "id": 1,
+                    "title": "PP SHARE",
+                    "value": "+0.2",
+                    "created_by": "test user",
+                    "created_at": "",
+                    "updtaed_by": "test user",
+                    "updated_at": "",
+                    "titleWidth":"7rem",
+                    "marginRight":"1.5rem"
+                },
+                {
+                    "id": 1,
+                    "title": "EBITA",
+                    "value": "+4.0%",
+                    "created_by": "test user",
+                    "created_at": "",
+                    "updtaed_by": "test user",
+                    "updated_at": ""
+                }
+            ],
+            "created_by": "test user",
+            "created_at": "",
+            "updtaed_by": "test user",
+            "updated_at": ""
+        }
+    }
+}

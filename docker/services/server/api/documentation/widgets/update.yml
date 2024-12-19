@@ -1,0 +1,47 @@
+
+summary: "Update Widget "
+tags:
+  - platform/Widgets
+description: "This will update the widget  "
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "widget_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "body"
+  name: "body"
+  description: "Accepts paramters to update widget "
+  required: "true"
+  schema:
+    type: "object"
+    example: {
+
+            "name": "widgetname",
+            "group_id" : 123
+    }
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "status": "true",
+      }
+
+  500:
+    description: "Query Error"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Query Error"
+      }
+
+

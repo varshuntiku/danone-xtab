@@ -1,0 +1,41 @@
+summary: "List of user app heirarchy"
+tags:
+  - product/Dashboard
+description: "This returns list of user app heirarchy"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "body"
+  name: "body"
+  required: true
+  schema:
+    type: "object"
+    properties:
+      name:
+        type: string
+      icon:
+        type: string
+      order:
+        type: string
+      root:
+        type: integer
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+              "status": "success"
+            }
+
+  500:
+    description: "error while creating dashboard"
+    schema:
+    type: "object"
+    example: {
+      "Error":"error while creating dashboard"
+    }

@@ -1,0 +1,60 @@
+summary: "Create new Function"
+tags:
+  - product/Dashboard
+description: "This creates a new Function"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  content:
+    application/json:
+      schema:
+        required: [industry_id, function_name, description, logo_name, order]
+        properties:
+          industry_id:
+            type: integer
+          function_name:
+            type: string
+          logo_name:
+            type: string
+          description:
+            type: string
+          order:
+            type: integer
+          function_id:
+            type: integer
+          parent_function_id:
+            type: integer
+          color:
+            type: string
+
+      example: {
+        "industry_id": 4,
+        "function_name": "New Function",
+        "description": "testing function",
+        "logo_name": "CPGMarketingIcon",
+        "order": 1,
+        "function_id": "",
+        "parent_function_id": "",
+        "color": null
+      }
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+        "message": "Function Created Successfully",
+
+      }
+
+  500:
+    description: "Error while creating new function"
+
+
+

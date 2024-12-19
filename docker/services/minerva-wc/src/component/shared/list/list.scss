@@ -1,0 +1,76 @@
+@import '../../../styles/util.scss';
+
+.MinervaWC .MinervaListRoot {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: spacing(8);
+
+    .MinervaListMain {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: spacing(10);
+
+        .MinervaList-checkbox {
+            visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .MinervaList-checkbox-icons {
+            display: flex;
+            cursor: pointer;
+        }
+
+        .MinervaListSelectAllLabel {
+            font-size: small;
+        }
+    }
+
+    .MinervaList-horizontal-line {
+        border-top: spacing(1) solid var(--minerva-text-color);
+        opacity: 0.3;
+        width: spacing(18);
+    }
+
+    .MinervaList-items {
+        display: flex;
+        flex-direction: column;
+        gap: spacing(18);
+
+        .MinervaListItem {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: spacing(12);
+
+            .MinervaListItem-checkbox-icons {
+                display: flex;
+                cursor: pointer;
+            }
+
+            .MinervaListItemLabel {
+                font-size: large;
+                cursor: pointer;
+            }
+
+            .MinervaListItemLabel:hover {
+                text-decoration: underline;
+            }
+
+            .MinervaListItem-checkbox {
+                visibility: hidden;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    svg {
+        border-radius: spacing(1);
+    }
+}

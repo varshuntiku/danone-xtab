@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: genai-server
+#  namespace: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: genai-server
+  template:
+    metadata:
+      labels:
+        app: genai-server
+    spec:
+      containers:
+        - name: genai-server
+          image: mathcodex.azurecr.io/genai-server:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: genai-server-service
+#  namespace: webapp
+spec:
+  type: LoadBalancer
+  selector:
+    app: genai-server
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

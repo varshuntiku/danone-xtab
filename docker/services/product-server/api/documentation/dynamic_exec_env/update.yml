@@ -1,0 +1,53 @@
+summary: "Update Dynamic Execution environment"
+tags:
+  - product/DynamicExecutionEnvironment
+description: "Update Execution environment for the given id"
+produces:
+- application/json
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "execution_environment_id"
+  required: "true"
+  description: "The environment ID that has to be updated"
+  schema:
+    type: "integer"
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [name, requirements, py_version]
+        properties:
+          name:
+            type: string
+          requirements:
+            type: string
+          py_version:
+            type: string
+        example: {'name': "Execution Env1", 'requirements': "package1\npackage2", 'py_version': "3.9.2"}
+
+responses:
+  200:
+    description: "API successful"
+    schema:
+      type: object
+    example: {'status': True}
+  404:
+    description: "ID not found"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'item not found'}
+  422:
+    description: "Request Body Error"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'post data error'}
+  500:
+    description: "Error"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'Error updating dynamic execution environment'}

@@ -1,0 +1,29 @@
+summary: "Upload file "
+tags:
+  - product/Main
+description: "This Uploads the file to the blob storage and returns the url"
+consumes:
+- multipart/form-data
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "formData"
+  name: "file"
+  type: "file"
+  description: "Accepts file"
+  required: "true"
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+              'path': 'URL',
+              'filename': 'fileName.xls',
+              }
+
+
+

@@ -1,0 +1,182 @@
+{
+    "data": {
+        "decisions": {
+            "nodes": [
+                {
+                    "id": "1",
+                    "positionXMultiplier": 0,
+                    "positionY": 0,
+                    "title": "Structured Data",
+                    "description": "Source 1 Database",
+                    "icon": "database",
+                    "sourcePosition": "right",
+                    "type": "input"
+                },
+                {
+                    "id": "2",
+                    "positionY": 0,
+                    "title": "Quality",
+                    "description": "Quality Check",
+                    "icon": "quality",
+                    "targetPosition": "left",
+                    "sourcePosition": "right"
+                },
+                {
+                    "id": "3",
+                    "positionXMultiplier": 1.9,
+                    "positionY": 0,
+                    "title": "Treatment",
+                    "description": "Treatment",
+                    "icon": "graph",
+                    "targetPosition": "left",
+                    "sourcePosition": "right"
+                },
+                {
+                    "id": "4",
+                    "positionXMultiplier": 0,
+                    "positionY": 90,
+                    "title": "Structured Data",
+                    "description": "Source 2 csv file",
+                    "icon": "file",
+                    "sourcePosition": "right",
+                    "type": "input"
+                },
+                {
+                    "id": "5",
+                    "positionY": 90,
+                    "title": "Quality",
+                    "description": "Quality Index",
+                    "icon": "quality",
+                    "targetPosition": "left",
+                    "sourcePosition": "right"
+                },
+                {
+                    "id": "6",
+                    "positionXMultiplier": 1.9,
+                    "positionY": 90,
+                    "title": "Treatment",
+                    "description": "Treatment",
+                    "icon": "graph",
+                    "targetPosition": "left",
+                    "sourcePosition": "right"
+                },
+                {
+                    "id": "7",
+                    "positionXMultiplier": 0,
+                    "positionY": 180,
+                    "title": "Structured Data",
+                    "description": "Source 3 Database",
+                    "icon": "database",
+                    "sourcePosition": "right",
+                    "type": "input"
+                },
+                {
+                    "id": "8",
+                    "positionY": 180,
+                    "title": "Quality",
+                    "description": "Quality Check",
+                    "icon": "quality",
+                    "targetPosition": "left",
+                    "sourcePosition": "right"
+                },
+                {
+                    "id": "9",
+                    "positionXMultiplier": 1.9,
+                    "positionY": 180,
+                    "title": "Treatment",
+                    "description": "Treatment",
+                    "icon": "graph",
+                    "targetPosition": "left",
+                    "sourcePosition": "right"
+                },
+                {
+                    "id": "10",
+                    "positionXMultiplier": 4,
+                    "positionY": 70,
+                    "title": "Solution",
+                    "description": "Application Dashboard",
+                    "icon": "dashboard",
+                    "targetPosition": "left",
+                    "sourcePosition": "right"
+                },
+                {
+                    "id": "11",
+                    "positionXMultiplier": 2.8,
+                    "positionY": 180,
+                    "title": "Aggregation",
+                    "description": "Merging & Aggregation",
+                    "icon": "aggregate",
+                    "targetPosition": "left",
+                    "sourcePosition": "right"
+                }
+            ],
+            "edges": [
+                {
+                    "id": "el-1",
+                    "source": "1",
+                    "target": "2",
+                    "type": "customedge"
+                },
+                {
+                    "id": "el-2",
+                    "source": "2",
+                    "target": "3",
+                    "type": "customedge"
+                },
+                {
+                    "id": "el-3",
+                    "source": "4",
+                    "target": "5",
+                    "type": "customedge"
+                },
+                {
+                    "id": "el-4",
+                    "source": "5",
+                    "target": "6",
+                    "type": "customedge"
+                },
+                {
+                    "id": "el-5",
+                    "source": "7",
+                    "target": "8",
+                    "type": "customedge"
+                },
+                {
+                    "id": "el-6",
+                    "source": "8",
+                    "target": "9",
+                    "type": "customedge"
+                },
+                {
+                    "id": "el-7",
+                    "source": "3",
+                    "target": "10",
+                    "type": "customstep"
+                },
+                {
+                    "id": "el-8",
+                    "source": "9",
+                    "target": "11",
+                    "type": "customstep"
+                },
+                {
+                    "id": "el-9",
+                    "source": "6",
+                    "target": "11",
+                    "type": "customstep"
+                },
+                {
+                    "id": "el-10",
+                    "source": "10",
+                    "target": "11",
+                    "type": "customstep",
+                    "sourcePosition": "right",
+                    "targetPosition": "left",
+                    "style": {
+                        "width": "100%"
+                    }
+                }
+            ]
+        }
+    }
+}

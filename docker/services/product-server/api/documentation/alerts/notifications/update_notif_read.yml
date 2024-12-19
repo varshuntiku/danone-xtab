@@ -1,0 +1,36 @@
+summary: "Update notification read status"
+tags:
+  - product/Alerts
+description: "Updates the notification read status for notification"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "notificationId"
+  required: "true"
+  description: "The notification ID for which the status has to be updated"
+  schema:
+    type: "integer"
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [is_read]
+        properties:
+          is_read:
+            type: "boolean"
+        example: {"is_read": true}
+
+responses:
+  200:
+    description: "Return successful update message"
+    schema:
+      type: "object"
+    example: {"message": "Updated Successfully"}
+  500:
+    description: "Error while updating notification"

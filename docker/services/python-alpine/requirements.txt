@@ -1,0 +1,10 @@
+azure-storage-blob==1.4.0
+flask==1.0.2
+flask-migrate==2.4.0
+flask-script==2.0.6
+Flask-SQLAlchemy==2.3.2
+flask_cors==3.0.7
+psycopg2==2.7.6.1
+psycopg2-binary==2.7.6.1
+pyjwt==2.4.0
+requests==2.21.0

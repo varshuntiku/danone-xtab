@@ -1,0 +1,58 @@
+@import '../../../../../styles/util.scss';
+
+.MinervaWC .RecommendationList-container {
+    display: flex;
+    flex-direction: column;
+
+    div .MinervaRecommendationList-title {
+        margin-bottom: spacing(10);
+    }
+
+    .RecommendationList-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: spacing(10);
+
+        & .RecommendationList-item {
+            height: relativeSpacing(14, 35);
+            display: inline-flex;
+            font-size: spacing(14);
+            align-items: center;
+            white-space: nowrap;
+            border-radius: relativeSpacing(14, 20);
+            vertical-align: middle;
+            justify-content: center;
+            cursor: pointer;
+            padding: relativeSpacing(14, 8);
+            background: var(--minerva-bg-gradient2);
+            overflow: hidden;
+            border: 1px solid var(--minerva-bg-main);
+            box-shadow: var(--minerva-box-shadow-4b);
+            transition-duration: 300ms;
+
+            &.RecommendationList-disabledItem {
+                pointer-events: none;
+                box-shadow: none;
+                filter: grayscale(0.8);
+            }
+
+            & .RecommendationList-content {
+                color: var(--minerva-text-color);
+                overflow: hidden;
+                white-space: nowrap;
+                padding-left: relativeSpacing(14, 10);
+                padding-right: relativeSpacing(14, 10);
+                text-overflow: ellipsis;
+            }
+
+            &:hover {
+                box-shadow: var(--minerva-box-shadow-4);
+            }
+
+            &:active {
+                opacity: 0.7;
+            }
+        }
+    }
+}

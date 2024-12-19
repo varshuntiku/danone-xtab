@@ -1,0 +1,69 @@
+{
+  "_from": "monaco-editor@*",
+  "_id": "monaco-editor@0.30.0",
+  "_inBundle": false,
+  "_integrity": "sha512-/k++/ofRmwnwWTpOWYOMGVcqBrqrlt3MP0Mt/cRTQojW7A9fnekcvPQ2iIFA0YSZdPWPN9yYXrYq0xqiUuxT/A==",
+  "_location": "/monaco-editor",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "monaco-editor@*",
+    "name": "monaco-editor",
+    "escapedName": "monaco-editor",
+    "rawSpec": "*",
+    "saveSpec": null,
+    "fetchSpec": "*"
+  },
+  "_requiredBy": [
+    "/react-monaco-editor"
+  ],
+  "_resolved": "https://registry.npmjs.org/monaco-editor/-/monaco-editor-0.30.0.tgz",
+  "_shasum": "1c7f9ba1d18c21868ce3a5413ef56351f9df7933",
+  "_spec": "monaco-editor@*",
+  "_where": "/Users/shridharguntury/Documents/workspace/repos/codex/docker/services/product-client/node_modules/react-monaco-editor",
+  "author": {
+    "name": "Microsoft Corporation"
+  },
+  "bugs": {
+    "url": "https://github.com/microsoft/monaco-editor/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "A browser based code editor",
+  "devDependencies": {
+    "clean-css": "^5.1.1",
+    "event-stream": "4.0.1",
+    "gulp": "^4.0.2",
+    "monaco-css": "3.9.0",
+    "monaco-editor-core": "0.30.0",
+    "monaco-html": "3.9.0",
+    "monaco-json": "3.9.0",
+    "monaco-languages": "2.11.1",
+    "monaco-typescript": "4.10.0",
+    "rimraf": "^3.0.2",
+    "typedoc": "^0.20.29",
+    "typescript": "4.2.3",
+    "uncss": "git+https://github.com/uncss/uncss.git#d0adf4bb89ef4f82006f8dd5b40d22a94269e50a",
+    "vinyl": "^2.2.1",
+    "yaserver": "^0.3.0"
+  },
+  "homepage": "https://github.com/microsoft/monaco-editor#readme",
+  "license": "MIT",
+  "module": "./esm/vs/editor/editor.main.js",
+  "name": "monaco-editor",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/microsoft/monaco-editor.git"
+  },
+  "scripts": {
+    "build-website": "gulp build-website && npm run typedoc",
+    "release": "gulp release",
+    "simpleserver": "gulp simpleserver",
+    "typedoc": "cd typedoc && \"../node_modules/.bin/typedoc\" --options ./typedoc.json",
+    "website": "gulp build-website && npm run typedoc && gulp prepare-website-branch"
+  },
+  "typings": "./esm/vs/editor/editor.api.d.ts",
+  "version": "0.30.0"
+}

@@ -1,0 +1,52 @@
+summary: "Returns the simulator ouputs."
+tags:
+  - product/App
+description: "Returns the simulator ouputs for the given inputs, selected filters and code"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [inputs, selected_filters, code]
+        properties:
+          inputs:
+            type: "array"
+            items:
+              type: "string"
+          selected_filters:
+            type: "array"
+            items:
+              type: "string"
+          code:
+            type: "string"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "object"
+          example :
+            data: "python code"
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'Error executing code'
+          }

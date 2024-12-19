@@ -1,0 +1,104 @@
+name: CODX-K8s-$(Date:ddMMyyyy)-$(Rev:r)
+trigger:
+  batch: true
+  branches:
+    include:
+    - genai/inference-k8s-deployment
+    - genai/base
+
+variables:
+- group: frontend-environment-variables
+- name: REACT_APP_JUPYTER_DEMO_TOKEN
+  value: $[variables.ReactAppJupyterDemoToken]
+- name: REACT_APP_MATOMO_TOKEN
+  value: $[variables.ReactAppMatomoToken]
+- name: REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING
+  value: $[variables.ReactAppApplicationInsightsConnectionString]
+- name: REACT_APP_GOOGLE_MAPS_KEY
+  value: $[variables.ReactAppGoogleMapsKey]
+
+- group: release-version
+- name: CODEX_PRODUCT_APP_VERSION
+  value: $[variables.CodexProductAppVersion]
+
+stages:
+- stage: Build_Push_Image
+  jobs:
+  - job: check_folder
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - script: |
+        token=$(curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
+        https://login.microsoftonline.com/$(TenantId)/oauth2/token \
+        -d 'client_id=$(ClientId)' \
+        -d 'grant_type=client_credentials' \
+        -d 'resource=https://management.core.windows.net/' \
+        -d 'client_secret=$(ClientSecret)')
+        echo $token
+        access_token=$(echo $token | jq '.access_token')
+        echo "##vso[task.setvariable variable=access_token]$access_token"
+    - script: |
+        curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/genai-server") -eq 0 ]; then
+          echo "No code changes in GenAI Server"
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+          echo "Code Changes in GenAI Server"
+        fi
+      name: checkFolderGenAIServer
+    - script: |
+        curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/genai-utils/inference") -eq 0 ]; then
+          echo "No code changes in Inference Service"
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+          echo "Code Changes in Inference Service"
+        fi
+      name: checkFolderInference
+    - script: |
+        curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/genai-utils/model-training") -eq 0 ]; then
+          echo "No code changes in Finetuning Service"
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+          echo "Code Changes in Finetuning Service"
+        fi
+      name: checkFolderFinetuning
+
+  - job: GenAI_Image_BuildPush_to_ACR
+    variables:
+      folderVar: $[dependencies.check_folder.outputs['checkFolderGenAIServer.RunJob']]
+    dependsOn: check_folder
+    condition: eq(variables.folderVar, true)
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'Azure-CR'
+        repository: 'genai-server'
+        command: 'buildAndPush'
+        Dockerfile: 'docker/services/genai-server/Dockerfile'
+        tags: latest
+      displayName: 'Build & Push Image to ACR'
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/genai/inference-k8s-deployment'))
+
+  - job: Inference_Image_BuildPush_to_ACR
+    variables:
+      folderVar: $[dependencies.check_folder.outputs['checkFolderInference.RunJob']]
+    dependsOn: check_folder
+    condition: eq(variables.folderVar, true)
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'Azure-CR'
+        repository: 'aks-genai-inference'
+        command: 'buildAndPush'
+        Dockerfile: 'docker/services/genai-utils/inference/Dockerfile'
+        arguments: '--no-cache'
+        tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+      displayName: 'Build & Push Image to ACR'
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/genai'))
+

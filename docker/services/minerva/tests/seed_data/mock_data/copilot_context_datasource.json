@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "context_id": 1,
+        "name": "Context doc.csv",
+        "config": {}
+    },
+    {
+        "id": 2,
+        "context_id": 1,
+        "name": "Context doc2.csv",
+        "config": {}
+    }
+]

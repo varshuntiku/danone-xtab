@@ -1,0 +1,83 @@
+/* Modal Styles */
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    position: absolute;
+    right: 10px;
+    background: #EAEDF3;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    width: 200px;
+    border: 1px solid #1373E5;
+  }
+
+  /* Header Styles */
+  .modal-content h2 {
+    font-size: 15px;
+    padding-left: 15px;
+    margin-bottom: 10px;
+    color: #1373E5;
+  }
+
+  /* List Styles */
+  .modal-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  /* List Item Styles */
+  .modal-content li {
+    padding: 10px;
+    cursor: pointer;
+    border-left: 5px solid transparent;
+    transition: background-color 0.3s ease;
+    font-size: 1.4rem;
+  }
+
+  /* Selected Item Styles */
+  .modal-content li.selected {
+    border-left: 5px solid #1373E5;
+    background-color: #CEDDFB; /* Light green, you can change this color */
+  }
+
+  /* Close Button Styles */
+  .modal-content button {
+    padding: 10px 15px;
+    background-color: #007bff; /* Blue, you can change this color */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+  }
+
+  /* Close Button Hover Styles */
+  .modal-content button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
+  .modal-close {
+    position: absolute;
+    padding: 5px;
+    background-color: #0056b3; /* Blue, you can change this color */
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 20px;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    right: 10px;
+  }

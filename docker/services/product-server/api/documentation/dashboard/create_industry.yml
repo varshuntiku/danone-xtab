@@ -1,0 +1,68 @@
+summary: "Create new industry"
+tags:
+  - product/Dashboard
+description: "This creates a new industry"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  content:
+    application/json:
+      schema:
+        required: [industry_name, logo_name, horizon, order]
+        properties:
+          industry_name:
+            type: string
+          logo_name:
+            type: string
+          description:
+            type: string
+          horizon:
+            type: string
+          order:
+            type: integer
+          level:
+            type: string
+            default: null
+          parent_industry_id:
+            type: integer
+          color:
+            type: string
+            default: null
+          id:
+            type: integer
+
+      example: {
+        "id": "",
+        "industry_name": "Industry name",
+        "parent_industry_id": "",
+        "logo_name": "Telecom",
+        "description": "",
+        "order": 1,
+        "horizon": "NA",
+        "level": null,
+        "color": null
+      }
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+        "message": "Industry Created Successfully",
+
+      }
+
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {"error": "Error while creating Industry"}
+
+
+

@@ -1,0 +1,108 @@
+summary: "Creates and adds an application ."
+tags:
+  - product/Admin
+description: "Creates and adds an application "
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "access_key"
+  required: "true"
+  schema:
+    type: "string"
+
+requestBody:
+  required: "true"
+  content:
+    application/json:
+      schema:
+        type: "array"
+        items:
+          type: "object"
+          properties:
+            screen_index:
+              type: "string"
+            screen_name:
+              type: "string"
+            screen_description:
+              type: "string"
+            screen_filters_open:
+              type: "string"
+            screen_auto_refresh:
+              type: "string"
+            screen_image:
+              type: "string"
+            level:
+              type: "string"
+            graph_type:
+              type: "string"
+            horizontal:
+              type: "string"
+            hidden:
+              type: "string"
+            settings:
+              type: "array"
+              items:
+                type: "object"
+                properties:
+                  item_index:
+                    type: "integer"
+                  item:
+                    type: "integer"
+                  item_is_label:
+                    type: "boolean"
+                  config:
+                    type: "object"
+                  values:
+                    type: "array"
+                    items:
+                      type: "object"
+                      properties:
+                        value:
+                          type: object
+                          additionalProperties:
+                            oneOf:
+                              - type: string
+                              - type: array
+                        simulated_value:
+                          type: object
+                          additionalProperties:
+                            oneOf:
+                              - type: string
+                              - type: array
+                        filters:
+                          type: "array"
+                          items:
+                            type: "object"
+                            properties:
+                              key:
+                                type: "string"
+                              value:
+                                type: "string"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "array"
+          example :
+            - app_id: 1234
+
+  500:
+    description: "Error adding application"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'Error adding application'
+          }

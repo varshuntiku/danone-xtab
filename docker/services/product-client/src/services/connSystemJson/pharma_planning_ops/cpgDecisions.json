@@ -1,0 +1,431 @@
+{
+    "decisions": [
+        {
+            "id": "fn_node_1",
+            "nodes": [
+                {
+                    "id": "1",
+                    "problem_definition_id": 1,
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "text": "Long Term (10 Years)",
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed"
+                },
+                {
+                    "id": "2",
+                    "problem_definition_id": 1,
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "text": "Medium Term (5 Years)",
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed"
+                },
+                {
+                    "id": "3",
+                    "problem_definition_id": 1,
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "text": "Short Term (3 Years)",
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed"
+                },
+                {
+                    "id": "4",
+                    "problem_definition_id": 1,
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "text": "Semi Annual Forecast Updates",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "current"
+                },
+                {
+                    "id": "5",
+                    "problem_definition_id": 1,
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "text": "Market Planning Process",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "pending"
+                },
+                {
+                    "id": "6",
+                    "problem_definition_id": 1,
+                    "linkedProblemDefinitionId": "wf_node_4",
+                    "text": "Corporate Review",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "pending"
+                }
+            ],
+            "edges": [
+                {
+                    "id": "e1-2",
+                    "source": "1",
+                    "target": "2",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "2"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e5-6",
+                    "source": "5",
+                    "target": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "6"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fn_node_1",
+            "nodes": [
+                {
+                    "id": "7",
+                    "problem_definition_id": 2,
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "text": "Impact Measurement",
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed"
+                },
+                {
+                    "id": "8",
+                    "problem_definition_id": 2,
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "text": "Simulations",
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed"
+                },
+                {
+                    "id": "9",
+                    "problem_definition_id": 2,
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "text": "APS Business Reviews",
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed"
+                },
+                {
+                    "id": "10",
+                    "problem_definition_id": 2,
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "text": "Brand / Theraputic Area Review",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "current"
+                },
+                {
+                    "id": "11",
+                    "problem_definition_id": 2,
+                    "linkedProblemDefinitionId": "wf_node_5",
+                    "text": "Corporate Review",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "pending"
+                }
+            ],
+            "edges": [
+                {
+                    "id": "e1-2",
+                    "source": "1",
+                    "target": "2",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "2"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e2-3",
+                    "source": "2",
+                    "target": "3",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "3"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e3-4",
+                    "source": "3",
+                    "target": "4",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "4"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e4-5",
+                    "source": "4",
+                    "target": "5",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "5"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e5-6",
+                    "source": "5",
+                    "target": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "6"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "fn_node_3",
+            "nodes": [
+                {
+                    "id": "12",
+                    "problem_definition_id": 1,
+                    "linkedProblemDefinitionId": "wf_node_9",
+                    "text": "Understand capacity and opportunities",
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        5,7
+                    ]
+                },
+                {
+                    "id": "14",
+                    "problem_definition_id": 2,
+                    "linkedProblemDefinitionId": "wf_node_9",
+                    "text": "Patient Risk Scoring",
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2,5,8
+                    ]
+                },
+                {
+                    "id": "15",
+                    "problem_definition_id": 2,
+                    "linkedProblemDefinitionId": "wf_node_9",
+                    "text": "Impact Assesment",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "current",
+                    "stakeholders": [
+                        2,5
+                    ]
+                },
+                {
+                    "id": "13",
+                    "problem_definition_id": 2,
+                    "linkedProblemDefinitionId": "wf_node_9",
+                    "text": "Patient Segmentation",
+                    "color": "#FF8F5E",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "type": "custom",
+                    "status": "completed",
+                    "stakeholders": [
+                        2,7
+                    ]
+                },
+                {
+                    "id": "16",
+                    "problem_definition_id": 2,
+                    "linkedProblemDefinitionId": "wf_node_9",
+                    "text": "Next Best Action review and measure",
+                    "bgColor": "rgba(255, 165, 126, 0.08)",
+                    "color": "#FF8F5E",
+                    "type": "custom",
+                    "status": "pending",
+                    "stakeholders": [
+                        2,5,8
+                    ]
+                }
+            ],
+            "edges": [
+                {
+                    "id": "e12-13",
+                    "source": "12",
+                    "target": "13",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "12"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e14-16",
+                    "source": "14",
+                    "target": "16",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "d",
+                    "nodeIds": [
+                        "14"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ],
+                    "status": "completed"
+                },
+                {
+                    "id": "e15-16",
+                    "source": "15",
+                    "target": "16",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "c",
+                    "targetHandle": "ab",
+                    "nodeIds": [
+                        "16"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e13-16",
+                    "source": "13",
+                    "target": "16",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "13"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                },
+                {
+                    "id": "e5-6",
+                    "source": "5",
+                    "target": "6",
+                    "color": "#FF8F5E",
+                    "show": true,
+                    "sourceHandle": "b",
+                    "targetHandle": "g",
+                    "nodeIds": [
+                        "6"
+                    ],
+                    "screens": [
+                        "decisions"
+                    ]
+                }
+            ]
+        }
+    ]
+}

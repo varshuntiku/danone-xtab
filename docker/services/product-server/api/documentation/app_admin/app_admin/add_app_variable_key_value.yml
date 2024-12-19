@@ -1,0 +1,45 @@
+summary: "Create app variable"
+tags:
+  - product/AppAdmin
+description: "Creates and adds a new app variable to app variables json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "key"
+  required: "true"
+  schema:
+    type: "string"
+
+requestBody:
+  description: Details to create the app variable
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [value]
+        properties:
+          value:
+            type: "string"
+        example: {"value": "testing"}
+
+responses:
+  200:
+    description: "Created successfully"
+    schema:
+      type: "object"
+      example: {'status': 'success'}
+  500:
+    description: "Error while creating"
+    schema :
+      type: "object"
+      example:  {'error': 'Error while adding application variable'}

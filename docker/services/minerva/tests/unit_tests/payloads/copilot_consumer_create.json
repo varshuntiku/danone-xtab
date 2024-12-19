@@ -1,0 +1,17 @@
+{
+    "name": "consumer 1",
+    "desc": "consumer created from unittest",
+    "allowed_origins": ["http://localhost:8003"],
+    "features": {},
+    "auth_agents": [
+        {
+            "type": "jwt",
+            "config": {
+                "public_key": "",
+                "jwt_algorithm": "",
+                "email_property_key": "email"
+            }
+        }
+    ],
+    "copilot_apps": [1]
+}

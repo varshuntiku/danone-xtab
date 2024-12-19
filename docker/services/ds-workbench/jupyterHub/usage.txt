@@ -1,0 +1,4 @@
+1. Create Cluster
+2. Installing Cert Manager and Ingress(SSL), refer these links https://mathco.atlassian.net/wiki/spaces/Innovation/pages/2395176981/Setting+Up+Public+IP+and+DNS+for+Azure+Cluster, https://mathco.atlassian.net/wiki/spaces/Innovation/pages/2394947587/Setting+Up+SSL+for+JupyterHub
+3. TODO -
+    Few Values in /templates/workbench/ingress/ingress.yaml should come from values.yaml

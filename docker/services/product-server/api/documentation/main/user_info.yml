@@ -1,0 +1,30 @@
+summary: "Fetch user information."
+tags:
+  - product/Main
+description: "Returns list of user details and feature access for each user"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+        "user_id": 123,
+        "username": "soumava.paul@themathcompany.com",
+        "is_restricted_user": false,
+        "first_name": "Soumava",
+        "last_name": "Paul",
+        "last_login": "26 April, 2022 08:36",
+        "access_key": "ACCeSS12345",
+        "feature_access": {
+            "rbac": true,
+            "admin": true,
+
+        }
+      }
+  500:
+    description: "Error in query"

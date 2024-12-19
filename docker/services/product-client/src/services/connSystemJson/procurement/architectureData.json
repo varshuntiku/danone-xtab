@@ -1,0 +1,48 @@
+{
+  "data": [
+    {
+        "name": "Data Warehouse 1",
+        "dataMart": [
+            {
+                "name": "Product Master",
+                "app": "Demand forecasting",
+                "isActive": true
+            },
+            {
+                "name": "Supplier Master",
+                "app": "Demand forecasting",
+                "isActive": true
+            },
+            {
+                "name": "3rd Party Sources",
+                "app": "Price Simulator"
+            },
+            {
+                "name": "Transactions",
+                "app": "Price Simulator"
+            }
+        ],
+        "isActive": true
+    },
+    {
+        "name": "Data Warehouse 2",
+        "dataMart": [
+            {
+                "name": "Invoices",
+                "app": "Prize Simulator",
+                "isActive": true
+            },
+            {
+                "name": "Payments",
+                "app": "Prize Simulator"
+            },
+            {
+                "name": "Marketing",
+                "app": "Prize Simulator"
+            }
+        ]
+    }
+],
+"config": {
+}
+}

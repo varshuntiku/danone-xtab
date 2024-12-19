@@ -1,0 +1,13 @@
+{
+    "name": "string",
+    "source": "azure-openai",
+    "model_type": "text-to-text",
+    "description": "string",
+    "problem_type": "string",
+    "is_active": true,
+    "model_path": "string",
+    "model_path_type": "string",
+    "api_key": "string",
+    "model_params": {},
+    "is_active_config": true
+}

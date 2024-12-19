@@ -1,0 +1,29 @@
+summary: "Get Screens data"
+tags:
+  - product/AppAdmin
+description: "Get screens for a given app"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Returns list of screens for the given app id"
+    schema:
+      type: "object"
+      example: {'status': 'success', 'data': 'screen list'}
+  500:
+    description: "Error while getting the screens data"
+    schema :
+      type: "object"
+      example:  {
+        'error': 'Error in getting application screens'
+      }

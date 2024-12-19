@@ -1,0 +1,323 @@
+/* CommentsDrawer.module.css */
+.body {
+    position: fixed;
+    right: -50rem;
+    bottom: 0;
+    z-index: 99999;
+    width: 50rem;
+    height: 95%;
+    background: #ffffff;
+    border: 1px solid #d3d3d3;
+    padding: 1.5rem;
+    padding-top: 0;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.bodyVisible {
+    right: 0;
+}
+
+.commentTitle {
+    font-size: 2.2rem;
+    font-family: Arial, sans-serif;
+    color: #000000;
+    font-weight: 540;
+}
+
+.titlePane {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #d3d3d3;
+    min-height: 5rem;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+
+.closeButton {
+    margin: 0 !important;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.closeButton svg {
+    fill: #ffffff;
+    width: 1.6rem;
+    height: 1.6rem;
+}
+
+.filterButton {
+    margin: 0 !important;
+    padding: 0.8rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.notificationPreview {
+  position: absolute;
+  bottom: 0; 
+  right: 0; 
+  border: 1px solid #BF99BD; 
+  background-color: white;
+  max-height: 50vh; 
+  max-width: 30rem; 
+  width: 100%; 
+  overflow-y: auto; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.filterButton svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+.badge {
+    background-color: #d3d3d3;
+    color: #ffffff;
+    top: 0px;
+    right: 0px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    height: 1.8rem;
+    min-height: 1.8rem;
+    width: 1.8rem;
+    min-width: 1.8rem;
+}
+
+.addCommentContainer {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: #000000;
+    letter-spacing: 0.5px;
+}
+
+.badge {
+    color: #ffffff;
+    top: 0px;
+    right: 0px;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    height: 1.8rem;
+    min-height: 1.8rem;
+    width: 1.8rem;
+    min-width: 1.8rem;
+  }
+  
+  .addCommentContainer {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: #000000;
+    letter-spacing: 0.5px;
+  }
+  
+  .dropdownMenu {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    border: 1px solid #BF99BD;
+    border-radius: 4px;
+  }
+  
+  .menuItem {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    color: #220047;
+    padding: 1rem;
+    height: 4.5rem;
+    min-height: 4.5rem;
+    cursor: pointer;
+    padding: 0.8px;
+  }
+  
+  .menuItem:hover {
+    background: #f5f5f5;
+  }
+  
+  .progress {
+      position: absolute;
+         top: 50%;
+          bottom: 50%;
+          left: 40%;
+      
+  }
+
+  .menuContainer {
+    position: relative;
+  }
+  
+  .menuButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menu {
+    position: absolute;
+    /* top: 100%; */
+    /* left: 0; */
+    background: white;
+    color: rgba(0, 0, 0, 0.87);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border: 1px solid #ccc;
+    /* border-radius: 4px; */
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+    z-index: 1000;
+    width: 15.5rem;
+    overflow-y: hidden;
+    height: 23rem;
+    left: 220px;
+    top: -1rem;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .menuTitle {
+    flex: 1;
+    font-weight: bold;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .menuItems {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+
+  .buttonDivider {
+    border-top: 1px solid #BF99BD;
+  }
+  
+  .resetButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2rem;
+    width: 70%;
+    font-size: 1.5rem;
+    height: 3rem;
+    text-transform: none;
+    background: none;
+    /* font-size: 1.3rem; */
+    color: #220047;
+    border: none;
+    cursor: pointer;
+  }
+  .resetButton svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+
+  .checkboxWrapper {
+    display: inline-block;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+  .checkbox {
+    margin-right: 8px;
+    cursor: pointer;
+  }
+  .checkbox + label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .checkbox:checked + label::before {
+    content: '✔';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #220047;
+    border-radius: 3px;
+    background-color: #220047;
+    color: #fff;
+    text-align: center;
+    line-height: 16px;
+    margin-right: 8px;
+  }
+  .badge {
+    background-color: #220047;
+    color: white;
+    border-radius: 50%;
+    padding: 0.3rem 0.6rem;
+    font-size: 1.2rem;
+    margin-left: 0.5rem;
+  }
+  .checkbox {
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    cursor: pointer;
+    border: 1px solid #220047;
+    /* border-radius: 3px; */
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .checkbox:checked {
+    background-color: #007bff; /* Blue fill when checked */
+    border-color: #007bff; /* Blue border when checked */
+  }
+  
+  .checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid white; /* White tick */
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .Menuprogress{
+    width: 18px;
+height: 18px;
+display: flex;
+margin-left: -2em;
+justify-content: center;
+align-items: center;
+}
+.login  {
+  color: #220047;
+    border: 1px solid #220047;
+    box-shadow: none;
+    background-color: transparent;
+    border-radius: 0.2em;
+  cursor: pointer;
+}
+.login  :hover{
+  border: 1px solid #220047;
+border-radius: 0.2em;
+color: #FFA497;
+opacity: 0.8;
+box-shadow: 0.1rem 0.1rem 0.4rem 0rem #220047;
+background-color: #220047;
+cursor: pointer;
+}

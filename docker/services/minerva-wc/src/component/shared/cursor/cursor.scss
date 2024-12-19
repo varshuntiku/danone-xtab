@@ -1,0 +1,19 @@
+@import '../../../styles/util.scss';
+
+.MinervaWC .MinervaCursor {
+    width: spacing(2);
+    height: spacing(20);
+    background-color: var(--minerva-text-color);
+    animation: blink 1s step-end infinite;
+    display: inline-block;
+    vertical-align: middle;
+
+    @keyframes blink {
+        0%, 100% {
+            background-color: var(--minerva-text-color);
+        }
+        50% {
+            background-color: transparent;
+        }
+    }
+}

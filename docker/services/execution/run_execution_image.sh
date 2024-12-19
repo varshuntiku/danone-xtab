@@ -1,0 +1,1 @@
+docker run --publish 8002:8000 codex-exec-env

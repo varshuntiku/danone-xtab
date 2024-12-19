@@ -1,0 +1,34 @@
+summary: "Get widget details"
+tags:
+  - platform/Widgets
+description: "Generates the widget details for the given widget id."
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "widget_id"
+  description: "Widget  ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+             "id": 123,
+            "name": "",
+            "group_id": 124,
+        }
+  404:
+    description: "Item not found"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Item not found"
+      }

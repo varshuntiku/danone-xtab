@@ -1,0 +1,8 @@
+@import "../../../../../../styles/util.scss";
+
+.MinervaWC .MinervaButtonOptions {
+    display: flex;
+    gap: spacing(10);
+    flex-wrap: wrap;
+    align-items: center;
+}

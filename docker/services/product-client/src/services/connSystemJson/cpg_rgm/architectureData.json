@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+        "name": "Data Warehouse 1",
+        "dataMart": [
+            {
+                "name": "Pricing",
+                "app": "Prize Simulator",
+                "isActive": true
+            },
+            {
+                "name": "Promo",
+                "app": "Prize Simulator"
+            },
+            {
+                "name": "Finance",
+                "app": "Prize Simulator"
+            },
+            {
+                "name": "Marketing",
+                "app": "Prize Simulator"
+            }
+        ],
+        "isActive": true
+    },
+    {
+        "name": "Data Warehouse 2",
+        "dataMart": [
+            {
+                "name": "Pricing",
+                "app": "Prize Simulator",
+                "isActive": true
+            },
+            {
+                "name": "Promo",
+                "app": "Prize Simulator"
+            },
+            {
+                "name": "Finance",
+                "app": "Prize Simulator"
+            },
+            {
+                "name": "Marketing",
+                "app": "Prize Simulator"
+            }
+        ]
+    }
+],
+"config": {
+}
+}

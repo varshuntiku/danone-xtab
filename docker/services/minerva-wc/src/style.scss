@@ -1,0 +1,19 @@
+@import './styles/util.scss';
+@import './styles/button.scss';
+@import './styles/avator.scss';
+@import './styles/typo.scss';
+@import './styles/icon.scss';
+@import './styles/border.scss';
+@import './styles/animation.scss';
+
+minerva-wc>[slot="minervaIcon"] {
+    display: none;
+}
+
+minerva-wc>[slot="emptyStateIcon"] {
+    display: none;
+}
+
+minerva-wc>[slot="emptyStateComponent"] {
+    display: none;
+}

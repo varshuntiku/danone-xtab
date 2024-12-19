@@ -1,0 +1,56 @@
+@import "../../../styles/util.scss";
+
+.MinervaWC .MinervaTab {
+
+    display: flex;
+    background: none;
+    border: none;
+    outline: none;
+    align-items: center;
+    padding: spacing(10, 20);
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--minerva-text-color-70);
+    justify-content: center;
+
+    &.MinervaHorizontalTab {
+        flex-direction: column;
+        border-bottom: spacing(4) solid transparent;
+        width: fit-content;
+
+        &.MinervaActiveTab {
+            border-bottom: spacing(4) solid var(--minerva-text-color);
+        }
+
+        span {
+            margin-bottom: spacing(8);
+        }
+    }
+
+    &.MinervaVerticalTab {
+        flex-direction: row;
+        border-right: spacing(4) solid transparent;
+        width: 100%;
+
+        &.MinervaActiveTab {
+            border-right: spacing(4) solid var(--minerva-text-color);
+        }
+
+        span {
+            margin-right: spacing(8);
+        }
+    }
+
+    &.MinervaWrappedTab {
+        white-space: normal;
+    }
+
+    &.MinervaActiveTab {
+        color: var(--minerva-text-color)
+    }
+
+    &:disabled {
+        cursor: default;
+    }
+
+}

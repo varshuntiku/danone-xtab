@@ -1,0 +1,50 @@
+summary: "Save Screen Widget UIaC"
+tags:
+  - product/AppAdmin
+description: "Save the screen widget UIaC code"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "widget_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to save the widget code
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [code]
+        properties:
+          code:
+            type: "string"
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+      example: {'status': 'success'}
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'Error while saving widget config'}

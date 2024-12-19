@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "storage-helper"
+version = "0.1.0"
+description = "Storage Helper Service"
+authors = ["punith.k"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+azure-storage-blob = "^12.9.0"
+azure-storage-file-share = "^12.8.0"
+azure-identity = "^1.7.0"
+boto3 = "^1.18.67"
+
+
+[tool.poetry.extras]
+azure_blob = ["azure-storage-blob","azure-identity"]
+azure_file = ["azure-storage-file-share","azure-identity"]
+azure = ["azure-storage-blob","azure-storage-file-share","azure-identity"]
+aws = ["boto3"]
+full = ["azure-storage-blob","azure-storage-file-share","azure-identity","boto3"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

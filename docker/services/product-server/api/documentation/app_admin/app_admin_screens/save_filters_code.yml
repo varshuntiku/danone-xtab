@@ -1,0 +1,46 @@
+summary: "Save Filter Code"
+tags:
+  - product/AppAdmin
+description: "Save the filter code provided by the user"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to save the screen filter data code
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [code_string]
+        properties:
+          code_string:
+            type: "string"
+          screen_filters_open:
+            type: "boolean"
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+      example: {'status': 'success'}
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'Error while saving screen filters'}

@@ -1,0 +1,28 @@
+summary: "List of industry specific apps"
+tags:
+  - product/Dashboard
+description: "This returns list of all industry specific apps"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "industry"
+  description : "Industry Name"
+  required: "true"
+  schema:
+    type: "string"
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+
+  500:
+    description: "Error while fetching"
+    schema:
+      type: "object"
+      example: [
+        "Error":"Error while fetching"
+      ]

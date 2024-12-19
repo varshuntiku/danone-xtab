@@ -1,0 +1,1612 @@
+{
+    "data": [
+      {
+        "id": 1,
+        "label": "Price Analyser",
+        "sub_headers": [
+          "Anamoly Detection",
+          "Isolate promo vs. price impact"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            },
+            {
+              "insight": "Business Insights 3",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+3.5% YoY"
+            },
+            {
+              "insight": "Business Insights 4",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+1.5% YoY"
+            }
+          ]
+        },
+        "tag": "Pricing",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_4"
+        ],
+        "app_id": 1,
+        "app_name": "Marketing & Media Planner"
+      },
+      {
+        "id": 2,
+        "label": "Price Point Simulator",
+        "sub_headers": [
+          "Optimization algorithm",
+          "White space analysis"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Pricing",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_5"
+        ],
+        "app_id": 26,
+        "app_name": "Integrated Demand Forecasting"
+      },
+      {
+        "id": 3,
+        "label": "Price elasticity & volume shift analysis",
+        "sub_headers": [
+          "Price elasticity model",
+          "Local/ Regional constraints"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Pricing",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_4"
+        ],
+        "app_id": 1,
+        "app_name": "Marketing & Media Planner"
+      },
+      {
+        "id": 4,
+        "label": "Power BI solution ",
+        "sub_headers": [
+          "Anamoly Detection",
+          "Isolate promo vs. price impact"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Promo",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_4"
+        ],
+        "type": "powerbi",
+        "app_id": 26,
+        "app_name": "Integrated Demand Forecasting"
+      },
+      {
+        "id": 5,
+        "label": "Past Promo Analyser",
+        "sub_headers": [
+          "Impact by promo type & duration",
+          "Promo pressure"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Pricing",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_5"
+        ],
+        "app_id": 26,
+        "app_name": "Integrated Demand Forecasting"
+      },
+      {
+        "id": 6,
+        "label": "Promo Simulator & Optimizer",
+        "sub_headers": [
+          "Promotion Depth Optimizer"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Pricing",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_4"
+        ],
+        "app_id": 1,
+        "app_name": "Marketing & Media Planner"
+      },
+      {
+        "id": 7,
+        "label": "Consumer Promotion Analyser",
+        "sub_headers": [
+          "Segment Switching Consumer",
+          "Promotion Effectiveness"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Promo",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_5"
+        ],
+        "app_id": 26,
+        "app_name": "Integrated Demand Forecasting"
+      },
+      {
+        "id": 8,
+        "label": "Promo Optimizer",
+        "sub_headers": [
+          "Anamoly Detection",
+          "Isolate promo vs. price impact"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Promo",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_4"
+        ],
+        "app_id": 1,
+        "app_name": "Marketing & Media Planner"
+      },
+      {
+        "id": 9,
+        "label": "Demand Forecasting tool",
+        "sub_headers": [
+          "Anamoly Detection",
+          "Isolate promo vs. price impact"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Forecasting",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_4"
+        ],
+        "app_id": 26,
+        "app_name": "Integrated Demand Forecasting"
+      },
+      {
+        "id": 10,
+        "label": "Channel Dynamics Analyzer",
+        "sub_headers": [
+          "Anamoly Detection",
+          "Isolate promo vs. price impact"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Marketing",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_4"
+        ],
+        "type": "powerbi",
+        "app_id": 1,
+        "app_name": "Marketing & Media Planner"
+      },
+      {
+        "id": 11,
+        "label": "Sales Driver Analyzer",
+        "sub_headers": [
+          "Anamoly Detection",
+          "Isolate promo vs. price impact"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Sales",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_4"
+        ],
+        "type": "powerbi",
+        "app_id": 26,
+        "app_name": "Integrated Demand Forecasting"
+      },
+      {
+        "id": 12,
+        "label": "Execution Tracker",
+        "sub_headers": [
+          "Anamoly Detection",
+          "Isolate promo vs. price impact"
+        ],
+        "popup_info": {
+          "app_description": "Application description goes here",
+          "kpi_insights": [
+            {
+              "insight": "Business Insights 1",
+              "insight_sub_headers": [
+                "Anamoly Detection",
+                "Isolate promo vs. price impact"
+              ],
+              "insight_value": "+2.2% YoY"
+            },
+            {
+              "insight": "Business Insights 2",
+              "insight_sub_headers": [
+                "Anamoly Detection"
+              ],
+              "insight_value": "+0.5% YoY"
+            }
+          ]
+        },
+        "tag": "Sales",
+        "functions": [
+          "fn_node_2"
+        ],
+        "workflows": [
+          "wf_node_6"
+        ]
+      },
+      {
+          "id": 13,
+          "label": "Portfolio Planner",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_17"
+          ],
+          "app_id": 559
+        },
+        {
+          "id": 14,
+          "label": "Portfolio Optimization",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_17"
+          ],
+          "app_id": 394
+        },
+        {
+          "id": 15,
+          "label": "Assortment Planner",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_17"
+          ],
+          "app_id": 1380
+        },
+        {
+          "id": 16,
+          "label": "Planogram Guideline",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_17"
+          ]
+        },
+        {
+          "id": 17,
+          "label": "Integrated Planning and Merchandizing",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_17"
+          ]
+        },
+        {
+          "id": 18,
+          "label": "Distribution Planner",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_18"
+          ],
+          "app_id":487
+        },
+        {
+          "id": 19,
+          "label": "Assortment Optimizer",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_18"
+          ],
+          "app_id":472
+        },
+        {
+          "id": 20,
+          "label": "Planogram Compliance",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_18"
+          ],
+          "app_id":1580
+        },
+        {
+          "id": 21,
+          "label": "Promo Planning and Optimization",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_19"
+          ]
+        },
+        {
+          "id": 22,
+          "label": "Promo Analytics / Evaluation",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_19"
+          ],
+          "app_id":462
+        },
+        {
+          "id": 23,
+          "label": "Price Simulation / Price Analyzer",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_19"
+          ],
+          "app_id":1525
+        },
+        {
+          "id": 24,
+          "label": "Planogram Simulator + Trade Terms",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_6"
+          ],
+          "workflows": [
+            "wf_node_19"
+          ],
+          "app_id":1580
+        },
+        {
+          "id": 25,
+          "label": "Order Management System",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_1"
+          ],
+          "workflows": [
+            "wf_node_7"
+          ]
+        },
+        {
+          "id": 26,
+          "label": "Pricing and Incentive Management",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_1"
+          ],
+          "workflows": [
+            "wf_node_7"
+          ]
+        },
+        {
+          "id": 27,
+          "label": "Sales Driver Analysis / Sales Rep Performance Analytics",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_1"
+          ],
+          "workflows": [
+            "wf_node_8"
+          ],
+          "app_id":883
+        },
+        {
+          "id": 28,
+          "label": "Order Management System",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_1"
+          ],
+          "workflows": [
+            "wf_node_8"
+          ]
+        },
+        {
+          "id": 29,
+          "label": "Customer Segmentation and Targeting",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_1"
+          ],
+          "workflows": [
+            "wf_node_8"
+          ],
+          "app_id":1211
+        },
+        {
+          "id": 30,
+          "label": "Contract Management System",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_1"
+          ],
+          "workflows": [
+            "wf_node_9"
+          ],
+          "app_id":256
+        },
+        {
+          "id": 31,
+          "label": "BPPC Analysis",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_5"
+          ],
+          "workflows": [
+            "wf_node_13"
+          ],
+          "app_id":1483
+        },
+        {
+          "id": 32,
+          "label": "Shopper Insights Analytics",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_5"
+          ],
+          "workflows": [
+            "wf_node_13"
+          ]
+        },
+        {
+          "id": 33,
+          "label": "Range Review & SKU Optimization",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_5"
+          ],
+          "workflows": [
+            "wf_node_14"
+          ],
+          "app_id":466
+        },
+        {
+          "id": 34,
+          "label": "Planogram Compliance",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_5"
+          ],
+          "workflows": [
+            "wf_node_14"
+          ],
+          "app_id":1580
+        },
+        {
+          "id": 35,
+          "label": "Assortment Optimization",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_5"
+          ],
+          "workflows": [
+            "wf_node_15"
+          ],
+          "app_id":1580
+        },
+        {
+          "id": 26,
+          "label": "Post Promo/Assortment Effectiveness",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_5"
+          ],
+          "workflows": [
+            "wf_node_16"
+          ],
+          "app_id":1276
+        },
+        {
+          "id": 27,
+          "label": "Previous Promo Effectiveness Report",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_3"
+          ],
+          "workflows": [
+            "wf_node_10"
+          ]
+        },
+        {
+          "id": 28,
+          "label": "Shopper Analytics",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_3"
+          ],
+          "workflows": [
+            "wf_node_10"
+          ]
+        },
+        {
+          "id": 29,
+          "label": "SKU Optimization",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_3"
+          ],
+          "workflows": [
+            "wf_node_10"
+          ],
+          "app_id":419
+        },
+        {
+          "id": 30,
+          "label": "Promo Planner",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_3"
+          ],
+          "workflows": [
+            "wf_node_10"
+          ],
+          "app_id":1487
+        },
+        {
+          "id": 30,
+          "label": "Promo/Campaign Budget Optimization",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_3"
+          ],
+          "workflows": [
+            "wf_node_10"
+          ],
+          "app_id":1225
+        },
+        {
+          "id": 31,
+          "label": "Post Promo Effectiveness",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_3"
+          ],
+          "workflows": [
+            "wf_node_11"
+          ],
+          "app_id":1276
+        },
+        {
+          "id": 32,
+          "label": "Budget Optimization",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_3"
+          ],
+          "workflows": [
+            "wf_node_12"
+          ],
+          "app_id":1225
+        },
+        {
+          "id": 33,
+          "label": "Promo Optimization",
+          "sub_headers": [
+            "Anamoly Detection",
+            "Isolate promo vs. price impact"
+          ],
+          "popup_info": {
+            "app_description": "Application description goes here",
+            "kpi_insights": [
+              {
+                "insight": "Business Insights 1",
+                "insight_sub_headers": [
+                  "Anamoly Detection",
+                  "Isolate promo vs. price impact"
+                ],
+                "insight_value": "+2.2% YoY"
+              },
+              {
+                "insight": "Business Insights 2",
+                "insight_sub_headers": [
+                  "Anamoly Detection"
+                ],
+                "insight_value": "+0.5% YoY"
+              }
+            ]
+          },
+          "tag": "Sales",
+          "functions": [
+            "fn_node_3"
+          ],
+          "workflows": [
+            "wf_node_12"
+          ]
+        }
+
+    ]
+  }

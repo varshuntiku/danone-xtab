@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "gpt-35-turbo",
+        "source": "azure-openai",
+        "model_type": "text",
+        "is_active": true,
+        "description": "gpt-35-turbo",
+        "problem_type": "deps"
+    },
+    {
+        "id": 2,
+        "name": "gpt-4",
+        "source": "azure-openai",
+        "model_type": "text",
+        "is_active": true,
+        "description": "gpt-4",
+        "problem_type": "deps"
+    },
+    {
+        "id": 3,
+        "name": "gpt-35-turbo-16k",
+        "source": "azure-openai",
+        "model_type": "text",
+        "is_active": true,
+        "description": "gpt-35-turbo-16k",
+        "problem_type": "deps"
+    },
+    {
+        "id": 4,
+        "name": "text-embedding-ada-002",
+        "source": "azure-openai",
+        "model_type": "embedding",
+        "is_active": true,
+        "description": "text-embedding-ada-002",
+        "problem_type": "deps"
+    }
+]

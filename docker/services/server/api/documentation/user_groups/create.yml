@@ -1,0 +1,71 @@
+summary: "Create new user group"
+tags:
+  - platform/UserGroups
+description: "This creates a new user group"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "body"
+  name: "body"
+  description: "Accepts the following fields for creating a user group"
+  required: "true"
+  schema:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+        required: "true"
+      app:
+        type: "string"
+      case_studies:
+        type: "string"
+      my_projects_only:
+        type: "string"
+      my_projects:
+        type: "string"
+      all_projects:
+        type: "string"
+      widget_factory:
+        type: "string"
+      environments:
+        type: "string"
+      app_publish:
+        type: "string"
+      rbac:
+        type: "string"
+    example: {
+            "name" : "usergroupname",
+            "app" : "False",
+            "case_studies": "False",
+            "my_projects_only": "False",
+            "my_projects": "False",
+            "all_projects": "False",
+            "widget_factory": "False",
+            "environments": "False",
+            "app_publish": "False",
+            "rbac": "False",
+
+    }
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+        "id": 123,
+        "name": "usergroup"
+      }
+
+  422:
+    description: "Error in query"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Error in query operation"
+      }
+
+

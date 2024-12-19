@@ -1,0 +1,19 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.3.1
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: subhasis.debsharma@mathco.com
+author_name: Subhasis Debsharma
+data_format: string
+file_extension: ''
+has_binder: true
+has_settings: false
+kind: theme
+labextension_name: nuclios-light-v2
+mimetype: ''
+mimetype_name: ''
+project_short_description: A JupyterLab extension for nuclios light theme
+python_name: nuclios_light_v2
+repository: https://dev.azure.com/mathco-products/codex/_git/gitops
+test: true
+viewer_name: ''
+

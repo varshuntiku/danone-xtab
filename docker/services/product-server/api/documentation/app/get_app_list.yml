@@ -1,0 +1,28 @@
+summary: "List of all accessible apps' name and id."
+tags:
+  - product/App
+description: "Generates list the apps if the logged in user has special access"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "array"
+          example :
+            - app_id: "1234"
+              app_name:  "App 1234"
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'Error executing code'
+          }

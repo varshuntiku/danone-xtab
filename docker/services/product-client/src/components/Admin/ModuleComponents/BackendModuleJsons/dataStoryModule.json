@@ -1,0 +1,88 @@
+{
+    "dialog": {
+        "title": "DataStory Module Description"
+    },
+    "dialog_actions": [
+        {
+            "is_cancel": true,
+            "name": "Got it",
+            "variant": "contained"
+        }
+    ],
+    "form_config": {
+        "fields": [
+            {
+                "id": 2,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "What is a data story?"
+            },
+            {
+                "id": 3,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "The data stories feature allows you to share the contents of an application with a wider audience through a context-based presentation."
+            },
+            {
+                "id": 4,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "Enabling data stories:"
+            },
+            {
+                "id": 5,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "To enable the data stories feature, please click on the toggle button"
+            },
+            {
+                "id": 6,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "In-app availability: "
+            },
+            {
+                "id": 7,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "Data stories will be accessible to the business user in the advanced features section."
+            }
+        ]
+    }
+}

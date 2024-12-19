@@ -1,0 +1,51 @@
+summary: "Get objective steps"
+tags:
+  - product/Navigator
+description: "Returns the list of objective step & its info for the given objective id."
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "objective_id"
+  required: "true"
+  schema:
+    type: "integer"
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : [{
+            'title': title,
+            'description': description,
+            'graph_type': graph_type,
+            'horizontal': horizontal,
+            'order': order,
+            'app_screen_id': app_screen_id,
+            'graph_widgets': [
+                {
+                  'title': title,
+                  'sub_title': sub_title,
+                  'widget_value': widget_value
+                 }
+            ]
+        }]
+  500:
+    description: "TODO"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Query Error"
+      }
+  404:
+    description: "TODO item not found"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Item not found"
+      }
+
+
+

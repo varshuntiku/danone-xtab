@@ -1,0 +1,50 @@
+summary: "Update app function"
+tags:
+  - product/AppAdmin
+description: "Updates value for one of the app functions"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "key"
+  required: "true"
+  schema:
+    type: "string"
+
+requestBody:
+  description: Details to update the app function
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [value]
+        properties:
+          value:
+            type: "string"
+        example: {"value": "testing"}
+
+responses:
+  200:
+    description: "Updated successfully"
+    schema:
+      type: "object"
+      example: {"message": "Variable updated successfully"}
+  404:
+    description: "Key Not Found"
+    schema:
+      type: "object"
+      example: {'error': 'Error in update operation, function does not exist in application functions'}
+  500:
+    description: "Error while updating"
+    schema :
+      type: "object"
+      example:  {'error': 'Error while updating application function'}

@@ -1,0 +1,33 @@
+summary: "List of all apps"
+tags:
+  - product/Dashboard
+description: "This returns list of all apps"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+              'id': 123,
+              'name': "name",
+              'description':  False,
+              'industry':  False,
+              'function': False,
+              'config_link':  False,
+              'blueprint_link':  False,
+              "logo_url":  False,
+              "small_logo_url":  False,
+      }
+
+  500:
+    description: "Error while fetching"
+    schema:
+      type: "object"
+      example: [
+        "Error":"Error while fetching"
+      ]

@@ -1,0 +1,23 @@
+summary: "Activate alert"
+tags:
+  - product/Alerts
+description: "Updates the active state of alerts for the given appID"
+produces:
+- "application/json"
+
+parameters:
+- in: "path"
+  name: "appId"
+  required: "true"
+  description: "The application ID for which the state has to be updated"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Return successful update message"
+    schema:
+      type: "object"
+    example: {"message": "Updated Successfully"}
+  500:
+    description: "Error while activating alert"

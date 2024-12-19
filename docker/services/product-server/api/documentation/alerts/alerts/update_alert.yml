@@ -1,0 +1,62 @@
+summary: "Update alert"
+tags:
+  - product/Alerts
+description: "Updates the alert data for the given alert ID"
+consumes:
+- application/json
+produces:
+- application/json
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "alertId"
+  required: "true"
+  description: "The alert ID for which the data has to be updated"
+  schema:
+    type: "integer"
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [title, category, condition, threshold, receive_notification, active, users, widget_value]
+        properties:
+          title:
+            type: "string"
+          category:
+            type: "string"
+          condition:
+            type: "string"
+          threshold:
+            type: "integer"
+          receive_notification:
+            type: "boolean"
+          active:
+            type: "boolean"
+            default: true
+          users:
+            type: "array"
+            items:
+              type: "object"
+              required: [id, name, email]
+              properties:
+                id:
+                  type: "integer"
+                name:
+                  type: "string"
+                email:
+                  type: "string"
+              example: {"id": 1, "name": "abc", "email": "abc@themathcompany.com"}
+        example: {"title": "swagger alert", "category": "category_T", "condition": "above", "threshold": 50, "receive_notification": true, "active": true, "users": [], "widget_value": {}}
+
+responses:
+  200:
+    description: "Return successful update message"
+    schema:
+      type: "object"
+    example: {"message": "Updated Successfully"}
+  500:
+    description: "Error while updating alert"

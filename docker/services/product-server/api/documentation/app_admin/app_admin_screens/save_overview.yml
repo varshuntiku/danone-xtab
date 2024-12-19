@@ -1,0 +1,55 @@
+summary: "Save Screen Overview"
+tags:
+  - product/AppAdmin
+description: "Save the screen overview details"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to save the screen overview
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [screen_name, screen_description, screen_image, screen_auto_refresh, rating_url]
+        properties:
+          screen_name:
+            type: "string"
+          screen_description:
+            type: "string"
+          screen_image:
+            type: "string"
+          screen_auto_refresh:
+            type: "boolean"
+            default: false
+          rating_url:
+            type: "string"
+            default: null
+        example: {"screen_name": "Screen 1", "screen_description": "Screen Description", "rating_url" :null, "screen_image": "simulate", "screen_auto_refresh" :false}
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+      example: {'status': 'success'}
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'Error while saving screen overview'}

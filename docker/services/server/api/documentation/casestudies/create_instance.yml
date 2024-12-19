@@ -1,0 +1,29 @@
+summary: "Create Instance"
+tags:
+  - platform/Case Studies
+description: "This creates a new case-study using project_id and adds the instance [A copy of the existing project] in database."
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "project_id"
+  description: "Creates instance of project by project_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {"id": 123, "name": "instance name"}
+
+  422:
+    description: "Error in query"
+

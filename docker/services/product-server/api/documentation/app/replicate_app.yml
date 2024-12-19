@@ -1,0 +1,46 @@
+summary: "Replicate an app."
+tags:
+  - product/App
+description: "Replicate an app"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  description: Details to copy the app
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [source_app_id]
+        properties:
+          source_app_id:
+            type: "integer"
+          destination_app_id:
+            type: "integer"
+          destination_app_env:
+            type: "string"
+          copy_app_vars_flag:
+            type: "boolean"
+        example: { "source_app_id": 1 }
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "object"
+          example : {
+            new_app_id: 10
+          }
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'Could Not Create the Replica. Please Try Again.'
+          }

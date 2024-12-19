@@ -1,0 +1,174 @@
+name: NUCLIOS-CI-$(Date:ddMMyyyy)-$(Rev:r)-$(CodexProductAppVersion)
+trigger:
+  batch: true
+  branches:
+    include:
+      - terraform-aks
+
+stages:
+  - stage: Build_Job
+    dependsOn: []
+    condition: succeeded()
+    jobs:
+      - job: Platform_UI
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - checkout: self
+            clean: false
+            fetchDepth: 1
+            fetchTags: false
+          - script: |
+              cd docker/services/client
+              rm -rf .env
+              echo 'NODE_PATH='$(CODEX_PLATFORM_NODE_PATH) | cat > .env
+              echo 'REACT_APP_BACKEND_API='$(CODEX_PLATFORM_APP_BACKEND_API) | cat >> .env
+              echo 'REACT_APP_MLFLOW_API='$(CODEX_PLATFORM_APP_MLFLOW_API)| cat >> .env
+              echo 'REACT_APP_JUPYTER_DEMO_URL='$(CODEX_PLATFORM_APP_JUPYTER_DEMO_URL)| cat >> .env
+              echo 'REACT_APP_JUPYTER_DEMO_TOKEN='$(ReactAppJupyterDemoToken)| cat >> .env
+              echo 'REACT_APP_ENV='$(CODEX_PLATFORM_APP_ENV)| cat >> .env
+              echo 'REACT_APP_PRODUCT_URL='"$(CODEX_PLATFORM_APP_PRODUCT_URL)<app_id>"| cat >> .env
+              echo 'INLINE_RUNTIME_CHUNK='$(CODEX_PLATFORM_INLINE_RUNTIME_CHUNK)| cat >> .env
+              echo 'GENERATE_SOURCEMAP'=$(CODEX_PLATFORM_GENERATE_SOURCEMAP)| cat >> .env
+              echo 'REACT_APP_ENABLE_SENTRY='"'$(REACT_APP_ENABLE_SENTRY)'"| cat >> .env
+              cat .env
+              cd ../../..
+            displayName: "Create ENV file"
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/terraform-aks'))
+          - task: Docker@2
+            inputs:
+              containerRegistry: "$(DEVOPS_SERVICE_CONNECTION_TO_ACR_PIPELINE)"
+              repository: "$(PLATFORM_UI_ACR_REPO_NAME)"
+              command: "buildAndPush"
+              Dockerfile: "docker/services/client/Dockerfile.aks"
+              tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+            displayName: "Build & Push Platform-FE Image to ACR"
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/terraform-aks'))
+          - task: Kubernetes@1
+            inputs:
+              connectionType: 'Kubernetes Service Connection'
+              kubernetesServiceEndpoint: "$(DEVOPS_SERVICE_CONNECTION_TO_AKS_PIPELINE)"
+              namespace: "$(NAMESPACE)"
+              command: 'rollout'
+              arguments: 'restart deployment $(PLATFORM_UI_DEPLOYMENT)'
+              secretType: 'dockerRegistry'
+              containerRegistryType: 'Azure Container Registry'
+      - job: Product_UI
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - checkout: self
+            clean: false
+            fetchDepth: 1
+            fetchTags: false
+          - script: |
+              cd docker/services/product-client
+              rm -rf .env
+              echo 'NODE_PATH='$(CODEX_PRODUCT_NODE_PATH) | cat > .env
+              echo 'REACT_APP_BACKEND_API='$(CODEX_PRODUCT_APP_BACKEND_API) | cat >> .env
+              echo 'REACT_APP_PLATFORM_BACKEND_API='$(CODEX_PRODUCT_APP_PLATFORM_BACKEND_API)| cat >> .env
+              echo 'REACT_APP_SOCKET_IO='$(CODEX_PRODUCT_APP_SOCKET_IO)| cat >> .env
+              echo 'REACT_APP_GENAI='$(REACT_APP_GENAI)| cat >> .env
+              echo 'REACT_APP_PLATFORM_SOCKET_IO='$(CODEX_PRODUCT_APP_PLATFORM_SOCKET_IO)| cat >> .env
+              echo 'REACT_APP_PLATFORM='$(CODEX_PRODUCT_APP_PLATFORM)| cat >> .env
+              echo 'REACT_APP_ENV='$(CODEX_PRODUCT_APP_ENV)| cat >> .env
+              echo 'REACT_APP_SERVERLESS_API='$(CODEX_PRODUCT_APP_SERVERLESS_API)| cat >> .env
+              echo 'REACT_APP_JUPYTER_DEMO_URL='$(CODEX_PRODUCT_APP_JUPYTER_DEMO_URL)| cat >> .env
+              echo 'REACT_APP_JUPYTER_DEMO_TOKEN='$(ReactAppJupyterDemoToken)| cat >> .env
+              echo 'REACT_APP_VERSION='$(CodexProductAppVersion)| cat >> .env
+              echo 'REACT_APP_MATOMO_SITE_ID='$(CODEX_PRODUCT_APP_MATOMO_SITE_ID)| cat >> .env
+              echo 'REACT_APP_MATOMO_SITE_URL='$(CODEX_PRODUCT_APP_MATOMO_SITE_URL)| cat >> .env
+              echo 'REACT_APP_MATOMO_TOKEN='"'$(ReactAppMatomoToken)'"| cat >> .env
+              echo 'INLINE_RUNTIME_CHUNK='$(CODEX_PRODUCT_INLINE_RUNTIME_CHUNK)| cat >> .env
+              echo 'REACT_APP_MINERVA_BACKEND_URL='$(CODEX_PRODUCT_APP_MINERVA_BACKEND_URL)| cat >> .env
+              echo 'SKIP_PREFLIGHT_CHECK='$(CODEX_PRODUCT_SKIP_PREFLIGHT_CHECK)| cat >> .env
+              echo 'REACT_APP_STATIC_DATA_ASSET='$(CODEX_PRODUCT_APP_STATIC_DATA_ASSET)| cat >> .env
+              echo 'REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING='"'$(ReactAppApplicationInsightsConnectionString)'" | cat >> .env
+              echo 'GENERATE_SOURCEMAP'=$(CODEX_PRODUCT_GENERATE_SOURCEMAP)| cat >> .env
+              echo 'REACT_APP_GOOGLE_MAPS_KEY='"'$(ReactAppGoogleMapsKey)'"| cat >> .env
+              echo 'REACT_APP_ENABLE_MINERVA='$(CODEX_PRODUCT_ENABLE_MINERVA)| cat >> .env
+              echo 'REACT_APP_ENABLE_COPILOT='$(CODEX_PRODUCT_ENABLE_COPILOT)| cat >> .env
+              echo 'REACT_APP_MINERVA_SOCKET_IO='$(CODEX_PRODUCT_MINERVA_SOCKET_IO)| cat >> .env
+              echo 'REACT_APP_MINERVA_WC_HOST_URL='$(CODEX_PRODUCT_MINERVA_WC_HOST_URL)| cat >> .env
+              echo 'REACT_APP_ENABLE_LLMWORKBENCH='$(REACT_APP_ENABLE_LLMWORKBENCH)| cat >> .env
+              echo 'REACT_APP_GENAI_COOKBOOK_URL='"'$(REACTAPPGENAICOOKBOOKURL)'"| cat >> .env
+              echo 'REACT_APP_GENAI_APPROVAL_USERS='"'$(GENAIAPPROVALUSERS)'"| cat >> .env
+              echo 'REACT_APP_ENABLE_SENTRY='"'$(REACT_APP_ENABLE_SENTRY)'"| cat >> .env
+              echo 'REACT_APP_ENABLE_APP_INSIGHTS='"'$(REACT_APP_ENABLE_APP_INSIGHTS)'"| cat >> .env
+              echo 'REACT_APP_COPILOT_ADMIN_CLIENT='"'$(CODEX_APP_COPILOT_ADMIN_CLIENT)'"| cat >> .env
+              echo 'REACT_APP_COPILOT_TEST_API='$(CODEX_PRODUCT_APP_COPILOT_TEST_API)| cat >> .env
+              cat .env
+              cd ../../..
+            displayName: "Create Env file"
+            condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/terraform-aks'))
+          - task: Docker@2
+            inputs:
+              containerRegistry: "$(DEVOPS_SERVICE_CONNECTION_TO_ACR_PIPELINE)"
+              repository: "$(PRODUCT_UI_ACR_REPO_NAME)"
+              command: "buildAndPush"
+              Dockerfile: "docker/services/product-client/aksDockerfile"
+              tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+            displayName: "Build & Push Product-FE Image to ACR"
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/terraform-aks'))
+          - task: Kubernetes@1
+            inputs:
+              connectionType: 'Kubernetes Service Connection'
+              kubernetesServiceEndpoint: "$(DEVOPS_SERVICE_CONNECTION_TO_AKS_PIPELINE)"
+              namespace: "$(NAMESPACE)"
+              command: 'rollout'
+              arguments: 'restart deployment $(PLATFORM_UI_DEPLOYMENT)'
+              secretType: 'dockerRegistry'
+              containerRegistryType: 'Azure Container Registry'
+      - job: Platform_API
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - checkout: self
+            clean: false
+            fetchDepth: 1
+            fetchTags: false
+          - task: Docker@2
+            inputs:
+              containerRegistry: "$(DEVOPS_SERVICE_CONNECTION_TO_ACR_PIPELINE)"
+              repository: "$(PLATFORM_API_ACR_REPO_NAME)"
+              command: "buildAndPush"
+              Dockerfile: "docker/server.dockerfile"
+              tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+            displayName: "Build & Push Platform-API Image to ACR"
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/terraform-aks'))
+          - task: Kubernetes@1
+            inputs:
+              connectionType: 'Kubernetes Service Connection'
+              kubernetesServiceEndpoint: "$(DEVOPS_SERVICE_CONNECTION_TO_AKS_PIPELINE)"
+              namespace: "$(NAMESPACE)"
+              command: 'rollout'
+              arguments: 'restart deployment $(PLATFORM_API_DEPLOYMENT)'
+              secretType: 'dockerRegistry'
+              containerRegistryType: 'Azure Container Registry'
+
+      - job: Product_API
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - checkout: self
+            clean: false
+            fetchDepth: 1
+            fetchTags: false
+          - task: Docker@2
+            inputs:
+              containerRegistry: "$(DEVOPS_SERVICE_CONNECTION_TO_ACR_PIPELINE)"
+              repository: "$(PRODUCT_API_ACR_REPO_NAME)"
+              command: "buildAndPush"
+              Dockerfile: "docker/product.dockerfile"
+              tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+            displayName: "Build & Push Product-API Image to ACR"
+            condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/terraform-aks'))
+          - task: Kubernetes@1
+            inputs:
+              connectionType: 'Kubernetes Service Connection'
+              kubernetesServiceEndpoint: "$(DEVOPS_SERVICE_CONNECTION_TO_AKS_PIPELINE)"
+              namespace: "$(NAMESPACE)"
+              command: 'rollout'
+              arguments: 'restart deployment $(PRODUCT_API_DEPLOYMENT)'
+              secretType: 'dockerRegistry'
+              containerRegistryType: 'Azure Container Registry'

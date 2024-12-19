@@ -1,0 +1,88 @@
+{
+    "dialog": {
+        "title": "Full Screen Module Description"
+    },
+    "dialog_actions": [
+        {
+            "is_cancel": true,
+            "name": "Got it",
+            "variant": "contained"
+        }
+    ],
+    "form_config": {
+        "fields": [
+            {
+                "id": 2,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "What is Full-screen mode?"
+            },
+            {
+                "id": 3,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "Full screen mode allows users to view the screen along with the top nav bar only. The side nav bar will be collapsible."
+            },
+            {
+                "id": 4,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "Enabling Full Screen:"
+            },
+            {
+                "id": 5,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "To allow users to view the app in full screen mode by default, please click on the toggle button"
+            },
+            {
+                "id": 6,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "In-app availability: "
+            },
+            {
+                "id": 7,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "The default view will not have the side nav bar."
+            }
+        ]
+    }
+}

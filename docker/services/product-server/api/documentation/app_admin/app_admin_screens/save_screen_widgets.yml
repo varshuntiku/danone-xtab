@@ -1,0 +1,74 @@
+summary: "Save Screen Widgets"
+tags:
+  - product/AppAdmin
+description: "Save the screen Widgets Layout"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to save the screen layout
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [selected_layout, widgets]
+        properties:
+          selected_layout:
+            type: "object"
+            properties:
+              no_graphs:
+                type: "integer"
+              no_labels:
+                type: "integer"
+          widgets:
+            type: "array"
+            items:
+              type: "object"
+              properties:
+                id:
+                  type: "string"
+                is_label:
+                  type: "boolean"
+                  default: true
+                widget_index:
+                  type: "integer"
+                config:
+                  type: "object"
+                  properties:
+                    title:
+                      type: "string"
+                    sub_title:
+                      type: "string"
+                    prefix:
+                      type: "string"
+                    metric_factor:
+                      type: "string"
+                    code:
+                      type: "string"
+        example: {"widgets": [{"id": "new_0", "is_label": true, "widget_index": 0, "config": {"title": "", "sub_title": "", "prefix": "", "metric_factor": "", "code": ""}}, {"id": "new_1", "is_label": true, "widget_index": 1, "config": {"title": "", "sub_title": "", "prefix": "", "metric_factor": "", "code": ""}}, {"id": "new_2", "is_label": true, "widget_index": 2, "config": {"title":"", "sub_title": "", "prefix": "", "metric_factor": "", "code": ""}}, {"id": "new_3", "is_label": false, "widget_index": 3, "config": {"title": "", "sub_title": "", "prefix": "", "metric_factor": "", "code": ""}}, {"id": "new_4", "is_label": false, "widget_index": 4, "config": {"title": "", "sub_title": "", "prefix": "", "metric_factor": "", "code": ""}}], "selected_layout": {"no_labels": 3, "no_graphs": 2}}
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'Error while saving screen layout'}

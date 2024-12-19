@@ -1,0 +1,1680 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="generator" content="pdoc 0.10.0" />
+    <title>codex_widget_factory_lite.data_connectors.file_system API documentation</title>
+    <meta name="description" content="" />
+    <link rel="preload stylesheet" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css"
+        integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+    <link rel="preload stylesheet" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css"
+        integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+    <link rel="stylesheet preload" as="style"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+    <style>
+        :root {
+            --highlight-color: #fe9
+        }
+
+        .flex {
+            display: flex !important
+        }
+
+        body {
+            line-height: 1.5em
+        }
+
+        #content {
+            padding: 20px
+        }
+
+        #sidebar {
+            padding: 30px;
+            overflow: hidden
+        }
+
+        #sidebar>*:last-child {
+            margin-bottom: 2cm
+        }
+
+        .http-server-breadcrumbs {
+            font-size: 130%;
+            margin: 0 0 15px 0
+        }
+
+        #footer {
+            font-size: .75em;
+            padding: 5px 30px;
+            border-top: 1px solid #ddd;
+            text-align: right
+        }
+
+        #footer p {
+            margin: 0 0 0 1em;
+            display: inline-block
+        }
+
+        #footer p:last-child {
+            margin-right: 30px
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-weight: 300
+        }
+
+        h1 {
+            font-size: 2.5em;
+            line-height: 1.1em
+        }
+
+        h2 {
+            font-size: 1.75em;
+            margin: 1em 0 .50em 0
+        }
+
+        h3 {
+            font-size: 1.4em;
+            margin: 25px 0 10px 0
+        }
+
+        h4 {
+            margin: 0;
+            font-size: 105%
+        }
+
+        h1:target,
+        h2:target,
+        h3:target,
+        h4:target,
+        h5:target,
+        h6:target {
+            background: var(--highlight-color);
+            padding: .2em 0
+        }
+
+        a {
+            color: #058;
+            text-decoration: none;
+            transition: color .3s ease-in-out
+        }
+
+        a:hover {
+            color: #e82
+        }
+
+        .title code {
+            font-weight: bold
+        }
+
+        h2[id^="header-"] {
+            margin-top: 2em
+        }
+
+        .ident {
+            color: #900
+        }
+
+        pre code {
+            background: #f8f8f8;
+            font-size: .8em;
+            line-height: 1.4em
+        }
+
+        code {
+            background: #f2f2f1;
+            padding: 1px 4px;
+            overflow-wrap: break-word
+        }
+
+        h1 code {
+            background: transparent
+        }
+
+        pre {
+            background: #f8f8f8;
+            border: 0;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            margin: 1em 0;
+            padding: 1ex
+        }
+
+        #http-server-module-list {
+            display: flex;
+            flex-flow: column
+        }
+
+        #http-server-module-list div {
+            display: flex
+        }
+
+        #http-server-module-list dt {
+            min-width: 10%
+        }
+
+        #http-server-module-list p {
+            margin-top: 0
+        }
+
+        .toc ul,
+        #index {
+            list-style-type: none;
+            margin: 0;
+            padding: 0
+        }
+
+        #index code {
+            background: transparent
+        }
+
+        #index h3 {
+            border-bottom: 1px solid #ddd
+        }
+
+        #index ul {
+            padding: 0
+        }
+
+        #index h4 {
+            margin-top: .6em;
+            font-weight: bold
+        }
+
+        @media (min-width:200ex) {
+            #index .two-column {
+                column-count: 2
+            }
+        }
+
+        @media (min-width:300ex) {
+            #index .two-column {
+                column-count: 3
+            }
+        }
+
+        dl {
+            margin-bottom: 2em
+        }
+
+        dl dl:last-child {
+            margin-bottom: 4em
+        }
+
+        dd {
+            margin: 0 0 1em 3em
+        }
+
+        #header-classes+dl>dd {
+            margin-bottom: 3em
+        }
+
+        dd dd {
+            margin-left: 2em
+        }
+
+        dd p {
+            margin: 10px 0
+        }
+
+        .name {
+            background: #eee;
+            font-weight: bold;
+            font-size: .85em;
+            padding: 5px 10px;
+            display: inline-block;
+            min-width: 40%
+        }
+
+        .name:hover {
+            background: #e0e0e0
+        }
+
+        dt:target .name {
+            background: var(--highlight-color)
+        }
+
+        .name>span:first-child {
+            white-space: nowrap
+        }
+
+        .name.class>span:nth-child(2) {
+            margin-left: .4em
+        }
+
+        .inherited {
+            color: #999;
+            border-left: 5px solid #eee;
+            padding-left: 1em
+        }
+
+        .inheritance em {
+            font-style: normal;
+            font-weight: bold
+        }
+
+        .desc h2 {
+            font-weight: 400;
+            font-size: 1.25em
+        }
+
+        .desc h3 {
+            font-size: 1em
+        }
+
+        .desc dt code {
+            background: inherit
+        }
+
+        .source summary,
+        .git-link-div {
+            color: #666;
+            text-align: right;
+            font-weight: 400;
+            font-size: .8em;
+            text-transform: uppercase
+        }
+
+        .source summary>* {
+            white-space: nowrap;
+            cursor: pointer
+        }
+
+        .git-link {
+            color: inherit;
+            margin-left: 1em
+        }
+
+        .source pre {
+            max-height: 500px;
+            overflow: auto;
+            margin: 0
+        }
+
+        .source pre code {
+            font-size: 12px;
+            overflow: visible
+        }
+
+        .hlist {
+            list-style: none
+        }
+
+        .hlist li {
+            display: inline
+        }
+
+        .hlist li:after {
+            content: ',\2002'
+        }
+
+        .hlist li:last-child:after {
+            content: none
+        }
+
+        .hlist .hlist {
+            display: inline;
+            padding-left: 1em
+        }
+
+        img {
+            max-width: 100%
+        }
+
+        td {
+            padding: 0 .5em
+        }
+
+        .admonition {
+            padding: .1em .5em;
+            margin-bottom: 1em
+        }
+
+        .admonition-title {
+            font-weight: bold
+        }
+
+        .admonition.note,
+        .admonition.info,
+        .admonition.important {
+            background: #aef
+        }
+
+        .admonition.todo,
+        .admonition.versionadded,
+        .admonition.tip,
+        .admonition.hint {
+            background: #dfd
+        }
+
+        .admonition.warning,
+        .admonition.versionchanged,
+        .admonition.deprecated {
+            background: #fd4
+        }
+
+        .admonition.error,
+        .admonition.danger,
+        .admonition.caution {
+            background: lightpink
+        }
+    </style>
+    <style media="screen and (min-width: 700px)">
+        @media screen and (min-width:700px) {
+            #sidebar {
+                width: 30%;
+                height: 100vh;
+                overflow: auto;
+                position: sticky;
+                top: 0
+            }
+
+            #content {
+                width: 70%;
+                max-width: 100ch;
+                padding: 3em 4em;
+                border-left: 1px solid #ddd
+            }
+
+            pre code {
+                font-size: 1em
+            }
+
+            .item .name {
+                font-size: 1em
+            }
+
+            main {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: flex-end
+            }
+
+            .toc ul ul,
+            #index ul {
+                padding-left: 1.5em
+            }
+
+            .toc>ul>li {
+                margin-top: .5em
+            }
+        }
+    </style>
+    <style media="print">
+        @media print {
+            #sidebar h1 {
+                page-break-before: always
+            }
+
+            .source {
+                display: none
+            }
+        }
+
+        @media print {
+            * {
+                background: transparent !important;
+                color: #000 !important;
+                box-shadow: none !important;
+                text-shadow: none !important
+            }
+
+            a[href]:after {
+                content: " (" attr(href) ")";
+                font-size: 90%
+            }
+
+            a[href][title]:after {
+                content: none
+            }
+
+            abbr[title]:after {
+                content: " (" attr(title) ")"
+            }
+
+            .ir a:after,
+            a[href^="javascript:"]:after,
+            a[href^="#"]:after {
+                content: ""
+            }
+
+            pre,
+            blockquote {
+                border: 1px solid #999;
+                page-break-inside: avoid
+            }
+
+            thead {
+                display: table-header-group
+            }
+
+            tr,
+            img {
+                page-break-inside: avoid
+            }
+
+            img {
+                max-width: 100% !important
+            }
+
+            @page {
+                margin: 0.5cm
+            }
+
+            p,
+            h2,
+            h3 {
+                orphans: 3;
+                widows: 3
+            }
+
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                page-break-after: avoid
+            }
+        }
+    </style>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"
+        integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+    <script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+
+<body>
+    <main>
+        <article id="content">
+            <header>
+                <h1 class="title">Module <code>codex_widget_factory_lite.data_connectors.file_system</code></h1>
+            </header>
+            <section id="section-intro">
+                <details class="source">
+                    <summary>
+                        <span>Expand source code</span>
+                    </summary>
+                    <pre><code class="python">#
+# Author: Codx AI/ML Team
+# TheMathCompany, Inc. (c) 2022
+#
+# This file is part of Codx.
+#
+# Codx can not be copied and/or distributed without the express permission of TheMathCompany, Inc.
+
+import pandas as pd
+from io import StringIO
+from pathlib import Path
+import pickle
+import json
+import os
+from io import BytesIO
+from azure.storage.blob import BlockBlobService
+from azure.storage.common import TokenCredential
+from azure.common.credentials import ServicePrincipalCredentials
+import boto3
+
+
+class BaseFileSystem():
+    &#34;&#34;&#34;
+    The BaseFileSystem class has the interface (Abstract Methods) for
+    ingestion file system widget, which reads various types of files
+    from different data sources.
+    &#34;&#34;&#34;
+
+    def __init__(self, path):
+        self.path = Path(path)
+        self.inferred_file_type = self.infer_file_type()
+
+    def infer_file_type(self):
+        return self.path.suffix.replace(&#39;.&#39;, &#39;&#39;)
+
+    def read_file(self):
+        self.file_read_function_mapper = {&#34;csv&#34;: self._read_csv_file,
+                                          &#34;pkl&#34;: self._read_pickle_file,
+                                          &#34;json&#34;: self._read_json_file,
+                                          &#34;xls&#34;: self._read_excel_file,
+                                          &#34;xlsx&#34;: self._read_excel_file,
+                                          &#34;py&#34;: self._read_python_file}
+
+        return self.file_read_function_mapper[self.inferred_file_type]()
+
+    def display_file_names(self):
+        self._display_file_names()
+
+    # abstract functions, will be created in the respective Filesystem
+    def _display_file_names(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+    def _read_csv_file(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+    def _read_excel_file(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+    def _read_json_file(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+    def _read_pickle_file(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+    def _read_python_file(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+
+class LocalFileSystem(BaseFileSystem):
+    &#34;&#34;&#34;
+    The LocalFileSystem class has implementations for reading
+    various types of files from Local storage.
+    &#34;&#34;&#34;
+
+    def __init__(self,
+                 path,
+                 source_type,
+                 **kwargs):
+        if source_type == &#34;local&#34;:
+            super().__init__(path)
+            self.sheet_name = kwargs.get(&#34;sheet_name&#34;)
+
+    def _display_file_names(self):
+        print(f&#34;\n &gt;&gt;&gt; List of files in directory - {&#39;/&#39;.join(list(self.path.parts[:-1]))} \n&#34;)
+        os.chdir(&#39;/&#39;.join(list(self.path.parts[:-1])))
+        for blob_i in os.listdir():
+            print(blob_i)
+
+    def _read_csv_file(self):
+        return pd.read_csv(self.path, low_memory=False)
+
+    def _read_excel_file(self):
+        return pd.read_excel(self.path, sheet_name=self.sheet_name, engine=&#34;openpyxl&#34;)
+
+    def _read_json_file(self):
+        return json.load(open(self.path, &#34;r&#34;))
+
+    def _read_pickle_file(self):
+        return pickle.load(open(self.path, &#34;rb&#34;))
+
+    def _read_python_file(self):
+        return open(self.path).read()
+
+
+class AzureFileSystem(BaseFileSystem):
+    &#34;&#34;&#34;
+    The AzureFileSystem class has implementations for reading
+    various types of files from Azure Blob Storage.
+    &#34;&#34;&#34;
+
+    def __init__(self,
+                 path,
+                 source_type,
+                 connection_method,
+                 **kwargs):
+        if source_type == &#34;azure_storage_blob&#34;:
+            super().__init__(path)
+            self.connection_method = connection_method
+            self.blob_service = self._azure_connection_mapping(**kwargs)
+            self.sheet_name = kwargs.get(&#34;sheet_name&#34;)
+
+            self.container_name = self.path.parts[0]
+            self.blob_name = &#34;/&#34;.join(list(self.path.parts)[1:])
+
+    def _azure_connection_mapping(self, **kwargs):
+        if self.connection_method == &#39;client_secret_credential&#39;:
+            service_credential = ServicePrincipalCredentials(tenant=kwargs.get(&#39;tenant_id&#39;),
+                                                             client_id=kwargs.get(&#39;client_id&#39;),
+                                                             secret=kwargs.get(&#39;client_secret&#39;),
+                                                             resource=kwargs.get(&#39;resource&#39;))
+            token_credential = TokenCredential(service_credential.token[&#34;access_token&#34;])
+            blobService = BlockBlobService(account_name=kwargs.get(&#39;account_url&#39;),
+                                           token_credential=token_credential)
+        elif self.connection_method == &#39;connection_uri&#39;:
+            blobService = BlockBlobService(connection_string=kwargs.get(&#39;connection_uri&#39;))
+        elif self.connection_method == &#39;shared_access_key&#39;:
+            blobService = BlockBlobService(account_name=kwargs.get(&#39;account_url&#39;),
+                                           account_key=kwargs.get(&#39;account_key&#39;))
+        else:
+            raise ValueError(f&#34;Azure connection method provided is invalid. Given - {self.connection_method}.&#34;)
+        return blobService
+
+    def _display_file_names(self):
+        print(f&#34;\n &gt;&gt;&gt; List Of Blobs in directory - {&#39;/&#39;.join(list(self.path.parts[:-1]))} \n&#34;)
+        blob_objects_list = self.blob_service.list_blobs(container_name=self.container_name,
+                                                         prefix=&#34;/&#34;.join(self.blob_name.split(&#34;/&#34;)[:-1])).items
+        for blob_i in blob_objects_list:
+            print(blob_i.name.split(&#34;/&#34;)[-1])
+
+    def _read_csv_file(self):
+        blob_data = self.blob_service.get_blob_to_text(container_name=self.container_name,
+                                                       blob_name=self.blob_name)
+        return pd.read_csv(StringIO(blob_data.content))
+
+    def _read_excel_file(self):
+        blob_data = self.blob_service.get_blob_to_bytes(container_name=self.container_name,
+                                                        blob_name=self.blob_name)
+        return pd.read_excel(BytesIO(blob_data.content), sheet_name=self.sheet_name, engine=&#34;openpyxl&#34;)
+
+    def _read_json_file(self):
+        blob_data = self.blob_service.get_blob_to_text(container_name=self.container_name,
+                                                       blob_name=self.blob_name)
+        return json.loads(blob_data.content)
+
+    def _read_pickle_file(self):
+        blob_data = self.blob_service.get_blob_to_bytes(container_name=self.container_name,
+                                                        blob_name=self.blob_name)
+        return pickle.loads(blob_data.content)
+
+    def _read_python_file(self):
+        blob_data = self.blob_service.get_blob_to_text(container_name=self.container_name,
+                                                       blob_name=self.blob_name)
+        return blob_data.content
+
+
+class AWSFileSystem(BaseFileSystem):
+    &#34;&#34;&#34;
+    The AWSFileSystem class has implementations for reading various
+    types of files from Amazon S3 Storage (Simple Storage Service).
+    &#34;&#34;&#34;
+
+    def __init__(self,
+                 path,
+                 source_type,
+                 **kwargs):
+        if source_type == &#34;amazon_s3&#34;:
+            super().__init__(path)
+            # self.connection_method = connection_method
+            # self.blob_service = self._azure_connection_mapping(**kwargs)
+            self.aws_access_key = kwargs.get(&#34;aws_access_key&#34;)
+            self.aws_secret_access_key = kwargs.get(&#34;aws_secret_access_key&#34;)
+            self.region_name = kwargs.get(&#34;aws_region&#34;, &#34;us-east-1&#34;)
+            self.aws_session_token = kwargs.get(&#34;aws_session_token&#34;)
+            self.sheet_name = kwargs.get(&#34;sheet_name&#34;)
+
+            self.bucket_name = self.path.parts[0]
+            self.blob_name = &#34;/&#34;.join(list(self.path.parts)[1:])
+
+            self._make_s3_client()
+            self._make_blob_object()
+            self._get_blob_data()
+
+    def _make_s3_client(self):
+        self.s3_client = boto3.client(service_name=&#34;s3&#34;,
+                                      region_name=self.region_name,
+                                      aws_access_key_id=self.aws_access_key,
+                                      aws_secret_access_key=self.aws_secret_access_key,
+                                      aws_session_token=self.aws_session_token)
+
+    def _make_blob_object(self):
+        self.blob_object = self.s3_client.get_object(Bucket=self.bucket_name,
+                                                     Key=self.blob_name)
+
+    def _get_blob_data(self):
+        self.blob_data = self.blob_object[&#34;Body&#34;]
+
+    def _display_file_names(self):
+        print(f&#34;\n &gt;&gt;&gt; List Of Blobs in directory - {&#39;/&#39;.join(list(self.path.parts[:-1]))} \n&#34;)
+        blob_objects_list = self.s3_client.list_objects_v2(Bucket=self.bucket_name, Prefix=&#34;/&#34;.join(self.blob_name.split(&#34;/&#34;)[:-1]))[&#34;Contents&#34;]
+        for blob_i in blob_objects_list:
+            print(blob_i[&#34;Key&#34;].split(&#34;/&#34;)[-1])
+
+    def _read_csv_file(self):
+        content = self.blob_data.read()
+        return pd.read_csv(StringIO(content.decode()))
+
+    def _read_excel_file(self):
+        content = self.blob_data.read()
+        return pd.read_excel(BytesIO(content), sheet_name=self.sheet_name, engine=&#34;openpyxl&#34;)
+
+    def _read_json_file(self):
+        content = self.blob_data.read()
+        return json.loads(content.decode())
+
+    def _read_pickle_file(self):
+        content = self.blob_data.read()
+        return pickle.loads(content)
+
+    def _read_python_file(self):
+        content = self.blob_data.read()
+        return content.decode()
+
+
+class GCPFileSystem(BaseFileSystem):
+    pass
+
+
+def get_ingested_data(file_path,
+                      datasource_type=&#39;local&#39;,
+                      azure_connection_method=&#34;connection_uri&#34;,
+                      display_filenames=True,
+                      **kwargs):
+    &#34;&#34;&#34;
+    Ingest a dataset file(s) from the file-system.
+    The module supports data ingestion from the sources,
+        - Local storage.
+        - Azure Storage Blob.
+        - Amazon S3 (Simple Storage Service)
+
+    If multiple files are required to be ingested, provide the list
+    of file paths for the file path argument.
+
+    Currently supported formats
+    ---------------------------
+    Comma Seperated Values - csv
+    Excel - xls, xlsx
+    Pickle - pkl
+    JSON - json
+    Python - py
+
+    Parameters
+    ----------
+    General Parameters
+    ------------------
+    file_path : string, required
+        The path where the required file is located.
+        - If &#39;string&#39;, specify the path of the file.
+        - If &#39;list&#39;, specify the path for each of the multiple files as list.
+
+        It supports to ingest .csv, .xlsx, .pkl, .json files.
+
+        -If the blob is inside a folder of container then specify the path
+        in the following way.
+        eg : If blob is inside folder of container,
+                -f&#39;container_name/folder_1/blob_1.pkl&#39;
+             If blob is two levels inside the folder of container,
+                -f&#39;container_name/folder_1/folder_2/blob_2.pkl&#39;
+
+        -If single file has to be ingested,
+            file_path = f&#39;C:/My_Drive/.../File_1.json&#39;
+            file_path = f&#39;container_name/folder1/.../file.csv&#39;
+        -If multiple files have to be stored,
+            file_path = [f&#39;C:/My_Drive/.../File_1.csv&#39;,
+                         f&#39;C:/My_Drive/.../File_2.pkl&#39;,
+                         f&#39;C:/My_Drive/folder1/.../File_3.pkl&#39;]
+            file_path = [f&#39;container_name/folder1/.../file.csv&#39;,
+                         f&#39;container_name/folder1/.../file2.csv&#39;,
+                         f&#39;container_name/folder2/.../file3.csv&#39;]
+    datasource_type : string, optional (default=&#39;local&#39;)
+        {&#39;local&#39;, &#39;azure_storage_blob&#39;, &#39;amazon_s3&#39;}
+        The storage source where the files to be ingested are stored.
+        Read the below docs, Keyword parameters, to use various
+        additional arguments based on datasource_type.
+    azure_connection_method : string, optional (default=None)
+        {&#39;connection_uri&#39;, &#39;shared_access_key&#39;, &#39;client_secret_credentials&#39;}
+        The argument is required when the datasource_type is &#39;azure_storage_blob&#39;
+        Provide one of the connection method listed above.
+        Read the below docs, Method Specific Additional parameters
+        to use various connection methods.
+    display_filenames : bool, optional (default=True)
+        Displays all the file names present in the path location.
+    kwargs : optional
+        The additional arguments required based on datasource_type, data_type.
+
+        Provide sheet_name as key-word arg, if specific sheet is required
+        when ingesting excel file.
+
+        Read the below detailed document, of parameters required for respective
+        azure connection method.
+
+    Keyword Parameters
+    _________________________________________________________________________
+    Amazon S3 Additional parameters
+
+    aws_access_key: string
+        The access key to use when creating the client.
+    aws_secret_access_key: string
+        The secret key to use when creating the client.
+    aws_session_token: string, optional
+        The session token to use when creating the client.
+    aws_region: string, optional
+        The name of the region associated with the client.
+        A client is associated with a single region.
+    __________________________________________________________________________
+    Azure Connection Method Specific Additional parameters
+
+    Method 1 : Connect and store using Shared Access Key
+    ----------------------------------------------------
+    account_url: string,
+        Name of storage account, the account url to connect.
+    account_key: string,
+        Account key (Shared access key) of storage account, to use as credential.
+
+    Method 2 : Connect and store using Client Secret Credentials
+    ------------------------------------------------------------
+    account_url: string,
+        Name of storage account, the account url to connect.
+    client_id : string,
+        Client ID to initialize ClientSecretCredentials.
+    tenant_id : string,
+        Tenant ID to initialize ClientSecretCredentials.
+    client_secret : str,
+        Secret name to initialize ClientSecretCredentials.
+
+    Method 3 : Establish connection and store using Connection String
+    -----------------------------------------------------------------
+    connection_uri : string,
+        The connection uri (connection_string) corresponding to the azure blob
+        storage account.
+
+    Usage
+    -----
+    -Local
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;data.csv&#39;, datasource_type=&#39;local&#39;)
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;C:/My_space/ind_file.csv&#39;, datasource_type=&#39;local&#39;)
+    &gt;&gt;&gt;
+
+    -Azure Storage Blob
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;container_1/data.csv&#39;, datasource_type=&#39;azure_storage_blob&#39;)
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;container_1/folder_1/ind_file.csv&#39;, datasource_type=&#39;azure_storage_blob&#39;)
+    &gt;&gt;&gt;
+
+    -Amazon S3
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;bucket_1/data.csv&#39;, datasource_type=&#39;amazon_s3&#39;)
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;bucket_1/folder_1/ind_file.csv&#39;, datasource_type=&#39;amazon_s3&#39;)
+    &gt;&gt;&gt;
+
+    Returns
+    -------
+    A pandas dataframe or Dictionary (dict) or Python code string or Type of pkl content.
+    &#34;&#34;&#34;
+
+    if isinstance(file_path, str):
+        datasource_type_mapping = {&#39;local&#39;: LocalFileSystem(path=file_path,
+                                                            source_type=datasource_type,
+                                                            **kwargs),
+                                   &#39;azure_storage_blob&#39;: AzureFileSystem(path=file_path,
+                                                                         source_type=datasource_type,
+                                                                         connection_method=azure_connection_method,
+                                                                         **kwargs),
+                                   &#39;amazon_s3&#39;: AWSFileSystem(path=file_path,
+                                                              source_type=datasource_type,
+                                                              **kwargs)}
+        file_source_obj = datasource_type_mapping[datasource_type]
+        if display_filenames:
+            file_source_obj.display_file_names()
+        return file_source_obj.read_file()
+    else:
+        ingested_data_dict = {}
+        previous_path_set = []
+        for path_i in file_path:
+            file_name = Path(path_i).parts[-1].split(&#34;.&#34;)[0]
+            if display_filenames:
+                is_display_names = False if [path_j for path_j in previous_path_set if not set(Path(path_i).parts[:-1]) - path_j] else True
+            previous_path_set.append(set(Path(path_i).parts[:-1]))
+            ingested_data_dict[file_name] = get_ingested_data(file_path=path_i,
+                                                              datasource_type=datasource_type,
+                                                              azure_connection_method=azure_connection_method,
+                                                              display_filenames=is_display_names,
+                                                              **kwargs)
+
+        return ingested_data_dict</code></pre>
+                </details>
+            </section>
+            <section>
+            </section>
+            <section>
+            </section>
+            <section>
+                <h2 class="section-title" id="header-functions">Functions</h2>
+                <dl>
+                    <dt id="codex_widget_factory_lite.data_connectors.file_system.get_ingested_data"><code
+                            class="name flex">
+<span>def <span class="ident">get_ingested_data</span></span>(<span>file_path, datasource_type='local', azure_connection_method='connection_uri', display_filenames=True, **kwargs)</span>
+</code></dt>
+                    <dd>
+                        <div class="desc">
+                            <p>Ingest a dataset file(s) from the file-system.
+                                The module supports data ingestion from the sources,
+                                - Local storage.
+                                - Azure Storage Blob.
+                                - Amazon S3 (Simple Storage Service)</p>
+                            <p>If multiple files are required to be ingested, provide the list
+                                of file paths for the file path argument.</p>
+                            <h2 id="currently-supported-formats">Currently Supported Formats</h2>
+                            <p>Comma Seperated Values - csv
+                                Excel - xls, xlsx
+                                Pickle - pkl
+                                JSON - json
+                                Python - py</p>
+                            <h2 id="parameters">Parameters</h2>
+                            <h2 id="general-parameters">General Parameters</h2>
+                            <p>file_path : string, required
+                                The path where the required file is located.
+                                - If 'string', specify the path of the file.
+                                - If 'list', specify the path for each of the multiple files as list.</p>
+                            <pre><code>It supports to ingest .csv, .xlsx, .pkl, .json files.
+
+-If the blob is inside a folder of container then specify the path
+in the following way.
+eg : If blob is inside folder of container,
+        -f'container_name/folder_1/blob_1.pkl'
+     If blob is two levels inside the folder of container,
+        -f'container_name/folder_1/folder_2/blob_2.pkl'
+
+-If single file has to be ingested,
+    file_path = f'C:/My_Drive/.../File_1.json'
+    file_path = f'container_name/folder1/.../file.csv'
+-If multiple files have to be stored,
+    file_path = [f'C:/My_Drive/.../File_1.csv',
+                 f'C:/My_Drive/.../File_2.pkl',
+                 f'C:/My_Drive/folder1/.../File_3.pkl']
+    file_path = [f'container_name/folder1/.../file.csv',
+                 f'container_name/folder1/.../file2.csv',
+                 f'container_name/folder2/.../file3.csv']
+</code></pre>
+                            <p>datasource_type : string, optional (default='local')
+                                {'local', 'azure_storage_blob', 'amazon_s3'}
+                                The storage source where the files to be ingested are stored.
+                                Read the below docs, Keyword parameters, to use various
+                                additional arguments based on datasource_type.
+                                azure_connection_method : string, optional (default=None)
+                                {'connection_uri', 'shared_access_key', 'client_secret_credentials'}
+                                The argument is required when the datasource_type is 'azure_storage_blob'
+                                Provide one of the connection method listed above.
+                                Read the below docs, Method Specific Additional parameters
+                                to use various connection methods.
+                                display_filenames : bool, optional (default=True)
+                                Displays all the file names present in the path location.
+                                kwargs : optional
+                                The additional arguments required based on datasource_type, data_type.</p>
+                            <pre><code>Provide sheet_name as key-word arg, if specific sheet is required
+when ingesting excel file.
+
+Read the below detailed document, of parameters required for respective
+azure connection method.
+</code></pre>
+                            <p>Keyword Parameters</p>
+                            <hr>
+                            <p>Amazon S3 Additional parameters</p>
+                            <p>aws_access_key: string
+                                The access key to use when creating the client.
+                                aws_secret_access_key: string
+                                The secret key to use when creating the client.
+                                aws_session_token: string, optional
+                                The session token to use when creating the client.
+                                aws_region: string, optional
+                                The name of the region associated with the client.
+                                A client is associated with a single region.</p>
+                            <hr>
+                            <p>Azure Connection Method Specific Additional parameters</p>
+                            <h2 id="method-1-connect-and-store-using-shared-access-key">Method 1 : Connect and store
+                                using Shared Access Key</h2>
+                            <p>account_url: string,
+                                Name of storage account, the account url to connect.
+                                account_key: string,
+                                Account key (Shared access key) of storage account, to use as credential.</p>
+                            <h2 id="method-2-connect-and-store-using-client-secret-credentials">Method 2 : Connect and
+                                store using Client Secret Credentials</h2>
+                            <p>account_url: string,
+                                Name of storage account, the account url to connect.
+                                client_id : string,
+                                Client ID to initialize ClientSecretCredentials.
+                                tenant_id : string,
+                                Tenant ID to initialize ClientSecretCredentials.
+                                client_secret : str,
+                                Secret name to initialize ClientSecretCredentials.</p>
+                            <h2 id="method-3-establish-connection-and-store-using-connection-string">Method 3 :
+                                Establish connection and store using Connection String</h2>
+                            <p>connection_uri : string,
+                                The connection uri (connection_string) corresponding to the azure blob
+                                storage account.</p>
+                            <h2 id="usage">Usage</h2>
+                            <p>-Local</p>
+                            <pre><code class="language-python-repl">&gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f'data.csv', datasource_type='local')
+&gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f'C:/My_space/ind_file.csv', datasource_type='local')
+&gt;&gt;&gt;
+</code></pre>
+                            <p>-Azure Storage Blob</p>
+                            <pre><code class="language-python-repl">&gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f'container_1/data.csv', datasource_type='azure_storage_blob')
+&gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f'container_1/folder_1/ind_file.csv', datasource_type='azure_storage_blob')
+&gt;&gt;&gt;
+</code></pre>
+                            <p>-Amazon S3</p>
+                            <pre><code class="language-python-repl">&gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f'bucket_1/data.csv', datasource_type='amazon_s3')
+&gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f'bucket_1/folder_1/ind_file.csv', datasource_type='amazon_s3')
+&gt;&gt;&gt;
+</code></pre>
+                            <h2 id="returns">Returns</h2>
+                            <p>A pandas dataframe or Dictionary (dict) or Python code string or Type of pkl content.</p>
+                        </div>
+                        <details class="source">
+                            <summary>
+                                <span>Expand source code</span>
+                            </summary>
+                            <pre><code class="python">def get_ingested_data(file_path,
+                      datasource_type=&#39;local&#39;,
+                      azure_connection_method=&#34;connection_uri&#34;,
+                      display_filenames=True,
+                      **kwargs):
+    &#34;&#34;&#34;
+    Ingest a dataset file(s) from the file-system.
+    The module supports data ingestion from the sources,
+        - Local storage.
+        - Azure Storage Blob.
+        - Amazon S3 (Simple Storage Service)
+
+    If multiple files are required to be ingested, provide the list
+    of file paths for the file path argument.
+
+    Currently supported formats
+    ---------------------------
+    Comma Seperated Values - csv
+    Excel - xls, xlsx
+    Pickle - pkl
+    JSON - json
+    Python - py
+
+    Parameters
+    ----------
+    General Parameters
+    ------------------
+    file_path : string, required
+        The path where the required file is located.
+        - If &#39;string&#39;, specify the path of the file.
+        - If &#39;list&#39;, specify the path for each of the multiple files as list.
+
+        It supports to ingest .csv, .xlsx, .pkl, .json files.
+
+        -If the blob is inside a folder of container then specify the path
+        in the following way.
+        eg : If blob is inside folder of container,
+                -f&#39;container_name/folder_1/blob_1.pkl&#39;
+             If blob is two levels inside the folder of container,
+                -f&#39;container_name/folder_1/folder_2/blob_2.pkl&#39;
+
+        -If single file has to be ingested,
+            file_path = f&#39;C:/My_Drive/.../File_1.json&#39;
+            file_path = f&#39;container_name/folder1/.../file.csv&#39;
+        -If multiple files have to be stored,
+            file_path = [f&#39;C:/My_Drive/.../File_1.csv&#39;,
+                         f&#39;C:/My_Drive/.../File_2.pkl&#39;,
+                         f&#39;C:/My_Drive/folder1/.../File_3.pkl&#39;]
+            file_path = [f&#39;container_name/folder1/.../file.csv&#39;,
+                         f&#39;container_name/folder1/.../file2.csv&#39;,
+                         f&#39;container_name/folder2/.../file3.csv&#39;]
+    datasource_type : string, optional (default=&#39;local&#39;)
+        {&#39;local&#39;, &#39;azure_storage_blob&#39;, &#39;amazon_s3&#39;}
+        The storage source where the files to be ingested are stored.
+        Read the below docs, Keyword parameters, to use various
+        additional arguments based on datasource_type.
+    azure_connection_method : string, optional (default=None)
+        {&#39;connection_uri&#39;, &#39;shared_access_key&#39;, &#39;client_secret_credentials&#39;}
+        The argument is required when the datasource_type is &#39;azure_storage_blob&#39;
+        Provide one of the connection method listed above.
+        Read the below docs, Method Specific Additional parameters
+        to use various connection methods.
+    display_filenames : bool, optional (default=True)
+        Displays all the file names present in the path location.
+    kwargs : optional
+        The additional arguments required based on datasource_type, data_type.
+
+        Provide sheet_name as key-word arg, if specific sheet is required
+        when ingesting excel file.
+
+        Read the below detailed document, of parameters required for respective
+        azure connection method.
+
+    Keyword Parameters
+    _________________________________________________________________________
+    Amazon S3 Additional parameters
+
+    aws_access_key: string
+        The access key to use when creating the client.
+    aws_secret_access_key: string
+        The secret key to use when creating the client.
+    aws_session_token: string, optional
+        The session token to use when creating the client.
+    aws_region: string, optional
+        The name of the region associated with the client.
+        A client is associated with a single region.
+    __________________________________________________________________________
+    Azure Connection Method Specific Additional parameters
+
+    Method 1 : Connect and store using Shared Access Key
+    ----------------------------------------------------
+    account_url: string,
+        Name of storage account, the account url to connect.
+    account_key: string,
+        Account key (Shared access key) of storage account, to use as credential.
+
+    Method 2 : Connect and store using Client Secret Credentials
+    ------------------------------------------------------------
+    account_url: string,
+        Name of storage account, the account url to connect.
+    client_id : string,
+        Client ID to initialize ClientSecretCredentials.
+    tenant_id : string,
+        Tenant ID to initialize ClientSecretCredentials.
+    client_secret : str,
+        Secret name to initialize ClientSecretCredentials.
+
+    Method 3 : Establish connection and store using Connection String
+    -----------------------------------------------------------------
+    connection_uri : string,
+        The connection uri (connection_string) corresponding to the azure blob
+        storage account.
+
+    Usage
+    -----
+    -Local
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;data.csv&#39;, datasource_type=&#39;local&#39;)
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;C:/My_space/ind_file.csv&#39;, datasource_type=&#39;local&#39;)
+    &gt;&gt;&gt;
+
+    -Azure Storage Blob
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;container_1/data.csv&#39;, datasource_type=&#39;azure_storage_blob&#39;)
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;container_1/folder_1/ind_file.csv&#39;, datasource_type=&#39;azure_storage_blob&#39;)
+    &gt;&gt;&gt;
+
+    -Amazon S3
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;bucket_1/data.csv&#39;, datasource_type=&#39;amazon_s3&#39;)
+    &gt;&gt;&gt; ingested_data = get_ingested_data(file_path=f&#39;bucket_1/folder_1/ind_file.csv&#39;, datasource_type=&#39;amazon_s3&#39;)
+    &gt;&gt;&gt;
+
+    Returns
+    -------
+    A pandas dataframe or Dictionary (dict) or Python code string or Type of pkl content.
+    &#34;&#34;&#34;
+
+    if isinstance(file_path, str):
+        datasource_type_mapping = {&#39;local&#39;: LocalFileSystem(path=file_path,
+                                                            source_type=datasource_type,
+                                                            **kwargs),
+                                   &#39;azure_storage_blob&#39;: AzureFileSystem(path=file_path,
+                                                                         source_type=datasource_type,
+                                                                         connection_method=azure_connection_method,
+                                                                         **kwargs),
+                                   &#39;amazon_s3&#39;: AWSFileSystem(path=file_path,
+                                                              source_type=datasource_type,
+                                                              **kwargs)}
+        file_source_obj = datasource_type_mapping[datasource_type]
+        if display_filenames:
+            file_source_obj.display_file_names()
+        return file_source_obj.read_file()
+    else:
+        ingested_data_dict = {}
+        previous_path_set = []
+        for path_i in file_path:
+            file_name = Path(path_i).parts[-1].split(&#34;.&#34;)[0]
+            if display_filenames:
+                is_display_names = False if [path_j for path_j in previous_path_set if not set(Path(path_i).parts[:-1]) - path_j] else True
+            previous_path_set.append(set(Path(path_i).parts[:-1]))
+            ingested_data_dict[file_name] = get_ingested_data(file_path=path_i,
+                                                              datasource_type=datasource_type,
+                                                              azure_connection_method=azure_connection_method,
+                                                              display_filenames=is_display_names,
+                                                              **kwargs)
+
+        return ingested_data_dict</code></pre>
+                        </details>
+                    </dd>
+                </dl>
+            </section>
+            <section>
+                <h2 class="section-title" id="header-classes">Classes</h2>
+                <dl>
+                    <dt id="codex_widget_factory_lite.data_connectors.file_system.AWSFileSystem"><code
+                            class="flex name class">
+<span>class <span class="ident">AWSFileSystem</span></span>
+<span>(</span><span>path, source_type, **kwargs)</span>
+</code></dt>
+                    <dd>
+                        <div class="desc">
+                            <p>The AWSFileSystem class has implementations for reading various
+                                types of files from Amazon S3 Storage (Simple Storage Service).</p>
+                        </div>
+                        <details class="source">
+                            <summary>
+                                <span>Expand source code</span>
+                            </summary>
+                            <pre><code class="python">class AWSFileSystem(BaseFileSystem):
+    &#34;&#34;&#34;
+    The AWSFileSystem class has implementations for reading various
+    types of files from Amazon S3 Storage (Simple Storage Service).
+    &#34;&#34;&#34;
+
+    def __init__(self,
+                 path,
+                 source_type,
+                 **kwargs):
+        if source_type == &#34;amazon_s3&#34;:
+            super().__init__(path)
+            # self.connection_method = connection_method
+            # self.blob_service = self._azure_connection_mapping(**kwargs)
+            self.aws_access_key = kwargs.get(&#34;aws_access_key&#34;)
+            self.aws_secret_access_key = kwargs.get(&#34;aws_secret_access_key&#34;)
+            self.region_name = kwargs.get(&#34;aws_region&#34;, &#34;us-east-1&#34;)
+            self.aws_session_token = kwargs.get(&#34;aws_session_token&#34;)
+            self.sheet_name = kwargs.get(&#34;sheet_name&#34;)
+
+            self.bucket_name = self.path.parts[0]
+            self.blob_name = &#34;/&#34;.join(list(self.path.parts)[1:])
+
+            self._make_s3_client()
+            self._make_blob_object()
+            self._get_blob_data()
+
+    def _make_s3_client(self):
+        self.s3_client = boto3.client(service_name=&#34;s3&#34;,
+                                      region_name=self.region_name,
+                                      aws_access_key_id=self.aws_access_key,
+                                      aws_secret_access_key=self.aws_secret_access_key,
+                                      aws_session_token=self.aws_session_token)
+
+    def _make_blob_object(self):
+        self.blob_object = self.s3_client.get_object(Bucket=self.bucket_name,
+                                                     Key=self.blob_name)
+
+    def _get_blob_data(self):
+        self.blob_data = self.blob_object[&#34;Body&#34;]
+
+    def _display_file_names(self):
+        print(f&#34;\n &gt;&gt;&gt; List Of Blobs in directory - {&#39;/&#39;.join(list(self.path.parts[:-1]))} \n&#34;)
+        blob_objects_list = self.s3_client.list_objects_v2(Bucket=self.bucket_name, Prefix=&#34;/&#34;.join(self.blob_name.split(&#34;/&#34;)[:-1]))[&#34;Contents&#34;]
+        for blob_i in blob_objects_list:
+            print(blob_i[&#34;Key&#34;].split(&#34;/&#34;)[-1])
+
+    def _read_csv_file(self):
+        content = self.blob_data.read()
+        return pd.read_csv(StringIO(content.decode()))
+
+    def _read_excel_file(self):
+        content = self.blob_data.read()
+        return pd.read_excel(BytesIO(content), sheet_name=self.sheet_name, engine=&#34;openpyxl&#34;)
+
+    def _read_json_file(self):
+        content = self.blob_data.read()
+        return json.loads(content.decode())
+
+    def _read_pickle_file(self):
+        content = self.blob_data.read()
+        return pickle.loads(content)
+
+    def _read_python_file(self):
+        content = self.blob_data.read()
+        return content.decode()</code></pre>
+                        </details>
+                        <h3>Ancestors</h3>
+                        <ul class="hlist">
+                            <li><a title="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem"
+                                    href="#codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem">BaseFileSystem</a>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt id="codex_widget_factory_lite.data_connectors.file_system.AzureFileSystem"><code
+                            class="flex name class">
+<span>class <span class="ident">AzureFileSystem</span></span>
+<span>(</span><span>path, source_type, connection_method, **kwargs)</span>
+</code></dt>
+                    <dd>
+                        <div class="desc">
+                            <p>The AzureFileSystem class has implementations for reading
+                                various types of files from Azure Blob Storage.</p>
+                        </div>
+                        <details class="source">
+                            <summary>
+                                <span>Expand source code</span>
+                            </summary>
+                            <pre><code class="python">class AzureFileSystem(BaseFileSystem):
+    &#34;&#34;&#34;
+    The AzureFileSystem class has implementations for reading
+    various types of files from Azure Blob Storage.
+    &#34;&#34;&#34;
+
+    def __init__(self,
+                 path,
+                 source_type,
+                 connection_method,
+                 **kwargs):
+        if source_type == &#34;azure_storage_blob&#34;:
+            super().__init__(path)
+            self.connection_method = connection_method
+            self.blob_service = self._azure_connection_mapping(**kwargs)
+            self.sheet_name = kwargs.get(&#34;sheet_name&#34;)
+
+            self.container_name = self.path.parts[0]
+            self.blob_name = &#34;/&#34;.join(list(self.path.parts)[1:])
+
+    def _azure_connection_mapping(self, **kwargs):
+        if self.connection_method == &#39;client_secret_credential&#39;:
+            service_credential = ServicePrincipalCredentials(tenant=kwargs.get(&#39;tenant_id&#39;),
+                                                             client_id=kwargs.get(&#39;client_id&#39;),
+                                                             secret=kwargs.get(&#39;client_secret&#39;),
+                                                             resource=kwargs.get(&#39;resource&#39;))
+            token_credential = TokenCredential(service_credential.token[&#34;access_token&#34;])
+            blobService = BlockBlobService(account_name=kwargs.get(&#39;account_url&#39;),
+                                           token_credential=token_credential)
+        elif self.connection_method == &#39;connection_uri&#39;:
+            blobService = BlockBlobService(connection_string=kwargs.get(&#39;connection_uri&#39;))
+        elif self.connection_method == &#39;shared_access_key&#39;:
+            blobService = BlockBlobService(account_name=kwargs.get(&#39;account_url&#39;),
+                                           account_key=kwargs.get(&#39;account_key&#39;))
+        else:
+            raise ValueError(f&#34;Azure connection method provided is invalid. Given - {self.connection_method}.&#34;)
+        return blobService
+
+    def _display_file_names(self):
+        print(f&#34;\n &gt;&gt;&gt; List Of Blobs in directory - {&#39;/&#39;.join(list(self.path.parts[:-1]))} \n&#34;)
+        blob_objects_list = self.blob_service.list_blobs(container_name=self.container_name,
+                                                         prefix=&#34;/&#34;.join(self.blob_name.split(&#34;/&#34;)[:-1])).items
+        for blob_i in blob_objects_list:
+            print(blob_i.name.split(&#34;/&#34;)[-1])
+
+    def _read_csv_file(self):
+        blob_data = self.blob_service.get_blob_to_text(container_name=self.container_name,
+                                                       blob_name=self.blob_name)
+        return pd.read_csv(StringIO(blob_data.content))
+
+    def _read_excel_file(self):
+        blob_data = self.blob_service.get_blob_to_bytes(container_name=self.container_name,
+                                                        blob_name=self.blob_name)
+        return pd.read_excel(BytesIO(blob_data.content), sheet_name=self.sheet_name, engine=&#34;openpyxl&#34;)
+
+    def _read_json_file(self):
+        blob_data = self.blob_service.get_blob_to_text(container_name=self.container_name,
+                                                       blob_name=self.blob_name)
+        return json.loads(blob_data.content)
+
+    def _read_pickle_file(self):
+        blob_data = self.blob_service.get_blob_to_bytes(container_name=self.container_name,
+                                                        blob_name=self.blob_name)
+        return pickle.loads(blob_data.content)
+
+    def _read_python_file(self):
+        blob_data = self.blob_service.get_blob_to_text(container_name=self.container_name,
+                                                       blob_name=self.blob_name)
+        return blob_data.content</code></pre>
+                        </details>
+                        <h3>Ancestors</h3>
+                        <ul class="hlist">
+                            <li><a title="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem"
+                                    href="#codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem">BaseFileSystem</a>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt id="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem"><code
+                            class="flex name class">
+<span>class <span class="ident">BaseFileSystem</span></span>
+<span>(</span><span>path)</span>
+</code></dt>
+                    <dd>
+                        <div class="desc">
+                            <p>The BaseFileSystem class has the interface (Abstract Methods) for
+                                ingestion file system widget, which reads various types of files
+                                from different data sources.</p>
+                        </div>
+                        <details class="source">
+                            <summary>
+                                <span>Expand source code</span>
+                            </summary>
+                            <pre><code class="python">class BaseFileSystem():
+    &#34;&#34;&#34;
+    The BaseFileSystem class has the interface (Abstract Methods) for
+    ingestion file system widget, which reads various types of files
+    from different data sources.
+    &#34;&#34;&#34;
+
+    def __init__(self, path):
+        self.path = Path(path)
+        self.inferred_file_type = self.infer_file_type()
+
+    def infer_file_type(self):
+        return self.path.suffix.replace(&#39;.&#39;, &#39;&#39;)
+
+    def read_file(self):
+        self.file_read_function_mapper = {&#34;csv&#34;: self._read_csv_file,
+                                          &#34;pkl&#34;: self._read_pickle_file,
+                                          &#34;json&#34;: self._read_json_file,
+                                          &#34;xls&#34;: self._read_excel_file,
+                                          &#34;xlsx&#34;: self._read_excel_file,
+                                          &#34;py&#34;: self._read_python_file}
+
+        return self.file_read_function_mapper[self.inferred_file_type]()
+
+    def display_file_names(self):
+        self._display_file_names()
+
+    # abstract functions, will be created in the respective Filesystem
+    def _display_file_names(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+    def _read_csv_file(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+    def _read_excel_file(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+    def _read_json_file(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+    def _read_pickle_file(self):
+        raise NotImplementedError(&#34;abstract method&#34;)
+
+    def _read_python_file(self):
+        raise NotImplementedError(&#34;abstract method&#34;)</code></pre>
+                        </details>
+                        <h3>Subclasses</h3>
+                        <ul class="hlist">
+                            <li><a title="codex_widget_factory_lite.data_connectors.file_system.AWSFileSystem"
+                                    href="#codex_widget_factory_lite.data_connectors.file_system.AWSFileSystem">AWSFileSystem</a>
+                            </li>
+                            <li><a title="codex_widget_factory_lite.data_connectors.file_system.AzureFileSystem"
+                                    href="#codex_widget_factory_lite.data_connectors.file_system.AzureFileSystem">AzureFileSystem</a>
+                            </li>
+                            <li><a title="codex_widget_factory_lite.data_connectors.file_system.GCPFileSystem"
+                                    href="#codex_widget_factory_lite.data_connectors.file_system.GCPFileSystem">GCPFileSystem</a>
+                            </li>
+                            <li><a title="codex_widget_factory_lite.data_connectors.file_system.LocalFileSystem"
+                                    href="#codex_widget_factory_lite.data_connectors.file_system.LocalFileSystem">LocalFileSystem</a>
+                            </li>
+                        </ul>
+                        <h3>Methods</h3>
+                        <dl>
+                            <dt
+                                id="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem.display_file_names">
+                                <code class="name flex">
+<span>def <span class="ident">display_file_names</span></span>(<span>self)</span>
+</code>
+                            </dt>
+                            <dd>
+                                <div class="desc"></div>
+                                <details class="source">
+                                    <summary>
+                                        <span>Expand source code</span>
+                                    </summary>
+                                    <pre><code class="python">def display_file_names(self):
+    self._display_file_names()</code></pre>
+                                </details>
+                            </dd>
+                            <dt
+                                id="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem.infer_file_type">
+                                <code class="name flex">
+<span>def <span class="ident">infer_file_type</span></span>(<span>self)</span>
+</code>
+                            </dt>
+                            <dd>
+                                <div class="desc"></div>
+                                <details class="source">
+                                    <summary>
+                                        <span>Expand source code</span>
+                                    </summary>
+                                    <pre><code class="python">def infer_file_type(self):
+    return self.path.suffix.replace(&#39;.&#39;, &#39;&#39;)</code></pre>
+                                </details>
+                            </dd>
+                            <dt id="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem.read_file">
+                                <code class="name flex">
+<span>def <span class="ident">read_file</span></span>(<span>self)</span>
+</code>
+                            </dt>
+                            <dd>
+                                <div class="desc"></div>
+                                <details class="source">
+                                    <summary>
+                                        <span>Expand source code</span>
+                                    </summary>
+                                    <pre><code class="python">def read_file(self):
+    self.file_read_function_mapper = {&#34;csv&#34;: self._read_csv_file,
+                                      &#34;pkl&#34;: self._read_pickle_file,
+                                      &#34;json&#34;: self._read_json_file,
+                                      &#34;xls&#34;: self._read_excel_file,
+                                      &#34;xlsx&#34;: self._read_excel_file,
+                                      &#34;py&#34;: self._read_python_file}
+
+    return self.file_read_function_mapper[self.inferred_file_type]()</code></pre>
+                                </details>
+                            </dd>
+                        </dl>
+                    </dd>
+                    <dt id="codex_widget_factory_lite.data_connectors.file_system.GCPFileSystem"><code
+                            class="flex name class">
+<span>class <span class="ident">GCPFileSystem</span></span>
+<span>(</span><span>path)</span>
+</code></dt>
+                    <dd>
+                        <div class="desc">
+                            <p>The BaseFileSystem class has the interface (Abstract Methods) for
+                                ingestion file system widget, which reads various types of files
+                                from different data sources.</p>
+                        </div>
+                        <details class="source">
+                            <summary>
+                                <span>Expand source code</span>
+                            </summary>
+                            <pre><code class="python">class GCPFileSystem(BaseFileSystem):
+    pass</code></pre>
+                        </details>
+                        <h3>Ancestors</h3>
+                        <ul class="hlist">
+                            <li><a title="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem"
+                                    href="#codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem">BaseFileSystem</a>
+                            </li>
+                        </ul>
+                    </dd>
+                    <dt id="codex_widget_factory_lite.data_connectors.file_system.LocalFileSystem"><code
+                            class="flex name class">
+<span>class <span class="ident">LocalFileSystem</span></span>
+<span>(</span><span>path, source_type, **kwargs)</span>
+</code></dt>
+                    <dd>
+                        <div class="desc">
+                            <p>The LocalFileSystem class has implementations for reading
+                                various types of files from Local storage.</p>
+                        </div>
+                        <details class="source">
+                            <summary>
+                                <span>Expand source code</span>
+                            </summary>
+                            <pre><code class="python">class LocalFileSystem(BaseFileSystem):
+    &#34;&#34;&#34;
+    The LocalFileSystem class has implementations for reading
+    various types of files from Local storage.
+    &#34;&#34;&#34;
+
+    def __init__(self,
+                 path,
+                 source_type,
+                 **kwargs):
+        if source_type == &#34;local&#34;:
+            super().__init__(path)
+            self.sheet_name = kwargs.get(&#34;sheet_name&#34;)
+
+    def _display_file_names(self):
+        print(f&#34;\n &gt;&gt;&gt; List of files in directory - {&#39;/&#39;.join(list(self.path.parts[:-1]))} \n&#34;)
+        os.chdir(&#39;/&#39;.join(list(self.path.parts[:-1])))
+        for blob_i in os.listdir():
+            print(blob_i)
+
+    def _read_csv_file(self):
+        return pd.read_csv(self.path, low_memory=False)
+
+    def _read_excel_file(self):
+        return pd.read_excel(self.path, sheet_name=self.sheet_name, engine=&#34;openpyxl&#34;)
+
+    def _read_json_file(self):
+        return json.load(open(self.path, &#34;r&#34;))
+
+    def _read_pickle_file(self):
+        return pickle.load(open(self.path, &#34;rb&#34;))
+
+    def _read_python_file(self):
+        return open(self.path).read()</code></pre>
+                        </details>
+                        <h3>Ancestors</h3>
+                        <ul class="hlist">
+                            <li><a title="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem"
+                                    href="#codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem">BaseFileSystem</a>
+                            </li>
+                        </ul>
+                    </dd>
+                </dl>
+            </section>
+        </article>
+        <nav id="sidebar">
+            <h1>Index</h1>
+            <div class="toc">
+                <ul></ul>
+            </div>
+            <ul id="index">
+                <li>
+                    <h3>Super-module</h3>
+                    <ul>
+                        <li><code><a title="codex_widget_factory_lite.data_connectors" href="index.html">codex_widget_factory_lite.data_connectors</a></code>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3><a href="#header-functions">Functions</a></h3>
+                    <ul class="">
+                        <li><code><a title="codex_widget_factory_lite.data_connectors.file_system.get_ingested_data" href="#codex_widget_factory_lite.data_connectors.file_system.get_ingested_data">get_ingested_data</a></code>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3><a href="#header-classes">Classes</a></h3>
+                    <ul>
+                        <li>
+                            <h4><code><a title="codex_widget_factory_lite.data_connectors.file_system.AWSFileSystem" href="#codex_widget_factory_lite.data_connectors.file_system.AWSFileSystem">AWSFileSystem</a></code>
+                            </h4>
+                        </li>
+                        <li>
+                            <h4><code><a title="codex_widget_factory_lite.data_connectors.file_system.AzureFileSystem" href="#codex_widget_factory_lite.data_connectors.file_system.AzureFileSystem">AzureFileSystem</a></code>
+                            </h4>
+                        </li>
+                        <li>
+                            <h4><code><a title="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem" href="#codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem">BaseFileSystem</a></code>
+                            </h4>
+                            <ul class="">
+                                <li><code><a title="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem.display_file_names" href="#codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem.display_file_names">display_file_names</a></code>
+                                </li>
+                                <li><code><a title="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem.infer_file_type" href="#codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem.infer_file_type">infer_file_type</a></code>
+                                </li>
+                                <li><code><a title="codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem.read_file" href="#codex_widget_factory_lite.data_connectors.file_system.BaseFileSystem.read_file">read_file</a></code>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h4><code><a title="codex_widget_factory_lite.data_connectors.file_system.GCPFileSystem" href="#codex_widget_factory_lite.data_connectors.file_system.GCPFileSystem">GCPFileSystem</a></code>
+                            </h4>
+                        </li>
+                        <li>
+                            <h4><code><a title="codex_widget_factory_lite.data_connectors.file_system.LocalFileSystem" href="#codex_widget_factory_lite.data_connectors.file_system.LocalFileSystem">LocalFileSystem</a></code>
+                            </h4>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </main>
+    <footer id="footer">
+        <p>Generated by <a href="https://pdoc3.github.io/pdoc"
+                title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+    </footer>
+</body>
+
+</html>

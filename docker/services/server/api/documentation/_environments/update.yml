@@ -1,0 +1,51 @@
+
+summary: "Update Environment"
+tags:
+  - platform/Environments
+description: "This will update the environment name"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "environment_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "body"
+  name: "body"
+  description: "Accepts environment name"
+  required: "true"
+  schema:
+    type: "object"
+    example: {'name': 'envname'}
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "status": "true",
+      }
+  404:
+    description: "Item not found"
+    schema :
+      type: "object"
+      example:  {
+        "error" : "Item not found"
+      }
+  422:
+    description: "Could not update"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Could not update"
+      }
+
+

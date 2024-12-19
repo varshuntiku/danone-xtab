@@ -1,0 +1,31 @@
+name: Default-Execution-Environment-$(Date:ddMMyyyy)-$(Rev:r)-$(CodexProductAppVersion)
+trigger: none
+
+variables:
+  - group: release-version
+  - name: CODEX_PRODUCT_APP_VERSION
+    value: $[variables.CodexProductAppVersion]
+
+stages:
+  - stage: Run_Python_Script
+    dependsOn: []
+    condition: succeeded()
+    jobs:
+      - job: 'RunPythonScriptJob'
+        displayName: 'Run Python Script Job'
+        steps:
+        - task: UsePythonVersion@0
+          inputs:
+            versionSpec: '3.10'
+        - bash: |
+            cd docker/services/dynamic-execution-environment
+            pip install -r requirements.txt
+          displayName: 'Install dependencies'
+        - script: |
+            cd docker/services/dynamic-execution-environment/scripts
+            python3 execution-environment-default-create.py $(DEFAULT_EXECUTION_USERNAME) $(DEFAULT_EXECUTION_PASSWORD)
+          displayName: "Run execution-environment-default-create Script"
+          env:
+            GATEWAY_BASE_URL: $(GATEWAY_BASE_URL)
+            GATEWAY_BASE_FAST_API_URL: $(GATEWAY_BASE_FAST_API_URL)
+          # condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/qa'))

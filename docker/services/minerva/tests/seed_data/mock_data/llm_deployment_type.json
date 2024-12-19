@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "name": "basemodel",
+        "is_active": true
+    },
+    {
+        "id": 2,
+        "name": "experiment",
+        "is_active": true
+    },
+    {
+        "id": 3,
+        "name": "checkpoint",
+        "is_active": true
+    },
+    {
+        "id": 4,
+        "name": "custom",
+        "is_active": true
+    }
+]

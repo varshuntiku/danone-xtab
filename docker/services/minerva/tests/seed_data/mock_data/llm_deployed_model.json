@@ -1,0 +1,97 @@
+[
+    {
+        "id": 1,
+        "model_id": 1,
+        "endpoint": "https://mokendpoint",
+        "status": "Completed",
+        "is_active": true,
+        "name": "gpt-35-turbo",
+        "description": "gpt-35-turbo",
+        "approval_status": "approved",
+        "deployment_type_id": 1,
+        "progress": 100,
+        "model_params": {
+            "api_version": "2023-07-01-preview",
+            "deployment_name": "base-text-to-sql-gpt35",
+            "model_name": "gpt-35-turbo",
+            "openai_api_key": "1",
+            "temperature": 0
+        }
+    },
+    {
+        "id": 2,
+        "model_id": 2,
+        "endpoint": "https://mokendpoint",
+        "status": "Completed",
+        "is_active": true,
+        "name": "gpt-4",
+        "description": "gpt-4",
+        "approval_status": "approved",
+        "deployment_type_id": 1,
+        "progress": 100,
+        "model_params": {
+            "api_version": "2023-03-15-preview",
+            "deployment_name": "minerva-llm",
+            "model_name": "gpt-4",
+            "openai_api_key": "1",
+            "temperature": 0
+        }
+    },
+    {
+        "id": 3,
+        "model_id": 3,
+        "endpoint": "https://mokendpoint",
+        "status": "Completed",
+        "is_active": true,
+        "name": "gpt-35-turbo-16k",
+        "description": "gpt-35-turbo-16k",
+        "approval_status": "approved",
+        "deployment_type_id": 1,
+        "progress": 100,
+        "model_params": {
+            "api_version": "2023-07-01-preview",
+            "deployment_name": "gpt-35-16k",
+            "model_name": "gpt-35-turbo-16k",
+            "openai_api_key": "1",
+            "temperature": 0
+        }
+    },
+    {
+        "id": 4,
+        "model_id": 4,
+        "endpoint": "https://mokendpoint",
+        "status": "Completed",
+        "is_active": true,
+        "name": "text-embedding-ada-002",
+        "description": "text-embedding-ada-002",
+        "approval_status": "approved",
+        "deployment_type_id": 1,
+        "progress": 100,
+        "model_params": {
+            "api_version": "2023-07-01-preview",
+            "deployment_name": "text-embedding-ada-002",
+            "model_name": "text-embedding-ada-002",
+            "openai_api_key": "1",
+            "temperature": 0
+        }
+    },
+    {
+        "id": 5,
+        "model_id": 4,
+        "endpoint": "https://mokendpoint",
+        "status": "Completed",
+        "is_active": true,
+        "name": "tts",
+        "description": "text-embedding-ada-002",
+        "approval_status": "approved",
+        "deployment_type_id": 1,
+        "progress": 100,
+        "model_params": {
+            "api_version": "2023-07-01-preview",
+            "deployment_name": "text-embedding-ada-002",
+            "model_name": "text-embedding-ada-002",
+            "openai_api_key": "1",
+            "temperature": 0
+        }
+    }
+]

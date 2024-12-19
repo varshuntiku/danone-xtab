@@ -1,0 +1,40 @@
+summary: "Clone Application to create a replica application"
+tags:
+  - product/App
+description: "Clone from any version of applicatio to preview version application within a new container"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  description: Details to create the new app
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [source_app_id, app_name, function_id, industry_id, contact_email]
+        properties:
+          source_app_id:
+            type: "integer"
+          app_name:
+            type: "string"
+          industry_id:
+            type: "interger"
+          function_id:
+            type: "integer"
+          contact_email:
+            type: "string"
+        example: {"source_app_id": 1, "app_name":"App Local-2",  "industry_id": 1, "function_id":null,"contact_email":"abc@themathcompany.com"}
+
+responses:
+  200:
+    description: "Created successfully"
+    schema:
+      type: "object"
+      example:  {'app_id': 2}
+  500:
+    description: "Error while creating"
+    schema :
+      type: "object"
+      example:  {'error': 'Error in creating the application'}

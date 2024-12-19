@@ -1,0 +1,33 @@
+summary: "Get App Dynamic Environment ID"
+tags:
+  - product/DynamicExecutionEnvironment
+description: "Fetches the execution environment ID for the given app ID"
+produces:
+- application/json
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  description: "The app ID for which environment ID has to be fetched"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "API successful"
+    schema:
+      type: object
+    example: {'app_id': 1, 'dynamic_env_id': None}
+  404:
+    description: "ID not found"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'item not found'}
+  500:
+    description: "Error"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'Error retrieving app execution id mapping'}

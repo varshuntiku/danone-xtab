@@ -1,0 +1,6 @@
+{
+    "config": {
+        "file_storage_type": "azure_blob_storage",
+        "blob_connection_string": "DefaultEndpointsProtocol=https;AccountName=stcodxdev;AccountKey=4yyB8cZz/EMvRjzILCOB+iWYeVY09mmSyj8q6gUXh0rQ5fAN4nvxlv95RSOZt1MDmgB8iTQK9ad7+AStltcinA==;EndpointSuffix=core.windows.net"
+    }
+}

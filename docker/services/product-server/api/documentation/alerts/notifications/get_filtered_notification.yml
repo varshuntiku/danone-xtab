@@ -1,0 +1,31 @@
+summary: "Filtered notifications"
+tags:
+  - product/Alerts
+description: "Get the filtered notification according to the selected filter options"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "query"
+  name: "app_id"
+  description: "The app ID for which the filtered notifications have to be fetched. If the app ID is not mentioned, then the API will filter for platform notifications"
+  schema:
+    type: "integer"
+
+- in: "query"
+  name: "selected_filter"
+  required: "true"
+  description: "The filters based on which notifications will be fetched"
+  schema:
+    type: "string"
+    example: {"is_read": True, "start_date": "2023-01-01", "end_date": "2023-01-02"}
+
+responses:
+  200:
+    description: "Return list of notifications for platform or the given app ID and filters"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching notifications"

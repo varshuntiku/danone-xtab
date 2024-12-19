@@ -1,0 +1,38 @@
+.MinervaWC .MinervaResizable {
+    & .MinervaResizers {
+        width: 100%;
+        height: 100%;
+    }
+    & .MinervaResizer{
+        position: absolute;
+        z-index: 1;
+        &.MinervaResizer-top{
+            cursor: ns-resize;
+            height: 4px;
+            width: 100%;
+            left: 0;
+            top: 0;
+        }
+        &.MinervaResizer-bottom{
+            cursor: ns-resize;
+            height: 4px;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+        }
+        &.MinervaResizer-left{
+            cursor: ew-resize;
+            height: 100%;
+            width: 4px;
+            left: 0;
+            bottom: 0;
+        }
+        &.MinervaResizer-right{
+            cursor: ew-resize;
+            height: 100%;
+            width: 4px;
+            right: 0;
+            bottom: 0;
+        }
+    }
+}

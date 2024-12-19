@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "nuclios-inference"
+version = "0.2.0"
+description = "NucliOs package for inferencing"
+authors = ["anshul.singh"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+requests ="2.31.0"
+pydantic ="2.5.2"
+langchain ="0.0.340"
+sentence_transformers ="2.2.2"
+bitsandbytes ="0.41.2"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

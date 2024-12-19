@@ -1,0 +1,40 @@
+
+summary: "Delete Environment"
+tags:
+  - platform/Environments
+description: "Deletes a environment"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "environment_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "deleted_rows": 1,
+      }
+  404:
+    description: "Item not found"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Item not found"
+      }
+  500:
+    description: "Delete operation error:"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Delete operation error:"
+      }

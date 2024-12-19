@@ -1,0 +1,46 @@
+summary: "Fetch screen configuration."
+tags:
+  - product/App
+description: "Gets the screen configuration for a given screen id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "array"
+          example :
+            screen_index: 0
+            screen_name: "Screen name"
+            screen_description: null
+            screen_image: null
+            level: null
+            graph_type: null
+            horizontal: null
+            rating_url: null
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'item not found'
+          }

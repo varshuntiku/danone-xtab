@@ -1,0 +1,325 @@
+{
+	"sections": [
+		{
+			"name": "problemDefinition",
+			"title": "Problem Definition",
+			"desc": "Standardized Framework to define the business problem",
+			"subSections": [
+				{
+					"name": "stateProblem",
+					"title": "State Problem",
+					"desc": "State the problem as heard",
+					"header": "STATE THE PROBLEM AS HEARD",
+					"contentType": "grid-layout",
+					"content": {
+						"sections": [
+							{
+								"colStart": 1,
+								"colEnd": 33,
+								"rowStart": 1,
+								"rowEnd": 19,
+								"component": "rich-text-box",
+								"params": {
+									"placeholder": "●  Note down what you heard from the Stakeholder as is here, add to this as you hear more about the project",
+									"content": ""
+								},
+								"dataKey": "stateProblem1"
+							}
+						]
+					},
+					"data": {},
+					"info": {
+						"title": "",
+						"desc": ["Have no assumptions or no interpretations of what you heard about the problem, put the details as is","This could be the inputs you receive or details you get from the sales team in case of a new project", "This could also be what you hear from the customer on initial scoping calls"],
+						"content": ""
+					}
+				},
+				{
+					"name": "understandStatusQuo",
+					"title": "Understand Status Quo",
+					"desc": "Understand and describe status quo",
+					"header": "UNDERSTAND AND DESCRIBE THE CURRENT STATE",
+					"contentType": "grid-layout",
+					"content": {
+						"sections": [
+							{
+								"colStart": 1,
+								"colEnd": 17,
+								"rowStart": 1,
+								"rowEnd": 14,
+								"component": "rich-text-box",
+								"params": {
+									"title": "Explain the current state",
+									"placeholder": "●  State what are you solving for, explain if any current process/solution exists?\n●  What is the status quo?",
+									"content": "",
+									"info": {
+										"title": "",
+										"desc": ["Why is this problem a priority today?","What impact does the problem have on business?","Who are the stakeholders and how are they relevant to the problem statement?","How are decisions being taken currently?","Are there any benchmarks that exist today?","What are the reasons that led to the problem?"],
+										"content": ""
+									}
+								},
+								"dataKey": "statusQuo1"
+							},
+							{
+								"colStart": 17,
+								"colEnd": 33,
+								"rowStart": 1,
+								"rowEnd": 14,
+								"component": "rich-text-box",
+								"params": {
+									"title": "Challenges",
+									"placeholder": "●  Describe the challenges of the current state and their impact",
+									"content": "",
+									"info": {
+										"title": "",
+										"desc": ["Is there an existing solution that is being used?","What are the limitations of the current solution/process?", "Why is this problem relevant at this point of time?", "Is there a metric that is being adversely impacted?"],
+										"content": ""
+									}
+								},
+								"dataKey": "statusQuo2"
+							},
+							{
+								"colStart": 1,
+								"colEnd": 33,
+								"rowStart": 14,
+								"rowEnd": 19,
+								"component": "rich-text-box:attachment",
+								"params": {
+									"title": "Describe (or) attach the business/technical process that exists today (Flowchart/Process flow)",
+									"placeholder": "●  Describe the business process or the attachments",
+									"content": "",
+									"attachments": [],
+									"info": {
+										"title": "",
+										"desc": ["The attachment can be of any format."]
+									}
+								},
+								"dataKey": "statusQuo3"
+							}
+						]
+					}
+				},
+				{
+					"name": "understandConstraints",
+					"title": "State the Constraints",
+					"desc": "Understand the constraints we are working under",
+					"header": "INTERNAL WORKING CONSTRAINTS",
+					"contentType": "constraints-table",
+					"content": {
+						"tableParams": {
+							"gridOptions": {
+								"suppressToolBar": true,
+								"editorMode": true,
+								"tableHeight": "(100vh - 45rem)"
+							},
+							"coldef": [
+								{
+									"headerName": "Type",
+									"field": "type",
+									"width": "33rem",
+									"cellClassName": "pd-constraints-type-cell",
+									"headerClassName": "pd-constraints-type-header"
+								},
+								{
+									"headerName": "Describe the constraints under which we are working (if any)",
+									"field": "desc",
+									"cellEditor": "rich-text",
+									"cellParamsField": "descParams",
+									"editable": true
+								}
+							],
+							"rowData": [
+								{
+									"type": "TIMELINE",
+									"typeParams": {
+										"coldef": {
+											"cellRendererParams": {
+												"info": {
+													"desc": ["State the timeline by which the solution is expected?", ["Is the solution required for any key meeting, event or milestone (this could be an internal meeting or a meeting within the client’s organization)?", "How will the timeline impact resourcing and project planning?"]]
+												}
+											}
+										}
+									},
+									"descParams": {
+										"coldef": {
+											"cellEditorParams": {
+												"placeholder": "●  State the timeline by which the solution is expected?\n    ○  Is the solution required for any key meeting, event or milestone (this could be an internal meeting or a meeting within the client’s organization)?\n    ○  How will the timeline impact resourcing and project planning?"
+											}
+										}
+									},
+									"descDataKey": "constraints.timeline"
+
+								},
+								{
+									"type": "DATA (SOURCE)",
+									"typeParams": {
+										"coldef": {
+											"cellRendererParams": {
+												"info": {
+													"desc": ["Do we understand the quality/timeline of data that will be available to us?","Do we have access to all the data sources required?","Do we know how many stakeholders we need to interact with to get data in place?"]
+												}
+											}
+										}
+									},
+									"descParams": {
+										"coldef": {
+											"cellEditorParams": {
+												"placeholder": "●  Do we understand the quality/timeline of data that will be available to us?\n●  Do we have access to all the data sources required?\n●  Do we know how many stakeholders we need to interact with to get data in place?"
+											}
+										}
+									},
+									"descDataKey": "constraints.dataSource"
+								},
+								{
+									"type": "FRAMEWORK",
+									"typeParams": {
+										"coldef": {
+											"cellRendererParams": {
+												"info": {
+													"desc": ["What framework would be available for problem solving, is there any other limitation?", ["Example: MVP, Agile, etc. Will the framework fit into client’s problem?","Is there an existing project management solution we need to use? If not, is there anything from the stack that can be used?"]]
+												}
+											}
+										}
+									},
+									"descParams": {
+										"coldef": {
+											"cellEditorParams": {
+												"placeholder": "●  What framework would be available for problem solving, is there any other limitation?\n    ○  Example: MVP, Agile, etc. Will the framework fit into client’s problem?\n    ○  Is there an existing project management solution we need to use? If not, is there anything from the stack that can be used?"
+											}
+										}
+									},
+									"descDataKey": "constraints.framework"
+								},
+								{
+									"type": "INFRASTRUCTURE",
+									"typeParams": {
+										"coldef": {
+											"cellRendererParams": {
+												"info": {
+													"desc": ["What infrastructure would be available for problem solving? Are there any limitations around the resources or links to any critical infrastructure we need to be careful with?", ["Infrastructure can be a virtual desktop or the platform we will work on"]]
+												}
+											}
+										}
+									},
+									"descParams": {
+										"coldef": {
+											"cellEditorParams": {
+												"placeholder": "●  What infrastructure would be available for problem solving? Are there any limitations around the resources or links to any critical infrastructure we need to be careful with?\n    ○  Infrastructure can be a virtual desktop or the platform we will work on"
+											}
+										}
+									},
+									"descDataKey": "constraints.infrastructure"
+								},
+								{
+									"type": "BUSINESS PROCESS",
+									"typeParams": {
+										"coldef": {
+											"cellRendererParams": {
+												"info": {
+													"desc": ["Are there any business processes that could be a constraint for the solution? For example, a series of meetings that the solution needs to be a part of.","Does the solution have to comply with any existing projects?"]
+												}
+											}
+										}
+									},
+									"descParams": {
+										"coldef": {
+											"cellEditorParams": {
+												"placeholder": "●  Are there any business processes that could be a constraint for the solution? For example, a series of meetings that the solution needs to be a part of.\n●  Does the solution have to comply with any existing projects?"
+											}
+										}
+									},
+									"descDataKey": "constraints.businessProcess"
+								},
+								{
+									"type": "ANY OTHER",
+									"typeParams": {
+										"coldef": {
+											"cellRendererParams": {
+												"info": {
+													"desc": "(Please list any if it’s not described above)"
+												}
+											}
+										}
+									},
+									"descParams": {
+										"coldef": {
+											"cellEditorParams": {
+												"placeholder": "(Please list any if it’s not described above)"
+											}
+										}
+									},
+									"descDataKey": "constraints.anyOther"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "defineObjectiveSuccessCriteria",
+					"title": "Define Objective & Success Criteria",
+					"desc": "What would and end state look like if solved successfully?",
+					"header": "DEFINE THE OBJECTIVE & SUCCESS CRITERIA",
+					"contentType": "grid-layout",
+					"content": {
+						"sections": [
+							{
+								"colStart": 1,
+								"colEnd": 33,
+								"rowStart": 1,
+								"rowEnd": 10,
+								"component": "rich-text-box",
+								"params": {
+									"title": "What would an end state look like if this problem was solved successfully?",
+									"placeholder": "Please describe the end state (Assume you are at that moment and write down in present tense)",
+									"content": "",
+									"info": {
+										"title": "",
+										"desc": ["What Goals/KPI/Metric will get impacted by the execution of the project and how does end state look like?", "What decisions/changes/improvements will the solution bring in?", "What insights do you need to derive to influence the decision, changes that you are about to bring in"],
+										"content": ""
+									}
+								},
+								"dataKey": "successCriteria1"
+							},
+							{
+								"colStart": 1,
+								"colEnd": 17,
+								"rowStart": 10,
+								"rowEnd": 19,
+								"component": "rich-text-box",
+								"params": {
+									"title": "Are there any subjective success criteria?",
+									"placeholder": "●  Apart from what’s described above, what are the qualitative aspects that you need to meet during the project?",
+									"content": "",
+									"info": {
+										"title": "",
+										"desc": ["Apart from what’s described above, what are the qualitative aspects that you need to meet during the project?"],
+										"content": ""
+									}
+								},
+								"dataKey": "successCriteria2"
+							},
+							{
+								"colStart": 17,
+								"colEnd": 33,
+								"rowStart": 10,
+								"rowEnd": 19,
+								"component": "rich-text-box",
+								"params": {
+									"title": "Is there a wish-list apart from what is stated above?",
+									"placeholder": "●  What else in and around the project does the customer wishes for?\n●  What are other problems related to the current ones that customer wishes to solve?",
+									"content": "",
+									"info": {
+										"title": "",
+										"desc": ["What else in and around the project does the customer wishes for?", "What are other problems related to the current ones that customer wishes to solve?"],
+										"content": ""
+									}
+								},
+								"dataKey": "successCriteria3"
+							}
+						]
+					}
+				}
+			]
+		}
+	]
+}

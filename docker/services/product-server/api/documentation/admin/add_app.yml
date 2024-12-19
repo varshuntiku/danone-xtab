@@ -1,0 +1,69 @@
+summary: "Creates and adds an application ."
+tags:
+  - product/Admin
+description: "Creates and adds an application "
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "access_key"
+  required: "true"
+  schema:
+    type: "string"
+
+requestBody:
+  required: "true"
+  content:
+    application/json:
+      schema:
+        type: "object"
+        properties:
+          name:
+            type: "string"
+            example: "Test App"
+          theme:
+            type: "string"
+            example: "blue"
+          contact_email:
+            type: "string"
+            example: "user@example.com"
+          modules:
+            type: "object"
+            example: {
+              "dashboard": false,
+              "filter_settings": {
+                "Time Frame": {
+                  "enabled": true,
+                  "exclude": [],
+                  "include": "",
+                  "label": "Time Frame",
+                  "parent": ""
+                }
+              },
+              "filters": true,
+              "fullscreen_mode": true,
+              "user_mgmt": false
+            }
+
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "array"
+          example :
+            - app_id: 1234
+
+  500:
+    description: "Error adding application"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'Error adding application'
+          }

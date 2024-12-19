@@ -1,0 +1,7 @@
+@import '../../styles/util.scss';
+
+.MinervaWC .MinervaPinnedQueries {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(16);
+}

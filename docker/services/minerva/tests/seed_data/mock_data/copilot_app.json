@@ -1,0 +1,49 @@
+[
+    {
+        "id": 1,
+        "name": "Copilot AM App",
+        "desc": "Description of App1",
+        "config": {
+            "industry": "dev industry",
+            "org_name": "Worthington",
+            "identity": "Ask-Worthington",
+            "persona": null,
+            "lang_model": 4,
+            "capabilities": null,
+            "avatar_url": "https://url/coplilot/avatar/20/WORTHINGTON.png",
+            "empty_state_message_desc": "",
+            "suggested_queries": null,
+            "text_to_speech_model": 5
+        },
+        "deleted_at": null,
+        "created_by": 1,
+        "orchestrator_id": 1,
+        "orchestrator_config": {
+            "orchestrator_key": "orchestrator_value1",
+            "lang_model": 1
+        }
+    },
+    {
+        "id": 2,
+        "name": "Filamaner App",
+        "desc": "Description of App2",
+        "config": {
+            "industry": "dev industry",
+            "org_name": "Worthington",
+            "identity": "Ask-Worthington",
+            "persona": null,
+            "lang_model": 4,
+            "capabilities": null,
+            "avatar_url": "https://url/coplilot/avatar/20/WORTHINGTON.png",
+            "empty_state_message_desc": "",
+            "suggested_queries": null
+        },
+        "deleted_at": null,
+        "created_by": 2,
+        "orchestrator_id": 2,
+        "orchestrator_config": {
+            "orchestrator_key": "orchestrator_value2_main",
+            "lang_model": 1
+        }
+    }
+]

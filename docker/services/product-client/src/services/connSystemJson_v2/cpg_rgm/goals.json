@@ -1,0 +1,621 @@
+{
+   "label": "Goal",
+   "name": "2024 Target",
+   "timeperiod": [
+      "1Y",
+      "3Y",
+      "5Y"
+   ],
+   "targets": [
+      {
+         "id": 1,
+         "name": "NSV",
+         "record": "180M",
+         "progress": "15%",
+         "timeperiod": "1Y"
+      },
+      {
+         "id": 2,
+         "name": "Market Share",
+         "record": "24%",
+         "progress": "6pp",
+         "timeperiod": "1Y"
+      },
+      {
+         "id": 3,
+         "name": "EBITDA",
+         "record": "24%",
+         "progress": "8pp",
+         "timeperiod": "1Y"
+      }
+   ],
+   "momentum": {
+      "label": "Momentum & Projections",
+      "tabs": [
+         "Overall",
+         "Category",
+         "Brand",
+         "Channel"
+      ],
+      "name": "Quarterly Distribution",
+      "items": [
+         {
+            "tab": "Overall",
+            "progress": [
+               {
+                  "graph": {
+                     "data": [
+                        {
+                           "type": "bar",
+                           "x": [
+                              7,
+                              11,
+                              20,
+                              40
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "textposition": "outside",
+                           "orientation": "h",
+                           "marker": {
+                              "color": "#220047"
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              1,
+                              1,
+                              1,
+                              1
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "transparent"
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              5,
+                              8,
+                              15,
+                              20
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "#FFA497"
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              1,
+                              1,
+                              1,
+                              1
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "transparent"
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              1,
+                              1,
+                              1,
+                              1
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "transparent"
+                           },
+                           "text": [
+                              "$8M",
+                              "$20M",
+                              "$32M",
+                              "$60M"
+                           ],
+                           "textposition": "left"
+                        }
+                     ],
+                     "layout": {
+                        "ticks": "outside",
+                        "tickcolor": "white",
+                        "ticklen": 50,
+                        "xaxis": {
+                           "range": [
+                              0,
+                              85
+                           ],
+                           "visible": true,
+                           "tickcolor": "rgba(14, 31, 56, 0.1)",
+                           "gridcolor": "rgba(14, 31, 56, 0.1)",
+                           "linecolor": "rgba(14, 31, 56, 0.1)",
+                           "zerolinecolor": "rgba(14, 31, 56, 0.1)",
+                           "ticklen": 0,
+                           "showline": false,
+                           "gridwidth": 1
+                        },
+                        "yaxis": {
+                           "visible": true,
+                           "ticks": "outside",
+                           "ticklen": 15,
+                           "tickcolor": "transparent",
+                           "tickfont": {
+                              "size": 11
+                           }
+                        }
+                     },
+                     "legends": [
+                        {
+                           "color": "#220047",
+                           "title": "Target"
+                        },
+                        {
+                           "color": "#FFA497",
+                           "title": "Actual"
+                        }
+                     ]
+                  },
+                  "title": "Progress over Q2 2024"
+               },
+               {
+                  "graph": {
+                     "data": [
+                        {
+                           "type": "bar",
+                           "x": [
+                              4,
+                              -4,
+                              -12,
+                              -18
+                           ],
+                           "y": [
+                              "y1",
+                              "y2",
+                              "y3",
+                              "y4"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": [
+                                 "#B3EEE1",
+                                 "#FFC5CF",
+                                 "#FFC5CF",
+                                 "#FFC5CF"
+                              ]
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              1,
+                              -1,
+                              -1,
+                              -1
+                           ],
+                           "y": [
+                              "y1",
+                              "y2",
+                              "y3",
+                              "y4"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "transparent"
+                           },
+                           "text": [
+                              "4%",
+                              "-4%",
+                              "-14%",
+                              "-18%"
+                           ],
+                           "textposition": "left"
+                        }
+                     ],
+                     "layout": {
+                        "ticks": "outside",
+                        "tickcolor": "white",
+                        "ticklen": 50,
+                        "xaxis": {
+                           "range": [
+                              -25,
+                              25
+                           ],
+                           "visible": true,
+                           "tickcolor": "rgba(14, 31, 56, 0.1)",
+                           "gridcolor": "rgba(14, 31, 56, 0.1)",
+                           "linecolor": "rgba(14, 31, 56, 0.1)",
+                           "zerolinecolor": "rgba(14, 31, 56, 0.1)",
+                           "ticklen": 0,
+                           "showline": false,
+                           "gridwidth": 1
+                        },
+                        "yaxis": {
+                           "visible": false,
+                           "ticks": "outside",
+                           "tickcolor": "transparent",
+                           "ticklen": 15
+                        }
+                     }
+                  },
+                  "title": "Deviation"
+               }
+            ],
+            "projection": [
+               {
+                  "graph": {
+                     "data": [
+                        {
+                           "type": "bar",
+                           "x": [
+                              9,
+                              12,
+                              15,
+                              40
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "#220047"
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              1,
+                              1,
+                              1,
+                              1
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "transparent"
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              4,
+                              8,
+                              12,
+                              20
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "#FFA497"
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              1,
+                              1,
+                              1,
+                              1
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "transparent"
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              5,
+                              8,
+                              15,
+                              20
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "#C9DEF4"
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              1,
+                              1,
+                              1,
+                              0.1
+                           ],
+                           "y": [
+                              "Category3",
+                              "Category2",
+                              "Category1",
+                              "Overall"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "transparent"
+                           },
+                           "text": [
+                              "$7.2M",
+                              "$22M",
+                              "$32M",
+                              "$80M"
+                           ],
+                           "textposition": "left"
+                        }
+                     ],
+                     "layout": {
+                        "ticks": "outside",
+                        "tickcolor": "white",
+                        "ticklen": 50,
+                        "xaxis": {
+                           "range": [
+                              0,
+                              99
+                           ],
+                           "visible": true,
+                           "tickcolor": "rgba(14, 31, 56, 0.1)",
+                           "gridcolor": "rgba(14, 31, 56, 0.1)",
+                           "linecolor": "rgba(14, 31, 56, 0.1)",
+                           "zerolinecolor": "rgba(14, 31, 56, 0.1)",
+                           "ticklen": 0,
+                           "showline": false,
+                           "gridwidth": 1
+                        },
+                        "yaxis": {
+                           "visible": true,
+                           "ticks": "outside",
+                           "tickcolor": "transparent",
+                           "ticklen": 15,
+                           "tickfont": {
+                              "size": 11
+                           }
+                        }
+                     },
+                     "legends": [
+                        {
+                           "color": "#220047",
+                           "title": "Target"
+                        },
+                        {
+                           "color": "#FFA497",
+                           "title": "Actual"
+                        },
+                        {
+                           "color": "rgba(220, 207, 187, 1)",
+                           "title": "Projection"
+                        }
+                     ]
+                  },
+                  "title": "Projected Progress over Q3 2024"
+               },
+               {
+                  "graph": {
+                     "data": [
+                        {
+                           "type": "bar",
+                           "x": [
+                              -10,
+                              -0.2,
+                              8,
+                              -12
+                           ],
+                           "y": [
+                              "y1",
+                              "y2",
+                              "y3",
+                              "y4"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": [
+                                 "#FFC5CF",
+                                 "#B3EEE1",
+                                 "#B3EEE1",
+                                 "#FFC5CF"
+                              ]
+                           }
+                        },
+                        {
+                           "type": "bar",
+                           "x": [
+                              -1,
+                              1,
+                              1,
+                              -1
+                           ],
+                           "y": [
+                              "y1",
+                              "y2",
+                              "y3",
+                              "y4"
+                           ],
+                           "orientation": "h",
+                           "marker": {
+                              "color": "transparent"
+                           },
+                           "text": [
+                              "-10%",
+                              "0",
+                              "8%",
+                              "-12%"
+                           ],
+                           "textposition": "left"
+                        }
+                     ],
+                     "layout": {
+                        "ticks": "outside",
+                        "tickcolor": "white",
+                        "ticklen": 50,
+                        "xaxis": {
+                           "range": [
+                              -25,
+                              25
+                           ],
+                           "visible": true,
+                           "tickcolor": "rgba(14, 31, 56, 0.1)",
+                           "gridcolor": "rgba(14, 31, 56, 0.1)",
+                           "linecolor": "rgba(14, 31, 56, 0.1)",
+                           "zerolinecolor": "rgba(14, 31, 56, 0.1)",
+                           "ticklen": 0,
+                           "showline": false,
+                           "gridwidth": 1
+                        },
+                        "yaxis": {
+                           "visible": false,
+                           "ticks": "outside",
+                           "tickcolor": "transparent",
+                           "ticklen": 15
+                        }
+                     }
+                  },
+                  "title": "Deviation"
+               }
+            ]
+         }
+      ]
+   },
+   "initiatives": [
+      {
+         "id": 1,
+         "name": "Win Through Shopper Engagement",
+         "data": [
+            {
+               "id": 1,
+               "name": "NSV",
+               "record": "$60M",
+               "progress": "2%",
+               "target": "$180M"
+            },
+            {
+               "id": 2,
+               "name": "EBITDA",
+               "record": "$8M",
+               "progress": "2.7%",
+               "target": "$24M"
+            },
+            {
+               "id": 3,
+               "name": "Frequency Weekly(%)",
+               "record": "33%",
+               "progress": "33%",
+               "is_strategy": false
+            },
+            {
+               "id": 4,
+               "name": "Profiltable Transactions",
+               "record": "1.2M",
+               "progress": "20%",
+               "is_strategy": false
+            }
+         ],
+         "insights": [
+            {
+               "data": "insight",
+               "record": "Weekly purchase frequency for Entry SKU dropped by 5% across large format stores over Q2 driven by higher price in a high inflation period",
+               "status": "Negative"
+            },
+            {
+               "data": "insight",
+               "record": "NSV from immediate consumption packs have tumbles by 10% possibly driven by high prices in Q2",
+               "status": "Negative"
+            },
+            {
+               "data": "insight",
+               "record": "40% of the SKUs in Category 1 have profitable transactions indicating a positive trend towards targets",
+               "status": "Negative"
+            },
+            {
+               "data": "insight",
+               "record": "Weekly purchase frequency for Entry SKU dropped by 5% across large format stores over Q2 driven by higher price in a high inflation period",
+               "status": "Negative"
+            },
+            {
+               "data": "insight",
+               "record": "NSV from immediate consumption packs have tumbles by 10% possibly driven by high prices in Q2",
+               "status": "Positive"
+            },
+            {
+               "data": "insight",
+               "record": "40% of the SKUs in Category 1 have profitable transactions indicating a positive trend towards targets",
+               "status": "Positive"
+            }
+         ]
+      },
+      {
+         "id": 2,
+         "name": "Pervasive Distribution",
+         "data": [
+            {
+               "id": 1,
+               "name": "NSV",
+               "record": "$55M",
+               "progress": "1.8%",
+               "target": "$180M"
+            },
+            {
+               "id": 2,
+               "name": "Market Share",
+               "record": "20%",
+               "progress": "2pp",
+               "target": "24%"
+            }
+         ]
+      }
+   ]
+}

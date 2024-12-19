@@ -1,0 +1,43 @@
+
+summary: "Get instance info"
+tags:
+  - platform/Case Studies
+description: "This returns the project info for the given instance_id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "project_id"
+  description: "Project ID"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "instance_id"
+  description: "Instance ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "id": 123,
+            "name": "item.name",
+            "project_status": "item.project_status",
+            "assignees": [],
+            "reviewer": "item.reviewer"
+        }
+  404:
+    description: "Item not found"
+    schema :
+      type: "object"
+      example:  {
+        "error" : "Item not found"
+      }

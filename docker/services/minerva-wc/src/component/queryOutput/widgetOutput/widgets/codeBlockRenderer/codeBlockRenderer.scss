@@ -1,0 +1,38 @@
+@import '../../../../../styles/util.scss';
+
+.MinervaWC .MinervaCodeBlockRenderer {
+
+    & .MinervaCodeBlockRenderer-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: spacing(8, 16);
+        height: spacing(40);
+        background-color: color-mix(in srgb, var(--minerva-text-color) 10%, var(--minerva-bg-main));
+        border-radius: spacing(2, 2, 0, 0);
+
+        & .MinervaSelect {
+            border: 0;
+            padding: 0
+        }
+        & .MinervaCodeBlockRenderer-noBgHover {
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+    & .MinervaCodeBlockRenderer-codeRenderer {
+        background-color: var(--minerva-bg-secondary-light-blue-50);
+        padding: spacing(0, 24);
+        overflow-y: scroll;
+
+        & pre {
+            background-color: transparent !important;
+
+            & > * {
+                background-color: transparent !important;
+            }
+        }
+
+    }
+}

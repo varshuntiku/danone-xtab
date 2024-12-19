@@ -1,0 +1,20 @@
+{
+    "tool_version_registry_mapping_id": 1,
+    "name": "tool",
+    "desc": "desc",
+    "config": {},
+    "input_params": {},
+    "selected_datasources": [
+        {
+            "datasource_id": 1,
+            "config": {},
+            "key": "string"
+        }
+    ],
+    "selected_context_datasources": [
+        {
+            "context_datasource_id": 1,
+            "config": {}
+        }
+    ]
+}

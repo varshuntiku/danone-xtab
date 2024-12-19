@@ -1,0 +1,11 @@
+@import '../../../../../styles/util.scss';
+.MinervaWC .MinervaChartView {
+    height: spacing(350);
+    @include minervaFullScreen-bellow-md {
+        height: spacing(250);
+    }
+    width: 100%;
+    & .ygrid.crisp, .xgrid.crisp {
+        opacity: 0.4;
+    }
+}

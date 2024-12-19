@@ -1,0 +1,138 @@
+{
+    "data": {
+        "initiatives": [
+            {
+                "id": 1,
+                "name": "Plan PSP Launches for products & enhancements",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Patient Focus"
+                    }
+                ],
+                "business_process_id": [1]
+            },
+            {
+                "id": 2,
+                "name": "Execute & optimize on-market programs",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Process Improvement"
+                    }
+                ],
+                "business_process_id": [1]
+            },
+            {
+                "id": 3,
+                "name": "Make copay support offerings easy to consume",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Patient Focus"
+                    }
+                ],
+                "business_process_id": [1]
+            },
+            {
+                "id": 4,
+                "name": "Simplify access environment",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Patient Focus"
+                    },
+                    {
+                        "category": "Blue",
+                        "name": "Process Improvement"
+                    }
+                ],
+                "business_process_id": [1]
+            },
+            {
+                "id": 5,
+                "name": "Increase NPP engagement score by 10% & reach by 20%",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "Growth Driver"
+                    }
+                ],
+                "business_process_id": [2]
+            },
+            {
+                "id": 6,
+                "name": "Increase Prescriber Base for specific drugs by x%",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "Growth Driver"
+                    }
+                ],
+                "business_process_id": [2]
+            },
+            {
+                "id": 6,
+                "name": "Improve effectiveness of Complete programs",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "Growth Driver"
+                    }
+                ],
+                "business_process_id": [2]
+            },
+            {
+                "id": 6,
+                "name": "Create short-term awareness initiatives",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "Growth Driver"
+                    }
+                ],
+                "business_process_id": [2]
+            },
+            {
+                "id": 7,
+                "name": "Training for optimal reach and frequency",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Process Improvement"
+                    }
+                ],
+                "business_process_id": [3],
+                "problem_definition_id": [9]
+            },
+            {
+                "id": 8,
+                "name": "Training on safety and efficacy data",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Patient Focus"
+                    }
+                ],
+                "business_process_id": [3]
+            },
+            {
+                "id": 9,
+                "name": "Reduce patient drop offs by 10%",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Patient Focus"
+                    }
+                ],
+                "business_process_id": [3],
+                "problem_definition_id": [9]
+            }
+        ],
+        "goals": {
+            "name": "Improve Patients' Adherence on therapy by improving reach to Patient Support Resources",
+            "id": 1,
+            "targets": []
+        }
+    }
+}

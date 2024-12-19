@@ -1,0 +1,2 @@
+msrest==0.7.1
+msrestazure==0.6.4

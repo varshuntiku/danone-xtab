@@ -1,0 +1,24 @@
+summary: "Get the list of all alerts in the application"
+tags:
+  - product/Alerts
+description: "Provides the list of all alerts for the logged in user corresponding to the app ID"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "query"
+  name: "app_id"
+  description: "Accepts the application ID for which the alerts have to be shown"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Returns list of alerts for the application"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching alerts"

@@ -1,0 +1,456 @@
+{
+    "data": {
+        "value": {
+            "actions": [],
+            "form_config": {
+                "title": "",
+                "fields": [
+                    {
+                        "id": 1,
+                        "grid": 8,
+                        "fields": [
+                            {
+                                "grid": 2,
+                                "type": "label",
+                                "value": "Partition 1 segment 1",
+                                "InputLabelProps": {
+                                    "variant": "h5"
+                                }
+                            },
+                            {
+                                "id": 5,
+                                "grid": 1,
+                                "name": "skuList",
+                                "type": "dataBar",
+                                "noGutterBottom": true,
+                                "value": {
+                                    "value": 40,
+                                    "dataBarType": "Circular",
+                                    "color": {
+                                        "foregroundProgressBarColor": "darkgray",
+                                        "backgroundProgressBarColor": "lightgray"
+                                    },
+                                    "textColor": "#000000",
+                                    "padding": "1px"
+                                }
+                            },
+                            {
+                                "grid": 2,
+                                "type": "label",
+                                "value": "Partition 2 segment 2",
+                                "InputLabelProps": {
+                                    "variant": "h5"
+                                }
+                            },
+                            {
+                                "id": 5,
+                                "grid": 1,
+                                "name": "skuList",
+                                "type": "dataBar",
+                                "noGutterBottom": true,
+                                "value": {
+                                    "value": 80,
+                                    "dataBarType": "Circular",
+                                    "color": {
+                                        "foregroundProgressBarColor": "darkgray",
+                                        "backgroundProgressBarColor": "lightgray"
+                                    },
+                                    "textColor": "#000000",
+                                    "padding": "1px",
+                                    "textVariant": "h4",
+                                    "size": 60
+                                }
+                            },
+
+                            {
+                                "id": 5,
+                                "grid": 12,
+                                "name": "skuList",
+                                "type": "tabularForm",
+                                "noGutterBottom": true,
+                                "value": [
+                                    {
+                                        "slNo": 1,
+                                        "UserID": "Russle Gilmore",
+                                        "SKUListId": "Template",
+                                        "createTimeStamp": "2022-06-02 11:16:55 PST",
+                                        "view": ""
+                                    },
+                                    {
+                                        "slNo": 2,
+                                        "UserID": "Russle Gilmore",
+                                        "SKUListId": "SLAMList_01",
+                                        "createTimeStamp": "2022-06-02 11:16:55 PST",
+                                        "view": ""
+                                    }
+                                ],
+                                "tableprops": {
+                                    "coldef": [
+                                        {
+                                            "headerName": "SL No",
+                                            "field": "slNo"
+                                        },
+                                        {
+                                            "headerName": "User Id",
+                                            "field": "UserID"
+                                        },
+                                        {
+                                            "headerName": "SKU List Id",
+                                            "field": "SKUListId",
+                                            "cellEditor": "text",
+                                            "cellEditorParams": {
+                                                "variant": "outlined"
+                                            },
+                                            "editable": true
+                                        },
+                                        {
+                                            "headerName": "Create Timestamp",
+                                            "field": "createTimeStamp"
+                                        },
+                                        {
+                                            "headerName": "View",
+                                            "field": "view",
+                                            "cellEditor": "select",
+                                            "cellEditorParams": {
+                                                "options": [
+                                                    "LOAD",
+                                                    "NOT LOAD"
+                                                ],
+                                                "multiselect": true,
+                                                "variant": "outlined",
+                                                "fullWidth": true
+                                            },
+                                            "editable": true
+                                        }
+                                    ],
+                                    "gridOptions": {
+                                        "tableSize": "small",
+                                        "editorMode": true,
+                                        "tableMaxHeight": "20vh",
+                                        "quickSearch": true,
+                                        "quickSearchLabel": "Search here ...",
+                                        "enableAddRow": true,
+                                        "enableColumnEditor": true
+                                    }
+                                }
+                            },
+                            {
+                                "id": 5,
+                                "grid": 12,
+                                "name": "",
+                                "type": "tabularForm",
+                                "value": [
+                                    {
+                                        "upc": 1233121,
+                                        "Description": "KELLOGGS COCOs",
+                                        "Category": "Cold Cereal",
+                                        "Segment": "Main Stream"
+                                    },
+                                    {
+                                        "upc": 2873838,
+                                        "Description": "KELLOGGS COCOs",
+                                        "Category": "Cold Cereal",
+                                        "Segment": "Main Stream"
+                                    }
+                                ],
+                                "tableprops": {
+                                    "coldef": [
+                                        {
+                                            "headerName": "UPC",
+                                            "field": "upc"
+                                        },
+                                        {
+                                            "headerName": "Item Description",
+                                            "field": "Description"
+                                        },
+                                        {
+                                            "headerName": "Category",
+                                            "field": "Category"
+                                        },
+                                        {
+                                            "headerName": "Segment",
+                                            "field": "Segment"
+                                        },
+                                        {
+                                            "headerName": "Subsegment",
+                                            "field": "Subsegment"
+                                        },
+                                        {
+                                            "headerName": "Base Units",
+                                            "field": "Units"
+                                        },
+                                        {
+                                            "headerName": "Margin",
+                                            "field": "Margin"
+                                        },
+                                        {
+                                            "headerName": "%ACV Reach",
+                                            "field": "ACV"
+                                        },
+                                        {
+                                            "headerName": "Size",
+                                            "field": "Size"
+                                        },
+                                        {
+                                            "headerName": "Base $",
+                                            "field": "Base"
+                                        },
+                                        {
+                                            "headerName": "Velocity $",
+                                            "field": "Velocity"
+                                        },
+                                        {
+                                            "headerName": "Updated Timestamp",
+                                            "field": "Updated"
+                                        }
+                                    ],
+                                    "gridOptions": {
+                                        "tableSize": "small",
+                                        "editorMode": true,
+                                        "tableMaxHeight": "40vh",
+                                        "stripeRow": true
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "grid": 4,
+                        "fields": [
+                            {
+                                "grid": 12,
+                                "type": "modalForm",
+                                "name": "modalForm",
+                                "modalForm": {
+                                    "trigger_button": {
+                                        "text": "Export"
+                                    },
+                                    "dialog_actions": [
+                                        {
+                                            "is_cancel": true,
+                                            "name": "Cancel"
+                                        },
+                                        {
+                                            "name": "Submit",
+                                            "variant": "contained"
+                                        }
+                                    ],
+                                    "form_config": {
+                                        "fields": [
+                                            {
+                                                "grid": 12,
+                                                "name": "optionSelect",
+                                                "type": "select",
+                                                "options": [
+                                                    "A",
+                                                    "B",
+                                                    "C"
+                                                ]
+                                            },
+                                            {
+                                                "id": 5,
+                                                "grid": 12,
+                                                "name": "skuList3",
+                                                "type": "tabularForm",
+                                                "noGutterBottom": true,
+                                                "value": [
+                                                    {
+                                                        "slNo": 1,
+                                                        "UserID": "Russle Gilmore",
+                                                        "SKUListId": "Template",
+                                                        "createTimeStamp": "2022-06-02 11:16:55 PST",
+                                                        "view": ""
+                                                    },
+                                                    {
+                                                        "slNo": 2,
+                                                        "UserID": "Russle Gilmore",
+                                                        "SKUListId": "SLAMList_01",
+                                                        "createTimeStamp": "2022-06-02 11:16:55 PST",
+                                                        "view": ""
+                                                    }
+                                                ],
+                                                "tableprops": {
+                                                    "coldef": [
+                                                        {
+                                                            "headerName": "SL No",
+                                                            "field": "slNo"
+                                                        },
+                                                        {
+                                                            "headerName": "User Id",
+                                                            "field": "UserID"
+                                                        },
+                                                        {
+                                                            "headerName": "SKU List Id",
+                                                            "field": "SKUListId",
+                                                            "cellEditor": "text",
+                                                            "cellEditorParams": {
+                                                                "variant": "outlined"
+                                                            },
+                                                            "editable": true
+                                                        },
+                                                        {
+                                                            "headerName": "Create Timestamp",
+                                                            "field": "createTimeStamp"
+                                                        },
+                                                        {
+                                                            "headerName": "View",
+                                                            "field": "view",
+                                                            "cellEditor": "select",
+                                                            "cellEditorParams": {
+                                                                "options": [
+                                                                    "LOAD",
+                                                                    "NOT LOAD"
+                                                                ],
+                                                                "multiselect": true,
+                                                                "variant": "outlined",
+                                                                "fullWidth": true
+                                                            },
+                                                            "editable": true
+                                                        }
+                                                    ],
+                                                    "gridOptions": {
+                                                        "tableSize": "small",
+                                                        "editorMode": true,
+                                                        "tableMaxHeight": "20vh",
+                                                        "quickSearch": true,
+                                                        "quickSearchLabel": "Search here ...",
+                                                        "enableAddRow": true,
+                                                        "enableColumnEditor": true
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            },
+                            {
+                                "id": 5,
+                                "grid": 12,
+                                "name": "skuList2",
+                                "type": "tabularForm",
+                                "noGutterBottom": true,
+                                "value": [
+                                    {
+                                        "slNo": 1,
+                                        "UserID": "Russle Gilmore",
+                                        "SKUListId": "Template",
+                                        "createTimeStamp": "2022-06-02 11:16:55 PST",
+                                        "view": ""
+                                    },
+                                    {
+                                        "slNo": 2,
+                                        "UserID": "Russle Gilmore",
+                                        "SKUListId": "SLAMList_01",
+                                        "createTimeStamp": "2022-06-02 11:16:55 PST",
+                                        "view": ""
+                                    }
+                                ],
+                                "tableprops": {
+                                    "coldef": [
+                                        {
+                                            "headerName": "SL No",
+                                            "field": "slNo"
+                                        },
+                                        {
+                                            "headerName": "User Id",
+                                            "field": "UserID"
+                                        },
+                                        {
+                                            "headerName": "SKU List Id",
+                                            "field": "SKUListId",
+                                            "cellEditor": "text",
+                                            "cellEditorParams": {
+                                                "variant": "outlined"
+                                            },
+                                            "editable": true
+                                        },
+                                        {
+                                            "headerName": "Create Timestamp",
+                                            "field": "createTimeStamp"
+                                        },
+                                        {
+                                            "headerName": "View",
+                                            "field": "view",
+                                            "cellEditor": "select",
+                                            "cellEditorParams": {
+                                                "options": [
+                                                    "LOAD",
+                                                    "NOT LOAD"
+                                                ],
+                                                "multiselect": true,
+                                                "variant": "outlined",
+                                                "fullWidth": true
+                                            },
+                                            "editable": true
+                                        }
+                                    ],
+                                    "gridOptions": {
+                                        "tableSize": "small",
+                                        "editorMode": true,
+                                        "tableMaxHeight": "20vh"
+                                    }
+                                }
+                            },
+                            {
+                                "grid": 12,
+                                "type": "actionButtons",
+                                "value": [
+                                    null,
+                                    {
+                                        "name": "Apply"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 8,
+                                "grid": 8,
+                                "name": "skuList",
+                                "type": "dataBar",
+                                "containerStyle": {
+                                    "display": "flex",
+                                    "flexDirection": "column",
+                                    "gap": "1rem",
+                                    "width": "100%"
+                                },
+                                "value": [
+                                    {
+                                        "value": 50,
+                                        "color": "green",
+                                        "textColor": "white",
+                                        "databarValueColor": "white",
+                                        "databarColor": "#1B3B6F",
+                                        "databarHeight": "2.9rem",
+                                        "databarBorderRadius": "0px",
+                                        "noPercentageIcon": true,
+                                        "databarLabel": "(0.3)",
+                                        "databarBgColor": "blue"
+                                    },
+                                    {
+                                        "value": 20,
+                                        "color": "black",
+                                        "databarColor": "red",
+                                        "databarHeight": "2.9rem",
+                                        "databarBorderRadius": "0px",
+                                        "noPercentageIcon": true,
+                                        "databarLabel": "(0.4)",
+                                        "databarBgColor": "skyblue"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "error": false,
+            "message": "",
+            "extraParamsMapping": true,
+            "info": {
+                "list": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        }
+    }
+}

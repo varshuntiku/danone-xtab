@@ -1,0 +1,13 @@
+.MinervaWC .MinervaIcon {
+    fill: var(--minerva-text-color);
+    --color: var(--minerva-text-color);
+    --bg-color: var(--minerva-bg-main);
+    width: spacing(24);
+    height: spacing(24);
+}
+
+.MinervaWC .MinervaIconContrast {
+    @extend .MinervaIcon;
+    fill: var(--minerva-contrast-color);
+    --color: var(--minerva-contrast-color);
+}

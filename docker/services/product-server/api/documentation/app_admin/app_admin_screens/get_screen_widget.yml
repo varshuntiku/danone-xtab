@@ -1,0 +1,36 @@
+summary: "Get Screen Widget"
+tags:
+  - product/AppAdmin
+description: "Returns the widget info for the given widgetID in a particular app"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "widget_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Fetch successful"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching"
+    schema:
+      type: "object"
+      example: {'error': 'Error while saving filters'}

@@ -1,0 +1,81 @@
+{
+    "id": 614,
+    "input": "average sales of last year",
+    "pinned": true,
+    "output": {
+        "type": "sql",
+        "response": {
+            "citation": {
+                "type": "video",
+                "data": [
+                    {
+                        "title": "Sample Title",
+                        "src": "https://minervastorage.blob.core.windows.net/test-video/codx_long_1.mp4",
+                        "rangeStart": 300,
+                        "rangeEnd": 310,
+                        "desc": "Sample Citation Description 1"
+                    },
+                    {
+                        "title": "Sample Title",
+                        "src": "https://minervastorage.blob.core.windows.net/test-video/codx_long_1.mp4",
+                        "rangeStart": 500,
+                        "rangeEnd": 530,
+                        "desc": "Sample Citation Description 1"
+                    },
+                    {
+                        "title": "Sample Title",
+                        "src": "https://minervastorage.blob.core.windows.net/test-video/codx_long_1.mp4",
+                        "rangeStart": 1800,
+                        "rangeEnd": 1850,
+                        "desc": "Sample Citation Description 1"
+                    }
+                ]
+            },
+            "text": "The average sales of the last year is 0. There is no notable trend or pattern in the data.",
+            "sql_query": "\n## SQL Query\n\n```sql\nSELECT AVG(volume) AS average_sales FROM cpg.cpgnew_v2 WHERE posting_date >= CURRENT_DATE - INTERVAL '1 year' AND posting_date < CURRENT_DATE;\n```\n\n",
+            "widgets": [
+                [
+                    {
+                        "name": "card",
+                        "type": "card",
+                        "title": "average sales of last year",
+                        "value": {
+                            "data": {
+                                "values": [
+                                    [
+                                        0
+                                    ]
+                                ],
+                                "columns": [
+                                    "AVERAGE SALES"
+                                ]
+                            },
+                            "layout": {}
+                        }
+                    },
+                    {
+                        "name": "dataTable",
+                        "type": "dataTable",
+                        "title": "average sales of last year",
+                        "value": {
+                            "data": {
+                                "values": [
+                                    [
+                                        0
+                                    ]
+                                ],
+                                "columns": [
+                                    "average_sales"
+                                ]
+                            },
+                            "layout": {}
+                        }
+                    }
+                ]
+            ],
+            "processed_query": "average sales of last year"
+        }
+    },
+    "window_id": 92,
+    "feedback": null
+}

@@ -1,0 +1,49 @@
+summary: "Save Screen Actions code"
+tags:
+  - product/AppAdmin
+description: "Save the Screen Actions code for both components"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to save the Screen level Actions code
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [action_settings]
+        properties:
+          action_settings:
+            type: "object"
+            properties:
+              action_generator:
+                type: "string"
+              action_handler:
+                type: "string"
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+      example: {'status': 'success'}
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'Error while saving screen actions'}

@@ -1,0 +1,9 @@
+[
+    {
+        "id": 1,
+        "name": "Text to SQL",
+        "desc": "test app",
+        "config": null,
+        "created_by": 1
+    }
+]

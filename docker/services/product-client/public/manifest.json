@@ -1,0 +1,25 @@
+{
+  "short_name": "Codx Products",
+  "name": "Codx Products",
+  "icons": [
+    {
+      "src": "codx-box-new-logo.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "codx-box-new-logo.svg",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "codx-box-new-logo.svg",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

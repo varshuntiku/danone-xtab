@@ -1,0 +1,30 @@
+[
+    {
+        "application_id": 1,
+        "user_id": "copilot@ee.com",
+        "title": "top brands across sales",
+        "pinned": false,
+        "deleted_at": null
+    },
+    {
+        "application_id": 1,
+        "user_id": "copilot@ee.com",
+        "title": "top brands across regions",
+        "pinned": false,
+        "deleted_at": null
+    },
+    {
+        "application_id": 1,
+        "user_id": "copilot@ee.com",
+        "title": "top sales of last 5 years",
+        "pinned": false,
+        "deleted_at": null
+    },
+    {
+        "application_id": 1,
+        "user_id": "copilot@ee.com",
+        "title": "total sales across regions",
+        "pinned": false,
+        "deleted_at": null
+    }
+]

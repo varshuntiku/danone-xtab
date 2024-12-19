@@ -1,0 +1,8 @@
+<svg >
+    <defs>
+        <linearGradient id="graph-gradient" gradientTransform="rotate(90)">
+            <stop offset="0%" stopColor="rgba(71, 94, 191, 1)" />
+            <stop offset="100%" stopColor="rgba(104, 131, 247, 0.0001)" />
+        </linearGradient>
+    </defs>
+</svg>

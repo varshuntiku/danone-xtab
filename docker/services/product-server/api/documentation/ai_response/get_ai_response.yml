@@ -1,0 +1,30 @@
+summary: "Get the ai response for the given app_id and screen_id"
+tags:
+  - product/AiResponse
+description: "Provides the verified ai insight saved response"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  description: "Accepts the application ID for which the insight have to be shown"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  description: "Accepts the screen ID for which the insight have to be shown"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Returns the saved verified insight"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching insight"

@@ -1,0 +1,39 @@
+
+summary: "Delete NAC user Roles"
+tags:
+  - platform/NACUserRoles
+description: "Deletes a NAC User Role"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "nac_role_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "message": "Deleted Successfully",
+      }
+  404:
+    description: "Item not found"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Item not found"
+      }
+  500:
+    description: "Delete operation error:"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Delete operation error:"
+      }

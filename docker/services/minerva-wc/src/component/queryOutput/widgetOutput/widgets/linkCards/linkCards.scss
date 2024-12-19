@@ -1,0 +1,91 @@
+@import '../../../../../styles/util.scss';
+
+.MinervaWC .MinervaLinkCards-container {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(10);
+    border-left: 4px solid var(--minerva-contrast-color-40);
+    padding-left: 1.6em;
+
+    & .MinervaLinkCards-list {
+        display: grid;
+        gap: 0.8em;
+        column-gap: 2.4em;
+        row-gap: 1.6em;
+        justify-content: space-evenly;
+        grid-template-columns: repeat(auto-fill, 17em);
+
+        & .MinervaLinkCard-box {
+            display: flex;
+            background-color: color-mix(in srgb, var(--minerva-text-color) 10%, var(--minerva-bg-main));
+            border-radius: 0.2em;
+            cursor: pointer;
+            padding: 0.8em 1.6em 1.2em;
+            transition-duration: 200ms;
+            flex-direction: column;
+            gap: 0.4em;
+            text-decoration: none;
+            max-width: 25em;
+
+            & .MinervaLinkCard-header {
+                display: flex;
+                gap: spacing(10);
+                align-items: center;
+                padding-bottom: spacing(5);
+                border-bottom: 1px solid var(--minerva-text-color-10);
+
+                & .MinervaLinkCard-logoContainer {
+                    padding: spacing(5);
+                    border-radius: spacing(5);
+                    border: 1px solid var(--minerva-contrast-color-40);
+                    background-color: color-mix(in srgb, var(--minerva-contrast-color) 15%, var(--minerva-bg-main));
+
+                    & .MinervaLinkCard-logo {
+                        padding: spacing(5);
+                        background-color: color-mix(in srgb, var(--minerva-text-color) 5%, var(--minerva-bg-main));
+                        border-radius: spacing(20);
+                        font-size: 1em;
+                        color: var(--minerva-contrast-color);
+                    }
+                }
+
+                & .MinervaLinkCard-title {
+                    color: var(--minerva-contrast-color);
+                }
+
+                svg {
+                    vertical-align: middle;
+                    width: spacing(25);
+                    height: spacing(25);
+                }
+            }
+
+            & .LinkCard-description {
+                font-weight: 500;
+            }
+
+            & .LinkCard-caption {
+                font-weight: 300;
+            }
+
+            & .LinkCard-description, .LinkCard-caption {
+                text-align: center;
+                font-size: spacing(10);
+            }
+
+            &:hover {
+                box-shadow: var(--minerva-box-shadow-4);
+            }
+            &:active {
+                opacity: 0.7;
+            }
+        }
+    }
+
+}
+
+@include bellow-md {
+    .MinervaWC .MinervaLinkCards-container .MinervaLinkCards-list {
+        grid-template-columns: repeat(auto-fill, 10em);
+    }
+}

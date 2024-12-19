@@ -1,0 +1,15 @@
+summary: "List of Functions"
+tags:
+  - product/Dashboard
+description: "This returns list of users with their info"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+
+

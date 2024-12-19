@@ -1,0 +1,23 @@
+summary: "Get Notifications"
+tags:
+  - product/Alerts
+description: "Returns list of notifications for a particular app or the list of platform notifications if no appID is given"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "query"
+  name: "app_id"
+  description: "The app ID for which notification have to be shown. If no app ID is given then the API will show platform notifications"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Return list of notifications for the given app ID or list of platform notifications"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching notifications"

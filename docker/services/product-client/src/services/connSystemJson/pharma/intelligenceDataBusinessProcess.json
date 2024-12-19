@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "name": "HCP Marketing",
+            "id": "1",
+            "ref_id": 1,
+            "problemDefinition": [
+                {
+                    "name": "Annual Planning",
+                    "id": "1",
+                    "ref_id": 1,
+                    "business_process_id": "1",
+                    "problemDefinition": [
+                        {
+                            "name": "Market Mix Modelling",
+                            "id": "1",
+                            "ref_id": 1,
+                            "business_process_id": "1"
+                        },
+                        { "name": "Omni Channel Measurement", "id": "2", "ref_id": 2, "business_process_id": "1" },
+                        { "name": "Next Best Action", "id": "3", "ref_id": 3, "business_process_id": "1" }
+                    ]
+                },
+                { "name": "Mid Year Review", "id": "2", "ref_id": 2, "business_process_id": "1" },
+                { "name": "Measurement", "id": "3", "ref_id": 3, "business_process_id": "1" }
+            ]
+        },
+        {
+            "name": "Patient Support",
+            "id": "2",
+            "ref_id": 2
+        },
+        {
+            "name": "Patient Marketing",
+            "id": "3",
+            "ref_id": 3
+        },
+        {
+            "name": "Sales Force Effectiveness",
+            "id": "4",
+            "ref_id": 4
+        }
+    ]
+}

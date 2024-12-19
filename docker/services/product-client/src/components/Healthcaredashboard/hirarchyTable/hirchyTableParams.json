@@ -1,0 +1,112 @@
+{
+    "coldef": [
+        {
+            "headerName": "Category",
+            "field": "category",
+            "cellParamsField": "catParams"
+
+        },
+        {
+            "headerName": "Industry",
+            "field": "industry",
+            "cellParamsField": "indParams"
+        },
+        {
+            "headerName": "Functions",
+            "field": "functions",
+            "cellParamsField":"funParams"
+        },
+        {
+            "headerName": "Sub-Functions",
+            "field": "subFuncitons",
+            "cellParamsField":"subParams"
+        },
+        {
+            "headerName": "Applications",
+            "field": "app",
+            "cellParamsField":"appParams"
+        }
+
+    ],
+    "rowData": [
+        {"category": "Manufacturers","catParams": {"rowSpan":30},"industry": "Pharmaceuticals", "indParams": {"rowSpan": 18}, "functions": "Commercial & Mktg", "funParams":{"rowSpan":4},"subFuncitons": "Territory & Target Allocation", "app": "Application 1"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Commercial & Mktg","subFuncitons": "Field Sales Performance", "app": "Application 2"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Commercial & Mktg","subFuncitons": "Physician Targeting Optimization", "app": "Application 3"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Commercial & Mktg","subFuncitons": " Marketing Mix & Campaign Effectiveness", "app": "Application 4"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Patient Insights", "funParams":{"rowSpan":2},"subFuncitons": " Patient Support Program Effectiveness", "app": "Application 1"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Patient Insights", "funParams":{"rowSpan":2},"subFuncitons": "OTC", "app": "Application 1"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Market Access ", "funParams":{"rowSpan":4},"subFuncitons": "Payer Segmentation", "app": "Application 1"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Market Access ", "funParams":{"rowSpan":3},"subFuncitons": "Rebates/ Recommendation ", "app": "Application 2"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Market Access ", "funParams":{"rowSpan":3},"subFuncitons": "Contract Management & Analysis","subParams":{"rowSpan":2}, "app": "Application 3"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Market Access ", "funParams":{"rowSpan":3},"subFuncitons": "", "app": "Application 4"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "R&D", "funParams":{"rowSpan":3},"subFuncitons": "Site Selection Tool", "app": "Application 1"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "R&D", "funParams":{"rowSpan":3},"subFuncitons": "Horizontal Scanning Application Market", "app": "Application 2"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "R&D", "funParams":{"rowSpan":3},"subFuncitons": " Market Potential Assessment", "app": "Application 2"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Pharmacovigilance & HEOR", "funParams":{"rowSpan":5},"subFuncitons": "AE Sourcing & Intake", "app": "Application 1"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Pharmacovigilance & HEOR", "funParams":{"rowSpan":5},"subFuncitons": "AE Triaging & Analysis", "app": "Application 2"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Pharmacovigilance & HEOR", "funParams":{"rowSpan":5},"subFuncitons": " AE Reporting & Archival", "app": "Application 3"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Pharmacovigilance & HEOR", "funParams":{"rowSpan":5},"subFuncitons": " RWE Capabilities","subParams":{"rowSpan":2},"app": "Application 4"},
+        {"category": "Manufacturers","industry": "Pharmaceuticals","functions": "Pharmacovigilance & HEOR", "funParams":{"rowSpan":5},"subFuncitons": " RWE Capabilities", "app": "Application 5"},
+        {"category": "Manufacturers","industry": "Medical Devices", "indParams": {"rowSpan": 6}, "functions": "Competitive Intel", "funParams":{"rowSpan":3},"subFuncitons": "HCP Segmentation", "app": "Application 1"},
+        {"category": "Manufacturers","industry": "Medical Devices", "indParams": {"rowSpan": 6}, "functions": "Competitive Intel", "funParams":{"rowSpan":3},"subFuncitons": " Market Level Analytics", "app": "Application 2"},
+        {"category": "Manufacturers","industry": "Medical Devices", "indParams": {"rowSpan": 6}, "functions": "Competitive Intel", "funParams":{"rowSpan":3},"subFuncitons": " ", "app": "Application 3"},
+        {"category": "Manufacturers","industry": "Medical Devices", "indParams": {"rowSpan": 6}, "functions":"Player and HCP", "funParams":{"rowSpan":3},"subFuncitons": "Payer Segmentation", "app": "Application 1"},
+        {"category": "Manufacturers","industry": "Medical Devices", "indParams": {"rowSpan": 6}, "functions":"Player and HCP", "funParams":{"rowSpan":3},"subFuncitons": " HCP Loyalty", "app": "Application 2"},
+        {"category": "Manufacturers","industry": "Medical Devices", "indParams": {"rowSpan": 6}, "functions":"Player and HCP", "funParams":{"rowSpan":3},"subFuncitons": "  HCP Churn", "app": "Application 3"},
+        {"category": "Manufacturers","industry": "Animal Health", "indParams": {"rowSpan": 4}, "functions":"Pet care", "funParams":{"rowSpan":4},"subFuncitons": "Vet Utilization", "app": "Application 1"},
+        {"category": "Manufacturers","industry": "Animal Health", "indParams": {"rowSpan": 4}, "functions":"Pet care", "funParams":{"rowSpan":4},"subFuncitons": " Early disease setection", "app": "Application 2"},
+        {"category": "Manufacturers","industry": "Animal Health", "indParams": {"rowSpan": 4}, "functions":"Pet care", "funParams":{"rowSpan":4},"subFuncitons": " Wearable analysis", "app": "Application 3"},
+        {"category": "Manufacturers","industry": "Animal Health", "indParams": {"rowSpan": 4}, "functions":"Pet care", "funParams":{"rowSpan":4},"subFuncitons": "Pet food analysis", "app": "Application 4"},
+        {"category": "Manufacturers","industry": "Aesthetics", "indParams": {"rowSpan": 2}, "functions":"Aesthetics", "funParams":{"rowSpan":2},"subFuncitons": "Aesthetics", "app": "Application 1"},
+        {"category": "Manufacturers","industry": "Aesthetics", "indParams": {"rowSpan": 2}, "functions":"Aesthetics", "funParams":{"rowSpan":2},"subFuncitons": "", "app": "Application 2"},
+        {"category": "Insurers and Payers","catParams": {"rowSpan": 21}, "industry": "Commercial Plans", "indParams": {"rowSpan": 15}, "functions": "Member", "funParams":{"rowSpan":4},"subFuncitons": "Personalized Engagement ", "app": "Application 1"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans","functions": "Member","subFuncitons": "Customer Service Analytics", "app": "Application 2"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans","functions": "Member","subFuncitons": " Churn Model", "app": "Application 3"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans","functions": "Member","subFuncitons": "Cost Estimator Tool", "app": "Application 4"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans","functions": "Operations","funParams":{"rowSpan":3},"subFuncitons": "Fraud, Waste & Abuse", "app": "Application 2"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans","functions": "Operations","subFuncitons": "Medical Cost Forecasting", "app": "Application 3"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans", "functions": "Operations","subFuncitons": "Prior Auth Decision Prediction", "app": "Application 3"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans", "functions": "Clinical", "funParams":{"rowSpan":2},"subFuncitons": "Hospital Readmission Prediction", "app": "Application 1"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans", "functions": "Clinical","subFuncitons": " Right Time Care Intervention", "app": "Application 2"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans", "indParams": {"rowSpan": 4}, "functions":"Rating", "funParams":{"rowSpan":4},"subFuncitons": "Medicare STAR Analytics", "app": "Application 1"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans", "indParams": {"rowSpan": 4}, "functions":"Rating", "funParams":{"rowSpan":2},"subFuncitons": " HEDIS Performance", "app": "Application 2"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans", "indParams": {"rowSpan": 4}, "functions":"Rating", "funParams":{"rowSpan":2},"subFuncitons": " ", "app": "Application 3"},
+        {"category": "Insurers and Payers","industry": "Commercial Plans", "indParams": {"rowSpan": 4}, "functions":"Rating", "funParams":{"rowSpan":2},"subFuncitons": " ", "app": "Application 4"},
+        {"category": "Insurers and Payers","industry": "Medicare", "indParams": {"rowSpan": 2}, "functions":"Medicare-functions", "funParams":{"rowSpan":2},"subFuncitons": "Medicare-subfunctions", "app": "Application 1"},
+        {"category": "Insurers and Payers","industry": "Medicare", "indParams": {"rowSpan": 2}, "functions":"Medicare-functions", "funParams":{"rowSpan":2},"subFuncitons": "", "app": "Application 2"},
+        {"category": "Insurers and Payers","industry": "Medicaid", "indParams": {"rowSpan": 2}, "functions":"Medicaid-functions", "funParams":{"rowSpan":2},"subFuncitons": "Medicaid-subfunctions", "app": "Application 1"},
+        {"category": "Insurers and Payers","industry": "Medicaid", "indParams": {"rowSpan": 2}, "functions":"Medicaid-functions", "funParams":{"rowSpan":2},"subFuncitons": "", "app": "Application 2"},
+        {"category": "Insurers and Payers","industry": "Pharmacy Benefit Managers (PBMs)", "indParams": {"rowSpan": 2}, "functions":"Pharmacy Benefit Managers (PBMs)", "funParams":{"rowSpan":2},"subFuncitons": "Pharmacy Benefit Managers (PBMs)", "app": "Application 1"},
+        {"category": "Insurers and Payers","industry": "Pharmacy Benefit Managers (PBMs)", "indParams": {"rowSpan": 2}, "functions":"Pharmacy Benefit Managers (PBMs)", "funParams":{"rowSpan":2},"subFuncitons": "Pharmacy Benefit Managers (PBMs)", "app": "Application 2"},
+        {"category": "Insurers and Payers","industry": "Employers", "indParams": {"rowSpan": 2}, "functions":"Employers - Function", "funParams":{"rowSpan":2},"subFuncitons": "Employers - Function", "app": "Application 1"},
+        {"category": "Insurers and Payers","industry": "Employers", "indParams": {"rowSpan": 2}, "functions":"Employers - Function", "funParams":{"rowSpan":2},"subFuncitons": "", "app": "Application 2"},
+        {"category": "Providers","catParams": {"rowSpan": 15},"industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 12}, "functions":"Disease", "funParams":{"rowSpan":5},"subFuncitons": "Chronic Disease Prediction (Diabetes, CKD, COPD etc.)", "app": "Application 1"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Disease", "funParams":{"rowSpan":5},"subFuncitons": " Rare Disease Prediction", "app": "Application 2"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Disease", "funParams":{"rowSpan":5},"subFuncitons": " ", "app": "Application 3"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Disease", "funParams":{"rowSpan":5},"subFuncitons": " ", "app": "Application 4"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Disease", "funParams":{"rowSpan":5},"subFuncitons": " ", "app": "Application 5"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Care Continuum", "funParams":{"rowSpan":3},"subFuncitons": "Right Time Care Intervention ", "app": "Application 1"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Care Continuum", "funParams":{"rowSpan":3},"subFuncitons": " High Risk Population Identification", "app": "Application 2"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Care Continuum", "funParams":{"rowSpan":3},"subFuncitons": "  Precision Medicine", "app": "Application 2"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Operations", "funParams":{"rowSpan":2},"subFuncitons": "  Call Center Analytics", "app": "Application 1"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Rating", "funParams":{"rowSpan":2},"subFuncitons": "Medicare STAR Analytics", "app": "Application 1"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Rating", "funParams":{"rowSpan":2},"subFuncitons": " HEDIS Performance", "app": "Application 2"},
+        {"category": "Providers","industry": "Integrated Delivery Networks (IDNs)", "indParams": {"rowSpan": 14}, "functions":"Operations", "funParams":{"rowSpan":2},"subFuncitons": "  Provider-Payer Ops Automation", "app": "Application 2"},
+        {"category": "Providers","industry": "Hospitals", "indParams": {"rowSpan": 2}, "functions":"Hospitals - Function", "funParams":{"rowSpan":2},"subFuncitons": "Hospitals - subFunction", "app": "Application 1"},
+        {"category": "Providers","industry": "Hospitals", "indParams": {"rowSpan": 2}, "functions":"Hospitals - Function", "funParams":{"rowSpan":2},"subFuncitons": "", "app": "Application 2"},
+        {"category": "Providers","industry": "Diagnostic Labs", "indParams": {"rowSpan": 1}, "functions":"Diagnostic Labs - Function","subFuncitons": "Diagnostic Labs - Sub function", "app": "Application 1"},
+        {"category": "Trade & Distribution","catParams":{"rowSpan":7},"industry": "Retail Pharmacies", "indParams": {"rowSpan": 3}, "functions":"Retail Pharmacies - Function", "funParams":{"rowSpan":3},"subFuncitons": " Retail Pharmacies - Sub function","subParams":{"rowSpan":3}, "app": "Application 1"},
+        {"category": "Trade & Distribution","catParams":{"rowSpan":7},"industry": "Retail Pharmacies", "indParams": {"rowSpan": 3}, "functions":"Retail Pharmacies - Function", "funParams":{"rowSpan":3},"subFuncitons": " Retail Pharmacies - Sub function", "app": "Application 2"},
+        {"category": "Trade & Distribution","catParams":{"rowSpan":7},"industry": "Retail Pharmacies", "indParams": {"rowSpan": 3}, "functions":"Retail Pharmacies - Function", "funParams":{"rowSpan":3},"subFuncitons": " Retail Pharmacies - Sub function", "app": "Application 3"},
+        {"category": "Trade & Distribution","industry": "Diagnostic Labs", "indParams": {"rowSpan": 2}, "functions":"Group Purchase Organizations (GPOs)", "funParams":{"rowSpan":2},"subFuncitons": "Group Purchase Organizations (GPOs) - Sub function","subParams":{"rowSpan":2},"app": "Application 1"},
+        {"category": "Trade & Distribution","industry": "Diagnostic Labs", "indParams": {"rowSpan": 1}, "functions":"Group Purchase Organizations (GPOs)", "funParams":{"rowSpan":2},"subFuncitons": "", "app": "Application 1"},
+        {"category": "Trade & Distribution","catParams":{"rowSpan":7},"industry": "Distributions", "indParams": {"rowSpan": 2}, "functions":"Distributions - Function", "funParams":{"rowSpan":2},"subFuncitons": "Distributions - Sub function","subParams":{"rowSpan":2},"app": "Application 1"},
+        {"category": "Trade & Distribution","catParams":{"rowSpan":7},"industry": "Distributions", "indParams": {"rowSpan": 2}, "functions":"Distributions - Function", "funParams":{"rowSpan":2},"subFuncitons": "", "app": "Application 2"}
+],
+    "gridOptions": {
+        "tableSize": "small",
+        "editorMode": true,
+        "fullBorder": true,
+        "suppressToolBar": true
+    }
+}

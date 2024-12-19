@@ -1,0 +1,11 @@
+@import "../../../styles/util.scss";
+
+.MinervaWC .MinervaTabPanel {
+    display: none;
+    flex: 1;
+    overflow-y: scroll;
+
+    &.MinervaActiveTabPanel {
+        display: block;
+    }
+}

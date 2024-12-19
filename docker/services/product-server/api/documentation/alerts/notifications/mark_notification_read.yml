@@ -1,0 +1,34 @@
+summary: "Update notification list read status"
+tags:
+  - product/Alerts
+description: "Updates the read status for list of notifications"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: []
+        properties:
+          notifications:
+            type: "array"
+            items:
+              type: "object"
+              required: []
+              properties:
+                id:
+                  type: "integer"
+        example: {"notifications": [{"id": 1}, {"id": 2}]}
+
+responses:
+  200:
+    description: "Return successful update message"
+    schema:
+      type: "object"
+    example: {"message": "Updated Successfully"}
+  500:
+    description: "Error while updating notification"

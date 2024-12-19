@@ -1,0 +1,171 @@
+{
+    "id": 573,
+    "input": "Generate Outline",
+    "output": {
+        "response": {
+            "widgets": [
+                {
+                    "type": "outlineEditor",
+                    "value": {
+                        "slides": [
+                            {
+                                "layout_name": "4_Title Slide_Text Only",
+                                "layout_index": 0,
+                                "placeholder": [
+                                    {
+                                        "placeholder_type": "CENTER_TITLE (3)",
+                                        "idx": 0,
+                                        "content": "Sales Overview"
+                                    }
+                                ]
+                            },
+                            {
+                                "layout_name": "Section with Image",
+                                "layout_index": 4,
+                                "placeholder": [
+                                    {
+                                        "placeholder_type": "CENTER_TITLE (3)",
+                                        "idx": 0,
+                                        "content": "Top Brands",
+                                        "conversation_id": 1
+                                    },
+                                    {
+                                        "placeholder_type": "BODY (2)",
+                                        "idx": 15,
+                                        "content": "Top brands: Waterhut, Drinksjet, Icex, Sodax, Softella. Waterhut 7.17M, Drinksjet 4.79M.",
+                                        "widget_index": "0",
+                                        "conversation_id": 1
+                                    },
+                                    {
+                                        "placeholder_type": "PICTURE (18)",
+                                        "idx": 16,
+                                        "content": "<visual content>",
+                                        "widget_index": "1",
+                                        "conversation_id": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "layout_name": "Section with Image",
+                                "layout_index": 4,
+                                "placeholder": [
+                                    {
+                                        "placeholder_type": "CENTER_TITLE (3)",
+                                        "idx": 0,
+                                        "content": "Top Brands Across Regions",
+                                        "conversation_id": 2
+                                    },
+                                    {
+                                        "placeholder_type": "BODY (2)",
+                                        "idx": 15,
+                                        "content": "Top sales: Waterhut 642.25M, Drinksjet 304.865M, Icex 236.043M, Sodax 115.761M, Softella 33.177M.",
+                                        "widget_index": "0",
+                                        "conversation_id": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "layout_name": "Section with Image",
+                                "layout_index": 4,
+                                "placeholder": [
+                                    {
+                                        "placeholder_type": "CENTER_TITLE (3)",
+                                        "idx": 0,
+                                        "content": "Total Sales",
+                                        "conversation_id": 3
+                                    },
+                                    {
+                                        "placeholder_type": "PICTURE (18)",
+                                        "idx": 16,
+                                        "content": "<visual content>",
+                                        "widget_index": "0-0",
+                                        "conversation_id": 3
+                                    },
+                                    {
+                                        "placeholder_type": "BODY (2)",
+                                        "idx": 15,
+                                        "content": "Total sales: 1.3321 billion.",
+                                        "widget_index": "1",
+                                        "conversation_id": 3
+                                    }
+                                ]
+                            },
+                            {
+                                "layout_name": "Section with Image",
+                                "layout_index": 4,
+                                "placeholder": [
+                                    {
+                                        "placeholder_type": "CENTER_TITLE (3)",
+                                        "idx": 0,
+                                        "content": "Top Brands Sales Last Year",
+                                        "conversation_id": 4
+                                    },
+                                    {
+                                        "placeholder_type": "PICTURE (18)",
+                                        "idx": 16,
+                                        "content": "<visual content>",
+                                        "widget_index": "2",
+                                        "conversation_id": 4
+                                    },
+                                    {
+                                        "placeholder_type": "BODY (2)",
+                                        "idx": 15,
+                                        "content": "Top brands last year: Waterhut 642.25M, Drinksjet 304.865M.",
+                                        "widget_index": "0",
+                                        "conversation_id": 4
+                                    }
+                                ]
+                            },
+                            {
+                                "layout_name": "Section with Image",
+                                "layout_index": 4,
+                                "placeholder": [
+                                    {
+                                        "placeholder_type": "CENTER_TITLE (3)",
+                                        "idx": 0,
+                                        "content": "Top Brands Across Regions Last Year",
+                                        "conversation_id": 5
+                                    },
+                                    {
+                                        "placeholder_type": "PICTURE (18)",
+                                        "idx": 16,
+                                        "content": "<visual content>",
+                                        "widget_index": "0",
+                                        "conversation_id": 5
+                                    },
+                                    {
+                                        "placeholder_type": "BODY (2)",
+                                        "idx": 15,
+                                        "content": "Brand leaders last year: Waterhut, Drinksjet, Icex, Sodax, Softella.",
+                                        "widget_index": "1",
+                                        "conversation_id": 5
+                                    }
+                                ]
+                            },
+                            {
+                                "layout_name": "4_Title Slide_Text Only",
+                                "layout_index": 0,
+                                "placeholder": [
+                                    {
+                                        "placeholder_type": "CENTER_TITLE (3)",
+                                        "idx": 0,
+                                        "content": "Thank you"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ],
+            "entities": [
+                {
+                    "key": "Presentation Outline",
+                    "value": "Creating a presentation structure from selected prompts"
+                }
+            ],
+            "processed_query": "sales across brands"
+        }
+    },
+    "window_id": 61,
+    "feedback": null
+}

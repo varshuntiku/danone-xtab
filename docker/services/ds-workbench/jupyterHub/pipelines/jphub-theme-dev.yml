@@ -1,0 +1,44 @@
+trigger: none
+
+pr: none
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  PYPI_SERVER: 'https://pkgs.dev.azure.com/mathco-products/codex/_packaging/codex_feed/pypi/upload/'
+  PYPI_USERNAME: '__token__'
+  PYPI_PASSWORD: $(pat)
+
+stages:
+- stage: nuclios_dark_v2
+  displayName: 'Nuclios Dark V2 Stage'
+  jobs:
+  - job: nuclios_dark_v2
+    steps:
+    - script: |
+        cd extensions/nuclios-dark-v2
+        python -m pip install --upgrade pip
+        pip install build twine keyrings.alt
+        python -m build
+      displayName: 'Build nuclios-dark-v2'
+    
+    - script: |
+        twine upload --repository-url $(PYPI_SERVER) -u $(PYPI_USERNAME) -p $(PYPI_PASSWORD) extensions/nuclios-dark-v2/dist/*
+      displayName: 'Upload package nuclios-dark-v2'
+
+- stage: nuclios_light_v2
+  displayName: 'Nuclios Light V2 Stage'
+  jobs:
+  - job: nuclios_light_v2
+    steps:
+    - script: |
+        cd extensions/nuclios-light-v2
+        python -m pip install --upgrade pip
+        pip install build twine keyrings.alt
+        python -m build
+      displayName: 'Build nuclios-light-v2'
+    
+    - script: |
+        twine upload --repository-url $(PYPI_SERVER) -u $(PYPI_USERNAME) -p $(PYPI_PASSWORD) extensions/nuclios-light-v2/dist/*
+      displayName: 'Upload package nuclios-light-v2'

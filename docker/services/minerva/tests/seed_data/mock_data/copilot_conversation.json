@@ -1,0 +1,115 @@
+[
+    {
+        "application_id": 1,
+        "user_id": "copilot@ee.com",
+        "user_query": "top brands across sales",
+        "copilot_response": {
+            "response": {
+                "text": "145,338 total sales.",
+                "processed_query": "what are the total sales?",
+                "hint": "\n#### SQL Query\n\n```sql\nSELECT SUM(cpg.cpgnew_v2.price) AS total_sales FROM cpg.cpgnew_v2;\n```\n\n",
+                "entities": null,
+                "widgets": [
+                    [
+                        {
+                            "name": "card",
+                            "type": "card",
+                            "title": "What are the total sales?",
+                            "value": {
+                                "data": {
+                                    "values": [
+                                        [
+                                            145337.6
+                                        ]
+                                    ],
+                                    "columns": [
+                                        "TOTAL SALES"
+                                    ]
+                                },
+                                "layout": {}
+                            }
+                        }
+                    ]
+                ],
+                "citation": {
+                    "id": "sql",
+                    "type": "markdown",
+                    "data": "\n#### SQL Query\n\n```sql\nSELECT SUM(cpg.cpgnew_v2.price) AS total_sales FROM cpg.cpgnew_v2;\n```\n\n"
+                }
+            }
+        },
+        "deleted_at": null,
+        "feedback": null,
+        "comment": null,
+        "conversation_window_id": 1,
+        "pinned": false
+    },
+    {
+        "application_id": 1,
+        "user_id": "copilot@ee.com",
+        "user_query": "Which year I had the highest sales",
+        "copilot_response": {
+            "response": {
+                "text": "2020 had highest sales with total sales of 42 thousand.",
+                "processed_query": "Which year I had the highest sales?",
+                "hint": "\n#### SQL Query\n\n```sql\nSELECT EXTRACT(YEAR FROM c.posting_date) AS YEAR, SUM(c.price) AS total_sales FROM cpg.cpgnew_v2 c GROUP BY YEAR ORDER BY total_sales DESC NULLS LAST LIMIT 1;\n```\n\n",
+                "entities": null,
+                "widgets": [
+                    [
+                        {
+                            "name": "card",
+                            "type": "card",
+                            "title": "2018",
+                            "value": {
+                                "data": {
+                                    "values": [
+                                        [
+                                            2020.0
+                                        ],
+                                        [
+                                            42246.1
+                                        ]
+                                    ],
+                                    "columns": [
+                                        "YEAR",
+                                        "TOTAL SALES"
+                                    ]
+                                },
+                                "layout": {}
+                            }
+                        }
+                    ]
+                ],
+                "citation": {
+                    "id": "sql",
+                    "type": "markdown",
+                    "data": "\n#### SQL Query\n\n```sql\nSELECT EXTRACT(YEAR FROM c.posting_date) AS YEAR, SUM(c.price) AS total_sales FROM cpg.cpgnew_v2 c GROUP BY YEAR ORDER BY total_sales DESC NULLS LAST LIMIT 1;\n```\n\n"
+                }
+            }
+        },
+        "deleted_at": null,
+        "feedback": null,
+        "comment": null,
+        "conversation_window_id": 1,
+        "pinned": false
+    },
+    {
+        "application_id": 1,
+        "user_id": "copilot@ee.com",
+        "user_query": "",
+        "copilot_response": {
+            "response": {
+              "text": "The image depicts a cluster of plants with dark green leaves and clusters of small berries. The berries are in various stages of ripeness, with some appearing red and others green. The overall color palette of the image is muted, with earthy tones dominating the scene.",
+              "processed_query": "",
+              "hint": "",
+              "entities": null,
+              "widgets": null
+            }
+          },
+        "deleted_at": null,
+        "feedback": null,
+        "comment": null,
+        "conversation_window_id": 1,
+        "pinned": false
+    }
+]

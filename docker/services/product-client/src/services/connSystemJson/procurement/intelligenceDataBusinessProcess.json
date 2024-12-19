@@ -1,0 +1,54 @@
+{
+    "data": [
+        {
+            "name": "Planning",
+            "id": "1",
+            "ref_id": 1,
+            "problemDefinition": [
+                {
+                    "name": "Annual Plan",
+                    "id": "1",
+                    "ref_id": 1,
+                    "business_process_id": "1",
+                    "problemDefinition": [
+                        {
+                            "name": "Demand Forecasting",
+                            "id": "1",
+                            "ref_id": 1,
+                            "business_process_id": "1"
+                        },
+                        { "name": "Spend Optimizer", "id": "2", "ref_id": 2, "business_process_id": "1" },
+                        { "name": "Commodity Price Forecasting", "id": "3", "ref_id": 3, "business_process_id": "1" }
+                    ]
+                },
+                { "name": "Mid Year Review", "id": "2", "ref_id": 2, "business_process_id": "1" },
+                { "name": "Measurement", "id": "3", "ref_id": 3, "business_process_id": "1" }
+            ]
+        },
+        {
+            "name": "Operations",
+            "id": "2",
+            "ref_id": 2
+        },
+        {
+            "name": "Budgeting",
+            "id": "3",
+            "ref_id": 3
+        },
+        {
+            "name": "Purchase to Pay",
+            "id": "4",
+            "ref_id": 4
+        },
+        {
+            "name": "Compliance",
+            "id": "5",
+            "ref_id": 5
+        },
+        {
+            "name": "Marketing",
+            "id": "6",
+            "ref_id": 6
+        }
+    ]
+}

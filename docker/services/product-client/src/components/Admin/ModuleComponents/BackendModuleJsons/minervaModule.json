@@ -1,0 +1,88 @@
+{
+    "dialog": {
+        "title": "Ask NucliOS Module Description"
+    },
+    "dialog_actions": [
+        {
+            "is_cancel": true,
+            "name": "Got it",
+            "variant": "contained"
+        }
+    ],
+    "form_config": {
+        "fields": [
+            {
+                "id": 2,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "What is Ask NucliOS?"
+            },
+            {
+                "id": 3,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "Ask NucliOS is a conversational AI assistant designed to support ad-hoc data queries. Ask NucliOS is a Natural Language Querying tool and supports both voice and text inputs."
+            },
+            {
+                "id": 4,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "Enabling Ask NucliOS:"
+            },
+            {
+                "id": 5,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "To configure Ask NucliOS for your app, please click on the toggle button and add the tenant ID."
+            },
+            {
+                "id": 6,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "In-app availability: "
+            },
+            {
+                "id": 7,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "Ask NucliOS will be accessible to the business user in the advanced features section."
+            }
+        ]
+    }
+}

@@ -1,0 +1,72 @@
+@import '../../../styles/util.scss';
+
+$spacingUnit: spacing(10);
+
+.MinervaWC .MinervaLinearProgress {
+    display: flex;
+    gap: spacing(5);
+    align-items: center;
+    & .MinervaLinearProgress-bar-root {
+        background-color: var(--minerva-contrast-color-40);
+        height: calc(#{$spacingUnit} * var(--bar-height));
+        overflow: hidden;
+        position: relative;
+        flex: 1;
+        & .MinervaLinearProgress-bar {
+            top: 0;
+            left: 0;
+            width: 100%;
+            bottom: 0;
+            position: absolute;
+            transition: transform 0.2s linear;
+            transform-origin: left;
+            background-color: var(--minerva-contrast-color);
+            &.MinervaLinearProgress-bar1 {
+                width: auto;
+                animation: Minerva-Keyframe-intermitant1 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+            }
+            &.MinervaLinearProgress-bar2 {
+                width: auto;
+                animation: Minerva-Keyframe-intermitant2 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+            }
+            &.MinervaLinearProgress-bar-determinate {
+                --transalte-value: calc((var(--bar-progress-value) - 100) * 1%);
+                transform: translateX(var(--transalte-value));
+                transition: transform .4s linear;
+            }
+
+            @keyframes Minerva-Keyframe-intermitant1 {
+                0% {
+                    left: -35%;
+                    right: 100%;
+                }
+                60% {
+                    left: 100%;
+                    right: -90%;
+                }
+                100% {
+                    left: 100%;
+                    right: -90%;
+                }
+            }
+
+            @keyframes Minerva-Keyframe-intermitant2 {
+                0% {
+                    left: -200%;
+                    right: 100%;
+                }
+                60% {
+                    left: 107%;
+                    right: -8%;
+                }
+                100% {
+                    left: 107%;
+                    right: -8%;
+                }
+            }
+        }
+    }
+    & small {
+        color: var(--minerva-contrast-color);
+    }
+}

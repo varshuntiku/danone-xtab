@@ -1,0 +1,39 @@
+summary: "List of user groups"
+tags:
+  - platform/UserGroups
+description: "This returns list of user group with their info"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: [
+
+          {
+            "id": 123,
+            "name": "name",
+            "app": "app",
+            "case_studies": "case_studies",
+            "my_projects_only": "my_projects_only",
+            "my_projects": "my_projects",
+            "all_projects": "all_projects",
+            "widget_factory": "widget_factory",
+            "environments": "environments",
+            "app_publish": "app_publish",
+            "rbac": "rbac",
+            "user_group_type": "",
+            "created_by": '--'
+          }
+      ]
+
+  500:
+    description: "Yet to be added in api"
+    schema:
+    type: "object"
+    example: [
+      "Error":"Error in query operation"
+    ]

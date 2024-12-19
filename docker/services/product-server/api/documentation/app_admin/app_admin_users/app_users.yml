@@ -1,0 +1,26 @@
+summary: "Get app users"
+tags:
+  - product/AppAdmin
+description: "Fetches the users for given app ID"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Returns list of users with their details"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching"
+    schema :
+      type: "object"
+      example:  {'error': "Error in fetching app users"}

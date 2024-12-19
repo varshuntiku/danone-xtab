@@ -1,0 +1,5 @@
+{
+  "packageManager": "python",
+  "packageName": "nuclios_light_v2",
+  "uninstallInstructions": "Use your Python package manager (pip, conda, etc.) to uninstall the package nuclios_light_v2"
+}

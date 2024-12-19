@@ -1,0 +1,26 @@
+summary: "Get Archived UIaCs"
+tags:
+  - product/AppAdmin
+description: "It returns the widgets archived UIaCs of an application"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Fetch successful"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching"
+    schema:
+      type: "object"
+      example: {'error': 'Error while saving filters'}

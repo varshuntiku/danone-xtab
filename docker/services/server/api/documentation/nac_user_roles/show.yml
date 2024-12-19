@@ -1,0 +1,38 @@
+summary: "Get NAC user role Details"
+tags:
+  - platform/NACUserRoles
+description: "This returns the NAC user role info for the given user role id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "nac_user_role_id"
+  description: "NAC User Rroup ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "id": "3",
+            "name": "test nac user role",
+            "permissions": [
+              "CREATE_VARIABLE",
+              "CREATE_PREVIEW_APP"
+            ]
+        }
+  404:
+    description: "Item not found"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Item not found"
+      }

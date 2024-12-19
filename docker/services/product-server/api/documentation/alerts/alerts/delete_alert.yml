@@ -1,0 +1,25 @@
+summary: "Delete alert"
+tags:
+  - product/Alerts
+description: "Deletes the alert data for the given alert ID"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "alertId"
+  required: "true"
+  description: "The alert ID for which the data has to be deleted"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Return successful delete message"
+    schema:
+      type: "object"
+    example: {"message": "Deleted Successfully"}
+  500:
+    description: "Error while deleting alert"

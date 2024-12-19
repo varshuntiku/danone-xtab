@@ -1,0 +1,82 @@
+@import '../../styles/util.scss';
+
+.MinervaWC .MinervaPinnedQuery {
+    padding: spacing(16, 16, 16, 24);
+    background: var(--minerva-bg-main);
+    display: flex;
+    flex-direction: column;
+    gap: spacing(4);
+    .MinervaPinnedQuery-header {
+        display: flex;
+        gap: spacing(16);
+        align-items: center;
+        .MinervaAvatar {
+            flex-shrink: 0;
+        }
+        .MinervaPinnedQuery-header-action {
+            display: flex;
+            gap: spacing(8);
+            .MinervaPinnedQuery-expand-btn {
+                transition-duration: 200ms;
+            }
+        }
+        .MinervaPinnedQuery-query-input {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-weight: 500;
+            font-size: spacing(18);
+        }
+    }
+
+    &.MinervaPinnedQuery-expanded {
+        gap: spacing(28);
+        .MinervaPinnedQuery-expand-btn {
+            transform: rotate(180deg);
+        }
+    }
+
+    .MinervaQueryOutputItem-query-container {
+        display: flex;
+        gap: spacing(20);
+        align-items: center;
+        .MinervaAvatar {
+            flex-shrink: 0;
+        }
+    }
+
+    .MinervaPinnedQuery-response {
+        display: flex;
+        gap: spacing(16);
+        margin-right: spacing(40);
+        .MinervaAvatar {
+            background-color: var(--minerva-bg-secondary-blue);
+            border-radius: spacing(10);
+            margin-top: spacing(4);
+        }
+        .MinervaPinnedQuery-visual-result {
+            flex: 1;
+            // overflow: hidden;
+        }
+
+        .MinervaPinnedQuery-response-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: spacing(20);
+            // overflow: hidden;
+            width: 0; // tobe tested
+        }
+    }
+
+    .MinervaPinnedQuery-bottom-actions {
+        display: flex;
+        gap: spacing(4);
+        .MinervaPinnedQuery-link {
+            font-size: spacing(12);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+}

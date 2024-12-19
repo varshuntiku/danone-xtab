@@ -1,0 +1,13 @@
+import os
+
+SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+SQLALCHEMY_ENGINE_OPTIONS = {
+    "pool_pre_ping": True,
+    "pool_recycle": 300,
+}
+SQLALCHEMY_BINDS = {"APP_DB": os.environ.get("SQLALCHEMY_BINDS")}
+APPS_DB_URI = os.environ.get("APPS_DB_URI")
+PPT_DOWNLOAD_FUNCTION_URL = os.environ.get("PPT_DOWNLOAD_FUNCTION_URL")
+NUCLIOS_ENV_LOGIN = os.environ.get("NUCLIOS_ENV_LOGIN")
+NUCLIOS_ENV_DEE = os.environ.get("NUCLIOS_ENV_DEE")

@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  nuclios-testdb:
+    image: postgres:11.2-alpine
+    restart: always
+    ports:
+      - "5434:5432"
+    env_file:
+      - "./.env.test"
+    volumes:
+      - "./scripts:/docker-entrypoint-initdb.d"
+
+name: nuclios-testdb

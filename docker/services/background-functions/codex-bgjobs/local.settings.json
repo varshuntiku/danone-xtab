@@ -1,0 +1,7 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=stcodxdev;AccountKey=4yyB8cZz/EMvRjzILCOB+iWYeVY09mmSyj8q6gUXh0rQ5fAN4nvxlv95RSOZt1MDmgB8iTQK9ad7+AStltcinA==;EndpointSuffix=core.windows.net",
+    "FUNCTIONS_WORKER_RUNTIME": "python"
+  }
+}

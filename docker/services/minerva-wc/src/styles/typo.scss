@@ -1,0 +1,31 @@
+.MinervaWC {
+    .MinervaTypo-pre {
+        text-wrap: wrap;
+        font-family: inherit;
+        word-break: break-word;
+    }
+
+    .MinervaTypo-body1 {
+        // font-size: spacing(16);
+    }
+
+    .MinervaTypo-body2 {
+        font-size: spacing(14);
+    }
+
+    .MinervaTypo-color-70 {
+        color: var(--minerva-text-color-70);
+    }
+
+    .MinervaTypo-title1 {
+        font-size: spacing(18);
+        font-weight: 500;
+        // line-height: 1.6em;
+    }
+
+    .MinervaTypo-title2 {
+        // font-size: spacing(16);
+        font-weight: 400;
+        line-height: 1.6em;
+    }
+}

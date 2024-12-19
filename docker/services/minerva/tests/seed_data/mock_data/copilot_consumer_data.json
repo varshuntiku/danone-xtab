@@ -1,0 +1,21 @@
+[
+    {
+        "name": "test consumer",
+        "desc": "consumer created from unittest",
+        "access_key": "f0b277a7-f5404db9bc71-a4dafb55de0b",
+        "allowed_origins": [
+            "http://localhost:8003"
+        ],
+        "features": {},
+        "auth_agents": [
+            {
+                "type": "azure_ad",
+                "config": {
+                    "tenant_id": "4bf30310-e4f1-4658-9e34-9e8a5a193ed1",
+                    "audience": "api://ab51dea7-e54a-4007-bfde-3404abf24dfc"
+                }
+            }
+        ],
+        "deleted_at": null
+    }
+]

@@ -1,0 +1,29 @@
+summary: "List of alerts by widget"
+tags:
+  - product/Alerts
+description: "Generates a list of alerts and it's info for the given widget_id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "widgetId"
+  required: "true"
+  description: Widget ID for which the alerts have to be fetched
+  schema:
+    type: "integer"
+
+- in: "query"
+  name: "filter_data"
+  schema:
+    type: "string"
+
+responses:
+  200:
+    description: "Return list of alerts and their info"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching alerts for widget"

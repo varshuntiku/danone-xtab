@@ -1,0 +1,37 @@
+@import '../../../../../styles/util.scss';
+
+.MinervaWC .MinervaOutlineEditor-container {
+    .MinervaOutlineEditor-root:not(:last-child) {
+        margin-bottom: spacing(16);
+    }
+
+    .MinervaOutlineEditor-root {
+        .MinervaOutlineEditor-title {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: spacing(8);
+
+            font-family: inherit;
+            font-size: spacing(15);
+            font-weight: 500;
+            line-height: spacing(18);
+            letter-spacing: spacing(1.5);
+            text-align: left;
+            margin-bottom: spacing(8);
+        }
+
+        .MinervaOutlineEditor-content {
+            margin-left: spacing(12);
+            margin-bottom: spacing(8);
+
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: spacing(8);
+        }
+
+    }
+
+    .MinervaOutlineEditor-action-container {
+        margin-top: spacing(20);
+    }
+}

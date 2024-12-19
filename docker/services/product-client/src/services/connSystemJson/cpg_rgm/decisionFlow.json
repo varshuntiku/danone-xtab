@@ -1,0 +1,393 @@
+{
+    "data": {
+        "title": "Pricing",
+        "id": 22,
+        "problem_definition_id": 122,
+        "linkedProblemDefinitions": [
+            {
+                "id": "wf_node_4",
+                "name": "Yearly pricing strategy - Category specific",
+                "color": "#FFA57E",
+                "bgColor": "rgba(255, 165, 126, 0.08)",
+                "height": "320px",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_5",
+                "name": "Mid-Year Review",
+                "color": "#FE6A9C",
+                "bgColor": "rgba(254, 106, 156, 0.1)",
+                "height": "300px",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_6",
+                "name": "Measurement",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_7",
+                "name": "1",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_8",
+                "name": "2",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_9",
+                "name": "3",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_10",
+                "name": "Promotion Planning",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_11",
+                "name": "Promotion Measurement",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_12",
+                "name": "Promotion Optimization",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_13",
+                "name": "Assortment strategy",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_14",
+                "name": "Annual Assortment Planning",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_15",
+                "name": "Assortment Optimization",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_16",
+                "name": "Performance Management",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_17",
+                "name": "Define annual execution strategy",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_18",
+                "name": "Operationalization",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            },
+            {
+                "id": "wf_node_19",
+                "name": "Measurement of effectiveness",
+                "height": "300px",
+                "color": "#A2C73B",
+                "bgColor": "rgba(162, 199, 59, 1)",
+                "decisionsCategories": [
+                    {
+                        "id": 22,
+                        "iconType": "strategy",
+                        "name": "Strategy & Insights"
+                    },
+                    {
+                        "id": 23,
+                        "iconType": "finance",
+                        "name": "Finance"
+                    },
+                    {
+                        "id": 24,
+                        "iconType": "commercial",
+                        "name": "Commercial"
+                    }
+                ]
+            }
+        ]
+    }
+}

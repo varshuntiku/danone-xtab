@@ -1,0 +1,35 @@
+summary: "Reset an app."
+tags:
+  - product/App
+description: "Reset an app by given app id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "object"
+          example : {
+            status: "success"
+          }
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'Could Not Reset the App. Please Try Again.'
+          }

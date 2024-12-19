@@ -1,0 +1,73 @@
+{
+    "stepperData": [
+        {
+            "name": "overview",
+            "title": "Application Overview",
+            "desc": "Please fill in the basic details of the Ask NucliOS application",
+            "completed": false
+        },
+        {
+            "name": "dataSource",
+            "title": "Configure Data source",
+            "desc": "Configure Data source for your Ask NucliOS Application",
+            "completed": false
+        }
+    ],
+    "appData": {},
+    "formOptions": {
+        "dataSourceOptions": [
+            {
+                "name": "sql",
+                "label": "SQL Database",
+                "value": "SQL Database"
+            },
+            {
+                "name": "index_file",
+                "label": "Vector Embedding File",
+                "value": "Vector Embedding File"
+            },
+            {
+                "name": "document_query",
+                "label": "Document",
+                "value": "Document"
+            },
+            {
+                "name": "csv_file",
+                "label": "CSV File",
+                "value": "CSV File"
+            }
+        ]
+    },
+    "sqlConfig": {
+        "type": "sql",
+        "description": "Query structured data",
+        "llm_model": null,
+        "config": {
+            "context_db_connection_uri": "",
+            "context_db_connection_schema": "",
+            "context": {}
+        }
+    },
+    "embeddingFileConfig": {
+        "type": "index_file",
+        "description": "Query unstructured data",
+        "llm_model": null,
+        "config": {
+            "index_name": null
+        }
+    },
+    "documentConfig": {
+        "type": "document_query",
+        "description": "Query unstructured data",
+        "llm_model": null,
+        "config": {
+            "index_name": null
+        }
+    },
+    "csvFile": {
+        "type": "csv_file",
+        "description": "Query from a csv file.",
+        "llm_model": null,
+        "config": {}
+    }
+}

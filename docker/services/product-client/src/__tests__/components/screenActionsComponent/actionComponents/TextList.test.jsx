@@ -1,0 +1,36 @@
+import React from 'react';
+import { render, screen, cleanup } from '@testing-library/react';
+import { Router } from 'react-router-dom';
+import CustomThemeContextProvider from '../../../../themes/customThemeContext';
+import { createMemoryHistory } from 'history';
+import { TextList } from '../../../../components/screenActionsComponent/actionComponents/TextList.jsx';
+import { vi } from 'vitest';
+
+const history = createMemoryHistory();
+
+vi.mock('services/screen.js', () => {
+    return {
+        triggerActionHandler: ({ callback }) => {
+            callback({ error: true, message: 'some message' });
+        }
+    };
+});
+
+describe('Codex Product test', () => {
+    afterEach(cleanup);
+
+    test('Should render layouts TextList Component', () => {
+        const { getByText, debug } = render(
+            <CustomThemeContextProvider>
+                <Router history={history}>
+                    <TextList
+                        screen_id={1}
+                        app_id={1}
+                        params={{ fetch_on_load: true, data: { list: [{ text: 'hello' }] } }}
+                        action_type="action_Type"
+                    />
+                </Router>
+            </CustomThemeContextProvider>
+        );
+    });
+});

@@ -1,0 +1,49 @@
+summary: "List of all the widgets."
+tags:
+  - product/App
+description: "Generates a list of all the widgets and it's info associated to given app and screen id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "array"
+          example :
+            - id: 1234
+              widget_index: 0
+              widget_key: ""
+              is_label: false
+              config: {
+                title: "",
+                sub_title: "",
+                prefix: "",
+                metric_factor: "",
+                code: ""
+              }
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'item not found'
+          }

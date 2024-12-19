@@ -1,0 +1,5 @@
+build.sh
+run.sh
+init_migrate_db.sh
+migrate_db.sh
+upgrade_db.sh

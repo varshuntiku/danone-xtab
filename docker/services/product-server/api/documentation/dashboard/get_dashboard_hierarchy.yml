@@ -1,0 +1,31 @@
+summary: "Fetch healthcare dashboard"
+tags:
+  - product/Dashboard
+description: "This returns dashboard details details for given health care dashboard id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "dashboard_id"
+  required: true
+  schema:
+    type: integer
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+              "result": {}
+            }
+
+  404:
+    description: "Dashboard Not found"
+    schema:
+    type: "object"
+    example: {
+      "Error":"Dashboard Not found"
+    }

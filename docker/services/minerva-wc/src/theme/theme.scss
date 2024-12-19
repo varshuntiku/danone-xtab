@@ -1,0 +1,97 @@
+.MinervaWC {
+    --minerva-text-color-10: color-mix(in srgb, var(--minerva-text-color) 10%, transparent);
+    --minerva-text-color-20: color-mix(in srgb, var(--minerva-text-color) 20%, transparent);
+    --minerva-text-color-30: color-mix(in srgb, var(--minerva-text-color) 30%, transparent);
+    --minerva-text-color-40: color-mix(in srgb, var(--minerva-text-color) 40%, transparent);
+    --minerva-text-color-50: color-mix(in srgb, var(--minerva-text-color) 50%, transparent);
+    --minerva-text-color-60: color-mix(in srgb, var(--minerva-text-color) 60%, transparent);
+    --minerva-text-color-70: color-mix(in srgb, var(--minerva-text-color) 70%, transparent);
+    --minerva-text-color-80: color-mix(in srgb, var(--minerva-text-color) 80%, transparent);
+    --minerva-text-color-90: color-mix(in srgb, var(--minerva-text-color) 90%, transparent);
+
+    --minerva-bg-main-10: color-mix(in srgb, var(--minerva-bg-main) 10%, transparent);
+    --minerva-bg-main-20: color-mix(in srgb, var(--minerva-bg-main) 20%, transparent);
+    --minerva-bg-main-30: color-mix(in srgb, var(--minerva-bg-main) 30%, transparent);
+    --minerva-bg-main-40: color-mix(in srgb, var(--minerva-bg-main) 40%, transparent);
+    --minerva-bg-main-70: color-mix(in srgb, var(--minerva-bg-main) 70%, transparent);
+    --minerva-bg-main-50: color-mix(in srgb, var(--minerva-bg-main) 50%, transparent);
+
+    --minerva-bg-secondary-light-blue-50: color-mix(in srgb, var(--minerva-bg-secondary-light-blue) 50%, transparent);
+
+    --minerva-bg-main-l90: color-mix(in srgb, var(--minerva-bg-main) 90%, #fff);
+
+
+
+    --minerva-contrast-color-40: color-mix(in srgb, var(--minerva-contrast-color) 40%, transparent);
+    --minerva-contrast-color-70: color-mix(in srgb, var(--minerva-contrast-color) 70%, transparent);
+    --minerva-contrast-color-10: color-mix(in srgb, var(--minerva-contrast-color) 10%, transparent);
+
+    --minerva-contrast-color2-8: color-mix(in srgb, var(--minerva-contrast-color2) 8%, transparent);
+    --minerva-contrast-color2-20: color-mix(in srgb, var(--minerva-contrast-color2) 20%, transparent);
+    --minerva-contrast-color2-40: color-mix(in srgb, var(--minerva-contrast-color2) 40%, transparent);
+
+    --minerva-border-1: 1px solid rgba(158, 158, 158, 0.2);
+
+    --minerva-color-mix1: color-mix(in srgb, var(--minerva-text-color) 1%, var(--minerva-bg-main));
+    --minerva-color-mix2: color-mix(in srgb, var(--minerva-text-color) 4%, var(--minerva-bg-main));
+    --minerva-modal-bg: linear-gradient(120deg, var(--minerva-bg-main) 20%, var(--minerva-color-mix2) 100%);
+
+    --minerva-bg-gradient: linear-gradient(200deg, var(--minerva-bg-secondary-light-blue), var(--minerva-bg-main), var(--minerva-contrast-color2-20));
+
+    // --minerva-modal-bg: linear-gradient(111.81deg, var(--minerva-bg-main) 2%, var(--minerva-bg-main-70) 20%, var(--minerva-bg-main-40) 100%);
+    --minerva-bg-secondary-blue-50: color-mix(in srgb, var(--minerva-bg-secondary-blue) 50%, transparent);
+    --minerva-bg-secondary-blue-25: color-mix(in srgb, var(--minerva-bg-secondary-blue) 25%, transparent);
+
+    --minerva-bg-gradient: linear-gradient(200deg, var(--minerva-bg-secondary-light-blue), var(--minerva-bg-main), var(--minerva-contrast-color2-20));
+    --minerva-bg-gradient2: linear-gradient(250deg, var(--minerva-bg-secondary-blue-50),  var(--minerva-contrast-color2-40));
+
+    --minerva-box-shadow-1: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+    --minerva-box-shadow-4: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
+    --minerva-box-shadow-8: 0px 5px 5px -3px rgba(0,0,0,0.2), 0px 8px 10px 1px rgba(0,0,0,0.14), 0px 3px 14px 2px rgba(0,0,0,0.12);
+
+    --minerva-box-shadow-1a: 0px 4px 4px 3px rgba(0,0,0,0.05);
+    --minerva-box-shadow-1b: 6px 4px 10px 0px rgba(0, 0, 0, 0.15);
+
+    --minerva-voice-bg: linear-gradient(180deg, rgba(34, 0, 71, 0.5) 0%, #220047 100%);
+
+    --minerva-box-shadow-4b: 0px 2px 8px 0px rgba(0,0,0,0.2);
+
+    --minerva-bg-success: #00A582;
+    --minerva-bg-error: #ff655a;
+    --minerva-bg-info: #a3cfff;
+    --minerva-bg-warning: #ff9800;
+    --minerva-text-color-white: #ffff;
+
+    display: contents;
+	& *{
+        box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+        color: var(--minerva-text-color)
+	}
+    // & :not( .MinervaMarkdownRenderer *){
+    //     box-sizing: border-box;
+	// 	padding: 0;
+	// 	margin: 0;
+	// }
+
+    & ::-webkit-scrollbar {
+        width: 0.4em;
+        height: 0.4em;
+    }
+    & ::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 4px;
+        border:0.5px solid var(--minerva-text-color-50)
+    }
+    & ::-webkit-scrollbar-thumb:hover {
+        background: transparent;
+    }
+    & ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    & .MinervaFullWidth {
+        width: 100%;
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "data": [
+        {
+            "role": "Account Sales Manager",
+            "name": "Olivia Garcia",
+            "profileColor": "#07AC86",
+            "profileIcon": true,
+            "tag": "Pricing",
+            "functions": 2,
+            "workflows": 5,
+            "id":2,
+            "nodeColor": "rgba(7, 172, 134, 0.1)"
+        },
+        {
+            "role": "Regional Sales Director",
+            "name": "Jamal Williams",
+            "profileColor": "#20A4F3",
+            "profileIcon": true,
+            "tag": "Pricing",
+            "functions": 2,
+            "workflows": 5,
+            "id":5,
+            "nodeColor": "rgba(32, 164, 243, 0.1)"
+        },
+        {
+            "role": "Commercial Director",
+            "name": "Samuel Lee",
+            "profileColor": "#FF8F5E",
+            "profileIcon": true,
+            "tag": "Pricing",
+            "functions": 2,
+            "workflows": 5,
+            "id":7,
+            "nodeColor": "#FF8F5E20"
+        },
+        {
+            "role": "Sales & Distribution Planning",
+            "name": "Emily Davis",
+            "profileColor": "#AA7EF0",
+            "profileIcon": true,
+            "tag": "Pricing",
+            "functions": 2,
+            "workflows": 5,
+            "id":8,
+            "nodeColor": "rgba(170, 126, 240, 0.1)"
+        }
+    ]
+}

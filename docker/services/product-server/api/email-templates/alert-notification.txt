@@ -1,0 +1,22 @@
+Hi,
+
+A Notification has been generated for the alert {alert_name}.
+
+The {alert_category} has reached {alert_condition} {alert_threshold}
+
+
+
+
+
+This email is intended for
+
+You are receiving professional identity emails.
+
+This email has been sent to intended recipient(s) and may
+contain confidential Information. Please
+ignore if you are not
+the recipient.
+
+Â© C/o Awfis Space Solutions Pvt. Ltd Sabari Complex, #24,
+1st Floor, Residency Rd, Bengaluru,
+Karnataka 560025

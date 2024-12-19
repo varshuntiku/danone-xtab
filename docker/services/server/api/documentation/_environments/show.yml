@@ -1,0 +1,34 @@
+summary: "Get Environment details"
+tags:
+  - platform/Environments
+description: "This returns environment details for given environment_id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "environment_id"
+  description: "Environment ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "id": 123,
+            "name": "envname",
+        }
+  404:
+    description: "Item not found"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Item not found"
+      }

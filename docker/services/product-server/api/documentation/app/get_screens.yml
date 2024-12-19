@@ -1,0 +1,42 @@
+summary: "List of all the screens and it's associated info."
+tags:
+  - product/App
+description: "Generates list of all the screens and it's info associated with the given app_id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "string"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "array"
+          example :
+            id: 98765
+            screen_index: 0
+            screen_name: "Overview"
+            screen_description: "Test"
+            screen_image: "default"
+            level: null
+            graph_type: null
+            horizontal: null
+            rating_url: null
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'item not found'
+          }

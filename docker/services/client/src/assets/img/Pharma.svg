@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <g id="hierarchy" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1" transform="translate(-270.000000, -629.000000)" fill="#FF9800" fill-rule="nonzero">
+            <path d="M282,629 C275.381053,629 270,634.381053 270,641 C270,647.618947 275.381053,653 282,653 C288.618947,653 294,647.618947 294,641 C294,634.381053 288.618947,629 282,629 Z M287.709474,642.92 L283.92,642.92 L283.92,646.709474 L280.08,646.709474 L280.08,642.92 L276.290526,642.92 L276.290526,639.08 L280.08,639.08 L280.08,635.290526 L283.894737,635.290526 L283.894737,639.08 L287.684211,639.08 L287.684211,642.92 L287.709474,642.92 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

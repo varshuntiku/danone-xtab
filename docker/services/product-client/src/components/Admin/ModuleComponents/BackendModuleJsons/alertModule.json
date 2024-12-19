@@ -1,0 +1,99 @@
+{
+    "dialog": {
+        "title": "Alerts Module Description"
+    },
+    "dialog_actions": [
+        {
+            "is_cancel": true,
+            "name": "Got it",
+            "variant": "contained"
+        }
+    ],
+    "form_config": {
+        "fields": [
+            {
+                "id": 2,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "What are Alerts?"
+            },
+            {
+                "id": 3,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "Alerts are tasks that continually monitor active queries to look for and report on specific events or conditions. When the conditions of the alert are met, a notification is triggered."
+            },
+            {
+                "id": 4,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "Enabling Alerts:"
+            },
+            {
+                "id": 5,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "To activate alerts and notifications, please click on the toggle button."
+            },
+            {
+                "id": 6,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "Please note, you will need to modify the UIaC to make this available for the relevant components."
+            },
+            {
+                "id": 7,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "noGutterBottom": true,
+                "InputLabelProps": {
+                    "variant": "h4"
+                },
+                "style": {
+                    "fontWeight": 400
+                },
+                "value": "In-app availability: "
+            },
+            {
+                "id": 8,
+                "name": " ",
+                "grid": 12,
+                "type": "label",
+                "InputLabelProps": {
+                    "variant": "h5"
+                },
+                "value": "Alerts will be accessible to the business user in the advanced features section."
+            }
+        ]
+    }
+}

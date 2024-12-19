@@ -1,0 +1,48 @@
+summary: "Perferm actions on screen."
+tags:
+  - product/App
+description: "Perferm actions on the given screen"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to perform actions
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [filter_state, action_param, action_type]
+        properties:
+          filter_state:
+            type: "object"
+          action_param:
+            type: "object"
+          action_type:
+            type: "object"
+
+responses:
+  200:
+    description: "Success"
+
+  500:
+    description: "Error while executing"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'Error in executing action handler code'
+          }

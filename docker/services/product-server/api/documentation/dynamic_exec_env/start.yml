@@ -1,0 +1,27 @@
+summary: "Activate Dynamic Execution environment"
+tags:
+  - product/DynamicExecutionEnvironment
+description: "Activate Execution environment for the given id"
+produces:
+- application/json
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "execution_environment_id"
+  required: "true"
+  description: "The environment ID that has to be activated"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "API successful"
+    schema:
+      type: object
+  500:
+    description: "ID Not found"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'Error initializing dynamic visualization environment'}

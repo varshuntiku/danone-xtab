@@ -1,0 +1,56 @@
+.customSnackbar {
+    background-color: #00A582;
+    position: fixed;
+    margin-top: 1px;
+    margin-left: 65px;
+    border-radius: 0.4rem;
+    width: 36.5rem;
+    height: 5rem;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.customSnackbarShow {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.snackbarContent {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 24px;
+}
+
+.severityIcon {
+    display: block;
+    fill: white;
+    margin-top: 0.8rem;
+    margin-left: 0.4rem;
+}
+
+.snackbarMessage {
+    margin-top: 30px;
+    display: block;
+    margin-top: -4rem;
+    color: #ffffff;
+    margin-left: 18px;
+    font-size: 1.8rem;
+    padding: 1rem;
+
+
+}
+
+.snackbarClose {
+
+    stroke: white;
+    margin-left: 32.5rem;
+    margin-top: -9rem;
+    margin-bottom: 2.2rem;
+}
+
+.snackbarIcon {
+    margin-left: 0.8rem;
+    margin-top: 0.5rem;
+}

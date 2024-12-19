@@ -1,0 +1,225 @@
+import { alpha } from "@material-ui/core";
+
+export const solutionBluePrintListStyles = (theme) => ({
+  main: {
+    padding: ".5rem 4rem",
+  },
+  title1: {
+    marginLeft: "auto",
+    marginRight: "auto",
+    color: theme.palette.text.revamp,
+    fontFamily: theme.title.h1.fontFamily,
+    fontSize: theme.layoutSpacing(24),
+    fontStyle: "normal",
+    fontWeight: "500",
+    lineHeight: "normal",
+    letterSpacing: "1px",
+    marginBottom: "0.3rem",
+  },
+  approvalsStatusContainer: {
+    backgroundColor: theme.palette.background.paper,
+    display: "flex",
+    justifyContent: "end",
+    alignItems: "center",
+    height: "7rem",
+    paddingTop: "2.5rem",
+    paddingRight: "4rem",
+    "& span": {
+      color: theme.palette.text.default,
+      fontSize: "2rem",
+    },
+  },
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: 120,
+    "& .inputLabel": {
+      fontSize: "1.5rem",
+      color: theme.palette.text.default,
+    },
+    "& #approvals-status-select": {
+      fontSize: "2rem",
+      color: theme.palette.text.default,
+    },
+    "& svg": {
+      fontSize: "3rem",
+      color: theme.palette.text.default,
+    },
+  },
+  list: {
+    "& span": {
+      fontSize: "2rem",
+    },
+    "& p": {
+      fontSize: "2rem",
+    },
+  },
+  actionsBox: {
+    "& .approve svg": {
+      color: "green",
+      fontSize: "2.5rem",
+    },
+    "& .reject svg": {
+      color: "red",
+      fontSize: "2.5rem",
+    },
+    "& .disabled svg": {
+      opacity: 0.4,
+    },
+  },
+  tableContainer: {
+    marginTop: theme.spacing(3),
+    borderRadius: "5px",
+    maxHeight: `calc(100vh - ${theme.layoutSpacing(360)})`,
+    position: "relative",
+    border: `0.5px solid ${theme.palette.separator.tableContent}`,
+  },
+  pagination: {
+    background: theme.palette.primary.dark,
+    borderTop: "1px solid " + alpha(theme.palette.border.dashboard, 0.4),
+    borderRadius: "0 0 5px 5px",
+    color: theme.palette.text.default,
+    fontSize: theme.spacing(2),
+    position: "sticky",
+    bottom: 0,
+    left: 0,
+  },
+  paginationActions: {
+    padding: theme.spacing(1),
+    "& svg": {
+      color: theme.palette.text.default,
+      fontSize: theme.spacing(3),
+    },
+  },
+  paginationCaptions: {
+    color: theme.palette.text.default,
+    fontSize: theme.spacing(2),
+  },
+  paginationSelectRoot: {
+    background: theme.palette.primary.light,
+    borderRadius: "5px",
+  },
+  paginationSelect: {
+    padding: theme.spacing(1) + " " + theme.spacing(2),
+  },
+  paginationSelectIcon: {
+    position: "absolute",
+    pointerEvents: "none",
+    color: theme.palette.text.default,
+    fontSize: theme.spacing(3),
+    top: "50%",
+    transform: "translateY(-50%)",
+  },
+  paginationMenu: {
+    width: "100%",
+  },
+  paginationToolBar: {
+    padding: theme.spacing(1),
+  },
+  filesUploadWin: {
+    background: theme.palette.background.modelBackground,
+    backdropFilter: "blur(2rem)",
+    borderRadius: "0.5rem",
+    border: "none",
+    width: "30vw",
+    maxHeight: "70vh",
+  },
+  fileUploadMainContainer: {
+    paddingTop: "2rem",
+    maxHeight: "75vh",
+    display: "flex",
+    flexDirection: "column",
+  },
+  fileField: {
+    width: "100%",
+    height: "22vh",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    border: "2px solid" + theme.IndustryDashboard.border.light,
+    padding: theme.layoutSpacing(20),
+    borderStyle: "dashed",
+    borderRadius: "1rem",
+  },
+  uploadContainer: {
+    width: "100%",
+    height: "100%",
+    color: theme.palette.text.revamp,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    gap: theme.layoutSpacing(10),
+    paddingBottom: "3rem",
+  },
+  extensionNamesTxt: {
+    color: theme.IndustryDashboard.border.light,
+  },
+  filesListContainer: {
+    display: "flex",
+    justifyContent: "flex-start",
+    flexDirection: "column",
+    paddingTop: "10px",
+    marginTop: "2rem",
+    height: "25vh",
+    overflowY: "scroll",
+  },
+  uploadFilesLabel: {
+    marginTop: "10px",
+    color: theme.IndustryDashboard.border.light,
+  },
+  fileName: {
+    position: "relative",
+    alignItems: "center",
+    color: theme.palette.text.revamp,
+    fontSize: "2rem",
+    padding: "1rem",
+    borderRadius: "0.5rem",
+    border: `1px solid ${theme.IndustryDashboard.border.light}`,
+    margin: "0.5rem",
+    "& button": {
+      padding: "0",
+      position: "absolute",
+      right: "0",
+      top: "1.5rem",
+    },
+    "& svg": {
+      cursor: "pointer",
+      width: "12px",
+      height: "12px",
+    },
+  },
+  addBlueprintWin: {
+    background: theme.palette.background.modelBackground,
+    backdropFilter: "blur(2rem)",
+    borderRadius: "0.5rem",
+    border: "none",
+    width: "40vw",
+    height: "30vh",
+    "& #bp_name-label": {
+      color: `${theme.palette.text.titleText} !important`,
+    },
+  },
+  loadMaskContainer: {
+    height: "50vh",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  loadMaskText: {
+    fontWeight: "300",
+    textAlign: "center",
+    color: theme.palette.text.default,
+    fontFamily: theme.title.h1.fontFamily,
+    fontSize: theme.layoutSpacing(20),
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(0.75),
+  },
+  circularLoaderContainer: {
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "100%",
+  },
+});

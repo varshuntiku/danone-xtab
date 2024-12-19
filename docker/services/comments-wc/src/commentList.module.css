@@ -1,0 +1,37 @@
+/* CommentsList.module.css */
+
+.scrollableContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    max-height: 500px;
+    padding: 1rem; 
+}
+
+/* Custom scrollbar styles */
+.scrollableContainer::-webkit-scrollbar {
+    width: 0.4rem !important; /* Width of the scrollbar */
+    height: 0.4rem; /* Height of horizontal scrollbar (if needed) */
+}
+
+.scrollableContainer::-webkit-scrollbar-track {
+    background-color: transparent !important; /* Background color of the track */
+}
+
+.scrollableContainer::-webkit-scrollbar-thumb {
+    border-radius: 0.6rem;
+    backdrop-filter: blur(0.5rem);
+    border: 0.5px solid #220047CC; /* Border color with transparency */
+}
+
+/* Additional styles to handle horizontal overflow */
+.scrollableContainer::-webkit-scrollbar:horizontal {
+    height: 0.4rem; /* Height for horizontal scrollbar */
+}
+
+.commentContainer{
+    width:100%;
+    }

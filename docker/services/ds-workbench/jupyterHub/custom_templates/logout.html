@@ -1,0 +1,10 @@
+{% extends "templates/logout.html" %} {% block message %} {{ super() }}
+{% block script %}
+<script>
+    window.onload = () => {
+        localStorage.clear();
+        document.cookie = "";
+    }
+</script>
+{% endblock script %}
+{% endblock %}

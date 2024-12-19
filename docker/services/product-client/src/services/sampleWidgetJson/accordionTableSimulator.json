@@ -1,0 +1,318 @@
+{
+    "data": {
+        "widget_value_id": 2898,
+        "value": {
+            "isAccordianTableSimulator": true,
+            "sections": [
+                {
+                    "name": "Primary Inputs",
+                    "accordionHeaderName": "Category/SubCategory/PPG",
+                    "accordions": [
+                        {
+                            "name": "Mayonies",
+                            "accordions": [
+                                {
+                                    "name": "Mayonies 500ml PET",
+                                    "id": 1,
+                                    "lazyLoadTableData": "load-table-primary-input",
+                                    "tableData": null
+                                },
+                                {
+                                    "name": "HEINZ AFL Mayonies H2H",
+                                    "id": 2,
+                                    "lazyLoadTableData": "load-table-primary-input",
+                                    "tableData": null
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Ketchup",
+                            "accordions": [
+                                {
+                                    "name": "KETCHUP 500ml PET",
+                                    "id": 3,
+                                    "lazyLoadTableData": "load-table-primary-input",
+                                    "tableData": null
+                                },
+                                {
+                                    "name": "HEINZ AFL KETCHUP H2H",
+                                    "id": 4,
+                                    "lazyLoadTableData": "load-table-primary-input",
+                                    "tableData": null
+                                }
+                            ]
+                        }
+                    ],
+                    "tableConfig": {
+                        "coldef": [
+                            {
+                                "headerName": "Week",
+                                "field": "week"
+                            },
+                            {
+                                "headerName": "Tactic",
+                                "field": "tactic",
+                                "cellEditor": "select",
+                                "cellEditorParams": {
+                                    "options": [
+                                        "TPC",
+                                        "Multibuy",
+                                        "TMD"
+                                    ],
+                                    "variant": "outlined",
+                                    "fullWidth": true
+                                },
+                                "editable": true
+                            },
+                            {
+                                "headerName": "Mechanic",
+                                "field": "mechanic",
+                                "cellEditor": "select",
+                                "cellEditorParams": {
+                                    "options": [
+                                        "0.45",
+                                        "2.0",
+                                        "1.5",
+                                        "0.6"
+                                    ],
+                                    "variant": "outlined",
+                                    "fullWidth": true
+                                },
+                                "editable": true
+                            },
+                            {
+                                "headerName": "Display",
+                                "field": "display",
+                                "cellEditor": "select",
+                                "cellEditorParams": {
+                                    "options": [
+                                        "Shelf",
+                                        "Gondola",
+                                        "Aisle"
+                                    ],
+                                    "variant": "outlined",
+                                    "fullWidth": true
+                                },
+                                "editable": true
+                            },
+                            {
+                                "headerName": "TDP",
+                                "field": "tdp",
+                                "cellEditor": "number",
+                                "cellEditorParams": {
+                                    "variant": "outlined",
+                                    "fullWidth": true
+                                },
+                                "editable": true
+                            }
+                        ],
+                        "gridOptions": {
+                            "editorMode": true,
+                            "tableSize": "small",
+                            "lazyRow": true,
+                            "tableMaxHeight": "30vh"
+                        }
+                    }
+                },
+                {
+                    "name": "Competitor Canabils",
+                    "accordionHeaderName": "PPG/Cannibals",
+                    "accordions": [
+                        {
+                            "name": "Competitor Canabils 1",
+                            "id": 1,
+                            "lazyLoadTableData": "load-table-copetitor-cananbils",
+                            "tableData": null
+                        },
+                        {
+                            "name": "Competitor Canabils 2",
+                            "id": 2,
+                            "lazyLoadTableData": "load-table-copetitor-cananbils",
+                            "tableData": null
+                        },
+                        {
+                            "name": "Competitor Canabils 3",
+                            "id": 3,
+                            "lazyLoadTableData": "load-table-copetitor-cananbils",
+                            "tableData": null
+                        }
+                    ],
+                    "tableConfig": {
+                        "coldef": [
+                            {
+                                "headerName": "Week",
+                                "field": "week"
+                            },
+                            {
+                                "headerName": "Price/Kg",
+                                "field": "price",
+                                "cellEditor": "number",
+                                "cellEditorParams": {
+                                    "variant": "outlined",
+                                    "fullWidth": false
+                                },
+                                "editable": true
+                            }
+                        ],
+                        "gridOptions": {
+                            "editorMode": true,
+                            "tableSize": "small",
+                            "lazyRow": true,
+                            "tableMaxHeight": "30vh"
+                        }
+                    }
+                },
+                {
+                    "name": "Macro Factor",
+                    "accordionHeaderName": "Year",
+                    "accordions": [
+                        {
+                            "name": "2022",
+                            "id": 1,
+                            "lazyLoadTableData": "load-table-macro-factor",
+                            "tableData": null
+                        },
+                        {
+                            "name": "2023",
+                            "id": 2,
+                            "lazyLoadTableData": "load-table-macro-factor",
+                            "tableData": null
+                        }
+                    ],
+                    "tableConfig": {
+                        "coldef": [
+                            {
+                                "headerName": "Month",
+                                "field": "month"
+                            },
+                            {
+                                "headerName": "GDP",
+                                "field": "gdp",
+                                "cellEditor": "number",
+                                "cellEditorParams": {
+                                    "variant": "outlined",
+                                    "fullWidth": false
+                                },
+                                "editable": true
+                            },
+                            {
+                                "headerName": "Inflation",
+                                "field": "inflation",
+                                "cellEditor": "number",
+                                "cellEditorParams": {
+                                    "variant": "outlined",
+                                    "fullWidth": false
+                                },
+                                "editable": true
+                            }
+                        ],
+                        "gridOptions": {
+                            "editorMode": true,
+                            "tableSize": "small",
+                            "lazyRow": true,
+                            "tableMaxHeight": "30vh"
+                        }
+                    }
+                }
+            ],
+            "actions": [
+                {
+                    "name": "Reset"
+                },
+                {
+                    "name": "Run & Save Scenario",
+                    "customAction": "saveScenarioName",
+                    "variant": "contained",
+                    "scenarioName": "sampleScenarioName"
+                }
+            ],
+            "extraParams": {
+                "maxHeight": "65vh"
+            },
+            "isToolBar": {
+                "left":[
+                    {
+                        "id":"periodKPI",
+                        "type":"singleSelectDropdown",
+                        "label":"Period",
+                        "options":["Weekly","Monthly","Quarterly","Yearly"],
+                        "defaultValue":"Weekly",
+                        "margin":"0 0 0 1rem",
+                        "width":"16rem"
+                    },
+                    {
+                        "id":"selectKPI",
+                        "type":"multiSelectDropdown",
+                        "position":"left",
+                        "label":"Select KPI",
+                        "options":["Value units","Value KG","RSV","NSV"],
+                        "defaultValue":["Value units"],
+                        "margin":"0 0 0 1rem",
+                        "width":"16rem"
+                    },
+					{
+                        "id": "legendsIcon",
+                        "type": "legendsIcon",
+                        "options": [
+                            {
+                                "label": "Heinz",
+                                "value": "red"
+                            },
+                            {
+                                "label": "Prima",
+                                "value": "blue"
+                            },
+                            {
+                                "label": "Private Label",
+                                "value": "#FF5733"
+                            },
+                            {
+                                "label": "Others",
+                                "value": "#14E9EC"
+                            }
+
+                        ],
+                        "width": "1rem",
+                        "height": "1rem",
+                        "margin": "0 1rem 0 2rem"
+                    }
+					],
+                    "center":[
+                        {
+                            "id":"toggleButton",
+                            "type":"toggleButton",
+                            "options":[{"label":"label1","value":"value1"},{"label":"label2","value":"value2"}]
+                        }
+                    ],
+                    "right":[
+                        {
+                            "id":"revert",
+                            "type":"button",
+                            "label":"Revert"
+                        },
+                        {
+                            "id":"override",
+                            "type":"iconButton",
+                            "iconName":"edit",
+                            "labelRight":"Manual Override",
+                            "onClickLabelLeft":"Override",
+                            "margin":"0 2rem 0 2rem"
+
+                        },
+                        {
+                            "id":"percentageValueToggle",
+                            "type":"toggleSwitch",
+                            "iconName":"switch",
+                            "defaultValue":true,
+                            "labelLeft":"Percentage",
+                            "labelRight":"Value",
+                            "margin":"0 2rem 0 2rem"
+                        }
+
+
+                    ]
+            }
+        },
+        "simulated_value": false
+    }
+}

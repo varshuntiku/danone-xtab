@@ -1,0 +1,25 @@
+{
+    "defaulttext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor consequat sapien, sed volutpat lectus hendrerit sed. Duis sodales consequat orci et faucibus. Integer lacinia, est quis eleifend elementum, sapien sem sagittis nisi, a tempor ex justo at magna. Sed mattis, urna at placerat vulputate, justo libero ultricies ipsum, eu accumsan nibh odio ac dui. Morbi eleifend id mauris a aliquam.",
+    "coverpage": {
+        "layout": "layout-coverpage",
+        "mainimage": "url",
+        "codexlogolink": "url",
+        "style": {}
+    },
+    "infopage": {
+        "layout": "layout-infopage",
+        "content": "text"
+    },
+    "reportpages": {
+        "page1": {
+            "graphvalueid": 1,
+            "layout": "layout1",
+            "style": "layout1style"
+        },
+        "page2": {
+            "graphvalueid": 1,
+            "layout": "layout2",
+            "style": "layout2style"
+        }
+    }
+}

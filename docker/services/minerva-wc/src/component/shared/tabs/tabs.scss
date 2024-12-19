@@ -1,0 +1,46 @@
+@import "../../../styles/util.scss";
+
+.MinervaWC .MinervaTabsContainer {
+    display: flex;
+
+    .MinervaTabs {
+        display: flex;
+
+        &.MinervaHorizontalTabs {
+            flex-direction: row;
+            border-bottom: var(--minerva-border-1);
+        }
+
+        &.MinervaVerticalTabs {
+            flex-direction: column;
+            border-right: var(--minerva-border-1);
+        }
+
+        &.MinervaVerticalTabs.MinervaScrollableTabs{
+            overflow: auto;
+            scrollbar-width: none;
+            // height: spacing(200);
+        }
+
+        &.MinervaHorizontalTabs.MinervaScrollableTabs{
+            overflow: auto;
+            scrollbar-width: none;
+        }
+    }
+
+    &.MinervaHorizontalTabsContainer {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &.MinervaVerticalTabsContainer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+.MinervaWC .MinervaTabsContainer-root {
+    display: flex;
+    gap: spacing(16)
+}

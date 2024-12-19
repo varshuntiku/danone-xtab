@@ -1,0 +1,84 @@
+{
+    "data": [
+        {
+            "name": "Planning",
+            "id": "1",
+            "ref_id": 1,
+            "problemDefinition": [
+                {
+                    "name": "Long Range Planning",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "business_process_id": "1"
+                },
+                {
+                    "name": "Investment Allocation",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "business_process_id": "1"
+                },
+                {
+                    "name": "Annual Tactical Planning",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "business_process_id": "1"
+                },
+                {
+                    "name": "Strategic Planning",
+                    "node_type": "workflow",
+                    "id": "wf_node_7",
+                    "ref_id": 4,
+                    "business_process_id": "1"
+                },
+                {
+                    "name": "Annual Financial Planning",
+                    "node_type": "workflow",
+                    "id": "wf_node_8",
+                    "ref_id": 5,
+                    "business_process_id": "1"
+                }
+            ]
+        },
+        {
+            "name": "Omnichannel Execution",
+            "id": "2",
+            "ref_id": 2,
+            "problemDefinition": []
+        },
+        {
+            "name": "Field Force Execution",
+            "id": "3",
+            "ref_id": 3,
+            "problemDefinition": [
+                {
+                    "name": "Nurse Ambassodor Operations Review",
+                    "node_type": "workflow",
+                    "id": "wf_node_9",
+                    "ref_id": 1,
+                    "business_process_id": "3"
+                }
+            ]
+        },
+        {
+            "name": "Account Execution",
+            "id": "4",
+            "ref_id": 4,
+            "problemDefinition": []
+        },
+        {
+            "name": "Supply Chain Execution",
+            "id": "5",
+            "ref_id": 5,
+            "problemDefinition": []
+        },
+        {
+            "name": "Patient Support",
+            "id": "6",
+            "ref_id": 6,
+            "problemDefinition": []
+        }
+    ]
+}

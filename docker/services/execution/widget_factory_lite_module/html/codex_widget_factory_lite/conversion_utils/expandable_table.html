@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>codex_widget_factory_lite.conversion_utils.expandable_table API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>codex_widget_factory_lite.conversion_utils.expandable_table</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">#
+# Author: Codx AI/ML Team
+# TheMathCompany, Inc. (c) 2022
+#
+# This file is part of Codx.
+#
+# Codx can not be copied and/or distributed without the express permission of TheMathCompany, Inc.
+
+import logging
+import traceback
+import pandas as pd
+import numpy as np
+from codex_widget_factory_lite.conversion_utils.base_conversion import BaseConversion
+
+class ExpandableTable(BaseConversion):
+    &#34;&#34;&#34;
+    The ExpandableTable class has the required conversion function to translate inputs
+    into a JSON structure that can be rendered as an expandable table on the Co.dx UI.
+    _________________________________________________________________________
+
+    Args:
+
+        expandable_df (df): A pandas dataframe, required.
+            The dataframe can be passed in two ways.
+
+            Firstly, the dataframe containing only the columns used in collapsible
+            table. The names present in keys of arg - &#39;value_cols_aggfunc_dict&#39; are
+            traeted as value columns and the remaining columns are treated
+            as index columns. The value columns are aggregated in each level and
+            the index columns are used as identifier for level by level expansion.
+
+            Alternatively, The dataframe containing n_rows and n_columns.
+            This is the first level data when the table on UI is not expanded.
+            If there needs to expandability, two Additional columns are to be
+            present in this expandable_df namely,
+
+            &#34;collapse_df&#34; - contains boolean value, True/False.
+            &#34;collapse_df_data&#34; - contains a dictionary which can be converted to dataframe.
+            The values provided in these columns as used to make table expandable.
+
+            &#34;collapse_df&#34; -
+            If a row needs to be expanded &#34;collapse_df&#34; is given as True.
+            If a row doesn&#39;t need expansion &#34;collapse_df&#34; is given as False.
+
+            Once, &#34;collapse_df&#34; is True, User has to mandatorily provide the value
+            for the column &#34;collapse_df_data&#34;.
+
+            &#34;collapse_df_data&#34; -
+            The table that needs to shown on the UI at the next level after
+            user expands the row should be present as a dict which is provided
+            under the column &#34;collapse_df_data&#34; of the corresponding row
+            which needs expansion.
+
+            The dict when converted to a dataframe contains n_rows and
+            n_columns that needs to be shown on the next level after
+            user expands the row.
+
+            If here user needs one more level of expansion, give the additional
+            columns &#34;collapse_df&#34;, &#34;collapse_df_data&#34;. The process can be
+            repeated for as many rows and levels the expansion is required.
+
+        If there is no column name &#34;collapse_df&#34; or if &#34;collapse_df&#34; is given
+        as a False, in the expandable_df or in the dict inside collapse_df_data
+        then it&#39;s dealt as no expansion for that row.
+
+        value_cols_aggfunc_dict (dict): The dict containing the value columns as keys.
+        The key is column name to aggregate and
+        value is function or list of functions.
+        The parameter is required if expandable_df is passed in first format.
+    _________________________________________________________________________
+
+    Attributes:
+        json_string (str): This attribute generates a JSON string for the component
+    _________________________________________________________________________
+
+    Usage
+    -----
+    1) ADS approach with index cols and value cols that shall be aggregated
+    &gt;&gt;&gt; from codex_widget_factory_lite.conversion_utils.metric import ExpandableTable
+    &gt;&gt;&gt; table = pd.DataFrame(......)            # Dataframe is created or read from file
+    &gt;&gt;&gt; expandable_json = ExpandableTable(expandable_table, {&#34;Val_col_1&#34;: &#34;mean&#34;, &#34;Val_col_2&#34;: &#34;sum&#34;, ..}).json_string
+
+    2) Alternative approach
+    &gt;&gt;&gt; from codex_widget_factory_lite.conversion_utils.metric import ExpandableTable
+    &gt;&gt;&gt; table = pd.DataFrame(......)            # Dataframe is created or read from file
+    &gt;&gt;&gt; expandable_table = pd.DataFrame(......) # Formatted Dataframe is created with collapse_df, collapse_df_data
+    &gt;&gt;&gt; expandable_table                        # Dataframe needs expansion conatains &#34;collapse_df&#34;, &#34;collapse_df_data&#34;
+
+            Country       2020 YoY      2021 YoY        2021            collapse_df       collapse_df_data
+        0       UK            1.80%         2.70%           305,088M    True          {&#39;Channels&#39;: {1: &#39;Grocery&#39;, 2: &#39;Discounters&#39;,...
+        5       Poland    8.50%     7.90%           61,252M             True          {&#39;Channels&#39;: {6: &#39;Grocery&#39;, 7: &#39;Discounters&#39;,...
+        8       TOTAL     2.90%     3.60%           966,903M    False         {&#39;Channels&#39;: {}, &#39;2020 YoY&#39;: {}, &#39;20...
+
+    &gt;&gt;&gt; expandable_table[&#34;collapse_df_data&#34;]    # Each row of the column &#34;collaspe_df_data&#34; contains {&lt;key&gt;: &lt;value&gt;} - dict
+
+        0     {&#39;Channels&#39;: {1: &#39;Grocery&#39;, 2: &#39;Discounters&#39;,...
+        5     {&#39;Channels&#39;: {6: &#39;Grocery&#39;, 7: &#39;Discounters&#39;,...
+        8     {&#39;Channels&#39;: {}, &#39;2020 YoY&#39;: {}, &#39;20...
+
+    &gt;&gt;&gt; expandable_table[&#39;collapse_df_data&#39;][0]     # Select index &#39;0&#39; from the dataframe. A dict and it&#39;s key values.
+
+        {
+            &#39;Channels&#39;: {1: &#39;Grocery&#39;, 2: &#39;Discounters&#39;, 3: &#39;SPT&#39;, 4: &#39;DCOM&#39;},
+            &#39;2020 YoY&#39;: {1: &#39;0.80%&#39;, 2: &#39;0.70%&#39;, 3: &#39;6.40%&#39;, 4: &#39;2.90%&#39;},
+            &#39;2021 YoY&#39;: {1: &#39;1.10%&#39;, 2: &#39;2.10%&#39;, 3: &#39;9.90%&#39;, 4: &#39;3.60%&#39;},
+            &#39;2021&#39;: {1: &#39;244,982M&#39;, 2: &#39;205,240M&#39;, 3: &#39;60,106M&#39;, 4: &#39;222,863M&#39;},
+            &#39;2022 YoY&#39;: {1: &#39;0.90%&#39;, 2: &#39;1.30%&#39;, 3: &#39;4.70%&#39;, 4: &#39;2.40%&#39;},
+            &#39;2023 YoY&#39;: {1: &#39;0.90%&#39;, 2: &#39;1.30%&#39;, 3: &#39;4.70%&#39;, 4: &#39;2.40%&#39;}
+        }
+
+    &gt;&gt;&gt; pd.DataFrame(expandable_table[&#39;collapse_df_data&#39;][0])    # Converting the dict to a dataframe
+
+            Channels        2020 YoY    2021 YoY          2021        2022 YoY (predicted)      2023 YoY (predicted)
+        1       Grocery         0.80%           1.10%         244,982M    0.90%                 0.90%
+        2       Discounters             0.70%           2.10%         205,240M    1.30%                 1.30%
+        3       SPT                     6.40%           9.90%         60,106M     4.70%                 4.70%
+        4       DCOM            2.90%           3.60%         222,863M    2.40%                 2.40%
+
+    &gt;&gt;&gt; expandable_json = ExpandableTable(expandable_table).json_string
+
+
+    Returns
+    -------
+    The `json_string` attribute returns a JSON string that is used to render the component on the UI
+    _________________________________________________________________________
+
+    The JSON structure for the component is -
+    ```
+    {
+     &#34;columns&#34;: [
+        {
+          &#34;id&#34;: &lt;Will be used internally to show the data&gt;,
+          &#34;label&#34;: &lt;Used as the Table Header&gt;
+        }, ...
+      ],
+      &#34;rows&#34;: [
+        {
+          &#34;collapse&#34;: &lt;boolean, if true renders the nested table, else ignores the , One needs to pass the data of the nested table as rows,columns inside the &#34;data&#34; key(line 18) inside each row which should be expanded&gt;,
+          &#34;columns&#34;: [
+            {
+              &#34;id&#34;: &lt;column_id&gt;,
+              &#34;label&#34;: &lt;column header&gt;
+            },
+          ],
+          &#34;data&#34;: {
+            &#34;collapse&#34;: &lt;If true, you need to pass data propery inside this &gt;,
+            &#34;title&#34;: &lt;Title of the table/subtable&gt;,
+            &#34;columns&#34;: [
+              {
+                &#34;id&#34;: &lt;column_id&gt;,
+                &#34;label&#34;: &lt;column label&gt;
+              },
+            ],
+            &#34;rows&#34;: [
+            ]
+          }
+      ]
+      &#34;isExpandable&#34;: &lt;boolean&gt;
+    }
+    ```
+
+    &#34;&#34;&#34;
+
+    def __init__(self, expandable_df, value_cols_aggfunc_dict={}):
+        super().__init__()
+        self.__initialise_component_dict(expandable_df, value_cols_aggfunc_dict)
+
+    def __initialise_component_dict(self, expandable_df, value_cols_aggfunc_dict):
+        try:
+            self.component_dict = {}
+            if &#34;collapse_df&#34; not in expandable_df.keys():
+                if value_cols_aggfunc_dict:
+                    expandable_df = self.__create_expandable_df(df=expandable_df,
+                                                        value_cols_agg_dict=value_cols_aggfunc_dict)
+                else:
+                    raise ValueError(&#34;value_cols_aggfunc_dict is empty dict. Expected valid dictionary input to perform aggregation.&#34;)
+
+            self.component_dict[&#34;columns&#34;] = self.__get_columns_list(data_df=expandable_df)
+            self.component_dict[&#34;isExpandable&#34;] = True
+
+            main_rows_list = []
+            main_rows_index = list(expandable_df.index)
+
+            for index_name in main_rows_index:
+                main_row_dict = expandable_df.loc[index_name].to_dict()
+                main_data = main_row_dict.pop(&#39;collapse_df_data&#39;, &#39;No Value&#39;)
+                collapse = main_row_dict.pop(&#39;collapse_df&#39;, &#39;No Value&#39;)
+                main_row_dict = {key: value if type(value) in [str, pd._libs.tslibs.timestamps.Timestamp, list, float, int, bool] else value.item() for key, value in main_row_dict.items()}
+
+                main_row_dict[&#34;collapse&#34;] = True if collapse == True else False
+
+                main_row_dict[&#34;columns&#34;] = self.__get_columns_list(data_df=expandable_df.loc[index_name])
+                if collapse == True:
+                    main_row_dict[&#34;data&#34;] = self.__get_collapse_data_dict(level_data=main_data)
+
+                main_rows_list.append(main_row_dict)
+
+            self.component_dict[&#34;rows&#34;] = main_rows_list
+        except Exception as e:
+            logging.error(traceback.format_exc())
+
+
+    def __create_expandable_df(self, df, value_cols_agg_dict):
+        &#34;&#34;&#34;
+        Internal function to convert given df to the format of
+        collapsible/expandable df.
+
+        Returns
+        -------
+        A pandas dataframe containing the expandable_df.
+        &#34;&#34;&#34;
+        value_cols = value_cols_agg_dict.keys()
+        index_cols = [col_n for col_n in df.columns if col_n not in value_cols]
+        df.insert(len(index_cols), &#34;Temp_Column&#34;, [np.nan if pd.isna(val) else &#34;Value&#34; for val in df[index_cols[-1]]])
+        index_cols.append(&#34;Temp_Column&#34;)
+        index_col = index_cols[0]
+        index_cols = index_cols[1:]
+        col_name = index_cols[0]
+
+        expandable_level_df = pd.pivot_table(df, aggfunc=value_cols_agg_dict, index=index_col)
+        expandable_level_df = round(expandable_level_df, 2)  # Danone Change
+        expandable_level_df.reset_index(inplace=True)
+        expandable_level_df[&#34;collapse_df&#34;] = True if len(index_cols) &gt; 1 else False
+        non_collapsible_rows = df[df[col_name].isnull()].drop(index_cols, axis=1)
+        non_collapsible_rows[&#34;collapse_df&#34;] = False
+        expandable_level_df = expandable_level_df.append(non_collapsible_rows)
+        expandable_level_df[&#34;collapse_df_data&#34;] = &#34;None&#34;
+        for row_n in expandable_level_df.index:
+            if expandable_level_df.at[row_n, &#34;collapse_df&#34;]:
+                select_df = df[df[index_col] == expandable_level_df.at[row_n, index_col]].copy()
+                select_df.drop(index_col, axis=1, inplace=True)
+                expandable_level_df.at[row_n, &#34;collapse_df_data&#34;] = self.__create_expandable_level_df(select_df,
+                                                                                                index_cols,
+                                                                                                value_cols_agg_dict)
+
+        return expandable_level_df
+
+
+    def __create_expandable_level_df(self, df, index_cols, value_cols_agg_dict):
+        &#34;&#34;&#34;
+        Internal function to compute level df dict of the
+        collapsible/expandable df.
+
+        Returns
+        -------
+        A dictionary format of level_df
+        &#34;&#34;&#34;
+        index_col = index_cols[0]
+        index_cols = index_cols[1:]
+        col_name = index_cols[0]
+
+        level_df = pd.pivot_table(df, aggfunc=value_cols_agg_dict, index=index_col)
+        level_df = round(level_df, 2)  # Danone Change
+        level_df.reset_index(inplace=True)
+        level_df[&#34;collapse_df&#34;] = True if len(index_cols) &gt; 1 else False
+        non_collapsible_rows = df[df[col_name].isnull()].drop(index_cols, axis=1)
+        non_collapsible_rows[&#34;collapse_df&#34;] = False
+        level_df = level_df.append(non_collapsible_rows)
+        level_df[&#34;collapse_df_data&#34;] = &#34;None&#34;
+        for row_n in level_df.index:
+            if level_df.at[row_n, &#34;collapse_df&#34;]:
+                select_df = df[df[index_col] == level_df.at[row_n, index_col]].copy()
+                select_df.drop(index_col, axis=1, inplace=True)
+                level_df.at[row_n, &#34;collapse_df_data&#34;] = self.__create_expandable_level_df(select_df,
+                                                                                    index_cols,
+                                                                                    value_cols_agg_dict)
+
+        return level_df.to_dict()
+
+
+    def __get_columns_list(self, data_df):
+        &#34;&#34;&#34;
+        Internal function to compute the columns component of the
+        collapsible/expandable table on the UI.
+
+        Returns
+        -------
+        A list of columns component
+        &#34;&#34;&#34;
+        main_cols_list = []
+        main_col_names = list(data_df.keys())
+        try:
+            main_col_names.remove(&#39;collapse_df_data&#39;)
+        except:
+            temp = &#34;No Collapse Data&#34;
+
+        main_col_dict = {}
+        if &#39;collapse_df&#39; in main_col_names:
+            main_col_dict[&#34;id&#34;] = False
+            main_col_dict[&#34;label&#34;] = &#34;&#34;
+            main_cols_list.append(main_col_dict)
+            main_col_names.remove(&#39;collapse_df&#39;)
+
+        for col_name in main_col_names:
+            main_col_dict = {}
+            main_col_dict[&#34;id&#34;] = col_name
+            main_col_dict[&#34;label&#34;] = str(col_name)
+            main_cols_list.append(main_col_dict)
+
+        return main_cols_list
+
+
+    def __get_collapse_data_dict(self, level_data):
+        &#34;&#34;&#34;
+        Internal function to compute data component of the
+        collapsible/expandable table on the UI.
+
+        Returns
+        -------
+        A dictionary of data component
+        &#34;&#34;&#34;
+        level_data_dict = {}
+        level_df = pd.DataFrame(level_data)
+
+        if level_df.get(&#39;collapse_df&#39;) is None:
+            level_data_dict[&#34;collapse&#34;] = False
+        else:
+            level_data_dict[&#34;collapse&#34;] = bool(level_df[&#34;collapse_df&#34;].any())
+
+        level_data_dict[&#34;columns&#34;] = self.__get_columns_list(data_df=level_df)
+
+        rows_list = []
+        rows_index = list(level_df.index)
+        for name in rows_index:
+            row_dict = level_df.loc[name].to_dict()
+            new_data = row_dict.pop(&#39;collapse_df_data&#39;, &#39;No Value&#39;)
+            collapse = row_dict.pop(&#39;collapse_df&#39;, &#39;No Value&#39;)
+            row_dict = {key: value if type(value) in [str, pd._libs.tslibs.timestamps.Timestamp, list, float, int, bool] else value.item() for key, value in row_dict.items()}
+
+            row_dict[&#34;collapse&#34;] = True if collapse == True else False
+
+            row_dict[&#34;columns&#34;] = self.__get_columns_list(data_df=level_df.loc[name])
+            if collapse == True:
+                row_dict[&#34;data&#34;] = self.__get_collapse_data_dict(level_data=new_data)
+
+            rows_list.append(row_dict)
+
+        level_data_dict[&#34;rows&#34;] = rows_list
+
+        return level_data_dict</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="codex_widget_factory_lite.conversion_utils.expandable_table.ExpandableTable"><code class="flex name class">
+<span>class <span class="ident">ExpandableTable</span></span>
+<span>(</span><span>expandable_df, value_cols_aggfunc_dict={})</span>
+</code></dt>
+<dd>
+<div class="desc"><p>The ExpandableTable class has the required conversion function to translate inputs
+into a JSON structure that can be rendered as an expandable table on the Co.dx UI.</p>
+<hr>
+<h2 id="args">Args</h2>
+<dl>
+<dt><strong><code>expandable_df</code></strong> :&ensp;<code>df</code></dt>
+<dd>
+<p>A pandas dataframe, required.
+The dataframe can be passed in two ways.</p>
+<p>Firstly, the dataframe containing only the columns used in collapsible
+table. The names present in keys of arg - 'value_cols_aggfunc_dict' are
+traeted as value columns and the remaining columns are treated
+as index columns. The value columns are aggregated in each level and
+the index columns are used as identifier for level by level expansion.</p>
+<p>Alternatively, The dataframe containing n_rows and n_columns.
+This is the first level data when the table on UI is not expanded.
+If there needs to expandability, two Additional columns are to be
+present in this expandable_df namely,</p>
+<p>"collapse_df" - contains boolean value, True/False.
+"collapse_df_data" - contains a dictionary which can be converted to dataframe.
+The values provided in these columns as used to make table expandable.</p>
+<p>"collapse_df" -
+If a row needs to be expanded "collapse_df" is given as True.
+If a row doesn't need expansion "collapse_df" is given as False.</p>
+<p>Once, "collapse_df" is True, User has to mandatorily provide the value
+for the column "collapse_df_data".</p>
+<p>"collapse_df_data" -
+The table that needs to shown on the UI at the next level after
+user expands the row should be present as a dict which is provided
+under the column "collapse_df_data" of the corresponding row
+which needs expansion.</p>
+<p>The dict when converted to a dataframe contains n_rows and
+n_columns that needs to be shown on the next level after
+user expands the row.</p>
+<p>If here user needs one more level of expansion, give the additional
+columns "collapse_df", "collapse_df_data". The process can be
+repeated for as many rows and levels the expansion is required.</p>
+</dd>
+</dl>
+<p>If there is no column name "collapse_df" or if "collapse_df" is given
+as a False, in the expandable_df or in the dict inside collapse_df_data
+then it's dealt as no expansion for that row.</p>
+<dl>
+<dt><strong><code>value_cols_aggfunc_dict</code></strong> :&ensp;<code>dict</code></dt>
+<dd>The dict containing the value columns as keys.</dd>
+</dl>
+<p>The key is column name to aggregate and
+value is function or list of functions.
+The parameter is required if expandable_df is passed in first format.</p>
+<hr>
+<h2 id="attributes">Attributes</h2>
+<dl>
+<dt><strong><code>json_string</code></strong> :&ensp;<code>str</code></dt>
+<dd>This attribute generates a JSON string for the component</dd>
+</dl>
+<hr>
+<h2 id="usage">Usage</h2>
+<p>1) ADS approach with index cols and value cols that shall be aggregated</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; from codex_widget_factory_lite.conversion_utils.metric import ExpandableTable
+&gt;&gt;&gt; table = pd.DataFrame(......)            # Dataframe is created or read from file
+&gt;&gt;&gt; expandable_json = ExpandableTable(expandable_table, {&quot;Val_col_1&quot;: &quot;mean&quot;, &quot;Val_col_2&quot;: &quot;sum&quot;, ..}).json_string
+</code></pre>
+<p>2) Alternative approach</p>
+<pre><code class="language-python-repl">&gt;&gt;&gt; from codex_widget_factory_lite.conversion_utils.metric import ExpandableTable
+&gt;&gt;&gt; table = pd.DataFrame(......)            # Dataframe is created or read from file
+&gt;&gt;&gt; expandable_table = pd.DataFrame(......) # Formatted Dataframe is created with collapse_df, collapse_df_data
+&gt;&gt;&gt; expandable_table                        # Dataframe needs expansion conatains &quot;collapse_df&quot;, &quot;collapse_df_data&quot;
+</code></pre>
+<pre><code>    Country       2020 YoY      2021 YoY        2021            collapse_df       collapse_df_data
+0       UK            1.80%         2.70%           305,088M    True          {'Channels': {1: 'Grocery', 2: 'Discounters',...
+5       Poland    8.50%     7.90%           61,252M             True          {'Channels': {6: 'Grocery', 7: 'Discounters',...
+8       TOTAL     2.90%     3.60%           966,903M    False         {'Channels': {}, '2020 YoY': {}, '20...
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; expandable_table[&quot;collapse_df_data&quot;]    # Each row of the column &quot;collaspe_df_data&quot; contains {&lt;key&gt;: &lt;value&gt;} - dict
+</code></pre>
+<pre><code>0     {'Channels': {1: 'Grocery', 2: 'Discounters',...
+5     {'Channels': {6: 'Grocery', 7: 'Discounters',...
+8     {'Channels': {}, '2020 YoY': {}, '20...
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; expandable_table['collapse_df_data'][0]     # Select index '0' from the dataframe. A dict and it's key values.
+</code></pre>
+<pre><code>{
+    'Channels': {1: 'Grocery', 2: 'Discounters', 3: 'SPT', 4: 'DCOM'},
+    '2020 YoY': {1: '0.80%', 2: '0.70%', 3: '6.40%', 4: '2.90%'},
+    '2021 YoY': {1: '1.10%', 2: '2.10%', 3: '9.90%', 4: '3.60%'},
+    '2021': {1: '244,982M', 2: '205,240M', 3: '60,106M', 4: '222,863M'},
+    '2022 YoY': {1: '0.90%', 2: '1.30%', 3: '4.70%', 4: '2.40%'},
+    '2023 YoY': {1: '0.90%', 2: '1.30%', 3: '4.70%', 4: '2.40%'}
+}
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; pd.DataFrame(expandable_table['collapse_df_data'][0])    # Converting the dict to a dataframe
+</code></pre>
+<pre><code>    Channels        2020 YoY    2021 YoY          2021        2022 YoY (predicted)      2023 YoY (predicted)
+1       Grocery         0.80%           1.10%         244,982M    0.90%                 0.90%
+2       Discounters             0.70%           2.10%         205,240M    1.30%                 1.30%
+3       SPT                     6.40%           9.90%         60,106M     4.70%                 4.70%
+4       DCOM            2.90%           3.60%         222,863M    2.40%                 2.40%
+</code></pre>
+<pre><code class="language-python-repl">&gt;&gt;&gt; expandable_json = ExpandableTable(expandable_table).json_string
+</code></pre>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt>The <code>json_string</code> attribute returns a JSON string that is used to render the component on the UI</dt>
+<dt><code>_________________________________________________________________________</code></dt>
+<dd>&nbsp;</dd>
+<dt><code>The JSON structure for the component is -</code></dt>
+<dd>&nbsp;</dd>
+</dl>
+<pre><code>{
+ &quot;columns&quot;: [
+    {
+      &quot;id&quot;: &lt;Will be used internally to show the data&gt;,
+      &quot;label&quot;: &lt;Used as the Table Header&gt;
+    }, ...
+  ],
+  &quot;rows&quot;: [
+    {
+      &quot;collapse&quot;: &lt;boolean, if true renders the nested table, else ignores the , One needs to pass the data of the nested table as rows,columns inside the &quot;data&quot; key(line 18) inside each row which should be expanded&gt;,
+      &quot;columns&quot;: [
+        {
+          &quot;id&quot;: &lt;column_id&gt;,
+          &quot;label&quot;: &lt;column header&gt;
+        },
+      ],
+      &quot;data&quot;: {
+        &quot;collapse&quot;: &lt;If true, you need to pass data propery inside this &gt;,
+        &quot;title&quot;: &lt;Title of the table/subtable&gt;,
+        &quot;columns&quot;: [
+          {
+            &quot;id&quot;: &lt;column_id&gt;,
+            &quot;label&quot;: &lt;column label&gt;
+          },
+        ],
+        &quot;rows&quot;: [
+        ]
+      }
+  ]
+  &quot;isExpandable&quot;: &lt;boolean&gt;
+}
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class ExpandableTable(BaseConversion):
+    &#34;&#34;&#34;
+    The ExpandableTable class has the required conversion function to translate inputs
+    into a JSON structure that can be rendered as an expandable table on the Co.dx UI.
+    _________________________________________________________________________
+
+    Args:
+
+        expandable_df (df): A pandas dataframe, required.
+            The dataframe can be passed in two ways.
+
+            Firstly, the dataframe containing only the columns used in collapsible
+            table. The names present in keys of arg - &#39;value_cols_aggfunc_dict&#39; are
+            traeted as value columns and the remaining columns are treated
+            as index columns. The value columns are aggregated in each level and
+            the index columns are used as identifier for level by level expansion.
+
+            Alternatively, The dataframe containing n_rows and n_columns.
+            This is the first level data when the table on UI is not expanded.
+            If there needs to expandability, two Additional columns are to be
+            present in this expandable_df namely,
+
+            &#34;collapse_df&#34; - contains boolean value, True/False.
+            &#34;collapse_df_data&#34; - contains a dictionary which can be converted to dataframe.
+            The values provided in these columns as used to make table expandable.
+
+            &#34;collapse_df&#34; -
+            If a row needs to be expanded &#34;collapse_df&#34; is given as True.
+            If a row doesn&#39;t need expansion &#34;collapse_df&#34; is given as False.
+
+            Once, &#34;collapse_df&#34; is True, User has to mandatorily provide the value
+            for the column &#34;collapse_df_data&#34;.
+
+            &#34;collapse_df_data&#34; -
+            The table that needs to shown on the UI at the next level after
+            user expands the row should be present as a dict which is provided
+            under the column &#34;collapse_df_data&#34; of the corresponding row
+            which needs expansion.
+
+            The dict when converted to a dataframe contains n_rows and
+            n_columns that needs to be shown on the next level after
+            user expands the row.
+
+            If here user needs one more level of expansion, give the additional
+            columns &#34;collapse_df&#34;, &#34;collapse_df_data&#34;. The process can be
+            repeated for as many rows and levels the expansion is required.
+
+        If there is no column name &#34;collapse_df&#34; or if &#34;collapse_df&#34; is given
+        as a False, in the expandable_df or in the dict inside collapse_df_data
+        then it&#39;s dealt as no expansion for that row.
+
+        value_cols_aggfunc_dict (dict): The dict containing the value columns as keys.
+        The key is column name to aggregate and
+        value is function or list of functions.
+        The parameter is required if expandable_df is passed in first format.
+    _________________________________________________________________________
+
+    Attributes:
+        json_string (str): This attribute generates a JSON string for the component
+    _________________________________________________________________________
+
+    Usage
+    -----
+    1) ADS approach with index cols and value cols that shall be aggregated
+    &gt;&gt;&gt; from codex_widget_factory_lite.conversion_utils.metric import ExpandableTable
+    &gt;&gt;&gt; table = pd.DataFrame(......)            # Dataframe is created or read from file
+    &gt;&gt;&gt; expandable_json = ExpandableTable(expandable_table, {&#34;Val_col_1&#34;: &#34;mean&#34;, &#34;Val_col_2&#34;: &#34;sum&#34;, ..}).json_string
+
+    2) Alternative approach
+    &gt;&gt;&gt; from codex_widget_factory_lite.conversion_utils.metric import ExpandableTable
+    &gt;&gt;&gt; table = pd.DataFrame(......)            # Dataframe is created or read from file
+    &gt;&gt;&gt; expandable_table = pd.DataFrame(......) # Formatted Dataframe is created with collapse_df, collapse_df_data
+    &gt;&gt;&gt; expandable_table                        # Dataframe needs expansion conatains &#34;collapse_df&#34;, &#34;collapse_df_data&#34;
+
+            Country       2020 YoY      2021 YoY        2021            collapse_df       collapse_df_data
+        0       UK            1.80%         2.70%           305,088M    True          {&#39;Channels&#39;: {1: &#39;Grocery&#39;, 2: &#39;Discounters&#39;,...
+        5       Poland    8.50%     7.90%           61,252M             True          {&#39;Channels&#39;: {6: &#39;Grocery&#39;, 7: &#39;Discounters&#39;,...
+        8       TOTAL     2.90%     3.60%           966,903M    False         {&#39;Channels&#39;: {}, &#39;2020 YoY&#39;: {}, &#39;20...
+
+    &gt;&gt;&gt; expandable_table[&#34;collapse_df_data&#34;]    # Each row of the column &#34;collaspe_df_data&#34; contains {&lt;key&gt;: &lt;value&gt;} - dict
+
+        0     {&#39;Channels&#39;: {1: &#39;Grocery&#39;, 2: &#39;Discounters&#39;,...
+        5     {&#39;Channels&#39;: {6: &#39;Grocery&#39;, 7: &#39;Discounters&#39;,...
+        8     {&#39;Channels&#39;: {}, &#39;2020 YoY&#39;: {}, &#39;20...
+
+    &gt;&gt;&gt; expandable_table[&#39;collapse_df_data&#39;][0]     # Select index &#39;0&#39; from the dataframe. A dict and it&#39;s key values.
+
+        {
+            &#39;Channels&#39;: {1: &#39;Grocery&#39;, 2: &#39;Discounters&#39;, 3: &#39;SPT&#39;, 4: &#39;DCOM&#39;},
+            &#39;2020 YoY&#39;: {1: &#39;0.80%&#39;, 2: &#39;0.70%&#39;, 3: &#39;6.40%&#39;, 4: &#39;2.90%&#39;},
+            &#39;2021 YoY&#39;: {1: &#39;1.10%&#39;, 2: &#39;2.10%&#39;, 3: &#39;9.90%&#39;, 4: &#39;3.60%&#39;},
+            &#39;2021&#39;: {1: &#39;244,982M&#39;, 2: &#39;205,240M&#39;, 3: &#39;60,106M&#39;, 4: &#39;222,863M&#39;},
+            &#39;2022 YoY&#39;: {1: &#39;0.90%&#39;, 2: &#39;1.30%&#39;, 3: &#39;4.70%&#39;, 4: &#39;2.40%&#39;},
+            &#39;2023 YoY&#39;: {1: &#39;0.90%&#39;, 2: &#39;1.30%&#39;, 3: &#39;4.70%&#39;, 4: &#39;2.40%&#39;}
+        }
+
+    &gt;&gt;&gt; pd.DataFrame(expandable_table[&#39;collapse_df_data&#39;][0])    # Converting the dict to a dataframe
+
+            Channels        2020 YoY    2021 YoY          2021        2022 YoY (predicted)      2023 YoY (predicted)
+        1       Grocery         0.80%           1.10%         244,982M    0.90%                 0.90%
+        2       Discounters             0.70%           2.10%         205,240M    1.30%                 1.30%
+        3       SPT                     6.40%           9.90%         60,106M     4.70%                 4.70%
+        4       DCOM            2.90%           3.60%         222,863M    2.40%                 2.40%
+
+    &gt;&gt;&gt; expandable_json = ExpandableTable(expandable_table).json_string
+
+
+    Returns
+    -------
+    The `json_string` attribute returns a JSON string that is used to render the component on the UI
+    _________________________________________________________________________
+
+    The JSON structure for the component is -
+    ```
+    {
+     &#34;columns&#34;: [
+        {
+          &#34;id&#34;: &lt;Will be used internally to show the data&gt;,
+          &#34;label&#34;: &lt;Used as the Table Header&gt;
+        }, ...
+      ],
+      &#34;rows&#34;: [
+        {
+          &#34;collapse&#34;: &lt;boolean, if true renders the nested table, else ignores the , One needs to pass the data of the nested table as rows,columns inside the &#34;data&#34; key(line 18) inside each row which should be expanded&gt;,
+          &#34;columns&#34;: [
+            {
+              &#34;id&#34;: &lt;column_id&gt;,
+              &#34;label&#34;: &lt;column header&gt;
+            },
+          ],
+          &#34;data&#34;: {
+            &#34;collapse&#34;: &lt;If true, you need to pass data propery inside this &gt;,
+            &#34;title&#34;: &lt;Title of the table/subtable&gt;,
+            &#34;columns&#34;: [
+              {
+                &#34;id&#34;: &lt;column_id&gt;,
+                &#34;label&#34;: &lt;column label&gt;
+              },
+            ],
+            &#34;rows&#34;: [
+            ]
+          }
+      ]
+      &#34;isExpandable&#34;: &lt;boolean&gt;
+    }
+    ```
+
+    &#34;&#34;&#34;
+
+    def __init__(self, expandable_df, value_cols_aggfunc_dict={}):
+        super().__init__()
+        self.__initialise_component_dict(expandable_df, value_cols_aggfunc_dict)
+
+    def __initialise_component_dict(self, expandable_df, value_cols_aggfunc_dict):
+        try:
+            self.component_dict = {}
+            if &#34;collapse_df&#34; not in expandable_df.keys():
+                if value_cols_aggfunc_dict:
+                    expandable_df = self.__create_expandable_df(df=expandable_df,
+                                                        value_cols_agg_dict=value_cols_aggfunc_dict)
+                else:
+                    raise ValueError(&#34;value_cols_aggfunc_dict is empty dict. Expected valid dictionary input to perform aggregation.&#34;)
+
+            self.component_dict[&#34;columns&#34;] = self.__get_columns_list(data_df=expandable_df)
+            self.component_dict[&#34;isExpandable&#34;] = True
+
+            main_rows_list = []
+            main_rows_index = list(expandable_df.index)
+
+            for index_name in main_rows_index:
+                main_row_dict = expandable_df.loc[index_name].to_dict()
+                main_data = main_row_dict.pop(&#39;collapse_df_data&#39;, &#39;No Value&#39;)
+                collapse = main_row_dict.pop(&#39;collapse_df&#39;, &#39;No Value&#39;)
+                main_row_dict = {key: value if type(value) in [str, pd._libs.tslibs.timestamps.Timestamp, list, float, int, bool] else value.item() for key, value in main_row_dict.items()}
+
+                main_row_dict[&#34;collapse&#34;] = True if collapse == True else False
+
+                main_row_dict[&#34;columns&#34;] = self.__get_columns_list(data_df=expandable_df.loc[index_name])
+                if collapse == True:
+                    main_row_dict[&#34;data&#34;] = self.__get_collapse_data_dict(level_data=main_data)
+
+                main_rows_list.append(main_row_dict)
+
+            self.component_dict[&#34;rows&#34;] = main_rows_list
+        except Exception as e:
+            logging.error(traceback.format_exc())
+
+
+    def __create_expandable_df(self, df, value_cols_agg_dict):
+        &#34;&#34;&#34;
+        Internal function to convert given df to the format of
+        collapsible/expandable df.
+
+        Returns
+        -------
+        A pandas dataframe containing the expandable_df.
+        &#34;&#34;&#34;
+        value_cols = value_cols_agg_dict.keys()
+        index_cols = [col_n for col_n in df.columns if col_n not in value_cols]
+        df.insert(len(index_cols), &#34;Temp_Column&#34;, [np.nan if pd.isna(val) else &#34;Value&#34; for val in df[index_cols[-1]]])
+        index_cols.append(&#34;Temp_Column&#34;)
+        index_col = index_cols[0]
+        index_cols = index_cols[1:]
+        col_name = index_cols[0]
+
+        expandable_level_df = pd.pivot_table(df, aggfunc=value_cols_agg_dict, index=index_col)
+        expandable_level_df = round(expandable_level_df, 2)  # Danone Change
+        expandable_level_df.reset_index(inplace=True)
+        expandable_level_df[&#34;collapse_df&#34;] = True if len(index_cols) &gt; 1 else False
+        non_collapsible_rows = df[df[col_name].isnull()].drop(index_cols, axis=1)
+        non_collapsible_rows[&#34;collapse_df&#34;] = False
+        expandable_level_df = expandable_level_df.append(non_collapsible_rows)
+        expandable_level_df[&#34;collapse_df_data&#34;] = &#34;None&#34;
+        for row_n in expandable_level_df.index:
+            if expandable_level_df.at[row_n, &#34;collapse_df&#34;]:
+                select_df = df[df[index_col] == expandable_level_df.at[row_n, index_col]].copy()
+                select_df.drop(index_col, axis=1, inplace=True)
+                expandable_level_df.at[row_n, &#34;collapse_df_data&#34;] = self.__create_expandable_level_df(select_df,
+                                                                                                index_cols,
+                                                                                                value_cols_agg_dict)
+
+        return expandable_level_df
+
+
+    def __create_expandable_level_df(self, df, index_cols, value_cols_agg_dict):
+        &#34;&#34;&#34;
+        Internal function to compute level df dict of the
+        collapsible/expandable df.
+
+        Returns
+        -------
+        A dictionary format of level_df
+        &#34;&#34;&#34;
+        index_col = index_cols[0]
+        index_cols = index_cols[1:]
+        col_name = index_cols[0]
+
+        level_df = pd.pivot_table(df, aggfunc=value_cols_agg_dict, index=index_col)
+        level_df = round(level_df, 2)  # Danone Change
+        level_df.reset_index(inplace=True)
+        level_df[&#34;collapse_df&#34;] = True if len(index_cols) &gt; 1 else False
+        non_collapsible_rows = df[df[col_name].isnull()].drop(index_cols, axis=1)
+        non_collapsible_rows[&#34;collapse_df&#34;] = False
+        level_df = level_df.append(non_collapsible_rows)
+        level_df[&#34;collapse_df_data&#34;] = &#34;None&#34;
+        for row_n in level_df.index:
+            if level_df.at[row_n, &#34;collapse_df&#34;]:
+                select_df = df[df[index_col] == level_df.at[row_n, index_col]].copy()
+                select_df.drop(index_col, axis=1, inplace=True)
+                level_df.at[row_n, &#34;collapse_df_data&#34;] = self.__create_expandable_level_df(select_df,
+                                                                                    index_cols,
+                                                                                    value_cols_agg_dict)
+
+        return level_df.to_dict()
+
+
+    def __get_columns_list(self, data_df):
+        &#34;&#34;&#34;
+        Internal function to compute the columns component of the
+        collapsible/expandable table on the UI.
+
+        Returns
+        -------
+        A list of columns component
+        &#34;&#34;&#34;
+        main_cols_list = []
+        main_col_names = list(data_df.keys())
+        try:
+            main_col_names.remove(&#39;collapse_df_data&#39;)
+        except:
+            temp = &#34;No Collapse Data&#34;
+
+        main_col_dict = {}
+        if &#39;collapse_df&#39; in main_col_names:
+            main_col_dict[&#34;id&#34;] = False
+            main_col_dict[&#34;label&#34;] = &#34;&#34;
+            main_cols_list.append(main_col_dict)
+            main_col_names.remove(&#39;collapse_df&#39;)
+
+        for col_name in main_col_names:
+            main_col_dict = {}
+            main_col_dict[&#34;id&#34;] = col_name
+            main_col_dict[&#34;label&#34;] = str(col_name)
+            main_cols_list.append(main_col_dict)
+
+        return main_cols_list
+
+
+    def __get_collapse_data_dict(self, level_data):
+        &#34;&#34;&#34;
+        Internal function to compute data component of the
+        collapsible/expandable table on the UI.
+
+        Returns
+        -------
+        A dictionary of data component
+        &#34;&#34;&#34;
+        level_data_dict = {}
+        level_df = pd.DataFrame(level_data)
+
+        if level_df.get(&#39;collapse_df&#39;) is None:
+            level_data_dict[&#34;collapse&#34;] = False
+        else:
+            level_data_dict[&#34;collapse&#34;] = bool(level_df[&#34;collapse_df&#34;].any())
+
+        level_data_dict[&#34;columns&#34;] = self.__get_columns_list(data_df=level_df)
+
+        rows_list = []
+        rows_index = list(level_df.index)
+        for name in rows_index:
+            row_dict = level_df.loc[name].to_dict()
+            new_data = row_dict.pop(&#39;collapse_df_data&#39;, &#39;No Value&#39;)
+            collapse = row_dict.pop(&#39;collapse_df&#39;, &#39;No Value&#39;)
+            row_dict = {key: value if type(value) in [str, pd._libs.tslibs.timestamps.Timestamp, list, float, int, bool] else value.item() for key, value in row_dict.items()}
+
+            row_dict[&#34;collapse&#34;] = True if collapse == True else False
+
+            row_dict[&#34;columns&#34;] = self.__get_columns_list(data_df=level_df.loc[name])
+            if collapse == True:
+                row_dict[&#34;data&#34;] = self.__get_collapse_data_dict(level_data=new_data)
+
+            rows_list.append(row_dict)
+
+        level_data_dict[&#34;rows&#34;] = rows_list
+
+        return level_data_dict</code></pre>
+</details>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="codex_widget_factory_lite.conversion_utils.base_conversion.BaseConversion" href="base_conversion.html#codex_widget_factory_lite.conversion_utils.base_conversion.BaseConversion">BaseConversion</a></li>
+<li>abc.ABC</li>
+</ul>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="codex_widget_factory_lite.conversion_utils.base_conversion.BaseConversion" href="base_conversion.html#codex_widget_factory_lite.conversion_utils.base_conversion.BaseConversion">BaseConversion</a></b></code>:
+<ul class="hlist">
+<li><code><a title="codex_widget_factory_lite.conversion_utils.base_conversion.BaseConversion.json_string" href="base_conversion.html#codex_widget_factory_lite.conversion_utils.base_conversion.BaseConversion.json_string">json_string</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="codex_widget_factory_lite.conversion_utils" href="index.html">codex_widget_factory_lite.conversion_utils</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="codex_widget_factory_lite.conversion_utils.expandable_table.ExpandableTable" href="#codex_widget_factory_lite.conversion_utils.expandable_table.ExpandableTable">ExpandableTable</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

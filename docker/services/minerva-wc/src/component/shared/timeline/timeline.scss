@@ -1,0 +1,43 @@
+@import '../../../styles/util.scss';
+
+.MinervaWC  .MinervaTimeline {
+    display: flex;
+    padding: spacing(10);
+    flex-grow: 1;
+    flex-direction: column;
+    & .MinervaTimelineItem {
+        display: flex;
+        position: relative;
+        list-style: none;
+        min-height: spacing(40);
+    }
+    & .MinervaTimelineSeparator {
+        flex: 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        transform: translateY(spacing(10));
+    }
+    & .MinervaTimelineContent {
+        flex: 1;
+        padding: spacing(10);
+    }
+    & .MinervaTimelineDot {
+        display: flex;
+        padding: spacing(5);
+        align-self: baseline;
+        box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 50%;
+        // margin: spacing(2, 0);
+        border-color: transparent;
+        background-color: var(--minerva-text-color-70);
+    }
+
+    & .MinervaTimelineConnector {
+            width: 2px;
+            flex-grow: 1;
+            background-color: var(--minerva-text-color-70);
+    }
+}

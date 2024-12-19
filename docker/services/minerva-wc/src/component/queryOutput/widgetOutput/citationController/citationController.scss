@@ -1,0 +1,60 @@
+@import '../../../../styles/util.scss';
+
+.MinervaWC .MinervaCitationController {
+    display: contents;
+}
+
+
+.MinervaWC .MinervaQueryOutputItem-citation-enabled .MinervaCitationController {
+    &.MinervaCitationController-text {
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover{
+            background: var(--minerva-bg-secondary-light-blue);
+            border-radius: spacing(4);
+        }
+    }
+
+    &.MinervaCitationController-text > * {
+        text-decoration: underline;
+        cursor: pointer;
+        &:hover{
+            background: var(--minerva-bg-secondary-light-blue);
+            border-radius: spacing(4);
+        }
+    }
+
+    .MinervaCitationController-view-source-btn {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        text-decoration: underline;
+        font-weight: 500;
+        cursor: pointer;
+        svg {
+            fill: var(--minerva-text-color);
+            width: spacing(20);
+            height: spacing(20);
+            vertical-align: middle;
+        }
+        &:hover{
+            background: var(--minerva-bg-secondary-light-blue);
+            border-radius: spacing(4);
+        }
+    }
+
+    &.MinervaCitationController-active {
+        &.MinervaCitationController-text {
+            background: var(--minerva-bg-secondary-light-blue);
+            border-radius: spacing(4);
+        }
+        &.MinervaCitationController-text > * {
+            background: var(--minerva-bg-secondary-light-blue);
+            border-radius: spacing(4);
+        }
+        .MinervaCitationController-view-source-btn {
+            background: var(--minerva-bg-secondary-light-blue);
+            border-radius: spacing(4);
+        }
+    }
+}

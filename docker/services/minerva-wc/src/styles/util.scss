@@ -1,0 +1,58 @@
+@use "sass:list";
+@use 'sass:math';
+
+@function spacing($numbers...) {
+  $factor: 0.0625em;
+  $res: ();
+  @each $number in $numbers {
+    $res: list.append($res, $number * $factor);
+  }
+  @return $res;
+}
+
+@function relativeSpacing($base, $numbers...) {
+  $factor: 0.0625em;
+  $neutralizer: $base * $factor;
+  $res: ();
+  @each $number in $numbers {
+    $res: list.append($res, math.div($number * $factor, $neutralizer) * 1em);
+  }
+  @return $res;
+}
+
+
+@mixin bellow-md {
+  @media (max-width: 767px) {
+    @content
+  }
+}
+
+@mixin above-md {
+  @media (min-width: 768px) {
+    @content
+  }
+}
+
+@mixin container-bellow-md {
+  @container (max-width: 767px) {
+    @content
+  }
+}
+
+@mixin container-above-md {
+  @container (min-width: 768px) {
+    @content
+  }
+}
+
+@mixin minervaFullScreen-bellow-md {
+  @container minervaFullScreen (max-width: 767px) {
+    @content
+  }
+}
+
+@mixin minervaFullScreen-above-md {
+  @container minervaFullScreen (min-width: 768px) {
+    @content
+  }
+}

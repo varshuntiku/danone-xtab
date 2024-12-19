@@ -1,0 +1,37 @@
+summary: "Test Filter"
+tags:
+  - product/AppAdmin
+description: "Test dynamic filters given code_str, default_selected_values & output_var"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to test the filter UIaC
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [code_string]
+        properties:
+          code_string:
+            type: "string"
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'Issue with getting filters'}

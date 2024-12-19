@@ -1,0 +1,41 @@
+{
+    "consumerData": {
+        "name":"",
+        "desc": "",
+        "allowed_origins": [],
+        "features": {},
+        "auth_agents": [],
+        "copilot_apps":""
+    },
+    "authAgentOptions": [
+        {
+            "name": "Azure AD",
+            "id": "azure_ad"
+        },
+        {
+            "name": "Cognito",
+            "id": "cognito"
+        },
+        {
+            "name": "JWT",
+            "id": "jwt"
+        }
+    ],
+
+    "authAgentConfiguration": {
+        "azure_ad": {
+            "tenant_id": "",
+            "audience": ""
+        },
+        "cognito": {
+            "region": "",
+            "user_pool_id": "",
+            "audience": ""
+        },
+        "jwt": {
+            "public_key": null,
+            "jwt_algorithm": "",
+            "email_property_key": ""
+        }
+    }
+}

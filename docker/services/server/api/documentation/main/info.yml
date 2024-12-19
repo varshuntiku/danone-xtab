@@ -1,0 +1,55 @@
+summary: "Fetch user information."
+tags:
+  - platform/Main
+description: "This fetches all access related information , along with access key"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      properties:
+        user_id:
+          type: "int"
+        username:
+          type: "string"
+        is_restricted_user:
+          type: "boolean"
+        first_name:
+          type: "string"
+        last_name:
+          type: "string"
+        last_login:
+          type: "string"
+        access_key:
+          type: "string"
+        feature_access:
+          type: "object"
+      example: {
+        "status": "success",
+        "user_id": 123,
+        "username": "soumava.paul@themathcompany.com",
+        "is_restricted_user": false,
+        "first_name": "Soumava",
+        "last_name": "Paul",
+        "last_login": "26 April, 2022 08:36",
+        "access_key": "ACCeSS12345",
+        "feature_access": {
+            "app": true,
+            "case_studies": false,
+            "my_projects": true,
+            "my_projects_only": false,
+            "all_projects": true,
+            "widget_factory": true,
+            "environments": true,
+            "rbac": true,
+            "admin": true,
+            "app_publish": true
+        }
+      }
+  500:
+    description: "Error in query"

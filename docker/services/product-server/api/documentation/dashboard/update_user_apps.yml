@@ -1,0 +1,75 @@
+summary: "Updates User Apps"
+tags:
+  - product/Dashboard
+description: "It updates user apps associated to a particular user based on his email address"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "email_address"
+  required: "true"
+  schema:
+    type: "string"
+
+requestBody:
+  content:
+    application/json:
+      schema:
+        required: []
+        properties:
+          first_name:
+            type: string
+          last_name:
+            type: string
+          user_id:
+            type: integer
+          default_apps:
+            type: array
+            items:
+              type: integer
+          user_apps:
+            type: array
+            items:
+              type: integer
+
+      example: {
+        "first_name": "abc",
+        "last_name": "xyz",
+        "user_id": 2,
+        "user_apps": [1,2],
+        "default_apps": [1,2]
+      }
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "status": "true",
+      }
+  404:
+    description: "Not found"
+    schema :
+      type: "object"
+      example:  {"error": "App User not found"}
+  409:
+    description: "Already Exists"
+    schema :
+      type: "object"
+      example:  {"error": "App user already exists"}
+  422:
+    description: "Error"
+    schema :
+      type: "object"
+      example:  {"error": "Error in operation"}
+  500:
+    description: "Internal Server Error"
+    schema :
+      type: "object"
+      example:  {"error": "Error in operation"}

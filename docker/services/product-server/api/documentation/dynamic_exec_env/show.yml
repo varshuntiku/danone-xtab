@@ -1,0 +1,27 @@
+summary: "Show Dynamic Execution environment"
+tags:
+  - product/DynamicExecutionEnvironment
+description: "Show Execution environment details for the given id"
+produces:
+- application/json
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "execution_environment_id"
+  required: "true"
+  description: "The ID whose details have to be fetched"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "API successful"
+    schema:
+      type: object
+  404:
+    description: "ID Not found"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'Item not found'}

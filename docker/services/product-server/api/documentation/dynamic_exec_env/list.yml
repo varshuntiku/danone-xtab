@@ -1,0 +1,19 @@
+summary: "Get Dynamic Execution environment list"
+tags:
+  - product/DynamicExecutionEnvironment
+description: "Get existing Execution environment list on the platform utils execution environment page"
+produces:
+- application/json
+security:
+  - Authorization: []
+
+responses:
+  200:
+    description: "API successful"
+    schema:
+      type: object
+  500:
+    description: "Error"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'Unable to retrieve dynamic execution environments'}

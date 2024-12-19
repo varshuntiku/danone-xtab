@@ -1,0 +1,103 @@
+@import '../../../styles/util.scss';
+
+.MinervaWC .MinervaTooltip-content {
+  position: fixed;
+  z-index: 1;
+  background-color: var(--minerva-text-color-80);
+  padding: relativeSpacing(13, 4, 12);
+  border-radius: relativeSpacing(13, 4);
+  font-size: spacing(13);
+  width: max-content;
+  opacity: 0;
+  overflow: visible;
+
+  &::backdrop {
+    display: none;
+  }
+
+  & span {
+    color: var(--minerva-bg-main);
+  }
+
+  &.MinervaTooltip-position-bottom {
+    margin-top: spacing(4);
+  }
+
+  &.MinervaTooltip-position-top {
+    margin-bottom: spacing(4);
+  }
+
+  &.MinervaTooltip-position-left,
+  &.MinervaTooltip-position-right {
+    transform: translate(0, -100%);
+  }
+
+  &.MinervaTooltip-position-left {
+    margin-right: spacing(4);
+  }
+
+  &.MinervaTooltip-position-right {
+    margin-left: spacing(4);
+  }
+
+  &.MinervaTooltip-arrow {
+    &::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+    }
+
+    &.MinervaTooltip-arrow-top,
+    &.MinervaTooltip-arrow-bottom {
+      &::after {
+        border-left: spacing(5) solid transparent;
+        border-right: spacing(5) solid transparent;
+        left: var(--custom-arrow--left-position, 0);
+        right: var(--custom-arrow--right-position, 0);
+        margin: 0 auto;
+      }
+    }
+
+    &.MinervaTooltip-arrow-top {
+      &::after {
+        border-bottom: spacing(5) solid var(--minerva-text-color-80);
+        bottom: 100%;
+      }
+    }
+
+    &.MinervaTooltip-arrow-bottom {
+      &::after {
+        border-top: spacing(5) solid var(--minerva-text-color-80);
+        top: 100%;
+      }
+    }
+
+    &.MinervaTooltip-arrow-left,
+    &.MinervaTooltip-arrow-right {
+      &::after {
+        bottom: 0;
+        top: 0;
+        margin: auto 0;
+        border-top: spacing(5) solid transparent;
+        border-bottom: spacing(5) solid transparent;
+      }
+    }
+
+    &.MinervaTooltip-arrow-right {
+      &::after {
+        border-left: spacing(5) solid var(--minerva-text-color-80);
+        left: 100%;
+      }
+    }
+
+    &.MinervaTooltip-arrow-left {
+      &::after {
+        border-right: spacing(5) solid var(--minerva-text-color-80);
+        right: 100%;
+      }
+    }
+
+  }
+}
+

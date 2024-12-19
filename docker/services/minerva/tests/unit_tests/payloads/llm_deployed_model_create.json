@@ -1,0 +1,7 @@
+{
+    "name": "model test",
+    "model_id": 1,
+    "endpoint": "string",
+    "description": "string",
+    "model_params": {}
+}

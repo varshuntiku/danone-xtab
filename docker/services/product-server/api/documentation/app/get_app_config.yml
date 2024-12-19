@@ -1,0 +1,80 @@
+summary: "Fetch configurations for the app and all it's app_screens info for the given app_id."
+tags:
+  - product/App
+description: "Fetch configurations for the app"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "object"
+          example :
+            id: "1234"
+            env_apps:
+              - id: 1234
+                environment: "preview"
+              - id: 1234
+                environment: "prod"
+            environment: "preview"
+            name: "Campaign Analytics"
+            theme: "blue"
+            screens:
+              - id: 98765
+                screen_index: 0
+                screen_name: "Overview"
+                screen_description: "Test"
+                screen_filters_open: false
+                screen_auto_refresh: false
+                screen_image: "default"
+                level: null
+                graph_type: null
+                horizontal: null
+                rating_url: null
+                widget_count: 1
+                screen_filters_values_present: true
+                screen_actions_present: false
+                hidden: false
+            modules: {}
+            industry: ""
+            function: ""
+            description: null
+            blueprint_link: null
+            config_link: null
+            approach_url: false
+            logo_url: false
+            small_logo_url: false
+            logo_blob_name: ""
+            small_logo_blob_name: ""
+            story_count: 0
+            restricted_app: false
+            is_user_admin: true
+            permissions: false
+            is_app_user: false
+            user_mgmt_access: false
+            contact_email: "user@example.com"
+            problem_area: null
+            industry_id: 19,
+            function_id: 90
+
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'item not found'
+          }

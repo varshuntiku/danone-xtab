@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "infra-manager"
+version = "0.0.31"
+description = "Infra Manager Service"
+authors = ["chandan.bilvaraj"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+kubernetes = "^28.1.0"
+python-dotenv = "^1.0.0"
+azure-identity = "^1.15.0"
+azure-mgmt-containerservice = "^27.0.0"
+azure-mgmt-compute = "^30.3.0"
+httpx = "^0.25.2"
+azure-mgmt-monitor = "^6.0.2"
+pytz = "^2023.3.post1"
+azure-mgmt-resource = "^23.0.1"
+azure-storage-file-share = "^12.15.0"
+azure-mgmt-containerregistry = "^10.3.0"
+azure-containerregistry = "^1.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

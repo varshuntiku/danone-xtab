@@ -1,0 +1,2 @@
+FROM quay.io/jupyterhub/k8s-singleuser-sample:4.0.0-0.dev.git.6671.h1de7d9be
+RUN pip install --index-url https://__token__:jsk5si2rykevgjibtb7hjgjlz54zvqk6zmiulkcmrr2ky42ycvma@pkgs.dev.azure.com/mathco-products/codex/_packaging/codex_feed/pypi/simple/ dsstore

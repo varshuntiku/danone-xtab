@@ -1,0 +1,40 @@
+version: '3'
+services:
+  codex-system-db-service:
+    image: ${POSTGRES_IMAGE}
+    container_name: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../services/system-db/create_multiple_databases.sh:/docker-entrypoint-initdb.d/create_multiple_databases.sh
+  #    - ./postgresql_data:/var/lib/postgresql/data
+  #    - ./postgresql_logs:/var/log/postgresql
+  # codex-server-service:
+  #   image: ${SERVER_IMAGE}
+  #   container_name: server
+  #   restart: always
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - codex-system-db-service
+  #   environment:
+  #     - POSTGRES_URI=${POSTGRES_URI}
+  #     - POSTGRES_SERVICE_NAME=${POSTGRES_SERVICE_NAME}
+  #     - POSTGRES_SERVICE_PORT=${POSTGRES_SERVICE_PORT}
+  #     - DATA_AZURE_CONNECTION_STRING=${DATA_AZURE_CONNECTION_STRING}
+  #     - DATA_FOLDER_PATH=${DATA_FOLDER_PATH}
+  #     - AZURE_STORAGE_CONNECTION_STRING=${AZURE_STORAGE_CONNECTION_STRING}
+  #   volumes:
+  #     - ./server_data:/data
+  # codex-client-service:
+  #   image: ${CLIENT_IMAGE}
+  #   container_name: client
+  #   restart: always
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - codex-server-service
+  #   environment:
+  #     - NODE_PATH=./src
+  #     - REACT_APP_BACKEND_API=${BACKEND_APP_URI}

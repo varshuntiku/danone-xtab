@@ -1,0 +1,38 @@
+summary: "Test app function"
+tags:
+  - product/AppAdmin
+description: "Tests one of the app functions"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "key"
+  required: "true"
+  schema:
+    type: "string"
+
+responses:
+  200:
+    description: "Tested successfully"
+    schema:
+      type: "object"
+      example: {"message": "Function tested successfully"}
+  404:
+    description: "Key Not Found"
+    schema:
+      type: "object"
+      example: {'error': 'Error in test operation, function does not exist in application functions'}
+  500:
+    description: "Error while updating"
+    schema :
+      type: "object"
+      example:  {'error': 'Error while testing application function'}

@@ -1,0 +1,28 @@
+summary: "List of widgets"
+tags:
+  - platform/Widgets
+description: "This returns the list of widgets"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example:  [
+        {
+              "id": 123,
+              "name": "",
+              "widget_group": "",
+              "created_by":  '--',
+              "updated_by": '--',
+              "created_at": "--",
+              "updated_at":  "--",
+              "contributor_code": False,
+              "test_code":  False,
+              "prod_code": False,
+              "attachment_count": 123,
+          }
+        ]

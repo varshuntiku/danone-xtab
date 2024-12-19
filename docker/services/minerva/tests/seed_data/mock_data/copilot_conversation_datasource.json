@@ -1,0 +1,11 @@
+[
+    {
+        "conversation_id": 3,
+        "name": "sample.png",
+        "meta": {
+            "storage_type": "AZURE_BLOB"
+        },
+        "type": null,
+        "deleted_at": null
+    }
+]

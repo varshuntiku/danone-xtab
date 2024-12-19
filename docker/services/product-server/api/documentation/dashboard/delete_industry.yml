@@ -1,0 +1,40 @@
+
+summary: "Delete Industry "
+tags:
+  - product/Dashboard
+description: "Deletes a industry "
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "industry_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "deleted_rows": 1,
+      }
+  404:
+    description: "Item not found"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Item not found"
+      }
+  500:
+    description: "Delete operation error:"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Delete operation error:"
+      }

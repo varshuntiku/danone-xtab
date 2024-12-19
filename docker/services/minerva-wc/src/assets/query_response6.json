@@ -1,0 +1,16 @@
+{
+    "id": 572,
+    "input": "sales across brands",
+    "pinned": true,
+    "output": {
+        "type": "sql",
+        "response": {
+            "text": "Demand forecasting can be approached through various methods, each suited to different types of businesses and market conditions. Here are some of the key methods. Survey of Buyer’s Choice: This method involves directly interviewing potential customers to understand their future purchase plans. It can be conducted through a complete enumeration method, a sample survey method, or an end-use method. Collective Opinion Method: This approach uses the estimates of a company's salesforce to predict future sales, taking into account factors like changes in selling price, product designs, competition, and consumer purchasing power​. Delphi Technique: Involves a group of experts providing forecasts and justifications, which are then shared among the panel for refinement until a consensus is reached. ",
+            "widgets": [],
+            "sql_query": "\n## SQL Query\n\n```python\nif True:\n   print(\"Hello world\")```\n\n",
+            "processed_query": "sales across brands"
+        }
+    },
+    "window_id": 60,
+    "feedback": null
+}

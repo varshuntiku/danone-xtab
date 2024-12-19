@@ -1,0 +1,31 @@
+@import '../../styles/util.scss';
+
+.MinervaWC .MinervaQueryResponsePreview {
+
+    margin-left: spacing(40);
+    margin-right: spacing(104);
+    padding: spacing(4);
+    .MinervaQueryResponsePreview-content {
+
+        p, pre {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            -webkit-line-clamp: 3; /* Set the maximum number of lines */
+        }
+    }
+    .MinervaQueryResponsePreview-content-chart {
+        border: 1px solid var(--minerva-text-color-10);
+        display: grid;
+        place-content: center;
+        overflow: hidden;
+        width: spacing(250);
+        height: spacing(98);
+        padding: spacing(4);
+        &> * {
+            width: 100%;
+            height: 100%;
+            zoom: 0.2;
+        }
+    }
+}

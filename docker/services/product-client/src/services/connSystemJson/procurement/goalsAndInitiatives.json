@@ -1,0 +1,278 @@
+{
+    "data": {
+        "initiatives": [
+            {
+                "id": 1,
+                "name": "Reduce procurement costs by 5% YoY",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Strategy"
+                    }
+                ],
+                "dashboard_id": 1,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    1
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Increase supplier diversity by 10% YoY",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Strategy"
+                    }
+                ],
+                "dashboard_id": 2,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    1
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Achieve a 95% on-time delivery rate for all orders",
+                "tags": [
+                    {
+                        "category": "Green",
+                        "name": "Strategy"
+                    }
+                ],
+                "dashboard_id": 3,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 4,
+                "name": "Increase inventory accuracy by 10% YoY",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Process"
+                    }
+                ],
+                "dashboard_id": 4,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    4
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 5,
+                "name": "Achieve a 95% CSAT from internal customers",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Process"
+                    }
+                ],
+                "dashboard_id": 5,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Increase the # of new suppliers added by 10% YoY",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Process"
+                    }
+                ],
+                "dashboard_id": 6,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    3
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Achieve a 95% accuracy rate in invoicing",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Process"
+                    }
+                ],
+                "dashboard_id": 6,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    2
+                ]
+            },
+            {
+                "id": 6,
+                "name": "Reduce supplier lead times by 10% YoY",
+                "tags": [
+                    {
+                        "category": "Blue",
+                        "name": "Process"
+                    }
+                ],
+                "dashboard_id": 6,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    3
+                ]
+            },
+            {
+                "id": 7,
+                "name": "Achieve a 95% compliance rate with company policies",
+                "category": "Violet",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "Foundational"
+                    }
+                ],
+                "dashboard_id": 7,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 8,
+                "name": "Increase the # of supplier performance reviews by 10% YoY",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "Foundational"
+                    }
+                ],
+                "dashboard_id": 8,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    2
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            },
+            {
+                "id": 9,
+                "name": "Forecasting Excellence",
+                "tags": [
+                    {
+                        "category": "Violet",
+                        "name": "Foundational"
+                    }
+                ],
+                "dashboard_id": 9,
+                "created_by": "Test user",
+                "created_at": "",
+                "updated_by": "Test user",
+                "is_active": true,
+                "business_process_id": [
+                    1
+                ],
+                "problem_definition_id": [
+                    5
+                ]
+            }
+        ],
+        "goals": {
+            "name": "Deliver 1YP Ambition",
+            "id": 1,
+            "targets": [
+                {
+                    "id": 1,
+                    "title": "Cost",
+                    "value": "-7.5%",
+                    "created_by": "test user",
+                    "created_at": "",
+                    "updtaed_by": "test user",
+                    "updated_at": "",
+                    "marginRight":"1.5rem"
+                },
+                {
+                    "id": 1,
+                    "title": "CSAT",
+                    "value": "+2",
+                    "created_by": "test user",
+                    "created_at": "",
+                    "updtaed_by": "test user",
+                    "updated_at": "",
+                    "titleWidth":"7rem",
+                    "marginRight":"1.5rem"
+                },
+                {
+                    "id": 1,
+                    "title": "Risk",
+                    "value": "-15.0%",
+                    "created_by": "test user",
+                    "created_at": "",
+                    "updtaed_by": "test user",
+                    "updated_at": ""
+                }
+            ],
+            "created_by": "test user",
+            "created_at": "",
+            "updtaed_by": "test user",
+            "updated_at": ""
+        }
+    }
+}

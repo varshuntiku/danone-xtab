@@ -1,0 +1,20 @@
+.popup-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 34%;
+  height: 100%;
+  background-color: #F1F8FF;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-content {
+  padding: 3rem;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}

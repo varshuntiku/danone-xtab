@@ -1,0 +1,39 @@
+summary: "Preview Visualization"
+tags:
+  - product/AppAdmin
+description: "Preview dynamic visualization given code_str"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to preview the screen visualization
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [code, filters]
+        properties:
+          code:
+            type: "string"
+          filters:
+            type: "object"
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'item not found'}

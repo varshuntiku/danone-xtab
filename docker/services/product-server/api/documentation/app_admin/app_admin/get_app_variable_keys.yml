@@ -1,0 +1,26 @@
+summary: "Get app variable keys"
+tags:
+  - product/AppAdmin
+description: "Returns a list of all the existing app variable keys"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Returns list of keys for the given appID"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching"
+    schema :
+      type: "object"
+      example:  {'error': 'Error while fetching application variables'}

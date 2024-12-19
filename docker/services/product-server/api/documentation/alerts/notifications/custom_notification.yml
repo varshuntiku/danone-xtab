@@ -1,0 +1,54 @@
+summary: "Custom platform notification"
+tags:
+  - product/Alerts
+description: "Generates custom notification on platform level"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [socket_data, notification_type]
+        properties:
+          socket_data:
+            type: "object"
+            required: [title, message]
+            properties:
+              title:
+                type: "string"
+              message:
+                type: "string"
+              app_id:
+                type: "integer"
+              widget_id:
+                type: "integer"
+              widget_name:
+                type: "string"
+              email:
+                type: "array"
+                items:
+                  type: "string"
+          notification_type:
+            type: "string"
+        example: {"socket_data": {"title": "Notification-1", "message": "Threshold exceeded", "email": ["abc.xyz@themathcompany.com"]}, "notification_type": "push"}
+
+responses:
+  200:
+    description: "Return successful update message"
+    schema:
+      type: "object"
+    example: {"message": "Notification Triggered Successfully"}
+  404:
+    description: "Invalid token"
+    schema:
+      type: "object"
+    example: {"message": "Unable to validate token"}
+  500:
+    description: "Error while updating notification"
+    schema:
+      type: "object"
+    example: {"message": "Unable to trigger notification"}

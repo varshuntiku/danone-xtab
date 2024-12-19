@@ -1,0 +1,106 @@
+name: CODX_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+trigger: none
+stages:
+- stage: Test_cases
+  condition: succeeded()
+  jobs:
+  # - job: precommit
+  #   pool:
+  #     vmImage: 'ubuntu-latest'
+  #   variables:
+  #     PRE_COMMIT_HOME: $(Pipeline.Workspace)/pre-commit-cache
+  #   steps:
+  #   - task: UsePythonVersion@0
+  #     inputs:
+  #      versionSpec: '3.10'
+  #   - task: CacheBeta@0
+  #     inputs:
+  #       key: pre-commit | "4" | .pre-commit-config.yaml
+  #       path: $(PRE_COMMIT_HOME)
+  #   - script: python -m pip install --upgrade pre-commit
+  #     displayName: 'install pre-commit'
+  #   - script: pre-commit run --all-files --show-diff-on-failure
+  #     displayName: 'run pre-commit'
+
+  - job: Frontend_code_coverage
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.14.1'
+    - script: |
+        cd docker/services/product-client
+        npm install --legacy-peer-deps --no-optional
+        npm install --legacy-peer-deps only=dev
+        npm run lint
+      displayName: 'npm install and lint'
+    - script: |
+        cd docker/services/product-client
+        npm run test:coverage
+      displayName: 'run unit tests for product-client'
+      continueOnError: false
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(System.DefaultWorkingDirectory)/docker/services/product-client/coverage'
+        ArtifactName: 'frontend-coverage-Report'
+      displayName: 'Publish coverage report'
+      continueOnError: false
+
+  - job: Backend_Platform_test
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.10'
+    - script: |
+        cd docker/services/server
+        pip install --user flake8
+      displayName: 'install flake8'
+    - script: |
+        python3 -m flake8 --max-line-length 100
+      displayName: 'run flake8 on platform backend'
+    - script: |
+        cd docker/services/server
+        python -m pip install --upgrade pip
+        pip install setuptools
+        pip install -r ../requirements_tests.txt
+        pip install pytest pytest-azurepipelines
+        pip install pytest-cov
+        cd tests
+        rm -rf config_local.py
+        cp config_CI.py config_local.py
+        pytest --junitxml=test-results-platform.xml --cov=api --cov-report=html:htmlcov/platform
+      displayName: 'pytest platform server'
+      continueOnError: false
+
+  - job: Backend_Product_test
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.10'
+    - script: |
+        cd docker/services/product-server
+        python -m pip install --upgrade pip
+        pip install setuptools
+        pip install --user flake8
+      displayName: 'install flake8'
+    - script: |
+        python3 -m flake8 --max-line-length 100
+      displayName: 'running flake8 on product backend'
+    - script: |
+        cd docker/services/product-server
+        python -m pip install --upgrade pip
+        pip install setuptools
+        pip install -r ../requirements_tests.txt
+        pip install pytest pytest-azurepipelines
+        pip install pytest-cov
+        cd tests
+        rm -rf config_local.py
+        cp config_CI.py config_local.py
+        pytest --junitxml=test-results-product.xml --cov=api --cov-report=html:htmlcov/product
+      displayName: 'pytest product server'
+      continueOnError: false

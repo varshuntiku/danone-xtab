@@ -1,0 +1,77 @@
+@import '../../../styles/util.scss';
+
+.MinervaWC .MinervaWidgetOutput {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(20);
+    .MinervaWidgetRenderer {
+        display: flex;
+        flex-direction: column;
+        gap: spacing(20);
+        position: relative;
+    }
+    .MinervaDataTableWrapper {
+        display: flex;
+        justify-content: center;
+        max-height: spacing(350);
+        @include minervaFullScreen-bellow-md {
+            max-height: spacing(250);
+        }
+    }
+
+    .MinervaWidgetListRenderer {
+        display: flex;
+        flex-direction: column;
+        gap: spacing(20);
+        position: relative;
+        .MinervaWidgetListRenderer-header {
+            display: flex;
+            gap: spacing(5);
+            align-items: center;
+            p {
+                flex: 1;
+            }
+
+            fieldset {
+                border: 1px solid var(--minerva-text-color-30);
+                display: flex;
+                align-items: center;
+                border-radius: spacing(2);
+                position: relative;
+                svg:first-of-type {
+                    --color: var(--minerva-text-color);
+                    position: absolute;
+                    left: spacing(16);
+                    width: spacing(18);
+                    height: spacing(18);
+                    pointer-events: none;
+                }
+
+                svg:last-of-type {
+                    position: absolute;
+                    right: spacing(4);
+                    pointer-events: none;
+                }
+
+                select {
+                    height: spacing(20);
+                    outline: none;
+                    border: 0;
+                    color: var(--minerva-contrast-color);
+                    background-color: var(--minerva-bg-main);
+                    font-weight: bold;
+                    cursor: pointer;
+                    font-size: 0.9em;
+                    font-weight: 400;
+                    font-size: spacing(15);
+                    text-transform: capitalize;
+                    -moz-appearance:none;
+                    -webkit-appearance: none;
+                    appearance:none;
+                    padding: spacing(4, 40, 4, 48);
+                    height: spacing(36);
+                }
+            }
+        }
+    }
+}

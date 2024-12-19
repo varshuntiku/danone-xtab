@@ -1,0 +1,242 @@
+{
+    "data": {
+        "goals": {
+            "name": "Overview",
+            "id": 1,
+            "targets": [
+                {
+                    "id": 1,
+                    "title": "# ML MODELS",
+                    "value": "376",
+                    "created_by": "test user",
+                    "created_at": "",
+                    "updtaed_by": "test user",
+                    "updated_at": ""
+                },
+                {
+                    "id": 1,
+                    "title": "TOTAL REALISED COST",
+                    "value": "$1M",
+                    "created_by": "test user",
+                    "created_at": "",
+                    "updtaed_by": "test user",
+                    "updated_at": ""
+                }
+            ],
+            "created_by": "test user",
+            "created_at": "",
+            "updtaed_by": "test user",
+            "updated_at": ""
+        },
+        "initiatives": [
+            {
+                "label": "Models",
+                "subTitle": 376,
+                "leftLevel": {
+                    "data": [
+                        {
+                            "type": "legend",
+                            "legendColor": "#4560D7",
+                            "legendText": "176 In Production"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#59C8A7",
+                            "legendText": "150 In Development"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#E69E63",
+                            "legendText": "50 In Idle State"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "values": [40, 15, 45],
+                                    "labels": [
+                                        "176 In Production",
+                                        "150 In Development",
+                                        "50 In Idle State"
+                                    ],
+                                    "domain": { "column": 0 },
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "hole": 0.7,
+                                    "type": "pie",
+                                    "marker": {
+                                        "colors": ["#59C8A7", "#E69E63", "#4560D7"]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true,
+                "height": "20rem",
+                "width": "40rem"
+            },
+            {
+                "label": "Served Requests",
+                "leftLevel": {
+                    "styles": {},
+                    "data": [
+                        {
+                            "type": "card-desc",
+                            "data": "Average Requests/Month",
+                            "fontSize": "2rem"
+                        },
+                        {
+                            "type": "card-value",
+                            "data": "9.8K",
+                            "fontSize": "3rem"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "styles": {},
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "fill": "tozeroy",
+                                    "marker": {
+                                        "symbol": "circle",
+                                        "size": 0.1,
+                                        "color": "rgba(63, 85, 182, 1)"
+                                    },
+                                    "opacity": "1",
+                                    "x": [
+                                        "01-06-2023",
+                                        "02-06-2023",
+                                        "03-06-2023",
+                                        "04-06-2023",
+                                        "05-06-2023",
+                                        "06-06-2023",
+                                        "07-06-2023"
+                                    ],
+                                    "y": [0, 65, 80, 55, 60, 95, 10],
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true,
+                "height": "20rem",
+                "width": "40rem"
+            },
+            {
+                "label": "Error Rates",
+                "subTitle": " ",
+                "leftLevel": {
+                    "styles": {},
+                    "data": [
+                        {
+                            "type": "legend",
+                            "legendColor": "#E69E63",
+                            "legendText": "0.3% System Error"
+                        },
+                        {
+                            "type": "legend",
+                            "legendColor": "#4560D7",
+                            "legendText": "0.1% Data Error"
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "top": "3rem",
+                            "data": [
+                                {
+                                    "values": [70, 30],
+                                    "labels": ["0.1% Data ErrorUS", "0.3% System Error"],
+                                    "domain": { "column": 0 },
+                                    "hoverinfo": "none",
+                                    "textinfo": "none",
+                                    "hole": 0.7,
+                                    "type": "pie",
+                                    "marker": {
+                                        "colors": ["#E69E63", "#4560D7"]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true,
+                "height": "20rem",
+                "width": "40rem"
+            },
+            {
+                "label": "Realised Cost",
+                "leftLevel": {
+                    "styles": {},
+                    "data": [
+                        {
+                            "type": "card-desc",
+                            "data": "Compute Cost",
+                            "intelCardDesc": true
+                        },
+                        {
+                            "type": "card-value",
+                            "data": "$800K",
+                            "intelCardValue": true
+                        }
+                    ]
+                },
+                "rightLevel": {
+                    "data": [
+                        {
+                            "type": "plotly",
+                            "data": [
+                                {
+                                    "fill": "tozeroy",
+                                    "marker": {
+                                        "symbol": "circle",
+                                        "size": 0.1,
+                                        "color": "rgba(63, 85, 182, 1)"
+                                    },
+                                    "opacity": "1",
+                                    "x": [
+                                        "01-06-2023",
+                                        "02-06-2023",
+                                        "03-06-2023",
+                                        "04-06-2023",
+                                        "05-06-2023",
+                                        "06-06-2023",
+                                        "07-06-2023"
+                                    ],
+                                    "y": [0, 65, 80, 55, 60, 95, 10],
+                                    "type": "scatter",
+                                    "hoverinfo": "none",
+                                    "textinfo": "none"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "info_Icon": false,
+                "banner": false,
+                "bannerBlue": true,
+                "height": "10rem",
+                "width": "40rem"
+            }
+        ]
+    }
+}

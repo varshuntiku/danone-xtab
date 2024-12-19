@@ -1,0 +1,24 @@
+summary: "List of widget groups"
+tags:
+  - platform/Widgets
+description: "This returns the list of widget groups"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: [
+          {
+              "id": 123,
+              "name": "WidgetName",
+              "created_by":  '--',
+              "updated_by":  '--',
+              "created_at": "--",
+              "updated_at":  "--",
+              "widget_count": 2
+          }
+        ]

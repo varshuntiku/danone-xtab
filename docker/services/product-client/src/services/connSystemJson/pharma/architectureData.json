@@ -1,0 +1,51 @@
+{
+  "data": [
+    {
+        "name": "HCP DW",
+        "dataMart": [
+            {
+                "name": "HCP Marketing",
+                "app": "Market Mix Modelling",
+                "isActive": true
+            },
+            {
+                "name": "HCP Features",
+                "app": "Meaasurement"
+            }
+        ],
+        "isActive": true
+    },
+    {
+        "name": "Patient DW",
+        "dataMart": [
+            {
+                "name": "Patient Features",
+                "app": "Patient Journey"
+            }
+        ]
+    },
+    {
+        "name": "Sales DW",
+        "dataMart": [
+            {
+                "name": "Sales Leads",
+                "app": "Sales Force Optimization"
+            }
+        ]
+    }
+],
+"config": {
+    "data_lake": {
+        "icon_height": "8rem",
+        "icon_width": "8rem"
+    },
+    "data_warehouse": {
+        "icon_height": "8rem",
+        "icon_width": "8rem"
+    },
+    "data_mart": {
+        "icon_height": "7rem",
+        "icon_width": "7rem"
+    }
+}
+}

@@ -1,0 +1,137 @@
+.MinervaWC .MinervaButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: spacing(18);
+    padding: relativeSpacing(18, 4, 8);
+    gap: relativeSpacing(18, 4);
+    line-height: 1;
+    border-radius: relativeSpacing(18, 2);
+    border-radius: relativeSpacing(18, 2);
+    min-width: relativeSpacing(18, 64);
+    border: 0;
+    cursor: pointer;
+    font-weight: 500;
+    letter-spacing: 0.02857em;
+    transition-duration: 100ms;
+    background: var(--minerva-contrast-color);
+    color: var(--minerva-bg-main);
+    text-transform: capitalize;
+    &:active {
+        opacity: 0.7;
+    }
+    &:disabled {
+        pointer-events: none;
+        filter: grayscale(0.7)
+    }
+    svg {
+        width: relativeSpacing(18, 24);
+        height: relativeSpacing(18, 24);
+        fill: var(--minerva-text-color);
+        --color: var(--minerva-text-color);
+    }
+}
+
+.MinervaWC .MinervaIconButton {
+    flex: 0 0 auto;
+    overflow: visible;
+    text-align: center;
+    transition: background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    display: inline-flex;
+    outline: 0;
+    align-items: center;
+    user-select: none;
+    vertical-align: middle;
+    justify-content: center;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    padding: spacing(4);
+    font-size: spacing(16);
+    &:active {
+        opacity: 0.7;
+    }
+    &:hover {
+        background-color: var(--minerva-text-color-10);
+    }
+    &:disabled {
+        pointer-events: none;
+        filter: grayscale(0.7)
+    }
+    svg {
+        width: spacing(24);
+        height: spacing(24);
+        fill: var(--minerva-text-color);
+        --color: var(--minerva-text-color);
+    }
+}
+
+
+.MinervaWC .MinervaIconButton-selected {
+    background: var(--minerva-text-color-20);
+    outline: 1px solid var(--minerva-text-color-30);
+}
+
+.MinervaWC .MinervaIconButton-small {
+    @extend .MinervaIconButton;
+    svg {
+        width: spacing(16);
+        height: spacing(16);
+        fill: var(--minerva-text-color);
+        --color: var(--minerva-text-color);
+    }
+}
+
+.MinervaWC .MinervaIconButton-small-bellow-md {
+    @include minervaFullScreen-bellow-md {
+        @extend .MinervaIconButton;
+        svg {
+            width: spacing(16);
+            height: spacing(16);
+            fill: var(--minerva-text-color);
+            --color: var(--minerva-text-color);
+        }
+    }
+}
+
+.MinervaWC .MinervaButton-outlined {
+    @extend .MinervaButton;
+    border: 1px solid;
+    border-color: var(--minerva-contrast-color);
+    background: transparent;
+    box-shadow: none;
+    color: var(--minerva-contrast-color);
+}
+
+.MinervaWC .MinervaButton-outlined-small {
+    @extend .MinervaButton-outlined;
+    font-size: spacing(14);
+    padding: relativeSpacing(14, 4, 8);
+}
+
+.MinervaWC .MinervaButton-small {
+    @extend .MinervaButton;
+    font-size: spacing(14);
+    padding: relativeSpacing(14, 4, 8);
+}
+
+
+.MinervaWC .MinervaButton-text {
+    @extend .MinervaButton;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--minerva-contrast-color);
+    &:hover {
+        background: var(--minerva-contrast-color-10);
+    }
+}
+
+.MinervaWC .MinervaButton-text-small {
+    @extend .MinervaButton-text;
+    font-size: spacing(14);
+    padding: relativeSpacing(14, 4, 8);
+}

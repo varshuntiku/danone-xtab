@@ -1,0 +1,47 @@
+summary: "Adds dynamic filters."
+tags:
+  - product/App
+description: "Adds dynamic filters to the given screen"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to add dynamic filters
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [selected, current_filter]
+        properties:
+          current_filter:
+            type: "string"
+          selected:
+            type: "object"
+        example: {"selected" : {"Region": "Europe", "Country": "Germany", "Category": "Category 1"}, "current_filter": "Country"}
+
+responses:
+  200:
+    description: "Success"
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'item not found'
+          }

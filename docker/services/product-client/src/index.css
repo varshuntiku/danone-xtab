@@ -1,0 +1,166 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.PrivateTabIndicator-root-45 {
+  background-color: #6DF0C2 !important;
+}
+
+@keyframes animate{
+  0%{
+      transform: translateY(0px);
+  }
+  45%{
+      transform: translateY(0px);
+  }
+  50%{
+      transform: translateY(-52px);
+  }
+  85%{
+      transform: translateY(-52px);
+  }
+  90%,100%{
+      transform: translateY(-104px);
+  }
+
+}
+/* Text Animation */
+@keyframes move-text {
+  0%{ bottom: -0.8em; opacity: 0;}
+  25%{ bottom: -0.6em;opacity: 0.4;}
+  50%{ bottom: -0.4em;opacity: 0.6;}
+  75%{ bottom: -0.2em;opacity: 0.8;}
+  100%{ bottom: 0;opacity: 1;}
+}
+
+/* List view Animation */
+@keyframes list-view-animateIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+/* Graph view Animantion */
+@keyframes graph-view-animateIn {
+  0% {
+    opacity: 0;
+    bottom: -0.8em;
+    transform: scale(1,0) translateY(40px) translateX(-10px);
+  }
+
+  100% {
+    bottom:0;
+    opacity: 1;
+  }
+}
+/* Heart Beat Animation  */
+@keyframes heartbeat
+{
+  0% {
+    transform: scale(0.8);
+  }
+  5% {
+    transform: scale(0.9);
+  }
+  10% {
+    transform: scale(0.8);
+  }
+  15% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+
+/* Number animation CSS starts */
+@property --n {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes animate {
+  from {
+    --n: var(--from);
+  }
+  to {
+    --n: var(--to);
+  }
+}
+
+.number {
+  animation: animate var(--duration) forwards var(--timing, linear);
+  counter-reset: num var(--n);
+}
+.number::before {
+  content: counter(num);
+}
+/* Number Animation CSS Ends */
+
+
+
+@keyframes topToBottom {
+  from {bottom: 200%;}
+  to {bottom: 40%;}
+}
+
+@keyframes leftToRight {
+  from {right: 150%;}
+  to {right: 50%;}
+}
+
+@keyframes rightToLeft {
+  from {left: 150%;}
+  to {left: 50%;}
+}
+
+@keyframes bottomToTop {
+  from {top: 200%;}
+  to {top: 42%;}
+}
+
+
+@keyframes codxLogoZoomIn {
+  0%   {visibility: visible; }
+  20%  { top:30%;left: 50%; }
+  40%  { top:30%;left: 50%; }
+  100%  { left: 8.4rem;top: 30px; visibility: visible;}
+}
+
+@keyframes moveToTop {
+  from {left: 50%;}
+  to {left: 0;top: 0; transform:unset; }
+}
+
+
+@keyframes textAnimation {
+  to   { visibility: visible; }
+}
+
+@keyframes app-table-animateIn {
+  0% {
+    transform: scale(1,0) translateY(40px) translateX(-10px);
+    visibility: visible;
+  }
+
+  100% {
+    visibility: visible;
+  }
+
+}
+

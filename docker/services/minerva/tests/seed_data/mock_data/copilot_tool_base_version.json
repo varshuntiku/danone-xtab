@@ -1,0 +1,8 @@
+[
+    {
+        "id": 1,
+        "name": "v1",
+        "desc": "Needs explicit listener or serve. Rigid in terms of the structure of the codebase.",
+        "config": {"path": "/default_tool"}
+    }
+]

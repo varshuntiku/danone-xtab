@@ -1,0 +1,135 @@
+ [
+            { "name": "Strategy & Planning", "logo": "CPGStrategyPlanningIcon", "altText": "Strategy & Planning", "industry": "CPG", "order_by": 0, "color": "#FFE096" },
+            { "name": "Finance & Procurement", "logo": "CPGFinanceProcurementIcon", "altText": "Finance & Procurement", "industry": "CPG", "order_by": 1, "color":"#54A0FF"  },
+            { "name": "Supply Chain", "logo": "CPGSupplyChainIcon", "altText": "Supply Chain", "industry": "CPG", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Marketing", "logo": "CPGMarketingIcon", "altText": "Marketing", "industry": "CPG", "order_by": 3, "color":"#6DF0C2"  },
+            { "name": "Revenue Management", "logo": "CPGRevenueManagementIcon", "altText": "Revenue Management", "industry": "CPG", "order_by": 4, "color":"#FF9FF3"  },
+            { "name": "Consumer Insights", "logo": "CPGConsumerInsightsIcon", "altText": "Consumer Insights", "industry": "CPG", "order_by": 5,"color":"#98C6FF" },
+            { "name": "R&D", "logo": "CPGConsumerInsightsIcon", "altText": "R&D", "industry": "CPG", "order_by": 6,"color":"#98C6FF" },
+
+            { "name": "Underwriting & Pricing", "logo": "InsuranceUnderwritingPricingIcon", "altText": "Underwriting & Pricing", "industry": "Insurance", "order_by": 0, "color":"#FFE096" },
+            { "name": "Claims Management", "logo": "InsuranceClaimsIcon", "altText": "Claims", "industry": "Insurance", "order_by": 1, "color":"#54A0FF" },
+            { "name": "Marketing & Customer Insights", "logo": "InsuranceMarketingCustomerIcon", "altText": "Marketing & Customer Insights", "industry": "Insurance", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Distribution", "logo": "InsuranceDistributionIcon", "altText": "Distribution", "industry": "Insurance", "order_by": 3, "color":"#6DF0C2" },
+
+            { "name": "Finance & Procurement", "logo": "RetailFinanceProcurementIcon", "altText": "Finance & Procurement", "industry": "Retail", "order_by": 0, "color":"#FFE096" },
+            { "name": "Supply Chain", "logo": "RetailSupplyChainIcon", "altText": "Supply Chain", "industry": "Retail", "order_by": 1, "color":"#54A0FF" },
+            { "name": "Merchandising & Store Ops", "logo": "RetailMerchandisingIcon", "altText": "Merchandising & Store Operations", "industry": "Retail", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Pricing", "logo": "RetailPricingIcon", "altText": "Pricing", "industry": "Retail", "order_by": 3, "color":"#6DF0C2" },
+            { "name": "Marketing", "logo": "RetailMarketingIcon", "altText": "Marketing", "industry": "Retail", "order_by": 4, "color":"#FF9FF3" },
+            { "name": "Customer & Digital Insights", "logo": "RetailCustomerInsightsIcon", "altText": "Customer & Digital Insights", "industry": "Retail", "order_by": 5,"color":"#98C6FF" },
+
+            { "name": "Sourcing", "logo": "AutomotiveProcurementIcon", "altText": "Sourcing", "industry": "Manufacturing", "order_by": 0, "color":"#FFE096" },
+            { "name": "Manufacturing & Engineering", "logo": "ManufacturingEngineeringIcon", "altText": "Manufacturing & Engineering", "industry": "Manufacturing", "order_by": 1, "color":"#54A0FF" },
+            { "name": "Supply Chain", "logo": "ManufacturingSupplyChainIcon", "altText": "Supply Chain", "industry": "Manufacturing", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Distribution", "logo": "InsuranceDistributionIcon", "altText": "Distribution", "industry": "Manufacturing", "order_by": 3, "color":"#6DF0C2" },
+            { "name": "Sales & Marketing", "logo": "ManufacturingSalesMktgIcon", "altText": "Sales & Marketing", "industry": "Manufacturing", "order_by": 4, "color":"#FF9FF3" },
+            { "name": "After Sales & Support", "logo": "TechnologyCustomerServiceIcon", "altText": "After Sales & Support", "industry": "Manufacturing", "order_by": 5,"color":"#98C6FF" },
+
+            { "name": "Sourcing", "logo": "AutomotiveProcurementIcon", "altText": "Sourcing", "industry": "Automotive", "order_by": 0, "color":"#FFE096" },
+            { "name": "Manufacturing & Engineering", "logo": "AutomotiveManufacturingIcon", "altText": "Manufacturing & Engineering", "industry": "Automotive", "order_by": 1, "color":"#54A0FF" },
+            { "name": "Supply Chain", "logo": "AutomotiveSupplyChainIcon", "altText": "Supply Chain", "industry": "Automotive", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Dealership & Distribution", "logo": "AutomotiveDealershipIcon", "altText": "Dealership & Distribution", "industry": "Automotive", "order_by": 3, "color":"#6DF0C2" },
+            { "name": "Sales & Marketing", "logo": "AutomotiveSalesMktgIcon", "altText": "Sales & Marketing", "industry": "Automotive", "order_by": 4, "color":"#FF9FF3" },
+            { "name": "After Sales & Support", "logo": "AutomotiveServiceIcon", "altText": "After Sales & Support", "industry": "Automotive", "order_by": 5,"color":"#98C6FF" },
+
+            { "name": "R&D", "logo": "TechnologyResearchDevelopment", "altText": "R&D", "industry": "Technology", "order_by": 0, "color":"#FFE096" },
+            { "name": "Finance & Procurement", "logo": "RetailFinanceProcurementIcon", "altText": "Finance & Procurement", "industry": "Technology", "order_by": 1, "color":"#54A0FF" },
+            { "name": "Manufacturing & Supply Chain", "logo": "AutomotiveSupplyChainIcon", "altText": "Manufacturing & Supply Chain", "industry": "Technology", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Marketing", "logo": "RetailMarketingIcon", "altText": "Marketing", "industry": "Technology", "order_by": 3, "color":"#6DF0C2" },
+            { "name": "Distribution & Sales", "logo": "TechnologyDistributionIcon", "altText": "Distribution & Sales", "industry": "Technology", "order_by": 4, "color":"#FF9FF3" },
+            { "name": "CRM & Customer Support", "logo": "TechnologyCustomerServiceIcon", "altText": "CRM & Customer Support", "industry": "Technology", "order_by": 5,"color":"#98C6FF" },
+
+            { "name": "Sales & Pricing", "logo": "TechnologySalesIcon", "altText": "Sales & Pricing", "industry": "Telecom", "order_by": 0, "color":"#FFE096" },
+            { "name": "Marketing", "logo": "RetailMarketingIcon", "altText": "Marketing", "industry": "Telecom", "order_by": 1, "color":"#54A0FF" },
+            { "name": "Customer Insights", "logo": "AutomotiveSupplyChainIcon", "altText": "Customer Insights", "industry": "Telecom", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Network Operations", "logo": "AutomotiveDealershipIcon", "altText": "Network Operations", "industry": "Telecom", "order_by": 3 , "color":"#6DF0C2" },
+            { "name": "Customer Support", "logo": "TechnologyCustomerServiceIcon", "altText": "Customer Support", "industry": "Telecom", "order_by": 4, "color":"#FF9FF3" },
+            { "name": "Retention", "logo": "TechnologyRetentionIcon", "altText": "Retention", "industry": "Telecom", "order_by": 5,"color":"#98C6FF" },
+
+            { "name": "Drug Development", "logo": "PharmaResearchDevelopment", "altText": "R&D - Drug Development", "industry": "Pharma", "order_by": 0, "color":"#FFE096" },
+            { "name": "Market Access", "logo": "PharmaMarketAccess", "altText": "Market Access", "industry": "Pharma", "order_by": 1, "color":"#54A0FF" },
+            { "name": "Manufacturing", "logo": "PharmaManufacturing", "altText": "Manufacturing", "industry": "Pharma", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Distribution", "logo": "PharmaDistribution", "altText": "Distribution", "industry": "Pharma", "order_by": 3 , "color":"#6DF0C2" },
+            { "name": "Commercial & Marketing", "logo": "PharmaMarketing", "altText": "Commercial & Marketing", "industry": "Pharma", "order_by": 4, "color":"#FF9FF3" },
+            { "name": "Patient Insights", "logo": "PharmaPatientInsights", "altText": "Patient Insights", "industry": "Pharma", "order_by": 5 ,"color":"#98C6FF" },
+            { "name": "R&D", "logo": "PharmaPatientInsights", "altText": "R&D", "industry": "Pharma", "order_by": 6 ,"color":"#98C6FF" },
+
+            { "name": "Supply & Procurement", "logo": "RetailFinanceProcurementIcon", "altText": "Supply & Procurement ", "industry": "Fashion Retail", "order_by": 0, "color":"#FFE096" },
+            { "name": "Merchandising & Store Ops", "logo": "RetailMerchandisingIcon", "altText": "Merchandising & Store Ops", "industry": "Fashion Retail", "order_by": 1, "color":"#54A0FF" },
+            { "name": "Marketing", "logo": "RetailMarketingIcon", "altText": "Marketing", "industry": "Fashion Retail", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Sales", "logo": "FashionRetailSalesIcon", "altText": "Sales", "industry": "Fashion Retail", "order_by": 3, "color":"#6DF0C2" },
+            { "name": "Fulfilment", "logo": "FashionRetailFulfilmentIcon", "altText": "Fulfilment", "industry": "Fashion Retail", "order_by": 4, "color":"#FF9FF3" },
+            { "name": "Digital Insights", "logo": "RetailCustomerInsightsIcon", "altText": "Digital Insights", "industry": "Fashion Retail", "order_by": 5,"color":"#98C6FF" },
+
+            { "name": "Data Consolidation Layer", "logo": "RetailCustomerInsightsIcon", "altText": "Data Consolidation Layer", "industry": "Spend Analytics", "order_by": 5,"color":"#98C6FF" },
+            { "name": "ML Layer", "logo": "RetailCustomerInsightsIcon", "altText": "ML Layer", "industry": "Spend Analytics", "order_by": 5,"color":"#98C6FF" },
+            { "name": "Consumption Layer", "logo": "RetailCustomerInsightsIcon", "altText": "Consumption Layer", "industry": "Spend Analytics", "order_by": 5,"color":"#98C6FF" },
+
+            { "name": "Data Consolidation Layer", "logo": "RetailFinanceProcurementIcon", "altText": "Data Consolidation Layer", "industry": "Customer Analytics", "order_by": 0,"color":"#FFE096" },
+            { "name": "ML Layer", "logo": "ManufacturingSupplyChainIcon", "altText": "ML Layer", "industry": "Customer Analytics", "order_by": 1,"color":"#9F7DE1" },
+            { "name": "Consumption Layer", "logo": "RetailMarketingIcon", "altText": "Consumption Layer", "industry": "Customer Analytics", "order_by": 2,"color":"#FF9FF3" },
+
+            { "name": "Performance", "logo": "CPGRevenueManagementIcon", "altText": "Performance", "industry": "Revenue Management", "order_by": 0,"color":"#FFE096" },
+            { "name": "Pricing", "logo": "InsuranceClaimsIcon", "altText": "Pricing", "industry": "Revenue Management", "order_by": 1,"color":"#9F7DE1" },
+            { "name": "Promotion", "logo": "ManufacturingSalesMktgIcon", "altText": "Promotion", "industry": "Revenue Management", "order_by": 2,"color":"#FF9FF3" },
+            { "name": "Distribution", "logo": "CPGSupplyChainIcon", "altText": "Distribution", "industry": "Revenue Management", "order_by": 3,"color":"#54A0FF" },
+            { "name": "Assortment", "logo": "RetailMerchandisingIcon", "altText": "Assortment", "industry": "Revenue Management", "order_by": 4,"color":"#98C6FF" },
+
+            { "name": "Consumer Insights", "logo": "CPGConsumerInsightsIcon", "altText": "Consumer Insights", "industry": "E-Commerce", "order_by": 1,"color":"#98C6FF" },
+            { "name": "Supply Chain", "logo": "CPGSupplyChainIcon", "altText": "Supply Chain", "industry": "E-Commerce", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Merchandizing", "logo": "CPGFinanceProcurementIcon", "altText": "Merchandizing", "industry": "E-Commerce", "order_by": 3, "color":"#54A0FF"  },
+            { "name": "Marketing", "logo": "CPGMarketingIcon", "altText": "Marketing", "industry": "E-Commerce", "order_by": 4, "color":"#6DF0C2"  },
+            { "name": "Customer experience", "logo": "CPGRevenueManagementIcon", "altText": "Customer experience", "industry": "E-Commerce", "order_by": 5, "color":"#FF9FF3"  },
+
+            { "name": "Operational Efficiency", "logo": "CPGConsumerInsightsIcon", "altText": "Operational Efficiency", "industry": "Banking", "order_by": 1,"color":"#98C6FF" },
+            { "name": "Risk Management", "logo": "CPGSupplyChainIcon", "altText": "Risk Management", "industry": "Banking", "order_by": 2, "color":"#9F7DE1"  },
+            { "name": "Top Line Growth", "logo": "CPGFinanceProcurementIcon", "altText": "Top-line Growth", "industry": "Banking", "order_by": 3, "color":"#54A0FF"  },
+            { "name": "Personalization", "logo": "CPGMarketingIcon", "altText": "Personalization", "industry": "Banking", "order_by": 4, "color":"#6DF0C2"  },
+            { "name": "Compliance Analytics", "logo": "CPGRevenueManagementIcon", "altText": "Compliance Analytics", "industry": "Banking", "order_by": 5, "color":"#FF9FF3"  },
+            { "name": "Data Monetization", "logo": "CPGRevenueManagementIcon", "altText": "Data Monetization", "industry": "Banking", "order_by": 6, "color":"#FF9FF3"  },
+            { "name": "CRM", "logo": "CPGRevenueManagementIcon", "altText": "CRM", "industry": "Banking", "order_by": 7, "color":"#FF9FF3"  },
+
+            { "name": "Growth & Planning", "logo": "CPGRevenueManagementIcon", "altText": "Codx Revenue Management", "industry": "Codx Revenue Management", "order_by": 7, "color":"#FF9FF3"  },
+
+            {
+                "name": "Experimentation",
+                "logo": "RetailCustomerInsightsIcon",
+                "altText": "Experimentation",
+                "industry": "Revenue Management",
+                "order_by": 4,
+                "color": "#98C6FF"
+            },
+            {
+                "name": "Data Harmonization Layer",
+                "logo": "RetailFinanceProcurementIcon",
+                "altText": "Data Harmonization Layer",
+                "industry": "POS Data Suite",
+                "order_by": 0,
+                "color": "#FFE096"
+            },
+            {
+                "name": "Data Quality Management Layer",
+                "logo": "ManufacturingSupplyChainIcon",
+                "altText": "Data Quality Management Layer",
+                "industry": "POS Data Suite",
+                "order_by": 1,
+                "color": "#9F7DE1"
+            },
+            {
+                "name": "Analytics Consumption Layer",
+                "logo": "RetailMarketingIcon",
+                "altText": "Analytics Consumption Layer",
+                "industry": "POS Data Suite",
+                "order_by": 2,
+                "color": "#FF9FF3"
+            },
+            {
+                "name": "Total Portfolio Optimization",
+                "logo": "CPGConsumerInsightsIcon",
+                "altText": "Total Portfolio Optimization",
+                "industry": "Assortment and Distribution",
+                "order_by": 1,
+                "color": "#98C6FF"
+            }
+        ]

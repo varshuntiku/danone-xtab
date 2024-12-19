@@ -1,0 +1,322 @@
+{
+    "data": {
+        "id": 1,
+        "name": "Pricing - Mid Year Review",
+        "problem_definition_id": 5,
+        "metrics": [
+            {
+                "id": 1,
+                "name": "Annual Plan",
+                "data": [
+                    {
+                        "label": "Potential Impact",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "$14M"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Impact Realised",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "$3.2M"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "% Complete",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "60%"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Current Stage",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "Step 4"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Next Step",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "Step 5"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Approved By",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "Samuel Lee"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Mid year review",
+                "data": [
+                    {
+                        "label": "Potential Impact",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "$14M"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Impact Realised",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "$3.2M"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "% Complete",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "40%"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Current Stage",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "Step 4"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Next Step",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "Step 5"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Approved By",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "Samuel Lee"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Measurement",
+                "data": [
+                    {
+                        "label": "Potential Impact",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "$14M"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Impact Realised",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "$3.2M"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "% Complete",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "40%"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Current Stage",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "Step 4"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Next Step",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "Step 5"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "label": "Approved By",
+                        "leftLevel": {
+                            "data": [
+                                {
+                                    "type": "text",
+                                    "data": "Samuel Lee"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "kpiOverview": {
+            "intelligence": [
+                {
+                    "label": "KPIs",
+                    "value": 12,
+                    "showGraph": true,
+                    "graphData": {
+                        "x": [
+                            "01-06-2023",
+                            "02-06-2023",
+                            "03-06-2023",
+                            "04-06-2023",
+                            "05-06-2023",
+                            "06-06-2023",
+                            "07-06-2023"
+                        ],
+                        "y": [0, 65, 80, 55, 60, 95, 10]
+                    },
+                    "graphLabel": "Quality"
+                },
+                {
+                    "label": "Models",
+                    "value": 4,
+                    "showGraph": true,
+                    "graphData": {
+                        "x": [
+                            "01-06-2023",
+                            "02-06-2023",
+                            "03-06-2023",
+                            "04-06-2023",
+                            "05-06-2023",
+                            "06-06-2023",
+                            "07-06-2023"
+                        ],
+                        "y": [0, 65, 70, 75, 80, 95, 0]
+                    },
+                    "graphLabel": "Accuracy"
+                },
+                {
+                    "label": "Decisions",
+                    "value": 7,
+                    "showGraph": false,
+                    "graphData": [],
+                    "graphLabel": ""
+                }
+            ],
+            "datasets": [
+                {
+                    "label": "Sources",
+                    "serial": 4,
+                    "freshness": "5hr",
+                    "drift": "5%",
+                    "graphData": {
+                        "x": [
+                            "01-06-2023",
+                            "02-06-2023",
+                            "03-06-2023",
+                            "04-06-2023",
+                            "05-06-2023",
+                            "06-06-2023",
+                            "07-06-2023"
+                        ],
+                        "y": [0, 85, 85, 90, 95, 95, 0]
+                    },
+                    "graphLabel": "Quality"
+                },
+                {
+                    "label": "Consumption",
+                    "serial": 2,
+                    "freshness": "5hr",
+                    "drift": "1%",
+                    "graphData": {
+                        "x": [
+                            "01-06-2023",
+                            "02-06-2023",
+                            "03-06-2023",
+                            "04-06-2023",
+                            "05-06-2023",
+                            "06-06-2023",
+                            "07-06-2023"
+                        ],
+                        "y": [0, 85, 85, 90, 95, 95, 0]
+                    },
+                    "graphLabel": "Quality"
+                }
+            ],
+            "infrastructure": [
+                {
+                    "label": "Storage",
+                    "value": "$0.6M"
+                },
+                {
+                    "label": "Compute",
+                    "value": "$0.75M"
+                }
+            ]
+        }
+    }
+}

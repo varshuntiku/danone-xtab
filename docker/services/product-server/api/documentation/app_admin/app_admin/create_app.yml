@@ -1,0 +1,41 @@
+summary: "Create a new app"
+tags:
+  - product/AppAdmin
+description: "Creates a new app with the given details"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  description: Details to create the new app
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [app_name, industry, industry_id, contact_email]
+        properties:
+          app_name:
+            type: "string"
+          industry:
+            type: "string"
+          industry_id:
+            type: "interger"
+          function:
+            type: "string"
+          function_id:
+            type: "integer"
+          contact_email:
+            type: "string"
+        example: {"app_name":"App Local-2","industry":"Industry","industry_id":1,"function":"","function_id":null,"contact_email":"abc@themathcompany.com"}
+
+responses:
+  200:
+    description: "Created successfully"
+    schema:
+      type: "object"
+  500:
+    description: "Error while creating"
+    schema :
+      type: "object"
+      example:  {'error': 'Error in creating the application'}

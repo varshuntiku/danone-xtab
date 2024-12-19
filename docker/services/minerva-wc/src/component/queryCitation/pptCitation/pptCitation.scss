@@ -1,0 +1,130 @@
+@import '../../../styles/util.scss';
+.MinervaWC .MinervaPPTCitation {
+    display: grid;
+    grid-template-columns: spacing(128) 1fr;
+    margin-top: spacing(20);
+    // aspect-ratio: 16/9;
+
+    &.MinervaPPTCitation-single-item-root {
+        grid-template-columns: 1fr;
+        & .MinervaPPTCitation-preview {
+            border-left: 0;
+        }
+    }
+
+    & .MinervaPPTCitation-list {
+        display: flex;
+        flex-direction: column;
+        overflow-y: scroll;
+        // margin: auto;
+        // height: calc(100% - var(--minerva-nuclios-border-gap, 0.8em));
+        padding: spacing(16, 12, 16, 12);
+        gap: spacing(12);
+
+        & .MinervaPPTCitation-list-item {
+            display: flex;
+            gap: spacing(8);
+            container-type: inline-size;
+            cursor: pointer;
+
+            &.MinervaPPTCitation-list-item-active {
+                &> div {
+                    outline: spacing(1) solid var(--minerva-text-color-50);
+
+                }
+            }
+
+            & p {
+                width: spacing(8);
+                font-size: spacing(12);
+            }
+
+            @container (min-width: 250px) {
+                & p {
+                  font-size: spacing(14);
+                }
+              }
+
+        }
+    }
+
+    & .MinervaPPTCitation-preview {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        flex: 1;
+        height: calc(100% - var(--minerva-nuclios-border-gap, 0.8em));
+        padding: spacing(16);
+        border-left: spacing(1) solid;
+        border-color: var(--minerva-nuclios-border-color, var(--minerva-text-color-30));
+        overflow: hidden;
+        margin: auto 0;
+        gap: spacing(4);
+
+        & .MinervaImageRendererContainer {
+            flex: 1;
+        }
+
+        & .MinervaImageRendererContainer .MinervaImage-wrapper img {
+            object-fit: contain;
+            aspect-ratio: 16/9;
+        }
+
+
+        & .MinervaPPTCitation-hyperlink-container {
+            display: flex;
+            gap: spacing(3.2);
+
+            & svg {
+                vertical-align: sub;
+            }
+
+            & a {
+                display: flex;
+                text-decoration: none;
+                max-width: 100%;
+                align-self: center;
+
+                .MinervaPPTCitation-source-icon {
+                    flex: 1;
+                    max-width: fit-content;
+                    width: spacing(32);
+                    height: spacing(32);
+                }
+
+                & .MinervaPPTCitation-document-name {
+                    font-size: spacing(20);
+                    letter-spacing: spacing(0.35);
+                    font-weight: 500;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    align-self: center;
+                    flex: 8;
+                    text-decoration: underline;
+                    max-width: fit-content;
+                }
+
+                & span {
+                    align-self: center;
+                }
+
+                .MinervaPPTCitation-open-in-new {
+                    align-self: center;
+                }
+            }
+
+            & .MinervaPPTCitation-document-name {
+                font-size: spacing(20);
+                letter-spacing: spacing(0.35);
+                font-weight: 500;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                align-self: center;
+                flex: 8;
+                max-width: fit-content;
+            }
+        }
+    }
+}

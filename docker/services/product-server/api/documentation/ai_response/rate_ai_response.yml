@@ -1,0 +1,45 @@
+summary: "Rate the generated ai insight for the given app_id and screen_id"
+tags:
+  - product/AiResponse
+description: "Rate a new generated ai insight response for the given app_id and screen_id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  description: "Accepts the application ID for which the insight have to be rated"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  description: "Accepts the screen ID for which the insight have to be rated"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [rating, username]
+        properties:
+          rating:
+            type: "integer"
+          username:
+            type: "string"
+        example: { "rating": 5, "username": "Test User"}
+
+responses:
+  200:
+    description: "Return successfully saved rating for insight"
+    schema:
+      type: "object"
+    example: {"status": "success"}
+  500:
+    description: "Error while saving the rating for insight"
+

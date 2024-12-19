@@ -1,0 +1,39 @@
+#jp-MainLogo {
+    display: none;
+}
+
+body {
+    background: transparent;
+}
+
+.jp-SideBar.lm-TabBar, #jp-down-stack .lm-TabBar {
+    background: transparent;
+}
+
+.jp-StatusBar-Widget {
+    background: transparent;
+}
+
+#jp-bottom-panel {
+    background: transparent;
+}
+
+#jp-top-panel {
+    background: transparent;
+}
+
+.jp-Toolbar {
+    background: transparent;
+}
+
+#jp-menu-panel {
+    background: transparent;
+}
+
+.lm-MenuBar {
+    background: transparent;
+}
+
+.jp-SideBar .lm-TabBar-tab:not(.lm-mod-current), #jp-down-stack .lm-TabBar-tab:not(.lm-mod-current) {
+    background: transparent;
+}

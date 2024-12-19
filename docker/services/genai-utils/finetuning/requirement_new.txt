@@ -1,0 +1,5 @@
+tiktoken
+trl>=0.7.6
+sentence_transformers
+transformers_stream_generator
+jsonlines

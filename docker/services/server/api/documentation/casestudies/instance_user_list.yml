@@ -1,0 +1,34 @@
+summary: "Get all users"
+tags:
+  - platform/Case Studies
+description: "This returns  list of all the users with full name and ID"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "project_id"
+  description: "Project ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: [
+          {
+            "id": 123,
+            "name": "userName1"
+          },
+          {
+            "id": 124,
+            "name": "userName2"
+          }
+        ]
+  500:
+    description: "Error in query"

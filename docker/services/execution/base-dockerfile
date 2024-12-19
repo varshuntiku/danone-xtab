@@ -1,0 +1,35 @@
+FROM continuumio/miniconda3:4.10.3p0-alpine
+
+LABEL maintainer anoop.s@themathcompany.com
+LABEL org mathco
+LABEL platform codex
+LABEL image_type base_image_dynamic_viz_exec_env
+
+ENV LANG C.UTF-8
+
+RUN apk --no-cache update \
+    && apk --no-cache upgrade \
+    && apk add --no-cache $PHPIZE_DEPS \
+    git bash build-base libffi-dev openssl-dev bzip2-dev zlib-dev readline-dev sqlite-dev \
+    gcc g++ gfortran lapack-dev musl-dev jpeg-dev freetype-dev libpng-dev \
+    nginx uwsgi uwsgi-python3 supervisor mariadb-dev postgresql-dev curl git py3-gunicorn \
+    ca-certificates linux-headers unixodbc-dev gcc libressl-dev musl-dev gpgme-dev libc-dev
+
+# Install python requirements for exec service
+COPY requirements.txt /
+RUN source ~/.bashrc \
+    && conda update -n base -c defaults conda \
+    && conda create -n codx_exec_service python=3.7 \
+    && conda activate codx_exec_service \
+    && pip3 install -r requirements.txt
+
+# Create default conda environemnts for different python versions
+# python versions - 3.7.13, 3.8.10, 3.9.2
+COPY base_requirements /
+RUN source ~/.bashrc \
+    && conda create -n base_3.7.13 python=3.7.13 \
+    && conda install -n base_3.7.13 -c conda-forge --file py37requirements.txt \
+    && conda create -n base_3.8.10 python=3.8.10 \
+    && conda install -n base_3.8.10 -c conda-forge --file py38requirements.txt \
+    && conda create -n base_3.9.2 python=3.9.2 \
+    && conda install -n base_3.9.2 -c conda-forge --file py39requirements.txt

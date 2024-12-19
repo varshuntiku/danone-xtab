@@ -1,0 +1,18 @@
+.MinervaWC .MinervaAvatar {
+    background-color: var(--minerva-text-color-10);
+    place-content: center;
+    display: grid;
+    height: spacing(32);
+    width: spacing(32);
+    border-radius: 50%;
+    overflow: hidden;
+    svg {
+        fill: var(--minerva-text-color);
+        width: spacing(16);
+        height: spacing(16);
+    }
+    img {
+        height: spacing(32);
+        width: spacing(32);
+    }
+}

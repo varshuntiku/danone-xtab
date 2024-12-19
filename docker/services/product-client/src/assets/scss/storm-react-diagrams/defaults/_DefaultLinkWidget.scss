@@ -1,0 +1,38 @@
+.srd-default-link{
+
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 24;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  path{
+    stroke: #AEACAF !important;
+  }
+
+  &--path-selected{
+    stroke: #AEACAF !important;
+    stroke-dasharray: 10,2;
+    animation: dash 1s linear infinite;
+  }
+
+  &__label {
+    pointer-events: none;
+
+    > div{
+      display: inline-block;
+      position: absolute;
+    }
+  }
+
+  &__point{
+    fill: rgba(white,0.5);
+  }
+
+  &--point-selected{
+    fill: #AEACAF;
+  }
+}

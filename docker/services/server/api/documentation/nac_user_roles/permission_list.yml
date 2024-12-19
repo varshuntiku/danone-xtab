@@ -1,0 +1,21 @@
+summary: "List of nac role permissions"
+tags:
+  - platform/NACUserRoles
+description: "This returns list of all permissions for NAC user roles"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: [
+        {
+          "id": 2,
+          "name": "CREATE_VARIABLE",
+          "user_role_type": "SYSTEM",
+          "created_by": "--"
+        }
+      ]

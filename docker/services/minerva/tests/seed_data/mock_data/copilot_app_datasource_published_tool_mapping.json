@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "datasource_id": 1,
+        "app_published_tool_id": 1,
+        "key": null,
+        "config": {
+            "datasource_type": "sql",
+            "datasource_table": [
+                "cpg.cpgnew_v2"
+            ]
+        }
+    }
+]

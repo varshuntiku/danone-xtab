@@ -1,0 +1,185 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "label": "Model Drift Monitoring",
+            "sub_headers": [
+                "Quality Report",
+                "Treatment Recommendations",
+                "Insights on Data issues"
+            ],
+            "popup_info": {
+                "app_description": "Application description goes here",
+                "kpi_insights": [
+                    {
+                        "insight": "Business Insights 1",
+                        "insight_sub_headers": [
+                            "Anamoly Detection",
+                            "Isolate promo vs. price impact"
+                        ],
+                        "insight_value": "+2.2% YoY"
+                    },
+                    {
+                        "insight": "Business Insights 2",
+                        "insight_sub_headers": [
+                            "Anamoly Detection"
+                        ],
+                        "insight_value": "+0.5% YoY"
+                    },
+                    {
+                        "insight": "Business Insights 2",
+                        "insight_sub_headers": [
+                            "Anamoly Detection"
+                        ],
+                        "insight_value": "+0.5% YoY"
+                    },
+                    {
+                        "insight": "Business Insights 3",
+                        "insight_sub_headers": [
+                            "Anamoly Detection"
+                        ],
+                        "insight_value": "+3.5% YoY"
+                    },
+                    {
+                        "insight": "Business Insights 4",
+                        "insight_sub_headers": [
+                            "Anamoly Detection"
+                        ],
+                        "insight_value": "+1.5% YoY"
+                    }
+                ]
+            },
+            "tag": "Pricing",
+            "functions": [
+                "fn_node_1"
+            ],
+            "workflows": [
+                "wf_node_1"
+            ],
+            "app_id": 1,
+            "app_name": "Marketing & Media Planner",
+            "is_active": true,
+            "is_selected": false
+        },
+        {
+            "id": 2,
+            "label": "Model Quality Monitoring",
+            "sub_headers": [
+                "Cost Overview",
+                "Budget & Forecast",
+                "Optimiser & Recommender"
+            ],
+            "popup_info": {
+                "app_description": "Application description goes here",
+                "kpi_insights": [
+                    {
+                        "insight": "Business Insights 1",
+                        "insight_sub_headers": [
+                            "Anamoly Detection",
+                            "Isolate promo vs. price impact"
+                        ],
+                        "insight_value": "+2.2% YoY"
+                    },
+                    {
+                        "insight": "Business Insights 2",
+                        "insight_sub_headers": [
+                            "Anamoly Detection"
+                        ],
+                        "insight_value": "+0.5% YoY"
+                    }
+                ]
+            },
+            "tag": "Pricing",
+            "functions": [
+                "fn_node_1"
+            ],
+            "workflows": [
+                "wf_node_2"
+            ],
+            "app_id": 26,
+            "app_name": "Integrated Demand Forecasting",
+            "is_active": true,
+            "is_selected": false
+        },
+        {
+            "id": 3,
+            "label": "Model Failure Prediction",
+            "sub_headers": [
+                "Optimization algorithm",
+                "White space analysis",
+                "Driver analysis with pricing & promo levers"
+            ],
+            "popup_info": {
+                "app_description": "Application description goes here",
+                "kpi_insights": [
+                    {
+                        "insight": "Business Insights 1",
+                        "insight_sub_headers": [
+                            "Anamoly Detection",
+                            "Isolate promo vs. price impact"
+                        ],
+                        "insight_value": "+2.2% YoY"
+                    },
+                    {
+                        "insight": "Business Insights 2",
+                        "insight_sub_headers": [
+                            "Anamoly Detection"
+                        ],
+                        "insight_value": "+0.5% YoY"
+                    }
+                ]
+            },
+            "tag": "Pricing",
+            "functions": [
+                "fn_node_1"
+            ],
+            "workflows": [
+                "wf_node_1"
+            ],
+            "app_id": 1,
+            "app_name": "Marketing & Media Planner",
+            "is_active": true,
+            "is_selected": false
+        },
+        {
+            "id": 4,
+            "label": "Model Success Prediction",
+            "sub_headers": [
+                "Optimization algorithm",
+                "White space analysis",
+                "Driver analysis with pricing & promo levers"
+            ],
+            "popup_info": {
+                "app_description": "Application description goes here",
+                "kpi_insights": [
+                    {
+                        "insight": "Business Insights 1",
+                        "insight_sub_headers": [
+                            "Anamoly Detection",
+                            "Isolate promo vs. price impact"
+                        ],
+                        "insight_value": "+2.2% YoY"
+                    },
+                    {
+                        "insight": "Business Insights 2",
+                        "insight_sub_headers": [
+                            "Anamoly Detection"
+                        ],
+                        "insight_value": "+0.5% YoY"
+                    }
+                ]
+            },
+            "tag": "Pricing",
+            "functions": [
+                "fn_node_1"
+            ],
+            "workflows": [
+                "wf_node_1"
+            ],
+            "app_id": 1,
+            "app_name": "Marketing & Media Planner",
+            "is_active": true,
+            "is_selected": false
+        }
+    ]
+}

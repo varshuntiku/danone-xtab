@@ -1,0 +1,192 @@
+name: NUCLIOS-DEE-$(Date:ddMMyyyy)-$(Rev:r)-$(CodexProductAppVersion)
+trigger:
+  batch: true
+  branches:
+    include:
+      - dynamic-exec-env/base
+
+variables:
+  - group: frontend-environment-variables
+  - name: REACT_APP_JUPYTER_DEMO_TOKEN
+    value: $[variables.ReactAppJupyterDemoToken]
+  - name: REACT_APP_MATOMO_TOKEN
+    value: $[variables.ReactAppMatomoToken]
+  - name: REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING
+    value: $[variables.ReactAppApplicationInsightsConnectionString]
+  - name: REACT_APP_GOOGLE_MAPS_KEY
+    value: $[variables.ReactAppGoogleMapsKey]
+  - name: GENAI_APPROVAL_USERS
+    value: $[variables.GENAIAPPROVALUSERS]
+  - name: REACT_APP_GENAI_COOKBOOK_URL
+    value: $[variables.REACTAPPGENAICOOKBOOKURL]
+
+  - group: release-version
+  - name: CODEX_PRODUCT_APP_VERSION
+    value: $[variables.CodexProductAppVersion]
+
+  - group: GENAI-CERT
+  - name: GENAI_MATHCO_COMBINED_CERT
+    value: $[variables.GenaiCertCombined]
+
+  - group: dynamic-execution-environment-variables
+
+stages:
+  - stage: Generate_ConfigMaps
+    dependsOn: []
+    condition: always()
+    jobs:
+      - job: generate_dee_configMap
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - task: AzureCLI@2
+            displayName: Generate DEE Config Map
+            inputs:
+              azureSubscription: 'MIcrosoft Azure - Math (7b97259b-ed1f-4ebf-80e0-40d9ed2f0d3f)'
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                echo "apiVersion: v1" > dee-config-map.yaml
+                echo "kind: ConfigMap" >> dee-config-map.yaml
+                echo "metadata:" >> dee-config-map.yaml
+                echo "  name: $(DEE_CONFIGMAP_NAME)" >> dee-config-map.yaml
+                echo "  namespace: $(DEPLOYMENT_NAMESPACE)" >> dee-config-map.yaml
+                echo "data:" >> dee-config-map.yaml
+                echo "  ACCESS_TOKEN_EXPIRE_MINUTES: '$(ACCESS_TOKEN_EXPIRE_MINUTES)'" >> dee-config-map.yaml
+                echo "  ACCOUNT_LOCKOUT_DURATION: '$(ACCOUNT_LOCKOUT_DURATION)'" >> dee-config-map.yaml
+                echo "  ACR_NAME: $(ACR_NAME)" >> dee-config-map.yaml
+                echo "  ACR_RG: $(ACR_RG)" >> dee-config-map.yaml
+                echo "  ACR_URL: $(ACR_URL)" >> dee-config-map.yaml
+                echo "  ALLOWED_HEADERS: $(DEE_ALLOWED_HEADERS)" >> dee-config-map.yaml
+                echo "  ALLOWED_METHODS: $(DEE_ALLOWED_METHODS)" >> dee-config-map.yaml
+                echo "  ALLOWED_ORIGINS: $(DEE_ALLOWED_ORIGINS)" >> dee-config-map.yaml
+                echo "  API_VERSION: '$(API_VERSION)'" >> dee-config-map.yaml
+                echo "  APP_MODE: $(APP_MODE)" >> dee-config-map.yaml
+                echo "  APP_NAME: $(APP_NAME)" >> dee-config-map.yaml
+                echo "  CERT_PATH: $(CERT_PATH)" >> dee-config-map.yaml
+                echo "  CLUSTER_NAME: $(CLUSTER_NAME)" >> dee-config-map.yaml
+                echo "  DEBUG: '$(DEBUG)'" >> dee-config-map.yaml
+                echo "  DEPLOYMENT_NAMESPACE: $(DEPLOYMENT_NAMESPACE)" >> dee-config-map.yaml
+                echo "  DOCS_URL: $(DOCS_URL)" >> dee-config-map.yaml
+                echo "  FAILED_LOGIN_THRESHOLD: '$(FAILED_LOGIN_THRESHOLD)'" >> dee-config-map.yaml
+                echo "  FOLDER_PATH: $(FOLDER_PATH)" >> dee-config-map.yaml
+                echo "  GATEWAY_BASE_URL: $(GATEWAY_BASE_URL)" >> dee-config-map.yaml
+                echo "  INGRESS_SERVER_NAME: $(INGRESS_SERVER_NAME)" >> dee-config-map.yaml
+                echo "  INTERNAL_SERVICE_CONNECTION_ENABLED: $(INTERNAL_SERVICE_CONNECTION_ENABLED)" >> dee-config-map.yaml
+                echo "  JWT_ALGORITHM: $(JWT_ALGORITHM)" >> dee-config-map.yaml
+                echo "  JWT_ENCODE_ISSUER: $(JWT_ENCODE_ISSUER)" >> dee-config-map.yaml
+                echo "  KANIKO_SECRET_KEY_NAME: $(KANIKO_SECRET_KEY_NAME)" >> dee-config-map.yaml
+                echo "  REFRESH_TOKEN_EXPIRE_MINUTES: '$(REFRESH_TOKEN_EXPIRE_MINUTES)'" >> dee-config-map.yaml
+                echo "  RESOURCE_GROUP: $(RESOURCE_GROUP)" >> dee-config-map.yaml
+                echo "  ROOT_PATH: $(DEE_ROOT_PATH)" >> dee-config-map.yaml
+                cat dee-config-map.yaml
+
+          - task: PublishBuildArtifacts@1
+            displayName: Publish DEE Config Map
+            inputs:
+              PathtoPublish: 'dee-config-map.yaml'
+              ArtifactName: 'dee-config'
+
+
+  - stage: Build_Job
+    dependsOn: []
+    condition: succeeded()
+    jobs:
+      - job: check_folder
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - script: |
+              token=$(curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
+              https://login.microsoftonline.com/$(TenantId)/oauth2/token \
+              -d 'client_id=$(ClientId)' \
+              -d 'grant_type=client_credentials' \
+              -d 'resource=https://management.core.windows.net/' \
+              -d 'client_secret=$(ClientSecret)')
+              echo $token
+              access_token=$(echo $token | jq '.access_token')
+              echo "##vso[task.setvariable variable=access_token]$access_token"
+          - script: |
+              curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+              if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/dynamic-execution-environment") -eq 0 ]; then
+                echo "No code changes in DEE"
+                echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+              else
+                echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+                echo "Code Changes in DEE"
+              fi
+            name: checkFolderDEE
+          - script: |
+              curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+              if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/code-executor-service") -eq 0 ]; then
+                echo "No code changes in Code Executor Service"
+                echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+              else
+                echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+                echo "Code Changes in Code Executor Service"
+              fi
+            name: checkFolderCodeExecutorService
+
+
+      - job: Dynamic_Execution_Environment_Deployemnt
+        variables:
+          folderVar: $[dependencies.check_folder.outputs['checkFolderDEE.RunJob']]
+        dependsOn: check_folder
+        condition: eq(variables.folderVar, true)
+        steps:
+          - script: |
+              mkdir docker/services/dynamic-execution-environment/cert
+              cd docker/services/dynamic-execution-environment/cert
+              echo "$(GenaiCertCombined)" > genai.crt
+
+          - task: Docker@2
+            inputs:
+              containerRegistry: "Azure-CR"
+              repository: "dynamic-execution-environment"
+              command: "buildAndPush"
+              Dockerfile: "docker/services/dynamic-execution-environment/Dockerfile"
+              tags: latest
+            displayName: "Build & Push Image to ACR"
+            condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/dynamic-exec-env/base'))
+
+      - job: Code_Executor_Service_Deployemnt
+        variables:
+          folderVar: $[dependencies.check_folder.outputs['checkFolderCodeExecutorService.RunJob']]
+        dependsOn: check_folder
+        condition: eq(variables.folderVar, true)
+        steps:
+          - task: Docker@2
+            inputs:
+              containerRegistry: "Azure-CR"
+              repository: "code-executor-service"
+              command: "buildAndPush"
+              Dockerfile: "docker/code_executor.dockerfile"
+              tags: latest
+            displayName: "Build & Push Image to ACR"
+            condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/dynamic-exec-env/base'))
+
+          - task: AzureCLI@2
+            inputs:
+              azureSubscription: 'MIcrosoft Azure - Math (7b97259b-ed1f-4ebf-80e0-40d9ed2f0d3f)'
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                accountKey=$(az storage account keys list -g $(resourcegroupName) -n $(storageAccountName) --query [0].value -o tsv)
+                az storage directory create --name $(fileShareDirectoryName) --share-name $(fileShareName) --account-key $accountKey --account-name $(storageAccountName)
+                az storage directory create --name $(widgetFileShareDirectoryName) --share-name $(fileShareName) --account-key $accountKey --account-name $(storageAccountName)
+
+                az storage file upload-batch \
+                  --account-name "$(storageAccountName)" \
+                  --account-key "$accountKey" \
+                  --destination "$(fileShareName)" \
+                  --source "$(codeExecutorDirectory)"  \
+                  --destination-path "$(fileShareDirectoryName)"
+
+                az storage file upload-batch \
+                  --account-name "$(storageAccountName)" \
+                  --account-key "$accountKey" \
+                  --destination "$(fileShareName)" \
+                  --source "$(widgetFactoryDirectory)"  \
+                  --destination-path "$(widgetFileShareDirectoryName)"
+
+

@@ -1,0 +1,60 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  background-color: "black";
+}
+.svg {
+  margin-left: 90px;
+  position: relative;
+  display: flex;
+}
+.svg > div {
+  position: relative;
+  right: 16px;
+  top: 15px;
+}
+.hexagon1 {
+  position: relative;
+  top: 28px;
+  left: 12px;
+}
+.hexagon2 {
+  position: relative;
+  bottom: 28px;
+  left: 10px;
+}
+.second-connector {
+  transform: rotate(180deg);
+  position: relative;
+  right: 32px;
+  bottom: 5px;
+}
+.row1 {
+  display: flex;
+
+  justify-content: space-between;
+}
+.hexagon3 {
+  position: relative;
+  top: 23px;
+  left: 50px;
+}
+.row2 {
+  display: flex;
+
+  justify-content: space-between;
+}
+.hexagon4 {
+  position: relative;
+  bottom: 33px;
+  left: 46px;
+}
+.landing {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  width: 100vw;
+  height: 100vh;
+}

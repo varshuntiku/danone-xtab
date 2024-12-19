@@ -1,0 +1,95 @@
+{
+    "id": 573,
+    "input": "sales acorss barnds",
+    "output": {
+		"type": "sql",
+		"response": {
+			"text": "",
+			"sql_query": "",
+			"widgets": [
+			{
+				"type": "input-form",
+				"value": {
+					"layout": [
+						{
+							"grid": 12,
+							"element": "table-input",
+							"elementProps": {
+								"gridTableProps": {
+									"coldef": [
+										{
+											"headerName": "SKU",
+											"field": "sku",
+											"editable": false,
+											"cellRenderer": "text",
+											"align": "right"
+										},
+										{
+											"headerName": "Week",
+											"field": "week",
+											"editable": false,
+											"cellRenderer": "text"
+										},
+										{
+											"headerName": "Tactic",
+											"field": "tactic",
+											"editable": true,
+											"cellRenderer": "text",
+											"cellEditor": "select",
+											"cellEditorParams": {
+												"options": ["op 1", "op 2", "op 3"]
+											}
+										},
+										{
+											"headerName": "Promo Mechanism",
+											"field": "promo_mechanism",
+											"editable": true,
+											"cellRenderer": "text",
+											"cellEditor": "select",
+											"cellEditorParams": {
+												"options": ["p 1", "p 2", "p 3"]
+											}
+										},
+										{
+											"headerName": "Widget TDP",
+											"field": "tdp",
+											"editable": true,
+											"cellRenderer": "text",
+											"cellEditor": "input"
+										},
+										{
+											"headerName": "Base Price",
+											"field": "price",
+											"editable": false,
+											"cellRenderer": "text"
+										}
+									],
+									"rowData": [
+										{"sku": "sku 1", "week": "week 1", "tactic": "", "promo_mechanism": "", "tdp": "tdp 1", "price": "102"},
+										{"sku": "sku 2", "week": "week 2", "tactic": "", "promo_mechanism": "", "tdp": "tdp 2", "price": "103"},
+										{"sku": "sku 3", "week": "week 3", "tactic": "", "promo_mechanism": "", "tdp": "tdp 3", "price": "104"}
+									],
+									"gridOptions": {
+										"outerActions": [
+											null,
+											{
+												"name": "Simulate",
+												"variant": "outlined",
+												"size": "small"
+											}
+										]
+									}
+								}
+							}
+						}
+					]
+				}
+			}
+			],
+			"processed_query": "sales acorss barnds"
+		}
+    },
+    "window_id": 61,
+    "feedback": null,
+	"status": "resolved"
+}

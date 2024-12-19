@@ -1,0 +1,25 @@
+{
+    "MODEL_NAME" : null,
+    "CHATCOMPLETION_MODEL" : true,
+    "EMBEDDING_MODEL" : false,
+    "QUANTIZATION" : false,
+    "LOAD_IN_8BIT" : true,
+    "LOAD_IN_4BIT" : false,
+    "LLM_INT8_THRESHOLD" : 6.0,
+    "LLM_INT8_HAS_FP16_WEIGHTS" : false,
+    "BNB_4BIT_QUANT_TYPE" : "fp4",
+    "BNB_4BIT_USE_DOUBLE_QUANT" :  false,
+    "EMBEDDING_MODEL_NAME" : null,
+    "MODEL_PATH" : "/data/repo",
+    "TEXTGENERATION_MODEL" : false,
+    "LF_CHAT": false
+}
+
+
+{
+    "model_name_or_path" : null,
+    "template": "default",
+    "CHATCOMPLETION_MODEL" : true,
+    "EMBEDDING_MODEL" : false,
+    "quantization_bit": 4
+}

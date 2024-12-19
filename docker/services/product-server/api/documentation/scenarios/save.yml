@@ -1,0 +1,52 @@
+summary: "Save Scenario"
+tags:
+  - product/Scenarios
+description: "This saves a new scenario"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "body"
+  name: "body"
+  description: "Accepts the following fields for saving a scenario name"
+  required: "true"
+  schema:
+    type: "object"
+    properties:
+      scenarioname:
+        type: "string"
+        required: "true"
+      comment:
+        type: "string"
+        required: "true"
+      app_screen_id:
+        type: "string"
+        required: "true"
+      widget_id:
+        type: "string"
+        required: "true"
+
+
+    example: {
+                "scenarioname": 'name',
+                "comment": 'comment',
+                "app_screen_id" : '45678',
+                "widget_id": "1234",
+
+              }
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+        "message": "Scenario name Created Successfully",
+
+      }
+
+
+

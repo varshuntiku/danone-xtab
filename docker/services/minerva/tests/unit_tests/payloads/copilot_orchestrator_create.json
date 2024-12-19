@@ -1,0 +1,11 @@
+{
+    "name": "orchestrator 1",
+    "identifier": "TestAgent",
+    "desc": "orchestrator created from unittest",
+    "config": {
+        "input_params_enabled": true,
+        "system_message": "system message for test orchestrator",
+        "suggested_lang_model": 1
+    },
+    "disabled": false
+}

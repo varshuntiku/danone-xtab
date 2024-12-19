@@ -1,0 +1,51 @@
+
+summary: "Update Instance"
+tags:
+  - platform/Case Studies
+description: "This will update the instance"
+produces:
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "project_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "instance_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "body"
+  name: "body"
+  description: "Accepts project  name"
+  required: "true"
+  schema:
+    type: "object"
+    example: {'name': 'projectname'}
+
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "status": "true",
+      }
+  404:
+    description: "Item not found"
+    schema :
+      type: "object"
+      example:  {
+        "error" : "Item not found"
+      }
+  422:
+    description: "Could not update"
+    schema :
+      type: "object"
+      example:  {
+        "error" : "Could not update"
+      }

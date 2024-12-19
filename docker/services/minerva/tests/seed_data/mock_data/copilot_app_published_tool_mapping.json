@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "copilot_app_id": 1,
+        "tool_version_registry_mapping_id": 1,
+        "name": "Text to sql - local test - V1.2.1",
+        "desc": "tool",
+        "status": "Completed",
+        "config": {
+            "output_summary": true,
+            "llm_model": 1
+        },
+        "preprocess_config": {
+            "dialect": "postgresql",
+            "schema": "\\nCREATE TABLE cpg.cpgnew_v2 (\\n\\tposting_date DATE, \\n\\tweektype VARCHAR(50), \\n\\tseason VARCHAR(50), \\n\\ttime VARCHAR(50), \\n\\tweek_number VARCHAR(50), \\n\\tbrand VARCHAR(50), \\n\\tsku VARCHAR(50), \\n\\tpacktype VARCHAR(50), \\n\\tpacksize VARCHAR(50), \\n\\tpackformat VARCHAR(50), \\n\\tpfmt1 VARCHAR(50), \\n\\tregion VARCHAR(50), \\n\\tcountry VARCHAR(50), \\n\\tchannel VARCHAR(50), \\n\\tprice DOUBLE PRECISION, \\n\\tvolume DOUBLE PRECISION, \\n\\tgrowth_percentage DOUBLE PRECISION, \\n\\tdiscount DOUBLE PRECISION, \\n\\thousehold_penetration DOUBLE PRECISION, \\n\\tnew_fake VARCHAR(200), \\n\\tid INTEGER NOT NULL\\n)\\n\\n",
+            "table_config": [
+                "cpg.cpgnew_v2"
+            ]
+        },
+        "input_params": {}
+    }
+]

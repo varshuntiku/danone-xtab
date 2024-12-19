@@ -1,0 +1,44 @@
+summary: "Get User Group Details"
+tags:
+  - platform/UserGroups
+description: "This returns the user group info for the given user group id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "user_group_id"
+  description: "User Group ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "id": "",
+            "name": "",
+            "user_group_type": "",
+            "app": "",
+            "case_studies": "",
+            "my_projects_only": "",
+            "my_projects": "",
+            "all_projects": "",
+            "widget_factory": "",
+            "environments": "",
+            "publish": "",
+            "rbac": ""
+        }
+  404:
+    description: "Item not found"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Item not found"
+      }

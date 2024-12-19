@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="/codxNewLogo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="NucliOS - From data to decisions." />
+  <meta http-equiv="Content-Security-Policy"
+    content="script-src 'self' https://prod-apnortheast-a.online.tableau.com https://static.zdassets.com https://maps.googleapis.com/ https://cdn.plot.ly https://codex-plotly.azureedge.net https://ajax.googleapis.com %REACT_APP_MINERVA_WC_HOST_URL%/ blob:">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="/codx-box-new-logo.svg" />
+  <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+  <!--     Fonts and icons     -->
+  <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" />
+  <link href="%REACT_APP_MINERVA_WC_HOST_URL%/index.css" rel="stylesheet" />
+  <!-- <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap"
+    /> -->
+  <link rel="manifest" href="/manifest.json" />
+  <style>
+    /* @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;500&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&display=swap"); */
+  </style>
+  <style>
+    html {
+      font-size: 62.5%;
+      /*62.5% of 16px = 10px*/
+      width: 100%;
+      height: 100%;
+      min-height: 640px;
+      min-width: 768px;
+      font-family: var(--global-font);
+    }
+
+    body {
+      /* font-size: '0.875rem !important'; */
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+
+    .container {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .zenDeskToggle {
+      left: 10px;
+      color: black;
+      width: 20px;
+      bottom: 60px;
+      cursor: pointer;
+      height: 20px;
+      display: flex;
+      position: fixed;
+      font-size: 15px;
+      background: white;
+      align-items: center;
+      border-radius: 10px;
+      justify-content: center;
+      z-index: 10;
+      border: 1px solid black;
+      display: none;
+      font-weight: bold;
+      transition: 0.5s;
+    }
+
+    .zenDeskToggle:hover {
+      opacity: 0.5;
+    }
+
+    #launcher {
+      display: none !important;
+    }
+
+    @media screen and (max-width: 1920px) {
+      html {
+        min-width: 100%;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      body svg[class|="MuiSvgIcon-root"] {
+        width: 2.2rem !important
+      }
+    }
+  </style>
+
+  <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+  <title>NucliOS</title>
+  <!--
+            Static import plotly file code commented. We are using CDN minified version of ploytly
+        -->
+  <!-- <script async src="/plotly-latest.min.js"></script> -->
+  <!-- <script fetchpriority="high" src="https://cdn.plot.ly/plotly-2.18.0.min.js" charset="utf-8"></script> -->
+
+  <!-- <script src="/plotly-latest.min.js"></script> -->
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+  <script src="https://prod-apnortheast-a.online.tableau.com/javascripts/api/tableau-2.min.js"></script>
+  <!-- removing pageinit async to check mobile view load -->
+  <script src="/pageInit.js"></script>
+  <script src="%REACT_APP_MINERVA_WC_HOST_URL%/main.js"></script>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root" class="container"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <!-- Start of themathcompany Zendesk Widget script -->
+  <div id="zenToggle" class="zenDeskToggle" title="Hide Help"></div>
+  <script async id="ze-snippet"
+    src="https://static.zdassets.com/ekr/snippet.js?key=6fd82990-017d-47ea-8226-af401b6d7c3f"> </script>
+  <script type="module" src="/src/index.jsx"></script>
+</body>
+
+</html>

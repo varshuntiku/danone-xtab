@@ -1,0 +1,45 @@
+summary: "Push an Update to a Widget"
+tags:
+  - product/App/Widget
+description: "Push a Widget State and Update a particular Widget on the UI."
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "body"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "body"
+  name: "widget_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+# requestBody:
+#   description: Details of the  the app variable
+#   required: true
+#   content:
+#     application/json:
+#       schema:
+#         required: [value]
+#         properties:
+#           value:
+#             type: "string"
+#         example: {"value": "testing"}
+
+responses:
+  200:
+    description: "Pushed successfully"
+    schema:
+      type: "object"
+      example: {'status': 'success'}
+  500:
+    description: "Error while Updating State"
+    schema :
+      type: "object"
+      example:  {'error': 'Error while Updating State'}

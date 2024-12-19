@@ -1,0 +1,24 @@
+[flake8]
+extend-ignore = E4,E51,E203,W234
+exclude =
+    # git folder
+    .git,
+    # python cache
+    __pycache__,
+    # pytest cache
+    .pytest_cache,
+    # mypy cache
+    .mypy_cache.
+    # migrations
+    migrations
+# Set the maximum length that any line (with some exceptions) may be.
+max-line-length = 5000
+# Report all errors, even if it is on the same line as a `# NOQA` comment.
+disable-noqa = False
+output-file = .flake8.log
+# Toggle whether pycodestyle should enforce matching the indentation of the opening bracket’s line.
+# incluences E131 and E133
+# hang-closing = True
+# per-file-ignores =
+#     api/main.py
+

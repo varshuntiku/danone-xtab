@@ -1,0 +1,53 @@
+{
+    "id": 573,
+    "input": "Generate Outline",
+    "output": {
+      "response": {
+        "widgets": [
+          {
+            "type": "fileList",
+            "value": [
+              {
+                "name": "Forecast Q2 2024 Forecast Q2 2024 Forecast Q2 2024",
+                "type": "ppt",
+                "url": "private:http.."
+              },
+              {
+                "name": "Forecast Q2 2024",
+                "type": "pdf",
+                "url": "private:http.."
+              },
+              {
+                "name": "Forecast Q2 2024",
+                "type": "pdf",
+                "url": "private:http.."
+              },
+              {
+                "name": "Forecast Q2 2024",
+                "type": "csv",
+                "url": "private:http.."
+              },
+              {
+                "name": "Forecast Q2 2024",
+                "type": "md",
+                "url": "private:http.."
+              },
+              {
+                "name": "Forecast Q2 2024",
+                "type": "ppt",
+                "url": "private:http.."
+              },
+              {
+                "name": "Forecast Q2 2024",
+                "type": "doc",
+                "url": "private:http.."
+              }
+            ]
+          }
+        ],
+        "processed_query": "sales across brands"
+      }
+    },
+    "window_id": 61,
+    "feedback": null
+  }

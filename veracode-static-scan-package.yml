@@ -1,0 +1,120 @@
+name: CODEX_CI_VERACODE_STATIC_SCAN_$(Date:yyyyMMdd)$(Rev:.r)
+trigger: none
+stages:
+- stage: Package_for_Veracode
+  condition: succeeded()
+  jobs:
+  - job: package_application
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - script: |
+        mkdir package
+        cd docker/services/client
+        rm -rf certs
+        rm -rf .env.dev
+        rm -rf .env.stage
+        rm -rf .env.takeda
+        rm -rf .env.test
+        rm -rf .env.test.bak
+        rm -rf .eslintignore
+        rm -rf .htaccess
+        rm -rf .npmrc
+        rm -rf dockerfile
+        rm -rf entrypoint.sh
+        rm -rf nginx.conf
+        rm -rf react-http-site-nginx.conf
+        rm -rf react-https-site-nginx.conf
+        rm -rf supervisord.conf
+        rm -rf VERSION
+        rm -rf .dockerignore
+        rm -rf .eslintrc.js
+        rm -rf env-config.js
+        rm -rf src\views\Pages\UserProfile.test.jsx
+        rm -rf src\index.test.jsx
+        ls
+        cd ../../..
+        cp -r docker/services/client/ package/
+      displayName: 'platform_client'
+    - script: |
+        cd docker/services/product-client
+        rm -rf .env.dev
+        rm -rf .env.stage
+        rm -rf .env.takeda
+        rm -rf .env.test
+        rm -rf .env.test.bak
+        rm -rf .gitignore
+        rm -rf .htaccess
+        rm -rf .npmrc
+        rm -rf README.md
+        rm -rf env-config.js
+
+        ls
+        cd ../../..
+        cp -r docker/services/product-client package/
+      displayName: 'product_client'
+    - script: |
+        cd docker/services/server
+        rm -rf logs
+        rm -rf certs
+        rm -rf dockerfile
+        rm -rf *.sh
+        rm -rf *.conf
+        rm -rf VERSION
+        rm -rf env-config.js
+        rm -rf requirements.txt
+        rm -rf .dockerignore
+        rm -rf uwsgi.ini
+        ls
+        cd ../../..
+        cp -r docker/services/server package/
+      displayName: 'platform_server'
+    - script: |
+        cd docker/services/product-server
+        rm -rf *.sh
+        rm -rf cents
+        rm -rf requirements.txt
+        rm -rf package-lock.json
+        rm -rf VERSION
+        ls
+        cd ../../..
+        cp -r docker/services/product-server package/
+      displayName: 'product_server'
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/package'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber)-package.zip'
+        replaceExistingArchive: true
+      displayName: 'Save build artifact'
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber)-package.zip'
+        ArtifactName: 'codx'
+
+  - job: waitForValidation
+    displayName: Wait for external validation
+    pool: server
+    timeoutInMinutes: 4320 # job times out in 3 days
+    steps:
+    - task: ManualValidation@0
+      timeoutInMinutes: 4320 # task times out in 1 day
+      inputs:
+        notifyUsers: |
+          sameena.shaik@themathcompany.com
+          manjunath.narasimhamurthy@themathcompany.com
+        instructions: 'Please validate the build configuration and resume'
+        onTimeout: 'reject'
+
+  - job: pushToVeracode
+    dependsOn: waitForValidation
+    steps:
+    - task: Veracode@3
+      inputs:
+       ConnectionDetailsSelection: 'Endpoint'
+       veracodeAppProfile: 'Co.dx'
+       version: '$(build.buildNumber)'
+       filepath: '$(build.artifactstagingdirectory)/$(Build.BuildNumber)-package.zip'
+       sandboxName: "Shridhar Guntury's Sandbox"
+       maximumWaitTime: '360'

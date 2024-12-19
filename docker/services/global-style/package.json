@@ -1,0 +1,54 @@
+{
+  "name": "global-style",
+  "private": false,
+  "version": "0.0.9",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "watch": "vite build --watch"
+  },
+  "main": "dist/global-style.umd.js",
+  "module": "dist/global-style.es.js",
+  "types": "src/global-style.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/global-style.es.js",
+      "require": "./dist/global-style.umd.js"
+    },
+    "./dist/index.css": "./dist/index.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@material-ui/styles": "^4.11.5",
+    "@material-ui/core": "^4.9.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "4.3.1",
+    "@reduxjs/toolkit": "^1.9.5",
+    "react-redux": "^7.2.4",
+    "axios": "^0.19.2",
+    "axios-retry": "3.5.0",
+    "prop-types": "^15.8.1",
+    "@azure/msal-browser": "^2.32.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.13",
+    "globals": "^15.11.0",
+    "@vitejs/plugin-react": "^4.3.3",
+    "vite": "^5.4.10",
+    "vite-plugin-css-injected-by-js": "^3.5.2",
+    "vite-plugin-lib-inject-css": "^2.1.1",
+    "vite-plugin-svgr": "^4.2.0"
+  }
+}

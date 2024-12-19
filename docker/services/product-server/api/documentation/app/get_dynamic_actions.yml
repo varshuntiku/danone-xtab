@@ -1,0 +1,45 @@
+summary: "Adds dynamic actions to the given screen."
+tags:
+  - product/App
+description: "Adds dynamic actions to the given screen"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to add dynamic actions
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [filter_state]
+        properties:
+          filter_state:
+            type: "object"
+        example: {"filter_state" :{"Region": "Europe", "Country": "UK", "Category": "Category 1"}}
+
+responses:
+  200:
+    description: "Success"
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'item not found'
+          }

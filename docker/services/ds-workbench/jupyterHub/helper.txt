@@ -1,0 +1,2 @@
+1. configmap manifest is not working as expected, jinja2 template doesnt work in helm. So kubectl equivalent 
+    kubectl create configmap <configmap-name>  --namespace <namespace> --from-file=<file-folde>

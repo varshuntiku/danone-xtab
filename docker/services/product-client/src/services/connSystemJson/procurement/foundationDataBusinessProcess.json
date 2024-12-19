@@ -1,0 +1,127 @@
+{
+    "data": [
+        {
+            "name": "Planning",
+            "id": "1",
+            "ref_id": 1,
+            "problemDefinition": [
+                {
+                    "name": "Annual Plan",
+                    "id": "1",
+                    "ref_id": 1,
+                    "business_process_id": "1",
+                    "problemDefinition": [
+                        {
+                            "name": "Demand Forecasting",
+                            "id": "1",
+                            "ref_id": 1,
+                            "business_process_id": "1",
+                            "databases": [
+                                { "name": "Historical Data", "id": 1 },
+                                { "name": "Simulation Data", "id": 2 }
+                            ]
+                        },
+                        { "name": "Spend Optimizer", "id": "2", "ref_id": 2, "business_process_id": "1" },
+                        { "name": "Commodity Price Forecasting", "id": "3", "ref_id": 3, "business_process_id": "1" }
+                    ]
+                },
+                { "name": "Mid year review", "id": "2", "ref_id": 2, "business_process_id": "1" }
+            ]
+        },
+        {
+            "name": "Operations",
+            "id": "2",
+            "ref_id": 2
+        },
+        {
+            "name": "Budgeting",
+            "id": "3",
+            "ref_id": 3
+        },
+        {
+            "name": "Purchase to Pay",
+            "id": "4",
+            "ref_id": 4
+        },
+        {
+            "name": "Compliance",
+            "id": "5",
+            "ref_id": 5
+        },
+        {
+            "name": "Marketing",
+            "id": "6",
+            "ref_id": 6
+        }
+    ],
+    "data1": [
+        {
+            "name": "Pricing",
+            "id": "1",
+            "ref_id": 2,
+            "problemDefinition": [
+                { "name": "Mid year review", "id": "1", "ref_id": 2, "business_process_id": "1" },
+                { "name": "Measurement", "id": "2", "ref_id": 3, "business_process_id": "1" }
+            ]
+        },
+        {
+            "name": "Assortment",
+            "id": "2",
+            "ref_id": 5,
+            "problemDefinition": [
+                {
+                    "name": "Yearly Pricing strategy - category specific 2",
+                    "id": "4",
+                    "ref_id": 1,
+                    "business_process_id": "2"
+                },
+                { "name": "Mid year review", "id": "5", "ref_id": 2, "business_process_id": "2" }
+            ]
+        },
+        {
+            "name": "Forecasting",
+            "id": "3",
+            "ref_id": 4,
+            "problemDefinition": [
+                {
+                    "name": "Yearly Pricing strategy - category specific",
+                    "id": "6",
+                    "ref_id": 1,
+                    "business_process_id": "3"
+                },
+                { "name": "Mid year review", "id": "7", "ref_id": 2, "business_process_id": "3" },
+                { "name": "Measurement", "id": "8", "ref_id": 3, "business_process_id": "3" }
+            ]
+        },
+        {
+            "name": "Promo",
+            "id": "4",
+            "ref_id": 3,
+            "problemDefinition": [
+                {
+                    "name": "Yearly Pricing strategy - category specific",
+                    "id": "9",
+                    "ref_id": 1,
+                    "business_process_id": "4"
+                },
+                { "name": "Mid year review", "id": "10", "ref_id": 2, "business_process_id": "4" },
+                { "name": "Measurement", "id": "11", "ref_id": 3, "business_process_id": "4" }
+            ]
+        },
+        {
+            "name": "Trade Optimization",
+            "id": "5",
+            "ref_id": 7,
+            "problemDefinition": [
+                {
+                    "name": "Yearly Pricing strategy - category specific",
+                    "id": "12",
+                    "ref_id": 1,
+                    "business_process_id": "5"
+                },
+                { "name": "Mid year review", "id": "13", "ref_id": 2, "business_process_id": "5" },
+                { "name": "Measurement", "id": "14", "ref_id": 3, "business_process_id": "5" }
+            ]
+        }
+    ]
+}

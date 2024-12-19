@@ -1,0 +1,51 @@
+
+summary: "Update Widget Group"
+tags:
+  - platform/WidgetGroups
+description: "This will update the widget group "
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "widget_group_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "body"
+  name: "body"
+  description: "Accepts paramters to update widget group"
+  required: "true"
+  schema:
+    type: "object"
+    example: {
+           "id": 12,
+            "name": "widgetname",
+            "code": "widget_code",
+            "light_color": "light",
+            "dark_color": "dark",
+            "in_port": "8000",
+            "out_port": "8001"
+    }
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "status": "true",
+      }
+
+  500:
+    description: "Query Error"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Query Error"
+      }
+
+

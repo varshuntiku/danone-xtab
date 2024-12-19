@@ -1,0 +1,38 @@
+summary: "Delete app variable value"
+tags:
+  - product/AppAdmin
+description: "Deletes key from existing app variables"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "key"
+  required: "true"
+  schema:
+    type: "string"
+
+responses:
+  200:
+    description: "The given key deleted successfully"
+    schema:
+      type: "object"
+      example: {"message": "Variable deleted successfully"}
+  404:
+    description: "Error in deleting, key doesnt exist"
+    schema :
+      type: "object"
+      example:  {'error': 'Error in delete operation, variable does not exist in application variables'}
+  500:
+    description: "Error while deleting"
+    schema :
+      type: "object"
+      example:  {'error': 'Error in deleting application variable'}

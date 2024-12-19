@@ -1,0 +1,53 @@
+name: NucliOS-Server-Tests-$(Date:ddMMyyyy)
+
+trigger:
+  batch: true
+  branches:
+    include:
+      - tests/backend-base
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+  POSTGRES_USER: "postgres"
+  POSTGRES_PASSWORD: "nucliostesterstore123"
+  POSTGRES_DB: "nucliosdb"
+  DB_URL_TEST: "postgresql+psycopg2://postgres:nucliostesterstore123@localhost:5434/nucliosdb"
+  LOG_LEVEL: "DEBUG"
+  SQLALCHEMY_SILENCE_UBER_WARNING: 1
+  ENVIRONMENT: "pipeline"
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: "3.10"
+      addToPath: true
+
+  - script: |
+      docker --version
+      docker ps
+
+  # - script: |
+  #     docker run -d -p 5434:5432 --name postgres-test  -e POSTGRES_USER=postgres -e  -e POSTGRES_PASSWORD=nucliostesterstore123 -e POSTGRES_DB=nucliosdb postgres:13
+  #     docker logs postgres-test
+  #     docker ps
+  #   displayName: "Run PostgreSQL container manually"
+
+  - script: |
+      cd docker/services/nuclios-server
+      python -m pip install --upgrade pip
+      pip install -r requirements-test.txt
+    displayName: "Install Python Dependencies"
+
+  - script: |
+      cd docker/services/nuclios-server
+      pytest -s --maxfail=1
+    displayName: "Run Unit Tests with Pytest"
+
+  # publish test results to Azure DevOps
+  # - task: PublishTestResults@2
+  #   inputs:
+  #     testResultsFiles: "**/test-*.xml"
+  #     testRunTitle: "Pytest Test Results"
+  #   condition: succeededOrFailed()

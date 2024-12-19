@@ -1,0 +1,29 @@
+{
+    "stage": "sft", => static
+    "model_name_or_path": "mistralai/Mistral-7B-v0.1", => dynamic from model registory
+    "use_fast_tokenizer": true, =>static
+    "do_train": true, => static
+    "dataset_dir": "./app/data_for_fintune", =>static
+    "dataset": "custom_data", ==>static
+    "template": "default", => static
+    "finetuning_type": "lora", =>dynamic  (lora,qlora)
+    "lora_rank": 8, =>dynamic
+    "lora_target": ["q_proj", "k_proj", "v_proj", "o_proj"], =>static (from orchestrator no need to pass this)
+    "output_dir": "/data/repo", =>  dynamic
+    "overwrite_output_dir": true, =>static (from orchestrator no need to pass this)
+    "overwrite_cache": true, =>static (from orchestrator no need to pass this)
+    "val_size": 0.2, =>dynamic (test_size)
+    "per_device_train_batch_size": 16, => dynamic (batch_size)
+    "gradient_accumulation_steps": 4,  => dynamic
+    "lr_scheduler_type": "cosine", => dynamic
+    "logging_steps": 10, => dynamic
+    "save_steps": 100, => static (finetuning code will take care of this)
+    "learning_rate": 5e-5, => dynamic
+    "num_train_epochs": 2.0, => dynamic (epochs)
+    "plot_loss": true,=>static (from orchestrator no need to pass this)
+    "bf16": true, =>static
+    "save_safetensors": true =>static (from orchestrator no need to pass this)
+    "dataset_path":   =>  dynamic (full_dataset_path)
+}
+
+"resume_from_checkpoint" : path of checkpoint

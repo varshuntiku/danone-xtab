@@ -1,0 +1,30 @@
+@import '../../styles/util.scss';
+.MinervaWC .MinervaSuggestedQuery {
+    container-type: inline-size;
+    .MinervaSuggestedQuery-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: spacing(16);
+        padding: spacing(0, 16, 24);
+        column-gap: spacing(24);
+        max-height: spacing(400);
+        overflow: auto;
+    }
+    @include container-bellow-md {
+        .MinervaSuggestedQuery-list {
+            padding: spacing(0, 0, 48);
+            grid-template-columns: 1fr;
+        }
+    }
+    .MinervaSuggestedQuery-item {
+        padding: spacing(16);
+        color: var(--minerva-text-color-60);
+        font-weight: 500;
+        transition-duration: 200ms;
+        cursor: pointer;
+        &:hover {
+            background: var(--minerva-bg-main-70);
+            --minerva-nuclios-border-gap: 0px;
+        }
+    }
+}

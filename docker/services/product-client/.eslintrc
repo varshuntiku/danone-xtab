@@ -1,0 +1,65 @@
+{
+    "extends": [
+        "prettier",
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "parser": "@babel/eslint-parser",
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module",
+        "requireConfigFile": false,
+        "babelOptions": {
+            "babelrc": false,
+            "configFile": false,
+            "presets": [
+                "@babel/preset-react"
+            ]
+        }
+    },
+    "env": {
+        "es6": true,
+        "es2021": true,
+        "browser": true,
+        "node": true,
+        "commonjs": true
+    },
+    "rules": {
+        "no-console": "warn",
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "react/jsx-indent": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/destructuring-assignment": "off",
+        "no-nested-ternary": "off",
+        "react/prop-types": 0,
+        "template-curly-spacing": "off",
+        "indent": "off",
+        "no-useless-catch": "off",
+        "no-useless-escape": "off",
+        "react/no-unknown-property": "off"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+        // ,
+        // "import/resolver": {
+        //     "node": {
+        //         "paths": ["src"],
+        //         "extensions": [".js", ".jsx"]
+        //     }
+        // }
+    }
+}

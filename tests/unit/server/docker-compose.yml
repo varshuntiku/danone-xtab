@@ -1,0 +1,35 @@
+version: '3'
+services:
+  # codex-test-analysis-db-service:
+  #   image: ${MONGO_IMAGE}
+  #   container_name: mongo
+  #   restart: always
+  #   ports:
+  #     - "27018:27017"
+  codex-test-system-db-service:
+    image: ${POSTGRES_IMAGE}
+    container_name: codex_test
+    restart: always
+    ports:
+      - "5932:5432"
+  # codex-test-consumption-db-service:
+  #   image: ${REDIS_IMAGE}
+  #   container_name: redis
+  #   restart: always
+  #   ports:
+  #     - "6479:6379"
+  # codex-test-queue-service:
+  #   image: ${MQ_IMAGE}
+  #   container_name: rabbitmq
+  #   restart: always
+  #   ports:
+  #     - "5672:5672"
+  #     - "5671:5671"
+  #     - "4369:4369"
+  #     - "25672:25672"
+  # codex-test-mlflow-service:
+  #   image: ${MLFLOW_IMAGE}
+  #   container_name: mlflow
+  #   restart: always
+  #   ports:
+  #     - "5000:5000"

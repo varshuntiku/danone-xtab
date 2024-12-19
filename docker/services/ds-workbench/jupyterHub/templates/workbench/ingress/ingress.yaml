@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-jupyterhub
+  namespace: "{{ .Release.Namespace }}"
+  annotations:
+    appgw.ingress.kubernetes.io/request-timeout: "1800"
+    appgw.ingress.kubernetes.io/health-probe-timeout: "1800"
+    appgw.ingress.kubernetes.io/health-probe-interval: "1800"
+    appgw.ingress.kubernetes.io/backend-path-prefix: "/jupyterhub"
+    appgw.ingress.kubernetes.io/appgw-ssl-certificate: mathconucliosllm
+    appgw.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: azure-application-gateway
+  rules:
+  - host: "{{ .Values.hub.extraEnv.DSWORKBENCH_HOST }}"
+    http:
+      paths:
+        - path: /jupyterhub
+          pathType: Prefix
+          backend:  
+            service:
+              name: proxy-public
+              port: 
+                number: 80

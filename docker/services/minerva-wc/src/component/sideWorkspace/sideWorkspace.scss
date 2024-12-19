@@ -1,0 +1,76 @@
+@import '../../styles/util.scss';
+
+.MinervaWC .MinervaSideWorkspace {
+    position: static;
+    width: spacing(768);
+    height: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: auto;
+    padding: spacing(20);
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: spacing(20);
+    background: var(--minerva-bg-secondary-light-blue);
+    // .MinervaSideWorkspace-close-btn {
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    // }
+    .MinervaSideWorkspace-expand-button {
+        position: fixed;
+        transform: translate(spacing(-35), spacing(32));
+        background: var(--minerva-text-color-20);
+        cursor: ew-resize;
+        z-index: 1;
+        transition-duration: 200ms;
+        &:hover {
+            background: var(--minerva-border-blue);
+            svg {
+                --color: white;
+            }
+        }
+
+        &:active {
+            background: var(--minerva-border-blue);
+            svg {
+                --color: white;
+            }
+        }
+
+        &:hover + .MinervaSideWorkspace-expand-indicator {
+            border-color: var(--minerva-border-blue);
+        }
+        &:active + .MinervaSideWorkspace-expand-indicator {
+            border-color: var(--minerva-border-blue);
+        }
+    }
+    .MinervaSideWorkspace-expand-indicator {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 1px solid transparent;
+        height: 100%;
+        transition-duration: 200ms;
+    }
+    .MinervaSideWorkspace-header {
+        display: flex;
+        align-items: center;
+        gap: spacing(10);
+        border-bottom: 1px solid var(--minerva-text-color-30);
+        padding: spacing(0, 0, 16);
+        p {
+            font-size: spacing(20);
+            font-weight: 500;
+        }
+    }
+    .MinervaSideWorkspace-pinnedQueries {
+        flex-grow: 1;
+        flex-basis: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        margin-right: spacing(-8);
+        margin-right: spacing(8);
+    }
+}

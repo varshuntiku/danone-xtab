@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "tool_version_id": 1,
+        "registry_id": 1,
+        "approved": true,
+        "deprecated": false,
+        "deployment_status": "Triggered",
+        "deployment_agent_id": 1,
+        "info": {
+            "access_url": "url"
+        },
+        "created_by": 1,
+        "version": "1.0.0"
+    },
+    {
+        "id": 2,
+        "tool_version_id": 1,
+        "registry_id": 1,
+        "approved": true,
+        "deprecated": false,
+        "deployment_status": "Triggered",
+        "deployment_agent_id": 1,
+        "info": {
+            "access_url": "url"
+        },
+        "created_by": 1,
+        "version": "1.0.0"
+    }
+]

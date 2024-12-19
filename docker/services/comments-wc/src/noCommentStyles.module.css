@@ -1,0 +1,22 @@
+.main {
+    margin-top: auto;
+    margin-bottom: 70%;
+    width: 100%; /* Assuming 'full' means full width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: #220047; /* Replace with the appropriate color */
+}
+
+.message {
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.blankIcon svg {
+    fill: #ffffff; /* Replace with the appropriate color */
+}

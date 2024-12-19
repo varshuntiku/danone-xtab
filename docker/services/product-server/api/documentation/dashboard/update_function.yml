@@ -1,0 +1,71 @@
+
+summary: "Update function"
+tags:
+  - product/Dashboard
+description: "This will update function details"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "function_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  content:
+    application/json:
+      schema:
+        required: [industry_id, function_name, description, logo_name, order]
+        properties:
+          industry_id:
+            type: integer
+          function_name:
+            type: string
+          logo_name:
+            type: string
+          description:
+            type: string
+          order:
+            type: integer
+          function_id:
+            type: integer
+          parent_function_id:
+            type: integer
+          color:
+            type: string
+          level:
+            type: string
+
+      example: {
+        "industry_id": 4,
+        "function_name": "New Function",
+        "description": "testing function",
+        "logo_name": "CPGMarketingIcon",
+        "order": 1,
+        "function_id": "",
+        "parent_function_id": "",
+        "color": null,
+        "level": null
+      }
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "status": "true",
+      }
+
+  500:
+    description: "Error updating function"
+    schema :
+      type: "object"
+      example:  {"error": "Error while updating function"}
+
+

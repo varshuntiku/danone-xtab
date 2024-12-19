@@ -1,0 +1,28 @@
+@import "../../styles/util.scss";
+.MinervaWC .MinervaPromptHistory {
+    max-height: spacing(200);
+    overflow-y: auto;
+    padding: spacing(10, 0);
+    & .MinervaButtonBase {
+        padding: spacing(10, 20);
+        background-color: var(--minerva-bg-main-l90);
+        box-shadow: var(--minerva-box-shadow-1);
+        border-radius: spacing(5);
+        opacity: 0.7;
+        transition-duration: 200ms;
+        & p {
+            font-size: 0.8em;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    & .MinervaTimeline {
+        padding: spacing(10, 0);
+    }
+
+    & .MinervaTimelineSeparator {
+        transform: translateY(spacing(20));
+    }
+}

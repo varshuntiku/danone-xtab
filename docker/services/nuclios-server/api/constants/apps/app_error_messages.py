@@ -1,0 +1,36 @@
+from enum import Enum
+
+
+class AppErrors(Enum):
+    GET_APP_ERROR = "Error fetching app details"
+    LINK_APP_TO_PROJECT_ERROR = "Error linking app to project"
+    CHECK_APP_EXISTS_ERROR = "Error checking if app exists"
+    APP_NOT_FOUND_ERROR = "App with given id does not exist"
+    APP_CONTAINER_CREATE_ERROR = "Error creating app container"
+    CREATE_APP_ERROR = "Error creating app"
+    DELETE_APP_ERROR = "Error deleting app"
+    GET_CONTAINER_MAPPINGS_ERROR = "Error getting container mappings"
+    CREATE_CONTAINER_MAPPING_ERROR = "Error craeting container mapping"
+    GET_PARENT_CONTAINER_APPS_ERROR = "Error getting apps under same parent container"
+    APP_OVERVIEW_UPDATE_ERROR = "Error updating app overview"
+    APP_MODULES_ERROR = "Error in saving application modules"
+    GET_APPS_ERROR = "Error fetching apps"
+    USER_APPS_ERROR = "Error fetching user apps"
+    USER_APP_NOT_FOUND_ERROR = "App for given user not found"
+    USER_APP_EXISTS_ERROR = "App for given user already exists"
+    USER_APPS_UPDATE_ERROR = "Error updating user apps"
+    APP_THEME_UPDATE_ERROR = "Error in applying theme"
+    CANNOT_REPLICATE_APP_ERROR = (
+        "Application has been created using Iterations, Hence it cant be replicated; Please Create a Fresh Version"
+    )
+    CREATE_CLONE_ERROR = "Could Not Create the Replica. Please Try Again."
+    IMPORT_FILE_READ_ERROR = "Failed to process file!"
+    RESET_APP_ERROR = "Failed to reset app details"
+    CREATE_REPLICA_ERROR = "Could Not Create the Replica. Please Try Again."
+    AUTO_BUILD_SCREEN_ERROR = "Error while building app screen"
+    AUTO_SCREEN_WIDGETS_UPDATE_ERROR = "Error while updating app screen widgets"
+    SCREEN_WIDGETS_ORDER_ERROR = "Failed to update widget order"
+    PROGRESS_BAR_FETCH_ERROR = "Error fetching progress bar"
+    PROGRESS_BAR_UPDATE_ERROR = "Error updating progress bar"
+    PROGRESS_BAR_CREATE_ERROR = "Error creating progress bar"
+    APP_SCREEN_NOT_FOUND_ERROR = "Could not find screen with the given screen id"

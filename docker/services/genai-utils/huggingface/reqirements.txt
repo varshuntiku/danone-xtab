@@ -1,0 +1,3 @@
+typing
+huggingface_hub
+requests

@@ -1,0 +1,23 @@
+summary: "Gets User Apps"
+tags:
+    -product/Dashboard
+description: "Gets all user apps asssociated with respective user email"
+security:
+  - Authorization: []
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+    example: {
+      "id":"id",
+      "name":"name",
+      "app_user_id":"app_user_id"
+    }
+  500:
+    description: "Error while fetching"
+    schema:
+    type: "object"
+    example: [
+      "Error":"Error while fetching"
+    ]

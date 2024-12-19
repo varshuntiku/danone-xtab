@@ -1,0 +1,42 @@
+summary: "Generates a new ai insight for the given app_id and screen_id"
+tags:
+  - product/AiResponse
+description: "Generates a new ai insight for the given app_id and screen_id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  description: "Accepts the application ID for which the insight have to be generated"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  description: "Accepts the screen ID for which the insight have to be generated"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [prompt]
+        properties:
+          prompt:
+            type: "string"
+        example: {"prompt": "#Start of charts, insights and metrics\n#end of charts, insights and metrics\nInstructions: Extract summary, key insights and recommended actions from the charts, insights and metrics provided."}
+
+responses:
+  200:
+    description: "Return insight details"
+    schema:
+      type: "object"
+  500:
+    description: "Error while generating the insight"
+

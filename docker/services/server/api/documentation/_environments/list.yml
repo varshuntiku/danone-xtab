@@ -1,0 +1,32 @@
+summary: "List of environments"
+tags:
+  - platform/Environments
+description: "This generates the list of environments available"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: [
+        "env_list":
+          [{
+          "id": row.id,
+                "name": row.name,
+                "created_by": '--',
+                "updated_by": '--',
+                "created_at":  "--",
+                "updated_at": "--",
+            }]
+      ]
+
+  500:
+    description: "Error in query"
+    schema:
+    type: "object"
+    example: [
+      "Error":"Error in query operation"
+    ]

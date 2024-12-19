@@ -1,0 +1,38 @@
+summary: "Log in"
+tags:
+  - platform/Main
+description: "This logs in the user and returns a access key,refresh token, and a boolean result, to know if the user has restricted access enabled."
+consumes:
+- "application/json"
+produces:
+- "application/json"
+parameters:
+- in: "body"
+  name: "body"
+  description: "Accepts user name and password"
+  required: "true"
+  schema:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      password:
+        type: "string"
+    example: {'username': 'yourusername','password':'yourpassword'}
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      properties:
+        access_token:
+          type: "string"
+        refresh_token:
+          type: "string"
+        is_restricted_user:
+          type: "boolean"
+
+  400:
+    description: "Login error456"
+  401:
+    description: "Wrong username or password"

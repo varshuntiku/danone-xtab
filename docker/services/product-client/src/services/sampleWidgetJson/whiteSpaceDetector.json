@@ -1,0 +1,973 @@
+{
+    "data": {
+        "widget_value_id": 211878,
+        "value": {
+            "is_white_space_detector": true,
+            "is_columnHeadlevels": true,
+            "dropdownIconsStyle":{
+                "width":"35px",
+                "height":"35px",
+                "position":"absolute",
+                "right":-10,
+                "top":-15,
+                "cursor":"pointer"
+            },
+            "columnHeadLevelsData": {
+                "levels": [
+                    "columnHeadDataLevel1",
+                    "columnHeadDataLevel2"
+                ],
+                "columnHeadDataLevel1": [
+                    {
+                        "id": "columnHeadLevel1",
+                        "head": "abc",
+                        "colspan": "4"
+                    },
+                    {
+                        "id": "columnHeadLevel2",
+                        "head": "xyz",
+                        "colspan": "3"
+                    }
+                ],
+                "columnHeadDataLevel2": [
+                    {
+                        "id": "columnHeadLevel21",
+                        "head": "abc",
+                        "colspan": "2"
+                    },
+                    {
+                        "id": "columnHeadLevel22",
+                        "head": "xyz",
+                        "colspan": "3"
+                    },
+                    {
+                        "id": "columnHeadLevel23",
+                        "head": "xyz",
+                        "colspan": "2"
+                    }
+                ]
+            },
+            "columnHeadData": [
+                {
+                    "id": "columnHead1",
+                    "head": "<6RMB"
+                },
+                {
+                    "id": "columnHead2",
+                    "head": "6-8RMB"
+                },
+                {
+                    "id": "columnHead3",
+                    "head": "8-10RMB"
+                },
+                {
+                    "id": "columnHead4",
+                    "head": "10-15RMB"
+                },
+                {
+                    "id": "columnHead5",
+                    "head": "15-20RMB"
+                },
+                {
+                    "id": "columnHead6",
+                    "head": "20-30RMB"
+                },
+                {
+                    "id": "columnHead7",
+                    "head": ">30RMB"
+                }
+            ],
+            "rowHeadData": [
+                {
+                    "id": "rowHead1",
+                    "head": "<6RMB",
+                    "subhead": [
+                        "Mkt Size: HL",
+                        "Mkt Growth: %",
+                        "CB Share: %"
+                    ]
+                },
+                {
+                    "id": "rowHead2",
+                    "head": "6-8RMB",
+                    "subhead": [
+                        "Mkt Size: HL",
+                        "Mkt Growth: %",
+                        "CB Share: %"
+                    ]
+                },
+                {
+                    "id": "rowHead3",
+                    "head": "8-10RMB",
+                    "subhead": [
+                        "Mkt Size: HL",
+                        "Mkt Growth: %",
+                        "CB Share: %"
+                    ]
+                },
+                {
+                    "id": "rowHead4",
+                    "head": "10-15RMB",
+                    "subhead": [
+                        "Mkt Size: HL",
+                        "Mkt Growth: %",
+                        "CB Share: %"
+                    ]
+                },
+                {
+                    "id": "rowHead5",
+                    "head": "15-20RMB",
+                    "subhead": [
+                        "Mkt Size: HL",
+                        "Mkt Growth: %",
+                        "CB Share: %"
+                    ]
+                },
+                {
+                    "id": "rowHead6",
+                    "head": "20-30RMB",
+                    "subhead": [
+                        "Mkt Size: HL",
+                        "Mkt Growth: %",
+                        "CB Share: %"
+                    ]
+                },
+                {
+                    "id": "rowHead7",
+                    "head": ">30RMB",
+                    "subhead": [
+                        "Mkt Size: HL",
+                        "Mkt Growth: %",
+                        "CB Share: %"
+                    ]
+                }
+            ],
+            "newCellsData": {
+                "rowHead1": {
+                    "columnHead1": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead2": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead3": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead4": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead5": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/buxton-mineral-water.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                        ],
+                        "options": {
+                            "review-price": true
+                        }
+                    },
+                    "columnHead6": {
+                        "content": [],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [],
+                        "icons": []
+                    }
+                },
+                "rowHead2": {
+                    "columnHead1": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead2": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead3": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead4": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead5": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/buxton-mineral-water.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                        ],
+                        "options": {
+                            "review-price": true
+                        }
+                    },
+                    "columnHead6": {
+                        "content": [],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [],
+                        "icons": []
+                    }
+                },
+                "rowHead3": {
+                    "columnHead1": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead2": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead3": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead4": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead5": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/buxton-mineral-water.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                        ],
+                        "options": {
+                            "review-price": true
+                        }
+                    },
+                    "columnHead6": {
+                        "content": [],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [],
+                        "icons": []
+                    }
+                },
+                "rowHead4": {
+                    "columnHead1": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead2": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead3": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead4": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead5": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/buxton-mineral-water.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                        ],
+                        "options": {
+                            "review-price": true
+                        }
+                    },
+                    "columnHead6": {
+                        "content": [],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [],
+                        "icons": []
+                    }
+                },
+                "rowHead5": {
+                    "columnHead1": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead2": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead3": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead4": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead5": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/buxton-mineral-water.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                        ],
+                        "options": {
+                            "review-price": true
+                        }
+                    },
+                    "columnHead6": {
+                        "content": [],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [],
+                        "icons": []
+                    }
+                },
+                "rowHead6": {
+                    "columnHead1": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead2": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead3": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead4": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead5": {
+                        "content": [],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/buxton-mineral-water.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                        ],
+                        "options": {
+                            "review-price": true
+                        }
+                    },
+                    "columnHead6": {
+                        "content": [],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [],
+                        "icons": []
+                    }
+                },
+                "rowHead7": {
+                    "columnHead1": {
+                        "content": [
+                            "60,112",
+                            "53%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead2": {
+                        "content": [
+                            "60,112",
+                            "53%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead3": {
+                        "content": [
+                            "60,112",
+                            "53%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead4": {
+                        "content": [
+                            "60,112",
+                            "53%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead5": {
+                        "content": [
+                            "60,112",
+                            "53%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/buxton-mineral-water.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                        ],
+                        "options": {
+                            "review-price": true
+                        }
+                    },
+                    "columnHead6": {
+                        "content": [
+                            "60,112",
+                            "53%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [
+                            "60,112",
+                            "53%"
+                        ],
+                        "icons": []
+                    }
+                }
+            },
+            "cellsData": {
+                "rowHead1": {
+                    "columnHead1": {
+                        "content": [
+                            "20,112",
+                            "-3%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead5": {
+                        "content": [
+                            "548",
+                            "44%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/buxton-mineral-water.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                        ],
+                        "options": {
+                            "review-price": true
+                        }
+                    },
+                    "columnHead7": {
+                        "content": [
+                            "2,881",
+                            "418298%"
+                        ],
+                        "icons": []
+                    }
+                },
+                "rowHead2": {
+                    "columnHead1": {
+                        "content": [
+                            "60,112",
+                            "23%"
+                        ],
+                        "icons": [],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead2": {
+                        "content": [
+                            "60,112",
+                            "23%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/sprite-can.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                        ]
+                    },
+                    "columnHead4": {
+                        "content": [
+                            "7,054",
+                            "7%"
+                        ],
+                        "icons": [],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead6": {
+                        "content": [
+                            "3,138",
+                            "10%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [
+                            "568",
+                            "11%"
+                        ],
+                        "icons": []
+                    }
+                },
+                "rowHead3": {
+                    "columnHead1": {
+                        "content": [
+                            "277,671",
+                            "37%",
+                            "0.9%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/coca-cola-bottle.png"
+                        ],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead2": {
+                        "content": [
+                            "7,054",
+                            "7%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead4": {
+                        "content": [
+                            "7,054",
+                            "-7%"
+                        ],
+                        "icons": [],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead5": {
+                        "content": [
+                            "7,054",
+                            "7%",
+                            "1.8%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/coca-cola-bottle.png"
+                        ]
+                    },
+                    "columnHead6": {
+                        "content": [
+                            "3,138",
+                            "10%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [
+                            "568",
+                            "11%"
+                        ],
+                        "icons": []
+                    }
+                },
+                "rowHead4": {
+                    "columnHead2": {
+                        "content": [
+                            "60,112",
+                            "23%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/coca-cola-bottle.png"
+                        ],
+                        "options": {
+                            "introduce-more-sku": true
+                        }
+                    },
+                    "columnHead1": {
+                        "content": [
+                            "20,112",
+                            "-3%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/sprite-can.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/coca-cola-bottle.png"
+                        ]
+                    },
+                    "columnHead3": {
+                        "content": [
+                            "548",
+                            "44%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/buxton-mineral-water.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                        ]
+                    },
+                    "columnHead4": {
+                        "content": [
+                            "2,881",
+                            "418298%"
+                        ],
+                        "icons": [],
+                        "options": {
+                            "white-space": true
+                        }
+                    },
+                    "columnHead5": {
+                        "options": {
+                            "white-space": true
+                        }
+                    }
+                },
+                "rowHead5": {
+                    "columnHead0": {
+                        "head": "15-20RMB",
+                        "subhead": [
+                            "Mkt Size: HL",
+                            "Mkt Growth: %",
+                            "CB Share: %"
+                        ]
+                    },
+                    "columnHead1": {
+                        "content": [
+                            "60,112",
+                            "23%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead2": {
+                        "content": [
+                            "277,671",
+                            "37%",
+                            "0.9%"
+                        ],
+                        "options": {
+                            "introduce-more-sku": true
+                        }
+                    },
+                    "columnHead4": {
+                        "content": [
+                            "7,054",
+                            "7%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/whiskey-bottle.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                        ]
+                    },
+                    "columnHead6": {
+                        "content": [
+                            "3,138",
+                            "10%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [
+                            "568",
+                            "11%"
+                        ],
+                        "icons": []
+                    }
+                },
+                "rowHead6": {
+                    "columnHead0": {
+                        "head": "20-30RMB",
+                        "subhead": [
+                            "Mkt Size: HL",
+                            "Mkt Growth: %",
+                            "CB Share: %"
+                        ]
+                    },
+                    "columnHead1": {
+                        "content": [
+                            "277,671",
+                            "37%",
+                            "0.9%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead2": {
+                        "content": [
+                            "7,054",
+                            "7%"
+                        ],
+                        "icons": [
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png",
+                            "https://willbedeletedsoon.blob.core.windows.net/test-uploads/coca-cola-bottle.png"
+                        ]
+                    },
+                    "columnHead4": {
+                        "content": [
+                            "7,054",
+                            "-7%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead5": {
+                        "content": [
+                            "7,054",
+                            "7%",
+                            "1.8%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead6": {
+                        "content": [
+                            "3,138",
+                            "10%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead7": {
+                        "content": [
+                            "568",
+                            "11%"
+                        ],
+                        "icons": []
+                    }
+                },
+                "rowHead7": {
+                    "columnHead1": {
+                        "content": [
+                            "277,671",
+                            "37%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead2": {
+                        "content": [
+                            "7,054",
+                            "7%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead3": {
+                        "content": [
+                            "7,054",
+                            "-7%"
+                        ],
+                        "icons": []
+                    },
+                    "columnHead4": {
+                        "content": [
+                            "7,054",
+                            "7%",
+                            "1.8%"
+                        ],
+                        "icons": []
+                    }
+                }
+            },
+            "legends": [
+                {
+                    "id": "white-space",
+                    "name": "White space",
+                    "style": {
+                        "borderColor": "#ff3232",
+                        "borderWidth": "3px",
+                        "borderStyle": "solid"
+                    }
+                },
+                {
+                    "id": "introduce-more-sku",
+                    "name": "Introduce more SKU",
+                    "style": {
+                        "borderColor": "#0070c0",
+                        "borderWidth": "3px",
+                        "borderStyle": "solid"
+                    }
+                },
+                {
+                    "id": "review-price",
+                    "name": "Review the price",
+                    "style": {
+                        "borderColor": "#ffc000",
+                        "borderWidth": "3px",
+                        "borderStyle": "solid"
+                    }
+                }
+            ],
+            "axisHeaders": {
+                "x": "Price per Pack",
+                "y": "Price per Liter"
+            },
+            "iconsList": [
+                {
+                    "text": "Budweiser bottle",
+                    "url": "https://willbedeletedsoon.blob.core.windows.net/test-uploads/budweiser-bottle.png"
+                },
+                {
+                    "text": "Buxton mineral water",
+                    "url": "https://willbedeletedsoon.blob.core.windows.net/test-uploads/buxton-mineral-water.png"
+                },
+                {
+                    "text": "Coca cola bottle",
+                    "url": "https://willbedeletedsoon.blob.core.windows.net/test-uploads/coca-cola-bottle.png"
+                },
+                {
+                    "text": "Sprite can",
+                    "url": "https://willbedeletedsoon.blob.core.windows.net/test-uploads/sprite-can.png"
+                },
+                {
+                    "text": "Tuborg can",
+                    "url": "https://willbedeletedsoon.blob.core.windows.net/test-uploads/tuborg-can.png"
+                },
+                {
+                    "text": "Whiskey bottle",
+                    "url": "https://willbedeletedsoon.blob.core.windows.net/test-uploads/whiskey-bottle.png"
+                }
+            ],
+            "actions": [
+                {
+                    "text": "Save",
+                    "name": "action_save",
+                    "variant": "outlined"
+                }
+            ],
+            "styleOptions": {
+                "alternateRowColorDark": "",
+                "alternateRowColorLight": "",
+                "cellSize": {
+                    "width": "140px",
+                    "height": ""
+                },
+                "rowHeadWidth": "",
+                "legendsAlignment": "bottom-right",
+                "shiftCellIconsUp": "50px",
+                "cellIconMaxWidth": "25px"
+            },
+            "settings": {
+                "iconsPerCell": 3
+            }
+        },
+        "simulated_value": false
+    }
+}

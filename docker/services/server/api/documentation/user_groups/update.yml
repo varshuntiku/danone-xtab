@@ -1,0 +1,54 @@
+
+summary: "Update User Group"
+tags:
+  - platform/UserGroups
+description: "This will update the User Group"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "user_group_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "body"
+  name: "body"
+  description: "Accepts paramters to update user group"
+  required: "true"
+  schema:
+    type: "object"
+    example: {
+            "name" : "usergroupname",
+            "app" : "False",
+            "case_studies": "False",
+            "my_projects_only": "False",
+            "my_projects": "False",
+            "all_projects": "False",
+            "widget_factory": "False",
+            "environments": "False",
+            "app_publish": "False",
+            "rbac": "False",
+    }
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "status": "true",
+      }
+
+  500:
+    description: "Query Error"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Query Error"
+      }
+
+

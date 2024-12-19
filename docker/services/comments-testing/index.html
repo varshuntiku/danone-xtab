@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + React</title>
+</head>
+ 
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <!-- <script src="./src/my-react-library.umd.js"></script> -->
+  <script>
+    function loadExternalScript(url) {
+      const polyfillScript = document.createElement("script");
+      polyfillScript.type = "text/javascript";
+      polyfillScript.text = `
+    window.process = {
+      env: {
+        NODE_ENV: 'production'
+      }
+    };
+  `;
+      document.body.appendChild(polyfillScript);
+ 
+      const script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = url; // Set the src directly
+      script.async = true; // Ensures non-blocking
+      document.body.appendChild(script);
+    }
+ 
+    loadExternalScript("https://nuclios-gen-ai-dev.mathco.com/comments-backend/file/wc-jsfile");
+  </script>
+</body>
+ 
+</html>
+ 

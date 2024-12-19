@@ -1,0 +1,477 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "label": "Launch Reporting",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          },
+          {
+            "insight": "Business Insights 3",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+3.5% YoY"
+          },
+          {
+            "insight": "Business Insights 4",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+1.5% YoY"
+          }
+        ]
+      },
+      "type": "powerbi",
+      "tag": "Product Launch",
+      "functions": [
+        "fn_node_1"
+      ],
+      "workflows": [
+        "wf_node_4"
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Marketing Impact Assessment",
+      "sub_headers": [
+        "Optimization algorithm",
+        "White space analysis"
+      ],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Marketing",
+      "functions": [
+        "fn_node_1",
+        "fn_node_3"
+      ],
+      "workflows": [
+        "wf_node_4",
+        "wf_node_9"
+      ],
+      "type": "powerbi"
+    },
+    {
+      "id": 3,
+      "label": "Affordability Reporting",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Affordability",
+      "functions": [
+        "fn_node_1"
+      ],
+      "workflows": [
+        "wf_node_4"
+      ],
+      "type": "powerbi"
+    },
+    {
+      "id": 4,
+      "label": "Access Funnel Reporting",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Access",
+      "functions": [
+        "fn_node_1"
+      ],
+      "workflows": [
+        "wf_node_4"
+      ],
+      "type": "powerbi"
+    },
+    {
+      "id": 5,
+      "label": "Impact Assessment",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Impact",
+      "functions": [
+        "fn_node_1"
+      ],
+      "workflows": [
+        "wf_node_4"
+      ],
+      "type": "powerbi"
+    },
+    {
+      "id": 6,
+      "label": "NPP Dashboard/Email Campaign Manager",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "NPP",
+      "functions": [
+        "fn_node_2"
+      ],
+      "workflows": [],
+      "type": "powerbi"
+    },
+    {
+      "id": 7,
+      "label": "Prescriber Choice Model Readout",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Patient",
+      "functions": [
+        "fn_node_2",
+        "fn_node_3"
+      ],
+      "workflows": [
+        "wf_node_9"
+      ],
+      "type": "PPT"
+    },
+    {
+      "id": 8,
+      "label": "Patient Journey Map",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Patient",
+      "functions": [
+        "fn_node_2"
+      ],
+      "workflows": []
+    },
+    {
+      "id": 9,
+      "label": "Data Discoverability Portal",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Data",
+      "functions": [
+        "fn_node_2"
+      ],
+      "workflows": []
+    },
+    {
+      "id": 10,
+      "label": "Field Execution Dashboard",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Field",
+      "functions": [
+        "fn_node_3"
+      ],
+      "workflows": [
+        "wf_node_9"
+      ],
+      "type": "powerbi"
+    },
+    {
+      "id": 11,
+      "label": "Account Performance Reporting",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Accounts",
+      "functions": [
+        "fn_node_4"
+      ],
+      "workflows": [],
+      "type": "powerbi"
+    },
+    {
+      "id": 12,
+      "label": "Market Access Dashboard",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Market Access",
+      "functions": [
+        "fn_node_4"
+      ],
+      "workflows": [],
+      "type": "powerbi"
+    },
+    {
+      "id": 13,
+      "label": "Contracting Tier",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Contracting",
+      "functions": [
+        "fn_node_4"
+      ],
+      "workflows": []
+    },
+    {
+      "id": 13,
+      "label": "Next Best Action",
+      "sub_headers": [],
+      "popup_info": {
+        "app_description": "Application description goes here",
+        "kpi_insights": [
+          {
+            "insight": "Business Insights 1",
+            "insight_sub_headers": [
+              "Anamoly Detection",
+              "Isolate promo vs. price impact"
+            ],
+            "insight_value": "+2.2% YoY"
+          },
+          {
+            "insight": "Business Insights 2",
+            "insight_sub_headers": [
+              "Anamoly Detection"
+            ],
+            "insight_value": "+0.5% YoY"
+          }
+        ]
+      },
+      "tag": "Field",
+      "functions": [
+        "fn_node_3"
+      ],
+      "workflows": [
+        "wf_node_9"
+      ]
+    }
+  ]
+}

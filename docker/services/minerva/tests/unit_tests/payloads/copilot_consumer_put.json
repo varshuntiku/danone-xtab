@@ -1,0 +1,5 @@
+{
+    "desc": "consumer updated from unittest",
+    "allowed_origins": ["http://localhost:8003", "http://localhost:3001"],
+    "copilot_apps": [1]
+}

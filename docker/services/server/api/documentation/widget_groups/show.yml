@@ -1,0 +1,38 @@
+summary: "Get widget group details"
+tags:
+  - platform/WidgetGroups
+description: "Generates the widget group info for the given widget group id."
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "widget_group_id"
+  description: "Widget Group ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+             "id": 12,
+            "name": "widgetname",
+            "code": "widget_code",
+            "light_color": "light",
+            "dark_color": "",
+            "in_port": "",
+            "out_port": ""
+        }
+  404:
+    description: "Item not found"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Item not found"
+      }

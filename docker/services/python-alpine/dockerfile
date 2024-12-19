@@ -1,0 +1,51 @@
+FROM alpine:3.9
+
+LABEL maintainer shridhar@themathcompany.com
+LABEL org mathco
+LABEL platform codex
+LABEL product python-alpine
+LABEL image_type platform_image
+
+# Copy python requirements file
+COPY requirements.txt /tmp/requirements.txt
+
+RUN apk --no-cache update \
+    && apk --no-cache upgrade \
+    && apk add --no-cache $PHPIZE_DEPS \
+    gcc \
+    g++ \
+    bash \
+    openssl-dev \
+    libffi-dev \
+    python3 \
+    python3-dev \
+    gfortran \
+    lapack-dev \
+    musl-dev \
+    jpeg-dev \
+    zlib-dev \
+    freetype-dev \
+    libpng-dev \
+    nginx \
+    uwsgi \
+    uwsgi-python3 \
+    supervisor \
+    mariadb-dev \
+    postgresql-dev && \
+    python3 -m ensurepip && \
+    rm -r /usr/lib/python*/ensurepip && \
+    pip3 install --upgrade pip setuptools && \
+    pip3 install -r /tmp/requirements.txt && \
+    pip3 install numpy && \
+    pip3 install cython && \
+    pip3 install scipy==1.2.1 && \
+    pip3 install pandas==1.0.4 && \
+    pip3 install statsmodels==0.9.0 && \
+    pip3 install mlflow==1.1.0 && \
+    pip3 install plotly==4.10.0 && \
+    pip3 install matplotlib==3.0.2 && \
+    pip3 install scikit-learn==0.21.2 && \
+    pip3 install nltk==3.4.5 && \
+    pip3 install spacy==2.2.3 && \
+    rm /etc/nginx/conf.d/default.conf && \
+    rm -r /root/.cache

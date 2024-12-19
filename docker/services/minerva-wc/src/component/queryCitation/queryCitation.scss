@@ -1,0 +1,16 @@
+@import '../../styles/util.scss';
+
+.MinervaWC .MinervaQueryCitation-container {
+    margin-right: spacing(4);
+
+    & .MinervaQueryCitation-title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        -webkit-line-clamp: 2;
+        font-size: spacing(16);
+        font-weight: 400;
+        line-height: spacing(24);
+        text-align: left;
+    }
+}

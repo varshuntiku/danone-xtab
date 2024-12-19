@@ -1,0 +1,62 @@
+summary: "Create new widget group"
+tags:
+  - platform/WidgetGroups
+description: "This creates a new widget group "
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "body"
+  name: "body"
+  description: "Accepts the following fields for creating a user"
+  required: "true"
+  schema:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+        required: "true"
+      code:
+        type: "string"
+
+      light_color:
+        type: "string"
+
+      dark_color:
+        type: "string"
+      in_port:
+        type: "boolean"
+      out_port:
+        type: "boolean"
+    example: {
+                  "name": "",
+                  "code": "",
+                  "light_color" : "",
+                  "dark_color" : "",
+                  "in_port": False,
+                  "out_port" : False
+
+              }
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+        "id": 123,
+        "name": "widgetname"
+      }
+
+  422:
+    description: "Error in query"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Error in query operation"
+      }
+
+

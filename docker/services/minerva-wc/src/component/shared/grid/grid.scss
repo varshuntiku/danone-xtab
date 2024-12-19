@@ -1,0 +1,67 @@
+@import '../../../styles/util.scss';
+$spacingUnit: spacing(10);
+.MinervaWC .MinervaGridContainer {
+    display: flex;
+    flex-wrap: wrap;
+
+    & .MinervaGridItem {
+        --row-spacing-val: calc(#{$spacingUnit} * var(--row-spacing));
+        --col-spacing-val: calc(#{$spacingUnit} * var(--col-spacing));
+        padding: calc(var(--row-spacing-val) / 2) calc(var(--col-spacing-val) / 2);
+        box-sizing: border-box;
+        display: block;
+    }
+    & .MinervaGridItem-xs {
+        display: block;
+        width: calc(100% * var(--span-xs) /  var(--columns));
+        flex-basis: auto;
+        min-width: 0px;
+    }
+    & .MinervaGridItem-xs-grow {
+        display: block;
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        min-width: 0px;
+    }
+    & .MinervaGridItem-xs-auto {
+        display: block;
+        flex-basis: auto;
+        flex-grow: 0;
+        flex-shrink: 0;
+        max-width: none;
+        width: auto;
+        min-width: 0px;
+    }
+    & .MinervaGridItem-xs-hide {
+        display: none;
+    }
+
+    // @include above-md{
+    //     & .MinervaGridItem-md {
+    //         display: block;
+    //         width: calc(100% * var(--span-md) /  var(--columns));
+    //         flex-basis: auto;
+    //         min-width: 0px;
+    //     }
+    //     & .MinervaGridItem-md-grow {
+    //         display: block;
+    //         flex-basis: 0;
+    //         flex-grow: 1;
+    //         max-width: 100%;
+    //         min-width: 0px;
+    //     }
+    //     & .MinervaGridItem-md-auto {
+    //         display: block;
+    //         flex-basis: auto;
+    //         flex-grow: 0;
+    //         flex-shrink: 0;
+    //         max-width: none;
+    //         width: auto;
+    //         min-width: 0px;
+    //     }
+    //     & .MinervaGridItem-md-hide {
+    //         display: none;
+    //     }
+    // }
+}

@@ -1,0 +1,28 @@
+
+summary: "Delete Blob "
+tags:
+  - product/Projects
+description: "Deletes a User "
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            'message': "Deleted the file from Blob",
+            'filename': file_name
+      }
+
+  500:
+    description: "Delete operation error:"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Delete operation error:"
+      }

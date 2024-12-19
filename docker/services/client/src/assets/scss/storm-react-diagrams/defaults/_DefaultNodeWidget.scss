@@ -1,0 +1,55 @@
+.srd-default-node {
+  background-color: rgb(30, 30, 30);
+  border-radius: 5px;
+  font-family: sans-serif;
+  color: black;
+  border: solid 2px transparent;
+  overflow: visible;
+  font-size: 13px;
+
+  &__title {
+    background: transparent;
+    display: flex;
+    white-space: nowrap;
+    font-weight: bold;
+    > * {
+      align-self: center;
+      text-align: center;
+    }
+    .fa {
+      padding: 5px;
+      opacity: 0.2;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1.0;
+      }
+    }
+  }
+
+  &__name {
+    flex-grow: 1;
+    padding: 5px 5px;
+  }
+
+  &__ports {
+    display: flex;
+    background-image: none;
+    font-size: 11px;
+    margin: 0 5px;
+  }
+
+  &__in, &__out{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__green{
+    color: green;
+  }
+
+  &__red{
+    color: red;
+  }
+}

@@ -1,0 +1,181 @@
+{
+    "data": [
+        {
+            "name": "Planning",
+            "id": "1",
+            "ref_id": 1,
+            "problemDefinition": [
+                {
+                    "name": "Annual Plan",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "parent_fn_id": "fn_node_1",
+                    "business_process_id": "1"
+                },
+                {
+                    "name": "Mid year review",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "parent_fn_id": "fn_node_1",
+                    "business_process_id": "1"
+                },
+                {
+                    "name": "Measurement",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "parent_fn_id": "fn_node_1",
+                    "business_process_id": "1"
+                }
+            ]
+        },
+        {
+            "name": "Operations",
+            "id": "2",
+            "ref_id": 2,
+            "problemDefinition": [
+                {
+                    "name": "Yearly Landscape Review",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "2"
+                },
+                {
+                    "name": "Quarterly MIS Review",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "2"
+                },
+                {
+                    "name": "Monthly Performance Review",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "parent_fn_id": "fn_node_2",
+                    "business_process_id": "2"
+                }
+            ]
+        },
+        {
+            "name": "Budgeting",
+            "id": "3",
+            "ref_id": 3,
+            "problemDefinition": [
+                {
+                    "name": "Annual Plan",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "parent_fn_id": "fn_node_3",
+                    "business_process_id": "3"
+                },
+                {
+                    "name": "Mid year review",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "parent_fn_id": "fn_node_3",
+                    "business_process_id": "3"
+                },
+                {
+                    "name": "Measurement",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "parent_fn_id": "fn_node_3",
+                    "business_process_id": "3"
+                }
+            ]
+        },
+        {
+            "name": "Purchase to Pay",
+            "id": "4",
+            "ref_id": 4,
+            "problemDefinition": [
+                {
+                    "name": "Monthly Invoice Review",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "business_process_id": "4"
+                },
+                {
+                    "name": "Monthly Payment Review",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "business_process_id": "4"
+                },
+                {
+                    "name": "Planning",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "business_process_id": "4"
+                }
+            ]
+        },
+        {
+            "name": "Compliance",
+            "id": "5",
+            "ref_id": 5,
+            "problemDefinition": [
+                {
+                    "name": "Annual Planning",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "business_process_id": "4"
+                },
+                {
+                    "name": "Monthly Compliance Reporting",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "business_process_id": "4"
+                },
+                {
+                    "name": "Measurement",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "business_process_id": "4"
+                }
+            ]
+        },
+        {
+            "name": "Marketing",
+            "id": "5",
+            "ref_id": 5,
+            "problemDefinition": [
+                {
+                    "name": "Annual Planning",
+                    "node_type": "workflow",
+                    "id": "wf_node_4",
+                    "ref_id": 1,
+                    "business_process_id": "4"
+                },
+                {
+                    "name": "Quarterly Marketing Activities",
+                    "node_type": "workflow",
+                    "id": "wf_node_5",
+                    "ref_id": 2,
+                    "business_process_id": "4"
+                },
+                {
+                    "name": "Measurement",
+                    "node_type": "workflow",
+                    "id": "wf_node_6",
+                    "ref_id": 3,
+                    "business_process_id": "4"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,109 @@
+name: CODX-ARTIFACT-$(Date:ddMMyyyy)-$(Rev:r)
+
+trigger:
+- genai/inference-k8s-deployment
+
+variables:
+- group: frontend-environment-variables
+- name: REACT_APP_JUPYTER_DEMO_TOKEN
+  value: $[variables.ReactAppJupyterDemoToken]
+- name: REACT_APP_MATOMO_TOKEN
+  value: $[variables.ReactAppMatomoToken]
+- name: REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING
+  value: $[variables.ReactAppApplicationInsightsConnectionString]
+- name: REACT_APP_GOOGLE_MAPS_KEY
+  value: $[variables.ReactAppGoogleMapsKey]
+
+stages:
+- stage: Upload_Artifact
+  dependsOn: []
+  condition: succeeded()
+  jobs:
+  - job: check_folder
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - script: |
+        token=$(curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
+        https://login.microsoftonline.com/$(TenantId)/oauth2/token \
+        -d 'client_id=$(ClientId)' \
+        -d 'grant_type=client_credentials' \
+        -d 'resource=https://management.core.windows.net/' \
+        -d 'client_secret=$(ClientSecret)')
+        echo $token
+        access_token=$(echo $token | jq '.access_token')
+        echo "##vso[task.setvariable variable=access_token]$access_token"
+    - script: |
+        curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/infra-manager") -eq 0 ]; then
+          echo "No code changes in infra-manager"
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+          echo "Code Changes in infra-manager"
+        fi
+      name: checkFolderInfraManager
+    - script: |
+        curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/genai-utils/nuclios_inference") -eq 0 ]; then
+          echo "No code changes in nuclios inference"
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+          echo "Code Changes in nuclios inference"
+        fi
+      name: checkFolderNucliosInference
+
+  - job: InfraManager_Package_Upload
+    pool:
+      vmImage: 'ubuntu-latest'
+    variables:
+      folderVar: $[dependencies.check_folder.outputs['checkFolderInfraManager.RunJob']]
+    dependsOn: check_folder
+    condition: eq(variables.folderVar, true)
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.10'
+      displayName: 'Use Python 3.10'
+      retryCountOnTaskFailure: 2
+    - task: TwineAuthenticate@1
+      inputs:
+        artifactFeed: 'codex/codex_feed'
+      displayName: 'Authenticate Twine'
+    - script: |
+        cd docker/services/infra-manager
+        python -m pip install --upgrade pip
+        python -m pip install --upgrade build twine
+        python -m build
+      displayName: 'Install dependencies in Infra-Manager Folder'
+    - script: |
+        twine upload -r "codex_feed" --config-file $(PYPIRC_PATH) docker/services/infra-manager/dist/* --verbose
+      displayName: 'Upload Python infra-manager Package'
+
+  - job: NucliosInference_Package_Upload
+    pool:
+      vmImage: 'ubuntu-latest'
+    variables:
+      folderVar: $[dependencies.check_folder.outputs['checkFolderNucliosInference.RunJob']]
+    dependsOn: check_folder
+    condition: eq(variables.folderVar, true)
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.10'
+      displayName: 'Use Python 3.10'
+      retryCountOnTaskFailure: 2
+    - task: TwineAuthenticate@1
+      inputs:
+        artifactFeed: 'codex/codex_feed'
+      displayName: 'Authenticate Twine'
+    - script: |
+        cd docker/services/genai-utils/nuclios_inference
+        python -m pip install --upgrade pip
+        python -m pip install --upgrade build twine
+        python -m build
+      displayName: 'Install dependencies'
+    - script: |
+        twine upload -r "codex_feed" --config-file $(PYPIRC_PATH) docker/services/genai-utils/nuclios_inference/dist/* --verbose
+      displayName: 'Upload Python nuclios_inference Package'

@@ -1,0 +1,52 @@
+{
+    "kpis": {
+        "label": "Current Performance",
+        "items": [
+            {
+                "id": 1,
+                "name": "Volume 2023",
+                "projection": "270 M HL",
+                "record": "200 M HL",
+                "progress": "8%YoY"
+            },
+            {
+                "id": 2,
+                "name": "Revenue 2023",
+                "projection": "$960M",
+                "record": "$800M",
+                "progress": "6%YoY"
+            },
+            {
+                "id": 3,
+                "name": "Gross Margin 2023",
+                "projection": "$960M",
+                "record": "$200 K",
+                "progress": "8%YoY"
+            },
+            {
+                "id": 4,
+                "name": "Promotion Spend 2023",
+                "projection": "$960M",
+                "record": "$200 K",
+                "progress": "8%YoY"
+            }
+        ]
+    },
+    "insights": {
+        "label": "NucliOS Recommends",
+        "items": [
+            {
+               "id": 1,
+               "data": "Innovation to be launched by October to achieve targets for Q3 in category 2"
+            },
+            {
+               "id": 2,
+               "data": "Inflation adjusted price correction needs to be done for SKUs in category 1 considering high elasticity observed in 2023 & Q1’24"
+            },
+            {
+               "id": 3,
+               "data": "Fund more promotional budget for category 3 to become a challenger in market share (>20%)"
+            }
+        ]
+    }
+}

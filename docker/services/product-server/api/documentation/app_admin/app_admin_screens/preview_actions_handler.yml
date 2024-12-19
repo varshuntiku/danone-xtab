@@ -1,0 +1,37 @@
+summary: "Preview Action Generator"
+tags:
+  - product/AppAdmin
+description: "Preview dynamic action given action_generator, action_handler codes"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to test the Screen level Actions code (Action Handler)
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [code_string]
+        properties:
+          code_string:
+            type: "string"
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'Issue with getting actions'}

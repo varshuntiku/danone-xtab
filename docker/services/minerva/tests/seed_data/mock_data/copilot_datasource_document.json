@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "datasource_id": 4,
+        "name": "Data Spec.pdf",
+        "meta": {
+            "storage_type": "AZURE_BLOB"
+        }
+    }
+]

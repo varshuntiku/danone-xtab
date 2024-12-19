@@ -1,0 +1,188 @@
+@import '../../styles/util.scss';
+@import '../../styles/variables.scss';
+
+@mixin fullScreenMode{
+    --view-mode: "fullscreen";
+    // common {
+    container-type: inline-size;
+    container-name: minervaFullScreen;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: var(--minerva-bg-main);
+    overflow: hidden;
+    position: relative;
+    // }
+    .MinervaFullScreen-header {
+        // common {
+        display: grid;
+        border-bottom: var(--minerva-border-1);
+        padding: spacing(5);
+        gap: spacing(5);
+        height: spacing(52);
+        align-items: center;
+        // }
+        grid-template-columns: 1fr;
+        h3 {
+            // common {
+            font-weight: 500;
+            // }
+            font-size: spacing(21);
+            text-align: center;
+        }
+        .MinervaFullScreen-version {
+            text-transform: initial;
+            letter-spacing: initial;
+            color: inherit;
+            font-size: 0.5em;
+            position: absolute;
+        }
+        .MinervaFullScreen-header-action-left {
+            display: flex;
+            gap: spacing(5);
+            position: absolute;
+        }
+        .MinervaFullScreen-header-action-right {
+            display: flex;
+            gap: spacing(5);
+            position: absolute;
+            right: spacing(10);
+            align-items: center;
+        }
+    }
+
+    .MinervaFullScreen-main {
+        // common {
+        flex: 1;
+        display: grid;
+        overflow: hidden;
+        // }
+        grid-template-columns: minmax(460px, 1fr) auto;
+        .MinervaFullScreen-conversation-section {
+            left: -100%;
+            position: absolute;
+            transition-duration: 0.3s;
+            background: var(--minerva-bg-main);
+            z-index: 2;
+            // top: 0;
+            width: 100%;
+            height: 100%;
+            width: spacing(516);
+            border-right: initial;
+            & .MinervaConvoWindows-close-convo-btn {
+                display: inline-flex;
+            }
+        }
+        .MinervaFullScreen-chat-section {
+            // common {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--minerva-bg-gradient);
+            // }
+            & .MinervaFullScreen-queryoutput-section {
+                flex-grow: 1;
+                flex-basis: 0;
+                overflow-y: auto;
+                overflow-x: hidden;
+                position: relative;
+            }
+        }
+        .MinervaFullScreen-sideworkspace-triggers {
+            background: var(--minerva-bg-main);
+            padding: spacing(4);
+            //To display multiple workspace triggers one below the other
+            display: flex;
+            flex-direction: column;
+        }
+
+        .MinervaFullScreen-sideworkspace-section {
+            display: none;
+            position: relative;
+            overflow: hidden;
+        }
+    }
+
+    &.MinervaFullScreen-sideworkspace-opened {
+        .MinervaFullScreen-main {
+            .MinervaFullScreen-sideworkspace-section {
+                display: block;
+            }
+            .MinervaFullScreen-sideworkspace-triggers {
+                display: none;
+            }
+        }
+    }
+
+    &.MinervaFullScreen-convo-opened {
+        .MinervaFullScreen-conversation-section {
+            left: 0;
+        }
+    }
+}
+
+@mixin mobileMode{
+    --view-mode: "mini";
+    .MinervaFullScreen-header {
+        // grid-template-columns: auto 1fr;
+        h3 {
+            font-size: spacing(18);
+        }
+        .MinervaFullScreen-version {
+            font-size: 0.8em;
+        }
+    }
+
+    .MinervaFullScreen-main {
+        grid-template-columns: 1fr;
+        .MinervaFullScreen-conversation-section {
+            left: -100%;
+            position: absolute;
+            transition-duration: 0.3s;
+            background: var(--minerva-bg-main);
+            z-index: 2;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            // max-width: $chatConvoHistoryWidth;
+            border-right: initial;
+            .MinervaConvoWindows-close-convo-btn {
+                display: inline-flex;
+            }
+        }
+        .MinervaFullScreen-sideworkspace-triggers, .MinervaFullScreen-sideworkspace-section {
+            display: none;
+        }
+
+    }
+
+    &.MinervaFullScreen-convo-opened {
+        .MinervaFullScreen-conversation-section {
+            left: 0;
+            top: 0;
+            box-shadow: var(--minerva-box-shadow-8);
+        }
+    }
+}
+
+.MinervaWC .MinervaFullScreen {
+    @include fullScreenMode()
+}
+
+.MinervaWC .MinervaFullScreen-mini {
+    @include fullScreenMode()
+}
+
+.MinervaWC .MinervaPopperDialog:not(.MinervaPopperDialog-expanded) .MinervaFullScreen {
+    @include mobileMode()
+}
+
+@include bellow-md {
+    .MinervaWC .MinervaFullScreen {
+        @include mobileMode()
+    }
+    .MinervaWC .MinervaPopperDialog-expanded .MinervaFullScreen{
+        @include mobileMode()
+    }
+}

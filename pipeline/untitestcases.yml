@@ -1,0 +1,192 @@
+name: CODX_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
+trigger: none
+
+variables:
+- group: frontend-environment-variables
+- name: TENANT_ID
+  value: $[variables.TenantId]
+- name: CLIENT_ID
+  value: $[variables.ClientId]
+- name: CLIENT_SECRET
+  value: $[variables.ClientSecret]
+
+stages:
+- stage: Test_cases
+  condition: succeeded()
+  jobs:
+
+  - job: check_folder
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - script: |
+        token=$(curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
+        https://login.microsoftonline.com/$(TenantId)/oauth2/token \
+        -d 'client_id=$(ClientId)' \
+        -d 'grant_type=client_credentials' \
+        -d 'resource=https://management.core.windows.net/' \
+        -d 'client_secret=$(ClientSecret)')
+        echo $token
+        access_token=$(echo $token | jq '.access_token')
+        echo "##vso[task.setvariable variable=access_token]$access_token"
+    - script: |
+        echo $(access_token)
+        echo $(Build.SourceVersion)
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/.*client") -eq 0 ]; then
+          echo "hi"
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+        fi
+      name: checkFolderFe
+    - script: |
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/server") -eq 0 ]; then
+          echo "bye"
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+        fi
+      name: checkFolderBePlat
+    - script: |
+        curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/product-server") -eq 0 ]; then
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+        fi
+      name: checkFolderBeProd
+    - script: |
+        curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/nuclios-server") -eq 0 ]; then
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+        fi
+      name: checkFolderFastAPI
+
+  - job: Frontend_code_coverage
+    dependsOn: check_folder
+    variables:
+      folderVar: $[dependencies.check_folder.outputs['checkFolderFe.RunJob']]
+    condition: eq(variables.folderVar, true)
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: npmAuthenticate@0
+      inputs:
+        workingFile: '$(System.DefaultWorkingDirectory)/docker/services/product-client/.npmrc'
+      displayName: 'Authenticate npm to Feed'
+    - task: Cache@2
+      inputs:
+        key: 'node | "$(Agent.OS)" | package-lock.json'
+        restoreKeys: |
+          node | "$(Agent.OS)"
+      displayName: 'Restore node modules cache'
+    - task: NodeTool@0
+      inputs:
+        versionSpec: '18.14.1'
+    - script: |
+        cd docker/services/product-client
+        npm install --legacy-peer-deps --no-optional
+        npm install --legacy-peer-deps --only=dev
+        npm run lint:check
+      displayName: 'npm install and lint'
+    # - script: |
+    #     cd docker/services/product-client
+    #     npm run test:coverage
+    #   displayName: 'run unit tests for product-client'
+    #   continueOnError: false
+    # - task: PublishBuildArtifacts@1
+    #   inputs:
+    #     PathtoPublish: '$(System.DefaultWorkingDirectory)/docker/services/product-client/coverage'
+    #     ArtifactName: 'frontend-coverage-Report'
+    #   displayName: 'Publish coverage report'
+    #   continueOnError: false
+
+  # - job: Backend_Platform_test
+  #   dependsOn: check_folder
+  #   variables:
+  #     folderVar: $[dependencies.check_folder.outputs['checkFolderBePlat.RunJob']]
+  #   condition: eq(variables.folderVar, true)
+  #   pool:
+  #     vmImage: 'ubuntu-latest'
+  #   steps:
+  #   - task: UsePythonVersion@0
+  #     inputs:
+  #       versionSpec: '3.10'
+  #   - script: |
+  #       cd docker/services/server
+  #       python -m pip install --upgrade pip
+  #       pip install setuptools
+  #       pip install -r ../requirements_tests.txt
+  #       pip install pytest pytest-azurepipelines
+  #       pip install pytest-cov
+  #       cd tests
+  #       rm -rf config_local.py
+  #       cp config_CI.py config_local.py
+  #       pytest --junitxml=test-results-platform.xml --cov=api --cov-report=html:htmlcov/platform
+  #     displayName: 'pytest platform server'
+  #     continueOnError: false
+  #   - script: |
+  #       rm -rf docker/services/server/api/migrations
+  #       rm -rf docker/services/product-server/api/migrations
+  #       cd docker/services/server
+  #       pip install --user flake8==6.1.0
+  #     displayName: 'install flake8'
+  #   - script: |
+  #       python3 -m flake8
+  #     displayName: 'run flake8 on platform backend'
+
+  # - job: Backend_Product_test
+  #   dependsOn: check_folder
+  #   variables:
+  #     folderVar: $[dependencies.check_folder.outputs['checkFolderBeProd.RunJob']]
+  #   condition: eq(variables.folderVar, true)
+  #   pool:
+  #     vmImage: 'ubuntu-latest'
+  #   steps:
+  #   - task: UsePythonVersion@0
+  #     inputs:
+  #       versionSpec: '3.10'
+  #   - script: |
+  #       cd docker/services/product-server
+  #       python -m pip install --upgrade pip
+  #       pip install setuptools
+  #       pip install -r ../requirements_tests.txt
+  #       pip install pytest pytest-azurepipelines
+  #       pip install pytest-cov
+  #       cd tests
+  #       rm -rf config_local.py
+  #       cp config_CI.py config_local.py
+  #       pytest --junitxml=test-results-product.xml --cov=api --cov-report=html:htmlcov/product
+  #     displayName: 'pytest product server'
+  #     continueOnError: false
+  #   - script: |
+  #       rm -rf docker/services/product-server/api/migrations
+  #       rm -rf docker/services/server/api/migrations
+  #       cd docker/services/product-server
+  #       pip install --user flake8==6.1.0
+  #     displayName: 'install flake8'
+  #   - script: |
+  #       python3 -m flake8
+  #     displayName: 'running flake8 on product backend'
+
+  - job: Backend_FastAPI_test
+    dependsOn: check_folder
+    variables:
+      folderVar: $[dependencies.check_folder.outputs['checkFolderFastAPI.RunJob']]
+    condition: eq(variables.folderVar, true)
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.10'
+    - script: |
+        cd docker/services/nuclios-server
+        pip install --user flake8==6.1.0
+      displayName: 'install flake8'
+    - script: |
+        cd docker/services/nuclios-server
+        python3 -m flake8 .
+      displayName: 'running flake8 on nuclios fastapi backend'

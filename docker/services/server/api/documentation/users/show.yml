@@ -1,0 +1,37 @@
+summary: "Get User Details"
+tags:
+  - platform/Users
+description: "This returns the user  details for the given user  id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "user_id"
+  description: "User ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "id": 123,
+            "first_name": "Soumava",
+            "last_name": "Paul",
+            "email_address": "",
+            "user_groups": ["Coach","default-user"],
+            "restricted_user": False
+        }
+  404:
+    description: "Item not found"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Item not found"
+      }

@@ -1,0 +1,46 @@
+{
+    "data": [
+        {
+            "is_active": true,
+            "insights": true,
+            "insight_data": [
+                "30% of the datasets are not in consumptions due to quality issues "
+            ]
+        },
+        {
+            "is_active": true,
+            "insights": true,
+            "insight_data": [
+                "External data sources of IRI contributes to 65% of procurement cost "
+            ]
+        },
+        {
+            "is_active": true,
+            "insights": true,
+            "insight_data": [
+                "15% of data pipelines are idle for past 90 days "
+            ]
+        },
+        {
+            "is_active": true,
+            "insights": true,
+            "insight_data": [
+                "15% of data pipelines are idle for past 90 days "
+            ]
+        },
+        {
+            "is_active": true,
+            "insights": true,
+            "insight_data": [
+                "15% of data pipelines are idle for past 90 days "
+            ]
+        },
+        {
+            "is_active": true,
+            "insights": true,
+            "insight_data": [
+                "15% of data pipelines are idle for past 90 days "
+            ]
+        }
+    ]
+}

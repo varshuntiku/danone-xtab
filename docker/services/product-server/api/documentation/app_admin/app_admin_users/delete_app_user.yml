@@ -1,0 +1,37 @@
+summary: "Delete app user"
+tags:
+  - product/AppAdmin
+description: "Deletes the given app user id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_user_id"
+  required: "true"
+  description: "The app user id that has to be deleted"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Deletes the given app user"
+    schema:
+      type: "object"
+  400:
+    description: "Invalid Operation"
+    schema:
+      type:
+      example: {'error': 'Deleting self account is not allowed.'}
+  404:
+    description: "ID not found"
+    schema:
+      type: "object"
+      example: {'error': 'item not found'}
+  422:
+    description: "Unprocessed entity"
+    schema:
+      type: "object"
+      example: {'error': "Error in deleting app users"}

@@ -1,0 +1,30 @@
+summary: "List of all accessible apps."
+tags:
+  - product/App
+description: "Generates a list of all the accessible apps for the logged in user with a url to access the apps"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+
+            "status": "success",
+            "app_id": False,
+            "landing_url": "landing_url"
+
+      }
+
+  500:
+    description: "Error while fetching"
+    schema:
+      type: "object"
+      example: {
+        'status': 'error',
+        'error': 'item not found '
+        }

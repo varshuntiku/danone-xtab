@@ -1,0 +1,33 @@
+summary: "Start execution environment"
+tags:
+  - platform/ExecutionEnvironments
+description: "This starts a execution environment [Check if this can be done through post]"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "execution_environment_id"
+  description: "Execution Environment ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example:
+        {
+            "status": true,
+        }
+
+  404:
+    description: "Error in query"
+    schema:
+      type: "object"
+      example: {
+        "Error":"Cluster id not found"
+      }

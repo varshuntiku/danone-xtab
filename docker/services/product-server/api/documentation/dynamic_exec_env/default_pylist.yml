@@ -1,0 +1,19 @@
+summary: "Get default python libraries"
+tags:
+  - product/DynamicExecutionEnvironment
+description: "Fetches list of default python libraries to create a new execution environment"
+produces:
+- application/json
+security:
+  - Authorization: []
+
+responses:
+  200:
+    description: "API successful"
+    schema:
+      type: object
+  500:
+    description: "Error"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'Unable to retrieve default requirements for dynamic execution environments'}

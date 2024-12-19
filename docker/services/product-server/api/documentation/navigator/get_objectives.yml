@@ -1,0 +1,55 @@
+summary: "List of objectives"
+tags:
+  - product/Navigator
+description: "returns the list of objectives & details for the given app id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : [
+          {
+            'description': description,
+            'group_name': group_name,
+            'objectives_list': [
+                {
+                'objective_id': 123,
+                'objective_name': "objective_name",
+                'next_recommended_objective': "next_recommended_objective"
+                } ,
+                {
+                'objective_id': 124,
+                'objective_name': "objective_name",
+                'next_recommended_objective': "next_recommended_objective"
+                }
+
+            ]
+          }
+        ]
+  500:
+    description: "TODO"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Query Error"
+      }
+  404:
+    description: "TODO item not found"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Item not found"
+      }
+
+
+

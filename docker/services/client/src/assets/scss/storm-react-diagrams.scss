@@ -1,0 +1,11 @@
+@import "storm-react-diagrams/DiagramWidget";
+@import "storm-react-diagrams/LinkLayerWidget";
+@import "storm-react-diagrams/NodeLayerWidget";
+@import "storm-react-diagrams/NodeWidget";
+@import "storm-react-diagrams/PortWidget";
+
+//defaults
+@import "storm-react-diagrams/defaults/DefaultNodeWidget";
+@import "storm-react-diagrams/defaults/DefaultPortWidget";
+@import "storm-react-diagrams/defaults/DefaultLabelWidget";
+@import "storm-react-diagrams/defaults/DefaultLinkWidget";

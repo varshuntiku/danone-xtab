@@ -1,0 +1,30 @@
+{% extends "templates/page.html" %} {% block message %} {{ super() }}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{ static_url('css/style.min.css') }}" type="text/css" />
+<style>
+    body {
+            background: transparent;
+            visibility: hidden;
+        }
+</style>
+{% endblock stylesheet %}
+{% block script %}
+    <script>
+        window.onload = () => {
+            setTimeout(() => {
+            var evtSource1 = new EventSource(
+                jhdata.base_url + "api/users/" + jhdata.user + "/server/progress?_xsrf=" + jhdata.xsrf_token
+            )
+            evtSource1.onmessage = function(e) {
+                var evt = JSON.parse(e.data);
+                window.parent.postMessage({
+                    type: 'jupyterhub-progress',
+                    data: evt
+                },
+                '*')
+            }
+            }, 1000);
+        }
+    </script>
+{% endblock script %}
+{% endblock %}

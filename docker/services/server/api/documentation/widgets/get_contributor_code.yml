@@ -1,0 +1,33 @@
+summary: "Get contributor code"
+tags:
+  - platform/WidgetGroups
+description: "This returns the list of widget group along with their details."
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "widget_id"
+  description: "Widget ID"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: [
+          {
+             "data" : "123Abc"
+          }
+        ]
+  500:
+    description: "Yet to be added in api"
+    schema:
+    type: "object"
+    example: [
+      "Error":"Error in query operation"
+    ]

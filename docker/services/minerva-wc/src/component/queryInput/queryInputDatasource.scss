@@ -1,0 +1,110 @@
+@import '../../styles/util.scss';
+.MinervaWC .MinervaQueryDatasourceInput-datasource-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: spacing(16.5);
+    .MinervaQueryDatasource {
+            display: flex;
+            width: spacing(170);
+            padding: spacing(12);
+            position: relative;
+            align-items: center;
+            gap: spacing(10);
+            background-color: var(--minerva-bg-main);
+            border-radius: spacing(4);
+            box-shadow: var(--minerva-box-shadow-1);
+
+            .MinervaIconButton-small {
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translate(spacing(8), spacing(-8));
+                background-color: var(--minerva-bg-main-70);
+                padding: spacing(0.4);
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            &:hover .MinervaIconButton-small {
+                opacity: 1
+            }
+        }
+
+        .MinervaQueryDatasourceInput-name {
+            text-overflow: ellipsis;
+            max-width: spacing(170);
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .MinervaQueryDatasourceInput-filelimit {
+            font-size: spacing(14);
+        }
+
+        .MinervaIconButton-fileupload {
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: spacing(21);
+                height: spacing(21);
+                font-size: spacing(20);
+            }
+        }
+        .MinervaQueryDatasource-file {
+            fill: var(--minerva-text-color)
+        }
+
+        .MinervaQueryDatasourceInput-thumbnail {
+            width: spacing(60);
+            height: spacing(48);
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .MinervaQueryDatsource-image {
+            position: relative;
+
+            .MinervaIconButton-small {
+                position: absolute;
+                top: 0;
+                right: 0;
+                transform: translate(spacing(8), spacing(-8));
+                background-color: var(--minerva-bg-main-70);
+                padding: spacing(0.4);
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            &:hover .MinervaIconButton-small {
+                opacity: 1
+            }
+        }
+        .MinervaQueryImage-preview-popover {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 90%;
+            max-height: 90%;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: none;
+
+            .MinervaQueryImage-preview {
+                width: spacing(778);
+                height: spacing(738);
+            }
+
+            .MinervaQueryImage-close {
+                align-self: flex-start;
+                margin-top: -1px;
+                svg {
+                    fill : var(--minerva-text-color-white)
+                }
+            }
+        }
+}
+

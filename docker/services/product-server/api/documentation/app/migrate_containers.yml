@@ -1,0 +1,22 @@
+summary: "Migration containers"
+tags:
+  - product/App
+description: "Fetches migration containers details"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "object"
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          type: "object"

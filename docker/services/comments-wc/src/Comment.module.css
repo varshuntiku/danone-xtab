@@ -1,0 +1,469 @@
+/* Comment.module.css */
+
+/* General comment container styles */
+.commentContainer {
+    border-bottom: 1px solid #dcdcdc; /* Replace with actual color */
+    padding-top: 16px; /* Assuming theme.spacing(2) equals 16px */
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    color: #333; /* Replace with actual color */
+}
+
+/* Header styles */
+.header {
+    display: flex;
+    align-items: center;
+}
+
+/* Content styles */
+.content {
+    padding-left: 5rem;
+    font-size: 1.6rem;
+}
+
+/* Avatar styles */
+.avatar {
+    width: 30px;
+    height: 30px;
+    margin-right: 16px; /* Assuming theme.spacing(2) equals 16px */
+    background-color: #220047; /* Replace with dynamic color */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Avatar wrapper styles */
+.avatarWrapper {
+    width: 5rem;
+}
+
+/* Name styles */
+.name {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/* Text field styles */
+.textField {
+    width: 100%;
+}
+
+/* Edit icon styles */
+.editIcon {
+    visibility: hidden;
+    padding: 0.5rem;
+}
+
+/* Comment hover styles */
+.commentHovered:hover .editIcon {
+    visibility: visible;
+    padding: 0.5rem;
+}
+
+/* Divider styles */
+.divider {
+    border-top: 1px solid #dcdcdc; /* Replace with actual color */
+    margin: 8px 0; /* Assuming theme.spacing(1) equals 8px */
+}
+
+/* Icon button styles */
+.iconButton {
+    padding: 0.5rem;
+}
+.iconButton:hover {
+    background-color: #00000012;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.disabled {
+    pointer-events: none; 
+   
+   
+}
+/* Bookmark icon styles */
+.bookmarkIcon {
+    display: flex;
+    padding: 0.5rem;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+.bookmarkunfillIcon {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+/* Resolve icon styles */
+.resolveIcon {
+    display: flex;
+    padding: 0.5rem;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bookmark styles */
+.bookMark, .bookMarkFilled {
+    width: 2rem;
+    height: 2rem;
+    stroke: #333; /* Replace with actual color */
+}
+
+/* Filled bookmark styles */
+.bookMarkFilled {
+    fill: #333; /* Replace with actual color */
+}
+
+/* Menu icon styles */
+.menuIcon {
+    padding: 0.5rem;
+}
+
+/* Bookmark and resolve container styles */
+.bookmarkResolveContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Icon bar styles */
+.iconBar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+/* Menu styles */
+.menu {
+    padding: 0;
+}
+
+.menu .MuiList-padding {
+    padding: 0;
+}
+
+.menu .MuiListItem-button:hover {
+    background: #f0f0f0; /* Replace with actual color */
+}
+
+/* Menu item styles */
+.menuItem {
+    padding: 1rem !important;
+    height: 4.5rem;
+    min-height: 4.5rem;
+}
+
+/* Attachment container styles */
+.attachmentContainer {
+    gap: 0.5rem;
+    display: flex;
+    margin-top: 0.8rem;
+    padding-left: 5rem;
+    flex-direction: column;
+}
+
+/* Content styles for the second content area */
+.content2 {
+    font-size: 1.67rem;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: 0.5px;
+}
+
+/* Resolved styles */
+.resolved {
+    padding: 0.5rem;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0; /* Replace with actual color */
+}
+
+.resolved svg {
+    fill: #333; /* Replace with actual color */
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Pulsating circle styles */
+.pulsatingCircle {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 0.5rem;
+}
+
+.pulsatingCircle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: #333; /* Replace with actual color */
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.pulsatingCircle::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background-color: #333; /* Replace with actual color */
+    opacity: 0.4;
+    animation: pulse 2s infinite;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.33);
+        opacity: 0.4;
+    }
+    70% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(0.33);
+        opacity: 0.4;
+    }
+}
+
+/* Mention styles */
+.mention {
+    font-weight: 500;
+    font-family: 'Graphik', sans-serif;
+    color: #dcdcdc; /* Replace with actual color */
+    font-size: 1.6rem !important;
+}
+
+/* Pulse container styles */
+.pulseContainer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    margin-right: -5rem;
+    margin-left: -34.2rem;
+}
+
+/* Notification message styles */
+.notificationMessage {
+    font-size: 1.4rem;
+    color: #333; /* Replace with actual color */
+    font-weight: 500;
+}
+
+/* Reply add container styles */
+.replyAddContainer {
+    display: flex;
+    align-items: start;
+    padding-left: 24px; /* Assuming theme.spacing(6) equals 24px */
+    margin-top: 16px; /* Assuming theme.spacing(2) equals 16px */
+}
+
+/* Reply avatar styles */
+.replyAvatar {
+    width: 30px;
+    height: 30px;
+    margin-right: 16px; /* Assuming theme.spacing(2) equals 16px */
+    margin-top: 12px; /* Assuming theme.spacing(1.5) equals 12px */
+    background-color: #220047; /* Replace with dynamic color */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Reply container styles */
+.replyContainer {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+}
+
+/* Show button styles */
+.showButton {
+    color: #dcdcdc; /* Replace with actual color */
+    display: flex !important;
+    font-size: 1.3rem !important;
+    align-items: bottom;
+}
+
+.showButton .MuiButton-label {
+    font-size: 1.4rem !important;
+}
+
+.showButton:hover {
+    background: none;
+    color: #dcdcdc; /* Replace with actual color */
+}
+
+.showButton svg {
+    margin-left: 0.5rem;
+    stroke: #dcdcdc; /* Replace with actual color */
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Dialog title styles */
+.dialogTitle {
+    font-size: 2.6rem;
+    width: 60%;
+    letter-spacing: 1.5px;
+    color: #333; /* Replace with actual color */
+    display: flex;
+    font-family: 'Graphik Compact', sans-serif;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dialogTitle svg {
+    width: 2.6rem;
+    height: 2.6rem;
+    fill: #333; /* Replace with actual color */
+}
+
+/* Dialog content styles */
+.dialogContent {
+    font-size: 1.67rem;
+    font-weight: 400;
+    line-height: 2rem;
+    letter-spacing: 0.5px;
+}
+
+/* Cancel and proceed button styles */
+.cancel, .proceed {
+    margin-bottom: 2.4rem;
+}
+
+.proceed {
+    margin-right: 1.6rem;
+}
+.progress {
+    position: absolute;
+       top: 50%;
+        bottom: 50%;
+        left: 40%;
+    }
+    
+
+/* Dialog root styles */
+.dialogRoot {
+    margin: 16px; /* Assuming theme.spacing(2) equals 16px */
+    padding: 16px; /* Assuming theme.spacing(2) equals 16px */
+    background-color: #fff; /* Replace with actual color */
+    border-radius: 8px;
+}
+.resolvedIcon {
+    background-color: #00000012; /* Light black background */
+    border-radius: 50%; /* Circular shape */
+    padding: 10px; /* Adjust padding as needed */
+}
+
+.dialogContainer{
+    display: flex;
+       align-items: center;
+       justify-content: center;
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: rgba(0, 0, 0, 0.5);
+       z-index: 1000;
+       }
+.dialogPaper {
+        background: white;
+       padding: 3rem;
+       width: 25%;
+       box-shadow: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
+       backdrop-filter: blur(2rem);
+       height: 140px;
+       font-size: larger;
+       margin-left:4rem;
+    }
+
+
+  .dialogContainer
+{
+display: flex;
+   align-items: center;
+   justify-content: center;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.5);
+   z-index: 1000;
+   }
+.dialogContent{
+   font-size: 1.8rem;
+   margin-bottom: 55px;
+   color: #220047;
+ 
+   margin-top: 3rem;
+   font-weight: 400;
+   word-spacing: 2px;
+}
+  
+.dialogActions{
+   display: flex;
+   justify-content: flex-end;
+   margin-right: -3rem;
+   border: none;
+   margin-top: -2rem;
+   cursor: pointer;
+}
+
+
+.cancel{
+   border-color: #220047;
+   margin-right: 1.6rem;
+   font-weight: 700;
+   background: white;
+   color: #220047;
+   border: 1px solid #22004799;
+   padding: 5px 15px;
+   font-size: 2rem;
+   padding-left: 2.4rem;
+   padding-right: 2.4rem;
+   cursor: pointer;
+   height: 5rem;
+   border-radius: 2px;
+}
+
+.proceed{
+  border: none;
+   padding: 0.95rem 1.5rem;
+   cursor: pointer;
+   border-radius: 2px;
+   background: #220047;
+   color: #FFA497;
+   font-weight: 550;
+   font-size: 1.7rem;
+   width: 15rem;
+   margin-right: 3rem;
+   box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+.closeButton {
+    cursor: pointer;
+    height: 3rem;
+    padding: 1rem;
+    margin-top: 4.5rem;
+}

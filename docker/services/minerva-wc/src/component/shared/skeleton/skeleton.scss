@@ -1,0 +1,21 @@
+@import "../../../styles/util.scss";
+$spacingUnit: spacing(16);
+.MinervaWC .MinervaSkeleton {
+    animation: Minerva-Keyframe-pulse 1.5s ease-in-out 0.5s infinite;
+    background-color: var(--minerva-text-color-10);
+    border-radius: spacing(2);
+    display: block;
+    height: calc(#{$spacingUnit} * var(--height));
+
+    @keyframes Minerva-Keyframe-pulse {
+        0% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.4;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}

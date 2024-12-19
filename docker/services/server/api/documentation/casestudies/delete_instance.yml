@@ -1,0 +1,44 @@
+
+summary: "Delete Instance"
+tags:
+  - platform/Case Studies
+description: "Deletes the project using the given instance_id by adding time and date in deleted_at column"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "path"
+  name: "project_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "instance_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "deleted_rows": 1,
+      }
+  404:
+    description: "Item not found"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Item not found"
+      }
+  500:
+    description: "Delete operation error:"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Delete operation error:"
+      }

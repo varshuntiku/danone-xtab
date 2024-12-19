@@ -1,0 +1,68 @@
+{
+    "id": 462,
+    "input": "What is the difference between Mult-gig ethernet and MATEnet connectors and in what context should I use them?",
+    "output": {
+      "type": null,
+      "response": {
+        "text": "",
+        "processed_query": "What is the difference between Mult-gig ethernet and MATEnet connectors and in what context should I use them?",
+        "hint": null,
+        "entities": null,
+        "widgets": [
+          {
+            "type": "text",
+            "value": "Based on the content provided, the Mult-gig Ethernet connectors support data transmission up to 12 Gbps and are designed for current and next-generation Ethernet applications, such as 4k displays, radar/lidar, high-resolution cameras, and safety applications. On the other hand, MATEnet is a miniaturized and scalable connector system for automotive Ethernet that can transmit up to 1 Gbps according to IEEE 100BASE-T1 and 1000BASE-T1 standards, and up to 4 Gbps with alternative technologies. ",
+            "citation": {
+              "id": "0",
+              "type": "ppt",
+              "data": [
+                {
+                  "name": "Product Info.pdf",
+                  "source_url": null,
+                  "img_url": "private:https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_161_261_6.png"
+                },
+                {
+                  "name": "TE Technical Conference Paper.pdf",
+                  "source_url": null,
+                  "img_url": "private:https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_161_264_1.png"
+                },
+                {
+                  "name": "Product Info.pdf",
+                  "source_url": "https://www.google.com/",
+                  "img_url": "private:https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_161_261_5.png"
+                }
+              ]
+            }
+          },
+          {
+            "type": "text",
+            "value": "",
+            "citation": {
+              "id": "1",
+              "type": "ppt",
+              "data": []
+            }
+          },
+          {
+            "type": "text",
+            "value": "In terms of context, you would use Mult-gig Ethernet connectors for high-speed data transmission in advanced automotive applications, while MATEnet connectors would be suitable for automotive Ethernet applications that require lower data transmission speeds.",
+            "citation": {
+              "id": "2",
+              "type": "ppt",
+              "data": [
+                {
+                  "name": "Product Info.pdf",
+                  "source_url": null,
+                  "img_url": "private:https://minervastorage.blob.core.windows.net/copilot-tool-document-image/Pageimage_161_261_6.png"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "window_id": 169,
+    "feedback": null,
+    "pinned": null,
+    "comment": null
+  }

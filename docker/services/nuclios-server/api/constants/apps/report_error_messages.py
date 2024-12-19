@@ -1,0 +1,37 @@
+from enum import Enum
+
+
+class ReportErrors(Enum):
+    GET_USER_CREATED_STORIES_ERROR = "Error fetching user created stories"
+    GET_STORY_ACCESS_ERROR = "Error getting story access"
+    GET_USER_ACCESSIBLE_STORIES_ERROR = "Error fetching user accessible stories"
+    GET_STORY_CONTENT_ERROR = "Error getting story content"
+    GET_STORY_ERROR = "Error fetching the story"
+    STORY_NOT_EXIST_ERROR = "Story with the given id does not exist"
+    STORY_LAYOUTS_ERROR = "Error getting story layouts"
+    STORY_PAGES_ERROR = "Error fetching story pages"
+    MISSING_STORY_ID_ERROR = "Story id not present"
+    INCORRECT_STORY_TYPE_ERROR = "Type of story id is not correct"
+    CREATE_LAYOUT_ERROR = "Error creating story layout"
+    ADD_LAYOUT_ERROR = "Error while adding story layouts"
+    DELETE_LAYOUT_ERROR = "Error deleting story layout"
+    CREATE_STORY_ACCESS_ERROR = "Error creating story access record"
+    SHARED_STORY_DATA_ERROR = "Error while fetching shared story data"
+    CREATE_STORY_CONTENT_ERROR = "Error creating story content"
+    ADD_STORY_CONTENT_ERROR = "Error adding story content"
+    INVALID_REQUEST_ERROR = (
+        "Invalid Request. Excepting story ids in list and is_multiple_add property as true but did not get the property"
+    )
+    DELETE_STORY_CONTENT_ERROR = "Error deleting story content"
+    UPDATE_STORY_ERROR = "Error updating story"
+    DELETE_STORY_PAGES = "Error deleting story pages"
+    UPDATE_STORY_CONTENT_ERROR = "Error updating story content"
+    CREATE_STORY_PAGES = "Error creating story pages"
+    STORY_MAPPING_DELETE_ERROR = "Error deleting story app mappings"
+    STORIES_DELETE_ERROR = "Error deleting stories"
+    STORY_CONTENT_DELETE_ERROR = "Error deleting story content"
+    GET_STORY_APP_MAPPING_ERROR = "Error getting story app mappings"
+    CREATE_STORY_ERROR = "Error creating story"
+    CREATE_STORY_APP_MAPPING_ERROR = "Error creating story app mappings"
+    CREATE_STORY_SHARE_ERROR = "Error creating story share"
+    UPDATE_STORY_SCHEDULE_INFO_ERROR = "Error updating story schedule info"

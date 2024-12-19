@@ -1,0 +1,49 @@
+summary: "Validate existence of scenario name"
+tags:
+  - product/Scenarios
+description: "Checks if scenario name entered by user already exists for a particular screen and app id."
+produces:
+- "application/json"
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  description: APP ID for which the user wants to save the scenario
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "app_screen_id"
+  required: "true"
+  description: APP SCREEN ID for which the user wants to save the scenario
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "name"
+  required: "true"
+  description: SCENARIO NAME entered by the user
+  schema:
+    type: "integer"
+security:
+  - Authorization: []
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+
+            "isexists": false,
+
+      }
+
+  500:
+    description: "Error while Validating Scenario name"
+    schema:
+      type: "object"
+      example: {
+        'message': 'Error while Validating Scenario name',
+
+        }

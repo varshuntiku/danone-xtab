@@ -1,0 +1,27 @@
+@import '../../../styles/util.scss';
+.MinervaWC .MinervaPopover:has(> .MinervaConfirmPopup) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.MinervaWC .MinervaConfirmPopup {
+    display: flex;
+    flex-direction: column;
+
+    & h4 {
+        padding: spacing(20);
+    }
+
+    & .MinervaConfirmPopup-content {
+        padding: spacing(0, 20, 20);
+    }
+
+    & .MinervaConfirmPopup-action {
+        padding: spacing(0, 20, 20);
+        display: flex;
+        gap: spacing(10);
+        justify-content: end;
+    }
+
+}

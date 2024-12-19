@@ -1,0 +1,68 @@
+summary: "Save module info"
+tags:
+  - product/AppAdmin
+description: "Save module info for a given app"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Update modules enable/disable
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [modules]
+        properties:
+          modules:
+            type: "object"
+            properties:
+              alerts:
+                type: "boolean"
+              application_manual_url:
+                type: "boolean"
+              dashboard:
+                type: "boolean"
+              data_story:
+                type: "boolean"
+              fullscreen_mode:
+                type: "boolean"
+              retain_filters:
+                type: "boolean"
+              user_mgmt:
+                type: "boolean"
+              minerva:
+                type: "object"
+                properties:
+                  enabled:
+                    type: "boolean"
+                  tenant_id:
+                    type: "integer"
+                    default: null
+
+        example: {"modules": {"user_mgmt": false, "dashboard": false, "fullscreen_mode": false, "alerts": true, "retain_filters": false, "application_manual_url": false, "data_story": false, "minerva": {"enabled": false, "tenant_id": null}}}
+
+responses:
+  200:
+    description: "Patched successfully"
+    schema:
+      type: "object"
+      example: {'status': 'success'}
+  404:
+    description: "AppID given is not found"
+    schema :
+      type: "object"
+      example:  {'error': 'Application not found'}
+  500:
+    description: "Error while updating"
+    schema :
+      type: "object"
+      example:  {'error': 'Error in saving application modules'}

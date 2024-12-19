@@ -1,0 +1,35 @@
+summary: "List of execution environments"
+tags:
+  - platform/ExecutionEnvironments
+description: "This generates the list of execution environments available"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: [
+        "env_list":
+          [{
+                "id": 123,
+                "name": "env name",
+                "requirements": "",
+                "cluster_id": "",
+                "status": "",
+                "created_by": '--',
+                "updated_by": '--',
+                "created_at":  "--",
+                "updated_at": "--",
+            }]
+      ]
+
+  500:
+    description: "Error in query"
+    schema:
+    type: "object"
+    example: [
+      "Error":"Error in query operation"
+    ]

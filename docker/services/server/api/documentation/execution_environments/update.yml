@@ -1,0 +1,55 @@
+
+summary: "Update execution Environment"
+tags:
+  - platform/Environments
+description: "This will update the execution environment name"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "environment_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "body"
+  name: "body"
+  description: "Accepts execution environment name and requirements"
+  required: "true"
+  schema:
+    type: "object"
+    example: {
+      'name': 'envname',
+      'requirements': 'envrequirements'
+
+    }
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "status": "true",
+      }
+  404:
+    description: "Item not found"
+    schema :
+      type: "object"
+      example:  {
+        "error" : "Item not found"
+      }
+  422:
+    description: "Could not update"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Could not update"
+      }
+
+

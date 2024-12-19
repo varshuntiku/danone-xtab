@@ -1,0 +1,35 @@
+summary: "Search the list of all accessible apps by name."
+tags:
+  - product/App
+description: "Generates list the apps if the logged in user has special access"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_name"
+  required: "true"
+  schema:
+    type: "string"
+
+responses:
+  200:
+    description: "Success"
+    content:
+      application/json:
+        schema:
+          type: "array"
+          example :
+            - app_id: "1234"
+              app_name:  "App 1234"
+
+  500:
+    description: "Error while fetching"
+    content:
+      application/json:
+        schema:
+          example: {
+            'error': 'Error fetching application by name'
+          }

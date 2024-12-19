@@ -1,0 +1,355 @@
+.layoutSize {
+    width: 100%;
+    height: 100%;
+}
+.layoutSize2 {
+    width: 100%;
+    height: 50%;
+}
+.layoutSize3 {
+    width: 100%;
+    height: 25%;
+}
+.layoutSize4 {
+    width: 100%;
+    height: 93%;
+}
+.layoutSize8 {
+    width: 100%;
+    height: 90%;
+}
+.layoutSize7 {
+    width: 100%;
+    height: 10%;
+}
+.layoutSize5 {
+    height: 47rem;
+}
+.layoutSize6 {
+    height: 35rem;
+}
+.layout9{
+    height: 10rem;
+}
+.textAlignLeft {
+    text-align: left;
+}
+.textCenterAlign {
+    text-align: center;
+}
+.marginBottom1 {
+    margin-bottom: 3rem;
+}
+.marginBottom3 {
+    margin-bottom: 5rem;
+}
+.marginBottom2 {
+    margin-bottom: 1.5rem;
+}
+.marginTop1 {
+    margin-top: 10rem;
+}
+.marginTop2 {
+    margin-top: 7rem;
+}
+
+.marginTop3 {
+    margin-top: 3rem;
+}
+
+.marginTop4 {
+    margin-top: 2rem;
+}
+.marginTop5 {
+    margin-top: 5rem;
+}
+.marginTop6 {
+    margin-top: 0.33rem;
+}
+.marginTop7 {
+    margin-top: 1rem;
+}
+.marginRight {
+    margin-right: 1rem;
+}
+.marginLeft {
+    margin-left: 1rem;
+}
+.marginLeft2 {
+    margin-left: 1.5rem;
+}
+.marginLeft3{
+    margin-left: -6rem;
+}
+.marginLeft4{
+    margin-left: 10rem;
+}
+.textFieldStyle {
+    width: 50rem;
+    font-size: 8rem;
+}
+.textFieldInputProp {
+    font-size: medium;
+}
+.radioLabel {
+    font-size: 1.8rem;
+}
+.fontSize1 {
+    font-size: 1.5;
+}
+.fontWeight1 {
+    font-weight: 500;
+}
+.inputSelectStyle {
+    width: 50rem;
+    height: 6rem;
+    font-size: 1.5rem;
+    border: solid 1px #cccccc;
+}
+.stepIcon {
+    border: solid 1px #6CA8EF;
+    border-radius: 50%;
+    /* color: 'transparent !important', */
+    width: 3rem;
+    height: 3rem;
+}
+
+.stepText {
+    fill: #6CA8EF;
+    font-size: 1.5rem;
+}
+.divStyle1 {
+    display: flex;
+    flex-direction: row;
+    gap:5px;
+}
+.divStyle2 {
+    display: flex;
+}
+.fontColor {
+    color: #004976;
+}
+.cardContent {
+    height: "16rem";
+}
+.cardLayout {
+    margin: 16;
+    display: flex;
+    flex-direction: "row";
+    width: 90%;
+    justify-content: "space-between";
+    /* height: "15rem"; */
+    border-radius: 12px;
+    border: solid 1px #FCCECE;
+    margin-right: 3rem;
+    /* padding: "2rem"; */
+}
+.fontStyle1 {
+    font-size: 6rem;
+    font-weight: 600;
+    color: #214163;
+}
+.fontStyle2 {
+    font-size: 2.7rem;
+    font-weight: 300;
+    color: #677482;
+}
+.fontStyle3 {
+    font-size: 1.5rem;
+}
+.landingHeadingLayout {
+    width: 466px;
+    height: 150px;
+    top: 302px;
+    left: 467px;
+}
+.landingHeadingText {
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 75px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.landingTextLayout {
+    width: 821px;
+    height: 132px;
+    top: 497px;
+    left: 467px;
+    opacity: 60%;
+}
+.landingText {
+    color: #071D34;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 32.81px;
+    letter-spacing: 0.35px;
+    text-align: left;
+}
+.questHeight {
+    height: 3.8rem;;
+}
+
+.humanBody {
+    position: relative;
+    flex-direction: column;
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 5rem;
+}
+.validationMsg{
+    font-size: 1.7rem;
+    color: red;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: 1fr;
+    background-color: steelblue;
+    background-image: url(https://source.unsplash.com/VWcPlbHglYc);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    height: auto;
+  }
+  .container {
+    position: relative;
+}
+.image1 {
+    position: absolute;
+    /* width: 600px;
+    height: 600px; */
+    margin-left: 7rem;
+    margin-top: -2rem;
+}
+
+.image2 {
+    position: absolute;
+    /* width: 600px;
+    height: 600px; */
+    margin-left: 7rem;
+    margin-top: -2rem;
+}
+
+.image3 {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    margin-left: 7rem;
+    margin-top: -2rem;
+}
+
+.box-container {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+
+  .box {
+    width: 200px;
+    height: 200px;
+    background-color: #000;
+  }
+
+  .btn-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .right-slide-appear {
+    opacity: 0;
+    transform: translateX(-500px) scale(0.6);
+  }
+  .right-slide-appear-done {
+    opacity: 1;
+    transition: all 500ms;
+    transform: translateX(0) scale(1);
+  }
+  .right-slide-enter {
+    opacity: 0;
+    transform: translateX(100px) scale(1);
+  }
+  .right-slide-enter-active {
+    opacity: 1;
+    transition: all 500ms ease-out;
+    transform: translateX(0) scale(1);
+  }
+  .right-slide-exit {
+    opacity: 1;
+  }
+  .right-slide-exit-active {
+    opacity: 0;
+    transition: all 500ms ease-in;
+    transform: translateX(100px) scale(1);
+  }
+
+  .bottom-slide-appear {
+    opacity: 0;
+    transform: translateY(-500px) scale(0.6);
+  }
+  .bottom-slide-appear-done {
+    opacity: 1;
+    transition: all 800ms;
+    transform: translateY(0) scale(1);
+  }
+  .bottom-slide-enter {
+    opacity: 0;
+    transform: translateY(100px) scale(1);
+  }
+  .bottom-slide-enter-active {
+    opacity: 1;
+    transition: all 800ms ease-out;
+    transform: translateY(0) scale(1);
+  }
+  .bottom-slide-exit {
+    opacity: 1;
+  }
+  .bottom-slide-exit-active {
+    opacity: 0;
+    transition: all 800ms ease-in;
+    transform: translateY(100px) scale(1);
+  }
+
+  .left-slide-appear {
+    opacity: 0;
+    transform: translateX(500px) scale(0.6);
+  }
+  .left-slide-appear-done {
+    opacity: 1;
+    transition: all 800ms;
+    transform: translateX(0) scale(1);
+  }
+  .left-slide-enter {
+    opacity: 0;
+    transform: translateX(-100px) scale(1);
+  }
+  .left-slide-enter-active {
+    opacity: 1;
+    transition: all 800ms ease-out;
+    transform: translateX(0) scale(1);
+  }
+  .left-slide-exit {
+    opacity: 1;
+  }
+  .left-slide-exit-active {
+    opacity: 0;
+    transition: all 800ms ease-in;
+    transform: translateX(-100px) scale(1);
+  }
+  .static-text {
+    color: #1E9D13;
+    font-size: 20px
+}
+.siderbar-divider {
+    position: absolute;
+    width: 100%;
+    top: 14%;
+    background-color: #CFB3CD;
+    margin: 2rem -1.5rem;
+}

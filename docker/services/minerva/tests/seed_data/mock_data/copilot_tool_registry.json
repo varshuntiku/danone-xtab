@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Global Registry",
+        "desc": null,
+        "config": null,
+        "created_by": null
+    },
+    {
+        "name": "Unittest registry",
+        "desc": "unittest skillset gets mapped to this",
+        "config": null
+    }
+]

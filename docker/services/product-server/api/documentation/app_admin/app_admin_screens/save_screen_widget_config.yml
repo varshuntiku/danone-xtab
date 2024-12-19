@@ -1,0 +1,62 @@
+summary: "Save Screen Widget Config"
+tags:
+  - product/AppAdmin
+description: "Save the screen widget details"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "screen_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+- in: "path"
+  name: "widget_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+requestBody:
+  description: Details to save the widget
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [config]
+        properties:
+          config:
+            type: "object"
+            properties:
+              title:
+                type: "string"
+              sub_title:
+                type: "string"
+              prefix:
+                type: "string"
+              metric_factor:
+                type: "string"
+              code:
+                type: "string"
+        example: {"config": {"title": "Graph1", "sub_title": "", "prefix": "", "metric_factor": "", "code": ""}}
+
+responses:
+  200:
+    description: "Request successful"
+    schema:
+      type: "object"
+      example: {'status': 'success'}
+  500:
+    description: "Error"
+    schema:
+      type: "object"
+      example: {'error': 'Error while saving widget config'}

@@ -1,0 +1,40 @@
+summary: "Get Project Info"
+tags:
+  - platform/Case Studies
+description: "This returns info of a project for the given project_id"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "project_id"
+  description: "Gets project info by project_id"
+  required: "true"
+  schema:
+    type: "integer"
+
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: [{
+            "id": 123,
+            "name": "",
+            "project_status": "",
+            "assignees": [{
+            "id": 123,
+            "name": ""
+            }],
+            "assignees_label": "",
+            "reviewer":  '--',
+            "created_by":  '--',
+            "updated_by": '--',
+            "created_at": "",
+            "updated_at": "--"
+        }]
+  500:
+    description: "Error in query"

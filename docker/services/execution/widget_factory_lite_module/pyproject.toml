@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "codex_widget_factory_lite"
+version = "1.0.0"
+description = "Codex widget factory lite"
+authors = ["nuclios"]
+readme = "README.md"
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+msrest = "==0.7.1"
+msrestazure = "==0.6.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,190 @@
+name: Execution-Environment-Pipeline-$(Date:ddMMyyyy)-$(Rev:r)-$(CodexProductAppVersion)
+trigger:
+  batch: true
+  branches:
+    include:
+      - dev
+
+variables:
+  - group: release-version
+  - name: CODEX_PRODUCT_APP_VERSION
+    value: $[variables.CodexProductAppVersion]
+  - group: frontend-environment-variables
+
+stages:
+  - stage: Build_Default_Code_Executor_and_DS_Workbench
+    condition: always()
+    jobs:
+      - job: buildCheckFolder
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+        - script: |
+            token=$(curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
+            https://login.microsoftonline.com/$(TenantId)/oauth2/token \
+            -d 'client_id=$(ClientId)' \
+            -d 'grant_type=client_credentials' \
+            -d 'resource=https://management.core.windows.net/' \
+            -d 'client_secret=$(ClientSecret)')
+            echo $token
+            access_token=$(echo $token | jq '.access_token')
+            echo "##vso[task.setvariable variable=access_token]$access_token"
+        - script: |
+            curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+            if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -E -c "/docker/services/code-executor-service|/docker/services/execution/widget_factory_lite_module/codex_widget_factory_lite") -eq 0 ]; then
+              echo "No code changes in Code Executor Service"
+              echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+            else
+              echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+              echo "Code Changes in Code Executor Service"
+            fi
+          name: checkFolderCodeExecutorService
+        - script: |
+            curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+            if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/ds-workbench/jupyterhub-user-service") -eq 0 ]; then
+              echo "No code changes in JupyterHub-User-Service"
+              echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+            else
+              echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+              echo "Code Changes in JupyterHub-User-Service"
+            fi
+          name: checkFolderJupyterHubUserService
+
+      - job: Build_Code_Executor_Service
+        variables:
+          folderVar: $[dependencies.buildCheckFolder.outputs['checkFolderCodeExecutorService.RunJob']]
+        dependsOn: buildCheckFolder
+        condition: eq(variables.folderVar, true)
+        steps:
+        - task: Docker@2
+          inputs:
+            containerRegistry: "Azure-CR"
+            repository: "code-executor-service"
+            command: "buildAndPush"
+            Dockerfile: "docker/code_executor.dockerfile"
+            tags: latest
+          displayName: "Build & Push Image to ACR"
+          condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/dev'))
+          
+        - task: AzureCLI@2
+          inputs:
+            azureSubscription: 'MIcrosoft Azure - Math (7b97259b-ed1f-4ebf-80e0-40d9ed2f0d3f)'
+            scriptType: 'bash'
+            scriptLocation: 'inlineScript'
+            inlineScript: |
+              accountKey=$(az storage account keys list -g $(resourcegroupName) -n $(storageAccountName) --query [0].value -o tsv)
+              az storage directory create --name $(fileShareDirectoryName) --share-name $(fileShareName) --account-key $accountKey --account-name $(storageAccountName)
+              az storage directory create --name $(widgetFileShareDirectoryName) --share-name $(fileShareName) --account-key $accountKey --account-name $(storageAccountName)
+
+              az storage file upload-batch \
+                --account-name "$(storageAccountName)" \
+                --account-key "$accountKey" \
+                --destination "$(fileShareName)" \
+                --source "$(codeExecutorDirectory)"  \
+                --destination-path "$(fileShareDirectoryName)"
+
+              az storage file upload-batch \
+                --account-name "$(storageAccountName)" \
+                --account-key "$accountKey" \
+                --destination "$(fileShareName)" \
+                --source "$(widgetFactoryDirectory)"  \
+                --destination-path "$(widgetFileShareDirectoryName)"
+            displayName: Code_Executor_Service Upload in Azure File Share
+            condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/dev'))
+
+      - job: Build_DS_Workbench
+        variables:
+          folderVar: $[dependencies.buildCheckFolder.outputs['checkFolderJupyterHubUserService.RunJob']]
+        dependsOn: buildCheckFolder
+        condition: eq(variables.folderVar, true)
+        steps:
+        - task: AzureCLI@2
+          inputs:
+            azureSubscription: 'MIcrosoft Azure - Math (7b97259b-ed1f-4ebf-80e0-40d9ed2f0d3f)'
+            scriptType: 'bash'
+            scriptLocation: 'inlineScript'
+            inlineScript: |
+              accountKey=$(az storage account keys list -g $(resourcegroupName) -n $(storageAccountName) --query [0].value -o tsv)
+              az storage directory create --name $(jupyterHubUserServiceFileShareDirectoryName) --share-name $(fileShareName) --account-key $accountKey --account-name $(storageAccountName)
+
+              az storage file upload-batch \
+                --account-name "$(storageAccountName)" \
+                --account-key "$accountKey" \
+                --destination "$(fileShareName)" \
+                --source "$(jupyterHubUserServiceDirectory)"  \
+                --destination-path "$(jupyterHubUserServiceFileShareDirectoryName)"
+            displayName: Build_DS_Workbench Upload in Azure File Share
+            condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/dev'))
+
+        - task: Docker@2
+          inputs:
+            containerRegistry: "Azure-CR"
+            repository: "jupyterhub-user-service-dev"
+            command: "buildAndPush"
+            Dockerfile: "docker/services/ds-workbench/jupyterhub-user-service/Dockerfile"
+            tags: latest
+          displayName: "Build & Push jupyterhub-user-service Image to ACR"
+          condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/dev'))
+
+  - stage: Deploy_Default_Execution_Environment
+    condition: succeeded()
+    jobs:
+      - job: buildCheckFolderCodeExecutorService
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+        - script: |
+            token=$(curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
+            https://login.microsoftonline.com/$(TenantId)/oauth2/token \
+            -d 'client_id=$(ClientId)' \
+            -d 'grant_type=client_credentials' \
+            -d 'resource=https://management.core.windows.net/' \
+            -d 'client_secret=$(ClientSecret)')
+            echo $token
+            access_token=$(echo $token | jq '.access_token')
+            echo "##vso[task.setvariable variable=access_token]$access_token"
+        - script: |
+            curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+            if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -E -c "/docker/services/code-executor-service|/docker/services/execution/widget_factory_lite_module/codex_widget_factory_lite") -eq 0 ]; then
+              echo "No code changes in Code Executor Service"
+              echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+            else
+              echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+              echo "Code Changes in Code Executor Service"
+            fi
+          name: checkChangesCodeExecutorService
+      - job: addDelay
+        pool: server
+        variables:
+            folderVar: $[dependencies.buildCheckFolderCodeExecutorService.outputs['checkChangesCodeExecutorService.RunJob']]
+        dependsOn: buildCheckFolderCodeExecutorService
+        condition: eq(variables.folderVar, true)
+        steps:
+        - task: Delay@1
+          inputs:
+            delayForMinutes: '5'
+
+      - job: 'RunPythonScriptJob'
+        variables:
+          folderVar: $[dependencies.buildCheckFolderCodeExecutorService.outputs['checkChangesCodeExecutorService.RunJob']]
+        dependsOn:
+         - buildCheckFolderCodeExecutorService
+         - addDelay
+        condition: eq(variables.folderVar, true)
+        steps:
+
+        - task: UsePythonVersion@0
+          inputs:
+            versionSpec: '3.10'
+        - bash: |
+            cd docker/services/nuclios-workbench/backends/api-services/dynamic-execution-environment
+            pip install -r requirements.txt
+          displayName: 'Install dependencies'
+        - script: |
+            cd docker/services/nuclios-workbench/backends/api-services/dynamic-execution-environment/scripts
+            python3 execution-environment-default-create.py $(DEFAULT_EXECUTION_USERNAME) $(DEFAULT_EXECUTION_PASSWORD)
+          env:
+            GATEWAY_BASE_URL: $(GATEWAY_BASE_URL)
+            GATEWAY_BASE_FAST_API_URL: $(GATEWAY_BASE_FAST_API_URL)
+          displayName: "Run execution-environment-default-create Script"
+          condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/dev'))

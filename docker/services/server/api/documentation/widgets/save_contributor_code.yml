@@ -1,0 +1,45 @@
+
+summary: "Update contributor code"
+tags:
+  - platform/Widgets
+description: "This will update the contributor code "
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "widget_id"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "body"
+  name: "body"
+  description: "Accepts paramters to update contributor code "
+  required: "true"
+  schema:
+    type: "object"
+    example: {
+           "code_text": "codeText",
+    }
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example: {
+            "status": "true",
+      }
+
+  500:
+    description: "Query Error"
+    schema :
+      type: "object"
+      example:  {
+        "Error" : "Query Error"
+      }
+
+

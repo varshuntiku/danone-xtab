@@ -1,0 +1,1151 @@
+{
+    "assumptions": false,
+    "columns": [
+        {
+            "id": false,
+            "label": ""
+        },
+        {
+            "id": "Category",
+            "label": "Category"
+        }
+    ],
+    "rows": [
+        {
+            "collapse": true,
+            "columns": [
+                {
+                    "id": false,
+                    "label": ""
+                },
+                {
+                    "id": "label",
+                    "label": "Channel"
+                }
+            ],
+            "data": {
+                "collapse": false,
+                "columns": [
+                    {
+                        "id": false,
+                        "label": ""
+                    },
+                    {
+                        "id": "Industry",
+                        "label": "Industry"
+                    },
+                    {
+                        "id": "Description",
+                        "label": "Description"
+                    }
+                ],
+                "rows": [
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Territory & Target Allocation"
+                                            },
+                                            {
+                                                "SubFunctions": " Field Sales Performances"
+                                            },
+                                            {
+                                                "SubFunctions": " Physician Targeting Optimization"
+                                            },
+                                            {
+                                                "SubFunctions": "Marketing Mix & Campaign Effectiveness"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Commercial & Mktg"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Patient Support Program Effectiveness"
+                                            },
+                                            {
+                                                "SubFunctions": "OTC"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Patient Insights"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Payer Segmentation Rebates"
+                                            },
+                                            {
+                                                "SubFunctions": "Recommendation Contract"
+                                            },
+                                            {
+                                                "SubFunctions": "Management & Analysis"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Market Access"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Site Selection Tool"
+                                            },
+                                            {
+                                                "SubFunctions": " Horizontal Scanning Application"
+                                            },
+                                            {
+                                                "SubFunctions": " Market Potential Assessment"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "R&D"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "AE Sourcing & Intake"
+                                            },
+                                            {
+                                                "SubFunctions": " AE Triaging & Analysis"
+                                            },
+                                            {
+                                                "SubFunctions": " AE Reporting & Archival"
+                                            },
+                                            {
+                                                "SubFunctions": "Archival RWE Capabilities"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Pharmacovigilance & HEOR"
+                                }
+                            ]
+                        },
+                        "Industry": "Pharmaceuticals"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "HCP Segmentation"
+                                            },
+                                            {
+                                                "SubFunctions": " Market Level Analytics"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Competitive Intel"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Payer Segmentation"
+                                            },
+                                            {
+                                                "SubFunctions": " HCP Loyalty"
+                                            },
+                                            {
+                                                "SubFunctions": " HCP Churn"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Player and HCP"
+                                }
+                            ]
+                        },
+                        "Industry": "Medical Devices"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Vet Utilization"
+                                            },
+                                            {
+                                                "SubFunctions": "Early disease setection"
+                                            },
+                                            {
+                                                "SubFunctions": "Wearable analysis"
+                                            },
+                                            {
+                                                "SubFunctions": "Pet food analysis"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Pet Care"
+                                }
+                            ]
+                        },
+                        "Industry": "Animal Health"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Aesthetics"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Aesthetics"
+                                }
+                            ]
+                        },
+                        "Industry": "Aesthetics"
+                    }
+                ]
+            },
+            "Category": "Manufacturers"
+        },
+        {
+            "collapse": true,
+            "columns": [
+                {
+                    "id": false,
+                    "label": ""
+                },
+                {
+                    "id": "Category",
+                    "label": "Category"
+                }
+            ],
+            "data": {
+                "collapse": false,
+                "columns": [
+                    {
+                        "id": false,
+                        "label": ""
+                    },
+                    {
+                        "id": "Industry",
+                        "label": "Industry"
+                    },
+                    {
+                        "id": "Description",
+                        "label": "Description"
+                    }
+                ],
+                "rows": [
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Personalized Engagement"
+                                            },
+                                            {
+                                                "SubFunctions": " Customer Service Analytics"
+                                            },
+                                            {
+                                                "SubFunctions": " Churn Model"
+                                            },
+                                            {
+                                                "SubFunctions": "Cost Estimator Tool"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Member"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Fraud, Waste & Abuse"
+                                            },
+                                            {
+                                                "SubFunctions": "Medical Cost Forecasting"
+                                            },
+                                            {
+                                                "SubFunctions": "Prior Auth Decision Prediction"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Operations"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Hospital Readmission Prediction"
+                                            },
+                                            {
+                                                "SubFunctions": "Right Time Care Intervention"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Clinical"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Medicare STAR Analytics"
+                                            },
+                                            {
+                                                "SubFunctions": "HEDIS Performance"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Rating"
+                                }
+                            ]
+                        },
+                        "Industry": "Commercial Plans"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Medicare - sub function"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Medicare - Function"
+                                }
+                            ]
+                        },
+                        "Industry": "Medicare"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Medicaid - sub function"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Medicaid - Function"
+                                }
+                            ]
+                        },
+                        "Industry": "Medicaid"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Pharmacy Benefit Managers (PBMs)"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Pharmacy Benefit Managers (PBMs)"
+                                }
+                            ]
+                        },
+                        "Industry": "Pharmacy Benefit Managers (PBMs)"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Employers - sub function"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Employers - Function"
+                                }
+                            ]
+                        },
+                        "Industry": "Employers"
+                    }
+                ]
+            },
+            "Category": "Insurers and Payers"
+        },
+        {
+            "collapse": true,
+            "columns": [
+                {
+                    "id": false,
+                    "label": ""
+                },
+                {
+                    "id": "label",
+                    "label": "Channel"
+                }
+            ],
+            "data": {
+                "collapse": false,
+                "columns": [
+                    {
+                        "id": false,
+                        "label": ""
+                    },
+                    {
+                        "id": "Industry",
+                        "label": "Industry"
+                    },
+                    {
+                        "id": "Description",
+                        "label": "Description"
+                    }
+                ],
+                "rows": [
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Chronic Disease Prediction (Diabetes, CKD, COPD etc.)"
+                                            },
+                                            {
+                                                "SubFunctions": "Rare Disease Prediction"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Disease"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Right Time Care Intervention"
+                                            },
+                                            {
+                                                "SubFunctions": " High Risk Population Identification"
+                                            },
+                                            {
+                                                "SubFunctions": " Precision Medicine"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Care Continuum"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Call Center Analytics"
+                                            },
+                                            {
+                                                "SubFunctions": "Provider-Payer Ops Automation"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Operations"
+                                },
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Medicare STAR Analytics"
+                                            },
+                                            {
+                                                "SubFunctions": "HEDIS Performance"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Rating"
+                                }
+                            ]
+                        },
+                        "Industry": "Integrated Delivery Networks (IDNs)"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Hospitals - Sub function"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Hospitals - Function"
+                                }
+                            ]
+                        },
+                        "Industry": "Hospitals"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Diagnostic Labs - Sub function"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Diagnostic Labs - Function"
+                                }
+                            ]
+                        },
+                        "Industry": "Diagnostic Labs"
+                    }
+                ]
+            },
+            "Category": "Providers"
+        },
+        {
+            "collapse": true,
+            "columns": [
+                {
+                    "id": false,
+                    "label": ""
+                },
+                {
+                    "id": "label",
+                    "label": "Channel"
+                }
+            ],
+            "data": {
+                "collapse": false,
+                "columns": [
+                    {
+                        "id": false,
+                        "label": ""
+                    },
+                    {
+                        "id": "Industry",
+                        "label": "Industry"
+                    },
+                    {
+                        "id": "Description",
+                        "label": "Description"
+                    }
+                ],
+                "rows": [
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Retail Pharmacies - Sub function"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Retail Pharmacies - Function"
+                                }
+                            ]
+                        },
+                        "Industry": "Retail Pharmacies"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Group Purchase Organizations (GPOs) - Sub function"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Group Purchase Organizations (GPOs) - Function"
+                                }
+                            ]
+                        },
+                        "Industry": "Group Purchase Organizations (GPOs)"
+                    },
+                    {
+                        "collapse": true,
+                        "data": {
+                            "collapse": false,
+                            "columns": [
+                                {
+                                    "id": false,
+                                    "label": ""
+                                },
+                                {
+                                    "id": "Functions",
+                                    "label": "Functions"
+                                },
+                                {
+                                    "id": "Description",
+                                    "label": "Description"
+                                }
+                            ],
+                            "rows": [
+                                {
+                                    "collapse": true,
+                                    "data": {
+                                        "collapse": false,
+                                        "columns": [
+                                            {
+                                                "id": false,
+                                                "label": ""
+                                            },
+                                            {
+                                                "id": "SubFunctions",
+                                                "label": "SubFunctions"
+                                            }
+                                        ],
+                                        "rows": [
+                                            {
+                                                "SubFunctions": "Distributions - Sub function"
+                                            }
+                                        ]
+                                    },
+                                    "Functions": "Distributions - Function"
+                                }
+                            ]
+                        },
+                        "Industry": "Distributions"
+                    }
+                ]
+            },
+            "Category": "Trade & Distribution"
+        }
+    ]
+}

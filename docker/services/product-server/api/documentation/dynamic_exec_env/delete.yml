@@ -1,0 +1,33 @@
+summary: "Delete Dynamic Execution environment"
+tags:
+  - product/DynamicExecutionEnvironment
+description: "Delete Execution environment for the given id"
+produces:
+- application/json
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "execution_environment_id"
+  required: "true"
+  description: "The environment ID that has to be deleted"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "API successful"
+    schema:
+      type: object
+    example: {'deleted_rows': 1}
+  404:
+    description: "ID not found"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'item not found'}
+  500:
+    description: "Error"
+    schema:
+      type: object
+    example: {'status': 'error', 'error': 'Error deleting dynamic execution environment'}

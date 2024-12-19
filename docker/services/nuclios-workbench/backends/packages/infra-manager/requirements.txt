@@ -1,0 +1,4 @@
+
+azure-mgmt-resource==23.0.1
+kubernetes==28.1.0
+python-dotenv==1.0.0

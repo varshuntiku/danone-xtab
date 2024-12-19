@@ -1,0 +1,58 @@
+@import '../../../../../styles/util.scss';
+
+.MinervaWC .MinervaFileListRenderer-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: spacing(16);
+    row-gap: spacing(30);
+
+    .MinervaFileListItemContainer-root {
+        display: flex;
+        align-items: center;
+        gap: spacing(10);
+
+        .MinervaFileListItemContainer {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: spacing(10);
+            background-color: var(--minerva-bg-main-l90);
+            border-radius: spacing(3);
+            padding: spacing(10);
+            box-shadow: var(--minerva-box-shadow-1);
+            width: spacing(182);
+            height: spacing(48);
+            flex: 1;
+
+            .MinervaFileType-icon {
+                display: flex;
+                gap: spacing(5);
+                flex-shrink: 0;
+            }
+
+            .MinervaFileItem-title {
+                flex-grow: 1;
+                font-size: spacing(14);
+                font-weight: 400;
+                color: var(--minerva-text-color);
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: normal;
+                word-break: break-word;
+            }
+        }
+
+        .MinervaFileListItem-download {
+            width: spacing(20);
+            height: spacing(20);
+            cursor: pointer;
+        }
+    }
+
+}

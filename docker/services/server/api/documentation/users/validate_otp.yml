@@ -1,0 +1,61 @@
+summary: "Validate the 6-digit OTP"
+tags:
+  - platform/Users
+description: "This validates the 6-digit otp provided by the user to change their password"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [code]
+        properties:
+          email:
+            type: "integer"
+        example: {"code": 654321}
+parameters:
+- in: header
+  name: userId
+  schema:
+    type: "integer"
+    required: true
+  example: 2
+
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+        "message": "Successfully validated"
+      }
+
+  400:
+    description: "Insufficient details"
+    schema:
+      type: "object"
+      example: {
+        "message": "Insufficient details to validate code"
+      }
+
+  404:
+    description: "Invalid code"
+    schema:
+      type: "object"
+      example: {
+        "message": "Invalid code"
+      }
+
+
+  500:
+    description: "Error in query operation"
+    schema:
+      type: "object"
+      example: {
+        'error': 'Error while validating the code'
+      }
+

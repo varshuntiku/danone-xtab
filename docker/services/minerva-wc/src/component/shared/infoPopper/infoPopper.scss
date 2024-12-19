@@ -1,0 +1,28 @@
+@import "../../../styles/util.scss";
+
+.MinervaWC .MinervaInfoPopper-content {
+    // max-width: spacing(400);
+    // max-height: spacing(500);
+    display: flex;
+    flex-direction: column;
+    .MinervaInfoPopper-content-header {
+        display: flex;
+        justify-content: end;
+        padding: spacing(5, 10, 0);
+        width: 100%;
+    }
+
+    .MinervaInfoPopper-content-body {
+        flex: 1;
+        padding: spacing(0, 10, 10);
+        overflow: auto;
+    }
+
+}
+
+.MinervaWC .MinervaPopover:has(> .MinervaInfoPopper-content) {
+    &[open]::backdrop {
+        background: transparent;
+    }
+    // transform: translateX(-50%);
+}

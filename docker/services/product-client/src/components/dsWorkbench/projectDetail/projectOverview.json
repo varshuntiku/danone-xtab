@@ -1,0 +1,95 @@
+{
+	"sections": [
+		{
+			"name": "overview",
+			"title": "Project Overview",
+			"desc": "Please fill in the basic details of the project",
+			"subSections": [
+				{
+					"name": "projectDetails",
+					"title": "Project Details",
+					"desc": "Fill in the basic details of the project",
+					"header": "Project Details",
+					"contentType": "project-details-form",
+					"content": {
+						"title": "",
+						"fields": [
+							{
+								"id": 1,
+								"name": "account",
+								"label": "Account name",
+								"type": "text",
+								"variant": "outlined",
+								"margin": "none",
+								"fullWidth": true,
+								"grid": 4
+							},
+							{
+								"id": 2,
+								"name": "name",
+								"label": "Project Name *",
+								"type": "text",
+								"variant": "outlined",
+								"margin": "none",
+								"fullWidth": true,
+								"grid": 4
+							},
+							{
+								"id": 3,
+								"name": "industry",
+								"label": "Domain *",
+								"type": "select",
+								"options": ["Airlines", "Automotive", "Banking", "CPG", "Entertainment", "E Commerce", "Insurance", "Pharmaceuticals", "Retail", "Technology", "Telecom"],
+								"variant": "outlined",
+								"margin": "none",
+								"fullWidth": true,
+								"grid": 4
+							},
+							{
+								"id": 5,
+								"name": "problem_area",
+								"label": "Problem Area",
+								"type": "text",
+								"variant": "outlined",
+								"margin": "none",
+								"fullWidth": true,
+								"grid": 4
+							},
+							{
+								"id": 6,
+								"name": "assignees",
+								"label": "Assign to",
+								"type": "select",
+								"variant": "outlined",
+								"search": true,
+								"options": [],
+								"optionValueKey": "id",
+								"optionLabelKey": "name",
+								"margin": "none",
+								"multiple": true,
+								"fullWidth": true,
+								"grid": 4
+							},
+							{
+								"id": 7,
+								"name": "reviewer",
+								"label": "Reviewer",
+								"type": "select",
+								"variant": "outlined",
+								"search": true,
+								"options": [],
+								"optionValueKey": "id",
+								"optionLabelKey": "name",
+								"margin": "none",
+								"multiple": false,
+								"fullWidth": true,
+								"grid": 4
+							}
+						]
+					},
+					"data": {}
+				}
+			]
+		}
+	]
+}

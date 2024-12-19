@@ -1,0 +1,3182 @@
+[
+    {
+        "id": 1,
+        "name": "Price",
+        "process": [
+            {
+                "id": 1,
+                "name": "Yearly Strategy Pricing-Category Specific",
+                "due": "Nov 15",
+                "progress": 100,
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "effectiveness for affordability, penetration & frequency at channel level",
+                            "showStakeHolder": true,
+                            "step": "complete",
+                            "stakeHolder": "VP RGM",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 1,
+                                    "name": "Pack roles Analysis",
+                                    "link": "https://nuclios.mathco.com/app/1483/pack-roles-definition",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "To support businessess to understand assortment segment performance across brand, pack,price, channels to optimize assortment and evaluate impact of assortment decisions"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "by isolating shopper activation and promotion impact on target segments to find impact of price",
+                            "showStakeHolder": true,
+                            "step": "active",
+                            "stakeHolder": "Sr. Director RGM",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 2,
+                                    "name": "Price Analyzer",
+                                    "link": "https://nuclios.mathco.com/app/1483/opportunity-identification/price-diagnostics",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "To support businessess to understand assortment segment performance across brand, pack,price, channels to optimize assortment and evaluate impact of assortment decisions"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "for different market scenarios, elasticities & macroeconomic indicators and finalize optimal plan",
+                            "showStakeHolder": true,
+                            "step": "next",
+                            "stakeHolder": "Director - Pricing",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 3,
+                                    "name": "Price Analyzer",
+                                    "link": "https://nuclios.mathco.com/app/1525/brand-analyzer/company-overview",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Evaluate pricing structure, identify areas for improvement, analyze market trends, historic information. Anomaly detection and its impact on sales"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "of price change and approve if within guidelines",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "Director - Pricing",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 4,
+                                    "name": "Price Analyzer",
+                                    "link": "https://nuclios.mathco.com/app/1525/brand-analyzer/market-overview",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Evaluate pricing structure, identify areas for improvement, analyze market trends, historic information. Anomaly detection and its impact on sales"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "5",
+                        "position": {
+                            "x": 1320,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "5",
+                            "heading": "Rollout",
+                            "description": "for channels with most impact and assess effectiveness before global rollout",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "Sr. Director RGM",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 5,
+                                    "name": "Price Analyzer",
+                                    "link": "https://nuclios.mathco.com/app/1525/sku-analyzer/sku-segmentation",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Evaluate pricing structure, identify areas for improvement, analyze market trends, historic information. Anomaly detection and its impact on sales"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-4",
+                        "source": "4",
+                        "target": "5",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ],
+                "solutions": [
+                    {
+                        "id": 1,
+                        "name": "Pack roles Analysis",
+                        "link": "https://nuclios.mathco.com/app/1483/pack-roles-definition",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "To support businessess to understand assortment segment performance across brand, pack,price, channels to optimize assortment and evaluate impact of assortment decisions"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Price Analyzer",
+                        "link": "https://nuclios.mathco.com/app/1483/opportunity-identification/price-diagnostics",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "To support businessess to understand assortment segment performance across brand, pack,price, channels to optimize assortment and evaluate impact of assortment decisions"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Price Analyzer",
+                        "link": "https://nuclios.mathco.com/app/1525/brand-analyzer/company-overview",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Evaluate pricing structure, identify areas for improvement, analyze market trends, historic information. Anomaly detection and its impact on sales"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "Price Analyzer",
+                        "link": "https://nuclios.mathco.com/app/1525/brand-analyzer/market-overview",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Evaluate pricing structure, identify areas for improvement, analyze market trends, historic information. Anomaly detection and its impact on sales"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "name": "Price Analyzer",
+                        "link": "https://nuclios.mathco.com/app/1525/sku-analyzer/sku-segmentation",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Evaluate pricing structure, identify areas for improvement, analyze market trends, historic information. Anomaly detection and its impact on sales"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Quarterly/ Mid-Year Price Review",
+                "due": "Feb 20",
+                "solutions": [
+                    {
+                        "id": 1,
+                        "name": "Price Analyzer",
+                        "link": "https://nuclios.mathco.com/app/1525/sku-analyzer/sku-analyses",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Evaluate pricing structure, identify areas for improvement, analyze market trends, historic information. Anomaly detection and its impact on sales"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Price Elasticity",
+                        "link": "https://nuclios.mathco.com/app/1200/dashboard",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Evaluate price ladders, understand price index and elasticities. Understand how consumers respond to change in price. Measure of how sensitive the quantity demanded of a good is to changes in its price. Used to identify substitutes and complements."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Price Simulation And Optimization",
+                        "link": "https://nuclios.mathco.com/app/1236/price-simulation/scenario-comparison",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Perform Price Point Optimization. Leverage Brandwise Subcategory level elasticity, Cross-price elasticity, volume share vs profit to understand how to best optimize value and volume share by tweaking price. Compare various scenarios and choose the best price change to get the desired result."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 7,
+                        "name": "Price Guidance",
+                        "link": "https://nuclios.mathco.com/app/1691",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Use the Price Guidance to create a plan"
+                            }
+                        ],
+                        "powerBi": true
+                    },
+                    {
+                        "id": 8,
+                        "name": "\tChannel Shelf Price Tracker",
+                        "link": "https://nuclios.mathco.com/app/1692",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Simulate using the price tracker to create an optimum plan"
+                            }
+                        ],
+                        "salesForce": true
+                    },
+                    {
+                        "id": 9,
+                        "name": "Price planning suite",
+                        "link": "https://app.powerbi.com/groups/me/reports/75e563bb-9346-4f08-a11d-1014e135b3d8/ReportSectionc244f6412cf6075440b9?ctid=4bf30310-e4f1-4658-9e34-9e8a5a193ed1&experience=power-bi",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": ""
+                            }
+                        ],
+                        "powerBi": true
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "effectiveness for affordability, penetration & frequency at channel level",
+                            "showStakeHolder": true,
+                            "step": "complete",
+                            "stakeHolder": "Sr. Manager - Pricing",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 1,
+                                    "name": "Price Analyzer",
+                                    "link": "https://nuclios.mathco.com/app/1525/sku-analyzer/sku-analyses",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Evaluate pricing structure, identify areas for improvement, analyze market trends, historic information. Anomaly detection and its impact on sales"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "by isolating shopper activation and promotion impact on target segments to find impact of price",
+                            "showStakeHolder": true,
+                            "step": "active",
+                            "stakeHolder": "Director - Pricing",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 2,
+                                    "name": "Price Elasticity",
+                                    "link": "https://nuclios.mathco.com/app/1200/dashboard",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Evaluate price ladders, understand price index and elasticities. Understand how consumers respond to change in price. Measure of how sensitive the quantity demanded of a good is to changes in its price. Used to identify substitutes and complements."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 7,
+                                    "name": "Price Guidance",
+                                    "link": "https://nuclios.mathco.com/app/1691",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Use the Price Guidance to create a plan"
+                                        }
+                                    ],
+                                    "powerBi": true
+                                },
+                                {
+                                    "id": 9,
+                                    "name": "Price planning suite",
+                                    "link": "https://app.powerbi.com/groups/me/reports/75e563bb-9346-4f08-a11d-1014e135b3d8/ReportSectionc244f6412cf6075440b9?ctid=4bf30310-e4f1-4658-9e34-9e8a5a193ed1&experience=power-bi",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": ""
+                                        }
+                                    ],
+                                    "powerBi": true
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "for different market scenarios, elasticities & macroeconomic indicators and finalize optimal plan",
+                            "showStakeHolder": true,
+                            "step": "next",
+                            "stakeHolder": "Sr. Director RGM",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 3,
+                                    "name": "Price Simulation And Optimization",
+                                    "link": "https://nuclios.mathco.com/app/1236/price-simulation/simulation",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Perform Price Point Optimization. Leverage Brandwise Subcategory level elasticity, Cross-price elasticity, volume share vs profit to understand how to best optimize value and volume share by tweaking price. Compare various scenarios and choose the best price change to get the desired result."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 8,
+                                    "name": "\tChannel Shelf Price Tracker",
+                                    "link": "https://nuclios.mathco.com/app/1692",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Simulate using the price tracker to create an optimum plan"
+                                        }
+                                    ],
+                                    "salesForce": true
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "of price change and approve if within guidelines",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "Director- Finance",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 4,
+                                    "name": "Price Simulation And Optimization",
+                                    "link": "https://nuclios.mathco.com/app/1236/price-simulation/scenario-comparison",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Perform Price Point Optimization. Leverage Brandwise Subcategory level elasticity, Cross-price elasticity, volume share vs profit to understand how to best optimize value and volume share by tweaking price. Compare various scenarios and choose the best price change to get the desired result."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "5",
+                        "position": {
+                            "x": 1320,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "5",
+                            "heading": "Rollout",
+                            "description": "for channels with most impact and assess effectiveness before global rollout",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "Regional Sales Head",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 5,
+                                    "name": "Price Simulation And Optimization",
+                                    "link": "https://nuclios.mathco.com/app/1236/price-simulation/scenario-comparison",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Perform Price Point Optimization. Leverage Brandwise Subcategory level elasticity, Cross-price elasticity, volume share vs profit to understand how to best optimize value and volume share by tweaking price. Compare various scenarios and choose the best price change to get the desired result."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-4",
+                        "source": "4",
+                        "target": "5",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ],
+                "progress": 40,
+                "legends": [
+                    {
+                        "id": 1,
+                        "color": "#DCF1EA",
+                        "name": "Completed"
+                    },
+                    {
+                        "id": 2,
+                        "color": "#478BDB",
+                        "name": "In Process"
+                    },
+                    {
+                        "id": 3,
+                        "color": "transparent",
+                        "name": "Next Step"
+                    }
+                ],
+                "processInfo": [
+                    {
+                        "heading": "Potential Impact",
+                        "value": "NSV $35M"
+                    },
+                    {
+                        "heading": "Estimated Cost",
+                        "value": "$2.5M"
+                    },
+                    {
+                        "heading": "Owner",
+                        "value": "Jane Doe"
+                    },
+                    {
+                        "heading": "Blocker",
+                        "value": "Plan isolating shopper activation & prom plan on S&I team"
+                    },
+                    {
+                        "heading": "Action Needed",
+                        "value": "Simulate price and share with stakeholders by Oct 18"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Measurement",
+                "due": "Jul 6",
+                "progress": 10,
+                "solutions": [
+                    {
+                        "id": 1,
+                        "name": "In Store Measurement",
+                        "link": "https://nuclios.mathco.com/app/1455/sales-driver-analysis",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Sales driver analysis of trade terms metrics to identify areas where improvements can be made in order to increase profits and optimize operations."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Sales Driver Analysis",
+                        "link": "https://nuclios.mathco.com/app/1455/sales-driver-analysis",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Sales driver analysis of trade terms metrics to identify areas where improvements can be made in order to increase profits and optimize operations."
+                            }
+                        ]
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "effectiveness for affordability, penetration & frequency at channel level",
+                            "showStakeHolder": true,
+                            "step": "complete",
+                            "stakeHolder": "Commercial Execution Leader",
+                            "showHeader": true
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "by isolating shopper activation and promotion impact on target segments to find impact of price",
+                            "showStakeHolder": true,
+                            "step": "active",
+                            "stakeHolder": "Manager = Commercial Execution",
+                            "showHeader": true
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "for different market scenarios, elasticities & macroeconomic indicators and finalize optimal plan",
+                            "showStakeHolder": true,
+                            "step": "next",
+                            "stakeHolder": "Commercial Execution Leader",
+                            "showHeader": true
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "of price change and approve if within guidelines",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 1,
+                                    "name": "In Store Measurement",
+                                    "link": "https://nuclios.mathco.com/app/1455/sales-driver-analysis",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Sales driver analysis of trade terms metrics to identify areas where improvements can be made in order to increase profits and optimize operations."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "5",
+                        "position": {
+                            "x": 1320,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "5",
+                            "heading": "Rollout",
+                            "description": "for channels with most impact and assess effectiveness before global rollout",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "showHeader": true,
+                            "solutions": [
+                                {
+                                    "id": 2,
+                                    "name": "Sales Driver Analysis",
+                                    "link": "https://nuclios.mathco.com/app/1455/sales-driver-analysis",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Sales driver analysis of trade terms metrics to identify areas where improvements can be made in order to increase profits and optimize operations."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Promotions",
+        "process": [
+            {
+                "id": 1,
+                "name": "Promotion Planning",
+                "due": "Nov 15",
+                "progress": 100,
+                "solutions": [
+                    {
+                        "id": 1,
+                        "name": "Post Promo Evaluation",
+                        "link": "https://nuclios.mathco.com/app/1276",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Evaluate impact of Markdown/Promo Price change on Sales."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Promo Planning",
+                        "link": "https://nuclios.mathco.com/app/1487/slice-creation",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Analyze SKUs and PPGs across country, retailer, category, sub-category, sku and time period for which the promotion is to be run"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Price Promo calendar",
+                        "link": "https://nuclios.mathco.com/app/1276/promo-calendar",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Plan promotions by running various scenarios and updating the promo calendar after analyzing the ouput of the simulations."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "Promotion Report",
+                        "link": "https://nuclios.mathco.com/app/1695",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Find Reports on main KPIs for promotion planning"
+                            }
+                        ],
+                        "powerBi": true
+                    },
+                    {
+                        "id": 5,
+                        "name": "Create promotions",
+                        "link": "https://nuclios.mathco.com/app/1694",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Promotions can be a part of a larger campaign to spread awareness about a new product or can be a part of a targeted objective."
+                            }
+                        ],
+                        "salesForce": true
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Review & identify opportunities to enhance the existing promo events",
+                            "showStakeHolder": true,
+                            "step": "complete",
+                            "stakeHolder": "Director - Analytics & Insights",
+                            "solutions": [
+                                {
+                                    "id": 1,
+                                    "name": "Post Promo Evaluation",
+                                    "link": "https://nuclios.mathco.com/app/1276",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Evaluate impact of Markdown/Promo Price change on Sales."
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 4,
+                                    "name": "Promotion Report",
+                                    "link": "https://nuclios.mathco.com/app/1695",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Find Reports on main KPIs for promotion planning"
+                                        }
+                                    ],
+                                    "powerBi": true
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Develop and quantify shopper needs, price point perception, trends",
+                            "showStakeHolder": true,
+                            "step": "active",
+                            "stakeHolder": "Consumer/ Shopper Marketing Lead"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Prioritize strategic SKUs for custom/ optimized promotions",
+                            "showStakeHolder": true,
+                            "step": "next",
+                            "stakeHolder": "Sr. Director RGM",
+                            "solutions": [
+                                {
+                                    "id": 2,
+                                    "name": "Promo Planning",
+                                    "link": "https://nuclios.mathco.com/app/1487/slice-creation",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Analyze SKUs and PPGs across country, retailer, category, sub-category, sku and time period for which the promotion is to be run"
+                                        },
+                                        {
+                                            "id": 5,
+                                            "name": "Create promotions",
+                                            "link": "https://nuclios.mathco.com/app/1694",
+                                            "data": [
+                                                {
+                                                    "id": 1,
+                                                    "name": "Promotions can be a part of a larger campaign to spread awareness about a new product or can be a part of a targeted objective."
+                                                }
+                                            ],
+                                            "salesForce": true
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Develop promotion calendar which align with forecasts",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "Director - TPO/TPM RGM",
+                            "solutions": [
+                                {
+                                    "id": 3,
+                                    "name": "Price Promo calendar",
+                                    "link": "https://nuclios.mathco.com/app/1276/promo-calendar",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Plan promotions by running various scenarios and updating the promo calendar after analyzing the ouput of the simulations."
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "5",
+                        "position": {
+                            "x": 1320,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "5",
+                            "heading": "Rollout",
+                            "description": "Get financial audit and approval",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "VP RGM"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-4",
+                        "source": "4",
+                        "target": "5",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Promotion Measurement",
+                "due": "Feb 20",
+                "progress": 20,
+                "solutions": [
+                    {
+                        "id": 1,
+                        "name": "Post Promo Evaluation",
+                        "link": "https://nuclios.mathco.com/app/1276/datacheck",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Evaluate Price promotion effectiveness of various promo types"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Post Promo Evaluation",
+                        "link": "https://nuclios.mathco.com/app/1276/promo-deep-dive-gross-breakdown",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Evaluate Price promotion effectiveness of various promo types"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Promo Impact Analyzer",
+                        "link": "https://nuclios.mathco.com/app/462/promo-pressure/promo-pressure",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Analyze effectiveness of promoton under different conditions"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "Promo sales decomposition",
+                        "link": "https://nuclios.mathco.com/app/773/deep-dive/store-segment-wise-deep-dive/sales-decomposition",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Analyze drivers of promo sales"
+                            }
+                        ]
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Evaluate promotion effectiveness considering affordability, penetration, cannibalization & incrementality",
+                            "showStakeHolder": true,
+                            "step": "complete",
+                            "stakeHolder": "Director - Analytics & Insights"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Determine profit pools and evaluate promotion RoI",
+                            "showStakeHolder": true,
+                            "step": "active",
+                            "stakeHolder": "Director - TPO/TPM RGM"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Track effectiveness in harsher market conditions & competitor events and flag for anomalies",
+                            "showStakeHolder": true,
+                            "step": "next",
+                            "stakeHolder": "Sr. Manager - TPO/TPM RGM"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Evaluate impact of instore activations and new product sell in.",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "Manager = Commercial Execution"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Promotion Optimization",
+                "due": "Jul 6",
+                "progress": 10,
+                "solutions": [
+                    {
+                        "id": 1,
+                        "name": "Promotion ROI Analyser",
+                        "link": "https://nuclios.mathco.com/app/512/promotion-analysis/uplift-vs-roi",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Assess ROI of promotions"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Promo Optimization",
+                        "link": "https://nuclios.mathco.com/app/1487/simulate",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Plan promotions by running various scenarios and updating the promo calendar after analyzing the ouput of the simulations."
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Promo Optimization",
+                        "link": "https://nuclios.mathco.com/app/1487/slice-creation",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Plan promotions by running various scenarios and updating the promo calendar after analyzing the ouput of the simulations."
+                            }
+                        ]
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Optimize for retailer-brand win-win objectives ",
+                            "showStakeHolder": true,
+                            "step": "complete",
+                            "stakeHolder": "Category / Account Heads"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Optimize Cost to run promotions & drive higher trade RoI",
+                            "showStakeHolder": true,
+                            "step": "active",
+                            "stakeHolder": "Director - TPO/TPM RGM"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Optimize promotion mechanics, event weeks & co merch",
+                            "showStakeHolder": true,
+                            "step": "next",
+                            "stakeHolder": "Sr. Manager - TPO/TPM RGM"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Optimize consumer promotion events for targeted channels",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "Director - Consumer/ Shopper Promotions"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Distribution",
+        "process": [
+            {
+                "id": 1,
+                "name": "Develop Operating Plan",
+                "due": "Nov 15",
+                "progress": 100,
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Develop key account yearly strategy to achieve joint goals and objectives",
+                            "showStakeHolder": true,
+                            "step": "complete"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Design AMPS (Availability/Merchandising/Price/Space) plan by category/ brand",
+                            "showStakeHolder": true,
+                            "step": "active"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Create a customer strategy",
+                            "showStakeHolder": true,
+                            "step": "next"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Define the picture of success at channel/outlet level.",
+                            "showStakeHolder": true,
+                            "step": "tbd"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Deliver as per plan",
+                "due": "Nov 15",
+                "progress": 20,
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Forecast for requirements considering all factors - incl velocity, market conditions, supply chain complexity",
+                            "showStakeHolder": true,
+                            "step": "complete"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Decide best route-to-market within channels to reach customers, shoppers",
+                            "showStakeHolder": true,
+                            "step": "active"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Identify & assign specific actions required by the salesforce to implement at channel/ outlet level",
+                            "showStakeHolder": true,
+                            "step": "next"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": " Manage storage of finished goods, chilled and ambient and plan for omnichannel distribution",
+                            "showStakeHolder": true,
+                            "step": "tbd"
+                        }
+                    },
+                    {
+                        "id": "5",
+                        "position": {
+                            "x": 1320,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "5",
+                            "heading": "Rollout",
+                            "description": "Execute right delivery of the product",
+                            "showStakeHolder": true,
+                            "step": "tbd"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-4",
+                        "source": "4",
+                        "target": "5",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Measure & Optimize",
+                "due": "Nov 15",
+                "progress": 10,
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Measure KPIs to ensure pervasive distribution ",
+                            "showStakeHolder": true,
+                            "step": "complete"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Identify gaps in current route-to-market and define workarounds for ensuring availability",
+                            "showStakeHolder": true,
+                            "step": "active"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Develop route-to-market priorities including expansion, new channel developments etc",
+                            "showStakeHolder": true,
+                            "step": "next"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Update commercial distribution policy for the company",
+                            "showStakeHolder": true,
+                            "step": "tbd"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Assortment",
+        "process": [
+            {
+                "id": 4,
+                "name": "Assortment Strategy",
+                "due": "Nov 15",
+                "progress": 100,
+                "solutions": [
+                    {
+                        "id": 1,
+                        "name": "BPPC Analysis",
+                        "link": "https://nuclios.mathco.com/app/1483/market-comparison/pack-roles",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Develop OBPPC and determine priorities"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Growth Opportunity hacker",
+                        "link": "https://nuclios.mathco.com/app/557",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Understand opportunity areas across category,  region & customers"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Growth forecasting & planning",
+                        "link": "https://nuclios.mathco.com/app/470",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Determine the potential for each market & category"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "Range & Mix Planning",
+                        "link": "https://nuclios.mathco.com/app/320",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Know the current mix distribution and evaluate white spaces"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "name": "Shopper Behavior Analyzer",
+                        "link": "https://nuclios.mathco.com/app/1381/switching-matrix",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Channel swicthing analysis"
+                            }
+                        ]
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Determine OBPPC priorities – Develop OBPPC and determine priorities.",
+                            "showStakeHolder": true,
+                            "step": "complete",
+                            "stakeHolder": "VP RGM"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Create Business Growth Model - Prioritize category growth opportunities and establish aspirational objectives",
+                            "showStakeHolder": true,
+                            "step": "active",
+                            "stakeHolder": "Sr. Director RGM"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Prioritize product mix across channels/ customers/ geographies",
+                            "showStakeHolder": true,
+                            "step": "next",
+                            "stakeHolder": "Regional/ Category Head"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Create channel level shopper strategy",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "Head - Channel Strategy"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 1,
+                "name": "Annual Assortment Planning",
+                "due": "Nov 15",
+                "progress": 100,
+                "solutions": [
+                    {
+                        "id": 1,
+                        "name": "Assortment Planner",
+                        "link": "https://nuclios.mathco.com/app/1381/descriptive-analysis/sku-opportunity",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "SKU level performance across markets & channels"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Assortment Analyzer",
+                        "link": "https://nuclios.mathco.com/app/1381/descriptive-analysis/sku-opportunity",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": ""
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Range Review - SKU Performance evaluator",
+                        "link": "https://nuclios.mathco.com/app/466/range-review-scenario-planner/range-review-scenario-planner",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Assess different types of SKUs"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "Planogram Design",
+                        "link": "https://nuclios.mathco.com/app/472/planograms/design",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Design channel specific planograms & optimize them for performance"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 5,
+                        "name": "Assortment product",
+                        "link": "https://nuclios.mathco.com/app/1693",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Generate a list of SKUs and add to assortment"
+                            }
+                        ],
+                        "salesForce": true
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Create SKU list for channel-geo-category (BU generated)",
+                            "showStakeHolder": true,
+                            "step": "complete",
+                            "stakeHolder": "Director - Category",
+                            "solutions": [
+                                {
+                                    "id": 1,
+                                    "name": "Assortment Planner",
+                                    "link": "https://nuclios.mathco.com/app/1381/descriptive-analysis/sku-opportunity",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "SKU level performance across markets & channels"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "id": 5,
+                                    "name": "Assortment product",
+                                    "link": "https://nuclios.mathco.com/app/1693",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Generate a list of SKUs and add to assortment"
+                                        }
+                                    ],
+                                    "salesForce": true
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Refine SKUs by paramters (incrementality, NSV, margins, supply chain complexity, velocity, …)",
+                            "showStakeHolder": true,
+                            "step": "active",
+                            "stakeHolder": "Director - Analytics & Insights",
+                            "solutions": [
+                                {
+                                    "id": 2,
+                                    "name": "Assortment Analyzer",
+                                    "link": "https://nuclios.mathco.com/app/1381/descriptive-analysis/sku-opportunity",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": ""
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Flag SKUs that need to be monitored & create a cull list",
+                            "showStakeHolder": true,
+                            "step": "next",
+                            "stakeHolder": "Director - Analytics & Insights",
+                            "solutions": [
+                                {
+                                    "id": 3,
+                                    "name": "Range Review - SKU Performance evaluator",
+                                    "link": "https://nuclios.mathco.com/app/466/range-review-scenario-planner/range-review-scenario-planner",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Assess different types of SKUs"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Generate final priority list of SKUs",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "Sr. Director RGM"
+                        }
+                    },
+                    {
+                        "id": "5",
+                        "position": {
+                            "x": 1320,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "5",
+                            "heading": "Rollout",
+                            "description": "Design planogram for final list at desired levels, bound by guidelines",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "Commercial Execution Leader",
+                            "solutions": [
+                                {
+                                    "id": 4,
+                                    "name": "Planogram Design",
+                                    "link": "https://nuclios.mathco.com/app/472/planograms/design",
+                                    "data": [
+                                        {
+                                            "id": 1,
+                                            "name": "Design channel specific planograms & optimize them for performance"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-4",
+                        "source": "4",
+                        "target": "5",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Assortment Optimization",
+                "due": "Nov 15",
+                "progress": 20,
+                "solutions": [
+                    {
+                        "id": 1,
+                        "name": "Assortment Overview",
+                        "link": "https://nuclios.mathco.com/app/472/assortment-overview/assortment-summary",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Idenify opportunities, white spaces to optimize assortment"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Range Review",
+                        "link": "https://nuclios.mathco.com/app/466/range-review-scenario-planner/range-review-scenario-planner",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Evaluate KPIs and targets to drive category goals"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Assortment Optimizer",
+                        "link": "https://nuclios.mathco.com/app/540/assortment-optimizer/assortment-overview/product-sku-report",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Optimize assortment and deliver plans"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "Assortment Review",
+                        "link": "https://nuclios.mathco.com/app/1481/plan-assortment/final-decision/decision-layer",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Final plan reviewer"
+                            }
+                        ]
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Optimize assortment at channel-account-geo level",
+                            "showStakeHolder": true,
+                            "step": "complete",
+                            "stakeHolder": "Director - Analytics & Insights"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Align with stakeholder on optimized list of assortment plan or facilitate override",
+                            "showStakeHolder": true,
+                            "step": "active",
+                            "stakeHolder": "Category Manager"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Discuss & finalize plan with field teams",
+                            "showStakeHolder": true,
+                            "step": "next",
+                            "stakeHolder": "Category Head"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Audit and review final assortment plan",
+                            "showStakeHolder": true,
+                            "step": "tbd",
+                            "stakeHolder": "National Account Manager"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Performance Management",
+                "due": "Nov 15",
+                "progress": 10,
+                "solutions": [
+                    {
+                        "id": 1,
+                        "name": "Assortment Overview",
+                        "link": "https://nuclios.mathco.com/app/472/assortment-overview/assortment-summary",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Idenify opportunities, white spaces to optimize assortment"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 2,
+                        "name": "Range Review",
+                        "link": "https://nuclios.mathco.com/app/466/range-review-scenario-planner/range-review-scenario-planner",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Evaluate KPIs and targets to drive category goals"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 3,
+                        "name": "Assortment Optimizer",
+                        "link": "https://nuclios.mathco.com/app/540/assortment-optimizer/assortment-overview/product-sku-report",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Optimize assortment and deliver plans"
+                            }
+                        ]
+                    },
+                    {
+                        "id": 4,
+                        "name": "Assortment Review",
+                        "link": "https://nuclios.mathco.com/app/1481/plan-assortment/final-decision/decision-layer",
+                        "data": [
+                            {
+                                "id": 1,
+                                "name": "Final plan reviewer"
+                            }
+                        ]
+                    }
+                ],
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Measure KPIs & Develop specific action plan to capture region, channel, account opportunity",
+                            "showStakeHolder": true,
+                            "step": "complete",
+                            "stakeHolder": "Director - Analytics & Insights"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Establish process to consistently capture assortment effectiveness",
+                            "showStakeHolder": true,
+                            "step": "active",
+                            "stakeHolder": "Senior Direcor - RGM"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Define new ideal state considering segmentation & potential",
+                            "showStakeHolder": true,
+                            "step": "next",
+                            "stakeHolder": "VP RGM"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Trade Terms",
+        "process": [
+            {
+                "id": 1,
+                "name": "Trade Strategy & Trade terms development",
+                "due": "Nov 15",
+                "progress": 100,
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Establish compliance on differences between large and small stores",
+                            "showStakeHolder": true,
+                            "step": "complete"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Establish right collection and payment protocols for goods sold",
+                            "showStakeHolder": true,
+                            "step": "active"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Collaborative incentive planning sessions with customers to reward compliance and promote sales",
+                            "showStakeHolder": true,
+                            "step": "next"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Streamline order generation to the settlement of the order",
+                            "showStakeHolder": true,
+                            "step": "tbd"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Process monitoring & optimization",
+                "due": "Nov 15",
+                "progress": 20,
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Enable sales representatives to improve performance with their customers.",
+                            "showStakeHolder": true,
+                            "step": "complete"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Streamline order generation to the settlement of the order",
+                            "showStakeHolder": true,
+                            "step": "active"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Evlauate price decisions at channel level and draft dynamic pricing as required",
+                            "showStakeHolder": true,
+                            "step": "next"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Prospecting, Activities necessary to identify and capture new customers and channels within a geography",
+                            "showStakeHolder": true,
+                            "step": "tbd"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Negotiation & alignment for subsequent contracts",
+                "due": "Nov 15",
+                "progress": 10,
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Assess gaps and impact of gaps to negotiate with channel partners",
+                            "showStakeHolder": true,
+                            "step": "complete"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Establish the trade pricing plan",
+                            "showStakeHolder": true,
+                            "step": "active"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Execution",
+        "process": [
+            {
+                "id": 1,
+                "name": "Define annual execution strategy",
+                "due": "Nov 15",
+                "progress": 100,
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": " Establish Commercial Execution Priorities (Assets, coolers, availability, space, POSM)",
+                            "showStakeHolder": true,
+                            "step": "complete"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": " Establish segmented execution plans",
+                            "showStakeHolder": true,
+                            "step": "active"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Define consistency requirements for retail channels",
+                            "showStakeHolder": true,
+                            "step": "next"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Draft guidelines for planogram with retailer constraints & data collection from stores",
+                            "showStakeHolder": true,
+                            "step": "tbd"
+                        }
+                    },
+                    {
+                        "id": "5",
+                        "position": {
+                            "x": 1320,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "5",
+                            "heading": "Rollout",
+                            "description": "Complete visual merchandizing strategy",
+                            "showStakeHolder": true,
+                            "step": "tbd"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-4",
+                        "source": "4",
+                        "target": "5",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "name": "Operationalization",
+                "due": "Nov 15",
+                "progress": 20,
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Enabling easy procurment for retail channels",
+                            "showStakeHolder": true,
+                            "step": "complete"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Ensure front line execution effectiveness - store, incentives, orders, POSM",
+                            "showStakeHolder": true,
+                            "step": "active"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Maximize availability, display and communication through visual merchandising fixes",
+                            "showStakeHolder": true,
+                            "step": "next"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Monitor & Track Planogram compliance",
+                            "showStakeHolder": true,
+                            "step": "tbd"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "name": "Measurement of effectiveness",
+                "due": "Nov 15",
+                "progress": 10,
+                "nodes": [
+                    {
+                        "id": "1",
+                        "position": {
+                            "x": 0,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "1",
+                            "heading": "Evaluate Sku Price",
+                            "description": "Capture compliance reports & collaborate with stores for improvement",
+                            "showStakeHolder": true,
+                            "step": "complete"
+                        }
+                    },
+                    {
+                        "id": "2",
+                        "position": {
+                            "x": 330,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "2",
+                            "heading": "Construct Plan",
+                            "description": "Quantify shopper activity insights",
+                            "showStakeHolder": true,
+                            "step": "active"
+                        }
+                    },
+                    {
+                        "id": "3",
+                        "position": {
+                            "x": 660,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "3",
+                            "heading": "Simulate Prices",
+                            "description": "Activate, track & steward plan of execution",
+                            "showStakeHolder": true,
+                            "step": "next"
+                        }
+                    },
+                    {
+                        "id": "4",
+                        "position": {
+                            "x": 990,
+                            "y": 0
+                        },
+                        "type": "customNode",
+                        "data": {
+                            "order": "4",
+                            "heading": "Audit Impact",
+                            "description": "Revise planogram,  adjust inventory & negotiate trade terms",
+                            "showStakeHolder": true,
+                            "step": "tbd"
+                        }
+                    }
+                ],
+                "edges": [
+                    {
+                        "id": "e1-1",
+                        "source": "1",
+                        "target": "2",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-2",
+                        "source": "2",
+                        "target": "3",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    },
+                    {
+                        "id": "e1-3",
+                        "source": "3",
+                        "target": "4",
+                        "markerEnd": {
+                            "type": "MarkerType.Arrow",
+                            "color": "#220047",
+                            "width": 20,
+                            "height": 20
+                        },
+                        "style": {
+                            "stroke": "#220047"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+]

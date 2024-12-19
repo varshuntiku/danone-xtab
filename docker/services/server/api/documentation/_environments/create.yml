@@ -1,0 +1,40 @@
+summary: "Create Environment"
+tags:
+  - platform/Environments
+description: "This creates a new environment with the name provided"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+parameters:
+- in: "body"
+  name: "body"
+  description: "Accepts name of the environment"
+  required: "true"
+  schema:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+    example: {'name': 'customenvironmentname'}
+responses:
+  200:
+    description: "Success"
+    schema:
+      type: "object"
+      example : {
+        "id": 123,
+        "name": "customenvironmentname"
+      }
+
+  422:
+    description: "Error in query"
+    schema:
+      type: "object"
+      example: {
+        "Error": "Error in query operation"
+      }
+
+

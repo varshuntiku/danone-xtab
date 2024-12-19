@@ -1,0 +1,30 @@
+summary: "Get the ai response rating for the given app_id and screen_id"
+tags:
+  - product/AiResponse
+description: "Provides the rating for verified and saved ai insight response"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+parameters:
+- in: "path"
+  name: "app_id"
+  description: "Accepts the application ID for which the insight rating needs to be fetched"
+  required: "true"
+  schema:
+    type: "integer"
+- in: "path"
+  name: "screen_id"
+  description: "Accepts the screen ID for which the insight rating needs to be fetched"
+  required: "true"
+  schema:
+    type: "integer"
+
+responses:
+  200:
+    description: "Returns the saved rating for verified insight"
+    schema:
+      type: "object"
+  500:
+    description: "Error while fetching insight rating"

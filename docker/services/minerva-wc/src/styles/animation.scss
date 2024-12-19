@@ -1,0 +1,14 @@
+.MinervaWC .MinervaFadeInAnimation {
+    animation: minervaWCFadeIn var(--duration, 1s) ease-in var(--delay, 0s) var(--iteration-count, 1) var(--direction, normal) var(--fill-mode, none);
+    @keyframes minervaWCFadeIn {
+        0% {
+            opacity: 0;
+        }
+        80% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}

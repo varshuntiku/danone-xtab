@@ -1,0 +1,58 @@
+@import '../../styles/util.scss';
+@import '../../styles/variables.scss';
+
+.MinervaWC dialog[open].MinervaPopperDialog {
+    width: $popperWidth;
+    height: $popperHeight;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    & .MinervaFullScreen {
+        flex: 1;
+    }
+    &.MinervaPopperDialog-expanded {
+        border-radius: 0;
+    }
+}
+
+.MinervaWC .MinervaIconButton.MinervaPopper-floater-btn {
+    bottom: spacing(8);
+    left: spacing(8);
+    position: fixed;
+    z-index: 999;
+    background-color: var(--minerva-contrast-color);
+    box-shadow: var(--minerva-box-shadow-8);
+    overflow: hidden;
+    svg {
+        fill: var(--minerva-bg-main);
+    };
+    &:hover {
+        background-color: var(--minerva-contrast-color);
+        opacity: 0.9;
+    }
+    img {
+        width: spacing(32);
+        height: spacing(32);
+    }
+}
+
+
+.MinervaWC .MinervaButton.MinervaPopper-trigger-btn {
+    // color: var(--minerva-text-color);
+    border: 1px solid var(--minerva-text-color-30);
+    border-radius: spacing(44);
+    padding: spacing(6, 18);
+    svg {
+        fill: var(--minerva-text-color);
+        width: spacing(24);
+        height: spacing(24);
+        margin-right: spacing(6);
+    }
+    img {
+        width: spacing(24);
+        height: spacing(24);
+        margin-right: spacing(6);
+    }
+
+}
+

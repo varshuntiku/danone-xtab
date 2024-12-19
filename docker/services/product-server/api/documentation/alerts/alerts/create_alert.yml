@@ -1,0 +1,66 @@
+summary: "Create a new alert in the application"
+tags:
+  - product/Alerts
+description: "Creates a new alert for the logged in user corresponding to the app ID"
+produces:
+- "application/json"
+security:
+  - Authorization: []
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        required: [title, message, app_id, app_screen_id, app_screen_widget_id, filter_data, category, condition, threshold, receive_notification, alert_source_type, alert_widget_type, widget_url, widget_value, users]
+        properties:
+          title:
+            type: "string"
+          message:
+            type: "string"
+          app_id:
+            type: "integer"
+          app_screen_id:
+            type: "integer"
+          app_screen_widget_id:
+            type: "integer"
+          filter_data:
+            type: "string"
+          category:
+            type: "string"
+          condition:
+            type: "string"
+          threshold:
+            type: "integer"
+          receive_notification:
+            type: "boolean"
+          alert_source_type:
+            type: "string"
+          alert_widget_type:
+            type: "string"
+          widget_url:
+            type: "string"
+          users:
+            type: "array"
+            items:
+              type: "object"
+              required: [id, name, email]
+              properties:
+                id:
+                  type: "interger"
+                name:
+                  type: "string"
+                email:
+                  type: "string"
+              example: {"id": 1, "name": "abc", "email": "abc@themathcompany.com"}
+        example: {"title": "Swagger Alert", "message": "", "app_id": 1205, "app_screen_id": 70796, "app_screen_widget_id": 184317, "filter_data": "", "category": "category_T", "condition": "above", "threshold": 50, "receive_notification": true, "alert_source_type": "Pre test >> Overview >> graph O", "alert_widget_type": "false", "widget_url": "http://localhost:3001/app/1205/overview", "widget_value": {}, "users": []}
+
+responses:
+  200:
+    description: "Return successful creation message"
+    schema:
+      type: "object"
+    example: {"message": "Created Successfully"}
+  500:
+    description: "Error while creating the alert"
+

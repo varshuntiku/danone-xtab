@@ -1,0 +1,520 @@
+name: NUCLIOS-UAT-$(Date:ddMMyyyy)-$(Rev:r)-$(CodexProductAppVersion)
+trigger:
+  batch: true
+  branches:
+    include:
+    - uat
+
+variables:
+- group: uat-frontend-environment-variables
+- name: REACT_APP_JUPYTER_DEMO_TOKEN
+  value: $[variables.ReactAppJupyterDemoToken]
+- name: REACT_APP_MATOMO_TOKEN
+  value: $[variables.ReactAppMatomoToken]
+- name: REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING
+  value: $[variables.ReactAppApplicationInsightsConnectionString]
+- name: REACT_APP_GOOGLE_MAPS_KEY
+  value: $[variables.ReactAppGoogleMapsKey]
+
+- group: release-version
+- name: CODEX_PRODUCT_APP_VERSION
+  value: $[variables.CodexProductAppVersion]
+
+- group: frontend-environment-variables
+- name: TENANT_ID
+  value: $[variables.TenantId]
+- name: CLIENT_ID
+  value: $[variables.ClientId]
+- name: CLIENT_SECRET
+  value: $[variables.ClientSecret]
+
+- group: dynamic-execution-environment-variables-uat
+- group: GENAI-CERT
+
+stages:
+- stage: Frontend_Build_Job
+  dependsOn: []
+  condition: succeeded()
+  jobs:
+  # - job: Platform_UI
+  #   pool:
+  #     vmImage: 'ubuntu-latest'
+  #   steps:
+  #   - script: |
+  #       cd docker/services/client
+  #       rm -rf .env
+  #       echo 'NODE_PATH='$(CODEX_PLATFORM_NODE_PATH) | cat > .env
+  #       echo 'REACT_APP_BACKEND_API='$(CODEX_PLATFORM_APP_BACKEND_API) | cat >> .env
+  #       echo 'REACT_APP_MLFLOW_API='$(CODEX_PLATFORM_APP_MLFLOW_API)| cat >> .env
+  #       echo 'REACT_APP_JUPYTER_DEMO_URL='$(CODEX_PLATFORM_APP_JUPYTER_DEMO_URL)| cat >> .env
+  #       echo 'REACT_APP_JUPYTER_DEMO_TOKEN='$(ReactAppJupyterDemoToken)| cat >> .env
+  #       echo 'REACT_APP_ENV='$(CODEX_PLATFORM_APP_ENV)| cat >> .env
+  #       echo 'REACT_APP_PRODUCT_URL='"$(CODEX_PLATFORM_APP_PRODUCT_URL)<app_id>"| cat >> .env
+  #       echo 'INLINE_RUNTIME_CHUNK='$(CODEX_PLATFORM_INLINE_RUNTIME_CHUNK)| cat >> .env
+  #       echo 'GENERATE_SOURCEMAP'=$(CODEX_PLATFORM_GENERATE_SOURCEMAP)| cat >> .env
+  #       echo 'REACT_APP_ENABLE_SENTRY='"'$(REACT_APP_ENABLE_SENTRY)'"| cat >> .env
+  #       cat .env
+  #       cd ../../..
+  #     displayName: 'Create ENV file'
+  #     condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+  #   - task: Docker@2
+  #     inputs:
+  #       containerRegistry: 'Azure-CR'
+  #       repository: 'nuclios-platform-ui-uat'
+  #       command: 'buildAndPush'
+  #       Dockerfile: 'docker/services/client/Dockerfile'
+  #       tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+  #     displayName: 'Build & Push Platform-FE Image to ACR'
+  #     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/uat'))
+
+  - job: Product_UI
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - script: |
+        cd docker/services/product-client
+        rm -rf .env
+        echo 'NODE_PATH='$(CODEX_PRODUCT_NODE_PATH) | cat > .env
+        echo 'REACT_APP_BACKEND_API='$(CODEX_PRODUCT_APP_BACKEND_API) | cat >> .env
+        echo 'REACT_APP_PLATFORM_BACKEND_API='$(CODEX_PRODUCT_APP_PLATFORM_BACKEND_API)| cat >> .env
+        echo 'REACT_APP_SOCKET_IO='$(CODEX_PRODUCT_APP_SOCKET_IO)| cat >> .env
+        echo 'REACT_APP_PLATFORM_SOCKET_IO='$(CODEX_PRODUCT_APP_PLATFORM_SOCKET_IO)| cat >> .env
+        echo 'REACT_APP_PLATFORM='$(CODEX_PRODUCT_APP_PLATFORM)| cat >> .env
+        echo 'REACT_APP_ENV='$(CODEX_PRODUCT_APP_ENV)| cat >> .env
+        echo 'REACT_APP_SERVERLESS_API='$(CODEX_PRODUCT_APP_SERVERLESS_API)| cat >> .env
+        echo 'REACT_APP_JUPYTER_DEMO_URL='$(CODEX_PRODUCT_APP_JUPYTER_DEMO_URL)| cat >> .env
+        echo 'REACT_APP_JUPYTER_DEMO_TOKEN='$(ReactAppJupyterDemoToken)| cat >> .env
+        echo 'REACT_APP_VERSION='$(CodexProductAppVersion)| cat >> .env
+        echo 'REACT_APP_MATOMO_SITE_ID='$(CODEX_PRODUCT_APP_MATOMO_SITE_ID)| cat >> .env
+        echo 'REACT_APP_MATOMO_SITE_URL='$(CODEX_PRODUCT_APP_MATOMO_SITE_URL)| cat >> .env
+        echo 'REACT_APP_MATOMO_TOKEN='"'$(ReactAppMatomoToken)'"| cat >> .env
+        echo 'INLINE_RUNTIME_CHUNK='$(CODEX_PRODUCT_INLINE_RUNTIME_CHUNK)| cat >> .env
+        echo 'REACT_APP_MINERVA_BACKEND_URL='$(CODEX_PRODUCT_APP_MINERVA_BACKEND_URL)| cat >> .env
+        echo 'SKIP_PREFLIGHT_CHECK='$(CODEX_PRODUCT_SKIP_PREFLIGHT_CHECK)| cat >> .env
+        echo 'REACT_APP_STATIC_DATA_ASSET='$(CODEX_PRODUCT_APP_STATIC_DATA_ASSET)| cat >> .env
+        echo 'REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING='"'$(ReactAppApplicationInsightsConnectionString)'" | cat >> .env
+        echo 'GENERATE_SOURCEMAP'=$(CODEX_PRODUCT_GENERATE_SOURCEMAP)| cat >> .env
+        echo 'REACT_APP_GOOGLE_MAPS_KEY='"'$(ReactAppGoogleMapsKey)'"| cat >> .env
+        echo 'REACT_APP_ENABLE_MINERVA='$(CODEX_PRODUCT_ENABLE_MINERVA)| cat >> .env
+        echo 'REACT_APP_ENABLE_COPILOT='$(CODEX_PRODUCT_ENABLE_COPILOT)| cat >> .env
+        echo 'REACT_APP_MINERVA_WC_HOST_URL='$(CODEX_PRODUCT_MINERVA_WC_HOST_URL)| cat >> .env
+        echo 'REACT_APP_ENABLE_SENTRY='"'$(REACT_APP_ENABLE_SENTRY)'"| cat >> .env
+        echo 'REACT_APP_ENABLE_APP_INSIGHTS='"'$(REACT_APP_ENABLE_APP_INSIGHTS)'"| cat >> .env
+        echo 'REACT_APP_JPHUB_URL='"'$(CODEX_APP_JPHUB_URL)'"| cat >> .env
+        echo 'REACT_APP_COPILOT_ADMIN_CLIENT='"'$(CODEX_APP_COPILOT_ADMIN_CLIENT)'"| cat >> .env
+        echo 'REACT_APP_DEE_ENV_ENABLED='$(REACT_APP_DEE_ENV_ENABLED)| cat >> .env
+        echo 'REACT_APP_DEE_ENV_BASE_URL='"'$(REACT_APP_DEE_ENV_BASE_URL)'"| cat >> .env
+        echo 'REACT_APP_ENABLE_FASTAPI='$(CODEX_PRODUCT_ENABLE_FASTAPI)| cat >> .env
+        echo 'REACT_APP_NUCLIOS_BACKEND_API='"'$(CODEX_APP_NUCLIOS_BACKEND_API)'"| cat >> .env
+        echo 'REACT_APP_COPILOT_TEST_API='$(CODEX_PRODUCT_APP_COPILOT_TEST_API)| cat >> .env
+        echo 'REACT_APP_SOLUTION_BP_ENV_BASE_URL='"'$(REACT_APP_SOLUTION_BP_ENV_BASE_URL)'"| cat >> .env
+        echo 'REACT_APP_JUPYTER_HUB_ENV_BASE_URL='"'$(REACT_APP_JUPYTER_HUB_ENV_BASE_URL)'"| cat >> .env
+        echo 'REACT_APP_DS_STORE_ENV_BASE_URL='"'$(REACT_APP_DS_STORE_ENV_BASE_URL)'"| cat >> .env
+        cat .env
+        cd ../../..
+      displayName: 'Create Env file'
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+    - task: npmAuthenticate@0
+      inputs:
+        workingFile: '$(System.DefaultWorkingDirectory)/docker/services/product-client/.npmrc'
+      displayName: 'Authenticate solution-blueprint npm to Feed'
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'Azure-CR'
+        repository: 'nuclios-product-ui-uat'
+        command: 'buildAndPush'
+        Dockerfile: 'docker/services/product-client/Dockerfile'
+        tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+      displayName: 'Build & Push Product-FE Image to ACR'
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/uat'))
+- stage: Backend_Build_Job
+  dependsOn: []
+  condition: succeeded()
+  jobs:
+  - job: Platform_API
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'Azure-CR'
+        repository: 'nuclios-platform-api-uat'
+        command: 'buildAndPush'
+        Dockerfile: 'docker/server.dockerfile'
+        tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+      displayName: 'Build & Push Platform-API Image to ACR'
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/uat'))
+
+  # - job: Product_API
+  #   pool:
+  #     vmImage: 'ubuntu-latest'
+  #   steps:
+  #   - task: Docker@2
+  #     inputs:
+  #       containerRegistry: 'Azure-CR'
+  #       repository: 'nuclios-product-api-uat'
+  #       command: 'buildAndPush'
+  #       Dockerfile: 'docker/product.dockerfile'
+  #       tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+  #     displayName: 'Build & Push Product-API Image to ACR'
+  #     condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/uat'))
+  - job: Product_API_FAST
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+      - task: Docker@2
+        inputs:
+          containerRegistry: "Azure-CR"
+          repository: "nuclios-fast-api-uat"
+          command: "buildAndPush"
+          Dockerfile: "docker/productfast.dockerfile"
+          tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+        displayName: "Build & Push Product-API Image to ACR"
+        condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/uat'))
+  - job: Minerva
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: "Azure-CR"
+        repository: "codex-minerva-backend-uat"
+        command: "buildAndPush"
+        Dockerfile: "docker/services/minerva/Dockerfile"
+        tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+      displayName: "Build & Push Minerva Image to ACR"
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/uat'))
+  - job: Minerva_WC
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+      - task: NodeTool@0
+        inputs:
+          versionSpec: "18"
+      - script: |
+          cd docker/services/minerva-wc
+          npm install --legacy-peer-deps --no-optional
+          cd ../../..
+      - script: |
+          cd docker/services/minerva-wc
+          rm -rf .env
+          echo 'SERVER_URL='$(CODEX_PRODUCT_APP_MINERVA_BACKEND_URL)| cat >> .env
+          echo 'MINERVA_VERSION='$(CODEX_MINERVA_WC_VERSION)| cat >> .env
+          echo 'HOST_URL='$(CODEX_PRODUCT_MINERVA_WC_HOST_URL)| cat >> .env
+          echo 'TEST_SERVER_URL='$(CODEX_PRODUCT_APP_COPILOT_TEST_API)| cat >> .env
+          cat .env
+          cd ../../..
+        displayName: "Create .env file"
+      - script: |
+          set -e
+          cd docker/services/minerva-wc
+          rm -rf build
+          npm run build
+          ls
+          cd ../../..
+        displayName: "Build Minerva_WC"
+        condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: "$(System.DefaultWorkingDirectory)/docker/services/minerva-wc/dist"
+          ArtifactName: "minerva-web-component"
+        condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+- stage: BG_JOBS
+  dependsOn: []
+  condition: succeeded()
+  jobs:
+  - job: BG_Functions
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.10'
+    - bash: |
+        cd docker/services/background-functions/codex-bgjobs
+        pip install --target="./.python_packages/lib/site-packages" -r ./requirements.txt
+      displayName: 'Create Background jobs server build'
+    - script: |
+        cd docker/services/background-functions/codex-bgjobs/QueueTrigger
+        rm -rf config.py
+        cp config_uat.py config.py
+        rm -rf function.json
+        cp function.uat.json function.json
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+    - task: ArchiveFiles@2
+      inputs:
+        rootFolderOrFile: 'docker/services/background-functions/codex-bgjobs'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber)-bgjob-uat.zip'
+        replaceExistingArchive: true
+      displayName: 'Save build artifact'
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildNumber)-bgjob-uat.zip'
+        ArtifactName: 'job-server-build'
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+
+- stage: Generate_ConfigMaps
+  dependsOn: []
+  condition: always()
+  jobs:
+  - job: generate_dee_configMap
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+    - task: AzureCLI@2
+      displayName: Generate DEE Config Map
+      inputs:
+        azureSubscription: 'MIcrosoft Azure - Math (7b97259b-ed1f-4ebf-80e0-40d9ed2f0d3f)'
+        scriptType: 'bash'
+        scriptLocation: 'inlineScript'
+        inlineScript: |
+          echo "apiVersion: v1" > dee-config-map.yaml
+          echo "kind: ConfigMap" >> dee-config-map.yaml
+          echo "metadata:" >> dee-config-map.yaml
+          echo "  name: $(DEE_CONFIGMAP_NAME)" >> dee-config-map.yaml
+          echo "  namespace: $(DEPLOYMENT_NAMESPACE)" >> dee-config-map.yaml
+          echo "data:" >> dee-config-map.yaml
+          echo "  ACCESS_TOKEN_EXPIRE_MINUTES: '$(ACCESS_TOKEN_EXPIRE_MINUTES)'" >> dee-config-map.yaml
+          echo "  ACCOUNT_LOCKOUT_DURATION: '$(ACCOUNT_LOCKOUT_DURATION)'" >> dee-config-map.yaml
+          echo "  ACR_NAME: $(ACR_NAME)" >> dee-config-map.yaml
+          echo "  ACR_RG: $(ACR_RG)" >> dee-config-map.yaml
+          echo "  ACR_URL: $(ACR_URL)" >> dee-config-map.yaml
+          echo "  ALLOWED_HEADERS: $(DEE_ALLOWED_HEADERS)" >> dee-config-map.yaml
+          echo "  ALLOWED_METHODS: $(DEE_ALLOWED_METHODS)" >> dee-config-map.yaml
+          echo "  ALLOWED_ORIGINS: $(DEE_ALLOWED_ORIGINS)" >> dee-config-map.yaml
+          echo "  API_VERSION: '$(API_VERSION)'" >> dee-config-map.yaml
+          echo "  APP_MODE: $(APP_MODE)" >> dee-config-map.yaml
+          echo "  APP_NAME: $(APP_NAME)" >> dee-config-map.yaml
+          echo "  CERT_PATH: $(CERT_PATH)" >> dee-config-map.yaml
+          echo "  CLUSTER_NAME: $(CLUSTER_NAME)" >> dee-config-map.yaml
+          echo "  DEBUG: '$(DEBUG)'" >> dee-config-map.yaml
+          echo "  DEPLOYMENT_NAMESPACE: $(DEPLOYMENT_NAMESPACE)" >> dee-config-map.yaml
+          echo "  DOCS_URL: $(DOCS_URL)" >> dee-config-map.yaml
+          echo "  FAILED_LOGIN_THRESHOLD: '$(FAILED_LOGIN_THRESHOLD)'" >> dee-config-map.yaml
+          echo "  FOLDER_PATH: $(FOLDER_PATH)" >> dee-config-map.yaml
+          echo "  GATEWAY_BASE_URL: $(GATEWAY_BASE_URL)" >> dee-config-map.yaml
+          echo "  INGRESS_SERVER_NAME: $(INGRESS_SERVER_NAME)" >> dee-config-map.yaml
+          echo "  JWT_ALGORITHM: $(JWT_ALGORITHM)" >> dee-config-map.yaml
+          echo "  JWT_ENCODE_ISSUER: $(JWT_ENCODE_ISSUER)" >> dee-config-map.yaml
+          echo "  KANIKO_SECRET_KEY_NAME: $(KANIKO_SECRET_KEY_NAME)" >> dee-config-map.yaml
+          echo "  REFRESH_TOKEN_EXPIRE_MINUTES: '$(REFRESH_TOKEN_EXPIRE_MINUTES)'" >> dee-config-map.yaml
+          echo "  RESOURCE_GROUP: $(RESOURCE_GROUP)" >> dee-config-map.yaml
+          echo "  ROOT_PATH: $(DEE_ROOT_PATH)" >> dee-config-map.yaml
+          echo "  INTERNAL_SERVICE_CONNECTION_ENABLED: '$(INTERNAL_SERVICE_CONNECTION_ENABLED)'" >> dee-config-map.yaml
+          echo "  JPHUB_DEPLOYMENT_NAMESPACE: $(JPHUB_DEPLOYMENT_NAMESPACE)" >> dee-config-map.yaml
+          echo "  DSSTORE_BACKEND_URI: $(DSSTORE_BACKEND_URI)" >> dee-config-map.yaml
+          echo "  RUN_PENDING_ENVS: '$(RUN_PENDING_ENVS)'" >> dee-config-map.yaml
+          cat dee-config-map.yaml
+
+    - task: PublishBuildArtifacts@1
+      displayName: Publish DEE Config Map
+      inputs:
+        PathtoPublish: 'dee-config-map.yaml'
+        ArtifactName: 'dee-config'
+
+- stage: DEE_Build_Push_Image
+  dependsOn: []
+  condition: always()
+  jobs:
+  - job: dee_check_folder
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+    - script: |
+        token=$(curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
+        https://login.microsoftonline.com/$(TenantId)/oauth2/token \
+        -d 'client_id=$(ClientId)' \
+        -d 'grant_type=client_credentials' \
+        -d 'resource=https://management.core.windows.net/' \
+        -d 'client_secret=$(ClientSecret)')
+        echo $token
+        access_token=$(echo $token | jq '.access_token')
+        echo "##vso[task.setvariable variable=access_token]$access_token"
+    - script: |
+        curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/dynamic-execution-environment") -eq 0 ]; then
+          echo "No code changes in DEE"
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+          echo "Code Changes in DEE"
+        fi
+      name: checkFolderDEE
+
+  - job: DEE_Deployment_Image_BuildPush_to_ACR
+    variables:
+      folderVar: $[dependencies.dee_check_folder.outputs['checkFolderDEE.RunJob']]
+    dependsOn: dee_check_folder
+    condition: eq(variables.folderVar, true)
+    steps:
+    - script: |
+        mkdir docker/services/dynamic-execution-environment/cert
+        cd docker/services/dynamic-execution-environment/cert
+        echo "$(GenaiCertCombined)" > genai.crt
+    - task: Docker@2
+      inputs:
+        containerRegistry: "Azure-CR"
+        repository: "dynamic-execution-environment-uat"
+        command: "buildAndPush"
+        Dockerfile: "docker/services/dynamic-execution-environment/Dockerfile"
+        tags: latest
+      displayName: "Build & Push Image to ACR"
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+
+- stage: DS_Workbench_Build_Push_image
+  dependsOn: []
+  condition: always()
+  jobs:
+  - job: dsstore_backend_check_folder
+    pool:
+      vmImage: "ubuntu-latest"
+    steps:
+    - script: |
+        token=$(curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
+        https://login.microsoftonline.com/$(TenantId)/oauth2/token \
+        -d 'client_id=$(ClientId)' \
+        -d 'grant_type=client_credentials' \
+        -d 'resource=https://management.core.windows.net/' \
+        -d 'client_secret=$(ClientSecret)')
+        echo $token
+        access_token=$(echo $token | jq '.access_token')
+        echo "##vso[task.setvariable variable=access_token]$access_token"
+    - script: |
+        curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes
+        if [ $(curl -H "Authorization: Bearer $(access_token)" https://dev.azure.com/mathco-products/codex/_apis/git/repositories/9f11d7b0-5ce5-4b32-b527-135bdf364c1f/commits/$(Build.SourceVersion)/changes | grep -c "/docker/services/ds-workbench/dsstore-backend") -eq 0 ]; then
+          echo "No code changes in dsstore-backend"
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]false"
+        else
+          echo "##vso[task.setvariable variable=RunJob;isoutput=true]true"
+          echo "Code Changes in dsstore-backend"
+        fi
+      name: checkFolderDsstoreBackend
+
+  - job: Dsstore_Backend_Image_BuildPush_to_ACR
+    variables:
+      folderVar: $[dependencies.dsstore_backend_check_folder.outputs['checkFolderDsstoreBackend.RunJob']]
+    dependsOn: dsstore_backend_check_folder
+    condition: eq(variables.folderVar, true)
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: "Azure-CR"
+        repository: "dsstore-backend-uat"
+        command: "buildAndPush"
+        Dockerfile: "docker/services/ds-workbench/dsstore-backend/Dockerfile"
+        tags: latest
+      displayName: "Build & Push Image to ACR"
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+
+- stage: Nuclios_WorkBench
+  dependsOn: []
+  condition: succeeded()
+  jobs:
+  - job: Copilot_Service_Deployemnt
+    steps:
+    - script: |
+        mkdir docker/services/nuclios-workbench/backends/api-services/copilot/cert
+        cd docker/services/nuclios-workbench/backends/api-services/copilot/cert
+        echo "$(GenaiCertCombined)" > genai.crt
+    - task: Docker@2
+      inputs:
+        containerRegistry: "Azure-CR"
+        repository: "nuclios-workbench-copilot-uat"
+        command: "buildAndPush"
+        Dockerfile: "docker/services/nuclios-workbench/backends/api-services/copilot/Dockerfile"
+        tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+      displayName: "Build & Push Image to ACR"
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: 'docker/services/nuclios-workbench/backends/api-services/copilot/Dockerfile'  # Path to your dist folder
+        artifactName: 'nuclios-workbench-copilot'  # Name the artifact
+        publishLocation: 'pipeline'
+
+  - job: dsstore_Backend_Deployemnt
+    steps:
+    - script: |
+        mkdir docker/services/nuclios-workbench/backends/api-services/ds-workbench/dsstore-backend/cert
+        cd docker/services/nuclios-workbench/backends/api-services/ds-workbench/dsstore-backend/cert
+        echo "$(GenaiCertCombined)" > genai.crt
+    - task: Docker@2
+      inputs:
+        containerRegistry: "Azure-CR"
+        repository: "nuclios-workbench-dsstore-backend-uat"
+        command: "buildAndPush"
+        Dockerfile: "docker/services/nuclios-workbench/backends/api-services/ds-workbench/dsstore-backend/Dockerfile"
+        tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+      displayName: "Build & Push Image to ACR"
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: 'docker/services/nuclios-workbench/backends/api-services/ds-workbench/dsstore-backend/Dockerfile'  # Path to your dist folder
+        artifactName: 'nuclios-workbench-dsstore-backend'  # Name the artifact
+        publishLocation: 'pipeline'
+
+  - job: jupyterHub_Deployemnt
+    steps:
+    - script: |
+        mkdir docker/services/nuclios-workbench/backends/api-services/ds-workbench/jupyterhub/cert
+        cd docker/services/nuclios-workbench/backends/api-services/ds-workbench/jupyterhub/cert
+        echo "$(GenaiCertCombined)" > genai.crt
+    - task: Docker@2
+      inputs:
+        containerRegistry: "Azure-CR"
+        repository: "nuclios-workbench-jupyterhub-uat"
+        command: "buildAndPush"
+        Dockerfile: "docker/services/nuclios-workbench/backends/api-services/ds-workbench/jupyterhub/Dockerfile"
+        tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+      displayName: "Build & Push Image to ACR"
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: 'docker/services/nuclios-workbench/backends/api-services/ds-workbench/jupyterhub/Dockerfile'  # Path to your dist folder
+        artifactName: 'nuclios-workbench-jupyterhub'  # Name the artifact
+        publishLocation: 'pipeline'
+
+  - job: DEE_Deployemnt
+    steps:
+    - script: |
+        mkdir docker/services/nuclios-workbench/backends/api-services/dynamic-execution-environment/cert
+        cd docker/services/nuclios-workbench/backends/api-services/dynamic-execution-environment/cert
+        echo "$(GenaiCertCombined)" > genai.crt
+    - task: Docker@2
+      inputs:
+        containerRegistry: "Azure-CR"
+        repository: "nuclios-workbench-dynamic-execution-environment-uat"
+        command: "buildAndPush"
+        Dockerfile: "docker/services/nuclios-workbench/backends/api-services/dynamic-execution-environment/Dockerfile"
+        tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+      displayName: "Build & Push Image to ACR"
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: 'docker/services/nuclios-workbench/backends/api-services/dynamic-execution-environment/Dockerfile'  # Path to your dist folder
+        artifactName: 'nuclios-workbench-dynamic-execution-environment'  # Name the artifact
+        publishLocation: 'pipeline'
+
+  - job: solution_Blueprint_Deployemnt
+    steps:
+    - script: |
+        mkdir docker/services/nuclios-workbench/backends/api-services/solution-blueprint/cert
+        cd docker/services/nuclios-workbench/backends/api-services/solution-blueprint/cert
+        echo "$(GenaiCertCombined)" > genai.crt
+    - task: Docker@2
+      inputs:
+        containerRegistry: "Azure-CR"
+        repository: "nuclios-workbench-solution-blueprint-uat"
+        command: "buildAndPush"
+        Dockerfile: "docker/services/nuclios-workbench/backends/api-services/solution-blueprint/Dockerfile"
+        tags: latest,$(Build.BuildNumber)-$(CodexProductAppVersion)
+      displayName: "Build & Push Image to ACR"
+      condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/uat'))
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: 'docker/services/nuclios-workbench/backends/api-services/solution-blueprint/Dockerfile'  # Path to your dist folder
+        artifactName: 'nuclios-workbench-solution-blueprint'  # Name the artifact
+        publishLocation: 'pipeline'

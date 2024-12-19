@@ -1,0 +1,36 @@
+[
+    {
+        "id": 1,
+        "name": "Filman ADS Source",
+        "type": "sql",
+        "copilot_app_id": 1,
+        "config": {"database_type": "postgresql", "context_db_connection_uri": "postgresql://user:pwd@host:5432/db", "context_db_connection_schema": "cpg"},
+        "deleted_at": null,
+        "created_by": 1
+    },
+    {
+        "id": 2,
+        "name": "DataSource2",
+        "type": "sql",
+        "copilot_app_id": 2,
+        "config": {"database_type": "postgresql", "context_db_connection_uri": "postgresql://user:pwd@host:5432/db", "context_db_connection_schema": "cpg"},
+        "deleted_at": null,
+        "created_by": 1
+    },
+    {
+        "id": 3,
+        "name": "Unittest sql ds",
+        "type": "sql",
+        "copilot_app_id": 1,
+        "config": {"database_type": "postgresql", "context_db_connection_uri": "postgresql://ergo42:Mathco_42@minerva-server.postgres.database.azure.com:5432/prod", "context_db_connection_schema": "cpg"},
+        "deleted_at": null,
+        "created_by": 1
+    },
+    {
+        "id": 4,
+        "name": "Unittest udq",
+        "type": "upload",
+        "copilot_app_id": 1,
+        "config": {}
+    }
+]

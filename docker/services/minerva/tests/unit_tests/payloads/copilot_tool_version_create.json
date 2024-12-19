@@ -1,0 +1,9 @@
+{
+    "files": [
+        {
+            "path": "tool.py",
+            "content": "sample tool test file"
+        }
+    ],
+    "desc": "Update tool.py for skillset"
+}

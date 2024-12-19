@@ -1,0 +1,11 @@
+@import "../../../../../styles/util.scss";
+
+.MinervaWC .MinervaMarkdownRenderer, .MinervaWC .MinervaCodeBlockWrapper {
+    & pre:has(> code[class*="language-"]) {
+        overflow: auto;
+        padding: spacing(5, 0);
+    }
+    & code[class*="language-"] {
+        padding: spacing(5, 10);
+    }
+}
