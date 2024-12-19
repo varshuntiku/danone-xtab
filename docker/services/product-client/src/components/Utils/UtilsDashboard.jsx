@@ -42,7 +42,7 @@ import { ReactComponent as LLM_Workbench } from 'assets/img/llm_workbench.svg';
 import AccountTreeIcon from '@material-ui/icons/AccountTree';
 
 import { ExecutionEnvironmentContextProvider } from 'components/ExecutionEnvironment/context/ExecutionEnvironmentContext';
-import SolutionBlueprint from 'components/solutionBlueprint/SolutionBlueprint';
+// import SolutionBlueprint from 'components/solutionBlueprint/SolutionBlueprint';
 import ExecutionEnvironmentsApprovals from 'components/Utils/ExecutionEnvironmentsApprovals';
 
 const utils = [
@@ -128,13 +128,13 @@ const utils = [
         icon: (className) => <SolutionWorkbenchRolesIcon className={className} />,
         component: (props) => <RoleManagement {...props} />
     },
-    {
-        id: 12,
-        name: 'Solution Blueprint',
-        path: '/solution-blueprint',
-        icon: (className) => <AccountTreeIcon className={className} />,
-        component: (props) => <SolutionBlueprint {...props} />
-    },
+    // {
+    //     id: 12,
+    //     name: 'Solution Blueprint',
+    //     path: '/solution-blueprint',
+    //     icon: (className) => <AccountTreeIcon className={className} />,
+    //     component: (props) => <SolutionBlueprint {...props} />
+    // },
     {
         id: 13,
         name: 'Generate PAT',
