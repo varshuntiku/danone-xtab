@@ -18,6 +18,55 @@ jobs:
       run: |
         echo "${{ secrets.ACR_PASSWORD }}" | docker login ${{ secrets.AZURE_CONTAINER_REGISTRY }} -u ${{ secrets.ACR_USERNAME }} --password-stdin
 
+    - name: Create .env file
+      run: |
+        cd docker/services/product-client
+        rm -rf .env
+        echo "NODE_PATH=./src" | cat > .env
+        echo "REACT_APP_BACKEND_API=http://20.50.21.241/codex-product-api" | cat >> .env
+        echo "REACT_APP_PLATFORM_BACKEND_API=" | cat >> .env
+        echo "REACT_APP_SOCKET_IO=http://20.50.21.241/" | cat >> .env
+        echo "REACT_APP_GENAI=" | cat >> .env
+        echo "REACT_APP_PLATFORM_SOCKET_IO=" | cat >> .env
+        echo "REACT_APP_PLATFORM=" | cat >> .env
+        echo "REACT_APP_ENV=xtab-danone-client-dev" | cat >> .env
+        echo "REACT_APP_SERVERLESS_API=" | cat >> .env
+        echo "REACT_APP_JUPYTER_DEMO_URL=" | cat >> .env
+        echo "REACT_APP_JUPYTER_DEMO_TOKEN= """ | cat >> .env
+        echo "REACT_APP_VERSION=" | cat >> .env
+        echo "REACT_APP_MATOMO_SITE_ID=" | cat >> .env
+        echo "REACT_APP_MATOMO_SITE_URL=" | cat >> .env
+        echo "REACT_APP_MATOMO_TOKEN=" | cat >> .env
+        echo 'INLINE_RUNTIME_CHUNK=false" | cat >> .env
+        echo "REACT_APP_MINERVA_BACKEND_URL=" | cat >> .env
+        echo 'SKIP_PREFLIGHT_CHECK=true" | cat >> .env
+        echo "REACT_APP_STATIC_DATA_ASSET=https://daneutstashubjvkwicdxdzl.blob.core.windows.net" | cat >> .env
+        echo "REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING=" | cat >> .env
+        echo 'GENERATE_SOURCEMAP=true" | cat >> .env
+        echo "REACT_APP_GOOGLE_MAPS_KEY=AIzaSyD7wxNpwb7pajmoUuXdm5yS8O_nY2igMus" | cat >> .env
+        echo "REACT_APP_ENABLE_MINERVA=false" | cat >> .env
+        echo "REACT_APP_ENABLE_COPILOT=false" | cat >> .env
+        echo "REACT_APP_MINERVA_SOCKET_IO=ws://localhost:8003/" | cat >> .env
+        echo "REACT_APP_MINERVA_WC_HOST_URL=http://localhost:5500/docker/services/minerva-wc/dist" | cat >> .env
+        echo "REACT_APP_ENABLE_LLMWORKBENCH=false" | cat >> .env
+        echo "REACT_APP_GENAI_COOKBOOK_URL=" | cat >> .env
+        echo "REACT_APP_GENAI_APPROVAL_USERS=" | cat >> .env
+        echo "REACT_APP_ENABLE_SENTRY=false" | cat >> .env
+        echo "REACT_APP_ENABLE_APP_INSIGHTS=false" | cat >> .env
+        echo "REACT_APP_NUCLIOS_BACKEND_API=http://20.50.21.241/nuclios-product-api" | cat >> .env
+        echo "REACT_APP_JPHUB_URL=" | cat >> .env
+        echo "REACT_APP_DEE_ENV_ENABLED=false" | cat >> .env
+        echo "REACT_APP_DEE_ENV_BASE_URL=" | cat >> .env
+        echo "REACT_APP_COPILOT_ADMIN_CLIENT=''" | cat >> .env
+        echo "REACT_APP_ENABLE_FASTAPI=True" | cat >> .env
+        echo "REACT_APP_COPILOT_TEST_API=" | cat >> .env
+        echo "REACT_APP_SOLUTION_BP_ENV_BASE_URL=" | cat >> .env
+        echo "REACT_APP_JUPYTER_HUB_ENV_BASE_URL= "| cat >> .env
+        echo "REACT_APP_DS_STORE_ENV_BASE_URL="| cat >> .env
+        cat .env
+        cd ../../..
+      shell: bash
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
