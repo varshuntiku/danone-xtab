@@ -37,12 +37,12 @@ jobs:
         echo "REACT_APP_MATOMO_SITE_ID=" | cat >> .env
         echo "REACT_APP_MATOMO_SITE_URL=" | cat >> .env
         echo "REACT_APP_MATOMO_TOKEN=" | cat >> .env
-        echo 'INLINE_RUNTIME_CHUNK=false" | cat >> .env
+        echo "INLINE_RUNTIME_CHUNK=false" | cat >> .env
         echo "REACT_APP_MINERVA_BACKEND_URL=" | cat >> .env
-        echo 'SKIP_PREFLIGHT_CHECK=true" | cat >> .env
+        echo "SKIP_PREFLIGHT_CHECK=true" | cat >> .env
         echo "REACT_APP_STATIC_DATA_ASSET=https://daneutstashubjvkwicdxdzl.blob.core.windows.net" | cat >> .env
         echo "REACT_APP_APPLICATIONINSIGHTS_CONNECTION_STRING=" | cat >> .env
-        echo 'GENERATE_SOURCEMAP=true" | cat >> .env
+        echo "GENERATE_SOURCEMAP=true" | cat >> .env
         echo "REACT_APP_GOOGLE_MAPS_KEY=AIzaSyD7wxNpwb7pajmoUuXdm5yS8O_nY2igMus" | cat >> .env
         echo "REACT_APP_ENABLE_MINERVA=false" | cat >> .env
         echo "REACT_APP_ENABLE_COPILOT=false" | cat >> .env
