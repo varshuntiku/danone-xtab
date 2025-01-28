@@ -23,9 +23,9 @@ jobs:
         cd docker/services/product-client
         rm -rf .env
         echo "NODE_PATH=./src" | cat > .env
-        echo "REACT_APP_BACKEND_API=http://20.50.21.241/codex-product-api" | cat >> .env
+        echo "REACT_APP_BACKEND_API=http://app-gateway-pip-shared-anl.westeurope.cloudapp.azure.com/backend/codex-product-api" | cat >> .env
         echo "REACT_APP_PLATFORM_BACKEND_API=" | cat >> .env
-        echo "REACT_APP_SOCKET_IO=http://20.50.21.241/" | cat >> .env
+        echo "REACT_APP_SOCKET_IO=wss://app-gateway-pip-shared-anl.westeurope.cloudapp.azure.com/backend/" | cat >> .env
         echo "REACT_APP_GENAI=" | cat >> .env
         echo "REACT_APP_PLATFORM_SOCKET_IO=" | cat >> .env
         echo "REACT_APP_PLATFORM=" | cat >> .env
@@ -53,7 +53,7 @@ jobs:
         echo "REACT_APP_GENAI_APPROVAL_USERS=" | cat >> .env
         echo "REACT_APP_ENABLE_SENTRY=false" | cat >> .env
         echo "REACT_APP_ENABLE_APP_INSIGHTS=false" | cat >> .env
-        echo "REACT_APP_NUCLIOS_BACKEND_API=http://20.50.21.241/nuclios-product-api" | cat >> .env
+        echo "REACT_APP_NUCLIOS_BACKEND_API=http://app-gateway-pip-shared-anl.westeurope.cloudapp.azure.com/backend/nuclios-product-api" | cat >> .env
         echo "REACT_APP_JPHUB_URL=" | cat >> .env
         echo "REACT_APP_DEE_ENV_ENABLED=false" | cat >> .env
         echo "REACT_APP_DEE_ENV_BASE_URL=" | cat >> .env
