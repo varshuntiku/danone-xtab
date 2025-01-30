@@ -7,6 +7,30 @@ Create Date: 2023-09-25 12:47:09.495733
 """
 from alembic import op
 import sqlalchemy as sa
+from sqlalchemy import inspect
+
+
+def drop_constraints(op, table_name, column_name):
+    conn = op.get_bind()
+    inspector = inspect(conn)
+
+    # Define your table and column names
+    table_name = table_name
+    column_name = column_name
+    # Get the dynamically generated foreign key constraint name
+    foreign_keys = inspector.get_foreign_keys(table_name)
+    print(foreign_keys)
+
+    # Find the correct foreign key constraint dynamically
+    constraint_name = None
+    for fk in foreign_keys:
+        if fk["constrained_columns"] == [column_name]:
+            constraint_name = fk["name"]
+            break
+
+    if constraint_name:
+        # Drop the foreign key constraint using its dynamic name
+        op.drop_constraint(constraint_name, table_name, type_="foreignkey")
 
 
 # revision identifiers, used by Alembic.
@@ -21,7 +45,9 @@ def upgrade():
     op.add_column("decision_flow", sa.Column("flow_identifier", sa.String(length=100), nullable=False))
     op.add_column("decision_flow", sa.Column("url", sa.String(length=500), nullable=False))
     op.add_column("decision_flow", sa.Column("status_id", sa.Integer(), nullable=False))
-    op.drop_constraint("decision_flow_problem_definition_id_fkey", "decision_flow", type_="foreignkey")
+    # op.drop_constraint("decision_flow_problem_definition_id_fkey", "decision_flow", type_="foreignkey")
+    drop_constraints(op, "decision_flow", "problem_definition_id")
+
     op.drop_column("decision_flow", "decisions")
     op.drop_column("decision_flow", "name")
     op.drop_column("decision_flow", "problem_definition_id")

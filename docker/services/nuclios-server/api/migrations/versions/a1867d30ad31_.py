@@ -7,6 +7,30 @@ Create Date: 2023-03-28 18:45:32.460170
 """
 from alembic import op
 import sqlalchemy as sa
+from sqlalchemy import inspect
+
+
+def drop_constraints(op, table_name, column_name):
+    conn = op.get_bind()
+    inspector = inspect(conn)
+
+    # Define your table and column names
+    table_name = table_name
+    column_name = column_name
+    # Get the dynamically generated foreign key constraint name
+    foreign_keys = inspector.get_foreign_keys(table_name)
+    print(foreign_keys)
+
+    # Find the correct foreign key constraint dynamically
+    constraint_name = None
+    for fk in foreign_keys:
+        if fk["constrained_columns"] == [column_name]:
+            constraint_name = fk["name"]
+            break
+
+    if constraint_name:
+        # Drop the foreign key constraint using its dynamic name
+        op.drop_constraint(constraint_name, table_name, type_="foreignkey")
 
 
 # revision identifiers, used by Alembic.
@@ -28,7 +52,9 @@ def upgrade():
     op.execute(
         "update app_mapping set container_id = (select parent_container_id from app where app.id = app_mapping.app_id)"
     )
-    op.drop_constraint("app_mapping_app_id_fkey", "app_mapping", type_="foreignkey")
+    # op.drop_constraint("app_mapping_app_id_fkey", "app_mapping", type_="foreignkey")
+    drop_constraints(op, "app_mapping", "app_id")
+
     op.drop_column("app_mapping", "app_id")
 
     op.alter_column("app", "parent_container_id", new_column_name="container_id")

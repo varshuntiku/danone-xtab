@@ -7,6 +7,30 @@ Create Date: 2024-02-08 19:50:26.517977
 """
 from alembic import op
 import sqlalchemy as sa
+from sqlalchemy import inspect
+
+
+def drop_constraints(op, table_name, column_name):
+    conn = op.get_bind()
+    inspector = inspect(conn)
+
+    # Define your table and column names
+    table_name = table_name
+    column_name = column_name
+    # Get the dynamically generated foreign key constraint name
+    foreign_keys = inspector.get_foreign_keys(table_name)
+    print(foreign_keys)
+
+    # Find the correct foreign key constraint dynamically
+    constraint_name = None
+    for fk in foreign_keys:
+        if fk["constrained_columns"] == [column_name]:
+            constraint_name = fk["name"]
+            break
+
+    if constraint_name:
+        # Drop the foreign key constraint using its dynamic name
+        op.drop_constraint(constraint_name, table_name, type_="foreignkey")
 
 
 # revision identifiers, used by Alembic.
@@ -21,7 +45,7 @@ def upgrade():
     op.create_table(
         "llm_cloud_provider",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("name", sa.String(length=255), nullable=True),
@@ -46,7 +70,7 @@ def upgrade():
     op.create_table(
         "llm_model_config",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("model_id", sa.Integer(), nullable=True),
@@ -78,7 +102,7 @@ def upgrade():
     op.create_table(
         "llm_experiment_checkpoint",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("experiment_id", sa.Integer(), nullable=True),
@@ -109,7 +133,7 @@ def upgrade():
     op.create_table(
         "llm_experiment_run_tracer",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("experiment_id", sa.Integer(), nullable=True),
@@ -152,7 +176,9 @@ def upgrade():
     op.add_column("llm_data_registry", sa.Column("dataset_folder", sa.String(length=255), nullable=True))
     op.drop_column("llm_data_registry", "file_location")
     op.add_column("llm_experiment", sa.Column("experiment_settings_id", sa.Integer(), nullable=True))
-    op.drop_constraint("llm_experiment_llm_experiment_settings_id_fkey", "llm_experiment", type_="foreignkey")
+    # op.drop_constraint("llm_experiment_llm_experiment_settings_id_fkey", "llm_experiment", type_="foreignkey")
+    drop_constraints(op, "llm_experiment", "llm_experiment_settings_id")
+
     op.create_foreign_key(
         "llm_experiment_llm_experiment_settings_id_fkey",
         "llm_experiment",
@@ -162,7 +188,9 @@ def upgrade():
     )
     op.drop_column("llm_experiment", "llm_experiment_settings_id")
     op.add_column("llm_experiment_result", sa.Column("experiment_id", sa.Integer(), nullable=True))
-    op.drop_constraint("llm_experiment_result_llm_experiment_id_fkey", "llm_experiment_result", type_="foreignkey")
+    # op.drop_constraint("llm_experiment_result_llm_experiment_id_fkey", "llm_experiment_result", type_="foreignkey")
+    drop_constraints(op, "llm_experiment_result", "llm_experiment_id")
+
     op.create_foreign_key(
         "llm_experiment_result_llm_experiment_id_fkey",
         "llm_experiment_result",

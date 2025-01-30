@@ -24,9 +24,9 @@ def upgrade() -> None:
     op.add_column("copilot_tool_registry", sa.Column("is_test", sa.Boolean(), nullable=True))
     op.add_column("copilot_tool_version", sa.Column("is_test", sa.Boolean(), nullable=True))
     op.execute(
-        """INSERT INTO public.copilot_tool_registry
+        """INSERT INTO copilot_tool_registry
 (name, "desc", is_test)
-VALUES('Local', 'Registry to publish local skillsets for test and debug', true);
+VALUES('Local', 'Registry to publish local skillsets for test and debug', 1);
 """
     )
     # ### end Alembic commands ###

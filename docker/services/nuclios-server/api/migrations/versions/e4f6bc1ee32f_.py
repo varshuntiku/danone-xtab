@@ -7,6 +7,30 @@ Create Date: 2021-04-02 18:01:13.165252
 """
 from alembic import op
 import sqlalchemy as sa
+from sqlalchemy import inspect
+
+
+def drop_constraints(op, table_name, column_name):
+    conn = op.get_bind()
+    inspector = inspect(conn)
+
+    # Define your table and column names
+    table_name = table_name
+    column_name = column_name
+    # Get the dynamically generated foreign key constraint name
+    foreign_keys = inspector.get_foreign_keys(table_name)
+    print(foreign_keys)
+
+    # Find the correct foreign key constraint dynamically
+    constraint_name = None
+    for fk in foreign_keys:
+        if fk["constrained_columns"] == [column_name]:
+            constraint_name = fk["name"]
+            break
+
+    if constraint_name:
+        # Drop the foreign key constraint using its dynamic name
+        op.drop_constraint(constraint_name, table_name, type_="foreignkey")
 
 
 # revision identifiers, used by Alembic.
@@ -24,7 +48,7 @@ def upgrade():
         sa.Column(
             "created_at",
             sa.DateTime(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             nullable=True,
         ),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
@@ -63,7 +87,9 @@ def upgrade():
         ),
         sa.PrimaryKeyConstraint("id"),
     )
-    op.drop_constraint("story_content_layout_id_fkey", "story_content", type_="foreignkey")
+    # op.drop_constraint("story_content_layout_id_fkey", "story_content", type_="foreignkey")
+    drop_constraints(op, "story_content", "layout_id")
+
     op.drop_column("story_content", "content_json")
     op.drop_column("story_content", "layout_id")
     op.drop_column("story_content", "orderby")
@@ -74,13 +100,13 @@ def upgrade():
     # insert_fn_sql = """
     #     INSERT INTO story_layout (created_at, layout_style, layout_props, thumbnail_blob_name, layout_name)
     #     values
-    #     (now(),
+    #     (CURRENT_TIMESTAMP,
     #     E'{"gridTemplateAreas":"\'h h h h\'\'g g t t\'\'g g t t\'\'g g t t\'\'k k k k\'"}',
     #     '{"rows":{"h"\:1,"g"\:3,"t"\:3,"k"\:1},"cols":{"h"\:4,"g"\:2,"t"\:2,"k"\:4}}', 'layout_1.png', 'layout1'),
-    #     (now(),
+    #     (CURRENT_TIMESTAMP,
     #     E'{"gridTemplateAreas":"\'h h h h\'\'g g g k\'\'g g g k\'\'g g g k\'\'t t t k\'"}',
     #     '{"rows":{"h"\:1,"g"\:3,"t"\:1,"k"\:4},"cols":{"h"\:4,"g"\:3,"t"\:3,"k"\:1}}', 'layout_2.png', 'layout2'),
-    #     (now(),
+    #     (CURRENT_TIMESTAMP,
     #     E'{"gridTemplateAreas":"\'h h h h\'\'g g t t\'\'g g t t\'\'g g t t\'\'g g t t\'"}',
     #     '{"rows":{"h"\:1,"g"\:4,"t"\:4,"k"\:0},"cols":{"h"\:4,"g"\:2,"t"\:2,"k"\:0}}', 'layout_3.png', 'layout3');
     # """

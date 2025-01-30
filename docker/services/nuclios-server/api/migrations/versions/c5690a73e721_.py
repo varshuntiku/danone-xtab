@@ -21,13 +21,13 @@ def upgrade():
 
     # Step 1: soft delete functions from functions table with deleted industry
     op.execute(
-        """update "functions" set deleted_at=now() where industry_id in (select id from industry i where i.deleted_at is not null)"""
+        """update "functions" set deleted_at=CURRENT_TIMESTAMP where industry_id in (select id from industry i where i.deleted_at is not null)"""
     )
 
     # Step2: Function duplicate soft delete:
     op.execute(
         """
-update "functions" set deleted_at = now() where id in (
+update "functions" set deleted_at = CURRENT_TIMESTAMP where id in (
     select id from "functions" f1 inner join(
         select min(id) as min_id, industry_id, function_name
         from "functions" f where deleted_at is null
@@ -40,7 +40,7 @@ update "functions" set deleted_at = now() where id in (
     # Step 3: soft delete container_mapping with deleted industries or functions
     op.execute(
         """
-update container_mapping set deleted_at = now() where id in (
+update container_mapping set deleted_at = CURRENT_TIMESTAMP where id in (
     SELECT
     id
     from container_mapping cm where industry_id in (
@@ -54,7 +54,7 @@ update container_mapping set deleted_at = now() where id in (
     # step 4: soft delete container mapping for duplicate container id, industry id and function id
     op.execute(
         """
-update container_mapping set deleted_at = now() where id in (
+update container_mapping set deleted_at = CURRENT_TIMESTAMP where id in (
     select id from container_mapping c1 inner join
     (select
      min(id) as min_id, container_id, function_id, industry_id
@@ -71,11 +71,11 @@ update container_mapping set deleted_at = now() where id in (
     # step 5: insert a miscellaneous industry to address all the industry less containers
     op.execute(
         """
-INSERT INTO public.industry(created_at, updated_at, deleted_at, industry_name, logo_name, created_by, updated_by, deleted_by, horizon, color, "level", description)
-select now(), NULL, NULL, 'Miscellaneous Industry', 'Technology',
+INSERT INTO industry(created_at, updated_at, deleted_at, industry_name, logo_name, created_by, updated_by, deleted_by, horizon, color, "level", description)
+select CURRENT_TIMESTAMP, NULL, NULL, 'Miscellaneous Industry', 'Technology',
     NULL, NULL, NULL, 'vertical', NULL, NULL, ''
 where not exists (
-    select id from public.industry where industry_name = 'Miscellaneous Industry'
+    select id from industry where industry_name = 'Miscellaneous Industry'
 )
 """
     )
@@ -83,12 +83,12 @@ where not exists (
     # step 6: insert a miscellaneous function to address all the function less containers
     op.execute(
         """
-INSERT INTO public."functions"
+INSERT INTO "functions"
 (created_at, updated_at, deleted_at, function_name, description,
  logo_name, created_by, updated_by, deleted_by, parent_function_id, color, "level")
-select now(), NULL, NULL, 'Miscellaneous Function', '', 'RetailCustomerInsightsIcon', NULL, NULL, NULL, NULL, NULL, null
+select CURRENT_TIMESTAMP, NULL, NULL, 'Miscellaneous Function', '', 'RetailCustomerInsightsIcon', NULL, NULL, NULL, NULL, NULL, null
 where not exists (
-    select f.id from public."functions" f inner join industry i on f.industry_id = i.id where i.industry_name = 'Miscellaneous Industry'
+    select f.id from "functions" f inner join industry i on f.industry_id = i.id where i.industry_name = 'Miscellaneous Industry'
 )
 """
     )
@@ -96,7 +96,7 @@ where not exists (
     # step 7: update function with Miscellaneous Industry id
     op.execute(
         """
-update public."functions"
+update "functions"
 set
 industry_id = (select id from "industry" where industry_name='Miscellaneous Industry')
 where industry_id is null

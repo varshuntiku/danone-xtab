@@ -24,7 +24,7 @@ def upgrade():
         sa.Column(
             "created_at",
             sa.DateTime(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             nullable=True,
         ),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
@@ -71,7 +71,7 @@ def downgrade():
         sa.Column(
             "created_at",
             postgresql.TIMESTAMP(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             autoincrement=False,
             nullable=True,
         ),

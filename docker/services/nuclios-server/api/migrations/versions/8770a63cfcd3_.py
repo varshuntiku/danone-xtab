@@ -8,6 +8,7 @@ Create Date: 2024-05-30 14:17:34.488998
 from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
+from sqlalchemy.dialects.mssql import UNIQUEIDENTIFIER
 
 # revision identifiers, used by Alembic.
 revision = "8770a63cfcd3"
@@ -21,7 +22,7 @@ def upgrade():
     op.create_table(
         "infra_type",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("name", sa.String(length=255), nullable=True),
@@ -50,7 +51,7 @@ def upgrade():
     op.create_table(
         "execution_environment",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("name", sa.String(length=100), nullable=True),
@@ -98,7 +99,7 @@ def upgrade():
     op.create_table(
         "execution_environment_app_mapping",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("app_id", sa.Integer(), nullable=True),
@@ -132,13 +133,13 @@ def upgrade():
     op.create_table(
         "execution_environment_deployment",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("env_id", sa.Integer(), nullable=True),
         sa.Column("name", sa.String(length=255), nullable=True),
         sa.Column("namespace", sa.String(length=255), nullable=True),
-        sa.Column("uuid", postgresql.UUID(as_uuid=True), nullable=True),
+        sa.Column("uuid", UNIQUEIDENTIFIER, nullable=True),
         sa.Column("is_active", sa.Boolean(), nullable=True),
         sa.Column("created_by", sa.Integer(), nullable=True),
         sa.Column("updated_by", sa.Integer(), nullable=True),

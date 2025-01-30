@@ -24,7 +24,7 @@ def upgrade():
         sa.Column(
             "created_at",
             sa.DateTime(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             nullable=True,
         ),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
@@ -53,59 +53,59 @@ def upgrade():
 
     insert_fn_sql = """
 --CPG
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Strategy & Planning', 'CPGStrategyPlanningIcon-Strategy & Planning', 'CPG', 0 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Finance & Procurement', 'CPGFinanceProcurementIcon-Finance & Procurement', 'CPG', 1 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Supply Chain', 'CPGSupplyChainIcon-Supply Chain', 'CPG', 2 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Marketing', 'CPGMarketingIcon-Marketing', 'CPG', 3 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Revenue Management', 'CPGRevenueManagementIcon-Revenue Management', 'CPG', 4 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Consumer Insights', 'CPGConsumerInsightsIcon-Consumer Insights', 'CPG', 5 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Strategy & Planning', 'CPGStrategyPlanningIcon-Strategy & Planning', 'CPG', 0 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Finance & Procurement', 'CPGFinanceProcurementIcon-Finance & Procurement', 'CPG', 1 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Supply Chain', 'CPGSupplyChainIcon-Supply Chain', 'CPG', 2 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Marketing', 'CPGMarketingIcon-Marketing', 'CPG', 3 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Revenue Management', 'CPGRevenueManagementIcon-Revenue Management', 'CPG', 4 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Consumer Insights', 'CPGConsumerInsightsIcon-Consumer Insights', 'CPG', 5 );
 --Insurance
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Underwriting & Pricing', 'InsuranceUnderwritingPricingIcon-Underwriting & Pricing', 'Insurance', 0 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Claims Management', 'InsuranceClaimsIcon-Claims', 'Insurance', 1 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Marketing & Customer Insights', 'InsuranceMarketingCustomerIcon-Marketing & Customer Insights', 'Insurance', 2 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Distribution', 'InsuranceDistributionIcon-Distribution', 'Insurance', 3 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Underwriting & Pricing', 'InsuranceUnderwritingPricingIcon-Underwriting & Pricing', 'Insurance', 0 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Claims Management', 'InsuranceClaimsIcon-Claims', 'Insurance', 1 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Marketing & Customer Insights', 'InsuranceMarketingCustomerIcon-Marketing & Customer Insights', 'Insurance', 2 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Distribution', 'InsuranceDistributionIcon-Distribution', 'Insurance', 3 );
 --Retail
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Finance & Procurement', 'RetailFinanceProcurementIcon-Finance & Procurement', 'Retail', 0 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Supply Chain', 'RetailSupplyChainIcon-Supply Chain', 'Retail', 1 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Merchandising & Store Ops', 'RetailMerchandisingIcon-Merchandising & Store Operations', 'Retail', 2 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Pricing', 'RetailPricingIcon-Pricing', 'Retail', 3 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Marketing', 'RetailMarketingIcon-Marketing', 'Retail', 4 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Customer & Digital Insights', 'RetailCustomerInsightsIcon-Customer & Digital Insights', 'Retail', 5 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Finance & Procurement', 'RetailFinanceProcurementIcon-Finance & Procurement', 'Retail', 0 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Supply Chain', 'RetailSupplyChainIcon-Supply Chain', 'Retail', 1 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Merchandising & Store Ops', 'RetailMerchandisingIcon-Merchandising & Store Operations', 'Retail', 2 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Pricing', 'RetailPricingIcon-Pricing', 'Retail', 3 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Marketing', 'RetailMarketingIcon-Marketing', 'Retail', 4 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Customer & Digital Insights', 'RetailCustomerInsightsIcon-Customer & Digital Insights', 'Retail', 5 );
 --Manufacturing
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Sourcing', 'AutomotiveProcurementIcon-Sourcing', 'Manufacturing', 0 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Manufacturing & Engineering', 'ManufacturingEngineeringIcon-Manufacturing & Engineering', 'Manufacturing', 1 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Supply Chain', 'ManufacturingSupplyChainIcon-Supply Chain', 'Manufacturing', 2 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Distribution', 'ManufacturingSupplyChainIcon-Distribution', 'Manufacturing', 3 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Sales & Marketing', 'ManufacturingSalesMktgIcon-Sales & Marketing', 'Manufacturing', 4 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'After Sales & Support', 'TechnologyCustomerServiceIcon-After Sales & Support', 'Manufacturing', 5 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Sourcing', 'AutomotiveProcurementIcon-Sourcing', 'Manufacturing', 0 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Manufacturing & Engineering', 'ManufacturingEngineeringIcon-Manufacturing & Engineering', 'Manufacturing', 1 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Supply Chain', 'ManufacturingSupplyChainIcon-Supply Chain', 'Manufacturing', 2 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Distribution', 'ManufacturingSupplyChainIcon-Distribution', 'Manufacturing', 3 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Sales & Marketing', 'ManufacturingSalesMktgIcon-Sales & Marketing', 'Manufacturing', 4 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'After Sales & Support', 'TechnologyCustomerServiceIcon-After Sales & Support', 'Manufacturing', 5 );
 --Automotive
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Sourcing', 'AutomotiveProcurementIcon-Sourcing', 'Automotive', 0 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Manufacturing & Engineering', 'AutomotiveManufacturingIcon-Manufacturing & Engineering', 'Automotive', 1 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Supply Chain', 'AutomotiveSupplyChainIcon-Supply Chain', 'Automotive', 2 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Dealership & Distribution', 'AutomotiveDealershipIcon-Dealership & Distribution', 'Automotive', 3 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Sales & Marketing', 'AutomotiveSalesMktgIcon-Sales & Marketing', 'Automotive', 4 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'After Sales & Support', 'AutomotiveServiceIcon-After Sales & Support', 'Automotive', 5 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Sourcing', 'AutomotiveProcurementIcon-Sourcing', 'Automotive', 0 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Manufacturing & Engineering', 'AutomotiveManufacturingIcon-Manufacturing & Engineering', 'Automotive', 1 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Supply Chain', 'AutomotiveSupplyChainIcon-Supply Chain', 'Automotive', 2 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Dealership & Distribution', 'AutomotiveDealershipIcon-Dealership & Distribution', 'Automotive', 3 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Sales & Marketing', 'AutomotiveSalesMktgIcon-Sales & Marketing', 'Automotive', 4 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'After Sales & Support', 'AutomotiveServiceIcon-After Sales & Support', 'Automotive', 5 );
 --Technology
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'R&D', 'TechnologyResearchDevelopment-R&D', 'Technology', 0 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Finance & Procurement', 'RetailFinanceProcurementIcon-Finance & Procurement', 'Technology', 1 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Manufacturing & Supply Chain', 'AutomotiveSupplyChainIcon-Manufacturing & Supply Chain', 'Technology', 2 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Marketing', 'RetailMarketingIcon-Marketing', 'Technology', 3 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Distribution & Sales', 'TechnologyDistributionIcon-Distribution & Sales', 'Technology', 4 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'CRM & Customer Support', 'TechnologyCustomerServiceIcon-CRM & Customer Support', 'Technology', 5 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'R&D', 'TechnologyResearchDevelopment-R&D', 'Technology', 0 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Finance & Procurement', 'RetailFinanceProcurementIcon-Finance & Procurement', 'Technology', 1 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Manufacturing & Supply Chain', 'AutomotiveSupplyChainIcon-Manufacturing & Supply Chain', 'Technology', 2 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Marketing', 'RetailMarketingIcon-Marketing', 'Technology', 3 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Distribution & Sales', 'TechnologyDistributionIcon-Distribution & Sales', 'Technology', 4 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'CRM & Customer Support', 'TechnologyCustomerServiceIcon-CRM & Customer Support', 'Technology', 5 );
 --Telecom
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Sales & Pricing', 'TechnologySalesIcon-Sales & Pricing', 'Telecom', 0 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Marketing', 'RetailMarketingIcon-Marketing', 'Telecom', 1 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Customer Insights', 'AutomotiveSupplyChainIcon-Customer Insights', 'Telecom', 2 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Network Operations', 'AutomotiveDealershipIcon-Network Operations', 'Telecom', 3 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Customer Support', 'TechnologyCustomerServiceIcon-Customer Support', 'Telecom', 4 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Retention', 'TechnologyRetentionIcon-Retention', 'Telecom', 5 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Sales & Pricing', 'TechnologySalesIcon-Sales & Pricing', 'Telecom', 0 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Marketing', 'RetailMarketingIcon-Marketing', 'Telecom', 1 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Customer Insights', 'AutomotiveSupplyChainIcon-Customer Insights', 'Telecom', 2 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Network Operations', 'AutomotiveDealershipIcon-Network Operations', 'Telecom', 3 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Customer Support', 'TechnologyCustomerServiceIcon-Customer Support', 'Telecom', 4 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Retention', 'TechnologyRetentionIcon-Retention', 'Telecom', 5 );
 --Pharma
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'R&D - Drug Development', 'PharmaResearchDevelopment-R&D - Drug Development', 'Pharma', 0 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Market Access', 'PharmaMarketAccess-Market Access', 'Pharma', 1 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Manufacturing', 'PharmaManufacturing-Manufacturing', 'Pharma', 2 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Distribution', 'PharmaDistribution-Distribution', 'Pharma', 3 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Commercial & Marketing', 'PharmaMarketing-Commercial & Marketing', 'Pharma', 4 );
-INSERT INTO function (created_at, name, logo, industry, orderby) VALUES (now(), 'Patient Insights', 'PharmaPatientInsights-Patient Insights', 'Pharma', 5 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'R&D - Drug Development', 'PharmaResearchDevelopment-R&D - Drug Development', 'Pharma', 0 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Market Access', 'PharmaMarketAccess-Market Access', 'Pharma', 1 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Manufacturing', 'PharmaManufacturing-Manufacturing', 'Pharma', 2 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Distribution', 'PharmaDistribution-Distribution', 'Pharma', 3 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Commercial & Marketing', 'PharmaMarketing-Commercial & Marketing', 'Pharma', 4 );
+INSERT INTO [function] (created_at, name, logo, industry, orderby) VALUES (CURRENT_TIMESTAMP, 'Patient Insights', 'PharmaPatientInsights-Patient Insights', 'Pharma', 5 );
     """
     op.execute(insert_fn_sql)
 

@@ -8,6 +8,7 @@ Create Date: 2023-11-02 09:09:30.696049
 from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
+from sqlalchemy.dialects.mssql import UNIQUEIDENTIFIER
 
 # revision identifiers, used by Alembic.
 revision = "447e00a43975"
@@ -21,7 +22,7 @@ def upgrade():
     op.create_table(
         "project",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("name", sa.String(length=100), nullable=True),
@@ -68,10 +69,10 @@ def upgrade():
     op.create_table(
         "problem_definition_version",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
-        sa.Column("version_id", postgresql.UUID(as_uuid=True), nullable=True),
+        sa.Column("version_id", UNIQUEIDENTIFIER, nullable=True),
         sa.Column("version_name", sa.String(length=1000), nullable=False),
         sa.Column("project_id", sa.Integer(), nullable=True),
         sa.Column("is_current", sa.Boolean(), nullable=False),

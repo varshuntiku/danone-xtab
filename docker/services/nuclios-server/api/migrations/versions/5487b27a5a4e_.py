@@ -23,13 +23,13 @@ def upgrade():
     op.create_table(
         "copilot_orchestrator",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("name", sa.String(length=100), nullable=True),
         sa.Column("identifier", sa.String(length=100), nullable=True),
         sa.Column("desc", sa.Text(), nullable=True),
-        sa.Column("config", sa.JSON(), nullable=True),
+        sa.Column("config", sa.Text(), nullable=True),
         sa.Column("disabled", sa.Boolean(), nullable=True),
         sa.Column("created_by", sa.Integer(), nullable=True),
         sa.Column("updated_by", sa.Integer(), nullable=True),
@@ -49,13 +49,13 @@ def upgrade():
         sa.PrimaryKeyConstraint("id"),
     )
     op.execute(
-        """INSERT INTO public.copilot_orchestrator (name, identifier, "desc", config) VALUES ('Prompt Based Orchestrator', 'PromptAgent', 'This orchestrator evaluates a given prompt alongside detailed descriptions of available tools to intelligently determine the most appropriate tool for answering specific queries', '{"system_message": ""}'::json);"""
+        """INSERT INTO copilot_orchestrator (name, identifier, "desc", config) VALUES ('Prompt Based Orchestrator', 'PromptAgent', 'This orchestrator evaluates a given prompt alongside detailed descriptions of available tools to intelligently determine the most appropriate tool for answering specific queries', '{"system_message": ""}');"""
     )
     op.execute(
-        """INSERT INTO public.copilot_orchestrator (name, identifier, "desc", config) VALUES ('OpenAI Function Based Orchestrator', 'FunctionCallAgent', 'This orchestrator utilizes OpenAIs predefined functions and capabilities to directly manage and route questions to the optimal tool', '{"input_params_enabled": true, "system_message": "Dont make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."}'::json);"""
+        """INSERT INTO copilot_orchestrator (name, identifier, "desc", config) VALUES ('OpenAI Function Based Orchestrator', 'FunctionCallAgent', 'This orchestrator utilizes OpenAIs predefined functions and capabilities to directly manage and route questions to the optimal tool', '{"input_params_enabled": true, "system_message": "Dont make assumptions about what values to plug into functions. Ask for clarification if a user request is ambiguous."}');"""
     )
-    op.add_column("copilot_app_published_tool_mapping", sa.Column("preprocess_config", sa.JSON(), nullable=True))
-    op.add_column("copilot_app_published_tool_mapping", sa.Column("input_params", sa.JSON(), nullable=True))
+    op.add_column("copilot_app_published_tool_mapping", sa.Column("preprocess_config", sa.Text(), nullable=True))
+    op.add_column("copilot_app_published_tool_mapping", sa.Column("input_params", sa.Text(), nullable=True))
     op.alter_column(
         "minerva_conversation",
         "feedback",
@@ -72,7 +72,7 @@ def upgrade():
     op.create_table(
         "copilot_app_datasource_published_tool_mapping",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("datasource_id", sa.Integer(), nullable=True),
@@ -184,7 +184,7 @@ def update_tool_datasource_mapping():
         res = connection.execute(
             """
         SELECT *
-        FROM public.copilot_app_published_tool_mapping ap_tool
+        FROM copilot_app_published_tool_mapping ap_tool
         WHERE ap_tool.deleted_at is null ;"""
         )
         existing_tools = res.mappings().all()
@@ -206,7 +206,7 @@ def update_tool_datasource_mapping():
                     datasource_res = connection.execute(
                         f"""
                             SELECT *
-                            FROM public.copilot_data_source ds
+                            FROM copilot_data_source ds
                             WHERE ds.id = {tool_ds_id} and ds.deleted_at is null ;"""
                     )
 
@@ -223,10 +223,10 @@ def update_tool_datasource_mapping():
                         new_tool_datasource_mapping_config["datasource_table"] = tool.config.get("datasource_table", [])
                         del updated_app_published_tool_config["datasource_table"]
 
-                    insert_record_query = f"insert into public.copilot_app_datasource_published_tool_mapping (created_at, updated_at, deleted_at, datasource_id, app_published_tool_id, \"key\", config, created_by, updated_by, deleted_by) VALUES ('now()', NULL, NULL, {tool.config.get('datasource')}, {tool.id}, NULL, '{json.dumps(new_tool_datasource_mapping_config)}'::json, {tool.created_by if tool.created_by else 'NULL'}, NULL, NULL )"
+                    insert_record_query = f"insert into copilot_app_datasource_published_tool_mapping (created_at, updated_at, deleted_at, datasource_id, app_published_tool_id, \"key\", config, created_by, updated_by, deleted_by) VALUES ('CURRENT_TIMESTAMP', NULL, NULL, {tool.config.get('datasource')}, {tool.id}, NULL, '{json.dumps(new_tool_datasource_mapping_config)}'::json, {tool.created_by if tool.created_by else 'NULL'}, NULL, NULL )"
                     op.execute(insert_record_query)
 
-                    update_record_query = f"update public.copilot_app_published_tool_mapping set config='{json.dumps(updated_app_published_tool_config)}'::json where id={tool.id}"
+                    update_record_query = f"update copilot_app_published_tool_mapping set config='{json.dumps(updated_app_published_tool_config)}'::json where id={tool.id}"
                     op.execute(update_record_query)
                 else:
                     pass

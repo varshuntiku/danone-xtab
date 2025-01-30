@@ -24,7 +24,7 @@ def upgrade() -> None:
     op.create_table(
         "copilot_tool_base_version",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("name", sa.String(length=100), nullable=False),
@@ -50,7 +50,7 @@ def upgrade() -> None:
     op.create_table(
         "copilot_tool_deployment_agent",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("name", sa.String(length=100), nullable=False),
@@ -106,42 +106,42 @@ def upgrade() -> None:
     )
     op.drop_column("copilot_tool_version_registry_mapping", "deployment_agent")
 
-    op.execute(
-        """INSERT INTO copilot_tool_base_version (name, "desc", config, created_by, created_at) VALUES
-        ('v1','Needs explicit listener or serve. Rigid in terms of the structure of the codebase.','{"path": "/default_tool"}',0, NOW());"""
-    )
-    op.execute(
-        """INSERT INTO public.copilot_tool_base_version (name, "desc", config, created_by, created_at) VALUES
-        ('v2','It has a Dockerfile with it. Flexible in terms of the structure of the codebase.','{"path": "/default_tool_v2"}',0, NOW());"""
-    )
+    # op.execute(
+    #     """INSERT INTO copilot_tool_base_version (name, "desc", config, created_by, created_at) VALUES
+    #     ('v1','Needs explicit listener or serve. Rigid in terms of the structure of the codebase.','{"path": "/default_tool"}',0, CURRENT_TIMESTAMP);"""
+    # )
+    # op.execute(
+    #     """INSERT INTO copilot_tool_base_version (name, "desc", config, created_by, created_at) VALUES
+    #     ('v2','It has a Dockerfile with it. Flexible in terms of the structure of the codebase.','{"path": "/default_tool_v2"}',0, CURRENT_TIMESTAMP);"""
+    # )
 
-    op.execute(
-        """INSERT INTO public.copilot_tool_deployment_agent (name, "desc", config, created_by, created_at) VALUES
-        ('fission','An open-source deployment agent for serverless functions.',NULL,0, NOW());"""
-    )
-    op.execute(
-        """INSERT INTO public.copilot_tool_deployment_agent (name, "desc", config, created_by, created_at) VALUES
-        ('dee','Nuclios Dynamic Execution Environment. A custom-built deployment agent was developed and maintained by the Nuclios team.',NULL,0, NOW());"""
-    )
+    # op.execute(
+    #     """INSERT INTO copilot_tool_deployment_agent (name, "desc", config, created_by, created_at) VALUES
+    #     ('fission','An open-source deployment agent for serverless functions.',NULL,0, CURRENT_TIMESTAMP);"""
+    # )
+    # op.execute(
+    #     """INSERT INTO copilot_tool_deployment_agent (name, "desc", config, created_by, created_at) VALUES
+    #     ('dee','Nuclios Dynamic Execution Environment. A custom-built deployment agent was developed and maintained by the Nuclios team.',NULL,0, CURRENT_TIMESTAMP);"""
+    # )
 
-    op.execute(
-        """INSERT INTO public.copilot_tool_deployment_agent_base_version_mapping (deployment_agent_id, base_version_id) VALUES
-        ( (SELECT id FROM copilot_tool_deployment_agent WHERE name = 'fission'),
-        (SELECT id FROM copilot_tool_base_version WHERE name = 'v1'));"""
-    )
-    op.execute(
-        """INSERT INTO public.copilot_tool_deployment_agent_base_version_mapping (deployment_agent_id, base_version_id) VALUES
-        ( (SELECT id FROM copilot_tool_deployment_agent WHERE name = 'dee'),
-        (SELECT id FROM copilot_tool_base_version WHERE name = 'v2'));"""
-    )
+    # op.execute(
+    #     """INSERT INTO copilot_tool_deployment_agent_base_version_mapping (deployment_agent_id, base_version_id) VALUES
+    #     ( (SELECT id FROM copilot_tool_deployment_agent WHERE name = 'fission'),
+    #     (SELECT id FROM copilot_tool_base_version WHERE name = 'v1'));"""
+    # )
+    # op.execute(
+    #     """INSERT INTO copilot_tool_deployment_agent_base_version_mapping (deployment_agent_id, base_version_id) VALUES
+    #     ( (SELECT id FROM copilot_tool_deployment_agent WHERE name = 'dee'),
+    #     (SELECT id FROM copilot_tool_base_version WHERE name = 'v2'));"""
+    # )
 
-    op.execute(
-        "UPDATE copilot_tool_version SET base_version_id = (SELECT id from copilot_tool_base_version WHERE name='v1')"
-    )
+    # op.execute(
+    #     "UPDATE copilot_tool_version SET base_version_id = (SELECT id from copilot_tool_base_version WHERE name='v1')"
+    # )
 
-    op.execute(
-        "UPDATE copilot_tool_version_registry_mapping SET deployment_agent_id = (SELECT id from copilot_tool_deployment_agent WHERE name='fission')"
-    )
+    # op.execute(
+    #     "UPDATE copilot_tool_version_registry_mapping SET deployment_agent_id = (SELECT id from copilot_tool_deployment_agent WHERE name='fission')"
+    # )
     # ### end Alembic commands ###
 
 

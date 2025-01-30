@@ -24,7 +24,7 @@ def upgrade() -> None:
     op.create_table(
         "filter",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("filters", sa.JSON(), nullable=True),
@@ -48,7 +48,7 @@ def upgrade() -> None:
     op.create_table(
         "comment",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("app_id", sa.Integer(), nullable=True),
@@ -93,7 +93,7 @@ def upgrade() -> None:
         sa.Column("reply_text", sa.Text(), nullable=False),
         sa.Column("attachments", sa.JSON(), nullable=True),
         sa.Column("tagged_users", sa.JSON(), nullable=True),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("created_by", sa.Integer(), nullable=True),
         sa.Column("updated_by", sa.Integer(), nullable=True),
         sa.Column("deleted_by", sa.Integer(), nullable=True),

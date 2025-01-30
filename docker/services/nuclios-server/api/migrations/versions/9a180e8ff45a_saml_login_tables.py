@@ -26,7 +26,7 @@ def upgrade() -> None:
         sa.Column(
             "created_at",
             sa.DateTime(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             nullable=True,
         ),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
@@ -58,7 +58,7 @@ def upgrade() -> None:
         sa.Column(
             "created_at",
             sa.DateTime(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             nullable=True,
         ),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
@@ -86,7 +86,7 @@ def upgrade() -> None:
     )
 
     op.execute(
-        """insert into login_config (config_name, config_data , is_enabled) values ('email_password', NULL, true), ('sso', NULL, true), ('saml', NULL, false)"""
+        """insert into login_config (config_name, config_data , is_enabled) values ('email_password', NULL, 1), ('sso', NULL, 1), ('saml', NULL, 0)"""
     )
     # ### end Alembic commands ###
 

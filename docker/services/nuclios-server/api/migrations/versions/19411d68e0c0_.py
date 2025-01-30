@@ -21,7 +21,7 @@ def upgrade():
     op.create_table(
         "app_theme",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("name", sa.String(length=100), nullable=False),
@@ -45,7 +45,7 @@ def upgrade():
     op.create_table(
         "app_theme_mode",
         sa.Column("id", sa.Integer(), nullable=False),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=True),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=True),
         sa.Column("updated_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("deleted_at", sa.DateTime(timezone=True), nullable=True),
         sa.Column("mode", sa.String(length=100), nullable=False),
@@ -81,10 +81,10 @@ def upgrade():
 
     for i, el in enumerate(initial_theme_data):
         if i % 2 == 0:
-            op.execute(f"""INSERT INTO public.app_theme (name) VALUES('{el['name']}');""")
+            op.execute(f"""INSERT INTO app_theme (name) VALUES('{el['name']}');""")
 
         op.execute(
-            f"""INSERT INTO public.app_theme_mode (mode, bg_variant, contrast_color, chart_colors, params, app_theme_id) select '{el['mode']}', '{el['bg_variant']}', '{el['contrast_color']}', '{json.dumps(el['chart_colors'])}', '{json.dumps({})}', id from app_theme where name='{el['name']}';"""
+            f"""INSERT INTO app_theme_mode (mode, bg_variant, contrast_color, chart_colors, params, app_theme_id) select '{el['mode']}', '{el['bg_variant']}', '{el['contrast_color']}', '{json.dumps(el['chart_colors'])}', '{json.dumps({})}', id from app_theme where name='{el['name']}';"""
         )
 
     # ### end Alembic commands ###

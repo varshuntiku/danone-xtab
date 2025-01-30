@@ -22,28 +22,28 @@ def upgrade():
     op.add_column("copilot_tool_version_registry_mapping", sa.Column("version", sa.String(length=100), nullable=True))
     op.drop_column("copilot_tool_version_registry_mapping", "title")
     # To populate version number for existing published tools
-    op.execute(
-        """
-        WITH version_cte AS (
-            SELECT
-                ctvrm.tool_version_id,
-                ROW_NUMBER() OVER (PARTITION BY ctv.tool_id ORDER BY ctvrm.created_at ASC) - 1 AS version_increment
-            FROM
-                copilot_tool_version_registry_mapping AS ctvrm
-            JOIN
-                copilot_tool_version AS ctv ON ctvrm.tool_version_id = ctv.id
-            WHERE
-                ctvrm.deleted_At IS NULL
-                AND ctvrm.deprecated = false
-        )
-        UPDATE copilot_tool_version_registry_mapping AS ctvrm
-        SET version = CONCAT('1.', version_increment, '.0')
-        FROM version_cte
-        WHERE ctvrm.tool_version_id = version_cte.tool_version_id;
-    """
-    )
+    # op.execute(
+    #     """
+    #     WITH version_cte AS (
+    #         SELECT
+    #             ctvrm.tool_version_id,
+    #             ROW_NUMBER() OVER (PARTITION BY ctv.tool_id ORDER BY ctvrm.created_at ASC) - 1 AS version_increment
+    #         FROM
+    #             copilot_tool_version_registry_mapping AS ctvrm
+    #         JOIN
+    #             copilot_tool_version AS ctv ON ctvrm.tool_version_id = ctv.id
+    #         WHERE
+    #             ctvrm.deleted_At IS NULL
+    #             AND ctvrm.deprecated = false
+    #     )
+    #     UPDATE copilot_tool_version_registry_mapping AS ctvrm
+    #     SET version = CONCAT('1.', version_increment, '.0')
+    #     FROM version_cte
+    #     WHERE ctvrm.tool_version_id = version_cte.tool_version_id;
+    # """
+    # )
     # To set existing tool versions verified as false
-    op.execute("UPDATE copilot_tool_version SET verified = false")
+    op.execute("UPDATE copilot_tool_version SET verified = 0")
     # ### end Alembic commands ###
 
 

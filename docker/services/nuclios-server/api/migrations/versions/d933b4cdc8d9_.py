@@ -37,7 +37,7 @@ def downgrade():
         sa.Column(
             "created_at",
             postgresql.TIMESTAMP(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             autoincrement=False,
             nullable=True,
         ),
@@ -70,7 +70,7 @@ def downgrade():
         sa.Column(
             "created_at",
             postgresql.TIMESTAMP(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             autoincrement=False,
             nullable=True,
         ),
@@ -103,7 +103,7 @@ def downgrade():
         sa.Column(
             "created_at",
             postgresql.TIMESTAMP(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             autoincrement=False,
             nullable=True,
         ),
@@ -136,7 +136,7 @@ def downgrade():
         sa.Column(
             "created_at",
             postgresql.TIMESTAMP(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             autoincrement=False,
             nullable=True,
         ),
@@ -163,7 +163,7 @@ def downgrade():
         sa.Column(
             "created_at",
             postgresql.TIMESTAMP(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             autoincrement=False,
             nullable=True,
         ),
@@ -193,7 +193,7 @@ def downgrade():
         sa.Column(
             "created_at",
             postgresql.TIMESTAMP(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             autoincrement=False,
             nullable=True,
         ),
@@ -236,7 +236,7 @@ def downgrade():
         sa.Column(
             "created_at",
             postgresql.TIMESTAMP(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             autoincrement=False,
             nullable=True,
         ),
@@ -259,7 +259,7 @@ def downgrade():
         sa.Column(
             "created_at",
             postgresql.TIMESTAMP(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             autoincrement=False,
             nullable=True,
         ),
@@ -290,7 +290,7 @@ def downgrade():
         sa.Column(
             "created_at",
             postgresql.TIMESTAMP(timezone=True),
-            server_default=sa.text("now()"),
+            server_default=sa.text("CURRENT_TIMESTAMP"),
             autoincrement=False,
             nullable=True,
         ),

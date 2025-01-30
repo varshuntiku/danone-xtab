@@ -20,9 +20,7 @@ depends_on: Union[str, Sequence[str], None] = None
 
 def upgrade():
     # Add the new columns to the solution_blueprint table
-    op.add_column(
-        "solution_blueprint", sa.Column("golden", sa.Boolean(), nullable=True, server_default=sa.text("false"))
-    )
+    op.add_column("solution_blueprint", sa.Column("golden", sa.Numeric(), nullable=True, server_default=sa.text("0")))
     op.add_column(
         "solution_blueprint", sa.Column("status", sa.String(length=50), nullable=True, server_default="not-verified")
     )

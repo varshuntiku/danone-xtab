@@ -25,73 +25,74 @@ def upgrade() -> None:
     op.add_column("copilot_conversation", sa.Column("input_mode", sa.String(length=100), nullable=True))
     op.add_column("copilot_conversation", sa.Column("extra_query_param", sa.Text(), nullable=True))
 
-    op.execute(
-        """INSERT INTO public.llm_model_registry (name,"source",model_type,is_active,description,problem_type, created_by) VALUES
-               ('tts','azure','text-to-speech',true,'test to speech','deps',0);"""
-    )
-    op.execute(
-        """INSERT INTO public.llm_model_registry (name,"source",model_type,is_active,description,problem_type, created_by) VALUES
-               ('gpt-4-turbo','azure','text',true,'text','deps',0);"""
-    )
+    # op.execute(
+    #     """INSERT INTO llm_model_registry (name,"source",model_type,is_active,description,problem_type, created_by) VALUES
+    #            ('tts','azure','text-to-speech',1,'test to speech','deps',0);"""
+    # )
+    # op.execute(
+    #     """INSERT INTO llm_model_registry (name,"source",model_type,is_active,description,problem_type, created_by) VALUES
+    #            ('gpt-4-turbo','azure','text',1,'text','deps',0);"""
+    # )
 
-    op.execute(
-        """INSERT INTO llm_model_type (type, is_active, created_by)
-    SELECT 'text-to-speech', true, 0
-    WHERE NOT EXISTS (
-        SELECT 1
-        FROM llm_model_type
-        WHERE type = 'text-to-speech'
-    );"""
-    )
+    # op.execute(
+    #     """INSERT INTO llm_model_type (type, is_active, created_by)
+    # SELECT 'text-to-speech', 1, 0
+    # WHERE NOT EXISTS (
+    #     SELECT 1
+    #     FROM llm_model_type
+    #     WHERE type = 'text-to-speech'
+    # );"""
+    # )
 
-    op.execute(
-        """INSERT INTO llm_model_type_mapping (model_id, type_id)
-    SELECT mr.id, mt.id
-    FROM llm_model_registry mr
-    JOIN llm_model_type mt ON mr.name = 'tts' AND mt.type = 'text-to-speech';
-    """
-    )
+    # op.execute(
+    #     """INSERT INTO llm_model_type_mapping (model_id, type_id)
+    # SELECT mr.id, mt.id
+    # FROM llm_model_registry mr
+    # JOIN llm_model_type mt ON mr.name = 'tts' AND mt.type = 'text-to-speech';
+    # """
+    # )
 
-    op.execute(
-        """INSERT INTO llm_deployed_model (model_id, endpoint, status, is_active, name, description, approval_status, deployment_type_id, progress, created_by, model_params)
-    SELECT mr.id, 'https://innovation-ai-speech.openai.azure.com/', 'Completed', true, mr.name, mr.description, 'approved', dt.id, 100, 0, '{"api_version": "2024-02-15-preview", "deployment_name": "tts", "model_name": "ai-speech", "openai_api_key": "38b2e9f0bc554792873dda4365faec3d", "temperature": 0}'
-    FROM llm_model_registry mr
-    JOIN llm_deployment_type dt ON mr.name = 'tts' AND dt.name = 'custom';"""
-    )
-    op.execute(
-        """INSERT INTO llm_deployed_model (model_id, endpoint, status, is_active, name, description, approval_status, deployment_type_id, progress, created_by, model_params)
-    SELECT mr.id, 'https://minerva-gpt-vision.openai.azure.com/', 'Completed', true, mr.name, mr.description, 'approved', dt.id, 100, 0, '{"api_version": "2023-05-15", "deployment_name": "gpt-4-turbo", "model_name": "gpt-4-turbo", "openai_api_key": "89f99169643b462ba58fca6d08f2bc20", "temperature": 0}'
-    FROM llm_model_registry mr
-    JOIN llm_deployment_type dt ON mr.name = 'tts' AND dt.name = 'custom';"""
-    )
+    # op.execute(
+    #     """INSERT INTO llm_deployed_model (model_id, endpoint, status, is_active, name, description, approval_status, deployment_type_id, progress, created_by, model_params)
+    # SELECT mr.id, 'https://innovation-ai-speech.openai.azure.com/', 'Completed', 1, mr.name, mr.description, 'approved', dt.id, 100, 0, '{"api_version": "2024-02-15-preview", "deployment_name": "tts", "model_name": "ai-speech", "openai_api_key": "38b2e9f0bc554792873dda4365faec3d", "temperature": 0}'
+    # FROM llm_model_registry mr
+    # JOIN llm_deployment_type dt ON mr.name = 'tts' AND dt.name = 'custom';"""
+    # )
+    # op.execute(
+    #     """INSERT INTO llm_deployed_model (model_id, endpoint, status, is_active, name, description, approval_status, deployment_type_id, progress, created_by, model_params)
+    # SELECT mr.id, 'https://minerva-gpt-vision.openai.azure.com/', 'Completed', 1, mr.name, mr.description, 'approved', dt.id, 100, 0, '{"api_version": "2023-05-15", "deployment_name": "gpt-4-turbo", "model_name": "gpt-4-turbo", "openai_api_key": "89f99169643b462ba58fca6d08f2bc20", "temperature": 0}'
+    # FROM llm_model_registry mr
+    # JOIN llm_deployment_type dt ON mr.name = 'tts' AND dt.name = 'custom';"""
+    # )
 
-    op.execute(
-        f"""
-CREATE TABLE {report_data_copilot_external} (
-    report_id serial4 NOT NULL,
-    app_id int4 NULL,
-    conversation_id int4 NULL,
-    user_id varchar(50) NULL,
-    task_type varchar(50) NULL,
-    screen_id int4 NULL,
-    screen_name varchar(250) NULL,
-    screen_summary json NULL,
-    user_question varchar(255) NULL,
-    dashboard_llm_data json NULL,
-    dashboard_screen_data json NULL,
-    nuclios_component_mapping json NULL,
-    nuclios_api_response json NULL,
-    is_active bool NULL DEFAULT true,
-    created_time timestamptz NULL DEFAULT now(),
-    CONSTRAINT report_ai_dashboard_pkey PRIMARY KEY (report_id)
-);
-"""
-    )
-    op.execute(
-        f"""
-CREATE INDEX idx_report_data_app_id ON {report_data_copilot_external} USING btree (app_id)
-"""
-    )
+
+#     op.execute(
+#         f"""
+# CREATE TABLE {report_data_copilot_external} (
+#     report_id IDENTITY NOT NULL,
+#     app_id int4 NULL,
+#     conversation_id int4 NULL,
+#     user_id varchar(50) NULL,
+#     task_type varchar(50) NULL,
+#     screen_id int4 NULL,
+#     screen_name varchar(250) NULL,
+#     screen_summary json NULL,
+#     user_question varchar(255) NULL,
+#     dashboard_llm_data json NULL,
+#     dashboard_screen_data json NULL,
+#     nuclios_component_mapping json NULL,
+#     nuclios_api_response json NULL,
+#     is_active bool NULL DEFAULT 1,
+#     created_time timestamptz NULL DEFAULT CURRENT_TIMESTAMP,
+#     CONSTRAINT report_ai_dashboard_pkey PRIMARY KEY (report_id)
+# );
+# """
+#     )
+#     op.execute(
+#         f"""
+# CREATE INDEX idx_report_data_app_id ON {report_data_copilot_external} USING btree (app_id)
+# """
+#     )
 
 
 def downgrade() -> None:
