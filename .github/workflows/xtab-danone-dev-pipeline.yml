@@ -23,7 +23,7 @@ jobs:
         cd docker/services/product-client
         rm -rf .env
         echo "NODE_PATH=./src" | cat > .env
-        echo "REACT_APP_BACKEND_API=http://app-gateway-pip-shared-anl.westeurope.cloudapp.azure.com/backend/codex-product-api" | cat >> .env
+        echo "REACT_APP_BACKEND_API=http://app-gateway-pip-shared-anl.westeurope.cloudapp.azure.com/backend/nuclios-product-api" | cat >> .env
         echo "REACT_APP_PLATFORM_BACKEND_API=" | cat >> .env
         echo "REACT_APP_SOCKET_IO=wss://app-gateway-pip-shared-anl.westeurope.cloudapp.azure.com/backend/" | cat >> .env
         echo "REACT_APP_GENAI=" | cat >> .env
