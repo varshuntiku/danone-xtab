@@ -29,7 +29,7 @@ app = FastAPI(
     docs_url=None,
     redoc_url=settings.REDOC_URL,
     redirect_slashes=False,
-    openapi_url="/backend/openapi.json"
+    # openapi_url="/backend/openapi.json"
 )
 # Initialising socket manager
 if settings.SOCKET_MANAGER == "redis":
