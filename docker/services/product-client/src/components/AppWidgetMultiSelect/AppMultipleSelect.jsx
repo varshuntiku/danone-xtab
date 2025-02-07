@@ -21,6 +21,10 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -211,13 +215,16 @@ const useStyles = makeStyles((theme) => ({
     },
     formGroupCustomStyles: {
         height: '100%',
-        overflowX: 'hidden',
-        overflowY: 'scroll',
+        overflowX: 'auto',
+        // overflowY: 'scroll',
         gap: `${theme.layoutSpacing(32)} ${theme.layoutSpacing(28)}`,
         marginRight: theme.layoutSpacing(-35),
-        flexDirection: 'row',
+        // flexDirection: 'row',
         alignItems: 'start',
         alignContent: 'flex-start'
+    },
+    flexCol: {
+        flexDirection: 'column'
     },
     contentWrapper: {
         height: 'inherit',
@@ -353,10 +360,14 @@ export default function AppMultipleSelect({
     selectedValue,
     onChangeFilter,
     params,
-    filterErrorFound = null
+    filterErrorFound = null,
+    is_default_value_dict,
+    optionsBodyHeight
 }) {
     const classes = useStyles();
-    const [value, setValue] = React.useState(selectedValue[item]);
+    const [value, setValue] = React.useState(
+        is_default_value_dict ? selectedValue[item]['items'] : selectedValue[item]
+    );
     const [selectAll, setSelectAll] = React.useState(() => value?.includes('All'));
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(
@@ -366,6 +377,7 @@ export default function AppMultipleSelect({
     );
     const [searchText, setSearchText] = React.useState('');
     let filteredOptions;
+    let paginationRenderOptionsCount;
     const [fromSelect, setFromSelect] = React.useState(
         selectedValue[item] && selectedValue[item].length > 0
             ? selectedValue[item][0].value
@@ -388,6 +400,9 @@ export default function AppMultipleSelect({
         options: data['widget_tag_value'],
         value: fromSelect
     });
+    const [widgetGroup, setWidgetGroup] = React.useState(
+        data['widget_group'] ? data['widget_group'] : []
+    );
 
     React.useEffect(() => {
         setPage(0);
@@ -601,70 +616,250 @@ export default function AppMultipleSelect({
                 </Typography>
             );
         } else {
-            renderOptions = (
-                rowsPerPage > 0
-                    ? filteredOptions.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    : filteredOptions
-            ).map((name) => {
-                const label = name?.label || name?.value || name;
-                const optionValue = name?.value || name;
-                const checked = value && value.includes(optionValue);
-                const key = optionValue + '';
-                const disabled = name?.disabled || false;
-                const color = checked
-                    ? data?.widget_filter_params?.selected_element_color || name?.color || ''
-                    : name?.color || '';
+            if (widgetGroup.length > 0) {
+                const withGroupLabel = [],
+                    withoutGroupLabel = [];
+                filteredOptions.map((element) => {
+                    if (element.groupLabel) {
+                        withGroupLabel.push(element);
+                    } else withoutGroupLabel.push(element);
+                });
                 return (
-                    <FormControlLabel
-                        classes={{ label: checked ? classes.checkedLabel : classes.label }}
-                        key={key}
-                        value={optionValue}
-                        control={
-                            data.widget_tag_input_type == 'Element Range Selector' ? (
-                                <label
-                                    className={checked ? classes.checkedcheckbox : classes.checkbox}
-                                    // checked={checked}
-                                    disabled={
-                                        (params?.max_len
-                                            ? value && value.includes(name)
-                                                ? false
-                                                : value.length >= params.max_len
-                                            : false) || disabled
-                                    }
-                                    onChange={onChangeCheckbox}
-                                />
-                            ) : (
-                                <Checkbox
-                                    className={checked ? classes.checkedcheckbox : classes.checkbox}
-                                    checked={checked}
-                                    disabled={
-                                        (params?.max_len
-                                            ? value && value.includes(name)
-                                                ? false
-                                                : value.length >= params.max_len
-                                            : false) || disabled
-                                    }
-                                    onChange={onChangeCheckbox}
-                                />
-                            )
-                        }
-                        label={
-                            data?.widget_filter_search ? (
-                                <StringHighLighter
-                                    text={label}
-                                    highlight={searchText}
-                                    highlightedItemClass={classes.highlight}
-                                />
-                            ) : (
-                                label
-                            )
-                        }
-                        style={{ '--label-color': color }}
-                        className={classes.labelItemWrapper}
-                    />
+                    <div style={{ display: 'contents' }}>
+                        <div style={{ display: 'contents' }}>
+                            {
+                                (renderOptions = (
+                                    rowsPerPage > 0
+                                        ? withoutGroupLabel.slice(
+                                              page * rowsPerPage,
+                                              page * rowsPerPage + rowsPerPage
+                                          )
+                                        : withoutGroupLabel
+                                ).map((elem) => {
+                                    const color = elem?.color || '';
+                                    const optionTitle = elem?.title || '';
+                                    const label = elem?.label || elem?.value || elem;
+                                    const optionValue = elem?.value || elem;
+                                    const checked = value && value.includes(optionValue);
+                                    const key = optionValue + '';
+                                    const disabled = elem?.disabled || false;
+                                    return (
+                                        <div>
+                                            <FormControlLabel
+                                                classes={{
+                                                    label: checked
+                                                        ? classes.checkedLabel
+                                                        : classes.label
+                                                }}
+                                                key={key}
+                                                value={optionValue}
+                                                title={optionTitle}
+                                                control={
+                                                    <Checkbox
+                                                        className={classes.checkbox}
+                                                        checked={checked}
+                                                        disabled={
+                                                            (params?.max_len
+                                                                ? value && value.includes(elem)
+                                                                    ? false
+                                                                    : value.length >= params.max_len
+                                                                : false) || disabled
+                                                        }
+                                                        onChange={onChangeCheckbox}
+                                                    />
+                                                }
+                                                label={
+                                                    data?.widget_filter_search ? (
+                                                        <StringHighLighter
+                                                            text={label}
+                                                            highlight={searchText}
+                                                            highlightedItemClass={classes.highlight}
+                                                        />
+                                                    ) : (
+                                                        label
+                                                    )
+                                                }
+                                                style={{ '--label-color': color }}
+                                            />
+                                        </div>
+                                    );
+                                }))
+                            }
+                        </div>
+                        <div style={{ display: 'contents' }}>
+                            {widgetGroup.map((elem) => (
+                                <div>
+                                    <Accordion>
+                                        <AccordionSummary
+                                            expandIcon={<ExpandMoreIcon />}
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header"
+                                            style={{ display: 'inline-flex' }}
+                                        >
+                                            {elem}
+                                        </AccordionSummary>
+                                        {
+                                            (renderOptions = (
+                                                rowsPerPage > 0
+                                                    ? withGroupLabel.slice(
+                                                          page * rowsPerPage,
+                                                          page * rowsPerPage + rowsPerPage
+                                                      )
+                                                    : withGroupLabel
+                                            ).map((name) => {
+                                                const color = name?.color || '';
+                                                const optionTitle = name?.title || '';
+                                                const groupLabel = name?.groupLabel || '';
+                                                const label = name?.label || name?.value || name;
+                                                const optionValue = name?.value || name;
+                                                const checked =
+                                                    value && value.includes(optionValue);
+                                                const key = optionValue + '';
+                                                const disabled = name?.disabled || false;
+                                                return (
+                                                    <AccordionDetails style={{ display: 'grid' }}>
+                                                        {name.groupLabel === elem ? (
+                                                            <div>
+                                                                <FormControlLabel
+                                                                    classes={{
+                                                                        label: checked
+                                                                            ? classes.checkedLabel
+                                                                            : classes.label
+                                                                    }}
+                                                                    key={key}
+                                                                    value={optionValue}
+                                                                    title={optionTitle}
+                                                                    control={
+                                                                        <Checkbox
+                                                                            className={
+                                                                                classes.checkbox
+                                                                            }
+                                                                            checked={checked}
+                                                                            disabled={
+                                                                                (params?.max_len
+                                                                                    ? value &&
+                                                                                      value.includes(
+                                                                                          name
+                                                                                      )
+                                                                                        ? false
+                                                                                        : value.length >=
+                                                                                          params.max_len
+                                                                                    : false) ||
+                                                                                disabled
+                                                                            }
+                                                                            onChange={
+                                                                                onChangeCheckbox
+                                                                            }
+                                                                        />
+                                                                    }
+                                                                    label={
+                                                                        data?.widget_filter_search ? (
+                                                                            <StringHighLighter
+                                                                                text={label}
+                                                                                highlight={
+                                                                                    searchText
+                                                                                }
+                                                                                highlightedItemClass={
+                                                                                    classes.highlight
+                                                                                }
+                                                                            />
+                                                                        ) : (
+                                                                            label
+                                                                        )
+                                                                    }
+                                                                    style={{
+                                                                        '--label-color': color
+                                                                    }}
+                                                                />
+                                                            </div>
+                                                        ) : (
+                                                            <></>
+                                                        )}
+                                                    </AccordionDetails>
+                                                );
+                                            }))
+                                        }
+                                    </Accordion>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
                 );
-            });
+            } else {
+                renderOptions = (
+                    rowsPerPage > 0
+                        ? filteredOptions.slice(
+                              page * rowsPerPage,
+                              page * rowsPerPage + rowsPerPage
+                          )
+                        : filteredOptions
+                ).map((name) => {
+                    const label = name?.label || name?.value || name;
+                    const optionValue = name?.value || name;
+                    const groupLabel = name?.groupLabel || '';
+                    const checked = value && value.includes(optionValue);
+                    const key = optionValue + '';
+                    const disabled = name?.disabled || false;
+                    const color = checked
+                        ? data?.widget_filter_params?.selected_element_color || name?.color || ''
+                        : name?.color || '';
+                    return (
+                        <FormControlLabel
+                            classes={{ label: checked ? classes.checkedLabel : classes.label }}
+                            key={key}
+                            value={optionValue}
+                            control={
+                                data.widget_tag_input_type == 'Element Range Selector' ? (
+                                    <label
+                                        className={
+                                            checked ? classes.checkedcheckbox : classes.checkbox
+                                        }
+                                        // checked={checked}
+                                        disabled={
+                                            (params?.max_len
+                                                ? value && value.includes(name)
+                                                    ? false
+                                                    : value.length >= params.max_len
+                                                : false) || disabled
+                                        }
+                                        onChange={onChangeCheckbox}
+                                    />
+                                ) : (
+                                    <Checkbox
+                                        className={
+                                            checked ? classes.checkedcheckbox : classes.checkbox
+                                        }
+                                        checked={checked}
+                                        disabled={
+                                            (params?.max_len
+                                                ? value && value.includes(name)
+                                                    ? false
+                                                    : value.length >= params.max_len
+                                                : false) || disabled
+                                        }
+                                        onChange={onChangeCheckbox}
+                                    />
+                                )
+                            }
+                            label={
+                                data?.widget_filter_search ? (
+                                    <StringHighLighter
+                                        text={label}
+                                        highlight={searchText}
+                                        highlightedItemClass={classes.highlight}
+                                    />
+                                ) : (
+                                    label
+                                )
+                            }
+                            style={{ '--label-color': color }}
+                            className={classes.labelItemWrapper}
+                        />
+                    );
+                });
+            }
         }
+        paginationRenderOptionsCount = renderOptions.length;
         return renderOptions;
     };
 
@@ -750,7 +945,18 @@ export default function AppMultipleSelect({
             return null;
         }
         return (
-            <div className={classes.paginationSection}>
+            <div
+                className={classes.paginationSection}
+                style={{
+                    marginTop: optionsBodyHeight
+                        ? paginationRenderOptionsCount == 7
+                            ? '-5.8rem'
+                            : paginationRenderOptionsCount < 8
+                            ? '-9.5rem'
+                            : null
+                        : null
+                }}
+            >
                 <Toolbar>
                     <Typography className={classes.paginationOptionsLabel}>
                         {data.widget_filter_multiselect
@@ -852,7 +1058,11 @@ export default function AppMultipleSelect({
     };
 
     return data.widget_filter_multiselect ? (
-        <FormControl component="fieldset" className={classes.contentWrapper}>
+        <FormControl
+            component="fieldset"
+            className={classes.contentWrapper}
+            style={{ height: optionsBodyHeight ? optionsBodyHeight : 'inherit' }}
+        >
             {filterErrorFound && (
                 <Typography
                     key="error"
@@ -925,7 +1135,11 @@ export default function AppMultipleSelect({
                 alignRight
                 alertInfo={data?.widget_filter_params?.widget_filter_alertInfo}
             />
-            <FormGroup className={classes.formGroupCustomStyles}>
+            <FormGroup
+                className={`${classes.formGroupCustomStyles} ${
+                    widgetGroup.length > 0 && classes.flexCol
+                }`}
+            >
                 {displayOptions(options)}
             </FormGroup>
             {renderPagination(options?.length)}

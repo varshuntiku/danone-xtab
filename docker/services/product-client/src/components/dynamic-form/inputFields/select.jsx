@@ -572,6 +572,9 @@ export default function SimpleSelect({ onChange, onBlur, fieldInfo }) {
                 <InputLabel
                     ref={inputLabel}
                     id={fieldInfo.id + 'demo-simple-select-outlined-label'}
+                    style={{
+                        fontSize: fieldInfo?.labelFontSize ? fieldInfo.labelFontSize : '1.6rem'
+                    }}
                 >
                     {fieldInfo.label}
                 </InputLabel>

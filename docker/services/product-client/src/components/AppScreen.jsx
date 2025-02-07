@@ -7,6 +7,13 @@ import jsPDF from 'jspdf';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
+import Accordion from '@material-ui/core/Accordion';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import Typography from '@material-ui/core/Typography';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { getWidgets, getScreenFilterValues, getScreenConfig } from 'services/screen.js';
 import AppWidgetLabel from 'components/AppWidgetLabel.jsx';
 import AppScreenFilters from 'components/AppScreenFilters.jsx';
@@ -34,6 +41,7 @@ import { getFiltersById } from 'services/comments';
 import CodxCircularLoader from './CodxCircularLoader';
 import AppUserMessage from './AppUserMessage';
 import { getFinalFilterObj } from '../util';
+import IconButton from '@material-ui/core/IconButton';
 const VideoJS = lazy(() => import('components/videojsStreamer.jsx'));
 const ScreenStepper = lazy(() => import('./ScreenStepper'));
 import StepperProgressBar from 'components/StepperProgressBar';
@@ -152,7 +160,11 @@ class AppScreen extends React.Component {
             selectedScenario: null,
             scenerioname: null,
             edit: false,
-            compareScenario:''
+            compareScenario:'',
+            isKpiExpanded: true,
+            currentIndex: 0,
+            perSectionExpandStatus: [],
+            currentScreenConfig: null
         };
     }
     setIsEditingParent = (isEditing) => {
@@ -390,6 +402,24 @@ class AppScreen extends React.Component {
                     });
                 }
             });
+        const screens = this.props.appScreens?.length
+            ? this.props.appScreens
+            : this.props.app_info.screens;
+        const currentScreenConfig = _.find(
+            screens,
+            function (screen) {
+                return screen.id === parseInt(this.state.screen_id);
+            },
+            this
+        );
+        const perSectionExpandStatus = currentScreenConfig?.per_section_collapse?.includes('0')
+            ? currentScreenConfig?.per_section_collapse
+                  ?.split('-')
+                  .map((status) => (status === '1' ? false : true))
+            : currentScreenConfig?.per_section_collapse
+                  ?.split('-')
+                  .map((status, index) => (status === '1' && index !== 0 ? false : true));
+        this.setState({ currentScreenConfig, perSectionExpandStatus });
     }
 
     refreshScreenData = async () => {
@@ -496,7 +526,8 @@ class AppScreen extends React.Component {
             this.props.app_info,
             this.state.screen_id,
             screen_filters_values,
-            comments_selected_filters ? comments_selected_filters : selected_filters
+            comments_selected_filters ? comments_selected_filters : selected_filters,
+            screen_filters_values.dataValues
         );
         this.props.setScreenLevelFilterState({ screenLevelFilterState: finalFiterObj });
         sessionStorage.setItem(
@@ -680,60 +711,233 @@ class AppScreen extends React.Component {
             this.props.getGraphData(payload);
         }
     };
+    handleScrollPrev = () => {
+        const { currentIndex } = this.state;
+        if (currentIndex > 0) {
+            this.setState({ currentIndex: currentIndex - 1 });
+        }
+    };
+
+    handleScrollNext = () => {
+        const { currentIndex } = this.state;
+        const label_widgets = _.filter(this.state.widgets, (widget_item) => widget_item.is_label);
+        if (currentIndex + 1 < label_widgets.length - 5) {
+            this.setState({ currentIndex: currentIndex + 1 });
+        }
+    };
 
     getLabels = () => {
         const { classes, app_info } = this.props;
         const label_widgets = _.filter(this.state.widgets, function (widget_item) {
             return widget_item.is_label;
         });
-
+        const maxVisibleItems = 6;
+        const { currentIndex } = this.state;
+        const displayedWidgets = label_widgets?.slice(currentIndex, currentIndex + maxVisibleItems);
+        const totalIndicators =
+            label_widgets.length <= maxVisibleItems
+                ? 1
+                : 1 + (label_widgets.length - maxVisibleItems);
+        const showIndicators =
+            currentIndex > 0 || currentIndex + maxVisibleItems < label_widgets.length;
         return this.state.selected_filters && label_widgets.length > 0 ? (
-            <div className={classes.gridLabelContainer}>
-                <Grid container justify="center" spacing={1} className={classes.gridLabelBody}>
-                    {_.map(
-                        label_widgets,
-                        function (widget_item) {
-                            const widget_title = widget_item.config?.title
-                                ? widget_item.config.title
-                                : widget_item.widget_key.replaceAll('_', ' ').toUpperCase();
-                            return (
-                                <Grid key={widget_item.id} item xs>
-                                    <AppWidgetLabel
-                                        parent_obj={this}
-                                        app_info={app_info}
-                                        app_id={this.state.app_id}
-                                        screen_id={this.state.screen_id}
-                                        title={widget_title}
-                                        details={widget_item}
-                                        selected_filters={this.state.selected_filters}
-                                        simulator_apply={this.state.simulator_apply}
-                                        screen_filter_settings={
-                                            this.state.screen_filters_values ? true : false
-                                        }
-                                        alert_enable={this.state.alert_enable}
-                                        source={
-                                            app_info.name +
-                                            ' >> ' +
-                                            this.state.screen_name +
-                                            ' >> ' +
-                                            widget_title
-                                        }
-                                        alert_admin_user={app_info.is_user_admin}
-                                        logged_in_user_info={this.props.logged_in_user_info}
-                                        label_widgets={label_widgets}
-                                        widget_index={widget_item?.widget_index}
-                                        askNucliosOpen={this.props.askNucliosOpen}
-                                    />
-                                </Grid>
-                            );
-                        },
-                        this
-                    )}
-                </Grid>
+            <div
+                className={`${classes.gridLabelContainer} ${
+                    this.state.currentScreenConfig?.enable_kpi_collapse ? (!this.state.isKpiExpanded
+                        ? classes.collapsedAccordion
+                        : classes.expandedAccordion) : ''
+                } `}
+            >
+                {this.state.currentScreenConfig?.enable_kpi_collapse ? (
+                    <Accordion
+                        defaultExpanded={true}
+                        className={classes.accordionOuter}
+                        onChange={(e, expanded) => {
+                            this.setState({ isKpiExpanded: expanded });
+                        }}
+                    >
+                        <AccordionSummary
+                            expandIcon={
+                                <ExpandMoreIcon
+                                    className={`${classes.expandIcon} ${
+                                        this.state.isKpiExpanded ? classes.iconExpanded : ''
+                                    }`}
+                                />
+                            }
+                            aria-controls="panel2a-content"
+                            id="panel2a-header"
+                        >
+                           <div className={classes.collapseContainer} >
+                                <Typography className={classes.heading}>
+                                    {this.state.currentScreenConfig?.kpis_header  || 'Key Performance Indicators'}
+                                </Typography>
+                                {showIndicators && (
+                                    <div className={classes.indicatorsContainerCollapse}>
+                                        {Array.from({ length: totalIndicators }, (_, i) => (
+                                            <span
+                                                key={i}
+                                                className={`${classes.indicator} ${i === currentIndex ? classes.activeIndicator : ''}`}
+                                            />
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        </AccordionSummary>
+
+                        <AccordionDetails>
+                            {currentIndex > 0 && (
+                                <IconButton
+                                    onClick={this.handleScrollPrev}
+                                    className={classes.prevButton}
+                                >
+                                    <ChevronLeftIcon />
+                                </IconButton>
+                            )}
+
+                            <Grid
+                                container
+                                justify="center"
+                                spacing={1}
+                                className={`${classes.gridLabelBody} ${classes.accordionGridLabelBody}`}
+                            >
+                                {_.map(
+                                    displayedWidgets,
+                                    function (widget_item) {
+                                        const widget_title = widget_item.config?.title
+                                            ? widget_item.config.title
+                                            : widget_item.widget_key
+                                                  .replaceAll('_', ' ')
+                                                  .toUpperCase();
+                                        return (
+                                            <Grid key={widget_item.id} item xs>
+                                                <AppWidgetLabel
+                                                    parent_obj={this}
+                                                    app_info={app_info}
+                                                    app_id={this.state.app_id}
+                                                    screen_id={this.state.screen_id}
+                                                    title={widget_title}
+                                                    details={widget_item}
+                                                    selected_filters={this.state.selected_filters}
+                                                    simulator_apply={this.state.simulator_apply}
+                                                    screen_filter_settings={
+                                                        this.state.screen_filters_values
+                                                            ? true
+                                                            : false
+                                                    }
+                                                    alert_enable={this.state.alert_enable}
+                                                    source={
+                                                        app_info.name +
+                                                        ' >> ' +
+                                                        this.state.screen_name +
+                                                        ' >> ' +
+                                                        widget_title
+                                                    }
+                                                    alert_admin_user={app_info.is_user_admin}
+                                                    logged_in_user_info={
+                                                        this.props.logged_in_user_info
+                                                    }
+                                                    label_widgets={label_widgets}
+                                                    widget_index={widget_item?.widget_index}
+                                                    askNucliosOpen={this.props.askNucliosOpen}
+                                                />
+                                            </Grid>
+                                        );
+                                    },
+                                    this
+                                )}
+                            </Grid>
+
+                            {currentIndex + maxVisibleItems < label_widgets.length && (
+                                <IconButton
+                                    onClick={this.handleScrollNext}
+                                    className={classes.nextButton}
+                                >
+                                    <ChevronRightIcon />
+                                </IconButton>
+                            )}
+                        </AccordionDetails>
+                    </Accordion>
+                ) : (
+                    <>
+                        {currentIndex > 0 && (
+                            <IconButton
+                                onClick={this.handleScrollPrev}
+                                className= {`${classes.prevButton} ${classes.prevButtonScroll}`}
+                            >
+                                <ChevronLeftIcon />
+                            </IconButton>
+                        )}
+
+                        <Grid
+                            container
+                            justify="center"
+                            spacing={1}
+                            className={`${classes.gridLabelBody} ${
+                                currentIndex > 0 ? classes.gridLabelBodyAccordian : ''
+                            }`}
+                        >
+                            {_.map(
+                                displayedWidgets,
+                                function (widget_item) {
+                                    const widget_title = widget_item.config?.title
+                                        ? widget_item.config.title
+                                        : widget_item.widget_key.replaceAll('_', ' ').toUpperCase();
+                                    return (
+                                        <Grid key={widget_item.id} item xs>
+                                            <AppWidgetLabel
+                                                parent_obj={this}
+                                                app_info={app_info}
+                                                app_id={this.state.app_id}
+                                                screen_id={this.state.screen_id}
+                                                title={widget_title}
+                                                details={widget_item}
+                                                selected_filters={this.state.selected_filters}
+                                                simulator_apply={this.state.simulator_apply}
+                                                screen_filter_settings={
+                                                    this.state.screen_filters_values ? true : false
+                                                }
+                                                alert_enable={this.state.alert_enable}
+                                                source={
+                                                    app_info.name +
+                                                    ' >> ' +
+                                                    this.state.screen_name +
+                                                    ' >> ' +
+                                                    widget_title
+                                                }
+                                                alert_admin_user={app_info.is_user_admin}
+                                                logged_in_user_info={this.props.logged_in_user_info}
+                                                label_widgets={label_widgets}
+                                                widget_index={widget_item?.widget_index}
+                                                askNucliosOpen={this.props.askNucliosOpen}
+                                            />
+                                        </Grid>
+                                    );
+                                },
+                                this
+                            )}
+                        </Grid>
+
+                        {currentIndex + maxVisibleItems < label_widgets.length && (
+                            <IconButton
+                                onClick={this.handleScrollNext}
+                                className= {`${classes.nextButton} ${classes.nextButtonScroll}`}
+
+                            >
+                                <ChevronRightIcon />
+                            </IconButton>
+                        )}
+                    </>
+                )}
             </div>
         ) : (
             ''
         );
+    };
+
+    widgetsSectionExpandHandler = (e, expanded, graph_section_index) => {
+        const updatedPerSectionExpandStatus = [...this.state.perSectionExpandStatus];
+        updatedPerSectionExpandStatus[graph_section_index] = expanded;
+        this.setState({ perSectionExpandStatus: updatedPerSectionExpandStatus });
     };
 
     getGraphs = () => {
@@ -752,7 +956,6 @@ class AppScreen extends React.Component {
         const label_widgets = _.filter(this.state.widgets, function (widget_item) {
             return widget_item.is_label;
         });
-
         if (current_settings && current_settings['graph_type']) {
             let graph_sections = current_settings['graph_type'].split('-');
             let index = 0;
@@ -784,6 +987,9 @@ class AppScreen extends React.Component {
             }
             let height_index = 0;
             if (current_settings['horizontal']) {
+                const perSectionCollapseStatus = current_settings?.per_section_collapse
+                    ?.split('-')
+                    .map((status) => (status === '1' ? true : false));
                 _.each(
                     graph_sections,
                     function (graph_section, graph_section_index) {
@@ -955,13 +1161,25 @@ class AppScreen extends React.Component {
                         );
                         graph_index_prefix = graph_index_prefix + parseInt(graph_section);
                         height_index++;
+                        const isCollapseEnabled =
+                            perSectionCollapseStatus &&
+                            perSectionCollapseStatus[graph_section_index];
                         // const simulatedAvailHeight = screen.availHeight / this.state.zoomLevel;
                         response.push(
                             <Grid
                                 item
                                 key={'grid_item_graph_section_' + graph_section_index}
                                 xs={12}
-                                className={`${classes.gridGraphHalfContainer} ${classes.gridParentItemStyle}`}
+                                className={`${classes.gridGraphHalfContainer}
+                                    ${classes.gridParentItemStyle}
+                                    ${
+                                        isCollapseEnabled ?
+                                        (!this.state.perSectionExpandStatus[graph_section_index]
+                                            ? classes.widgetSectionItemClose
+                                            : classes.widgetSectionItemOpen) :
+                                        null
+                                    }
+                                    ${isCollapseEnabled ? classes.widgetCollapse : null}`}
                                 style={{
                                     '--itemHeight': graph_height
                                         ? `${
@@ -972,14 +1190,69 @@ class AppScreen extends React.Component {
                                         : null
                                 }}
                             >
-                                <Grid
-                                    container
-                                    justifyContent="center"
-                                    spacing={1}
-                                    className={`${classes.gridGraphBody} ${classes.gridChildContainer}`}
-                                >
-                                    {graph_widget_items}
-                                </Grid>
+                                {isCollapseEnabled ? (
+                                    <Accordion
+                                        defaultExpanded={
+                                            this.state.perSectionExpandStatus[graph_section_index]
+                                        }
+                                        expanded={
+                                            this.state.perSectionExpandStatus[graph_section_index]
+                                        }
+                                        className={classes.sectionsAccordionOuter}
+                                        onChange={(e, expand) =>
+                                            this.widgetsSectionExpandHandler(
+                                                e,
+                                                expand,
+                                                graph_section_index
+                                            )
+                                        }
+                                    >
+                                        <AccordionSummary
+                                            expandIcon={
+                                                <ExpandMoreIcon
+                                                    className={`${classes.expandIcon} ${
+                                                        this.state.perSectionExpandStatus[
+                                                            graph_section_index
+                                                        ]
+                                                            ? classes.iconExpanded
+                                                            : ''
+                                                    }`}
+                                                />
+                                            }
+                                            aria-controls="panel1a-content"
+                                            id="panel1a-header"
+                                            className={classes.accordionSummaryStyle}
+                                        >
+                                            <Typography className={classes.heading}>
+                                                {
+                                                    current_settings?.section_headers?
+                                                    current_settings?.section_headers[
+                                                        graph_section_index
+                                                    ]:''
+                                                }
+                                            </Typography>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                            <Grid
+                                                container
+                                                justifyContent="center"
+                                                spacing={1}
+                                                className={`${classes.gridGraphBodyAccordion} ${classes.gridChildContainer}`}
+                                            >
+                                                {graph_widget_items}
+                                            </Grid>
+                                        </AccordionDetails>
+                                    </Accordion>
+                                ) : (
+                                    <Grid
+                                        container
+                                        justifyContent="center"
+                                        spacing={1}
+                                        className={`${classes.gridGraphBody} ${classes.gridChildContainer}`}
+                                    >
+                                        {graph_widget_items}
+                                    </Grid>
+                                )}
                             </Grid>
                         );
                     },
@@ -990,7 +1263,7 @@ class AppScreen extends React.Component {
                         container
                         justifyContent="center"
                         spacing={1}
-                        className={`${classes.gridGraphBody}  ${classes.gridParentContainer}`}
+                        className={`${classes.gridGraphBody}  ${classes.gridParentContainer} ${this.state.currentScreenConfig?.per_section_collapse?.includes('1') ? classes.accordionGridParentContainer : null}`}
                     >
                         {response}
                     </Grid>
@@ -1266,7 +1539,7 @@ class AppScreen extends React.Component {
         this.setState({ filtersUpdated: false });
     };
 
-    getWidgetData = (selected_filters, pivotInfo) => {
+    getWidgetData = (selected_filters, pivotInfo, dataValues=null) => {
         const screen_filters_values = { ...this.state.screen_filters_values };
         if (pivotInfo) {
             screen_filters_values['pivot_info'] = pivotInfo;
@@ -1275,7 +1548,8 @@ class AppScreen extends React.Component {
             this.props.app_info,
             this.state.screen_id,
             screen_filters_values,
-            selected_filters
+            selected_filters,
+            dataValues
         );
 
         this.setState(
@@ -1680,9 +1954,17 @@ class AppScreen extends React.Component {
                                                 this.state?.stepperScreens?.length) && top_navbar)
                                             ? classes.gridGraphNoLabelProgressContainer
                                             : classes.gridGraphNoLabelContainer,
-                                    top_navbar ? classes.gridContainerWithBottomBorder : ''
+                                    top_navbar ? classes.gridContainerWithBottomBorder  : ''
                                 )}
+                                style={{
+                                    '--accordion': (
+                                        top_navbar &&
+                                        (this.state.currentScreenConfig?.per_section_collapse?.includes('1') ||
+                                        this.state.currentScreenConfig?.enable_kpi_collapse)
+                                    ) ? true : false
+                                }}
                                 id="graphContainer"
+
                             >
                                 {this.state.selected_filters ? this.getGraphs() : ''}
                                 {this.state?.stepperScreens &&

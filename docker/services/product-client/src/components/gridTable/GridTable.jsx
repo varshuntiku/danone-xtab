@@ -88,6 +88,7 @@ import IconEditor from './IconEditor.jsx';
 import AppWidgetPlot from '../AppWidgetPlot';
 import TagsRenderer from './cell-renderer/tagsRenderer';
 import LibraryAddOutlinedIcon from '@material-ui/icons/LibraryAddOutlined';
+import CodxToggleButtonSwitch from '../custom/CodxToggleButtonSwitch';
 
 import { ReactComponent as SortIcon } from '../../assets/Icons/Sort.svg';
 
@@ -360,6 +361,14 @@ const useStyles = makeStyles((theme) => ({
         position: 'sticky',
         top: 0, // Ensures the header stays at the top
         zIndex: 2 // Set a higher z-index to make sure it's above other content
+    },
+    toggleButtonLabel: {
+        fontSize: '1.2rem'
+    },
+    toggleButton: {
+        '& .MuiToggleButtonGroup-grouped': {
+            fontSize: '1rem'
+        }
     }
 }));
 
@@ -659,7 +668,7 @@ function GridTableContextProvider({ children, page, pageCount }) {
 const GridTable = React.forwardRef(
     (
         {
-            params,
+            params: defaultParams,
             onValueChange,
             onRowDataChange,
             onColdefChange,
@@ -672,6 +681,11 @@ const GridTable = React.forwardRef(
         },
         ref
     ) => {
+        const toggleGridTable = defaultParams?.enableToggleButton;
+        const gridTableToggleData = defaultParams?.toggleOptions;
+        const [params, setParams] = useState(
+            toggleGridTable ? gridTableToggleData[toggleGridTable?.defaultValue] : defaultParams
+        );
         const progress_info = props.progressInfo;
         const config = props.config;
         const classes = useStyles(params);
@@ -679,7 +693,7 @@ const GridTable = React.forwardRef(
         const [columns, setColumns] = useState(createColumns(params.coldef));
         const [selectedColumns, setSelectedColumns] = useState(columns);
         const [copyError, setCopyError] = useState(false);
-        const [groupHeaders] = useState(() => {
+        const [groupHeaders, setGroupHeaders] = useState(() => {
             let groupHeaders = [];
             if (params.groupHeaders?.length) {
                 groupHeaders = params.groupHeaders.map((cols) => createColumns(cols));
@@ -762,6 +776,7 @@ const GridTable = React.forwardRef(
         );
 
         const [hoveredRowIndex, setHoveredRowIndex] = useState(null);
+
         const handleStickyColData = useCallback((data) => {
             setStickyColData((s) => ({ ...s, ...data }));
         }, []);
@@ -798,10 +813,30 @@ const GridTable = React.forwardRef(
 
             return rightOffset;
         };
+
         useEffect(() => {
             setZoomLevel(gridOptions?.defaultZoom || 1.0);
             setRows(createRows(params.rowData, gridOptions?.rowParamsField));
             setColumns(createColumns(params.coldef));
+        }, [defaultParams]);
+
+        useEffect(() => {
+            const columns = createColumns(params.coldef);
+            setColumns(columns);
+            setGroupHeaders(() => {
+                let groupHeaders = [];
+                if (params.groupHeaders?.length) {
+                    groupHeaders = params.groupHeaders.map((cols) => createColumns(cols));
+                }
+                return groupHeaders;
+            });
+            setRows(createRows(params.rowData, gridOptions?.rowParamsField));
+            setRowsPerPage(
+                gridOptions?.enablePagination
+                    ? gridOptions?.paginationSettings?.rowsPerPage || 5
+                    : 0
+            );
+            setZoomLevel(gridOptions?.defaultZoom || 1.0);
         }, [params]);
 
         useEffect(() => {
@@ -1771,6 +1806,10 @@ const GridTable = React.forwardRef(
             }
         };
 
+        const handleToggleButtonChange = (fieldId, value) => {
+            setParams(gridTableToggleData[value]);
+        };
+
         return (
             <GridTableContextProvider
                 rows={rows}
@@ -1807,6 +1846,8 @@ const GridTable = React.forwardRef(
                             isReArrangable={allowRearrange}
                             search={search}
                             onAddCol={handleAddCol}
+                            onClickToggleButton={handleToggleButtonChange}
+                            toggleButtonConfig={toggleGridTable}
                         />
 
                         <div
@@ -3200,7 +3241,9 @@ function TableToolBar({
     columns,
     onChangeFilterMenu,
     search,
-    onAddCol
+    onAddCol,
+    onClickToggleButton,
+    toggleButtonConfig
 }) {
     if (gridOptions?.suppressToolBar) {
         return null;
@@ -3217,19 +3260,16 @@ function TableToolBar({
                 </Typography>
             ) : null}
 
-            {gridOptions?.quickSearch ? (
-                <div style={{ width: gridOptions?.searchSuggestions ? '100%' : '50rem' }}>
-                    <SearchBar
-                        onChangeWithDebounce={onSearchChange}
-                        placeholder={gridOptions?.quickSearchLabel || 'Quick search...'}
-                        suggestions={gridOptions?.searchSuggestions}
-                        suggestionParams={gridOptions?.suggestionProps}
-                        value={search}
-                    />
-                </div>
+            {toggleButtonConfig ? (
+                <CodxToggleButtonSwitch
+                    classes={{
+                        toolBarText: classes.toggleButtonLabel,
+                        toggleButton: classes.toggleButton
+                    }}
+                    elementProps={toggleButtonConfig}
+                    onChange={onClickToggleButton}
+                />
             ) : null}
-
-            <Box flex={1} />
 
             {gridOptions?.editModeSwitch ? (
                 <FormControlLabel
@@ -3330,6 +3370,20 @@ function TableToolBar({
                         <ZoomInIcon fontSize="large" />
                     </Button>
                 </ButtonGroup>
+            ) : null}
+
+            <Box flex={1} />
+
+            {gridOptions?.quickSearch ? (
+                <div style={{ width: gridOptions?.searchSuggestions ? '100%' : '50rem' }}>
+                    <SearchBar
+                        onChangeWithDebounce={onSearchChange}
+                        placeholder={gridOptions?.quickSearchLabel || 'Quick search...'}
+                        suggestions={gridOptions?.searchSuggestions}
+                        suggestionParams={gridOptions?.suggestionProps}
+                        value={search}
+                    />
+                </div>
             ) : null}
         </Toolbar>
     );
@@ -3480,6 +3534,7 @@ function CustomTableCell({
         const params = {
             ...coldef?.cellEditorParams,
             error: cellParam?.error,
+            data: row.data,
             helperText: cellParam?.helperText,
             value: _value === undefined ? coldef?.cellEditorParams?.value : _value,
             isColDeletable,
@@ -3867,7 +3922,7 @@ function CustomTableCell({
                 [cellParam?.color ? 'color' : undefined]: cellParam?.color,
                 [cellParam?.textDecoration ? 'textDecoration' : undefined]:
                     cellParam?.textDecoration,
-                fontWeight: coldef?.bold ? 500 : '',
+                fontWeight: coldef?.bold || cellParam?.bold ? 500 : '',
                 [!gridOptions?.cellFontSize && cellParam?.fontSize
                     ? 'font-size'
                     : null]: `${cellParam?.fontSize}rem`,

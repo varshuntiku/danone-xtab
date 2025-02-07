@@ -64,6 +64,10 @@ class WidgetService(BaseService):
             horizontal = selected_layout["horizontal"] if "horizontal" in selected_layout else None
             graph_width = selected_layout["graph_width"] if "graph_width" in selected_layout else None
             graph_height = selected_layout["graph_height"] if "graph_height" in selected_layout else None
+            enable_kpi_collapse = selected_layout.get("enable_kpi_collapse", False)
+            per_section_collapse = selected_layout.get("per_section_collapse", None)
+            kpis_header = selected_layout.get("kpis_header", None)
+            section_headers = selected_layout.get("section_headers", None)
             self.screen_dao.update_screen_layout_details(
                 id=screen_id,
                 graph_type=graph_type,
@@ -71,6 +75,10 @@ class WidgetService(BaseService):
                 graph_width=graph_width,
                 graph_height=graph_height,
                 user_id=user_id,
+                enable_kpi_collapse=enable_kpi_collapse,
+                per_section_collapse=per_section_collapse,
+                kpis_header=kpis_header,
+                section_headers=section_headers,
             )
 
             request_widget_ids = []
@@ -270,18 +278,18 @@ class WidgetService(BaseService):
                             prev_screen_data=getattr(request_data, "prev_screen_data", None),
                         )
                     if widget_filter_json:
-                        if widget_filter_json["code"] and widget_filter_json["code"] != "":
-                            widget_filter_value, _, _ = get_dynamic_widgets(
-                                app_id=app_id,
-                                widget_id=request_data.widget.id,
-                                access_token=access_token,
-                                filters={},
-                                widget_code=widget_filter_json["code"],
-                                data_state_key=getattr(request_data, "data_state_key", None),
-                                request=request,
-                            )
-                        else:
-                            widget_filter_value = None
+                        # if widget_filter_json["code"] and widget_filter_json["code"] != "":
+                        #     widget_filter_value, _, _ = get_dynamic_widgets(
+                        #         app_id=app_id,
+                        #         widget_id=request_data.widget.id,
+                        #         access_token=access_token,
+                        #         filters={},
+                        #         widget_code=widget_filter_json["code"],
+                        #         data_state_key=getattr(request_data, "data_state_key", None),
+                        #         request=request,
+                        #     )
+                        # else:
+                        widget_filter_value = None
                     else:
                         widget_filter_value = None
                 except Exception as error_msg:

@@ -1,5 +1,13 @@
 import React, { useState, useRef } from 'react';
-import { Button, IconButton, makeStyles, Menu, MenuItem, ListItemIcon ,Typography} from '@material-ui/core';
+import {
+    Button,
+    IconButton,
+    makeStyles,
+    Menu,
+    MenuItem,
+    ListItemIcon,
+    Typography
+} from '@material-ui/core';
 import SaveAltIcon from '@material-ui/icons/SaveAlt';
 import { ReactComponent as DownloadFileIcon } from '../assets/downloadFileIcon.svg';
 import { ReactComponent as DownloadPdfIcon } from '../assets/downloadPdfIcon.svg';
@@ -8,7 +16,9 @@ import { triggerActionHandler } from '../../../services/screen';
 import clsx from 'clsx';
 import Link from '@material-ui/core/Link';
 import sanitizeHtml from 'sanitize-html-react';
-import Tooltip from "@material-ui/core/Tooltip";
+import Tooltip from '@material-ui/core/Tooltip';
+import { CloudDownload } from '@material-ui/icons';
+import { CustomDialog } from '../../custom/CustomDialog';
 
 const useStyles = makeStyles((theme) => ({
     icon: {
@@ -73,38 +83,57 @@ const useStyles = makeStyles((theme) => ({
             backgroundColor: theme.Toggle.DarkIconBg
         }
     },
-    iconButton:{
+    iconButton: {
         '&:hover': {
             background: theme.palette.background.selected,
-            borderRadius:'4px'
+            borderRadius: '4px'
+        },
+        '&.MuiIconButton-root.Mui-disabled': {
+            '& svg': {
+                color: theme.palette.grey[500],
+                cursor: 'not-allowed',
+                pointerEvents: 'fill'
+            }
         }
     },
-    textButton:{
-            color: theme.palette.text.contrastText,
-            display: 'flex',
-            right: '1rem',
-            // top: "6rem", //
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '1rem',
-            fontSize: '2rem',
-            fontWeight: '500',
-            fontFamily: theme.body.B5.fontFamily,
-            // marginRight: "1rem",
-            padding: '1rem',
-            borderRadius: '4px',
-            cursor: 'pointer',
-            margin:'0rem'
+    cloudDownloadButton: {
+        padding: theme.spacing(0.5),
+        minWidth: theme.spacing(5),
+        backgroundColor: 'transparent',
+        border: '1px solid ' + theme.palette.primary.contrastText,
+        color: theme.palette.primary.contrastText,
+        borderRadius: theme.spacing(0.5)
     },
-    iconMoreButton:{
-    background:'none',
-'   &:hover': {
-        background: 'none'
-    }
+    downloadLabel: {
+        fontSize: '1.9rem',
+        color: theme.palette.primary.contrastText
+    },
+    textButton: {
+        color: theme.palette.text.contrastText,
+        display: 'flex',
+        right: '1rem',
+        // top: "6rem", //
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '1rem',
+        fontSize: '2rem',
+        fontWeight: '500',
+        fontFamily: theme.body.B5.fontFamily,
+        // marginRight: "1rem",
+        padding: '1rem',
+        borderRadius: '4px',
+        cursor: 'pointer',
+        margin: '0rem'
+    },
+    iconMoreButton: {
+        background: 'none',
+        '   &:hover': {
+            background: 'none'
+        }
     },
     Moreicon: {
         fontSize: '2.5rem',
-        marginTop:'-1rem',
+        marginTop: '-1rem'
     }
 }));
 
@@ -118,12 +147,14 @@ export function DownloadLink({
     fileName,
     actionSettings,
     commentsOpen,
-   askNucliosOpen,
-   tabNavBarCount
+    askNucliosOpen,
+    tabNavBarCount
 }) {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = useState(null);
     const iconButtonRef = useRef(null);
+    const [downloading, setDownloading] = useState(0);
+    const [open, setOpen] = useState(false);
 
     const handleMenuClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -162,24 +193,34 @@ export function DownloadLink({
             });
     };
 
-    const handleDownloadClick = () => {
-        if (params.fetch_on_click) {
-            triggerActionHandler({
-                screen_id,
-                app_id,
-                payload: {
-                    action_type,
-                    action_params: null,
-                    filter_state: JSON.parse(
-                        sessionStorage.getItem('app_screen_filter_info_' + app_id + '_' + screen_id)
-                    )
-                },
-                callback: (d) => {
-                    downloadFile(d.url);
-                }
-            });
-        } else {
-            downloadFile(params.url);
+    const handleDownloadClick = async () => {
+        try {
+            setDownloading((d) => d + 1);
+            setOpen(true);
+            if (params.fetch_on_click) {
+                await triggerActionHandler({
+                    screen_id,
+                    app_id,
+                    payload: {
+                        action_type,
+                        action_params: null,
+                        filter_state: JSON.parse(
+                            sessionStorage.getItem(
+                                'app_screen_filter_info_' + app_id + '_' + screen_id
+                            )
+                        )
+                    },
+                    callback: (d) => {
+                        downloadFile(d.url);
+                    }
+                });
+            } else {
+                downloadFile(params.url);
+            }
+        } catch (err) {
+            console.log(err);
+        } finally {
+            setDownloading((d) => d - 1);
         }
     };
 
@@ -196,25 +237,57 @@ export function DownloadLink({
 
     const renderButtonOrLink = () => {
         if (params.is_icon) {
-            return (
-                actionSettings?.actions.length >= 2 && (commentsOpen || askNucliosOpen) && tabNavBarCount?.length>=2 ? (
-                    <Tooltip
-                        title="Download"
-                        classes={{ tooltip: classes.iconTooltip, arrow: classes.arrow }}
-                        arrow
+            return actionSettings?.actions.length >= 2 &&
+                (commentsOpen || askNucliosOpen) &&
+                tabNavBarCount?.length >= 2 ? (
+                <Tooltip
+                    title="Download"
+                    classes={{ tooltip: classes.iconTooltip, arrow: classes.arrow }}
+                    arrow
+                >
+                    <IconButton
+                        size="small"
+                        onClick={handleDownloadClick}
+                        title={params.title}
+                        className={classes.iconMoreButton}
                     >
-                        <IconButton size="small" onClick={handleDownloadClick} title={params.title} className={classes.iconMoreButton}>
-                            <SaveAltIcon className={classes.Moreicon} />
-                        </IconButton>
-                    </Tooltip>
-                ) :
-                    <IconButton size="small" onClick={handleDownloadClick} title={params.title} className={classes.iconButton}>
-                        <SaveAltIcon className={classes.icon} />
-                        <Typography class={classes.textButton}>
-                        Download
-                        </Typography>
+                        <SaveAltIcon className={classes.Moreicon} />
                     </IconButton>
-            )
+                </Tooltip>
+            ) : downloading && params?.showDownloadProgress ? (
+                <>
+                    <IconButton
+                        size="small"
+                        title={params.title}
+                        className={classes.iconButton}
+                        disabled={true}
+                    >
+                        <CloudDownload className={classes.icon} />
+                        <Typography class={classes.textButton}>Downloading...</Typography>
+                    </IconButton>
+                    <CustomDialog
+                        title="Info"
+                        subtitle="The file download has been initiated. Please check your 'Downloads' folder shortly"
+                        isOpen={open}
+                        handleClose={() => {
+                            setOpen(false);
+                        }}
+                    />
+                </>
+            ) : (
+                <IconButton
+                    size="small"
+                    onClick={handleDownloadClick}
+                    title={params.title}
+                    className={classes.iconButton}
+                    disabled={params?.disabled}
+                >
+                    <SaveAltIcon className={classes.icon} />
+                    <Typography class={classes.textButton}>
+                        {params.downloadLabel ? params.downloadLabel : 'Download'}
+                    </Typography>
+                </IconButton>
+            );
         } else if (params.is_button) {
             return (
                 <Button
@@ -253,31 +326,36 @@ export function DownloadLink({
     if (action_type === 'test_download_content') {
         return (
             <>
-                {actionSettings?.actions.length >= 2 && (commentsOpen || askNucliosOpen) && tabNavBarCount?.length>=2 ? (
+                {actionSettings?.actions.length >= 2 &&
+                (commentsOpen || askNucliosOpen) &&
+                tabNavBarCount?.length >= 2 ? (
                     <Tooltip
                         title="Download"
                         classes={{ tooltip: classes.iconTooltip, arrow: classes.arrow }}
                         arrow
                     >
-                        <IconButton size="small"
+                        <IconButton
+                            size="small"
                             onClick={handleMenuClick}
                             title={params.title}
-                            ref={iconButtonRef} className={classes.iconMoreButton}>
+                            ref={iconButtonRef}
+                            className={classes.iconMoreButton}
+                        >
                             <SaveAltIcon className={classes.Moreicon} />
                         </IconButton>
                     </Tooltip>
-                ) :
-                    <IconButton size="small"
+                ) : (
+                    <IconButton
+                        size="small"
                         onClick={handleMenuClick}
                         title={params.title}
                         ref={iconButtonRef}
                         className={classes.iconButton}
-                        >
+                    >
                         <SaveAltIcon className={classes.icon} />
-                        <Typography class={classes.textButton}>
-                        Download
-                        </Typography>
-                    </IconButton>}
+                        <Typography class={classes.textButton}>Download</Typography>
+                    </IconButton>
+                )}
                 <Menu
                     id="simple-menu"
                     anchorEl={anchorEl}
@@ -316,31 +394,36 @@ export function DownloadLink({
     if (action_type === 'test_download_file_content') {
         return (
             <>
-                {actionSettings?.actions.length >= 2 && (commentsOpen || askNucliosOpen) && tabNavBarCount?.length>=2 ? (
+                {actionSettings?.actions.length >= 2 &&
+                (commentsOpen || askNucliosOpen) &&
+                tabNavBarCount?.length >= 2 ? (
                     <Tooltip
                         title="Download"
                         classes={{ tooltip: classes.iconTooltip, arrow: classes.arrow }}
                         arrow
                     >
-                        <IconButton size="small"
+                        <IconButton
+                            size="small"
                             onClick={handleMenuClick}
                             title={params.title}
-                            ref={iconButtonRef} className={classes.iconMoreButton}>
+                            ref={iconButtonRef}
+                            className={classes.iconMoreButton}
+                        >
                             <SaveAltIcon className={classes.Moreicon} />
                         </IconButton>
                     </Tooltip>
-                ) :
-                    <IconButton size="small"
+                ) : (
+                    <IconButton
+                        size="small"
                         onClick={handleMenuClick}
                         title={params.title}
                         ref={iconButtonRef}
                         className={classes.iconButton}
-                        >
+                    >
                         <SaveAltIcon className={classes.icon} />
-                        <Typography class={classes.textButton}>
-                        Download
-                        </Typography>
-                    </IconButton>}
+                        <Typography class={classes.textButton}>Download</Typography>
+                    </IconButton>
+                )}
                 <Menu
                     id="simple-menu"
                     anchorEl={anchorEl}
