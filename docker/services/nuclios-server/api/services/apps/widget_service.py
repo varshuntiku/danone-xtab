@@ -64,10 +64,6 @@ class WidgetService(BaseService):
             horizontal = selected_layout["horizontal"] if "horizontal" in selected_layout else None
             graph_width = selected_layout["graph_width"] if "graph_width" in selected_layout else None
             graph_height = selected_layout["graph_height"] if "graph_height" in selected_layout else None
-            enable_kpi_collapse = selected_layout.get("enable_kpi_collapse", False)
-            per_section_collapse = selected_layout.get("per_section_collapse", None)
-            kpis_header = selected_layout.get("kpis_header", None)
-            section_headers = selected_layout.get("section_headers", None)
             self.screen_dao.update_screen_layout_details(
                 id=screen_id,
                 graph_type=graph_type,
@@ -75,10 +71,6 @@ class WidgetService(BaseService):
                 graph_width=graph_width,
                 graph_height=graph_height,
                 user_id=user_id,
-                enable_kpi_collapse=enable_kpi_collapse,
-                per_section_collapse=per_section_collapse,
-                kpis_header=kpis_header,
-                section_headers=section_headers,
             )
 
             request_widget_ids = []

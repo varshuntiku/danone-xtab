@@ -40,7 +40,7 @@ import CodxPopupDialog from '../custom/CodxPoupDialog';
 import CustomSnackbar from 'components/CustomSnackbar.jsx';
 import ScreenFilterIcon from 'assets/Icons/ScreenFilterIcon';
 
-import FilterVersion, { CreateFilter } from './FilterVersion';
+import FilterVersion, { CreateFilter } from "./FilterVersion"
 
 import * as _ from 'underscore';
 
@@ -315,7 +315,7 @@ const useStyles = makeStyles((theme) => ({
         padding: `${theme.layoutSpacing(8)} ${theme.layoutSpacing(24)}`
     },
     filterErrorMessage: {
-        fontSize: '1.4rem',
+        fontSize: "1.4rem",
         color: theme.palette.error.light,
         marginRight: '0.5rem'
         // marginRight: theme.spacing(2)
@@ -611,7 +611,6 @@ export default function AppWidgetMultiSelectFilters({
     const [loading, setLoading] = React.useState(false);
     const [filterError, setFilterError] = React.useState({});
     const [errorMessage, setErrorMessage] = React.useState(null);
-
     const [pivotInfo, setPivotInfo] = React.useState(
         parent_obj.state.screen_filters_values.pivot_info
     );
@@ -635,27 +634,14 @@ export default function AppWidgetMultiSelectFilters({
     const saveSlice = filterSlice?.save_slice ? filterSlice.save_slice : false;
     const loadSlice = filterSlice?.load_slice ? filterSlice.load_slice : false;
 
-    const enableFilterVersion =
-        parent_obj.state.screen_filters_values.enable_filter_version &&
-        parent_obj.state.screen_filters_values.filter_version_config;
-    const [filterVersionConfig, setFilterVersionConfig] = React.useState(
-        parent_obj.state.screen_filters_values.filter_version_config
-    );
+    const enableFilterVersion = parent_obj.state.screen_filters_values.enable_filter_version && parent_obj.state.screen_filters_values.filter_version_config;
+    const [filterVersionConfig, setFilterVersionConfig] = React.useState(parent_obj.state.screen_filters_values.filter_version_config)
 
-    const [selectedFilterVersion, setSelectedFilterVersion] = React.useState('');
-    const [selectedFilterDetail, setSelectedFilterDetail] = React.useState({
-        selected: selected,
-        filterData: filterData
-    });
-    const [snackbar, setSnackbar] = React.useState({
-        open: false,
-        message: false,
-        severity: 'success'
-    });
+    const [selectedFilterVersion, setSelectedFilterVersion] = React.useState("")
+    const [selectedFilterDetail, setSelectedFilterDetail] = React.useState({ selected: selected, filterData: filterData })
+    const [snackbar, setSnackbar] = React.useState({ open: false, message: false, severity: 'success' });
 
-    const componetName = parent_obj.state.screen_filters_values.component_name
-        ? parent_obj.state.screen_filters_values.component_name
-        : 'Pivot / Filters';
+    const componetName = parent_obj.state.screen_filters_values.component_name ? parent_obj.state.screen_filters_values.component_name : 'Pivot / Filters';
 
     React.useEffect(() => {
         getDynamicfilters({
@@ -738,30 +724,22 @@ export default function AppWidgetMultiSelectFilters({
                     getDynamicfilters({
                         app_id: app_info.id,
                         screen_id,
-                        payload: {
-                            selected: newState,
-                            current_filter: name,
-                            ...(filterVerConfig && { filter_version: filterVerConfig })
-                        },
+                        payload: { selected: newState, current_filter: name, ...(filterVerConfig && { filter_version: filterVerConfig }) },
                         callback: (resp) => {
                             setSelected(resp.defaultValues);
                             setFilterData(resp.dataValues);
                             setErrorMessage(resp.status_message?.errorMessage || null);
-                            if (['save', 'edit', 'delete'].includes(resp.current_function)) {
-                                setSnackbar({
-                                    open: true,
-                                    message: resp.status_message.success,
-                                    severity: 'success'
-                                });
+                            if (["save", "edit", "delete"].includes(resp.current_function)) {
+                                setSnackbar({ open: true, message: resp.status_message.success, severity: 'success' })
                             }
-                            if (resp.pivot_info?.length) setPivotInfo(resp.pivot_info);
+                            if (resp.pivot_info?.length) setPivotInfo(resp.pivot_info)
                             if (enableFilterVersion) {
                                 setSelectedFilterDetail({
                                     ...selectedFilterDetail,
                                     selected: resp.defaultValues,
                                     filterData: resp.dataValues
-                                });
-                                setFilterVersionConfig(resp.filter_version_config);
+                                })
+                                setFilterVersionConfig(resp.filter_version_config)
                             }
                             setLoading((s) => s - 1);
                         }
@@ -834,7 +812,7 @@ export default function AppWidgetMultiSelectFilters({
             ...selectedFilterDetail,
             selected: selected,
             filterData: filterData
-        });
+        })
         setSelectedFilterIndex(0);
     };
 
@@ -973,7 +951,7 @@ export default function AppWidgetMultiSelectFilters({
                 setSelectedFilterIndex(-1);
             }
         }
-        setSelectedFilterVersion('');
+        setSelectedFilterVersion("")
         setResetCounter((s) => s + 1);
     };
 
@@ -982,49 +960,38 @@ export default function AppWidgetMultiSelectFilters({
     };
 
     const handleSaveFilterVersion = (ver) => {
-        const newState = { ...selected };
+        const newState = { ...selected }
         if (hasPivot) {
-            newState['__pivot_info__'] = pivotInfo;
+            newState["__pivot_info__"] = pivotInfo;
         }
-        fetchDynamicData(newState, '__create_filter_version__', {
-            name: ver.versionName,
-            description: ver.description
-        });
-    };
+        fetchDynamicData(newState, "__create_filter_version__", { name: ver.versionName, description: ver.description })
+    }
 
     const handleDeleteFilterVersion = (item) => {
-        const newState = { ...selected };
+        const newState = { ...selected }
         if (hasPivot) {
-            newState['__pivot_info__'] = pivotInfo;
+            newState["__pivot_info__"] = pivotInfo;
         }
-        fetchDynamicData(newState, '__delete_filter_version__', {
-            name: item.name,
-            description: item.description
-        });
-    };
+        fetchDynamicData(newState, "__delete_filter_version__", { name: item.name, description: item.description })
+    }
 
     const handleChangeFilterVersion = (item) => {
-        const newState = { ...selected };
+        const newState = { ...selected }
         if (hasPivot) {
-            newState['__pivot_info__'] = pivotInfo;
+            newState["__pivot_info__"] = pivotInfo;
         }
-        setSelectedFilterVersion(item.name);
-        fetchDynamicData(newState, '__change_filter_version__', {
-            name: item.name,
-            description: item.description
-        });
-    };
+        setSelectedFilterVersion(item.name)
+        fetchDynamicData(newState, "__change_filter_version__", { name: item.name, description: item.description })
+    }
+
     const handelUpdateFilterVersion = (item) => {
-        const newState = { ...selected };
+
+        const newState = { ...selected }
         if (hasPivot) {
-            newState['__pivot_info__'] = pivotInfo;
+            newState["__pivot_info__"] = pivotInfo;
         }
-        fetchDynamicData(newState, '__update_filter_version__', {
-            name: item.name,
-            description: item.description,
-            existing_name: item.existingName
-        });
-    };
+        fetchDynamicData(newState, "__update_filter_version__", { name: item.name, description: item.description, existing_name: item.existingName })
+    }
 
     const onFilterShortcutClick = (index) => {
         setExpanded(true);
@@ -1434,7 +1401,7 @@ export default function AppWidgetMultiSelectFilters({
                                 className={classes.categoriesWrapper}
                             >
                                 <Grid item xs={12} className={classes.categories}>
-                                    {enableFilterVersion ? (
+                                {enableFilterVersion ? (
                                         <div className={classes.pivotSelection}>
                                             <div
                                                 name={'version'}
@@ -1809,63 +1776,61 @@ export default function AppWidgetMultiSelectFilters({
                                                 ) : null
                                             ) : selectedFilterIndex === -2 ? (
                                                 <>
-                                                    {enableFilterVersion ? (
-                                                        <FilterVersion
-                                                            filterVersions={
-                                                                filterVersionConfig?.filter_versions
-                                                            }
-                                                            onDeleteFilterVersion={
-                                                                handleDeleteFilterVersion
-                                                            }
-                                                            onChangeFilterVersion={
-                                                                handleChangeFilterVersion
-                                                            }
-                                                            onUpdateFilterVersion={
-                                                                handelUpdateFilterVersion
-                                                            }
-                                                            selectedFilterVersion={
-                                                                selectedFilterVersion
-                                                            }
-                                                            currentFilter={selectedFilterDetail}
-                                                        />
-                                                    ) : null}
-                                                    {/* <div
-                                                        className={
-                                                            classes.filterCategoryOptionsBody
+                                                {enableFilterVersion ? (
+                                                    <FilterVersion
+                                                        filterVersions={
+                                                            filterVersionConfig?.filter_versions
                                                         }
-                                                    >
-                                                        <Typography
-                                                            variant="subtitle1"
-                                                            className={classes.saveSliceLabel}
-                                                        >
-                                                            Slice Name
-                                                        </Typography>
-                                                        <ThemeProvider theme={textCompTheme}>
-                                                            <TextField
-                                                                variant="filled"
-                                                                className={classes.dialogFont}
-                                                                value={sliceName}
-                                                                onChange={handleNameChange}
-                                                                InputProps={{
-                                                                    classes: {
-                                                                        input: classes.formInput
-                                                                    }
-                                                                }}
-                                                                error={!!errorTextField}
-                                                                helperText={errorTextField}
-                                                                id={sliceName || 'name'}
-                                                            />
-                                                        </ThemeProvider>
-                                                        <Button
-                                                            aria-label="save slice"
-                                                            variant="contained"
-                                                            onClick={onSaveSlice}
-                                                            className={classes.saveSliceButton}
-                                                            key="saveSlice"
-                                                        >
-                                                            Save Slice
-                                                        </Button>
-                                                    </div> */}
+                                                        onDeleteFilterVersion={
+                                                            handleDeleteFilterVersion
+                                                        }
+                                                        onChangeFilterVersion={
+                                                            handleChangeFilterVersion
+                                                        }
+                                                        onUpdateFilterVersion={
+                                                            handelUpdateFilterVersion
+                                                        }
+                                                        selectedFilterVersion={
+                                                            selectedFilterVersion
+                                                        }
+                                                        currentFilter={selectedFilterDetail}
+                                                    />
+                                                ) : null}
+                                                {
+                                                // <div className={classes.filterCategoryOptionsBody}>
+                                                //     <Typography
+                                                //         variant="subtitle1"
+                                                //         className={classes.saveSliceLabel}
+                                                //     >
+                                                //         Slice Name
+                                                //     </Typography>
+                                                //     <ThemeProvider theme={textCompTheme}>
+                                                //         <TextField
+                                                //             variant="filled"
+                                                //             className={classes.dialogFont}
+                                                //             value={sliceName}
+                                                //             onChange={handleNameChange}
+                                                //             InputProps={{
+                                                //                 classes: {
+                                                //                     input: classes.formInput
+                                                //                 }
+                                                //             }}
+                                                //             error={!!errorTextField}
+                                                //             helperText={errorTextField}
+                                                //             id={sliceName || 'name'}
+                                                //         />
+                                                //     </ThemeProvider>
+                                                //     <Button
+                                                //         aria-label="save slice"
+                                                //         variant="contained"
+                                                //         onClick={onSaveSlice}
+                                                //         className={classes.saveSliceButton}
+                                                //         key="saveSlice"
+                                                //     >
+                                                //         Save Slice
+                                                //     </Button>
+                                                // </div>
+                                                }
                                                 </>
                                             ) : selectedFilterIndex === -3 ? (
                                                 <div className={classes.filterCategoryOptionsBody}>

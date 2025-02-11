@@ -35,7 +35,6 @@ const useStyles = makeStyles((theme) => ({
         background: '#C4C4C4 ',
         opacity: '10%',
         borderRadius: theme.spacing(1),
-        minHeight: '40vh',
         '&:after': {
             animation: 'MuiSkeleton-keyframes-wave 0.6s linear 0s infinite'
         }
