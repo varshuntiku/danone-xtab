@@ -32,6 +32,15 @@ const useStyles = makeStyles((theme) => ({
         },
         '& .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline': {
             borderColor: theme.palette.border.inputFocus
+        },
+        '& .MuiInputLabel-outlined': {
+            fontSize: '1.6rem',
+            backgroundColor: theme.palette.primary.light,
+            fontWeight: 'bold',
+            '&.Mui-focused': {
+                color: theme.palette.text.titleText,
+                fontWeight: 'bold'
+            }
         }
     },
     suggestionsHolder: {
@@ -106,6 +115,9 @@ export default function SearchBar({
             element.click();
         });
         setValue('');
+        if (onChangeWithDebounce) {
+            onChangeWithDebounce('');
+        }
     };
 
     return (

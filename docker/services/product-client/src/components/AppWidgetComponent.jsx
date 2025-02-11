@@ -16,6 +16,7 @@ import PlanogramShelf from './Planogram/PlanogramShelf';
 import DigitalTwin from './DigitalTwin/DigitalTwin';
 import ErrorIcon from '@material-ui/icons/Error';
 import { setActiveScreenWidgetsDetails, setUpdatedWidgetsIds } from 'store/index';
+import AppWidgetGraphOld from './AppWidgetGraphOld';
 
 const useStyles = makeStyles((theme) => ({
     comp: {
@@ -487,25 +488,35 @@ const AppWidgetComponent = React.memo((props) => {
             return (
                 <Paper className={classes.widgetContent} data-testid="app-widget-graph-container">
                     <SelectedIndexProvider>
-                        <AppWidgetGraph
-                            {...props}
-                            widget_value_id={widgetData.data?.widget_value_id}
-                            updateDataStateKey={updateDataStateKey}
-                            data={widgetData}
-                            dataProvided={true}
-                            details={widgetDetails}
-                            toggleCheck={props.toggleCheck}
-                            showHighlighter={updatedWidgetsIds?.includes(widgetDetails?.id)}
-                            setSimulatorTrigger={setSimulatorTrigger}
-                            simulatorTrigger={props.simulatorTrigger}
-                            data-testid="app-widget-graph"
-                            onProgressCompleteAction={handleProgessActionComplete}
-                            widgetWithNoAction={widgetWithNoAction}
-                            widgetComment={widgetComment}
-                            updateWidgetComment={updateWidgetComment}
-                            selected_filters={selected_filters}
-                            shouldOpenLibrary={shouldOpenLibrary}
-                        />
+                        {widgetData?.data?.value?.tableProps?.enableToggleButton ? (
+                            <AppWidgetGraphOld
+                                {...props}
+                                widget_value_id={widgetData.data.widget_value_id}
+                                updateDataStateKey={updateDataStateKey}
+                                data={widgetData}
+                                dataProvided={true}
+                            />
+                        ) : (
+                            <AppWidgetGraph
+                                {...props}
+                                widget_value_id={widgetData.data?.widget_value_id}
+                                updateDataStateKey={updateDataStateKey}
+                                data={widgetData}
+                                dataProvided={true}
+                                details={widgetDetails}
+                                toggleCheck={props.toggleCheck}
+                                showHighlighter={updatedWidgetsIds?.includes(widgetDetails?.id)}
+                                setSimulatorTrigger={setSimulatorTrigger}
+                                simulatorTrigger={props.simulatorTrigger}
+                                data-testid="app-widget-graph"
+                                onProgressCompleteAction={handleProgessActionComplete}
+                                widgetWithNoAction={widgetWithNoAction}
+                                widgetComment={widgetComment}
+                                updateWidgetComment={updateWidgetComment}
+                                selected_filters={selected_filters}
+                                shouldOpenLibrary={shouldOpenLibrary}
+                            />
+                        )}
                     </SelectedIndexProvider>
                 </Paper>
             );

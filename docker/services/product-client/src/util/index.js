@@ -58,7 +58,13 @@ export const setDeepValue = (obj, field, value) => {
     }
 };
 
-export const getFinalFilterObj = (app_info, screen_id, screen_filters_values, selectedFilters) => {
+export const getFinalFilterObj = (
+    app_info,
+    screen_id,
+    screen_filters_values,
+    selectedFilters,
+    dataValues = null
+) => {
     let final_selected = {};
     const pivotInfo = screen_filters_values?.pivot_info;
     const hasPivot = !!(pivotInfo && pivotInfo.length);
@@ -88,6 +94,12 @@ export const getFinalFilterObj = (app_info, screen_id, screen_filters_values, se
         'app_screen_filter_info_' + app_info.id + '_' + screen_id,
         JSON.stringify(final_selected)
     );
+    if (dataValues) {
+        sessionStorage.setItem(
+            'app_screen_filter_info_datavalue_' + app_info.id + '_' + screen_id,
+            JSON.stringify(dataValues)
+        );
+    }
     if (app_info.modules?.retain_filters) {
         if (sessionStorage.getItem('app_filter_info_' + app_info.id)) {
             const app_filter = JSON.parse(sessionStorage.getItem('app_filter_info_' + app_info.id));

@@ -22,7 +22,7 @@ import {
 
 import ErrorOutlineIcon from '@material-ui/icons/ErrorOutline';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-
+import DropdownRadioSelect from './DropdownRadioSelect';
 import AppMultipleSelect from './AppMultipleSelect';
 import DateRangeSelect from './DateRangeSelect';
 import { getDynamicfilters, previewFilters } from '../../services/filters';
@@ -39,6 +39,8 @@ import { textCompTheme } from '../dynamic-form/inputFields/textInput';
 import CodxPopupDialog from '../custom/CodxPoupDialog';
 import CustomSnackbar from 'components/CustomSnackbar.jsx';
 import ScreenFilterIcon from 'assets/Icons/ScreenFilterIcon';
+
+import FilterVersion, { CreateFilter } from "./FilterVersion"
 
 import * as _ from 'underscore';
 
@@ -175,8 +177,8 @@ const useStyles = makeStyles((theme) => ({
     filtersGridBody: {
         position: 'absolute',
         zIndex: 2,
-        height: theme.layoutSpacing(482),
-        width: 'unset',
+        height: '75%',
+        // width: 'unset',
         background: theme.palette.background.pureWhite,
         boxShadow: `0px 4px 4px 1px ${theme.palette.icons.nofile}0F`,
         '& > div': {
@@ -295,6 +297,7 @@ const useStyles = makeStyles((theme) => ({
         padding: `${theme.layoutSpacing(8)} ${theme.layoutSpacing(24)}`
     },
     filterToolbarButtonApply: {
+        width: 'max-content',
         color: theme.button.applyButton.color,
         borderColor: theme.palette.text.sidebarSelected,
         backgroundColor: theme.palette.text.sidebarSelected,
@@ -310,6 +313,12 @@ const useStyles = makeStyles((theme) => ({
         minWidth: theme.layoutSpacing(90),
         height: theme.layoutSpacing(36),
         padding: `${theme.layoutSpacing(8)} ${theme.layoutSpacing(24)}`
+    },
+    filterErrorMessage: {
+        fontSize: "1.4rem",
+        color: theme.palette.error.light,
+        marginRight: '0.5rem'
+        // marginRight: theme.spacing(2)
     },
     btn: {
         margin: theme.spacing(0, 0, 1, 0)
@@ -423,10 +432,18 @@ const useStyles = makeStyles((theme) => ({
     },
     filterDataWrapper: {
         height: '100%',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        position: 'relative'
+    },
+    disableContainer: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+        zIndex: 999
     },
     categoriesWrapper: {
-        width: theme.layoutSpacing(392),
+        width: '35%',
         height: '100%',
         background: theme.palette.background.filterCategories,
         boxShadow: `0px 4px 4px 1px ${theme.palette.icons.nofile}0F`,
@@ -593,13 +610,18 @@ export default function AppWidgetMultiSelectFilters({
     const [expanded, setExpanded] = React.useState(false);
     const [loading, setLoading] = React.useState(false);
     const [filterError, setFilterError] = React.useState({});
-
+    const [errorMessage, setErrorMessage] = React.useState(null);
     const [pivotInfo, setPivotInfo] = React.useState(
         parent_obj.state.screen_filters_values.pivot_info
     );
+    const [pivotAccordionInfo, setPivotAccordionInfo] = React.useState(
+        parent_obj.state.screen_filters_values.pivot_accordion_info
+            ? parent_obj.state.screen_filters_values.pivot_accordion_info
+            : []
+    );
     const dynamicPivot = parent_obj.state.screen_filters_values.dynamic_pivot;
     const hasPivot = !!(pivotInfo && pivotInfo.length);
-    const [selectedFilterIndex, setSelectedFilterIndex] = React.useState(-1);
+    const [selectedFilterIndex, setSelectedFilterIndex] = React.useState(hasPivot ? -1 : 0);
     const [resetCounter, setResetCounter] = React.useState(0);
     const [sliceName, setSliceName] = React.useState('');
     const [errorTextField, setErrorTextField] = React.useState('');
@@ -611,6 +633,16 @@ export default function AppWidgetMultiSelectFilters({
     const filterSlice = parent_obj.state.screen_filters_values.filterSlice;
     const saveSlice = filterSlice?.save_slice ? filterSlice.save_slice : false;
     const loadSlice = filterSlice?.load_slice ? filterSlice.load_slice : false;
+
+    const enableFilterVersion = parent_obj.state.screen_filters_values.enable_filter_version && parent_obj.state.screen_filters_values.filter_version_config;
+    const [filterVersionConfig, setFilterVersionConfig] = React.useState(parent_obj.state.screen_filters_values.filter_version_config)
+
+    const [selectedFilterVersion, setSelectedFilterVersion] = React.useState("")
+    const [selectedFilterDetail, setSelectedFilterDetail] = React.useState({ selected: selected, filterData: filterData })
+    const [snackbar, setSnackbar] = React.useState({ open: false, message: false, severity: 'success' });
+
+    const componetName = parent_obj.state.screen_filters_values.component_name ? parent_obj.state.screen_filters_values.component_name : 'Pivot / Filters';
+
     React.useEffect(() => {
         getDynamicfilters({
             app_id: app_info.id,
@@ -641,6 +673,16 @@ export default function AppWidgetMultiSelectFilters({
                         filterOption.widget_filter_type === 'date_range'
                     ) {
                         //TODO: update error message for date range filter type
+                        const filterOptionValue = selected[filterOption.widget_tag_key] || [];
+                        updatedFilterError[filterOption.widget_tag_key] =
+                            filterOptionValue.start_date <= filterOptionValue.end_date
+                                ? false
+                                : 'Invalid range selection';
+                    } else if (filterOption.widget_filter_type === 'dropdown_radio') {
+                        const filterOptionValue = selected[filterOption.widget_tag_key] || [];
+                        updatedFilterError[filterOption.widget_tag_key] = filterOptionValue?.error
+                            ? filterOptionValue?.error
+                            : false;
                     } else if (
                         filterOption.widget_filter_type &&
                         filterOption.widget_filter_type === 'range_select'
@@ -659,10 +701,10 @@ export default function AppWidgetMultiSelectFilters({
             ...prevState,
             ...updatedFilterError
         }));
-    }, [selected, hasPivot, pivotInfo, filterData]);
+    }, [selected, hasPivot, pivotInfo, filterData, selectedFilterVersion]);
 
     const fetchDynamicData = useDebouncedCallback(
-        (newState, name) => {
+        (newState, name, filterVerConfig = null) => {
             setLoading((s) => s + 1);
             try {
                 if (!screen_id) {
@@ -682,10 +724,23 @@ export default function AppWidgetMultiSelectFilters({
                     getDynamicfilters({
                         app_id: app_info.id,
                         screen_id,
-                        payload: { selected: newState, current_filter: name },
+                        payload: { selected: newState, current_filter: name, ...(filterVerConfig && { filter_version: filterVerConfig }) },
                         callback: (resp) => {
                             setSelected(resp.defaultValues);
                             setFilterData(resp.dataValues);
+                            setErrorMessage(resp.status_message?.errorMessage || null);
+                            if (["save", "edit", "delete"].includes(resp.current_function)) {
+                                setSnackbar({ open: true, message: resp.status_message.success, severity: 'success' })
+                            }
+                            if (resp.pivot_info?.length) setPivotInfo(resp.pivot_info)
+                            if (enableFilterVersion) {
+                                setSelectedFilterDetail({
+                                    ...selectedFilterDetail,
+                                    selected: resp.defaultValues,
+                                    filterData: resp.dataValues
+                                })
+                                setFilterVersionConfig(resp.filter_version_config)
+                            }
                             setLoading((s) => s - 1);
                         }
                     });
@@ -728,6 +783,11 @@ export default function AppWidgetMultiSelectFilters({
             sessionStorage.getItem('app_screen_filter_info_' + app_info.id + '_' + screen_id) ||
                 null
         );
+        const dataValues = JSON.parse(
+            sessionStorage.getItem(
+                'app_screen_filter_info_datavalue_' + app_info.id + '_' + screen_id
+            ) || null
+        );
         if (savedSelected) {
             setSelected({
                 ...savedSelected
@@ -737,6 +797,9 @@ export default function AppWidgetMultiSelectFilters({
                 setPivotInfo(savedSelected['__pivot_info__']);
             }
         }
+        if (dataValues) {
+            setFilterData(dataValues);
+        }
         onToggleFilter();
         setErrorTextField('');
         setSliceName('');
@@ -745,6 +808,11 @@ export default function AppWidgetMultiSelectFilters({
     const apply = () => {
         parent_obj.getWidgetData(selected, pivotInfo);
         onToggleFilter();
+        setSelectedFilterDetail({
+            ...selectedFilterDetail,
+            selected: selected,
+            filterData: filterData
+        })
         setSelectedFilterIndex(0);
     };
 
@@ -876,18 +944,54 @@ export default function AppWidgetMultiSelectFilters({
             setSelected({
                 ...savedSelected
             });
+            setErrorMessage(null);
             setFilterData(dataValue);
             if (hasPivot && savedSelected['__pivot_info__']) {
                 setPivotInfo(savedSelected['__pivot_info__']);
                 setSelectedFilterIndex(-1);
             }
         }
+        setSelectedFilterVersion("")
         setResetCounter((s) => s + 1);
     };
 
     const onFilterChange = (index) => {
         setSelectedFilterIndex(index);
     };
+
+    const handleSaveFilterVersion = (ver) => {
+        const newState = { ...selected }
+        if (hasPivot) {
+            newState["__pivot_info__"] = pivotInfo;
+        }
+        fetchDynamicData(newState, "__create_filter_version__", { name: ver.versionName, description: ver.description })
+    }
+
+    const handleDeleteFilterVersion = (item) => {
+        const newState = { ...selected }
+        if (hasPivot) {
+            newState["__pivot_info__"] = pivotInfo;
+        }
+        fetchDynamicData(newState, "__delete_filter_version__", { name: item.name, description: item.description })
+    }
+
+    const handleChangeFilterVersion = (item) => {
+        const newState = { ...selected }
+        if (hasPivot) {
+            newState["__pivot_info__"] = pivotInfo;
+        }
+        setSelectedFilterVersion(item.name)
+        fetchDynamicData(newState, "__change_filter_version__", { name: item.name, description: item.description })
+    }
+
+    const handelUpdateFilterVersion = (item) => {
+
+        const newState = { ...selected }
+        if (hasPivot) {
+            newState["__pivot_info__"] = pivotInfo;
+        }
+        fetchDynamicData(newState, "__update_filter_version__", { name: item.name, description: item.description, existing_name: item.existingName })
+    }
 
     const onFilterShortcutClick = (index) => {
         setExpanded(true);
@@ -941,9 +1045,9 @@ export default function AppWidgetMultiSelectFilters({
                                     />
                                 )
                             }
-                            aria-label={hasPivot ? 'Pivot / Filters' : 'Filters'}
+                            aria-label={hasPivot ? componetName : 'Filters'}
                         >
-                            {hasPivot ? 'Pivot / Filters' : 'Filters'}
+                            {hasPivot ? componetName : 'Filters'}
                         </Button>
                         <div
                             className={`${classes.filterAppliedList} ${
@@ -1116,6 +1220,71 @@ export default function AppWidgetMultiSelectFilters({
                                                                                 )}
                                                                         {filter_option[
                                                                             'widget_filter_type'
+                                                                        ] === 'dropdown_radio' &&
+                                                                        selected[
+                                                                            filter_option[
+                                                                                'widget_tag_key'
+                                                                            ]
+                                                                        ]?.search == ''
+                                                                            ? filter_option[
+                                                                                  'widget_filter_extra_params'
+                                                                              ][0]['show_dropdown']
+                                                                                ? selected[
+                                                                                      filter_option[
+                                                                                          'widget_tag_key'
+                                                                                      ]
+                                                                                  ][
+                                                                                      filter_option[
+                                                                                          'widget_filter_extra_params'
+                                                                                      ][0]['label']
+                                                                                  ] +
+                                                                                  ' ' +
+                                                                                  filter_option[
+                                                                                      'widget_filter_extra_params'
+                                                                                  ][1]['label'] +
+                                                                                  ' ' +
+                                                                                  selected[
+                                                                                      filter_option[
+                                                                                          'widget_tag_key'
+                                                                                      ]
+                                                                                  ][
+                                                                                      filter_option[
+                                                                                          'widget_filter_extra_params'
+                                                                                      ][1]['label']
+                                                                                  ]
+                                                                                : null
+                                                                            : selected[
+                                                                                  filter_option[
+                                                                                      'widget_tag_key'
+                                                                                  ]
+                                                                              ]?.items instanceof
+                                                                                  Array &&
+                                                                              selected[
+                                                                                  filter_option[
+                                                                                      'widget_tag_key'
+                                                                                  ]
+                                                                              ]?.items.length > 1
+                                                                            ? selected[
+                                                                                  filter_option[
+                                                                                      'widget_tag_key'
+                                                                                  ]
+                                                                              ]?.items.indexOf(
+                                                                                  'All'
+                                                                              ) > -1
+                                                                                ? 'All'
+                                                                                : selected[
+                                                                                      filter_option[
+                                                                                          'widget_tag_key'
+                                                                                      ]
+                                                                                  ]?.items.length +
+                                                                                  ' Items selected'
+                                                                            : selected[
+                                                                                  filter_option[
+                                                                                      'widget_tag_key'
+                                                                                  ]
+                                                                              ]?.items}
+                                                                        {filter_option[
+                                                                            'widget_filter_type'
                                                                         ] === 'range_select' &&
                                                                             (Array.isArray(
                                                                                 selected[
@@ -1224,6 +1393,7 @@ export default function AppWidgetMultiSelectFilters({
                 <Grid item xs={12}>
                     <Paper className={classes.filterCategoryBody}>
                         <Grid container className={classes.filterDataWrapper}>
+                            {loading && <div className={classes.disableContainer}></div>}
                             <Grid
                                 container
                                 spacing={0}
@@ -1231,6 +1401,37 @@ export default function AppWidgetMultiSelectFilters({
                                 className={classes.categoriesWrapper}
                             >
                                 <Grid item xs={12} className={classes.categories}>
+                                {enableFilterVersion ? (
+                                        <div className={classes.pivotSelection}>
+                                            <div
+                                                name={'version'}
+                                                key={'version+1'}
+                                                className={clsx(
+                                                    classes.filterCategoryLabel,
+                                                    selectedFilterIndex === -2
+                                                        ? classes.filterCategoryLabelButtonSelected
+                                                        : classes.filterCategoryLabelButton
+                                                )}
+                                                onClick={() => setSelectedFilterIndex(-2)}
+                                            >
+                                                <span>
+                                                    {filterVersionConfig?.label || 'Versions'}{' '}
+                                                    &nbsp;
+                                                </span>
+                                                <div style={{ flex: 1 }}></div>
+                                                <ChevronRightIcon
+                                                    fontSize="large"
+                                                    className={
+                                                        selectedFilterIndex === -2
+                                                            ? classes.filterCategoryLabelButtonIconSelected
+                                                            : classes.filterCategoryLabelButtonIcon
+                                                    }
+                                                />
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        ''
+                                    )}
                                     {hasPivot ? (
                                         <div className={classes.pivotSelection}>
                                             <div
@@ -1304,7 +1505,20 @@ export default function AppWidgetMultiSelectFilters({
                                                         )}
                                                         onClick={() => onFilterChange(index)}
                                                     >
-                                                        <span>{`${filter_option['widget_tag_label']} (${selectedOptionsCount}/${filter_option?.widget_tag_value?.length})`}</span>
+                                                        <span>{`${
+                                                            filter_option['widget_tag_label']
+                                                        } ${
+                                                            filter_option[
+                                                                'widget_tag_label'
+                                                            ].toLowerCase() !== 'item'
+                                                                ? '(' +
+                                                                  selectedOptionsCount +
+                                                                  '/' +
+                                                                  filter_option?.widget_tag_value
+                                                                      ?.length +
+                                                                  ')'
+                                                                : ''
+                                                        }`}</span>
                                                         <div style={{ flex: 1 }}></div>
                                                         {filterError &&
                                                         filterError[
@@ -1484,17 +1698,53 @@ export default function AppWidgetMultiSelectFilters({
                                                         }
                                                         message={notification?.message}
                                                     />
-                                                    <Button
-                                                        key={'apply_filter'}
-                                                        aria-label="apply filter"
-                                                        variant="contained"
-                                                        onClick={apply}
-                                                        edge="end"
-                                                        className={classes.filterToolbarButtonApply}
-                                                        disabled={!!filterErrorFound}
-                                                    >
-                                                        Apply
-                                                    </Button>
+                                                    {errorMessage ? (
+                                                        <Typography
+                                                            key="error"
+                                                            className={classes.filterErrorMessage}
+                                                        >
+                                                            {errorMessage}
+                                                        </Typography>
+                                                    ) : filterErrorFound ? (
+                                                        <Typography
+                                                            key="error"
+                                                            className={classes.filterErrorMessage}
+                                                        >
+                                                            Please select at least one option to
+                                                            enable Apply
+                                                        </Typography>
+                                                    ) : (
+                                                        <Button
+                                                            key={'apply_filter'}
+                                                            aria-label="apply filter"
+                                                            variant="contained"
+                                                            onClick={apply}
+                                                            edge="end"
+                                                            className={
+                                                                classes.filterToolbarButtonApply
+                                                            }
+                                                            disabled={!!filterErrorFound}
+                                                        >
+                                                            Apply
+                                                        </Button>
+                                                    )}
+                                                    {enableFilterVersion && (
+                                                        <CreateFilter
+                                                            existingFilterVersion={
+                                                                filterVersionConfig?.filter_versions
+                                                            }
+                                                            onSaveFilterVersion={
+                                                                handleSaveFilterVersion
+                                                            }
+                                                            selectedFilter={selectedFilterDetail}
+                                                            buttonStyleClass={
+                                                                classes.filterToolbarButtonApply
+                                                            }
+                                                            errorMessage={
+                                                                filterErrorFound || errorMessage
+                                                            }
+                                                        />
+                                                    )}
                                                 </div>
                                             </div>
                                         )}
@@ -1508,7 +1758,7 @@ export default function AppWidgetMultiSelectFilters({
                                     alignContent="space-between"
                                     className={classes.categoriesDataWrapper}
                                     style={{
-                                        width: getFiltersWidth(filterData[selectedFilterIndex])
+                                        width: '65%'
                                     }}
                                 >
                                     <Grid item xs={12} className={classes.categoriesData}>
@@ -1516,45 +1766,72 @@ export default function AppWidgetMultiSelectFilters({
                                         selectedFilterIndex === -2 ||
                                         selectedFilterIndex === -3 ? (
                                             selectedFilterIndex === -1 && hasPivot ? (
-                                                <PivotFilter
-                                                    key={expanded + ' ' + resetCounter}
-                                                    pivotInfo={pivotInfo}
-                                                    onChange={handlePivotInfoChange}
-                                                />
+                                                hasPivot ? (
+                                                    <PivotFilter
+                                                        key={expanded + ' ' + resetCounter}
+                                                        pivotInfo={pivotInfo}
+                                                        pivotAccordionInfo={pivotAccordionInfo}
+                                                        onChange={handlePivotInfoChange}
+                                                    />
+                                                ) : null
                                             ) : selectedFilterIndex === -2 ? (
-                                                <div className={classes.filterCategoryOptionsBody}>
-                                                    <Typography
-                                                        variant="subtitle1"
-                                                        className={classes.saveSliceLabel}
-                                                    >
-                                                        Slice Name
-                                                    </Typography>
-                                                    <ThemeProvider theme={textCompTheme}>
-                                                        <TextField
-                                                            variant="filled"
-                                                            className={classes.dialogFont}
-                                                            value={sliceName}
-                                                            onChange={handleNameChange}
-                                                            InputProps={{
-                                                                classes: {
-                                                                    input: classes.formInput
-                                                                }
-                                                            }}
-                                                            error={!!errorTextField}
-                                                            helperText={errorTextField}
-                                                            id={sliceName || 'name'}
-                                                        />
-                                                    </ThemeProvider>
-                                                    <Button
-                                                        aria-label="save slice"
-                                                        variant="contained"
-                                                        onClick={onSaveSlice}
-                                                        className={classes.saveSliceButton}
-                                                        key="saveSlice"
-                                                    >
-                                                        Save Slice
-                                                    </Button>
-                                                </div>
+                                                <>
+                                                {enableFilterVersion ? (
+                                                    <FilterVersion
+                                                        filterVersions={
+                                                            filterVersionConfig?.filter_versions
+                                                        }
+                                                        onDeleteFilterVersion={
+                                                            handleDeleteFilterVersion
+                                                        }
+                                                        onChangeFilterVersion={
+                                                            handleChangeFilterVersion
+                                                        }
+                                                        onUpdateFilterVersion={
+                                                            handelUpdateFilterVersion
+                                                        }
+                                                        selectedFilterVersion={
+                                                            selectedFilterVersion
+                                                        }
+                                                        currentFilter={selectedFilterDetail}
+                                                    />
+                                                ) : null}
+                                                {
+                                                // <div className={classes.filterCategoryOptionsBody}>
+                                                //     <Typography
+                                                //         variant="subtitle1"
+                                                //         className={classes.saveSliceLabel}
+                                                //     >
+                                                //         Slice Name
+                                                //     </Typography>
+                                                //     <ThemeProvider theme={textCompTheme}>
+                                                //         <TextField
+                                                //             variant="filled"
+                                                //             className={classes.dialogFont}
+                                                //             value={sliceName}
+                                                //             onChange={handleNameChange}
+                                                //             InputProps={{
+                                                //                 classes: {
+                                                //                     input: classes.formInput
+                                                //                 }
+                                                //             }}
+                                                //             error={!!errorTextField}
+                                                //             helperText={errorTextField}
+                                                //             id={sliceName || 'name'}
+                                                //         />
+                                                //     </ThemeProvider>
+                                                //     <Button
+                                                //         aria-label="save slice"
+                                                //         variant="contained"
+                                                //         onClick={onSaveSlice}
+                                                //         className={classes.saveSliceButton}
+                                                //         key="saveSlice"
+                                                //     >
+                                                //         Save Slice
+                                                //     </Button>
+                                                // </div>
+                                                }
+                                                </>
                                             ) : selectedFilterIndex === -3 ? (
                                                 <div className={classes.filterCategoryOptionsBody}>
                                                     <RadioGroup
@@ -1623,6 +1900,61 @@ export default function AppWidgetMultiSelectFilters({
                                                                         ].widget_filter_params
                                                                     }
                                                                     onChangeFilter={onChangeFilter.bind(
+                                                                        null,
+                                                                        filterData[
+                                                                            selectedFilterIndex
+                                                                        ],
+                                                                        filterData[
+                                                                            selectedFilterIndex
+                                                                        ]['widget_tag_key']
+                                                                    )}
+                                                                    onError={handleError.bind(
+                                                                        null,
+                                                                        filterData[
+                                                                            selectedFilterIndex
+                                                                        ].widget_tag_key
+                                                                    )}
+                                                                />
+                                                            )}
+                                                            {filterData[selectedFilterIndex]
+                                                                .widget_filter_type ===
+                                                                'dropdown_radio' && (
+                                                                <DropdownRadioSelect
+                                                                    key={
+                                                                        filterData[
+                                                                            selectedFilterIndex
+                                                                        ].widget_tag_key
+                                                                    }
+                                                                    value={
+                                                                        selected[
+                                                                            filterData[
+                                                                                selectedFilterIndex
+                                                                            ].widget_tag_key
+                                                                        ]
+                                                                    }
+                                                                    item={
+                                                                        filterData[
+                                                                            selectedFilterIndex
+                                                                        ].widget_tag_key
+                                                                    }
+                                                                    selectedValue={selected}
+                                                                    data={
+                                                                        filterData[
+                                                                            selectedFilterIndex
+                                                                        ]
+                                                                    }
+                                                                    params={
+                                                                        filterData[
+                                                                            selectedFilterIndex
+                                                                        ].widget_filter_params
+                                                                    }
+                                                                    extra_params={
+                                                                        filterData[
+                                                                            selectedFilterIndex
+                                                                        ]
+                                                                            ?.widget_filter_extra_params
+                                                                    }
+                                                                    onChange={onChangeFilter.bind(
                                                                         null,
                                                                         filterData[
                                                                             selectedFilterIndex
@@ -1714,11 +2046,40 @@ export default function AppWidgetMultiSelectFilters({
                                     />
                                 </Grid>
                             )}
+                            {selectedFilterIndex === -1 && (
+                                <Grid
+                                    container
+                                    spacing={0}
+                                    alignContent="space-between"
+                                    className={classes.categoriesDataWrapper}
+                                    style={{
+                                        width: '65%'
+                                    }}
+                                >
+                                    <Grid item xs={12} className={classes.categoriesData}>
+                                        {hasPivot ? (
+                                            <PivotFilter
+                                                key={expanded + ' ' + resetCounter}
+                                                pivotInfo={pivotInfo}
+                                                pivotAccordionInfo={pivotAccordionInfo}
+                                                onChange={handlePivotInfoChange}
+                                            />
+                                        ) : null}
+                                    </Grid>
+                                </Grid>
+                            )}
                         </Grid>
                     </Paper>
                 </Grid>
             </Grid>
             {expanded && <div className={classes.overlay} />}
+            <CustomSnackbar
+                message={snackbar.message}
+                open={snackbar.open}
+                autoHideDuration={2000}
+                onClose={setSnackbar.bind(null, { ...snackbar, open: false })}
+                severity={snackbar.severity}
+            />
         </div>
     );
 }

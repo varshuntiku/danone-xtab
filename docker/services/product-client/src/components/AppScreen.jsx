@@ -496,7 +496,8 @@ class AppScreen extends React.Component {
             this.props.app_info,
             this.state.screen_id,
             screen_filters_values,
-            comments_selected_filters ? comments_selected_filters : selected_filters
+            comments_selected_filters ? comments_selected_filters : selected_filters,
+            screen_filters_values.dataValues
         );
         this.props.setScreenLevelFilterState({ screenLevelFilterState: finalFiterObj });
         sessionStorage.setItem(
@@ -1266,7 +1267,7 @@ class AppScreen extends React.Component {
         this.setState({ filtersUpdated: false });
     };
 
-    getWidgetData = (selected_filters, pivotInfo) => {
+    getWidgetData = (selected_filters, pivotInfo, dataValues=null) => {
         const screen_filters_values = { ...this.state.screen_filters_values };
         if (pivotInfo) {
             screen_filters_values['pivot_info'] = pivotInfo;
@@ -1275,7 +1276,8 @@ class AppScreen extends React.Component {
             this.props.app_info,
             this.state.screen_id,
             screen_filters_values,
-            selected_filters
+            selected_filters,
+            dataValues
         );
 
         this.setState(

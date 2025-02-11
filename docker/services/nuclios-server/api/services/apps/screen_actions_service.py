@@ -207,7 +207,7 @@ class ScreenActionsService(BaseService):
             access_token,
             json.loads(app_screen.action_settings),
             {
-                "current_filter_params": filter_state,
+                "filter_state": filter_state,
                 "action_param": action_param,
                 "action_type": action_type,
             },

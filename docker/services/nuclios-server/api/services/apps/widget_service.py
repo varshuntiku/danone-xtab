@@ -270,18 +270,18 @@ class WidgetService(BaseService):
                             prev_screen_data=getattr(request_data, "prev_screen_data", None),
                         )
                     if widget_filter_json:
-                        if widget_filter_json["code"] and widget_filter_json["code"] != "":
-                            widget_filter_value, _, _ = get_dynamic_widgets(
-                                app_id=app_id,
-                                widget_id=request_data.widget.id,
-                                access_token=access_token,
-                                filters={},
-                                widget_code=widget_filter_json["code"],
-                                data_state_key=getattr(request_data, "data_state_key", None),
-                                request=request,
-                            )
-                        else:
-                            widget_filter_value = None
+                        # if widget_filter_json["code"] and widget_filter_json["code"] != "":
+                        #     widget_filter_value, _, _ = get_dynamic_widgets(
+                        #         app_id=app_id,
+                        #         widget_id=request_data.widget.id,
+                        #         access_token=access_token,
+                        #         filters={},
+                        #         widget_code=widget_filter_json["code"],
+                        #         data_state_key=getattr(request_data, "data_state_key", None),
+                        #         request=request,
+                        #     )
+                        # else:
+                        widget_filter_value = None
                     else:
                         widget_filter_value = None
                 except Exception as error_msg:

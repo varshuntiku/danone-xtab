@@ -218,6 +218,21 @@ class AppWidgetInsights extends React.Component {
                                     ))}
                             </div>
                             <div className={classes.insightValue}>{insight_item.value}</div>
+                            <br />
+                            {insight_item?.labelList
+                                ? insight_item.labelList.map((item, index) => {
+                                      return (
+                                          <Typography
+                                              key={'extra_label' + index}
+                                              variant="h5"
+                                              style={insight_item?.labelListStyle}
+                                              className={classes.labelListValue}
+                                          >
+                                              {item}
+                                          </Typography>
+                                      );
+                                  })
+                                : null}
                             {insight_item.extra_value && <br />}
                             {insight_item.extra_value && (
                                 <div>

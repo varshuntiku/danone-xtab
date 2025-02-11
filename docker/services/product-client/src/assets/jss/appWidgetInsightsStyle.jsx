@@ -267,6 +267,9 @@ const appWidgetInsightsStyle = (theme) => ({
         maskImage: `url(${ShareIcon})`,
         background: theme.palette.text.secondaryText,
         marginLeft: 'auto'
+    },
+    labelListValue:{
+      marginLeft:'5rem'
     }
 });
 
