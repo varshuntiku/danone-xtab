@@ -55,35 +55,35 @@ repos:
               docker/services/product-client|
               docker/services/client
           )
-# -   repo: local
-#     hooks:
-#     -   id: prettier
-#         name: prettier
-#         description: 'prettier-product-client'
-#         entry: bash -c "cd docker/services/product-client && prettier --write --list-different --ignore-unknown 'src/**/*.{js,jsx}'"
-#         exclude: |
-#           (?x)^(
-#               docker/services/product-client/src/__tests__|
-#               docker/services/product-client/src/__mocks__
-#           )
-#         language: node
-#         types_or: [css, javascript]
-#         args: []
-#         require_serial: false
-#         additional_dependencies: ["prettier@3.0.0-alpha.6"]
-#         minimum_pre_commit_version: '0'
-#     -   id: eslint
-#         name: eslint
-#         description: 'eslint product-client'
-#         entry: bash -c "cd docker/services/product-client && eslint . --ext=js,jsx --fix"
-#         language: node
-#         types: [javascript]
-#         args: []
-#         exclude: |
-#           (?x)^(
-#               docker/services/product-client/src/__tests__|
-#               docker/services/product-client/src/__mocks__
-#           )
-#         require_serial: false
-#         additional_dependencies: ["eslint@8.35.0"]
-#         minimum_pre_commit_version: '0'
+-   repo: local
+    hooks:
+    -   id: prettier
+        name: prettier
+        description: 'prettier-product-client'
+        entry: bash -c "cd docker/services/product-client && prettier --write --list-different --ignore-unknown 'src/**/*.{js,jsx}'"
+        exclude: |
+          (?x)^(
+              docker/services/product-client/src/__tests__|
+              docker/services/product-client/src/__mocks__
+          )
+        language: node
+        types_or: [css, javascript]
+        args: []
+        require_serial: false
+        additional_dependencies: ["prettier@3.0.0-alpha.6"]
+        minimum_pre_commit_version: '0'
+    -   id: eslint
+        name: eslint
+        description: 'eslint product-client'
+        entry: bash -c "cd docker/services/product-client && eslint . --ext=js,jsx --fix"
+        language: node
+        types: [javascript]
+        args: []
+        exclude: |
+          (?x)^(
+              docker/services/product-client/src/__tests__|
+              docker/services/product-client/src/__mocks__
+          )
+        require_serial: false
+        additional_dependencies: ["eslint@8.35.0"]
+        minimum_pre_commit_version: '0'
