@@ -216,9 +216,9 @@ class AppScreenAdmin extends React.Component {
             },
             callback: this.getLayoutOptionsCallBack
         });
-        await getScreenOverViewImages({
-            callback: this.getScreenOverViewIcons
-        });
+        // await getScreenOverViewImages({
+        //     callback: this.getScreenOverViewIcons
+        // });
         if (this.state.screen_id) {
             try {
                 await getScreenConfig({
@@ -1653,7 +1653,7 @@ class AppScreenAdmin extends React.Component {
                             />
                         </FormControl>
 
-                        <div className={classes.screenImageContianer}>
+                        {/* <div className={classes.screenImageContianer}>
                             <Typography variant="h4" className={classes.sectionEditorHeading}>
                                 Select Screen Image
                             </Typography>
@@ -1686,7 +1686,7 @@ class AppScreenAdmin extends React.Component {
                                     {renderNextBtn ? <NavigateNextIcon /> : null}
                                 </IconButton>
                             </Grid>
-                        </div>
+                        </div> */}
                         {this.props.app_info.modules.user_guide && (
                             <div className={classes.UserGuideContainer} style={{ marginTop: '5%' }}>
                                 <Typography variant="h4" className={classes.sectionEditorHeading}>
@@ -1710,7 +1710,7 @@ class AppScreenAdmin extends React.Component {
                                 )}
                             </div>
                         )}
-                        <Button
+                        {/* <Button
                             variant="contained"
                             onClick={() => this.setState({ openIconDialog: true })}
                             className={classes.uploadIcon}
@@ -1753,7 +1753,7 @@ class AppScreenAdmin extends React.Component {
                                     });
                                 }}
                             />
-                        </ModalComponent>
+                        </ModalComponent> */}
                     </div>
                 </div>
                 <div>

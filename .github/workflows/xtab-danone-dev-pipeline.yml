@@ -55,10 +55,10 @@ jobs:
         echo "REACT_APP_ENABLE_APP_INSIGHTS=false" | cat >> .env
         echo "REACT_APP_NUCLIOS_BACKEND_API=http://app-gateway-pip-shared-anl.westeurope.cloudapp.azure.com/backend/nuclios-product-api" | cat >> .env
         echo "REACT_APP_JPHUB_URL=" | cat >> .env
-        echo "REACT_APP_DEE_ENV_ENABLED=false" | cat >> .env
+        echo "REACT_APP_DEE_ENV_ENABLED=" | cat >> .env
         echo "REACT_APP_DEE_ENV_BASE_URL=" | cat >> .env
         echo "REACT_APP_COPILOT_ADMIN_CLIENT=''" | cat >> .env
-        echo "REACT_APP_ENABLE_FASTAPI=True" | cat >> .env
+        echo "REACT_APP_ENABLE_FASTAPI=true" | cat >> .env
         echo "REACT_APP_COPILOT_TEST_API=" | cat >> .env
         echo "REACT_APP_SOLUTION_BP_ENV_BASE_URL=" | cat >> .env
         echo "REACT_APP_JUPYTER_HUB_ENV_BASE_URL= "| cat >> .env
