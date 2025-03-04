@@ -3752,6 +3752,7 @@ class AppScreenAdmin extends React.Component {
                                 setProgressBarConfDetails={() => {}}
                                 setScreenProgressData={() => {}}
                                 screen_id={this.state.screen_id}
+                                updateScreenTab={() => { }}
                                 // a dummy function passed so that downstream components don't throw an error
                                 // stories cannot be created from preview
                             />
