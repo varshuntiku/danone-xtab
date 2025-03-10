@@ -221,7 +221,8 @@ const useStyles = makeStyles((theme) => ({
         marginRight: theme.layoutSpacing(-35),
         // flexDirection: 'row',
         alignItems: 'start',
-        alignContent: 'flex-start'
+        alignContent: 'flex-start',
+        paddingLeft: '10px'
     },
     flexCol: {
         flexDirection: 'column'
@@ -992,7 +993,7 @@ export default function AppMultipleSelect({
     };
 
     return data.widget_filter_multiselect ? (
-        <FormControl 
+        <FormControl
             component="fieldset"
             className={classes.contentWrapper}
             style={{ height: optionsBodyHeight ? optionsBodyHeight : 'inherit' }}
