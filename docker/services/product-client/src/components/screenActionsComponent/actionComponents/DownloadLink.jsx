@@ -169,6 +169,10 @@ export function DownloadLink({
             allowedTags: [],
             allowedAttributes: {}
         });
+        if (params.open_new_tab) {
+            window.open(url, '_blank');
+            return;
+        }
         fetch(sanitizedUrl)
             .then((response) => response.blob())
             .then((blob) => {
