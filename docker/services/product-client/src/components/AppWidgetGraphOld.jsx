@@ -12,7 +12,7 @@ import AppWidgetPlot from "components/AppWidgetPlot.jsx";
 import AppWidgetInsights from "components/AppWidgetInsights.jsx";
 import AppWidgetTestLearn from "components/AppWidgetTestLearn.jsx";
 import AppWidgetFlowTable from 'components/AppWidgetFlowTable.jsx';
-import AppWidgetAssumptions from 'components/AppWidgetAssumptions.jsx';
+import AppWidgetAssumptions from 'components/AppWidgetAssumptionsOld.jsx';
 import AppWidgetExpandableTable from "components/app-expandable-table/appWidgetExpandableTable.jsx";
 import AppWidgetTableSimulator from "./AppWidgetTableSimulator.jsx";
 import AppWidgetGanttTable from 'components/AppWidgetGanttTable.jsx';
